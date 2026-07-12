@@ -3,28 +3,26 @@ import shutil
 import re
 from deep_translator import GoogleTranslator
 
-# Mapping phase to source keywords
-# List of target tuples: (destination_dir, list_of_keywords, number_of_files_to_pick)
 PLAN = [
     (
         "LoTrinhThucChien/01_NenTang_Python_Toan",
-        [("Python/Core-Language", "Python"), ("Python/Object-Oriented", "Class"), ("Statistics-and-Math/Linear-Algebra-and-Matrices", "Matrix"), ("Statistics-and-Math/Calculus-and-Analysis", "Derivative"), ("Statistics-and-Math/Probability-and-Distributions", "Probability")],
-        20
+        [("Python", "Python"), ("Python", "Class"), ("Python", "Function"), ("Statistics-and-Math", "Matrix"), ("Statistics-and-Math", "Derivative"), ("Statistics-and-Math", "Probability")],
+        50
     ),
     (
         "LoTrinhThucChien/02_PhanTichDuLieu_DataScience",
-        [("Data-Science", "Pandas"), ("Data-Science", "Cleaning"), ("Data-Science", "NumPy"), ("Data-Visualization", "Matplotlib"), ("Data-Visualization", "Seaborn")],
-        20
+        [("Data-Science", "Pandas"), ("Data-Science", "Cleaning"), ("Data-Science", "NumPy"), ("Data-Visualization", "Matplotlib"), ("Data-Visualization", "Seaborn"), ("Data-Engineering", "SQL")],
+        50
     ),
     (
         "LoTrinhThucChien/03_HocMay_MachineLearning",
-        [("Machine-Learning/Regression", "Linear Regression"), ("Machine-Learning/Classification-and-Clustering", "Classification"), ("Machine-Learning/Classification-and-Clustering", "Clustering"), ("Deep-Learning/Backpropagation-and-Optimization", "Gradient Descent"), ("Machine-Learning", "Scikit")],
-        20
+        [("Machine-Learning", "Regression"), ("Machine-Learning", "Classification"), ("Machine-Learning", "Clustering"), ("Deep-Learning/Backpropagation-and-Optimization", "Gradient Descent"), ("Machine-Learning", "Scikit")],
+        50
     ),
     (
         "LoTrinhThucChien/04_HocSau_AI_ThucChien",
         [("Computer-Vision", "Neural Network"), ("Computer-Vision", "CNN"), ("NLP-and-Transformers", "NLP"), ("LLMs-and-GenAI", "Transformer"), ("LLMs-and-GenAI", "LLM")],
-        20
+        50
     )
 ]
 
@@ -52,12 +50,9 @@ def find_files(base_dir, keyword, limit):
 
 translator = GoogleTranslator(source='en', target='vi')
 
-# Clear existing files to avoid conflicts, except plan.md and index.html
-for d in os.listdir("LoTrinhThucChien"):
-    path = os.path.join("LoTrinhThucChien", d)
-    if os.path.isdir(path):
-        for f in os.listdir(path):
-            os.remove(os.path.join(path, f))
+os.makedirs("LoTrinhThucChien", exist_ok=True)
+for p in PLAN:
+    os.makedirs(p[0], exist_ok=True)
 
 for dest_dir, keyword_sources, total_limit in PLAN:
     limit_per_kw = max(1, total_limit // len(keyword_sources))
@@ -65,7 +60,20 @@ for dest_dir, keyword_sources, total_limit in PLAN:
     for src_dir, kw in keyword_sources:
         collected.extend(find_files(src_dir, kw, limit_per_kw))
 
-    collected = list(set(collected))[:total_limit] # Ensure uniqueness
+    collected = list(set(collected))[:total_limit]
+
+    if len(collected) < total_limit:
+        for src_dir, _ in keyword_sources:
+            if len(collected) >= total_limit:
+                break
+            for root, _, files in os.walk(src_dir):
+                for f in files:
+                    if len(collected) >= total_limit:
+                        break
+                    if f.endswith(".md") and f != "README.md":
+                        path = os.path.join(root, f)
+                        if path not in collected:
+                            collected.append(path)
 
     for idx, filepath in enumerate(collected):
         filename = os.path.basename(filepath)
@@ -73,14 +81,14 @@ for dest_dir, keyword_sources, total_limit in PLAN:
 
         try:
             translated_name = translator.translate(name_no_ext)
-            translated_name = re.sub(r'[\\/*?:"<>|]', "", translated_name) # Clean invalid chars
-            new_filename = f"{idx+1:02d}_{translated_name}.md"
+            translated_name = re.sub(r'[^\w\s-]', "", translated_name) # Strip non-alphanumeric properly
+            new_filename = f"{idx+1:03d}_{translated_name}.md"
         except Exception as e:
-            print(f"Failed to translate {name_no_ext}: {e}")
-            new_filename = f"{idx+1:02d}_{name_no_ext}.md"
+            new_filename = f"{idx+1:03d}_{name_no_ext}.md"
+
+        new_filename = new_filename.replace(" ", "_")
 
         dest_path = os.path.join(dest_dir, new_filename)
         shutil.copy2(filepath, dest_path)
-        print(f"Copied: {filepath} -> {dest_path}")
 
-print("Done copying and renaming 80 files.")
+print("Done copying and renaming 200 files.")

@@ -3,12 +3,10 @@ import concurrent.futures
 from deep_translator import GoogleTranslator
 
 def translate_markdown(text):
-    # Split into smaller chunks
     paragraphs = text.split('\n\n')
     translated_paragraphs = []
     in_code_block = False
 
-    # Pre-instantiate local translator per thread
     translator = GoogleTranslator(source='en', target='vi')
 
     for p in paragraphs:
@@ -45,8 +43,6 @@ def translate_markdown(text):
     return '\n\n'.join(translated_paragraphs)
 
 def process_file(filepath):
-    # Only translate if not already translated (simple heuristic: look for English words in the first 50 chars)
-    # Actually just translate all and override to be sure, it's fast with threading
     print(f"Translating: {filepath}")
     with open(filepath, 'r', encoding='utf-8') as file:
         content = file.read()
@@ -62,7 +58,6 @@ for root, _, files in os.walk("LoTrinhThucChien"):
         if f.endswith(".md") and f != "plan.md":
             files_to_process.append(os.path.join(root, f))
 
-# Using ThreadPoolExecutor to speed up API calls
 with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
     executor.map(process_file, files_to_process)
 
