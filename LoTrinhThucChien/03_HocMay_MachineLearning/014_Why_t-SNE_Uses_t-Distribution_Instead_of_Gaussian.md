@@ -1,8 +1,8 @@
-## Why t-SNE Uses t-Distribution Instead of Gaussian
+## Tại sao t-SNE sử dụng phân phối thay vì Gaussian
 
-Slide 1: Introduction to t-SNE
+Slide 1: Giới thiệu về t-SNE
 
-t-SNE (t-distributed Stochastic Neighbor Embedding) is a popular dimensionality reduction technique used for visualizing high-dimensional data. It's an improvement over the original SNE algorithm, with the key difference being the use of a t-distribution instead of a Gaussian distribution. This change addresses some limitations of SNE and provides better visualization results.
+t-SNE (T-distributed Stochastic Neighbor Embedding) là một kỹ thuật giảm kích thước phổ biến được sử dụng để hiển thị dữ liệu nhiều chiều. Đây là một cải tiến so với thuật toán SNE ban đầu, với điểm khác biệt chính là công việc sử dụng phân phối thay vì phân phối Gaussian. Thay đổi này sẽ giải quyết một số chế độ hạn chế của SNE và cung cấp kết quả hiển thị tốt hơn.
 
 ```python
 import matplotlib.pyplot as plt
@@ -23,9 +23,9 @@ plt.title('t-SNE Visualization of High-Dimensional Data')
 plt.show()
 ```
 
-Slide 2: Understanding SNE (Stochastic Neighbor Embedding)
+Trang trình bày 2: Tìm hiểu về SNE (Nhúng hàng ngẫu nhiên)
 
-SNE, the predecessor to t-SNE, uses Gaussian distributions to model the similarity between points in both high-dimensional and low-dimensional spaces. It aims to preserve the neighborhood structure of the data when reducing dimensionality.
+SNE, tiền thân của t-SNE, sử dụng Gaussian phân bố để mô hình hóa sự giống nhau giữa các điểm trong cả không gian chiều cao và chiều thấp. Nó nhắm đến mục tiêu bảo vệ vùng lân cận của dữ liệu cấu trúc an toàn khi giảm kích thước.
 
 ```python
     return np.exp(-np.sum((x - y)**2) / (2 * sigma**2))
@@ -37,9 +37,9 @@ similarity = gaussian_similarity(point1, point2)
 print(f"Gaussian similarity: {similarity}")
 ```
 
-Slide 3: Limitations of SNE
+Slide 3: Các chế độ của SNE
 
-SNE faces a problem known as the "crowding problem." In high-dimensional spaces, the volume of a sphere increases exponentially with its radius, which can lead to most points being equidistant. When projected to lower dimensions, this can result in points crowding in the center of the visualization.
+SNE phải đối mặt với một vấn đề được gọi là "vấn đề đông đúc". Trong không gian nhiều chiều, có thể tích hình cầu tăng theo cấp số nhân với bán kính của nó, điều này có thể dẫn đến hầu hết các điểm đều đều nhau. Khi được chiếu ở các kích thước nhỏ hơn, điều này có thể dẫn đến các tập trung ở trung tâm hình ảnh.
 
 ```python
 
@@ -62,9 +62,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 4: Introduction to t-Distribution
+Slide 4: Giới thiệu về t-Distribution
 
-The t-distribution, also known as Student's t-distribution, is a probability distribution that arises when estimating the mean of a normally distributed population in situations where the sample size is small and the population standard deviation is unknown.
+Phân phối t, còn được gọi là phân phối của Sinh viên, là phân phối xác thực phát sinh khi ước tính giá trị trung bình của một tổng thể có chuẩn phân phối trong các vấn đề có kích thước nhỏ và độ lệch của tổng thể không được xác định.
 
 ```python
 
@@ -82,9 +82,9 @@ plt.legend()
 plt.show()
 ```
 
-Slide 5: Why t-SNE Uses t-Distribution
+Trang trình bày 5: Tại sao t-SNE sử dụng phân phối t
 
-t-SNE replaces the Gaussian distribution in the low-dimensional space with a t-distribution. The t-distribution has heavier tails compared to the Gaussian, which helps alleviate the crowding problem. It allows moderately distant points in the high-dimensional space to be modeled by larger distances in the low-dimensional space.
+t-SNE thay thế phân phối Gaussian trong phân phối không chiều sâu. Phân phối t có dấu thăng hơn so với phân bố Gaussian, giúp giảm bớt vấn đề đông đúc. Nó cho phép các điểm ở khoảng cách vừa phải trong không có chiều cao được mô hình hóa bằng khoảng cách lớn hơn trong không có chiều rộng.
 
 ```python
     return (1 + np.sum((x - y)**2) / df) ** (-(df + 1) / 2)
@@ -104,13 +104,13 @@ plt.ylabel('Similarity')
 plt.show()
 ```
 
-Slide 6: Mathematical Formulation of t-SNE
+Slide 6: Công thức toán học của t-SNE
 
-t-SNE defines the similarity of datapoint $x\_j$ to $x\_i$ using a Gaussian distribution in the high-dimensional space:
+t-SNE xác định các điểm giống nhau của dữ liệu $x\_j$ với $x\_i$ bằng cách sử dụng phân phối Gaussian trong không gian nhiều chiều:
 
 $p\_{j|i} = \\frac{\\exp(-||x\_i - x\_j||^2 / 2\\sigma\_i^2)}{\\sum\_{k \\neq i} \\exp(-||x\_i - x\_k||^2 / 2\\sigma\_i^2)}$
 
-In the low-dimensional space, it uses a t-distribution with one degree of freedom:
+Trong không gian ít chiều, nó sử dụng phân phối theo một cấp độ:
 
 $q\_{ij} = \\frac{(1 + ||y\_i - y\_j||^2)^{-1}}{\\sum\_{k \\neq l} (1 + ||y\_k - y\_l||^2)^{-1}}$
 
@@ -135,9 +135,9 @@ print(f"High-dimensional similarity: {p_ij}")
 print(f"Low-dimensional similarity: {q_ij}")
 ```
 
-Slide 7: Advantages of t-Distribution in t-SNE
+Slide 7: Ưu điểm của phân phối trong t-SNE
 
-The t-distribution's heavier tails allow for a more faithful representation of distances between moderately distant points in the high-dimensional space. This helps to separate clusters more effectively and reduces the tendency of points to crowd in the center of the visualization.
+Các dấu sau của phân bố t được phép thực hiện khoảng cách trung thực hơn giữa các điểm ở khoảng cách vừa phải trong không gian nhiều chiều. Điều này giúp phân tích các cụm kết quả hơn và giảm xu hướng các tập trung ở trung tâm hình ảnh.
 
 ```python
 
@@ -161,9 +161,9 @@ plt.title('t-SNE Visualization of Clustered Data')
 plt.show()
 ```
 
-Slide 8: Gradient Computation in t-SNE
+Trang trình bày 8: Độ dốc tính toán trong t-SNE
 
-The gradient of the Kullback-Leibler divergence between P and Q distributions drives the optimization process in t-SNE. The use of t-distribution simplifies this gradient computation:
+Độ dốc của phân kỳ Kullback-Leibler giữa các phân phối P và Q cung cấp quá trình ưu tiên tối đa trong t-SNE. Công việc sử dụng phân phối đơn giản hóa công việc tính toán độ dốc này:
 
 $\\frac{\\partial C}{\\partial y\_i} = 4 \\sum\_j (p\_{ij} - q\_{ij})(y\_i - y\_j)(1 + ||y\_i - y\_j||^2)^{-1}$
 
@@ -191,9 +191,9 @@ gradient = tsne_gradient(Y, P, Q)
 print("Gradient shape:", gradient.shape)
 ```
 
-Slide 9: Perplexity in t-SNE
+Trang trình bày 9: Sự rối loạn trong t-SNE
 
-Perplexity is a hyperparameter in t-SNE that balances attention between local and global aspects of the data. It's related to the number of nearest neighbors each point effectively considers. The perplexity value typically ranges from 5 to 50.
+Sự hỗn loạn là một siêu tham số trong t-SNE giúp cân bằng sự chú ý giữa các cạnh cục bộ và toàn cầu của dữ liệu. Nó liên quan đến số lượng hàng xóm gần nhất mà mỗi điểm xem xét một cách hiệu quả. Phức tạp giá trị thường nằm trong khoảng từ 5 đến 50.
 
 ```python
 
@@ -222,9 +222,9 @@ plt.ylabel('Perplexity')
 plt.show()
 ```
 
-Slide 10: Early Exaggeration in t-SNE
+Trang trình bày 10: Cường độ sớm trong t-SNE
 
-Early exaggeration is a technique used in t-SNE to create better global structure. It involves multiplying the early iterations' high-dimensional probabilities by a factor (typically 4-12) to encourage the formation of widely separated clusters.
+Phóng đại đại sớm là một kỹ thuật được sử dụng trong t-SNE để tạo ra cấu trúc tổng thể tốt hơn. Nó liên quan đến việc nhân xác thực nhiều chiều của các lần đầu tiên với một hệ số (thường là 4-12) để khuyến khích thành các cụm phân tán rộng rãi.
 
 ```python
     P_exaggerated = P.copy()
@@ -249,9 +249,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 11: Real-life Example: Handwritten Digit Recognition
+Slide 11: Ví dụ thực tế: Nhận dạng chữ viết tay
 
-t-SNE is often used for visualizing high-dimensional datasets, such as images. Let's apply t-SNE to the MNIST dataset of handwritten digits.
+t-SNE thường được sử dụng để trực tiếp hóa các dữ liệu nhiều chiều, hạn chế như hình ảnh. Vui lòng áp dụng t-SNE cho MNIST data file bao gồm các chữ số viết tay.
 
 ```python
 from sklearn.manifold import TSNE
@@ -273,9 +273,9 @@ plt.legend(title='Digit')
 plt.show()
 ```
 
-Slide 12: Real-life Example: Gene Expression Analysis
+Slide 12: Ví dụ thực tế: Phân tích biểu hiện gen
 
-t-SNE is widely used in bioinformatics for visualizing gene expression data. Here's a simplified example using synthetic gene expression data.
+t-SNE được sử dụng rộng rãi trong sinh học để hiển thị dữ liệu biểu hiện. Đây là một ví dụ đơn giản sử dụng tổng hợp dữ liệu hiện tại.
 
 ```python
 
@@ -299,9 +299,9 @@ plt.legend(title='Condition')
 plt.show()
 ```
 
-Slide 13: Limitations and Considerations of t-SNE
+Trang trình bày 13: Giới hạn và cân nhắc của t-SNE
 
-While t-SNE is powerful, it has limitations. It can be computationally expensive for large datasets, may produce different results on multiple runs due to its stochastic nature, and can sometimes create misleading visualizations if not used carefully.
+Mặc dù t-SNE mạnh mẽ nhưng nó cũng có những chế độ hạn chế. Nó có thể tiết kiệm chi phí cho các tính toán đối với các dữ liệu lớn, có thể tạo ra các kết quả khác nhau trong nhiều lần chạy tính chất ngẫu nhiên của nó và đôi khi có thể tạo ra các hình ảnh trực tiếp sai lệch nếu không được sử dụng cẩn thận.
 
 ```python
 
@@ -326,9 +326,9 @@ plt.ylabel('Runtime (seconds)')
 plt.show()
 ```
 
-Slide 14: Conclusion and Best Practices
+Trang trình bày 14: Kết luận và các phương pháp hay nhất
 
-t-SNE's use of the t-distribution instead of a Gaussian distribution in the low-dimensional space addresses the crowding problem and provides better visualizations of high-dimensional data. When using t-SNE, consider experimenting with different perplexity values, running multiple times to ensure stability, and being cautious about interpreting distances between well-separated clusters.
+Việc t-SNE sử dụng phân phối thay vì phân phối Gaussian trong không gian chiều thấp giải quyết vấn đề đông đúc và cung cấp hình ảnh trực quan tốt hơn về dữ liệu chiều cao. Khi sử dụng t-SNE, hãy cân nhắc thử nghiệm các phức tạp giá trị khác nhau, chạy nhiều lần để đảm bảo tính ổn định và cẩn thận trong quá trình giải mã khoảng cách giữa các cụm được phân tách rõ ràng.
 
 ```python
     results = {}
@@ -354,12 +354,12 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-For those interested in diving deeper into t-SNE and its applications, here are some valuable resources:
+Đối với những người muốn tìm hiểu sâu hơn về t-SNE và các ứng dụng của nó, đây là một số tài nguyên có giá trị:
 
-1. Original t-SNE paper: "Visualizing Data using t-SNE" by Laurens van der Maaten and Geoffrey Hinton (2008) ArXiv URL: [https://arxiv.org/abs/1802.03426](https://arxiv.org/abs/1802.03426)
-2. "How to Use t-SNE Effectively" by Martin Wattenberg, Fernanda Viégas, and Ian Johnson Available at: [https://distill.pub/2016/misread-tsne/](https://distill.pub/2016/misread-tsne/)
-3. "Accelerating t-SNE using Tree-Based Algorithms" by Laurens van der Maaten (2014) ArXiv URL: [https://arxiv.org/abs/1301.3342](https://arxiv.org/abs/1301.3342)
+1. Bài viết gốc về t-SNE: "Trực quan hóa dữ liệu bằng t-SNE" của Laurens van der Maaten và Geoffrey Hinton (2008) ArXiv URL: [https://arxiv.org/abs/1802.03426](https://arxiv.org/abs/1802.03426)
+2. "Cách sử dụng hiệu quả t-SNE" của Martin Wattenberg, Fernanda Viégas và Ian Johnson Có tại: [https://distill.pub/2016/misread-tsne/](https://distill.pub/2016/misread-tsne/)
+3. "Tăng tốc t-SNE bằng thuật toán dựa trên cây" của Laurens van der Maaten (2014) URL ArXiv: [https://arxiv.org/abs/1301.3342](https://arxiv.org/abs/1301.3342)
 
-These resources provide in-depth explanations of t-SNE's theory, implementation details, and best practices for its effective use in various data analysis scenarios.
+Tài nguyên này cung cấp giải pháp sâu sắc về lý thuyết, chi tiết phát triển khai và phương pháp thực hành tốt nhất của t-SNE để sử dụng hiệu quả trong các vấn đề phân tích dữ liệu khác nhau.

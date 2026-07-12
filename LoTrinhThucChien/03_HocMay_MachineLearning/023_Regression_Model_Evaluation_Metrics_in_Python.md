@@ -1,7 +1,7 @@
-## Regression Model Evaluation Metrics in Python
-Slide 1: Mean Squared Error (MSE) Implementation
+## Số liệu đánh giá mô hình phục hồi trong Python
+Trang trình bày 1: Triển khai lỗi bình luận (MSE)
 
-Mean Squared Error serves as a fundamental metric in regression analysis, measuring the average squared difference between predicted and actual values. It penalizes larger errors more heavily due to the squared term, making it particularly sensitive to outliers in the dataset.
+Lỗi bình phương trung bình đóng vai trò là số liệu cơ bản trong phân tích hồi phục, đo độ chênh lệch phương tiện trung bình giữa giá trị dự đoán và giá trị thực tế. Nó phạt nặng hơn các lỗi lớn hơn so với thuật ngữ bình luận phương pháp, tạo ra nó đặc biệt nhạy cảm với các giá trị ngoại lệ trong dữ liệu.
 
 ```python
 def mean_squared_error(y_true, y_pred):
@@ -24,9 +24,9 @@ y_pred = [2.8, 2.2, 4.8, 7.1, 8.8]
 print(f"MSE: {mean_squared_error(y_true, y_pred):.4f}")  # Output: MSE: 0.0500
 ```
 
-Slide 2: Root Mean Squared Error (RMSE) Implementation
+Trang trình bày 2: Triển khai lỗi bình luận gốc (RMSE)
 
-RMSE extends MSE by taking the square root of the result, providing a metric in the same units as the target variable. This makes interpretation more intuitive when comparing model performance across different scales of data.
+RMSE mở rộng MSE bằng cách lấy kết quả cấp hai, cung cấp số liệu có cùng vị trí cho tiêu điểm biến. Điều này giúp diễn đàn trở nên trực quan hơn khi so sánh hiệu suất của các mô hình trên các dữ liệu khác nhau.
 
 ```python
 def root_mean_squared_error(y_true, y_pred):
@@ -48,9 +48,9 @@ y_pred = [2.8, 2.2, 4.8, 7.1, 8.8]
 print(f"RMSE: {root_mean_squared_error(y_true, y_pred):.4f}")  # Output: RMSE: 0.2236
 ```
 
-Slide 3: Mean Absolute Error (MAE) Implementation
+Trang trình bày 3: Triển khai Lỗi tuyệt đối trung bình (MAE)
 
-Mean Absolute Error calculates the average absolute differences between predictions and actual values, providing a linear penalty for errors. Unlike MSE, MAE is less sensitive to outliers and provides a more robust metric for datasets with significant anomalies.
+Sai số tuyệt đối trung bình tính toán khác biệt tuyệt đối trung bình giữa dự đoán và giá trị thực tế, đưa ra hình phạt tuyến tính cho các lỗi. Không giống như MSE, MAE ít nhạy cảm hơn các giá trị ngoại lệ và cung cấp số liệu mạnh mẽ hơn cho các tập dữ liệu có những điểm bất thường đáng kể.
 
 ```python
 def mean_absolute_error(y_true, y_pred):
@@ -72,9 +72,9 @@ y_pred = [2.8, 2.2, 4.8, 7.1, 8.8]
 print(f"MAE: {mean_absolute_error(y_true, y_pred):.4f}")  # Output: MAE: 0.2000
 ```
 
-Slide 4: R-squared (R²) Score Implementation
+Trang trình bày 4: Thực hiện điểm R bình phương (R²)
 
-R-squared quantifies the proportion of variance in the dependent variable explained by the independent variables. This metric provides a scale-free score between 0 and 1, where 1 indicates perfect prediction and 0 indicates performance equivalent to a horizontal line.
+Phương pháp R định mức tỷ lệ phương pháp sai trong các biến phụ thuộc được giải quyết bởi các biến độc lập. Số liệu này cung cấp điểm không có thang điểm từ 0 đến 1, trong đó 1 biểu tượng mong đợi hoàn hảo và 0 biểu thị hiệu suất tương thích với một đường ngang.
 
 ```python
 def r2_score(y_true, y_pred):
@@ -103,9 +103,9 @@ y_pred = [2.8, 2.2, 4.8, 7.1, 8.8]
 print(f"R² Score: {r2_score(y_true, y_pred):.4f}")  # Output: R² Score: 0.9921
 ```
 
-Slide 5: Adjusted R-squared Implementation
+Trang trình bày 5: Thực hiện điều chỉnh phương pháp R
 
-Adjusted R-squared modifies the R-squared metric to account for the number of predictors in the model, penalizing the addition of variables that don't contribute significantly to model performance. This prevents overfitting through feature selection.
+R bình phương đã điều chỉnh sửa đổi chỉ số R bình phương để tính số lượng yếu tố dự đoán trong mô hình, xử lý phạt bổ sung các biến số không đóng góp đáng kể vào hiệu suất mô hình. Điều này ngăn chặn việc trang bị quá trình thông số lựa chọn tính năng.
 
 ```python
 def adjusted_r2_score(y_true, y_pred, n_features):
@@ -135,9 +135,9 @@ print(f"Adjusted R² Score: {adjusted_r2_score(y_true, y_pred, n_features):.4f}"
 # Output: Adjusted R² Score: 0.9868
 ```
 
-Slide 6: Mean Absolute Percentage Error (MAPE) Implementation
+Trang trình bày 6: Triển khai lỗi phần trăm tuyệt đối trung bình (MAPE)
 
-Mean Absolute Percentage Error provides a percentage-based measure of prediction accuracy, making it particularly useful when comparing models across different scales. It expresses accuracy as a percentage, facilitating intuitive interpretation for stakeholders.
+Lỗi phần trăm tuyệt đối trung bình cung cấp độ chính xác đo lường dự đoán dựa trên phần trăm, nó đặc biệt hữu ích khi so sánh các mô hình trên các thước đo khác nhau. Nó có thể hiển thị độ chính xác dưới mức phần trăm lợi ích, tạo điều kiện thuận lợi cho việc giải thích trực quan cho các bên liên quan.
 
 ```python
 def mean_absolute_percentage_error(y_true, y_pred):
@@ -166,9 +166,9 @@ print(f"MAPE: {mean_absolute_percentage_error(y_true, y_pred):.2f}%")
 # Output: MAPE: 4.37%
 ```
 
-Slide 7: Real-world Example - House Price Prediction
+Slide 7: Ví dụ thực tế - Dự đoán giá nhà
 
-This comprehensive example demonstrates the application of regression metrics in a real estate price prediction scenario, including data preprocessing, model training, and evaluation using multiple metrics to assess model performance.
+Ví dụ này có thể hiện công việc áp dụng các số liệu phục hồi trong kịch bản dự đoán giá bất kỳ sản phẩm nào, bao gồm tiền xử lý dữ liệu, đào tạo mô hình và đánh giá giá bằng nhiều số liệu để đánh giá hiệu suất của mô hình.
 
 ```python
 import numpy as np
@@ -198,7 +198,7 @@ X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 ```
 
-Slide 8: Source Code for House Price Prediction Results
+Slide 8: Mã nguồn dự đoán giá nhà
 
 ```python
 # Train model and make predictions
@@ -234,9 +234,9 @@ MAPE: 3.45%
 """
 ```
 
-Slide 9: Residual Analysis Implementation
+Trang trình bày 9: Thực hiện phân tích dư thừa
 
-Residual analysis provides crucial insights into model assumptions and potential areas for improvement. This implementation includes residual calculation, normality testing, and homoscedasticity visualization to validate regression model assumptions.
+Phân tích dư lượng cung cấp những hiểu biết quan trọng về các giả định của hình ảnh và các lĩnh vực tiềm năng cần được cải thiện. Việc phát triển này bao gồm tính toán số dư, kiểm tra tính toán chuẩn và trực quan hóa tính toán đồng nhất để xác thực các giả định của mô hình thu hồi.
 
 ```python
 def analyze_residuals(y_true, y_pred):
@@ -270,9 +270,9 @@ for stat, value in stats_dict.items():
 print(f"\nShapiro-Wilk test: stat={normality_test[0]:.4f}, p={normality_test[1]:.4f}")
 ```
 
-Slide 10: Huber Loss Implementation
+Trang trình bày 10: Thực phẩm mất Huber
 
-Huber Loss combines the best properties of MSE and MAE by being quadratic for small errors and linear for large errors, offering robustness against outliers while maintaining MSE's advantages for smaller residuals. The delta parameter controls the transition point.
+Huber Loss kết hợp các đặc tính tốt nhất của MSE và MAE bằng phương pháp bậc hai đối với các lỗi nhỏ và tuyến tính đối với các lỗi lớn, mang lại khả năng chống lại các giá trị ngoại lệ trong khi vẫn duy trì các lợi ích thế của MSE đối với phần dư nhỏ hơn. Tham số delta kiểm soát Chuyển điểm tiếp theo.
 
 ```python
 def huber_loss(y_true, y_pred, delta=1.0):
@@ -302,9 +302,9 @@ y_pred = [2.8, 2.2, 4.8, 7.1, 8.8]
 print(f"Huber Loss (δ=1.0): {huber_loss(y_true, y_pred):.4f}")
 ```
 
-Slide 11: Explained Variance Score Implementation
+Trang trình bày 11: Giải thích việc thực hiện Điểm phương sai
 
-Explained Variance Score measures the proportion of variance that is predictable from the independent variables. It differs from R² by focusing on the variance of the errors rather than the total variance of the predictions.
+Các điểm phương pháp được giải thích theo tỷ lệ sai lệch có thể được dự đoán từ các biến độc lập. Nó khác với R2 ở chỗ tập trung vào sai số phương pháp hơn là tổng sai số phương pháp được mong đợi.
 
 ```python
 def explained_variance_score(y_true, y_pred):
@@ -330,9 +330,9 @@ y_pred = [2.8, 2.2, 4.8, 7.1, 8.8]
 print(f"Explained Variance Score: {explained_variance_score(y_true, y_pred):.4f}")
 ```
 
-Slide 12: Real-world Example - Time Series Energy Consumption
+Trang trình bày 12: Ví dụ thực tế - Mức tiêu thụ năng lượng theo thời gian chuỗi
 
-This example demonstrates the application of regression metrics in time series forecasting, specifically for energy consumption prediction, incorporating temporal features and multiple evaluation metrics.
+Ví dụ: điều này có thể hiện việc áp dụng các quy trình khôi phục số liệu trong thời gian chuỗi báo cáo dự kiến, đặc biệt là khả năng tiêu thụ dự kiến, kết hợp các đặc tính thời gian và nhiều giá trị đánh giá dữ liệu.
 
 ```python
 import numpy as np
@@ -367,7 +367,7 @@ y = (20 +
      np.random.normal(0, 2, n_hours))  # Random noise
 ```
 
-Slide 13: Source Code for Energy Consumption Results
+Slide 13: Mã nguồn cho kết quả tiêu thụ năng lượng
 
 ```python
 def evaluate_time_series_model(X, y, n_splits=5):
@@ -413,15 +413,15 @@ def evaluate_time_series_model(X, y, n_splits=5):
 evaluate_time_series_model(X, y)
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-*   "On the Use of Cross-Validation for Time Series Predictor Evaluation"
-    *   [https://arxiv.org/abs/1809.09446](https://arxiv.org/abs/1809.09446)
-*   "A Comprehensive Review of Loss Functions in Machine Learning"
-    *   [https://arxiv.org/abs/2011.00450](https://arxiv.org/abs/2011.00450)
-*   "Robust Regression and Outlier Detection"
-    *   [https://arxiv.org/abs/1607.01152](https://arxiv.org/abs/1607.01152)
-*   "Time Series Forecasting with Deep Learning: A Survey"
-    *   [https://arxiv.org/abs/2004.13408](https://arxiv.org/abs/2004.13408)
-*   "Beyond R-squared: Metrics for Regression Models"
-    *   [https://arxiv.org/abs/2012.03150](https://arxiv.org/abs/2012.03150)
+* "Về việc sử dụng xác thực chéo để đánh giá thời gian chuỗi dự kiến"
+    * [https://arxiv.org/abs/1809.09446](https://arxiv.org/abs/1809.09446)
+* "Đánh giá toàn diện về hàm mất mát trong máy học"
+    * [https://arxiv.org/abs/2011.00450](https://arxiv.org/abs/2011.00450)
+* "Hồi quy mạnh và phát hiện ngoại lệ"
+    * [https://arxiv.org/abs/1607.01152](https://arxiv.org/abs/1607.01152)
+* "Dự báo chuỗi thời gian với học chuyên sâu: Khảo sát"
+    * [https://arxiv.org/abs/2004.13408](https://arxiv.org/abs/2004.13408)
+* "Thêm R bình phương: Số liệu cho mô hình hồi quy"
+    * [https://arxiv.org/abs/2012.03150](https://arxiv.org/abs/2012.03150)

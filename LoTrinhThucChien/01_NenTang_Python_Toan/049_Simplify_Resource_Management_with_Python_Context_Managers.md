@@ -1,7 +1,7 @@
-## Simplify Resource Management with Python Context Managers
-Slide 1: Introduction to Context Managers
+## Đơn giản hóa việc quản lý tài nguyên với Trình quản lý bối cảnh Python
+Slide 1: Giới thiệu về Trình quản lý bối cảnh
 
-Context managers in Python are powerful tools that help manage resources efficiently and automatically. They ensure proper setup and cleanup of resources, reducing the risk of errors and resource leaks. Let's explore how context managers work and why they're essential for writing clean, maintainable code.
+Trình quản lý bối cảnh trong Python là công cụ mạnh mẽ giúp quản lý tài nguyên một cách hiệu quả và tự động. Chúng đảm bảo thiết lập và dọn dẹp tài nguyên đúng cách, giảm nguy cơ lỗi và rò rỉ tài nguyên. Hãy cùng khám phá cách hoạt động của trình quản lý bối cảnh và tại sao chúng lại cần thiết để viết mã rõ ràng, dễ bảo trì.
 
 ```python
 # Basic structure of a context manager
@@ -11,9 +11,9 @@ with open('example.txt', 'w') as file:
 # The file is automatically closed after the 'with' block
 ```
 
-Slide 2: The 'with' Statement
+Trang trình bày 2: Câu lệnh 'với'
 
-The 'with' statement is the cornerstone of context management in Python. It provides a clean and readable way to work with resources that need to be properly managed, such as files, network connections, or database cursors.
+Câu lệnh 'with' là nền tảng của quản lý ngữ cảnh trong Python. Nó cung cấp một cách rõ ràng và dễ đọc để làm việc với các tài nguyên cần được quản lý hợp lý, chẳng hạn như tệp, kết nối mạng hoặc con trỏ cơ sở dữ liệu.
 
 ```python
 # Without context manager
@@ -27,9 +27,9 @@ with open('example.txt', 'r') as file:
 # File is automatically closed
 ```
 
-Slide 3: Built-in Context Managers
+Trang trình bày 3: Trình quản lý bối cảnh tích hợp
 
-Python provides several built-in context managers for common operations. These include file handling, threading locks, and temporary directory management. Let's look at an example using the 'threading.Lock()' context manager.
+Python cung cấp một số trình quản lý bối cảnh tích hợp sẵn cho các hoạt động phổ biến. Chúng bao gồm xử lý tệp, khóa luồng và quản lý thư mục tạm thời. Hãy xem một ví dụ sử dụng trình quản lý bối cảnh 'threading.Lock()'.
 
 ```python
 import threading
@@ -52,7 +52,7 @@ for thread in threads:
 print(f"Final counter value: {counter.value}")
 ```
 
-Slide 4: Results for: Built-in Context Managers
+Trang trình bày 4: Kết quả cho: Trình quản lý bối cảnh tích hợp
 
 ```
 Final counter value: 10
@@ -75,7 +75,7 @@ with CustomContextManager() as cm:
     print("Inside the context")
 ```
 
-Slide 6: Results for: Creating Custom Context Managers
+Trang trình bày 6: Kết quả cho: Tạo Trình quản lý bối cảnh tùy chỉnh
 
 ```
 Entering the context
@@ -100,7 +100,7 @@ with custom_context():
     print("Inside the context")
 ```
 
-Slide 8: Results for: Using contextlib.contextmanager
+Slide 8: Kết quả cho: Sử dụng contextlib.contextmanager
 
 ```
 Entering the context
@@ -133,9 +133,9 @@ with db_connection('example.db') as conn:
 # Connection is automatically closed after the 'with' block
 ```
 
-Slide 10: Real-Life Example: Temporary File Management
+Trang trình chiếu 10: Ví dụ thực tế: Quản lý tệp tạm thời
 
-Context managers can be used to manage temporary files, ensuring they are properly created and deleted when no longer needed.
+Trình quản lý bối cảnh có thể được sử dụng để quản lý các tệp tạm thời, đảm bảo chúng được tạo và xóa đúng cách khi không còn cần thiết.
 
 ```python
 import tempfile
@@ -157,9 +157,9 @@ os.unlink(temp_file_path)
 print("Temporary file removed.")
 ```
 
-Slide 11: Error Handling in Context Managers
+Trang trình bày 11: Xử lý lỗi trong Trình quản lý bối cảnh
 
-Context managers can gracefully handle exceptions that occur within their scope. This feature is particularly useful for ensuring proper resource cleanup in case of errors.
+Người quản lý bối cảnh có thể xử lý khéo léo các trường hợp ngoại lệ xảy ra trong phạm vi của họ. Tính năng này đặc biệt hữu ích để đảm bảo dọn dẹp tài nguyên thích hợp trong trường hợp có lỗi.
 
 ```python
 class DatabaseConnection:
@@ -180,7 +180,7 @@ with DatabaseConnection() as db:
 print("Execution continues after the context manager")
 ```
 
-Slide 12: Results for: Error Handling in Context Managers
+Trang trình bày 12: Kết quả cho: Xử lý lỗi trong Trình quản lý bối cảnh
 
 ```
 Connecting to the database
@@ -216,7 +216,7 @@ with outer_context() as outer:
         print("Performing nested operations")
 ```
 
-Slide 14: Results for: Nested Context Managers
+Trang trình bày 14: Kết quả cho: Trình quản lý bối cảnh lồng nhau
 
 ```
 Entering outer context

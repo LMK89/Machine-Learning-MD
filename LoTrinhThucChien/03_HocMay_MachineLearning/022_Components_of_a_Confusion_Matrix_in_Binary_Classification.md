@@ -1,7 +1,7 @@
-## Components of a Confusion Matrix in Binary Classification
-Slide 1: Understanding Confusion Matrix Components
+## Các thành phần của Ma trận hỗn loạn trong phân loại nhị phân
+Trang trình bày 1: Tìm hiểu các phần hỗn hợp của các thành phần
 
-The confusion matrix serves as a fundamental evaluation metric in binary classification, comprising four essential components that measure the alignment between predicted and actual values. These components form the basis for calculating crucial performance metrics in machine learning models.
+Ma trận nhầm lẫn đóng vai trò là thước đo đánh giá cơ bản trong phân loại nhị phân, bao gồm bốn thành phần thiết yếu để đo lường sự liên kết giữa giá trị dự đoán và giá trị thực tế. Các thành phần này tạo thành cơ sở để tính toán các số liệu hiệu suất quan trọng trong các mô hình học máy.
 
 ```python
 import numpy as np
@@ -27,9 +27,9 @@ cm = create_confusion_matrix(y_true, y_pred)
 print("Confusion Matrix:\n", cm)
 ```
 
-Slide 2: Implementing Performance Metrics
+Trang trình bày 2: Triển khai các thước đo hiệu suất
 
-Performance metrics derived from confusion matrix components provide comprehensive insights into model behavior. These calculations help evaluate model effectiveness across different aspects of classification performance.
+Số liệu hiệu suất bắt nguồn từ các thành phần ma trận nhầm lẫn cung cấp thông tin chi tiết toàn diện về hành vi của mô hình. Những tính toán này giúp đánh giá hiệu quả của mô hình trên các khía cạnh khác nhau của hiệu suất phân loại.
 
 ```python
 def calculate_metrics(confusion_matrix):
@@ -81,9 +81,9 @@ def plot_confusion_matrix(cm, labels=['Negative', 'Positive']):
     return plt
 ```
 
-Slide 4: Real-world Example - Credit Card Fraud Detection
+Trang trình bày 4: Ví dụ thực tế - Phát hiện gian lận thẻ tín dụng
 
-This implementation demonstrates confusion matrix analysis in credit card fraud detection, where class imbalance is a common challenge. The example includes data preprocessing and handling of imbalanced classes.
+Việc triển khai này thể hiện sự phân tích ma trận nhầm lẫn trong việc phát hiện gian lận thẻ tín dụng, trong đó sự mất cân bằng giữa các lớp là một thách thức chung. Ví dụ này bao gồm tiền xử lý dữ liệu và xử lý các lớp không cân bằng.
 
 ```python
 import pandas as pd
@@ -113,9 +113,9 @@ X = np.random.randn(1000, 10)
 y = np.random.binomial(1, 0.1, 1000)
 ```
 
-Slide 5: Mathematical Foundations of Confusion Matrix Metrics
+Trang trình bày 5: Cơ sở toán học của các số liệu ma trận nhầm lẫn
 
-The mathematical relationships between confusion matrix components form the basis for various performance metrics. These formulas provide the theoretical foundation for understanding model evaluation.
+Mối quan hệ toán học giữa các thành phần ma trận nhầm lẫn tạo thành cơ sở cho các số liệu hiệu suất khác nhau. Những công thức này cung cấp nền tảng lý thuyết để hiểu được việc đánh giá mô hình.
 
 ```python
 # Mathematical formulas in LaTeX notation
@@ -132,9 +132,9 @@ Specificity: $$\\text{Specificity} = \\frac{TN}{TN + FP}$$
 """
 ```
 
-Slide 6: Advanced Metrics and ROC Curve Implementation
+Trang trình bày 6: Triển khai các số liệu nâng cao và đường cong ROC
 
-The Receiver Operating Characteristic (ROC) curve provides insights into model performance across different classification thresholds. This implementation calculates TPR and FPR for varying threshold values.
+Đường cong Đặc tính hoạt động của máy thu (ROC) cung cấp thông tin chi tiết về hiệu suất của mô hình qua các ngưỡng phân loại khác nhau. Việc triển khai này tính toán TPR và FPR cho các giá trị ngưỡng khác nhau.
 
 ```python
 def calculate_roc_curve(y_true, y_prob):
@@ -178,9 +178,9 @@ def calculate_pr_curve(y_true, y_prob):
     return np.array(precision_list), np.array(recall_list), thresholds
 ```
 
-Slide 8: Cross-Validation with Confusion Matrix
+Trang trình bày 8: Xác thực chéo bằng Ma trận nhầm lẫn
 
-Implementing cross-validation with confusion matrix metrics ensures robust model evaluation across different data splits, providing more reliable performance estimates.
+Việc triển khai xác thực chéo với các số liệu ma trận nhầm lẫn đảm bảo đánh giá mô hình mạnh mẽ trên các phần tách dữ liệu khác nhau, cung cấp các ước tính hiệu suất đáng tin cậy hơn.
 
 ```python
 from sklearn.model_selection import KFold
@@ -210,9 +210,9 @@ def cross_validate_confusion_matrix(X, y, model, n_splits=5):
     return avg_metrics, metrics_per_fold
 ```
 
-Slide 9: Time Series Confusion Matrix Analysis
+Trang trình bày 9: Phân tích ma trận nhầm lẫn chuỗi thời gian
 
-Analyzing confusion matrices in time series context requires special consideration for temporal dependencies and sliding window evaluation.
+Phân tích ma trận nhầm lẫn trong bối cảnh chuỗi thời gian đòi hỏi phải xem xét đặc biệt về sự phụ thuộc thời gian và đánh giá cửa sổ trượt.
 
 ```python
 def time_series_confusion_matrix(y_true, y_pred, window_size=30):
@@ -267,9 +267,9 @@ def cost_sensitive_evaluation(confusion_matrix, cost_matrix):
     }
 ```
 
-Slide 11: Real-world Example - Medical Diagnosis System
+Slide 11: Ví dụ thực tế - Hệ thống chẩn đoán y tế
 
-This implementation demonstrates confusion matrix analysis in a medical diagnosis context, where false negatives can have severe consequences and require special handling.
+Việc triển khai này thể hiện việc phân tích ma trận nhầm lẫn trong bối cảnh chẩn đoán y tế, trong đó kết quả âm tính giả có thể gây ra hậu quả nghiêm trọng và cần phải xử lý đặc biệt.
 
 ```python
 def medical_diagnosis_evaluation(y_true, y_pred, disease_prevalence=0.1):
@@ -333,9 +333,9 @@ def bootstrap_confusion_matrix_metrics(y_true, y_pred, n_iterations=1000, confid
     return metric_cis
 ```
 
-Slide 13: Multi-class Confusion Matrix Implementation
+Trang trình bày 13: Triển khai ma trận nhầm lẫn nhiều lớp
 
-Extending binary confusion matrix concepts to multi-class scenarios requires additional considerations and metrics calculations.
+Việc mở rộng các khái niệm ma trận nhầm lẫn nhị phân sang các kịch bản nhiều lớp đòi hỏi phải cân nhắc bổ sung và tính toán số liệu.
 
 ```python
 def multiclass_confusion_matrix(y_true, y_pred, classes):

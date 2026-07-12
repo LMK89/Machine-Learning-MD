@@ -1,8 +1,8 @@
-## Interactive Data Visualization with Matplotlib
+## Trực quan hóa dữ liệu tương tác với Matplotlib
 
-Slide 1: Interactive Line Plot with Click Events
+Trang trình bày 1: Sơ đồ đường tương tác với các sự kiện nhấp chuột
 
-Creating interactive visualizations enhances data exploration by allowing users to interact directly with plots. This implementation demonstrates how to capture mouse clicks on a line plot and display coordinates, enabling detailed examination of specific data points.
+Tạo trực quan hóa tương tác giúp nâng cao khả năng khám phá dữ liệu bằng cách cho phép người dùng tương tác trực tiếp với các ô. Việc triển khai này trình bày cách ghi lại các lần nhấp chuột trên biểu đồ đường và hiển thị tọa độ, cho phép kiểm tra chi tiết các điểm dữ liệu cụ thể.
 
 ```python
 import numpy as np
@@ -28,9 +28,9 @@ fig.canvas.mpl_connect('button_press_event', on_click)
 plt.show()
 ```
 
-Slide 2: Dynamic Data Updates in Real-time
+Trang trình bày 2: Cập nhật dữ liệu động theo thời gian thực
 
-Implementing real-time data visualization capabilities allows for monitoring of streaming data sources. This implementation creates an animated plot that updates automatically with new data points, simulating sensor readings or live measurements.
+Việc triển khai khả năng trực quan hóa dữ liệu theo thời gian thực cho phép giám sát các nguồn dữ liệu truyền phát. Việc triển khai này tạo ra một biểu đồ hoạt hình tự động cập nhật các điểm dữ liệu mới, mô phỏng các chỉ số cảm biến hoặc các phép đo trực tiếp.
 
 ```python
 import matplotlib.pyplot as plt
@@ -61,9 +61,9 @@ anim = FuncAnimation(rt_plot.fig, rt_plot.update, init_func=rt_plot.init_plot,
 plt.show()
 ```
 
-Slide 3: Custom Interactive Legend
+Trang trình bày 3: Chú giải tương tác tùy chỉnh
 
-Interactive legends provide enhanced control over plot elements, allowing users to toggle visibility of different data series. This implementation creates a customized legend with clickable elements and hover effects.
+Chú giải tương tác cung cấp khả năng kiểm soát nâng cao đối với các thành phần cốt truyện, cho phép người dùng chuyển đổi mức độ hiển thị của các chuỗi dữ liệu khác nhau. Việc triển khai này tạo ra một chú giải tùy chỉnh với các phần tử có thể nhấp vào và hiệu ứng di chuột.
 
 ```python
 import matplotlib.pyplot as plt
@@ -95,9 +95,9 @@ fig.canvas.mpl_connect('pick_event', on_pick)
 plt.show()
 ```
 
-Slide 4: Interactive Time Series Analysis
+Slide 4: Phân tích chuỗi thời gian tương tác
 
-Time series visualization requires specialized handling for temporal data and interactive features. This implementation creates an interactive time series plot with zoom capabilities and date-aware tooltips.
+Trực quan hóa chuỗi thời gian yêu cầu xử lý chuyên biệt đối với dữ liệu thời gian và các tính năng tương tác. Việc triển khai này tạo ra một biểu đồ chuỗi thời gian tương tác với khả năng thu phóng và chú giải công cụ nhận biết ngày.
 
 ```python
 import matplotlib.pyplot as plt
@@ -136,9 +136,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 5: Interactive 3D Surface Plot with Dynamic Coloring
+Trang trình bày 5: Sơ đồ bề mặt 3D tương tác với màu động
 
-Three-dimensional data visualization with interactive features enhances understanding of complex spatial relationships. This implementation demonstrates a 3D surface plot that responds to user input for rotation and color mapping adjustments.
+Trực quan hóa dữ liệu ba chiều với các tính năng tương tác giúp nâng cao hiểu biết về các mối quan hệ không gian phức tạp. Việc triển khai này thể hiện sơ đồ bề mặt 3D phản hồi đầu vào của người dùng để điều chỉnh xoay và ánh xạ màu.
 
 ```python
 import matplotlib.pyplot as plt
@@ -172,9 +172,9 @@ def create_interactive_3d_plot():
 create_interactive_3d_plot()
 ```
 
-Slide 6: Advanced Time Series Visualization
+Trang trình bày 6: Trực quan hóa chuỗi thời gian nâng cao
 
-Real-time data monitoring requires sophisticated visualization techniques that handle streaming data efficiently. This implementation showcases a rolling time window display with automatic updates and interactive markers.
+Giám sát dữ liệu thời gian thực đòi hỏi các kỹ thuật trực quan phức tạp để xử lý dữ liệu truyền phát hiệu quả. Việc triển khai này giới thiệu màn hình hiển thị cửa sổ thời gian luân phiên với các bản cập nhật tự động và điểm đánh dấu tương tác.
 
 ```python
 import matplotlib.pyplot as plt
@@ -206,9 +206,9 @@ anim = FuncAnimation(monitor.fig, monitor.update,
 plt.show()
 ```
 
-Slide 7: Interactive Histogram with Dynamic Binning
+Trang trình bày 7: Biểu đồ tương tác với Dynamic Binning
 
-Statistical data exploration benefits from interactive histogram visualization. This implementation allows users to dynamically adjust bin sizes and observe distribution changes in real-time.
+Lợi ích của việc khám phá dữ liệu thống kê nhờ trực quan hóa biểu đồ tương tác. Việc triển khai này cho phép người dùng tự động điều chỉnh kích thước thùng và quan sát các thay đổi phân phối trong thời gian thực.
 
 ```python
 import numpy as np
@@ -241,9 +241,9 @@ hist.fig.canvas.mpl_connect('scroll_event', hist.on_scroll)
 plt.show()
 ```
 
-Slide 8: Phase Space Plot with Dynamic Trajectories
+Trang trình bày 8: Sơ đồ không gian pha với quỹ đạo động
 
-Analyzing dynamical systems requires specialized visualization techniques. This implementation creates an interactive phase space plot that shows system evolution and allows parameter adjustment.
+Phân tích hệ thống động lực đòi hỏi các kỹ thuật trực quan chuyên dụng. Việc triển khai này tạo ra một biểu đồ không gian pha tương tác cho thấy sự tiến triển của hệ thống và cho phép điều chỉnh tham số.
 
 ```python
 import numpy as np
@@ -273,9 +273,9 @@ def create_phase_space_plot():
 create_phase_space_plot()
 ```
 
-Slide 9: Multi-Panel Interactive Dashboard
+Trang trình bày 9: Bảng điều khiển tương tác đa bảng
 
-Combining multiple visualization types enables comprehensive data analysis. This implementation creates a dashboard with synchronized interactive plots that respond to user interactions.
+Kết hợp nhiều loại trực quan cho phép phân tích dữ liệu toàn diện. Việc triển khai này tạo ra một bảng thông tin với các sơ đồ tương tác được đồng bộ hóa nhằm đáp ứng các tương tác của người dùng.
 
 ```python
 import matplotlib.pyplot as plt
@@ -305,9 +305,9 @@ def create_dashboard():
 create_dashboard()
 ```
 
-Slide 10: Custom Colormap Animation
+Trang trình bày 10: Hoạt ảnh bản đồ màu tùy chỉnh
 
-Understanding data through color requires specialized visualization techniques. This implementation demonstrates how to create and animate custom colormaps for enhanced data representation.
+Hiểu dữ liệu thông qua màu sắc đòi hỏi các kỹ thuật trực quan chuyên biệt. Việc triển khai này trình bày cách tạo và tạo hiệu ứng động cho các bản đồ màu tùy chỉnh để thể hiện dữ liệu nâng cao.
 
 ```python
 import numpy as np
@@ -336,9 +336,9 @@ def create_colormap_animation():
 create_colormap_animation()
 ```
 
-Slide 11: Interactive Scatter Plot Matrix
+Trang trình bày 11: Ma trận biểu đồ phân tán tương tác
 
-Multivariate data analysis requires specialized visualization techniques. This implementation creates an interactive scatter plot matrix with brushing and linking capabilities.
+Phân tích dữ liệu đa biến đòi hỏi các kỹ thuật trực quan chuyên dụng. Việc triển khai này tạo ra một ma trận biểu đồ phân tán tương tác với khả năng đánh dấu và liên kết.
 
 ```python
 import numpy as np
@@ -377,9 +377,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 12: Dynamic Network Graph Visualization
+Trang trình bày 12: Trực quan hóa đồ thị mạng động
 
-Network analysis requires specialized interactive visualization techniques. This implementation creates a force-directed graph layout with interactive node positioning.
+Phân tích mạng đòi hỏi các kỹ thuật trực quan tương tác chuyên biệt. Việc triển khai này tạo ra bố cục biểu đồ hướng lực với vị trí nút tương tác.
 
 ```python
 import numpy as np
@@ -421,10 +421,10 @@ def create_network_plot():
 create_network_plot()
 ```
 
-Slide 13: Additional Resources
+Trang trình bày 13: Tài nguyên bổ sung
 
-1.  [https://arxiv.org/abs/2012.08972](https://arxiv.org/abs/2012.08972) - Interactive Visualization Techniques for Exploring High-Dimensional Data
-2.  [https://arxiv.org/abs/2107.14702](https://arxiv.org/abs/2107.14702) - Real-Time Interactive Data Visualization in Python
-3.  [https://arxiv.org/abs/2109.05542](https://arxiv.org/abs/2109.05542) - Advanced Matplotlib Techniques for Scientific Visualization
-4.  [https://arxiv.org/abs/2203.09801](https://arxiv.org/abs/2203.09801) - Interactive Visual Analytics for Time Series Data
-5.  [https://arxiv.org/abs/2106.12231](https://arxiv.org/abs/2106.12231) - Modern Approaches to Network Visualization
+1. [https://arxiv.org/abs/2012.08972](https://arxiv.org/abs/2012.08972) - Kỹ thuật trực quan hóa tương tác để khám phá dữ liệu nhiều chiều
+2. [https://arxiv.org/abs/2107.14702](https://arxiv.org/abs/2107.14702) - Trực quan hóa dữ liệu tương tác theo thời gian thực bằng Python
+3. [https://arxiv.org/abs/2109.05542](https://arxiv.org/abs/2109.05542) - Kỹ thuật Matplotlib nâng cao để trực quan hóa khoa học
+4. [https://arxiv.org/abs/2203.09801](https://arxiv.org/abs/2203.09801) - Phân tích trực quan tương tác cho dữ liệu chuỗi thời gian
+5. [https://arxiv.org/abs/2106.12231](https://arxiv.org/abs/2106.12231) - Các phương pháp tiếp cận hiện đại để trực quan hóa mạng

@@ -1,9 +1,9 @@
-## Limitations of R-squared in Regression Model Evaluation:
-Slide 1: Introduction to R-squared (R²)
+## Hanh chế độ của phương R trong Đánh giá mô hình hồi quy:
+Slide 1: Giới thiệu về R bình phương (R²)
 
-Understanding R-squared (R²) in Regression Analysis
+Hiểu R bình phương (R²) trong Phân tích hồi quy
 
-R-squared, also known as the coefficient of determination, is a statistical measure used to assess the goodness of fit of a regression model. It represents the proportion of variance in the dependent variable that is predictable from the independent variable(s). While R-squared is widely used, it has limitations that can lead to misinterpretation of model performance.
+R-squared, còn được gọi là hệ số xác định, là thống kê thước đo được sử dụng để đánh giá mức độ phù hợp của quy định mô hình. Nó có thể đưa ra tỷ lệ sai của phương pháp trong các biến phụ thuộc có thể được dự đoán từ (các) biến độc lập. Mặc dù R bình luận được sử dụng rộng rãi nhưng không có những chế độ hạn chế nào có thể dẫn đến hiểu sai về hiệu suất của mô hình.
 
 ```python
 import numpy as np
@@ -23,11 +23,11 @@ r2 = r2_score(y, model.predict(X))
 print(f"R-squared: {r2:.4f}")
 ```
 
-Slide 2: Limitation 1 - Sensitivity to Sample Size
+Trang trình bày 2: Chế độ 1 - Độ nhạy đối với mẫu kích thước
 
-R-squared and Sample Size
+Bình phương R và mẫu kích thước
 
-R-squared tends to increase as more variables are added to the model, even if these variables don't significantly improve the model's predictive power. This can lead to overfitting, especially with small sample sizes. To demonstrate this, we'll create a function that generates random data and calculates R-squared for different sample sizes.
+R bình luận có xu hướng tăng khi có nhiều biến hơn được thêm vào mô hình, ngay cả khi các biến này không cải thiện đáng kể khả năng mong đợi của mô hình. Điều này có thể dẫn đến trạng thái trang quá mức, đặc biệt với kích thước nhỏ. Để chứng minh điều này, chúng tôi sẽ tạo ra một hàm tạo ngẫu nhiên dữ liệu và tính R bình phương cho các mẫu có kích thước khác nhau.
 
 ```python
 import numpy as np
@@ -47,11 +47,11 @@ for n, r2 in zip(sample_sizes, r2_values):
     print(f"Sample size: {n}, R-squared: {r2:.4f}")
 ```
 
-Slide 3: Limitation 2 - Insensitivity to Bias
+Slide 3: Han mode 2 - Không nhạy cảm với thành kiến
 
-R-squared and Model Bias
+R bình phương và mô phỏng độ lệch
 
-R-squared doesn't account for systematic bias in the model's predictions. A model can have a high R-squared value even if its predictions are consistently off by a large margin. This limitation highlights the importance of considering other metrics alongside R-squared when evaluating model performance.
+R bình phương không tính đến hệ thống sai lệch trong các mô hình dự kiến. Một mô hình có thể có giá trị R bình ổn cao ngay cả khi các kỳ vọng của nó luôn sai lệch một khoảng lớn. Chế độ này nêu bật tầm quan trọng của việc xem xét các số liệu khác cùng với bình luận R khi đánh giá hiệu suất mô hình.
 
 ```python
 import numpy as np
@@ -73,11 +73,11 @@ mae = np.mean(np.abs(y - y_pred_biased))
 print(f"Mean Absolute Error: {mae:.4f}")
 ```
 
-Slide 4: Limitation 3 - Lack of Information on Prediction Accuracy
+Trang trình bày 4: Chế độ 3 - Thiếu thông tin về độ chính xác dự kiến
 
-R-squared and Prediction Accuracy
+Bình phương R và độ chính xác được mong đợi
 
-R-squared doesn't provide direct information about the accuracy of predictions. A high R-squared doesn't necessarily mean the model makes accurate predictions. To illustrate this, we'll create a model with a high R-squared but poor predictive performance on new data.
+R-squared không cung cấp thông tin trực tiếp về tính chính xác của dự đoán. Bình phương R cao không có nghĩa là mô hình đưa ra chính xác được mong đợi. Để minh họa điều này, chúng tôi sẽ tạo ra một mô hình có R bình phương cao nhưng hiệu suất mong đợi trên dữ liệu mới.
 
 ```python
 import numpy as np
@@ -106,11 +106,11 @@ print(f"R-squared (test): {r2_test:.4f}")
 print(f"MAE (test): {mae_test:.4f}")
 ```
 
-Slide 5: Limitation 4 - Sensitivity to Outliers
+Trang trình bày 5: Chế độ 4 - Độ nhạy cảm với các ngoại lệ
 
-R-squared and Outliers
+Bình phương R và ngoại lệ
 
-R-squared can be heavily influenced by outliers in the data. A single extreme value can significantly impact the R-squared value, potentially leading to an overly optimistic or pessimistic assessment of model performance. Let's demonstrate this by comparing R-squared values with and without an outlier.
+R bình phương có thể bị ảnh hưởng nặng nề bởi các giá trị ngoại lệ trong dữ liệu. Một giá trị cực trị duy nhất có thể tác động đáng kể đến giá trị bình phương R, có khả năng dẫn đến đánh giá quá lạc quan hoặc bi quan về hiệu suất của mô hình. Hãy chứng minh điều này bằng cách so sánh các phương pháp giá trị R có và không có ngoại lệ giá trị.
 
 ```python
 import numpy as np
@@ -138,11 +138,11 @@ print(f"R-squared (normal): {r2_normal:.4f}")
 print(f"R-squared (with outlier): {r2_with_outlier:.4f}")
 ```
 
-Slide 6: Limitation 5 - Inability to Determine Causality
+Trình bày 6: Chế độ 5 - Không thể xác định quan hệ nhân vật
 
-R-squared and Causality
+Bình phương R và nhân
 
-A high R-squared value doesn't imply causality between variables. It only indicates correlation. This limitation is crucial to understand when interpreting regression results, especially in fields like economics or social sciences. Let's create an example where two unrelated variables show a high R-squared.
+Giá trị R bình luận cao không có ý nghĩa quan hệ nhân quả giữa các biến. Nó chỉ tìm thấy mối tương quan. Điều này rất quan trọng để hiểu khi diễn giải kết quả hồi quy, đặc biệt là trong các lĩnh vực như kinh tế hoặc khoa học xã hội. Hãy tạo một ví dụ trong đó hai biến không liên quan có giá trị R bình luận cao.
 
 ```python
 import numpy as np
@@ -165,11 +165,11 @@ corr = np.corrcoef(X.flatten(), y)[0, 1]
 print(f"Correlation coefficient: {corr:.4f}")
 ```
 
-Slide 7: Limitation 6 - Dependence on Linear Relationships
+Slide 7: Phần 6 - Sự phụ thuộc vào mối quan hệ tuyến tính
 
-R-squared and Non-linear Relationships
+Mối quan hệ R bình phương và phi tuyến tính
 
-R-squared assumes a linear relationship between variables. For non-linear relationships, R-squared may underestimate the strength of the relationship. This limitation highlights the importance of visualizing data and considering non-linear models when appropriate. Let's compare R-squared for a linear model and a non-linear relationship.
+R-squared giả định mối quan hệ tuyến tính giữa các biến. Đối với các mối quan hệ phi tuyến tính, bình phương R có thể đánh giá thấp sức mạnh của mối quan hệ. Chế độ này nhấn mạnh tầm quan trọng của công việc trực tuyến hóa dữ liệu và xem xét các mô hình phi tuyến tính khi thích hợp. Hãy so sánh phương pháp R để chọn mô hình tuyến tính và mối quan hệ phi tuyến tính.
 
 ```python
 import numpy as np
@@ -200,11 +200,11 @@ plt.title("Linear vs Non-linear Relationship")
 plt.show()
 ```
 
-Slide 8: Limitation 7 - Lack of Information on Residuals
+Slide 8: Chế độ 7 - Thiếu thông tin về dư lượng
 
-R-squared and Residual Analysis
+Phân tích phương pháp R và dư thừa
 
-R-squared doesn't provide information about the distribution of residuals, which is crucial for assessing model assumptions. A high R-squared doesn't guarantee that residuals are normally distributed or have constant variance. Let's create an example where R-squared is high, but residuals show heteroscedasticity.
+R-squared không cung cấp thông tin về bố cục dư, điều này rất quan trọng để đánh giá các giả định của mô hình. Bình phương R cao không đảm bảo rằng phần dư thừa có chuẩn phân phối hoặc có phương pháp sai không thay đổi. Hãy tạo một ví dụ trong đó R bình phương cao nhưng phần dư thừa hiện không nhất thiết phải thay đổi.
 
 ```python
 import numpy as np
@@ -233,11 +233,11 @@ plt.ylabel("Residuals")
 plt.show()
 ```
 
-Slide 9: Limitation 8 - Comparison Across Different Datasets
+Trình bày 9: Chế độ 8 - ​​So sánh giữa các dữ liệu khác nhau
 
-R-squared and Dataset Comparisons
+So sánh R bình phương và dữ liệu
 
-R-squared values are not directly comparable across different datasets or dependent variables. A model with a lower R-squared might perform better on new data than a model with a higher R-squared trained on a different dataset. This limitation emphasizes the importance of considering the specific context and goals of the analysis.
+Phương pháp R giá trị không thể so sánh trực tiếp giữa các dữ liệu hoặc các biến phụ thuộc khác nhau. Một mô hình có R bình phương thấp hơn có thể hoạt động tốt hơn trên dữ liệu mới nên mô hình có R bình phương cao hơn được đào tạo trên một dữ liệu khác. Chế độ này nhấn mạnh tầm quan trọng của công việc xem xét bối cảnh và mục tiêu cụ thể của phân tích.
 
 ```python
 import numpy as np
@@ -265,11 +265,11 @@ print(f"Dataset 1 - R-squared: {r2_1:.4f}, MSE: {mse_1:.4f}")
 print(f"Dataset 2 - R-squared: {r2_2:.4f}, MSE: {mse_2:.4f}")
 ```
 
-Slide 10: Limitation 9 - Insensitivity to Predictor Importance
+Trang trình bày 10: Hàm chế 9 - Không nhạy cảm với tầm quan trọng của yếu tố dự đoán
 
-R-squared and Feature Importance
+Bình phương R và tầm quan trọng của tính năng
 
-R-squared doesn't provide information about the relative importance of individual predictors. A high R-squared doesn't indicate which variables are most influential in the model. To address this limitation, we can use techniques like feature importance or partial dependence plots. Let's demonstrate this using a simple multiple regression model.
+R bình phương không cung cấp thông tin về tầm quan trọng tương đối của từng yếu tố dự đoán. Bình phương R cao không biết biến nào có ảnh hưởng nhiều nhất trong mô hình. Để giải quyết vấn đề này, chúng tôi có thể sử dụng các kỹ thuật như biểu đồ tầm quan trọng của đặc điểm hoặc biểu đồ phụ thuộc của một phần. Hãy chứng minh điều này bằng cách sử dụng mô hình hồi quy bội đơn giản.
 
 ```python
 import numpy as np
@@ -294,11 +294,11 @@ for i, importance in enumerate(perm_importance.importances_mean):
     print(f"Feature {i+1} importance: {importance:.4f}")
 ```
 
-Slide 11: Limitation 10 - Assumption of Constant Variance
+Slide 11: Mode 10 - Giả định sai phương pháp
 
-R-squared and Homoscedasticity
+R-bình phương và tính đồng nhất
 
-R-squared assumes homoscedasticity (constant variance) of residuals. When this assumption is violated, R-squared may not accurately represent the model's goodness of fit. Let's create an example where R-squared is high, but the homoscedasticity assumption is violated.
+R bình phương giả định đồng tính toán tối đa ( phương pháp không đổi) của phần dư. Khi giả định điều này là phạm vi, phương pháp R có thể không thể xác định chính xác mức độ phù hợp của mô hình. Hãy tạo một ví dụ trong đó R bình phương cao nhưng giả định về tính đồng nhất bị vi phạm.
 
 ```python
 import numpy as np
@@ -325,11 +325,11 @@ plt.ylabel("Residuals")
 plt.show()
 ```
 
-Slide 12: Limitation 11 - Sensitivity to Influential Points
+Slide 12: Phần chế độ 11 - Nhạy cảm với các ảnh hưởng
 
-R-squared and Influential Points
+R bình phương và ảnh hưởng điểm
 
-R-squared can be disproportionately affected by influential points, which are observations that have a large impact on the regression line. These points can lead to misleading R-squared values. Let's demonstrate this by comparing R-squared with and without an influential point.
+Phương pháp có thể bị ảnh hưởng không tương thích với các ảnh hưởng, đó là những hoạt động quan trọng để phục hồi đường hồi phục. Những điểm này có thể dẫn đến sai lệch giá trị R bình phương. Hãy chứng minh điều này bằng cách so sánh phương pháp R có và không có ảnh hưởng.
 
 ```python
 import numpy as np
@@ -355,11 +355,11 @@ print(f"R-squared (normal): {r2_normal:.4f}")
 print(f"R-squared (with influential point): {r2_influential:.4f}")
 ```
 
-Slide 13: Limitation 12 - Lack of Information on Model Complexity
+Slide 13: Mode 12 - Missing information về mô hình phức tạp
 
-R-squared and Model Complexity
+Bình phương R và mô hình phức tạp
 
-R-squared doesn't provide information about model complexity. A more complex model might have a higher R-squared but could be overfitting the data. To address this, we can use adjusted R-squared, which penalizes the addition of unnecessary predictors. Let's compare R-squared and adjusted R-squared for models with different numbers of predictors.
+R-squared không cung cấp thông tin về mô hình phức tạp. Một mô hình phức tạp hơn có thể có R bình phương cao hơn nhưng có thể làm quá khớp dữ liệu. Để giải quyết vấn đề này, chúng tôi có thể sử dụng R bình phương đã điều chỉnh, điều này sẽ loại bỏ việc bổ sung các yếu tố dự đoán không cần thiết. Hãy so sánh bình phương R và bình phương R đã điều chỉnh cho các mô hình có lượng yếu tố dự đoán khác nhau.
 
 ```python
 import numpy as np
@@ -389,11 +389,11 @@ for i in range(1, 6):
     print(f"Predictors: {i}, R-squared: {r2:.4f}, Adjusted R-squared: {adj_r2:.4f}")
 ```
 
-Slide 14: Real-life Example 1 - House Price Prediction
+Slide 14: Ví dụ 1 thực tế - Dự đoán giá nhà
 
-R-squared in House Price Prediction
+Bình phương R trong dự đoán giá
 
-In real estate, R-squared is often used to evaluate models predicting house prices. However, relying solely on R-squared can be misleading. Let's create a simple house price prediction model and examine its limitations.
+Trong bất kỳ sản phẩm nào, R bình luận thường được sử dụng để đánh giá các nhà sản xuất được mong đợi. Tuy nhiên, chỉ dựa vào R phương pháp có thể gây nhầm lẫn. Vui lòng tạo một mô hình dự đoán giá đơn giản và xem xét các giới hạn của nó.
 
 ```python
 import numpy as np
@@ -423,11 +423,11 @@ print(f"R-squared: {r2:.4f}")
 print(f"Mean Absolute Error: ${mae:.2f}")
 ```
 
-Slide 15: Real-life Example 2 - Stock Market Prediction
+Slide 15: Ví dụ 2 thực tế - Dự đoán thị trường chứng khoán
 
-Limitations of R-squared in Stock Market Prediction
+Chế độ của phương R trong dự đoán chứng khoán trường
 
-In finance, R-squared is sometimes used to evaluate stock market prediction models. However, its limitations become apparent in this volatile domain. Let's create a simple stock price prediction model to illustrate why R-squared alone is insufficient.
+Trong tài chính, R bình phương đôi khi được sử dụng để đánh giá các dự đoán về thị trường chứng khoán. Tuy nhiên, những giới hạn của nó sẽ trở nên rõ ràng trong lĩnh vực đầy biến động này. Hãy tạo một mô hình dự đoán giá cổ phiếu đơn giản để minh họa tại sao chỉ R bình phương là chưa đủ.
 
 ```python
 import numpy as np
@@ -460,14 +460,14 @@ df['DailyReturn'] = df['PriceChange'] / df['PreviousPrice']
 print(f"Volatility (std of daily returns): {df['DailyReturn'].std():.4f}")
 ```
 
-Slide 16: Additional Resources
+Trang trình bày 16: Tài nguyên bổ sung
 
-Further Reading on R-squared Limitations
+Đọc thêm về giới hạn của phương R
 
-To deepen your understanding of R-squared limitations and alternative metrics, consider exploring these resources:
+Để hiểu sâu hơn về các giới hạn bình luận phương pháp R và các số liệu thay thế, hãy xem xét khám phá các tài nguyên sau:
 
-1. "The Dangers of R-squared" by Frost, J. (2020) - A comprehensive discussion on R-squared pitfalls.
-2. "Beyond R-squared: New Metrics for Regression Models" by Kvålseth, T. O. (2015) - Explores alternative goodness-of-fit measures.
-3. "The Coefficient of Determination R-Squared Is More Informative than SMAPE, MAE, MAPE, MSE and RMSE in Regression Analysis Evaluation" by Alexander, D. L. J., Tropsha, A., & Winkler, D. A. (2015) - ArXiv:1511.02513 \[stat.ML\]
+1. "Sự nguy hiểm của bình phương R" của Frost, J. (2020) - Thảo luận toàn diện về những nguy hiểm của bình phương R.
+2. "Beyond R-squared: Metrics New for Regression Models" của Kvålseth, T. O. (2015) - Khám phá các biện pháp thay thế mức độ phù hợp.
+3. "Hệ số xác định R-Squared có nhiều thông tin hơn SMAPE, MAE, MAPE, MSE và RMSE trong đánh giá phân tích hồi phục" của Alexander, D. L. J., Tropsha, A., & Winkler, D. A. (2015) - ArXiv:1511.02513 \[stat.ML\]
 
-These resources provide in-depth analyses of R-squared limitations and suggest alternative approaches for model evaluation in various contexts.
+Tài nguyên này cung cấp các phân tích chuyên sâu về giới hạn bình phương R và đề xuất các phương pháp tiếp cận khác để đánh giá mô hình trong các bối cảnh khác nhau.

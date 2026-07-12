@@ -1,7 +1,7 @@
-## Addressing LLM Limitations with RAG Document Q&A
-Slide 1: Introduction to RAG Architecture
+## Giải quyết các hạn chế LLM bằng phần Hỏi & Đáp về Tài liệu RAG
+Slide 1: Giới thiệu về Kiến trúc RAG
 
-Retrieval Augmented Generation (RAG) is a powerful technique that combines document retrieval with language model generation. The architecture consists of an indexing phase where documents are processed and stored, a retrieval phase that finds relevant content, and a generation phase that produces natural language responses.
+Tạo tăng cường truy xuất (RAG) là một kỹ thuật mạnh mẽ kết hợp truy xuất tài liệu với tạo mô hình ngôn ngữ. Kiến trúc bao gồm giai đoạn lập chỉ mục trong đó tài liệu được xử lý và lưu trữ, giai đoạn truy xuất để tìm nội dung có liên quan và giai đoạn tạo tạo ra phản hồi bằng ngôn ngữ tự nhiên.
 
 ```python
 # Basic RAG Pipeline Implementation
@@ -34,9 +34,9 @@ class RAGPipeline:
         return results['documents'][0]
 ```
 
-Slide 2: Document Preprocessing
+Slide 2: Tiền xử lý tài liệu
 
-Document preprocessing is crucial for effective RAG systems. This involves cleaning text, splitting documents into manageable chunks, and removing irrelevant information. The chunk size should be optimized based on the model's context window and retrieval requirements.
+Việc xử lý trước tài liệu rất quan trọng đối với các hệ thống RAG hiệu quả. Điều này liên quan đến việc làm sạch văn bản, chia tài liệu thành các phần có thể quản lý được và xóa thông tin không liên quan. Kích thước khối phải được tối ưu hóa dựa trên cửa sổ ngữ cảnh của mô hình và các yêu cầu truy xuất.
 
 ```python
 from typing import List
@@ -74,9 +74,9 @@ chunks = processor.chunk_document(cleaned_text)
 print(f"Generated {len(chunks)} chunks")
 ```
 
-Slide 3: Vector Store Implementation
+Trang trình bày 3: Triển khai cửa hàng Vector
 
-Vector stores are essential components in RAG systems for efficient similarity search. They index document embeddings and enable fast retrieval of relevant content during query time using approximate nearest neighbor search algorithms.
+Kho lưu trữ vectơ là thành phần thiết yếu trong hệ thống RAG để tìm kiếm độ tương tự hiệu quả. Chúng lập chỉ mục các phần nhúng tài liệu và cho phép truy xuất nhanh nội dung có liên quan trong thời gian truy vấn bằng thuật toán tìm kiếm lân cận gần nhất.
 
 ```python
 import faiss
@@ -117,9 +117,9 @@ class VectorStore:
         return [self.documents[idx] for idx in indices[0]]
 ```
 
-Slide 4: Embedding Generation
+Slide 4: Thế hệ nhúng
 
-Document embedding generation is a critical step in RAG systems that transforms text into dense vector representations. These embeddings capture semantic meaning and enable efficient similarity search during retrieval operations.
+Tạo nhúng tài liệu là một bước quan trọng trong hệ thống RAG giúp chuyển đổi văn bản thành các biểu diễn vectơ dày đặc. Các phần nhúng này nắm bắt ý nghĩa ngữ nghĩa và cho phép tìm kiếm sự tương đồng hiệu quả trong quá trình truy xuất.
 
 ```python
 from transformers import AutoTokenizer, AutoModel
@@ -161,9 +161,9 @@ embedding = generator.generate_embedding(text)
 print(f"Generated embedding shape: {embedding.shape}")
 ```
 
-Slide 5: Retriever Implementation
+Trang trình bày 5: Triển khai Retriever
 
-The retriever component is responsible for finding the most relevant documents given a query. It uses similarity metrics to rank documents and implements various strategies like re-ranking and filtering to improve result quality.
+Thành phần truy xuất có trách nhiệm tìm kiếm các tài liệu phù hợp nhất cho một truy vấn. Nó sử dụng các số liệu tương tự để xếp hạng tài liệu và thực hiện các chiến lược khác nhau như xếp hạng lại và lọc để cải thiện chất lượng kết quả.
 
 ```python
 from typing import List, Tuple
@@ -219,9 +219,9 @@ for i, doc in enumerate(results):
     print(f"Result {i+1} - Score: {doc.score:.3f}")
 ```
 
-Slide 6: Context Window Management
+Trang trình bày 6: Quản lý cửa sổ ngữ cảnh
 
-Managing context windows effectively is crucial for optimal RAG performance. This implementation demonstrates how to dynamically adjust document chunks based on token limits and ensure retrieved content fits within model constraints.
+Quản lý cửa sổ ngữ cảnh một cách hiệu quả là rất quan trọng để có hiệu suất RAG tối ưu. Việc triển khai này trình bày cách điều chỉnh động các khối tài liệu dựa trên giới hạn mã thông báo và đảm bảo nội dung được truy xuất phù hợp với các ràng buộc của mô hình.
 
 ```python
 import tiktoken
@@ -269,9 +269,9 @@ fitted_docs = context_manager.fit_to_context(
 )
 ```
 
-Slide 7: Query Generation and Processing
+Slide 7: Tạo và xử lý truy vấn
 
-Query processing involves transforming user questions into effective search queries. This implementation includes query expansion, decomposition for complex questions, and handling of different query types to improve retrieval accuracy.
+Xử lý truy vấn liên quan đến việc chuyển đổi câu hỏi của người dùng thành truy vấn tìm kiếm hiệu quả. Việc triển khai này bao gồm mở rộng truy vấn, phân tách các câu hỏi phức tạp và xử lý các loại truy vấn khác nhau để cải thiện độ chính xác khi truy xuất.
 
 ```python
 from typing import List, Set
@@ -326,9 +326,9 @@ print(f"Original query: {query}")
 print(f"Processed queries: {processed_queries}")
 ```
 
-Slide 8: Response Generation
+Slide 8: Tạo phản hồi
 
-The generation phase combines retrieved contexts with the original query to produce coherent and accurate responses. This implementation includes prompt engineering and response formatting techniques.
+Giai đoạn tạo kết hợp các ngữ cảnh được truy xuất với truy vấn ban đầu để tạo ra các phản hồi mạch lạc và chính xác. Việc triển khai này bao gồm các kỹ thuật định dạng phản hồi và kỹ thuật nhanh chóng.
 
 ```python
 from dataclasses import dataclass
@@ -394,9 +394,9 @@ response = generator.generate_response(context)
 print(response)
 ```
 
-Slide 9: Real-world Implementation - Document Q&A System
+Slide 9: Triển khai thực tế - Hệ thống hỏi đáp tài liệu
 
-This implementation demonstrates a complete RAG-based document question-answering system. The system processes PDF documents, indexes their content, and answers user queries by combining relevant document sections with language model capabilities.
+Việc triển khai này thể hiện một hệ thống trả lời câu hỏi tài liệu dựa trên RAG hoàn chỉnh. Hệ thống xử lý các tài liệu PDF, lập chỉ mục nội dung của chúng và trả lời các truy vấn của người dùng bằng cách kết hợp các phần tài liệu có liên quan với khả năng mô hình ngôn ngữ.
 
 ```python
 import fitz  # PyMuPDF
@@ -477,9 +477,9 @@ answer = qa_system.answer_query("What are the main findings in the document?")
 print(f"Answer: {answer}")
 ```
 
-Slide 10: Performance Metrics and Evaluation
+Trang trình bày 10: Đo lường và đánh giá hiệu suất
 
-A comprehensive evaluation framework for RAG systems that measures retrieval accuracy, response quality, and system performance. This implementation includes standard metrics and custom evaluation approaches.
+Khung đánh giá toàn diện dành cho hệ thống RAG nhằm đo lường độ chính xác khi truy xuất, chất lượng phản hồi và hiệu suất hệ thống. Việc triển khai này bao gồm các số liệu tiêu chuẩn và phương pháp đánh giá tùy chỉnh.
 
 ```python
 from sklearn.metrics import precision_recall_fscore_support
@@ -557,9 +557,9 @@ retrieval_metrics = evaluator.evaluate_retrieval(
 print(f"Retrieval Metrics: {retrieval_metrics}")
 ```
 
-Slide 11: Optimization and Caching
+Trang trình bày 11: Tối ưu hóa và lưu vào bộ nhớ đệm
 
-Implementation of advanced caching strategies and query optimization techniques to improve RAG system performance. This includes embedding cache, document cache, and query result caching mechanisms.
+Triển khai các chiến lược bộ nhớ đệm nâng cao và kỹ thuật tối ưu hóa truy vấn để cải thiện hiệu suất hệ thống RAG. Điều này bao gồm việc nhúng bộ đệm, bộ đệm tài liệu và cơ chế lưu vào bộ đệm kết quả truy vấn.
 
 ```python
 from functools import lru_cache
@@ -652,9 +652,9 @@ result = optimized_system.optimized_query("What is machine learning?")
 print(f"Query result: {result}")
 ```
 
-Slide 12: Error Handling and Monitoring
+Slide 12: Xử lý và giám sát lỗi
 
-Robust error handling and monitoring implementation for RAG systems, including detailed logging, error recovery mechanisms, and system health monitoring.
+Triển khai giám sát và xử lý lỗi mạnh mẽ cho hệ thống RAG, bao gồm ghi nhật ký chi tiết, cơ chế khôi phục lỗi và theo dõi tình trạng hệ thống.
 
 ```python
 import logging
@@ -736,9 +736,9 @@ health_metrics = monitor.get_system_health()
 print(f"System Health Metrics: {health_metrics}")
 ```
 
-Slide 13: Advanced Document Processing and Chunking
+Slide 13: Xử lý và phân đoạn tài liệu nâng cao
 
-Implementation of sophisticated document processing strategies including semantic chunking, overlap management, and metadata preservation. This approach ensures optimal context preservation for retrieval tasks.
+Triển khai các chiến lược xử lý tài liệu phức tạp bao gồm phân đoạn ngữ nghĩa, quản lý chồng chéo và bảo toàn siêu dữ liệu. Cách tiếp cận này đảm bảo duy trì bối cảnh tối ưu cho các tác vụ truy xuất.
 
 ```python
 import spacy
@@ -863,9 +863,9 @@ for i, chunk in enumerate(chunks):
     print(f"Metadata: {chunk.metadata}")
 ```
 
-Slide 14: Real-world Implementation - Technical Documentation Search
+Slide 14: Triển khai thực tế - Tìm kiếm tài liệu kỹ thuật
 
-This implementation showcases a complete RAG system specifically designed for searching and answering questions from technical documentation, including handling of code snippets and technical terminology.
+Việc triển khai này cho thấy một hệ thống RAG hoàn chỉnh được thiết kế đặc biệt để tìm kiếm và trả lời các câu hỏi từ tài liệu kỹ thuật, bao gồm việc xử lý các đoạn mã và thuật ngữ kỹ thuật.
 
 ````python
 from typing import List, Dict, Optional
@@ -1005,9 +1005,9 @@ def example():
     return "Hello World"
 ````
 
-The `example` function demonstrates basic syntax. """
+Hàm `example` thể hiện cú pháp cơ bản. """
 
-doc = tech\_rag.parse\_technical\_document(content) result = tech\_rag.process\_technical\_query( "Show me the example code", doc ) print(f"Query result: {result}")
+doc = tech\_rag.parse\_Technology\_document(content) result = tech\_rag.process\_Technical\_query( "Cho tôi xem mã ví dụ", doc ) print(f"Kết quả truy vấn: {result}")
 
 ```
 

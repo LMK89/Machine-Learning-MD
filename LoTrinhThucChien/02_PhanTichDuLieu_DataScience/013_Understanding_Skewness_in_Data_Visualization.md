@@ -1,7 +1,7 @@
-## Understanding Skewness in Data Visualization
-Slide 1: Understanding Skewness in Data Analysis
+## Tìm hiểu về độ lệch trong trực quan hóa dữ liệu
+Trang trình bày 1: Tìm hiểu về độ lệch trong phân tích dữ liệu
 
-Skewness measures the asymmetry of a probability distribution, indicating whether data leans left or right. In statistical analysis, understanding skewness helps identify outliers, assess data normality, and make informed decisions about data transformations and modeling approaches.
+Độ lệch đo lường tính bất đối xứng của phân bố xác suất, cho biết dữ liệu nghiêng về bên trái hay bên phải. Trong phân tích thống kê, việc hiểu độ lệch giúp xác định các giá trị ngoại lệ, đánh giá tính chuẩn của dữ liệu và đưa ra quyết định sáng suốt về chuyển đổi dữ liệu và phương pháp lập mô hình.
 
 ```python
 import numpy as np
@@ -20,9 +20,9 @@ print(f"Right-skewed Distribution Skewness: {skew(right_skewed):.3f}")
 print(f"Left-skewed Distribution Skewness: {skew(left_skewed):.3f}")
 ```
 
-Slide 2: Mathematical Formula for Skewness
+Slide 2: Công thức tính độ lệch
 
-The mathematical definition of skewness involves the third standardized moment of a distribution. This formula quantifies the degree and direction of asymmetry in a dataset relative to its mean.
+Định nghĩa toán học về độ lệch liên quan đến thời điểm chuẩn hóa thứ ba của một phân bố. Công thức này định lượng mức độ và hướng bất đối xứng trong tập dữ liệu so với giá trị trung bình của nó.
 
 ```python
 # Mathematical formula for skewness using LaTeX notation
@@ -45,9 +45,9 @@ data = [1, 2, 2, 3, 3, 3, 4, 4, 5]
 print(f"Calculated Skewness: {calculate_skewness(data):.3f}")
 ```
 
-Slide 3: Visualizing Skewness Patterns
+Slide 3: Trực quan hóa các mẫu độ lệch
 
-Understanding how different data distributions appear graphically is crucial for data analysis. This implementation creates histograms and density plots to visualize various skewness patterns in real-world datasets.
+Hiểu cách phân phối dữ liệu khác nhau xuất hiện bằng đồ họa là rất quan trọng để phân tích dữ liệu. Việc triển khai này tạo ra biểu đồ và biểu đồ mật độ để trực quan hóa các mẫu độ lệch khác nhau trong bộ dữ liệu trong thế giới thực.
 
 ```python
 import seaborn as sns
@@ -70,9 +70,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 4: Real-world Application - Stock Returns Analysis
+Trang trình bày 4: Ứng dụng thực tế - Phân tích lợi nhuận chứng khoán
 
-Financial data analysis frequently encounters skewed distributions, particularly in stock returns. This implementation analyzes daily returns of a stock portfolio to understand its risk characteristics through skewness.
+Phân tích dữ liệu tài chính thường xuyên gặp phải sự phân phối sai lệch, đặc biệt là lợi nhuận chứng khoán. Việc triển khai này phân tích lợi nhuận hàng ngày của danh mục đầu tư chứng khoán để hiểu các đặc điểm rủi ro của nó thông qua độ lệch.
 
 ```python
 import yfinance as yf
@@ -108,9 +108,9 @@ plt.legend()
 plt.show()
 ```
 
-Slide 5: Detecting and Handling Skewed Features
+Slide 5: Phát hiện và xử lý các đặc điểm sai lệch
 
-When working with machine learning models, skewed features can significantly impact model performance. This implementation demonstrates techniques for detecting and transforming skewed features to improve model accuracy.
+Khi làm việc với các mô hình học máy, các tính năng bị sai lệch có thể ảnh hưởng đáng kể đến hiệu suất của mô hình. Việc triển khai này thể hiện các kỹ thuật phát hiện và chuyển đổi các tính năng bị lệch để cải thiện độ chính xác của mô hình.
 
 ```python
 import numpy as np
@@ -145,9 +145,9 @@ skewed_data = np.random.lognormal(0, 1, 1000)
 log_data, box_cox_data = analyze_and_transform_skewness(skewed_data)
 ```
 
-Slide 6: Skewness in Quality Control
+Trang trình bày 6: Sự sai lệch trong kiểm soát chất lượng
 
-In manufacturing processes, skewness analysis helps identify systematic deviations in product quality. This implementation analyzes production metrics and establishes control limits based on skewness patterns.
+Trong quy trình sản xuất, phân tích độ lệch giúp xác định những sai lệch mang tính hệ thống về chất lượng sản phẩm. Việc triển khai này phân tích các số liệu sản xuất và thiết lập các giới hạn kiểm soát dựa trên các mẫu độ lệch.
 
 ```python
 import numpy as np
@@ -192,9 +192,9 @@ plt.legend()
 plt.show()
 ```
 
-Slide 7: Skewness Impact on Financial Risk Metrics
+Trang trình bày 7: Tác động sai lệch đến các thước đo rủi ro tài chính
 
-Skewness plays a crucial role in financial risk assessment, particularly in calculating Value at Risk (VaR) and Expected Shortfall. This implementation demonstrates how skewness affects risk metrics calculation.
+Độ lệch đóng một vai trò quan trọng trong đánh giá rủi ro tài chính, đặc biệt là trong việc tính toán Giá trị rủi ro (VaR) và Thiếu hụt dự kiến. Việc triển khai này cho thấy độ lệch ảnh hưởng như thế nào đến việc tính toán số liệu rủi ro.
 
 ```python
 import numpy as np
@@ -234,9 +234,9 @@ risk_metrics = calculate_risk_metrics(returns)
 print(risk_metrics)
 ```
 
-Slide 8: Advanced Skewness Detection Using Machine Learning
+Trang trình bày 8: Phát hiện độ lệch nâng cao bằng Machine Learning
 
-Machine learning can be used to automatically detect and classify different types of skewness patterns in large datasets. This implementation uses a neural network approach for skewness pattern recognition.
+Học máy có thể được sử dụng để tự động phát hiện và phân loại các loại mẫu sai lệch khác nhau trong các tập dữ liệu lớn. Việc triển khai này sử dụng cách tiếp cận mạng thần kinh để nhận dạng mẫu độ lệch.
 
 ```python
 import tensorflow as tf
@@ -288,9 +288,9 @@ test_loss, test_accuracy = model.evaluate(X_test_scaled, y_test, verbose=0)
 print(f"Test Accuracy: {test_accuracy:.4f}")
 ```
 
-Slide 9: Time Series Skewness Analysis
+Trang trình bày 9: Phân tích độ lệch chuỗi thời gian
 
-Time series data often exhibits varying skewness patterns over different periods. This implementation analyzes how skewness evolves over time and implements a rolling skewness calculation for temporal pattern detection.
+Dữ liệu chuỗi thời gian thường thể hiện các dạng sai lệch khác nhau trong các khoảng thời gian khác nhau. Việc triển khai này phân tích độ lệch phát triển như thế nào theo thời gian và thực hiện phép tính độ lệch cuộn để phát hiện mẫu thời gian.
 
 ```python
 import pandas as pd
@@ -336,9 +336,9 @@ plt.legend()
 plt.show()
 ```
 
-Slide 10: Multivariate Skewness Assessment
+Slide 10: Đánh giá độ lệch đa biến
 
-Multivariate skewness extends the concept to multiple dimensions, crucial for complex datasets. This implementation calculates and visualizes multivariate skewness using Mardia's coefficients.
+Độ lệch đa biến mở rộng khái niệm này sang nhiều chiều, rất quan trọng đối với các bộ dữ liệu phức tạp. Việc triển khai này tính toán và trực quan hóa độ lệch đa biến bằng cách sử dụng các hệ số của Mardia.
 
 ```python
 import numpy as np
@@ -396,9 +396,9 @@ for key, value in results.items():
     print(f"{key}: {value:.4f}")
 ```
 
-Slide 11: Robust Skewness Estimation
+Trang trình bày 11: Ước tính độ lệch chắc chắn
 
-Traditional skewness measures can be sensitive to outliers. This implementation demonstrates robust skewness estimation techniques using quartile-based methods and bootstrap resampling.
+Các thước đo độ lệch truyền thống có thể nhạy cảm với các giá trị ngoại lệ. Việc triển khai này thể hiện các kỹ thuật ước tính độ lệch mạnh mẽ bằng cách sử dụng các phương pháp dựa trên tứ phân vị và lấy mẫu lại bootstrap.
 
 ```python
 import numpy as np
@@ -447,9 +447,9 @@ for k, v in contaminated_results.items():
     print(f"{k}: {v:.4f}")
 ```
 
-Slide 12: Skewness-Aware Feature Engineering
+Trang trình bày 12: Kỹ thuật tính năng nhận biết độ lệch
 
-When preparing data for machine learning models, accounting for skewness in feature engineering can significantly improve model performance. This implementation demonstrates advanced techniques for handling skewed features.
+Khi chuẩn bị dữ liệu cho các mô hình học máy, việc tính toán độ lệch trong kỹ thuật tính năng có thể cải thiện đáng kể hiệu suất của mô hình. Việc triển khai này thể hiện các kỹ thuật nâng cao để xử lý các tính năng bị sai lệch.
 
 ```python
 import numpy as np
@@ -509,9 +509,9 @@ for method, results in transformation_results.items():
         print(f"Normality p-value: {results['normality_p_value']:.4f}")
 ```
 
-Slide 13: Temporal Skewness Forecasting
+Slide 13: Dự báo độ lệch theo thời gian
 
-Predicting future skewness patterns can be valuable for risk management and decision-making. This implementation creates a model to forecast skewness in time series data.
+Dự đoán các mô hình sai lệch trong tương lai có thể có giá trị cho việc quản lý rủi ro và ra quyết định. Việc triển khai này tạo ra một mô hình để dự báo độ lệch trong dữ liệu chuỗi thời gian.
 
 ```python
 import pandas as pd
@@ -593,12 +593,12 @@ mse = mean_squared_error(actual, predictions)
 print(f"Mean Squared Error: {mse:.4f}")
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-List of relevant papers from ArXiv:
+Danh sách các giấy tờ liên quan từ ArXiv:
 
-*   [https://arxiv.org/abs/2103.02323](https://arxiv.org/abs/2103.02323) "Robust Estimation of Skewness and Kurtosis in Distributions with Infinite Higher Moments"
-*   [https://arxiv.org/abs/1908.05953](https://arxiv.org/abs/1908.05953) "On the Impact of Skewness and Kurtosis on Time Series Analysis"
-*   [https://arxiv.org/abs/2006.16942](https://arxiv.org/abs/2006.16942) "Deep Learning for Time Series Forecasting: The Electric Load Case"
-*   [https://arxiv.org/abs/1910.07920](https://arxiv.org/abs/1910.07920) "Skewness-Aware Feature Engineering for Neural Time Series Forecasting"
-*   [https://arxiv.org/abs/2012.09445](https://arxiv.org/abs/2012.09445) "A Survey on Distribution Testing: Your Data is Not Normal"
+* [https://arxiv.org/abs/2103.02323](https://arxiv.org/abs/2103.02323) "Ước tính mạnh mẽ về độ lệch và độ Kurtosis trong phân phối với vô số khoảnh khắc cao hơn"
+* [https://arxiv.org/abs/1908.05953](https://arxiv.org/abs/1908.05953) "Về tác động của độ lệch và độ nhọn đối với phân tích chuỗi thời gian"
+* [https://arxiv.org/abs/2006.16942](https://arxiv.org/abs/2006.16942) "Học sâu để dự báo chuỗi thời gian: Trường hợp phụ tải điện"
+* [https://arxiv.org/abs/1910.07920](https://arxiv.org/abs/1910.07920) "Kỹ thuật tính năng nhận biết độ lệch để dự báo chuỗi thời gian thần kinh"
+* [https://arxiv.org/abs/2012.09445](https://arxiv.org/abs/2012.09445) "Khảo sát về kiểm tra phân phối: Dữ liệu của bạn không bình thường"

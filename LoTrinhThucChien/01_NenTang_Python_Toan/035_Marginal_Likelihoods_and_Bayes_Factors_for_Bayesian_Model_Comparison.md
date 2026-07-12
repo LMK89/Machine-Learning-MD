@@ -1,8 +1,8 @@
-## Marginal Likelihoods and Bayes Factors for Bayesian Model Comparison
+## Khả năng cận biên và các yếu tố Bayes để so sánh mô hình Bayes
 
-Slide 1: Marginal Likelihood Fundamentals
+Trang trình bày 1: Nguyên tắc cơ bản về khả năng cận biên
 
-The marginal likelihood represents the probability of observing data under a specific model by integrating over all possible parameter values. This fundamental concept forms the backbone of Bayesian model comparison and selection methods in statistical inference.
+Khả năng cận biên thể hiện xác suất quan sát dữ liệu theo một mô hình cụ thể bằng cách tích hợp trên tất cả các giá trị tham số có thể có. Khái niệm cơ bản này tạo thành xương sống của các phương pháp so sánh và lựa chọn mô hình Bayes trong suy luận thống kê.
 
 ```python
 import numpy as np
@@ -29,9 +29,9 @@ ml = marginal_likelihood_normal(data, mu_prior=0, sigma_prior=2, sigma_likelihoo
 print(f"Marginal Likelihood: {ml:.10f}")
 ```
 
-Slide 2: Bayes Factor Implementation
+Trang trình bày 2: Triển khai yếu tố Bayes
 
-Bayes factors provide a quantitative measure for comparing two competing models by taking the ratio of their respective marginal likelihoods, offering a natural Bayesian approach to hypothesis testing and model selection.
+Các yếu tố Bayes cung cấp thước đo định lượng để so sánh hai mô hình cạnh tranh bằng cách lấy tỷ lệ khả năng cận biên tương ứng của chúng, đưa ra cách tiếp cận Bayes tự nhiên để kiểm tra giả thuyết và lựa chọn mô hình.
 
 ```python
 def bayes_factor(data, model1_params, model2_params):
@@ -65,9 +65,9 @@ print(f"Bayes Factor: {bf:.2f}")
 print(f"Interpretation: {interp}")
 ```
 
-Slide 3: Prior Distribution Implementation
+Trang trình bày 3: Triển khai phân phối trước
 
-The prior distribution encapsulates our beliefs about parameter values before observing data. This implementation demonstrates how to create and visualize different prior distributions for Bayesian model comparison.
+Phân phối trước gói gọn niềm tin của chúng tôi về các giá trị tham số trước khi quan sát dữ liệu. Việc triển khai này trình bày cách tạo và trực quan hóa các bản phân phối trước đó khác nhau để so sánh mô hình Bayes.
 
 ```python
 def create_prior_distribution(prior_type, params, n_samples=10000):
@@ -98,9 +98,9 @@ uniform_samples = create_prior_distribution('uniform', uniform_params)
 beta_samples = create_prior_distribution('beta', beta_params)
 ```
 
-Slide 4: Model Evidence Calculation
+Slide 4: Tính toán bằng chứng mô hình
 
-Calculating model evidence involves integrating the likelihood function over all possible parameter values weighted by the prior distribution. This implementation uses numerical integration to compute model evidence.
+Việc tính toán bằng chứng mô hình bao gồm việc tích hợp hàm khả năng trên tất cả các giá trị tham số có thể có được tính theo phân bố trước đó. Việc triển khai này sử dụng tích hợp số để tính toán bằng chứng mô hình.
 
 ```python
 def compute_model_evidence(data, prior_samples, likelihood_func):
@@ -128,9 +128,9 @@ evidence = compute_model_evidence(data, prior_samples, gaussian_likelihood)
 print(f"Model Evidence: {evidence:.10f}")
 ```
 
-Slide 5: Multi-Model Bayesian Comparison Framework
+Trang trình bày 5: Khung so sánh Bayesian đa mô hình
 
-A comprehensive framework for comparing multiple statistical models using Bayesian inference requires calculating evidence ratios and posterior probabilities across all model combinations while accounting for model complexity and fit.
+Một khuôn khổ toàn diện để so sánh nhiều mô hình thống kê sử dụng suy luận Bayes yêu cầu tính toán tỷ lệ bằng chứng và xác suất hậu nghiệm trên tất cả các kết hợp mô hình trong khi tính toán độ phức tạp và độ phù hợp của mô hình.
 
 ```python
 import numpy as np
@@ -173,9 +173,9 @@ bf_matrix = comparison.compute_bayes_factors()
 print("Bayes Factors Matrix:\n", bf_matrix)
 ```
 
-Slide 6: Marginal Likelihood Estimation
+Trang trình bày 6: Ước tính khả năng cận biên
 
-Implementation of Monte Carlo integration methods for estimating marginal likelihoods when analytical solutions are intractable, using importance sampling to improve estimation accuracy.
+Triển khai các phương pháp tích hợp Monte Carlo để ước tính khả năng cận biên khi các giải pháp phân tích khó thực hiện, sử dụng lấy mẫu tầm quan trọng để cải thiện độ chính xác của ước tính.
 
 ```python
 def estimate_marginal_likelihood(data, n_samples=10000):
@@ -199,9 +199,9 @@ ml_estimate = estimate_marginal_likelihood(data)
 print(f"Estimated Marginal Likelihood: {ml_estimate:.6f}")
 ```
 
-Slide 7: Numerical Integration for Evidence
+Slide 7: Tích hợp số cho bằng chứng
 
-Advanced numerical integration techniques for computing model evidence using adaptive quadrature methods, providing more accurate estimates for complex posterior distributions.
+Các kỹ thuật tích hợp số nâng cao để tính toán bằng chứng mô hình bằng phương pháp cầu phương thích ứng, cung cấp các ước tính chính xác hơn cho các phân bố sau phức tạp.
 
 ```python
 def adaptive_quadrature_evidence(data, bounds, n_points=100):
@@ -231,9 +231,9 @@ evidence = adaptive_quadrature_evidence(data, bounds)
 print(f"Model Evidence: {evidence:.8f}")
 ```
 
-Slide 8: Implementation of Jeffreys' Scale
+Slide 8: Triển khai thang đo của Jeffreys
 
-Practical implementation of Jeffreys' scale for interpreting Bayes factors, including uncertainty quantification and visualization of evidence strengths.
+Triển khai thực tế thang đo của Jeffreys để giải thích các yếu tố Bayes, bao gồm định lượng độ không đảm bảo và trực quan hóa sức mạnh bằng chứng.
 
 ```python
 def interpret_bayes_factor(bf, uncertainty=0.1):
@@ -272,9 +272,9 @@ for bf in test_bfs:
           f"(support level: {result['support']})")
 ```
 
-Slide 9: Prior Sensitivity Analysis
+Trang trình bày 9: Phân tích độ nhạy trước đó
 
-Implementation of sensitivity analysis to assess how different prior distributions affect the marginal likelihood and Bayes factor calculations.
+Triển khai phân tích độ nhạy để đánh giá mức độ ảnh hưởng của các phân phối trước khác nhau đến khả năng biên và tính toán hệ số Bayes.
 
 ```python
 def sensitivity_analysis(data, prior_params_range):
@@ -303,9 +303,9 @@ for result in sensitivity_results[:5]:  # Show first 5 results
           f"Log Evidence: {result['log_evidence']:.4f}")
 ```
 
-Slide 10: Bayesian Model Averaging
+Trang trình bày 10: Tính trung bình của mô hình Bayes
 
-Implementation of Bayesian Model Averaging (BMA) to combine predictions from multiple models weighted by their posterior probabilities.
+Triển khai Tính trung bình mô hình Bayes (BMA) để kết hợp các dự đoán từ nhiều mô hình được tính theo xác suất sau của chúng.
 
 ```python
 def bayesian_model_averaging(models, data, new_x):
@@ -338,9 +338,9 @@ models = [
 predictions, model_weights = bayesian_model_averaging(models, data, x_new)
 ```
 
-Slide 11: Cross-Validation for Model Comparison
+Trang trình bày 11: Xác thực chéo để so sánh mô hình
 
-Implementation of cross-validated Bayes factors to provide more robust model comparison when dealing with limited data.
+Triển khai các yếu tố Bayes được xác thực chéo để cung cấp khả năng so sánh mô hình mạnh mẽ hơn khi xử lý dữ liệu hạn chế.
 
 ```python
 def cross_validated_bayes_factors(data, models, k_folds=5):
@@ -372,9 +372,9 @@ cv_bf = cross_validated_bayes_factors(data, models)
 print("Cross-validated Bayes Factors:\n", cv_bf)
 ```
 
-Slide 12: Visualization of Model Evidence
+Trang trình bày 12: Trực quan hóa bằng chứng mẫu
 
-Implementation of visualization tools for comparing model evidences and Bayes factors across different models and parameters.
+Triển khai các công cụ trực quan để so sánh bằng chứng mô hình và các yếu tố Bayes giữa các mô hình và thông số khác nhau.
 
 ```python
 import matplotlib.pyplot as plt
@@ -407,10 +407,10 @@ bayes_factors = evidences[:, None] / evidences
 visualize_model_comparison(range(n_models), np.log(evidences), bayes_factors)
 ```
 
-Slide 13: Additional Resources
+Trang trình bày 13: Tài nguyên bổ sung
 
-1.  [https://arxiv.org/abs/1503.08755](https://arxiv.org/abs/1503.08755) - "Computing Bayes Factors Using a Generalization of the Savage-Dickey Density Ratio"
-2.  [https://arxiv.org/abs/1101.0955](https://arxiv.org/abs/1101.0955) - "Bayesian Model Selection and Model Averaging"
-3.  [https://arxiv.org/abs/1911.11876](https://arxiv.org/abs/1911.11876) - "A Tutorial on Bridge Sampling"
-4.  [https://arxiv.org/abs/1804.03610](https://arxiv.org/abs/1804.03610) - "Practical Bayesian Model Evaluation Using Leave-One-Out Cross-Validation"
-5.  [https://arxiv.org/abs/1601.00850](https://arxiv.org/abs/1601.00850) - "Computing Bayes Factors for Evidence-Based Decision Making"
+1. [https://arxiv.org/abs/1503.08755](https://arxiv.org/abs/1503.08755) - "Tính toán các yếu tố Bayes bằng cách khái quát hóa Tỷ lệ mật độ Savage-Dickey"
+2. [https://arxiv.org/abs/1101.0955](https://arxiv.org/abs/1101.0955) - "Lựa chọn mô hình Bayes và lấy trung bình mô hình"
+3. [https://arxiv.org/abs/1911.11876](https://arxiv.org/abs/1911.11876) - "Hướng dẫn lấy mẫu cầu"
+4. [https://arxiv.org/abs/1804.03610](https://arxiv.org/abs/1804.03610) - "Đánh giá mô hình Bayes thực tế bằng cách sử dụng xác thực chéo một lần"
+5. [https://arxiv.org/abs/1601.00850](https://arxiv.org/abs/1601.00850) - "Tính toán các yếu tố Bayes để đưa ra quyết định dựa trên bằng chứng"

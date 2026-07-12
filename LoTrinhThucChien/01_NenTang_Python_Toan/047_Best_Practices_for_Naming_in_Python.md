@@ -1,7 +1,7 @@
-## Best Practices for Naming in Python
-Slide 1: Clear and Descriptive Variable Names
+## Cách đặt tên tốt nhất trong Python
+Slide 1: Tên biến rõ ràng và mang tính mô tả
 
-Good variable names should be descriptive, meaningful, and follow Python naming conventions. They should clearly indicate the purpose and content of the variable while maintaining readability.
+Tên biến tốt phải mang tính mô tả, có ý nghĩa và tuân theo quy ước đặt tên của Python. Chúng phải chỉ rõ mục đích và nội dung của biến trong khi vẫn duy trì khả năng đọc được.
 
 ```python
 # Bad naming
@@ -21,9 +21,9 @@ for index in range(fruits_count):
 print(uppercase_fruits)  # Output: ['APPLE', 'BANANA', 'ORANGE']
 ```
 
-Slide 2: Function Naming Patterns
+Slide 2: Mẫu đặt tên hàm
 
-Function names should be action-oriented, using verbs to describe their purpose. They should follow the snake\_case convention and clearly indicate the transformation or computation being performed.
+Tên hàm phải hướng đến hành động, sử dụng động từ để mô tả mục đích của chúng. Chúng phải tuân theo quy ước snake\_case và chỉ rõ việc chuyển đổi hoặc tính toán đang được thực hiện.
 
 ```python
 # Bad naming
@@ -39,9 +39,9 @@ result = filter_positive_numbers(numbers)
 print(result)  # Output: [3, 5]
 ```
 
-Slide 3: Class Naming Conventions
+Slide 3: Quy ước đặt tên lớp
 
-Classes represent objects and should use PascalCase naming convention. The name should be a noun that clearly describes the entity being modeled, with clear and descriptive attribute names.
+Các lớp đại diện cho các đối tượng và nên sử dụng quy ước đặt tên PascalCase. Tên phải là một danh từ mô tả rõ ràng thực thể được mô hình hóa, với tên thuộc tính rõ ràng và mang tính mô tả.
 
 ```python
 # Bad naming
@@ -66,9 +66,9 @@ calc = Calculator(5, 3)
 print(calc.calculate_sum())  # Output: 8
 ```
 
-Slide 4: Constants and Module-Level Variables
+Trang trình bày 4: Các hằng số và biến cấp mô-đun
 
-Constants should use uppercase letters with underscores, placed at the module level. Their names should clearly indicate their purpose and usage context.
+Các hằng số nên sử dụng chữ in hoa có dấu gạch dưới, được đặt ở cấp độ mô-đun. Tên của chúng phải chỉ rõ mục đích và bối cảnh sử dụng.
 
 ```python
 # Bad naming
@@ -87,9 +87,9 @@ def calculate_circle_area(radius):
 print(calculate_circle_area(5))  # Output: 78.53975
 ```
 
-Slide 5: Iterator and Loop Variable Naming
+Slide 5: Đặt tên biến Iterator và vòng lặp
 
-When working with iterators and loops, use meaningful names that represent the individual elements being processed, avoiding single-letter variables except for simple mathematical operations.
+Khi làm việc với các trình vòng lặp và vòng lặp, hãy sử dụng các tên có ý nghĩa đại diện cho các phần tử riêng lẻ đang được xử lý, tránh các biến có một chữ cái ngoại trừ các phép toán đơn giản.
 
 ```python
 # Bad naming
@@ -104,9 +104,9 @@ for row_index in range(len(matrix)):
         print(f"Processing element: {element}")
 ```
 
-Slide 6: Real-world Example - Data Processing Pipeline
+Trang trình bày 6: Ví dụ thực tế - Đường ống xử lý dữ liệu
 
-A practical example demonstrating naming conventions in a data processing pipeline for customer transaction analysis.
+Một ví dụ thực tế thể hiện quy ước đặt tên trong quy trình xử lý dữ liệu để phân tích giao dịch của khách hàng.
 
 ```python
 class TransactionProcessor:
@@ -136,9 +136,9 @@ total_revenue = processor.calculate_total_revenue(valid_transactions)
 print(f"Total Revenue: ${total_revenue}")  # Output: Total Revenue: $175.0
 ```
 
-Slide 7: Naming in Machine Learning Contexts
+Trang trình bày 7: Đặt tên trong bối cảnh học máy
 
-Machine learning variable and function names should reflect the mathematical concepts while remaining readable. Common conventions include using lowercase for vectors and uppercase for matrices.
+Tên biến và hàm học máy phải phản ánh các khái niệm toán học trong khi vẫn có thể đọc được. Các quy ước chung bao gồm sử dụng chữ thường cho vectơ và chữ hoa cho ma trận.
 
 ```python
 import numpy as np
@@ -162,9 +162,9 @@ sample_input = np.array([[1.0, 0.5, -0.2]])
 prediction = model.forward_propagation(sample_input)
 ```
 
-Slide 8: Semantic Naming in Data Structures
+Trang trình bày 8: Đặt tên theo ngữ nghĩa trong cấu trúc dữ liệu
 
-When implementing data structures, names should reflect the structure's purpose and behavior, making the code self-documenting and easier to maintain.
+Khi triển khai cấu trúc dữ liệu, tên phải phản ánh mục đích và hành vi của cấu trúc, giúp mã tự ghi lại và dễ bảo trì hơn.
 
 ```python
 class BinarySearchTree:
@@ -191,9 +191,9 @@ root.insert_node(5)
 root.insert_node(15)
 ```
 
-Slide 9: Real-world Example - Time Series Analysis
+Trang trình bày 9: Ví dụ thực tế - Phân tích chuỗi thời gian
 
-A comprehensive example showing naming conventions in time series data processing and analysis implementation.
+Một ví dụ toàn diện hiển thị các quy ước đặt tên trong quá trình triển khai phân tích và xử lý dữ liệu chuỗi thời gian.
 
 ```python
 class TimeSeriesAnalyzer:
@@ -223,9 +223,9 @@ analyzer = TimeSeriesAnalyzer(monthly_temperatures)
 seasonal_pattern = analyzer.extract_seasonality(period_length=12)
 ```
 
-Slide 10: Exception Handling and Error Messages
+Trang trình chiếu 10: Xử lý ngoại lệ và thông báo lỗi
 
-Error messages and exception names should be clear, specific, and provide actionable information. Names should indicate the type of error and its context.
+Thông báo lỗi và tên ngoại lệ phải rõ ràng, cụ thể và cung cấp thông tin có thể thực hiện được. Tên phải chỉ ra loại lỗi và bối cảnh của nó.
 
 ```python
 class DatabaseConnectionError(Exception):
@@ -258,9 +258,9 @@ except ValueError as error:
     print(f"Validation error: {error}")
 ```
 
-Slide 11: Interface Design and Method Names
+Slide 11: Thiết kế giao diện và tên phương thức
 
-Method names in interfaces and abstract classes should clearly communicate their contract and expected behavior, focusing on the action being performed.
+Tên phương thức trong giao diện và lớp trừu tượng phải truyền đạt rõ ràng hợp đồng và hành vi dự kiến ​​của chúng, tập trung vào hành động đang được thực hiện.
 
 ```python
 from abc import ABC, abstractmethod
@@ -293,9 +293,9 @@ sample_data = np.random.rand(28, 28)
 features = processor.extract_features(processor.preprocess_raw_data(sample_data))
 ```
 
-Slide 12: Namespaces and Module Organization
+Trang trình bày 12: Không gian tên và Tổ chức mô-đun
 
-Well-structured namespaces and module names help organize code logically and prevent naming conflicts while maintaining clear dependencies.
+Các không gian tên và tên mô-đun có cấu trúc tốt giúp tổ chức mã một cách hợp lý và ngăn ngừa xung đột đặt tên trong khi vẫn duy trì các mối phụ thuộc rõ ràng.
 
 ```python
 # file: data_processing/transformers.py
@@ -323,9 +323,9 @@ transformer = DataTransformer('normalize')
 validator = DataValidator()
 ```
 
-Slide 13: Mathematics and Algorithm Implementation
+Slide 13: Triển khai toán học và thuật toán
 
-Mathematical function names should balance clarity with mathematical convention, using descriptive names for implementation details while preserving standard notation.
+Tên hàm toán học phải cân bằng giữa tính rõ ràng với quy ước toán học, sử dụng tên mô tả để biết chi tiết triển khai trong khi vẫn giữ nguyên ký hiệu chuẩn.
 
 ```python
 import numpy as np
@@ -356,12 +356,12 @@ input_data = np.random.randn(10, 5)
 output_probabilities = calculate_matrix_operation(input_data)
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-*   Machine Learning Naming Conventions: [https://arxiv.org/abs/2004.08900](https://arxiv.org/abs/2004.08900)
-*   Clean Code Patterns: [https://arxiv.org/abs/1909.08593](https://arxiv.org/abs/1909.08593)
-*   Neural Network Architecture Naming: [https://arxiv.org/abs/2006.12672](https://arxiv.org/abs/2006.12672)
-*   Best practices for search terms:
-    *   "Python naming conventions best practices"
-    *   "Clean code naming patterns"
-    *   "Software engineering naming guidelines"
+* Quy ước đặt tên học máy: [https://arxiv.org/abs/2004.08900](https://arxiv.org/abs/2004.08900)
+* Mẫu mã sạch: [https://arxiv.org/abs/1909.08593](https://arxiv.org/abs/1909.08593)
+* Đặt tên kiến trúc mạng thần kinh: [https://arxiv.org/abs/2006.12672](https://arxiv.org/abs/2006.12672)
+* Các phương pháp hay nhất cho cụm từ tìm kiếm:
+    * "Các phương pháp hay nhất về quy ước đặt tên Python"
+    * "Mẫu đặt tên mã sạch"
+    * "Hướng dẫn đặt tên kỹ thuật phần mềm"

@@ -1,8 +1,8 @@
-## Handling Imbalanced Datasets in Tabular Classification
+## Xử lý bộ dữ liệu không cân bằng trong bảng dạng phân loại
 
-Slide 1: Imbalanced Datasets in Classification
+Slide 1: Bộ dữ liệu cân bằng trong phân loại
 
-Imbalanced datasets are a common challenge in tabular classification tasks. They occur when one class significantly outnumbers the other classes, leading to biased models that perform poorly on minority classes. This imbalance is often inherent in real-world data, such as fraud detection or rare disease diagnosis. Understanding and addressing this issue is crucial for developing effective classification models.
+Bộ mất cân bằng dữ liệu là một biến số phổ biến trong các loại bảng nhiệm vụ. Chúng xảy ra khi một lớp đông hơn đáng kể so với các lớp khác, dẫn đến các mô hình sai lệch hoạt động kém đối với các lớp tối thiểu. Sự mất cân bằng này thường cố hữu trong dữ liệu trong thế giới thực, được cho là có giới hạn như phát hiện đột phá hoặc dự đoán bệnh độc gặp. Hiểu biết và giải quyết vấn đề này là rất quan trọng để phát triển các mô hình phân loại hiệu quả.
 
 ```python
 import numpy as np
@@ -24,9 +24,9 @@ plt.ylabel('Feature 2')
 plt.show()
 ```
 
-Slide 2: Oversampling Techniques
+Trang trình bày 2: Kỹ thuật thu thập mẫu quá trình
 
-Oversampling is a popular approach to address class imbalance. It involves increasing the number of instances in the minority class to balance the dataset. Various oversampling techniques exist, including random oversampling and more sophisticated methods like SMOTE (Synthetic Minority Over-sampling Technique). These techniques aim to improve model performance on minority classes without losing information from the majority class.
+Lấy mẫu quá mức là một cách tiếp cận phổ biến để giải quyết sự mất cân bằng giữa các lớp. Nó liên quan đến việc tăng số lượng phiên bản ở mức tối thiểu để cân bằng dữ liệu. Có nhiều kỹ thuật lấy mẫu quá mức khác nhau, bao gồm lấy mẫu quá ngẫu nhiên và các phương pháp phức tạp hơn như SMOTE (Kỹ thuật lấy mẫu quá mức tổng hợp tối thiểu). Những kỹ thuật này nhằm mục đích cải thiện hiệu suất hiển thị ở mức tối thiểu mà không làm mất thông tin ở lớp đa số.
 
 ```python
 from sklearn.datasets import make_classification
@@ -48,9 +48,9 @@ print(f"Random oversampled shape: {dict(zip(*np.unique(y_ros, return_counts=True
 print(f"SMOTE oversampled shape: {dict(zip(*np.unique(y_smote, return_counts=True)))}")
 ```
 
-Slide 3: SMOTE (Synthetic Minority Over-sampling Technique)
+Slide 3: SMOTE (Kỹ thuật lấy số liệu tổng hợp tối thiểu)
 
-SMOTE is an advanced oversampling method that creates synthetic examples in the feature space. It works by selecting minority class instances and interpolating new instances between them and their nearest neighbors. This approach aims to create more diverse and representative samples of the minority class, potentially improving the model's ability to generalize.
+SMOTE là một phương pháp nâng cao mẫu nhằm tạo ra các ví dụ tổng hợp trong không gian cụ thể. Nó hoạt động bằng cách chọn các loại có thể hiện ở mức tối thiểu và nội dung có thể mới giữa chúng và các loại lân cận gần nhất. Cách tiếp cận này nhắm đến mục tiêu tạo ra các dạng đa dạng và đại diện hơn cho các tầng lớp tối thiểu, có khả năng cải thiện khả năng hóa học của mô hình.
 
 ```python
 import numpy as np
@@ -81,9 +81,9 @@ X_resampled, y_resampled = smote(X, y, n_samples=90)
 print(f"Original shape: {X.shape}, Resampled shape: {X_resampled.shape}")
 ```
 
-Slide 4: Benefits of SMOTE
+Slide 4: Lợi ích của SMOTE
 
-SMOTE offers several advantages in handling imbalanced datasets. By creating synthetic examples, it increases the diversity of the minority class, which can lead to better decision boundaries and improved generalization. SMOTE can help prevent overfitting to the majority class and enhance the model's ability to recognize patterns in the minority class. This technique is particularly useful when the minority class is underrepresented and additional real-world data is difficult or expensive to obtain.
+SMOTE cung cấp một số lợi ích trong việc xử lý dữ liệu không cân bằng. Bằng cách tạo ra các ví dụ tổng hợp, nó làm tăng tính đa dạng của số lớp tối thiểu, điều này có thể dẫn đến ranh giới quyết định tốt hơn và cải thiện khả năng hóa học độc đáo. SMOTE có thể giúp ngăn chặn hoạt động của trang ở mức tối đa và nâng cao khả năng của mô hình trong việc nhận các mẫu ở mức tối thiểu. Kỹ thuật này đặc biệt hữu ích khi tầng lớp tối thiểu có số lượng ít đại diện và việc thu thập dữ liệu thực tế bổ sung khó khăn hoặc rẻ tiền.
 
 ```python
 from sklearn.datasets import make_classification
@@ -115,9 +115,9 @@ print("\nWith SMOTE:")
 print(classification_report(y_test, clf_smote.predict(X_test)))
 ```
 
-Slide 5: Potential Drawbacks of SMOTE
+Slide 5: Những hạn chế bảo tàng của SMOTE
 
-While SMOTE can be beneficial, it's not always the optimal solution. SMOTE may introduce noise or create unrealistic synthetic examples, especially in high-dimensional spaces or with complex data distributions. This can lead to overfitting or the creation of artificial patterns that don't exist in the real data. Additionally, SMOTE assumes that the feature space is continuous and that interpolation between examples is meaningful, which may not hold for all types of data.
+Mặc dù SMOTE có thể có lợi nhưng không phải lúc nào nó cũng là giải pháp tối ưu. SMOTE có thể tạo ra nhiễu hoặc tạo ra các ví dụ tổng hợp không thực tế, đặc biệt là trong không gian nhiều chiều hoặc với các thùng dữ liệu phân tích. Điều này có thể dẫn đến việc trang bị quá trình độ hoặc tạo ra các mẫu nhân vật không tồn tại trong quá trình thực thi dữ liệu. Ngoài ra, SMOTE giả định rằng không có đối tượng nào liên tục và được phép nội dung giữa các mẫu có ý nghĩa, điều này có thể không đúng với tất cả các loại dữ liệu.
 
 ```python
 import numpy as np
@@ -154,9 +154,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 6: SMOTE and Noise Introduction
+Slide 6: Giới thiệu về SMOTE và Noise
 
-SMOTE can inadvertently introduce noise into the dataset. This occurs when synthetic samples are generated in regions that don't accurately represent the true distribution of the minority class. For instance, in datasets with overlapping classes or complex decision boundaries, SMOTE might create synthetic samples that fall into the majority class region, leading to increased confusion for the classifier.
+SMOTE có thể vô hiệu hóa nhiễu đầu vào dữ liệu. Điều này xảy ra khi các tổng mẫu được tạo ở những vùng không thể xác định chính xác thực tế phân tích của số tầng tối thiểu. Ví dụ: trong các tập dữ liệu có các lớp chéo hoặc ranh giới được xác định tạp chất phức tạp, SMOTE có thể tạo các tổng hợp mẫu rơi vào khu vực lớp đa số, dẫn đến tăng cường sự hỗn hợp cho loại phân vùng.
 
 ```python
 import numpy as np
@@ -190,9 +190,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 7: Real-Life Example: Rare Disease Detection
+Trang trình chiếu 7: Ví dụ thực tế: Phát hiện bệnh độc gặp
 
-Consider a rare disease detection scenario where only 1% of patients have the disease. SMOTE can be applied to balance the dataset, but it may introduce noise by creating synthetic patients with unrealistic combinations of symptoms. This could lead to false positives in the model's predictions, potentially causing unnecessary stress and further testing for healthy individuals.
+Hãy xem xét một vấn đề phát hiện bệnh hiếm gặp khi chỉ có 1% bệnh nhân bệnh. SMOTE có thể được áp dụng để cân bằng dữ liệu, nhưng nó có thể gây nhiễu bằng cách tạo ra các bệnh nhân tổng hợp với các triệu chứng không thực tế. Điều này có thể dẫn đến kết quả dương tính giả trong dự đoán của mô hình, có khả năng gây căng thẳng không cần thiết và phải thử nghiệm bổ sung đối với những người khỏe mạnh.
 
 ```python
 import numpy as np
@@ -230,9 +230,9 @@ print("\nWith SMOTE:")
 print(classification_report(y_test, clf_smote.predict(X_test)))
 ```
 
-Slide 8: Real-Life Example: Image Classification
+Trang trình bày 8: Ví dụ thực tế: Phân loại hình ảnh
 
-In image classification tasks, such as identifying rare objects in satellite imagery, SMOTE can be problematic. Generating synthetic images by interpolating between existing ones may create unrealistic or nonsensical images. This can lead to poor generalization and decreased model performance when applied to real-world data.
+Trong các nhiệm vụ phân loại hình ảnh, được xác định như xác định các vật thể lạ trong hình ảnh bảo vệ, SMOTE có thể gặp vấn đề. Việc tạo hình ảnh tổng hợp bằng cách nội suy giữa các hình ảnh hiện có có thể tạo ra hình ảnh phi thực tế hoặc vô nghĩa. Điều này có thể dẫn đến khả năng hóa học gần hơn và giảm hiệu suất khi áp dụng dữ liệu trong thế giới thực.
 
 ```python
 import numpy as np
@@ -270,9 +270,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 9: Alternatives to SMOTE
+Slide 9: Lựa chọn thay thế cho SMOTE
 
-While SMOTE can be effective, other techniques may be more suitable depending on the specific dataset and problem. Undersampling methods, such as Random Undersampling or Tomek Links, reduce the majority class instead of increasing the minority class. Ensemble methods like BalancedRandomForestClassifier combine multiple models to handle imbalance. Additionally, adjusting class weights or using specialized loss functions can address imbalance without modifying the dataset.
+Mặc dù SMOTE có thể mang lại hiệu quả nhưng các kỹ thuật khác có thể phù hợp hơn tùy thuộc vào dữ liệu và vấn đề cụ thể. Các phương pháp lấy mẫu dưới đây, có giới hạn như Lấy mẫu ngẫu nhiên hoặc Tomek liên kết, giảm lớp đa số thay vì tăng số lượng tối thiểu. Các phương thức tập hợp như BalancedRandomForestClassifier kết hợp nhiều mô hình để xử lý tình trạng mất cân bằng. Ngoài ra, việc điều chỉnh số lớp hoặc sử dụng các chức năng mất mát chuyên dụng có thể giải quyết tình trạng mất cân bằng mà không cần chỉnh sửa dữ liệu.
 
 ```python
 from sklearn.datasets import make_classification
@@ -296,9 +296,9 @@ print("Random Forest with class weights:")
 print(classification_report(y_test, y_pred))
 ```
 
-Slide 10: Evaluating the Need for SMOTE
+Trang trình chiếu 10: Đánh giá nhu cầu về SMOTE
 
-Before applying SMOTE, it's crucial to assess whether it's necessary and beneficial for your specific problem. Evaluate the dataset's characteristics, such as class distribution and feature relationships. Consider the problem domain and the consequences of false positives versus false negatives. Sometimes, the natural imbalance in the data reflects real-world distributions and shouldn't be altered.
+Trước khi áp dụng SMOTE, điều quan trọng là phải đánh giá xem nó có cần thiết và mang lại lợi ích cho vấn đề cụ thể của bạn hay không. Đánh giá các đặc điểm của dữ liệu, phân loại như phân phối lớp và các mối quan hệ hệ thống. Xem xét phạm vi vấn đề và kết quả cuối cùng của kết quả tính toán dương tính và âm tính giả. Đôi khi, sự mất cân bằng tự nhiên trong dữ liệu phản ánh sự phân tích trong thế giới thực và không nên thay đổi.
 
 ```python
 import numpy as np
@@ -330,9 +330,9 @@ X, y = make_classification(n_samples=1000, n_classes=2, weights=[0.9, 0.1], rand
 evaluate_smote_necessity(X, y)
 ```
 
-Slide 11: SMOTE Hyperparameter Tuning
+Slide 11: Điều chỉnh siêu thông số SMOTE
 
-When using SMOTE, careful tuning of its hyperparameters is essential to maximize its effectiveness while minimizing potential drawbacks. Key parameters include the sampling strategy (determining the desired ratio of minority to majority samples) and the number of nearest neighbors used for interpolation. Grid search with cross-validation can help find optimal parameters for your specific dataset.
+Khi sử dụng SMOTE, việc điều chỉnh cẩn thận các siêu tham số của nó là điều cần thiết để tối đa hóa hiệu quả hóa của nó đồng thời giảm thiểu những nhược điểm tiềm ẩn. Các tham số chính bao gồm chiến lược lấy mẫu (xác định tỷ lệ mong muốn giữa số mẫu nhỏ và số mẫu lớn) và số lượng lân cận gần nhất được sử dụng để nội suy. Tìm kiếm chuỗi xác thực có thể giúp tìm kiếm các tham số tối ưu cho dữ liệu cụ thể của bạn.
 
 ```python
 from sklearn.model_selection import GridSearchCV
@@ -363,9 +363,9 @@ print("Best parameters:", grid_search.best_params_)
 print("Best F1-score:", grid_search.best_score_)
 ```
 
-Slide 12: Combining SMOTE with Other Techniques
+Slide 12: Kết hợp SMOTE với các kỹ thuật khác
 
-To address SMOTE's limitations, consider combining it with other techniques. For example, SMOTEENN (SMOTE with Edited Nearest Neighbors) or SMOTETomek (SMOTE with Tomek Links) apply SMOTE followed by undersampling to remove noisy samples. These hybrid approaches can help create more balanced datasets while reducing the risk of introducing noise or unrealistic synthetic samples.
+Để giải quyết những hạn chế của SMOTE, hãy cân nhắc việc kết hợp nó với các kỹ thuật khác. Ví dụ: SMOTEENN (SMOTE với Hàng xóm gần nhất đã được chỉnh sửa) hoặc SMOTETomek (SMOTE với Tomek Liên kết) áp dụng SMOTE, sau đó lấy mẫu dưới để loại bỏ các nhiễu xung. Phương pháp kết hợp này có thể giúp tạo ra sự cân bằng dữ liệu hơn là đồng thời giảm nguy cơ gây nhiễu hoặc tổng hợp các mẫu không thực tế.
 
 ```python
 from imblearn.combine import SMOTETomek, SMOTEENN
@@ -396,9 +396,9 @@ print(f"Mean F1-score (SMOTETomek): {scores_tomek.mean():.3f}")
 print(f"Mean F1-score (SMOTEENN): {scores_enn.mean():.3f}")
 ```
 
-Slide 13: Monitoring and Validating SMOTE Results
+Slide 13: Giám sát và xác nhận kết quả SMOTE
 
-After applying SMOTE, it's crucial to monitor and validate the results to ensure the synthetic samples are meaningful and beneficial. Techniques like t-SNE or UMAP can help visualize high-dimensional data before and after SMOTE. Additionally, comparing performance metrics on both the original and SMOTE-resampled datasets using cross-validation can provide insights into the effectiveness of the technique.
+Sau khi áp dụng SMOTE, điều quan trọng phải được theo dõi và xác định kết quả để đảm bảo các mẫu tổng hợp có ý nghĩa và mang lại lợi ích. Các kỹ thuật như t-SNE hoặc UMAP có thể giúp trực quan hóa dữ liệu chiều cao trước và sau SMOTE. Ngoài ra, việc so sánh các hiệu suất dữ liệu trên cả dữ liệu gốc và dữ liệu được lấy lại SMOTE mẫu bằng cách sử dụng xác thực chéo có thể cung cấp thông tin chi tiết về hiệu quả kỹ thuật.
 
 ```python
 import numpy as np
@@ -436,12 +436,12 @@ X_resampled, y_resampled = smote.fit_resample(X, y)
 visualize_smote_results(X, y, X_resampled, y_resampled)
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-For those interested in diving deeper into the topic of imbalanced datasets and SMOTE, here are some valuable resources:
+Đối với những người muốn tìm hiểu sâu hơn về chủ đề bộ dữ liệu mất cân bằng và SMOTE, đây là một số tài nguyên có giá trị:
 
-1.  Chawla, N. V., Bowyer, K. W., Hall, L. O., & Kegelmeyer, W. P. (2002). SMOTE: Synthetic Minority Over-sampling Technique. Journal of Artificial Intelligence Research, 16, 321-357. ArXiv: [https://arxiv.org/abs/1106.1813](https://arxiv.org/abs/1106.1813)
-2.  He, H., & Garcia, E. A. (2009). Learning from Imbalanced Data. IEEE Transactions on Knowledge and Data Engineering, 21(9), 1263-1284. DOI: 10.1109/TKDE.2008.239
-3.  Lemaitre, G., Nogueira, F., & Aridas, C. K. (2017). Imbalanced-learn: A Python Toolbox to Tackle the Curse of Imbalanced Datasets in Machine Learning. Journal of Machine Learning Research, 18(17), 1-5. ArXiv: [https://arxiv.org/abs/1609.06570](https://arxiv.org/abs/1609.06570)
+1. Chawla, N. V., Bowyer, K. W., Hall, L. O., & Kegelmeyer, W. P. (2002). SMOTE: Kỹ thuật thu thập mẫu quá mức tổng hợp tối thiểu. Tạp chí Nghiên cứu Trí tuệ Nhân tạo, 16, 321-357. ArXiv: [https://arxiv.org/abs/1106.1813](https://arxiv.org/abs/1106.1813)
+2. Anh ấy, H., & Garcia, E. A. (2009). Học từ dữ liệu không cân bằng. Giao dịch của IEEE về Kỹ thuật Kiến thức và Dữ liệu, 21(9), 1263-1284. DOI: 10.1109/TKDE.2008.239
+3. Lemaitre, G., Nogueira, F., & Aridas, C. K. (2017). Học mất cân bằng: Hộp công cụ Python để giải quyết lời nói về các bộ dữ liệu mất cân bằng trong máy học. Tạp chí Nghiên cứu Học máy, 18(17), 1-5. ArXiv: [https://arxiv.org/abs/1609.06570](https://arxiv.org/abs/1609.06570)
 
-These papers provide in-depth discussions on imbalanced datasets, SMOTE, and various other techniques for handling class imbalance in machine learning.
+Các bài viết này cung cấp các cuộc thảo luận chuyên sâu về bộ dữ liệu mất cân bằng, SMOTE và nhiều kỹ thuật khác để xử lý tình trạng mất cân bằng lớp học trong máy học.

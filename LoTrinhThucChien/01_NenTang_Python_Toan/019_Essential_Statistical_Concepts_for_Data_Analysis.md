@@ -1,7 +1,7 @@
-## Essential Statistical Concepts for Data Analysis
-Slide 1: Correlation Analysis - Pearson vs Spearman
+## Các khái niệm thống kê cần thiết để phân tích dữ liệu
+Trang trình bày 1: Phân tích tương quan - Pearson vs Spearman
 
-Statistical correlations measure relationships between variables, with Pearson capturing linear relationships and Spearman handling non-linear monotonic relationships. Understanding their differences enables choosing the appropriate method for your data analysis tasks.
+Tương quan thống kê đo lường mối quan hệ giữa các biến, trong đó Pearson nắm bắt các mối quan hệ tuyến tính và Spearman xử lý các mối quan hệ đơn điệu phi tuyến tính. Hiểu được sự khác biệt của chúng cho phép chọn phương pháp thích hợp cho nhiệm vụ phân tích dữ liệu của bạn.
 
 ```python
 import numpy as np
@@ -28,9 +28,9 @@ print(f"Pearson correlation: {pearson_nonlinear[0]:.3f}")
 print(f"Spearman correlation: {spearman_nonlinear[0]:.3f}")
 ```
 
-Slide 2: P-Value Computation from Scratch
+Trang trình bày 2: Tính toán giá trị P từ đầu
 
-The p-value calculation involves comparing observed test statistics against a null distribution. This implementation demonstrates how to compute p-values for a two-sample t-test without relying on statistical libraries.
+Việc tính toán giá trị p liên quan đến việc so sánh số liệu thống kê kiểm tra được quan sát với phân phối null. Việc triển khai này trình bày cách tính giá trị p cho thử nghiệm t hai mẫu mà không cần dựa vào thư viện thống kê.
 
 ```python
 def calculate_t_statistic(sample1, sample2):
@@ -64,9 +64,9 @@ p_val = compute_p_value(sample1, sample2)
 print(f"Computed p-value: {p_val:.4f}")
 ```
 
-Slide 3: Survivorship Bias Detection
+Trang trình bày 3: Phát hiện xu hướng sống sót
 
-Survivorship bias can significantly impact analysis results when working with historical data. This implementation shows how to detect and quantify survivorship bias in financial time series data.
+Sự thiên vị sống sót có thể tác động đáng kể đến kết quả phân tích khi làm việc với dữ liệu lịch sử. Việc triển khai này cho thấy cách phát hiện và định lượng độ lệch của tỷ lệ sống sót trong dữ liệu chuỗi thời gian tài chính.
 
 ```python
 import pandas as pd
@@ -128,9 +128,9 @@ for key, value in results.items():
     print(f"{key}: {value:.4f}")
 ```
 
-Slide 4: Simpson's Paradox Implementation
+Trang trình bày 4: Việc thực hiện nghịch lý của Simpson
 
-Simpson's Paradox occurs when trends present in different groups reverse when the groups are combined. This implementation demonstrates how to detect and visualize Simpson's Paradox using a practical example.
+Nghịch lý Simpson xảy ra khi các xu hướng hiện diện trong các nhóm khác nhau đảo ngược khi các nhóm được kết hợp lại. Việc triển khai này trình bày cách phát hiện và hình dung Nghịch lý của Simpson bằng một ví dụ thực tế.
 
 ```python
 import numpy as np
@@ -198,9 +198,9 @@ for group, corr in results['group_correlations'].items():
 print(f"\nParadox detected: {results['has_paradox']}")
 ```
 
-Slide 5: Central Limit Theorem Visualization
+Slide 5: Trực quan hóa định lý giới hạn trung tâm
 
-The Central Limit Theorem demonstrates how sample means approach a normal distribution regardless of the original population distribution. This implementation provides a comprehensive visualization of this fundamental statistical concept.
+Định lý giới hạn trung tâm chứng minh cách trung bình mẫu tiếp cận phân phối chuẩn bất kể phân bố dân số ban đầu như thế nào. Việc triển khai này cung cấp một hình ảnh trực quan toàn diện về khái niệm thống kê cơ bản này.
 
 ```python
 import numpy as np
@@ -262,9 +262,9 @@ for dist_name, dist_func in distributions.items():
     print(f"Sample std: {np.std(samples):.4f}")
 ```
 
-Slide 6: Bayesian Inference Implementation
+Trang trình bày 6: Triển khai suy luận Bayes
 
-A practical implementation of Bayesian inference that updates probabilities based on new evidence. This code demonstrates the core concepts of prior, likelihood, and posterior probability calculations.
+Việc triển khai thực tế suy luận Bayes nhằm cập nhật các xác suất dựa trên bằng chứng mới. Mã này thể hiện các khái niệm cốt lõi về tính toán xác suất trước, khả năng và xác suất sau.
 
 ```python
 import numpy as np
@@ -347,9 +347,9 @@ x = np.linspace(0, 10, 100)
 predictions = bayes_model.predict(x)
 ```
 
-Slide 7: Law of Large Numbers Visualization
+Slide 7: Định luật trực quan hóa số lớn
 
-This implementation demonstrates the Law of Large Numbers through Monte Carlo simulation, showing how sample means converge to the true population mean as sample size increases.
+Việc triển khai này thể hiện Định luật số lớn thông qua mô phỏng Monte Carlo, cho thấy cách trung bình mẫu hội tụ về trung bình tổng thể thực khi kích thước mẫu tăng lên.
 
 ```python
 import numpy as np
@@ -433,9 +433,9 @@ for dist_name, dist_info in distributions.items():
     }
 ```
 
-Slide 8: Selection Bias Detection and Correction
+Trang trình bày 8: Phát hiện và hiệu chỉnh sai lệch lựa chọn
 
-Selection bias occurs when data collection methods create a non-representative sample. This implementation demonstrates techniques for detecting and correcting selection bias in datasets using propensity score matching.
+Sai lệch lựa chọn xảy ra khi các phương pháp thu thập dữ liệu tạo ra một mẫu không mang tính đại diện. Việc triển khai này thể hiện các kỹ thuật phát hiện và sửa lỗi sai lệch lựa chọn trong các tập dữ liệu bằng cách sử dụng kết hợp điểm xu hướng.
 
 ```python
 import numpy as np
@@ -574,9 +574,9 @@ for feature in ['feature1', 'feature2', 'feature3']:
     print(f"Corrected mean: {corrected_mean:.3f}")
 ```
 
-Slide 9: Advanced Outlier Detection
+Trang trình bày 9: Phát hiện ngoại lệ nâng cao
 
-This implementation provides multiple methods for outlier detection, including statistical, distance-based, and density-based approaches, with visualization of results.
+Việc triển khai này cung cấp nhiều phương pháp để phát hiện ngoại lệ, bao gồm các phương pháp thống kê, dựa trên khoảng cách và dựa trên mật độ, với khả năng trực quan hóa kết quả.
 
 ```python
 import numpy as np
@@ -672,9 +672,9 @@ print(f"Original std: {data.std():.3f}")
 print(f"Clean std: {clean_data.std():.3f}")
 ```
 
-Slide 10: Real-World Application - Credit Risk Analysis
+Slide 10: Ứng dụng thực tế - Phân tích rủi ro tín dụng
 
-This implementation demonstrates a comprehensive statistical analysis pipeline for credit risk assessment, incorporating multiple statistical concepts covered previously.
+Việc triển khai này thể hiện một quy trình phân tích thống kê toàn diện để đánh giá rủi ro tín dụng, kết hợp nhiều khái niệm thống kê được đề cập trước đó.
 
 ```python
 import numpy as np
@@ -834,9 +834,9 @@ for feature, metrics in importance_metrics.items():
     print(f"Correlation: {metrics['correlation']:.3f}")
 ```
 
-Slide 11: Statistical Process Control (SPC)
+Trang trình chiếu 11: Kiểm soát quy trình thống kê (SPC)
 
-This implementation provides tools for statistical process control, including control charts and process capability analysis.
+Việc triển khai này cung cấp các công cụ để kiểm soát quy trình thống kê, bao gồm biểu đồ kiểm soát và phân tích khả năng quy trình.
 
 ```python
 import numpy as np
@@ -974,9 +974,9 @@ for index, value in capability.items():
     print(f"{index}: {value:.3f}")
 ```
 
-Slide 12: Time Series Decomposition and Analysis
+Trang trình bày 12: Phân tích và phân tích chuỗi thời gian
 
-This implementation provides advanced statistical analysis of time series data, including trend detection, seasonality analysis, and anomaly detection using multiple statistical methods.
+Việc triển khai này cung cấp phân tích thống kê nâng cao về dữ liệu chuỗi thời gian, bao gồm phát hiện xu hướng, phân tích thời vụ và phát hiện bất thường bằng nhiều phương pháp thống kê.
 
 ```python
 import numpy as np
@@ -1156,10 +1156,10 @@ for method, anomaly_mask in anomalies.items():
     print(f"{method} anomalies detected: {sum(anomaly_mask)}")
 ```
 
-Slide 13: Additional Resources
+Trang trình bày 13: Tài nguyên bổ sung
 
-*   "Statistical Learning with Sparsity: The Lasso and Generalizations" [https://arxiv.org/abs/1303.0518](https://arxiv.org/abs/1303.0518)
-*   "A Tutorial on Principal Component Analysis" [https://arxiv.org/abs/1404.1100](https://arxiv.org/abs/1404.1100)
-*   "Deep Learning in Statistical Machine Learning" [https://arxiv.org/abs/1603.04467](https://arxiv.org/abs/1603.04467)
-*   "Modern Statistics for Modern Biology" [https://arxiv.org/abs/1504.00641](https://arxiv.org/abs/1504.00641)
-*   "Causal Inference in Statistics: A Primer" [https://arxiv.org/abs/1505.00269](https://arxiv.org/abs/1505.00269)
+* "Học thống kê với độ thưa thớt: Lasso và khái quát hóa" [https://arxiv.org/abs/1303.0518](https://arxiv.org/abs/1303.0518)
+* "Hướng dẫn về phân tích thành phần chính" [https://arxiv.org/abs/1404.1100](https://arxiv.org/abs/1404.1100)
+* "Học sâu trong học máy thống kê" [https://arxiv.org/abs/1603.04467](https://arxiv.org/abs/1603.04467)
+* "Thống kê hiện đại cho sinh học hiện đại" [https://arxiv.org/abs/1504.00641](https://arxiv.org/abs/1504.00641)
+* "Suy luận nhân quả trong thống kê: Sơ lược" [https://arxiv.org/abs/1505.00269](https://arxiv.org/abs/1505.00269)

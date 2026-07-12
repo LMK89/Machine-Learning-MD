@@ -1,7 +1,7 @@
-## Advantages of Logging over Print() in Python
-Slide 1: Introduction to Logging in Python
+## Ưu điểm của việc đăng nhập qua Print() trong Python
+Slide 1: Giới thiệu về Logging trong Python
 
-Logging is a powerful tool for tracking events in your Python programs. It offers significant advantages over using print() statements for debugging and monitoring.
+Ghi nhật ký là một công cụ mạnh mẽ để theo dõi các sự kiện trong chương trình Python của bạn. Nó mang lại những lợi thế đáng kể so với việc sử dụng các câu lệnh print() để gỡ lỗi và giám sát.
 
 ```python
 import logging
@@ -20,9 +20,9 @@ logging.error("File not found")
 # 2024-09-28 10:15:30,125 - ERROR - File not found
 ```
 
-Slide 2: Adjustable Severity Levels
+Trang trình bày 2: Mức độ nghiêm trọng có thể điều chỉnh
 
-Logging provides different severity levels, allowing you to categorize messages based on their importance. This feature enables better organization and filtering of log messages.
+Việc ghi nhật ký cung cấp các mức độ nghiêm trọng khác nhau, cho phép bạn phân loại thư dựa trên tầm quan trọng của chúng. Tính năng này cho phép tổ chức và lọc thông điệp tường trình tốt hơn.
 
 ```python
 import logging
@@ -43,9 +43,9 @@ logging.critical("A critical error - program may be unable to continue")
 # CRITICAL:root:A critical error - program may be unable to continue
 ```
 
-Slide 3: Configuration Flexibility
+Slide 3: Cấu hình linh hoạt
 
-Logging offers extensive configuration options, allowing you to customize where and how your messages are logged. You can easily direct log output to different destinations.
+Tính năng ghi nhật ký cung cấp các tùy chọn cấu hình mở rộng, cho phép bạn tùy chỉnh vị trí và cách thức ghi lại tin nhắn của bạn. Bạn có thể dễ dàng hướng đầu ra nhật ký đến các điểm đến khác nhau.
 
 ```python
 import logging
@@ -65,9 +65,9 @@ logging.warning("This will appear in both console and both.log file")
 # WARNING:root:This will appear in both console and both.log file
 ```
 
-Slide 4: Improved Performance
+Trang trình bày 4: Hiệu suất được cải thiện
 
-Unlike print() statements, logging can be efficiently disabled or filtered without modifying the code, resulting in better performance in production environments.
+Không giống như các câu lệnh print(), việc ghi nhật ký có thể bị vô hiệu hóa hoặc lọc một cách hiệu quả mà không cần sửa đổi mã, mang lại hiệu suất tốt hơn trong môi trường sản xuất.
 
 ```python
 import logging
@@ -100,9 +100,9 @@ print(f"Logging (ignored) time: {log_ignored_time:.4f} seconds")
 # Logging (ignored) time: 0.0100 seconds
 ```
 
-Slide 5: Efficient Bug Management
+Trang trình bày 5: Quản lý lỗi hiệu quả
 
-Logging provides detailed information about exceptions, making it easier to diagnose and fix issues in your code.
+Việc ghi nhật ký cung cấp thông tin chi tiết về các ngoại lệ, giúp chẩn đoán và khắc phục sự cố trong mã của bạn dễ dàng hơn.
 
 ```python
 import logging
@@ -126,9 +126,9 @@ divide(10, 0)
 # ZeroDivisionError: division by zero
 ```
 
-Slide 6: Simplified Deployment
+Trang trình bày 6: Triển khai đơn giản hóa
 
-With logging, you can easily adjust the verbosity of your application without modifying the code, simplifying the transition from development to production environments.
+Với tính năng ghi nhật ký, bạn có thể dễ dàng điều chỉnh mức độ chi tiết của ứng dụng mà không cần sửa đổi mã, đơn giản hóa quá trình chuyển đổi từ môi trường phát triển sang môi trường sản xuất.
 
 ```python
 import logging
@@ -158,9 +158,9 @@ logging.error("Critical error occurred")
 # ERROR:root:Critical error occurred
 ```
 
-Slide 7: Customizing Log Formats
+Slide 7: Tùy chỉnh định dạng nhật ký
 
-Logging allows you to customize the format of your log messages, providing more context and making them easier to parse and analyze.
+Việc ghi nhật ký cho phép bạn tùy chỉnh định dạng của thông điệp tường trình, cung cấp nhiều ngữ cảnh hơn và giúp chúng dễ dàng phân tích và phân tích hơn.
 
 ```python
 import logging
@@ -188,9 +188,9 @@ logger.warning('This is a warning message')
 # 2024-09-28 10:30:15,125 - MyApp - WARNING - This is a warning message
 ```
 
-Slide 8: Logging in Multiple Modules
+Slide 8: Đăng nhập nhiều module
 
-Logging can be effectively used across multiple modules in your application, providing a centralized way to manage logs from different parts of your program.
+Tính năng ghi nhật ký có thể được sử dụng hiệu quả trên nhiều mô-đun trong ứng dụng của bạn, cung cấp một cách tập trung để quản lý nhật ký từ các phần khác nhau trong chương trình của bạn.
 
 ```python
 # module_a.py
@@ -224,9 +224,9 @@ module_b.function_b()
 # WARNING:module_b:Function B called
 ```
 
-Slide 9: Rotating File Handler
+Slide 9: Trình xử lý tệp xoay
 
-For long-running applications, it's important to manage log file sizes. The RotatingFileHandler allows you to automatically create new log files when the current one reaches a certain size.
+Đối với các ứng dụng chạy lâu, điều quan trọng là phải quản lý kích thước tệp nhật ký. RotatingFileHandler cho phép bạn tự động tạo các tệp nhật ký mới khi tệp hiện tại đạt đến kích thước nhất định.
 
 ```python
 import logging
@@ -246,9 +246,9 @@ for i in range(10000):
 # when app.log reaches 2000 bytes
 ```
 
-Slide 10: Real-Life Example: Web Server Logging
+Trang trình chiếu 10: Ví dụ thực tế: Ghi nhật ký máy chủ web
 
-Logging is crucial for monitoring and debugging web applications. Here's an example of how you might set up logging for a simple web server.
+Ghi nhật ký là rất quan trọng để theo dõi và gỡ lỗi các ứng dụng web. Đây là ví dụ về cách bạn có thể thiết lập ghi nhật ký cho một máy chủ web đơn giản.
 
 ```python
 import logging
@@ -281,9 +281,9 @@ httpd.serve_forever()
 # 2024-09-28 11:00:05,457 - INFO - 127.0.0.1 - - [28/Sep/2024 11:00:05] "GET / HTTP/1.1" 200 -
 ```
 
-Slide 11: Real-Life Example: Data Processing Pipeline
+Trang trình bày 11: Ví dụ thực tế: Quy trình xử lý dữ liệu
 
-Logging is essential in data processing pipelines to track progress and catch errors. Here's an example of how logging might be used in a simple data processing script.
+Ghi nhật ký là điều cần thiết trong quy trình xử lý dữ liệu để theo dõi tiến trình và phát hiện lỗi. Đây là ví dụ về cách sử dụng tính năng ghi nhật ký trong tập lệnh xử lý dữ liệu đơn giản.
 
 ```python
 import logging
@@ -321,16 +321,16 @@ result = process_data(data)
 # 2024-09-28 11:30:00,235 - INFO - Finished processing. 1000 items successful
 ```
 
-Slide 12: Logging Best Practices
+Trang trình bày 12: Các phương pháp hay nhất về ghi nhật ký
 
-Here are some best practices to follow when implementing logging in your Python applications:
+Dưới đây là một số phương pháp hay nhất cần tuân theo khi triển khai đăng nhập vào ứng dụng Python của bạn:
 
-1.  Use appropriate log levels
-2.  Include contextual information
-3.  Use structured logging for complex data
-4.  Configure logging as early as possible in your application
-5.  Use exception logging with logging.exception()
-6.  Avoid sensitive information in logs
+1. Sử dụng cấp độ nhật ký phù hợp
+2. Bao gồm thông tin theo ngữ cảnh
+3. Sử dụng tính năng ghi nhật ký có cấu trúc cho dữ liệu phức tạp
+4. Định cấu hình ghi nhật ký trong ứng dụng của bạn càng sớm càng tốt
+5. Sử dụng ghi nhật ký ngoại lệ với log.Exception()
+6. Tránh thông tin nhạy cảm trong nhật ký
 
 ```python
 import logging
@@ -366,9 +366,9 @@ process_user(67890, 'delete')
 # ValueError: Cannot delete user
 ```
 
-Slide 13: Logging vs Print: A Comparison
+Trang trình bày 13: Ghi nhật ký và In: So sánh
 
-Let's compare logging and print() to understand why logging is generally preferred for debugging and monitoring applications.
+Hãy so sánh việc ghi nhật ký và in() để hiểu tại sao việc ghi nhật ký thường được ưa thích hơn để gỡ lỗi và giám sát các ứng dụng.
 
 ```python
 import logging
@@ -403,12 +403,12 @@ using_logging()
 # 2024-09-28 12:30:01,124 - INFO - Function completed
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-For more information on Python logging, consider exploring these resources:
+Để biết thêm thông tin về ghi nhật ký Python, hãy xem xét khám phá các tài nguyên sau:
 
-1.  Python's official logging documentation: [https://docs.python.org/3/library/logging.html](https://docs.python.org/3/library/logging.html)
-2.  Logging Cookbook: [https://docs.python.org/3/howto/logging-cookbook.html](https://docs.python.org/3/howto/logging-cookbook.html)
-3.  "Structured Logging in Python" by Yury Selivanov: [https://arxiv.org/abs/2110.07557](https://arxiv.org/abs/2110.07557)
+1. Tài liệu ghi nhật ký chính thức của Python: [https://docs.python.org/3/library/logging.html](https://docs.python.org/3/library/logging.html)
+2. Ghi nhật ký Sách dạy nấu ăn: [https://docs.python.org/3/howto/logging-cookbook.html](https://docs.python.org/3/howto/logging-cookbook.html)
+3. "Ghi nhật ký có cấu trúc bằng Python" của Yury Selivanov: [https://arxiv.org/abs/2110.07557](https://arxiv.org/abs/2110.07557)
 
-These resources provide in-depth explanations and advanced techniques for mastering logging in Python.
+Những tài nguyên này cung cấp những giải thích chuyên sâu và các kỹ thuật nâng cao để thành thạo việc ghi nhật ký bằng Python.

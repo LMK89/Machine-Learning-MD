@@ -1,7 +1,7 @@
-## Partial Functions in Python for Code Modularity
-Slide 1: Introduction to Partial Functions in Python
+## Hàm từng phần trong Python dành cho tính mô đun mã
+Trang trình bày 1: Giới thiệu về Hàm từng phần trong Python
 
-Partial functions in Python allow us to create new functions by fixing a subset of arguments of an existing function. This technique enhances code modularity and reusability.
+Các hàm một phần trong Python cho phép chúng ta tạo các hàm mới bằng cách sửa một tập hợp con các đối số của hàm hiện có. Kỹ thuật này tăng cường tính mô đun hóa mã và khả năng sử dụng lại.
 
 ```python
 from functools import partial
@@ -16,9 +16,9 @@ print(square(4))  # Output: 16
 print(square(5))  # Output: 25
 ```
 
-Slide 2: The functools.partial Function
+Slide 2: Hàm functools.partial
 
-The `functools.partial` function is the key to creating partial functions in Python. It takes a function and some arguments, returning a new function with those arguments pre-set.
+Hàm `functools.partial` là chìa khóa để tạo các hàm một phần trong Python. Nó nhận một hàm và một số đối số, trả về một hàm mới với các đối số được đặt trước đó.
 
 ```python
 from functools import partial
@@ -34,9 +34,9 @@ print(say_hello("Alice"))  # Output: Hello, Alice!
 print(say_hi("Bob"))       # Output: Hi, Bob!
 ```
 
-Slide 3: Partial Functions and Default Arguments
+Trang trình bày 3: Hàm từng phần và đối số mặc định
 
-Partial functions differ from default arguments. While default arguments are set at function definition, partial functions create new function objects with pre-set arguments.
+Các hàm một phần khác với các đối số mặc định. Trong khi các đối số mặc định được đặt ở định nghĩa hàm, các hàm một phần sẽ tạo các đối tượng hàm mới với các đối số được đặt trước.
 
 ```python
 def multiply(a, b=2):
@@ -50,9 +50,9 @@ print(multiply(3, 4)) # Output: 12 (overriding default argument)
 print(double(3, 4))   # Output: 12 (overriding partial function)
 ```
 
-Slide 4: Partial Functions with Positional Arguments
+Trang trình bày 4: Hàm từng phần với đối số vị trí
 
-Partial functions can also be created with positional arguments. The new function will have fewer required arguments than the original.
+Các hàm một phần cũng có thể được tạo bằng các đối số vị trí. Hàm mới sẽ có ít đối số bắt buộc hơn hàm ban đầu.
 
 ```python
 from functools import partial
@@ -67,9 +67,9 @@ print(cube(2))  # Output: 8 (3^2)
 print(cube(3))  # Output: 27 (3^3)
 ```
 
-Slide 5: Partial Functions in Event Handlers
+Trang trình bày 5: Các hàm một phần trong Trình xử lý sự kiện
 
-Partial functions are particularly useful in event-driven programming, allowing us to pass additional arguments to callback functions.
+Các hàm một phần đặc biệt hữu ích trong lập trình hướng sự kiện, cho phép chúng ta chuyển các đối số bổ sung cho các hàm gọi lại.
 
 ```python
 import tkinter as tk
@@ -85,9 +85,9 @@ button.pack()
 root.mainloop()
 ```
 
-Slide 6: Partial Functions for Configuration
+Slide 6: Chức năng một phần cho cấu hình
 
-Partial functions can be used to create pre-configured versions of functions, enhancing code modularity.
+Các hàm một phần có thể được sử dụng để tạo các phiên bản hàm được cấu hình sẵn, nâng cao tính mô đun mã.
 
 ```python
 from functools import partial
@@ -106,9 +106,9 @@ print(connect_to_prod(password="secret"))
 # Output: Connected to prod.example.com:5432 as admin
 ```
 
-Slide 7: Partial Functions in Functional Programming
+Slide 7: Hàm từng phần trong lập trình hàm
 
-Partial functions play a crucial role in functional programming paradigms, enabling function composition and currying.
+Các hàm một phần đóng một vai trò quan trọng trong các mô hình lập trình hàm, cho phép kết hợp hàm và cà ri.
 
 ```python
 from functools import partial
@@ -127,9 +127,9 @@ increment_and_double = compose(double, increment)
 print(increment_and_double(3))  # Output: 8 ((3 + 1) * 2)
 ```
 
-Slide 8: Partial Functions for Parameter Binding
+Slide 8: Chức năng một phần để liên kết tham số
 
-Partial functions can bind parameters to create more specific versions of general functions.
+Các hàm một phần có thể liên kết các tham số để tạo ra các phiên bản cụ thể hơn của các hàm chung.
 
 ```python
 from functools import partial
@@ -151,9 +151,9 @@ for person in thirty_year_olds:
     print(person.name)  # Output: Alice, Charlie
 ```
 
-Slide 9: Partial Functions in Decorators
+Slide 9: Chức năng từng phần trong trang trí
 
-Partial functions can be used to create flexible decorators that accept arguments.
+Các hàm một phần có thể được sử dụng để tạo ra các trình trang trí linh hoạt chấp nhận các đối số.
 
 ```python
 from functools import partial, wraps
@@ -185,9 +185,9 @@ def fetch_data():
 print(fetch_data())  # May print: Data fetched successfully
 ```
 
-Slide 10: Partial Functions for Memoization
+Trang trình bày 10: Một phần chức năng ghi nhớ
 
-Partial functions can be used to implement memoization, a technique to cache expensive function calls.
+Các hàm một phần có thể được sử dụng để triển khai tính năng ghi nhớ, một kỹ thuật để lưu vào bộ đệm các lệnh gọi hàm đắt tiền.
 
 ```python
 from functools import partial, lru_cache
@@ -209,9 +209,9 @@ print(compute_with_5(3))  # Output: 8 (cached result)
 print(compute_with_10(7))  # Output: Computing 10 + 7 \n 17
 ```
 
-Slide 11: Partial Functions in Testing
+Slide 11: Chức năng từng phần trong kiểm thử
 
-Partial functions can simplify test setup by creating pre-configured test functions.
+Các chức năng từng phần có thể đơn giản hóa việc thiết lập thử nghiệm bằng cách tạo các chức năng thử nghiệm được cấu hình sẵn.
 
 ```python
 from functools import partial
@@ -241,9 +241,9 @@ if __name__ == "__main__":
     unittest.main()
 ```
 
-Slide 12: Real-Life Example: Image Processing
+Slide 12: Ví dụ thực tế: Xử lý ảnh
 
-Partial functions can be used in image processing to create reusable filter functions.
+Các hàm từng phần có thể được sử dụng trong xử lý ảnh để tạo các hàm lọc có thể tái sử dụng.
 
 ```python
 from functools import partial
@@ -272,9 +272,9 @@ high_contrast_image.save("high_contrast_image.jpg")
 gray_image.save("gray_image.jpg")
 ```
 
-Slide 13: Real-Life Example: Custom Sorting
+Trang trình bày 13: Ví dụ thực tế: Sắp xếp tùy chỉnh
 
-Partial functions can be used to create custom sorting functions for complex data structures.
+Các hàm một phần có thể được sử dụng để tạo các hàm sắp xếp tùy chỉnh cho các cấu trúc dữ liệu phức tạp.
 
 ```python
 from functools import partial
@@ -309,11 +309,11 @@ print("\nSorted by rating (high to low):")
 print(sort_by_rating(products))
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-For further exploration of partial functions and functional programming in Python:
+Để khám phá thêm về các hàm từng phần và lập trình hàm trong Python:
 
-1. "Functional Programming in Python" by David Mertz (O'Reilly)
-2. "Python Cookbook" by David Beazley and Brian K. Jones (O'Reilly)
-3. Official Python documentation on functools: [https://docs.python.org/3/library/functools.html](https://docs.python.org/3/library/functools.html)
-4. "Higher-order functions and operations on callable objects" (PEP 309): [https://www.python.org/dev/peps/pep-0309/](https://www.python.org/dev/peps/pep-0309/)
+1. "Lập trình hàm trong Python" của David Mertz (O'Reilly)
+2. "Sách dạy nấu ăn Python" của David Beazley và Brian K. Jones (O'Reilly)
+3. Tài liệu Python chính thức về functools: [https://docs.python.org/3/library/functools.html](https://docs.python.org/3/library/functools.html)
+4. "Các hàm và thao tác bậc cao hơn trên các đối tượng có thể gọi được" (PEP 309): [https://www.python.org/dev/peps/pep-0309/](https://www.python.org/dev/peps/pep-0309/)

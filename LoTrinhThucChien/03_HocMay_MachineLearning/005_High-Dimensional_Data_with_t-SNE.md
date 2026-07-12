@@ -1,7 +1,7 @@
-## High-Dimensional Data with t-SNE
-Slide 1: t-SNE Fundamentals
+## Dữ liệu chiều cao với t-SNE
+Trang trình bày 1: Nguyên tắc cơ bản của t-SNE
 
-t-SNE (t-Distributed Stochastic Neighbor Embedding) is a powerful dimensionality reduction technique that excels at preserving local structure in high-dimensional data by modeling similar samples as nearby points and dissimilar samples as distant points in the lower-dimensional space.
+t-SNE (t-Distributed Stochastic Neighbor Embedding) là một kỹ thuật giảm kích thước mạnh mẽ, vượt trội trong việc bảo toàn cấu trúc cục bộ trong dữ liệu chiều cao bằng cách mô hình hóa các mẫu tương tự như các điểm gần đó và các mẫu khác nhau là các điểm ở xa trong không gian có chiều thấp hơn.
 
 ```python
 import numpy as np
@@ -24,9 +24,9 @@ plt.xlabel('First Component')
 plt.ylabel('Second Component')
 ```
 
-Slide 2: Understanding t-SNE Probability Distribution
+Trang trình bày 2: Tìm hiểu về phân phối xác suất t-SNE
 
-The core concept of t-SNE involves converting high-dimensional Euclidean distances into conditional probabilities that represent similarities, using a Student t-distribution in the low-dimensional space to avoid the crowding problem.
+Khái niệm cốt lõi của t-SNE liên quan đến việc chuyển đổi khoảng cách Euclide nhiều chiều thành xác suất có điều kiện thể hiện sự tương đồng, sử dụng phân phối t Sinh viên trong không gian ít chiều để tránh vấn đề đông đúc.
 
 ```python
 def compute_pairwise_affinities(X, perplexity=30.0, sigma=1.0):
@@ -59,9 +59,9 @@ def tsne_multiple_perplexities(X, perplexities=[5, 30, 50]):
         axes[idx].set_title(f'Perplexity: {perp}')
 ```
 
-Slide 4: Optimization Process
+Slide 4: Quy trình tối ưu hóa
 
-The t-SNE algorithm uses gradient descent to minimize the Kullback-Leibler divergence between the probability distributions in high-dimensional and low-dimensional spaces, making it computationally intensive but effective.
+Thuật toán t-SNE sử dụng phương pháp giảm độ dốc để giảm thiểu sự phân kỳ Kullback-Leibler giữa phân bố xác suất trong không gian nhiều chiều và không gian ít chiều, khiến thuật toán này chuyên sâu về mặt tính toán nhưng hiệu quả.
 
 ```python
 def compute_gradient(P, Q, Y, n_components=2):
@@ -103,9 +103,9 @@ plt.colorbar(scatter)
 plt.title('t-SNE visualization of MNIST digits')
 ```
 
-Slide 6: Implementation from Scratch
+Trang trình bày 6: Triển khai từ đầu
 
-Understanding the core mathematics of t-SNE requires implementing the algorithm from scratch. This implementation focuses on the fundamental probability computations and gradient descent optimization process.
+Để hiểu được toán học cốt lõi của t-SNE đòi hỏi phải triển khai thuật toán ngay từ đầu. Việc triển khai này tập trung vào các tính toán xác suất cơ bản và quá trình tối ưu hóa độ dốc giảm dần.
 
 ```python
 def tsne_from_scratch(X, n_components=2, perplexity=30.0, n_iter=1000):
@@ -163,9 +163,9 @@ def optimize_tsne(P, Y, n_iter=1000, learning_rate=200, momentum=0.5):
     return Y
 ```
 
-Slide 8: Real-world Example: Gene Expression Analysis
+Trang trình bày 8: Ví dụ thực tế: Phân tích biểu hiện gen
 
-t-SNE is particularly useful in bioinformatics for visualizing high-dimensional gene expression data, helping identify patterns and clusters in complex biological datasets.
+t-SNE đặc biệt hữu ích trong tin sinh học để hiển thị dữ liệu biểu hiện gen chiều cao, giúp xác định các mẫu và cụm trong bộ dữ liệu sinh học phức tạp.
 
 ```python
 import pandas as pd
@@ -197,9 +197,9 @@ plt.legend()
 plt.title('t-SNE visualization of gene expression data')
 ```
 
-Slide 9: Barnes-Hut Optimization
+Trang trình bày 9: Tối ưu hóa Barnes-Hut
 
-Barnes-Hut approximation significantly reduces t-SNE's computational complexity from O(n²) to O(n log n) by using a tree-based algorithm for computing similarities.
+Phép tính gần đúng của Barnes-Hut làm giảm đáng kể độ phức tạp tính toán của t-SNE từ O(n²) xuống O(n log n) bằng cách sử dụng thuật toán dựa trên cây để tính toán các điểm tương đồng.
 
 ```python
 def build_vptree(X):
@@ -282,9 +282,9 @@ def apply_early_exaggeration(X, exaggeration_factor=12, early_iter=250):
     return Y, P / exaggeration_factor
 ```
 
-Slide 11: Handling Different Distance Metrics
+Trang trình bày 11: Xử lý các số liệu khoảng cách khác nhau
 
-t-SNE can be adapted to work with various distance metrics beyond Euclidean distance, making it suitable for different types of data structures and similarity measures.
+t-SNE có thể được điều chỉnh để hoạt động với nhiều số liệu khoảng cách khác nhau ngoài khoảng cách Euclide, làm cho nó phù hợp với các loại cấu trúc dữ liệu và thước đo tương tự khác nhau.
 
 ```python
 def custom_distance_tsne(X, metric='cosine', n_components=2):
@@ -370,15 +370,15 @@ def advanced_tsne_visualization(X_embedded, labels=None, uncertainties=None):
     return fig
 ```
 
-Slide 13: Additional Resources
+Trang trình bày 13: Tài nguyên bổ sung
 
-*   "Visualizing Data using t-SNE"
-*   [https://arxiv.org/abs/1008.4309](https://arxiv.org/abs/1008.4309)
-*   "How to Use t-SNE Effectively"
-*   [https://arxiv.org/abs/1612.03628](https://arxiv.org/abs/1612.03628)
-*   "Accelerating t-SNE using Tree-Based Algorithms"
-*   [https://arxiv.org/abs/1401.7957](https://arxiv.org/abs/1401.7957)
-*   "Understanding t-SNE: Parameter Selection and Optimization"
-*   [https://arxiv.org/abs/1712.09005](https://arxiv.org/abs/1712.09005)
-*   "A Theoretical Analysis of t-SNE"
-*   [https://arxiv.org/abs/1902.05969](https://arxiv.org/abs/1902.05969)
+* "Trực quan hóa dữ liệu bằng t-SNE"
+* [https://arxiv.org/abs/1008.4309](https://arxiv.org/abs/1008.4309)
+* "Cách sử dụng t-SNE hiệu quả"
+* [https://arxiv.org/abs/1612.03628](https://arxiv.org/abs/1612.03628)
+* "Tăng tốc t-SNE bằng thuật toán dựa trên cây"
+* [https://arxiv.org/abs/1401.7957](https://arxiv.org/abs/1401.7957)
+* "Tìm hiểu về t-SNE: Lựa chọn và tối ưu hóa tham số"
+* [https://arxiv.org/abs/1712.09005](https://arxiv.org/abs/1712.09005)
+* "Phân tích lý thuyết về t-SNE"
+* [https://arxiv.org/abs/1902.05969](https://arxiv.org/abs/1902.05969)

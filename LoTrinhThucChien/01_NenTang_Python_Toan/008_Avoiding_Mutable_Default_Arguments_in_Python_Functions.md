@@ -1,7 +1,7 @@
-## Avoiding Mutable Default Arguments in Python Functions
-Slide 1: Understanding Mutable Default Arguments
+## Tránh các đối số mặc định có thể thay đổi trong hàm Python
+Trang trình bày 1: Tìm hiểu các đối số mặc định có thể thay đổi
 
-Default arguments in Python functions that use mutable objects like lists or dictionaries can lead to unexpected behavior because these defaults are created once when the function is defined, not each time it's called. This fundamental behavior requires careful consideration during implementation.
+Các đối số mặc định trong hàm Python sử dụng các đối tượng có thể thay đổi như danh sách hoặc từ điển có thể dẫn đến hành vi không mong muốn vì các giá trị mặc định này được tạo một lần khi hàm được xác định chứ không phải mỗi lần nó được gọi. Hành vi cơ bản này đòi hỏi phải xem xét cẩn thận trong quá trình thực hiện.
 
 ```python
 # Problematic implementation with mutable default
@@ -15,9 +15,9 @@ print(add_item(2))  # Output: [1, 2] - Unexpected!
 print(add_item(3))  # Output: [1, 2, 3] - Still accumulating!
 ```
 
-Slide 2: Proper Implementation with None Default
+Trang trình bày 2: Triển khai đúng cách và không có mặc định nào
 
-Using None as a default value and initializing the mutable object inside the function ensures each function call starts with a fresh mutable object, preventing unexpected state preservation between calls.
+Việc sử dụng Không làm giá trị mặc định và khởi tạo đối tượng có thể thay đổi bên trong hàm sẽ đảm bảo mỗi lệnh gọi hàm bắt đầu bằng một đối tượng có thể thay đổi mới, ngăn chặn việc duy trì trạng thái không mong muốn giữa các lệnh gọi.
 
 ```python
 # Correct implementation using None default
@@ -33,9 +33,9 @@ print(add_item(2))  # Output: [2]
 print(add_item(3))  # Output: [3]
 ```
 
-Slide 3: Real-world Example - User Preferences Handler
+Trang trình bày 3: Ví dụ thực tế - Trình xử lý tùy chọn người dùng
 
-Implementing a user preferences system demonstrates how mutable defaults can affect application state management. This example shows a common pitfall in handling user settings with default values.
+Việc triển khai hệ thống tùy chọn người dùng cho thấy các giá trị mặc định có thể thay đổi có thể ảnh hưởng đến việc quản lý trạng thái ứng dụng như thế nào. Ví dụ này cho thấy một cạm bẫy phổ biến trong việc xử lý cài đặt người dùng với các giá trị mặc định.
 
 ```python
 class UserPreferences:
@@ -54,9 +54,9 @@ print(prefs.set_preferences(1))  # {'last_modified': '2024-03-15'}
 print(prefs.set_preferences(2))  # Same dict is modified!
 ```
 
-Slide 4: Fixed User Preferences Implementation
+Trang trình bày 4: Triển khai tùy chọn người dùng cố định
 
-The corrected implementation ensures each user gets their own fresh settings dictionary, preventing shared state between different users' preferences.
+Việc triển khai đã sửa sẽ đảm bảo mỗi người dùng có được từ điển cài đặt mới của riêng mình, ngăn chặn trạng thái chia sẻ giữa các tùy chọn của người dùng khác nhau.
 
 ```python
 class UserPreferences:
@@ -76,9 +76,9 @@ print(prefs.set_preferences(1))  # {'last_modified': '2024-03-15'}
 print(prefs.set_preferences(2))  # Fresh dict for user 2
 ```
 
-Slide 5: Cache Implementation Anti-pattern
+Trang trình bày 5: Anti-pattern triển khai bộ đệm
 
-A common mistake in implementing caching mechanisms is using mutable default arguments to store cached results, which can lead to memory leaks and unexpected behavior in production systems.
+Một lỗi phổ biến khi triển khai cơ chế bộ nhớ đệm là sử dụng các đối số mặc định có thể thay đổi để lưu trữ kết quả được lưu trong bộ nhớ đệm, điều này có thể dẫn đến rò rỉ bộ nhớ và hành vi không mong muốn trong hệ thống sản xuất.
 
 ```python
 # Problematic cache implementation
@@ -95,9 +95,9 @@ print(compute_with_cache(3))  # 9
 print(compute_with_cache(2))  # Returns cached 4
 ```
 
-Slide 6: Proper Cache Implementation
+Trang trình bày 6: Triển khai bộ đệm đúng cách
 
-Implementing a cache system correctly requires careful consideration of scope and mutability. This example shows how to properly implement a cache mechanism using class-based design.
+Việc triển khai hệ thống bộ đệm một cách chính xác đòi hỏi phải xem xét cẩn thận về phạm vi và khả năng thay đổi. Ví dụ này cho thấy cách triển khai đúng cơ chế bộ đệm bằng cách sử dụng thiết kế dựa trên lớp.
 
 ```python
 class ComputeCache:
@@ -116,9 +116,9 @@ print(calculator.compute(3))  # 9
 print(calculator.compute(2))  # Returns cached 4
 ```
 
-Slide 7: Data Processing Pipeline Example
+Trang trình bày 7: Ví dụ về quy trình xử lý dữ liệu
 
-Processing data with default configurations demonstrates how mutable defaults can affect data pipeline results when handling multiple datasets with shared configuration parameters.
+Việc xử lý dữ liệu với cấu hình mặc định cho thấy các giá trị mặc định có thể thay đổi có thể ảnh hưởng như thế nào đến kết quả của đường dẫn dữ liệu khi xử lý nhiều tập dữ liệu có tham số cấu hình được chia sẻ.
 
 ```python
 def process_dataset(data, config={}):
@@ -134,9 +134,9 @@ print(process_dataset(dataset2, config))  # [8, 10, 12]
 print(process_dataset(dataset1))  # Unexpected behavior!
 ```
 
-Slide 8: Corrected Data Processing Pipeline
+Slide 8: Quy trình xử lý dữ liệu đã được sửa chữa
 
-A robust implementation of the data processing pipeline ensures configuration isolation between different dataset processing calls.
+Việc triển khai mạnh mẽ quy trình xử lý dữ liệu đảm bảo cách ly cấu hình giữa các lệnh gọi xử lý tập dữ liệu khác nhau.
 
 ```python
 def process_dataset(data, config=None):
@@ -155,9 +155,9 @@ print(process_dataset(dataset2, config))  # [8, 10, 12]
 print(process_dataset(dataset1))  # [1, 2, 3] - Correct!
 ```
 
-Slide 9: Event Handler Implementation
+Trang trình bày 9: Triển khai trình xử lý sự kiện
 
-Event handling systems often require default configurations for different event types. Improper implementation with mutable defaults can cause event cross-contamination.
+Hệ thống xử lý sự kiện thường yêu cầu cấu hình mặc định cho các loại sự kiện khác nhau. Việc triển khai không đúng cách với các giá trị mặc định có thể thay đổi có thể gây ra sự lây nhiễm chéo cho sự kiện.
 
 ```python
 class EventHandler:
@@ -171,9 +171,9 @@ print(handler.handle_event("click"))  # ['Processed click']
 print(handler.handle_event("keypress"))  # ['Processed click', 'Processed keypress']
 ```
 
-Slide 10: Corrected Event Handler Implementation
+Trang trình bày 10: Triển khai trình xử lý sự kiện đã sửa
 
-The improved event handler implementation ensures proper isolation of event processing chains and prevents cross-contamination between different event types through careful management of handler lists.
+Việc triển khai trình xử lý sự kiện được cải tiến đảm bảo cách ly thích hợp các chuỗi xử lý sự kiện và ngăn ngừa lây nhiễm chéo giữa các loại sự kiện khác nhau thông qua việc quản lý cẩn thận danh sách trình xử lý.
 
 ```python
 class EventHandler:
@@ -190,9 +190,9 @@ print(handler.handle_event("click"))  # ['Processed click']
 print(handler.handle_event("keypress"))  # ['Processed keypress']
 ```
 
-Slide 11: Database Connection Pool Implementation
+Slide 11: Triển khai nhóm kết nối cơ sở dữ liệu
 
-Database connection pooling demonstrates a critical use case where mutable default arguments could lead to connection leaks and improper resource management in production environments.
+Tính năng tổng hợp kết nối cơ sở dữ liệu thể hiện một trường hợp sử dụng quan trọng trong đó các đối số mặc định có thể thay đổi có thể dẫn đến rò rỉ kết nối và quản lý tài nguyên không đúng cách trong môi trường sản xuất.
 
 ```python
 # Problematic implementation
@@ -206,9 +206,9 @@ print(get_db_connection())  # {'connection': 'db_connection_1'}
 print(get_db_connection())  # Same connection object
 ```
 
-Slide 12: Proper Database Connection Pool
+Trang trình bày 12: Nhóm kết nối cơ sở dữ liệu phù hợp
 
-A robust connection pool implementation requires careful state management and proper handling of connection lifecycle, demonstrating correct usage of immutable defaults.
+Việc triển khai nhóm kết nối mạnh mẽ đòi hỏi phải quản lý trạng thái cẩn thận và xử lý đúng vòng đời kết nối, thể hiện việc sử dụng đúng các giá trị mặc định không thể thay đổi.
 
 ```python
 class DatabasePool:
@@ -234,9 +234,9 @@ print(db_pool.get_connection())  # Fresh connection
 print(db_pool.get_connection({"timeout": 60}))  # New configuration
 ```
 
-Slide 13: Machine Learning Parameter Grid Implementation
+Trang trình bày 13: Triển khai lưới tham số máy học
 
-Machine learning hyperparameter management showcases how mutable defaults can affect model training when handling multiple parameter configurations across different training sessions.
+Quản lý siêu tham số học máy cho thấy các giá trị mặc định có thể thay đổi có thể ảnh hưởng như thế nào đến việc đào tạo mô hình khi xử lý nhiều cấu hình tham số trong các phiên đào tạo khác nhau.
 
 ```python
 # Problematic implementation
@@ -252,9 +252,9 @@ print(create_parameter_grid())
 print(create_parameter_grid({"epochs": [10, 20]}))  # Previous params remain
 ```
 
-Slide 14: Corrected Parameter Grid Implementation
+Trang trình bày 14: Thực hiện lưới tham số đã sửa
 
-A proper implementation ensures parameter grids remain isolated between different training configurations, preventing parameter bleeding between experimental setups.
+Việc triển khai đúng cách sẽ đảm bảo các lưới tham số vẫn được tách biệt giữa các cấu hình đào tạo khác nhau, ngăn ngừa hiện tượng tràn tham số giữa các thiết lập thử nghiệm.
 
 ```python
 def create_parameter_grid(params=None):
@@ -274,9 +274,9 @@ print(create_parameter_grid())  # Base parameters only
 print(create_parameter_grid({"epochs": [10, 20]}))  # Clean combination
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-*   "Python's Hidden Features: Understanding Mutable Default Arguments" - [https://arxiv.org/abs/2203.12345](https://arxiv.org/abs/2203.12345)
-*   "Best Practices in Python Function Design: A Comprehensive Study" - [https://arxiv.org/abs/2204.56789](https://arxiv.org/abs/2204.56789)
-*   "Analysis of Common Python Anti-patterns in Production Systems" - [https://arxiv.org/abs/2205.98765](https://arxiv.org/abs/2205.98765)
-*   "Performance Implications of Mutable Default Arguments in Large-Scale Python Applications" - [https://arxiv.org/abs/2206.34567](https://arxiv.org/abs/2206.34567)
+* "Các tính năng ẩn của Python: Tìm hiểu các đối số mặc định có thể thay đổi" - [https://arxiv.org/abs/2203.12345](https://arxiv.org/abs/2203.12345)
+* "Các phương pháp thực hành tốt nhất trong thiết kế hàm Python: Một nghiên cứu toàn diện" - [https://arxiv.org/abs/2204.56789](https://arxiv.org/abs/2204.56789)
+* "Phân tích các mẫu chống Python phổ biến trong hệ thống sản xuất" - [https://arxiv.org/abs/2205.98765](https://arxiv.org/abs/2205.98765)
+* "Ý nghĩa về hiệu suất của các đối số mặc định có thể thay đổi trong các ứng dụng Python quy mô lớn" - [https://arxiv.org/abs/2206.34567](https://arxiv.org/abs/2206.34567)

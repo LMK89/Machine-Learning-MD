@@ -1,7 +1,7 @@
-## Regression Error Metrics with Python Code Examples
-Slide 1: Mean Squared Error (MSE)
+## Số liệu sửa lỗi với ví dụ về mã Python
+Trang trình bày 1: Lỗi bình bình trung bình (MSE)
 
-Mean Squared Error is a fundamental regression metric that measures the average squared difference between predicted and actual values. It heavily penalizes larger errors due to squaring and provides a clear mathematical foundation for optimization in machine learning models.
+Lỗi bình phương trung bình là số liệu hồi phục cơ bản đo chênh lệch bình phương trung bình giữa giá trị dự đoán và giá trị thực tế. Nó xử lý các lỗi nghiêm trọng hơn so với thực hiện bình phương và cung cấp nền tảng học thuật rõ ràng để tối ưu hóa trong các máy học.
 
 ```python
 import numpy as np
@@ -28,9 +28,9 @@ mse = calculate_mse(y_true, y_pred)
 print(f"MSE: {mse:.4f}")  # Output: MSE: 0.0500
 ```
 
-Slide 2: Root Mean Squared Error (RMSE)
+Trang trình bày 2: Error normal normal (RMSE)
 
-Root Mean Squared Error extends MSE by taking its square root, providing a metric in the same units as the target variable. This makes RMSE more interpretable and widely used in practical applications for model evaluation and comparison.
+Lỗi bình đẳng hóa MSE mở rộng gốc bằng cách lấy hai cấp độ của nó, cung cấp số liệu có cùng vị trí với tiêu chí biến thể. Điều này làm cho RMSE dễ hiểu hơn và được sử dụng rộng rãi hơn trong các ứng dụng thực tế để đánh giá và so sánh mô hình.
 
 ```python
 import numpy as np
@@ -50,9 +50,9 @@ rmse = calculate_rmse(y_true, y_pred)
 print(f"RMSE: {rmse:.4f}")  # Output: RMSE: 0.2236
 ```
 
-Slide 3: Mean Absolute Error (MAE)
+Trang trình bày 3: Lỗi tuyệt đối trung bình (MAE)
 
-Mean Absolute Error calculates the average absolute differences between predictions and actual values, providing a linear scale of errors. Unlike MSE, MAE treats all errors proportionally, making it less sensitive to outliers and more robust for certain applications.
+Sai số tuyệt đối trung bình tính toán khác biệt tuyệt đối trung bình giữa kỳ vọng và giá trị thực tế, cung cấp thang sai số tuyến tính toán. Không giống như MSE, MAE xử lý tất cả các tỷ lệ lỗi, tạo ra nó ít nhạy cảm hơn các giá trị ngoại lệ và mạnh mẽ hơn đối với một số ứng dụng nhất định.
 
 ```python
 import numpy as np
@@ -72,9 +72,9 @@ mae = calculate_mae(y_true, y_pred)
 print(f"MAE: {mae:.4f}")  # Output: MAE: 0.2000
 ```
 
-Slide 4: Mean Absolute Percentage Error (MAPE)
+Trang trình bày 4: Lỗi phần trăm tuyệt đối trung bình (MAPE)
 
-Mean Absolute Percentage Error quantifies prediction accuracy as a percentage, making it particularly useful for comparing forecasts across different scales. MAPE provides intuitive interpretation but can be problematic when actual values are close to or equal to zero.
+Lỗi phần trăm tuyệt đối trung bình về độ chính xác của dự đoán theo phần trăm, tạo ra nó đặc biệt hữu ích khi so sánh các báo cáo dự báo trên các thang đo khác nhau. MAPE cung cấp khả năng diễn giải trực quan nhưng có thể gặp vấn đề khi giá trị thực tế gần bằng hoặc bằng 0.
 
 ```python
 import numpy as np
@@ -99,9 +99,9 @@ mape = calculate_mape(y_true, y_pred)
 print(f"MAPE: {mape:.2f}%")  # Output: MAPE: 4.71%
 ```
 
-Slide 5: R-squared (R²) Score
+Trang trình bày 5: Điểm R bình phương (R²)
 
-R-squared measures the proportion of variance in the dependent variable explained by the independent variables. It provides a scale-free score between 0 and 1, where 1 indicates perfect prediction and 0 indicates performance equivalent to a horizontal line.
+R phương pháp đo tỷ lệ phương pháp sai trong các biến phụ thuộc được giải quyết bởi các biến độc lập. Nó cung cấp điểm không có thang điểm từ 0 đến 1, trong đó 1 biểu tượng mong đợi hoàn hảo và 0 biểu thị hiệu suất tương thích với một đường ngang.
 
 ```python
 import numpy as np
@@ -133,9 +133,9 @@ r2 = calculate_r2(y_true, y_pred)
 print(f"R² Score: {r2:.4f}")  # Output: R² Score: 0.9789
 ```
 
-Slide 6: Adjusted R-squared
+Slide 6: Bình phương R đã điều chỉnh
 
-Adjusted R-squared modifies the R² score to account for the number of predictors in the model. This metric penalizes the addition of variables that don't improve the model's explanatory power, providing a more realistic assessment of model performance.
+Bình phương R đã điều chỉnh sẽ sửa đổi điểm R² để tính toán lượng yếu tố dự đoán trong mô hình. Số liệu này phạt các biến bổ sung không cải thiện khả năng giải thích của mô hình, cung cấp giá trị thực tế hơn về hiệu suất của mô hình.
 
 ```python
 def calculate_adjusted_r2(y_true, y_pred, n_predictors):
@@ -160,9 +160,9 @@ adj_r2 = calculate_adjusted_r2(y_true, y_pred, n_predictors)
 print(f"Adjusted R² Score: {adj_r2:.4f}")  # Output: Adjusted R² Score: 0.9578
 ```
 
-Slide 7: Real-world Application: House Price Prediction
+Slide 7: Ứng dụng thực tế: Dự đoán giá nhà
 
-This implementation demonstrates the application of regression metrics in a real estate price prediction scenario, showing how different error metrics provide complementary insights into model performance.
+Việc phát triển này có thể hiện thực hóa việc áp dụng các quy tắc khôi phục dữ liệu trong bản dự kiến ​​về giá bất động sản, chọn các lỗi khác được tìm thấy và cung cấp những hiểu biết bổ sung về hiệu suất mô hình như thế nào.
 
 ```python
 import numpy as np
@@ -199,7 +199,7 @@ for metric, value in metrics.items():
     print(f"{metric}: {value:.4f}")
 ```
 
-Slide 8: Results for House Price Prediction
+Slide 8: Kết quả dự đoán giá nhà
 
 ```python
 # Example output from previous slide
@@ -245,9 +245,9 @@ huber_loss = calculate_huber_loss(y_true, y_pred, delta=1.0)
 print(f"Huber Loss: {huber_loss:.4f}")  # Output: Huber Loss: 0.0200
 ```
 
-Slide 10: Quantile Loss
+Trang trình bày 10: Mất định lượng
 
-Quantile Loss enables prediction of specific percentiles of the target variable distribution, making it valuable for uncertainty estimation and risk assessment. This asymmetric loss function penalizes under-predictions and over-predictions differently based on the specified quantile.
+Tổng số lượng thử nghiệm được phép dự đoán các phần trăm của công cụ cụ thể của các biến thể bổ sung, nó tạo ra giá trị ước tính không đảm bảo về độ chính xác và đánh giá rủi ro. Hàm bị mất mát không được xử lý này xử lý các dự đoán dưới mức và dự kiến ​​​​quá khác dựa trên số lượng được xác định cụ thể.
 
 ```python
 import numpy as np
@@ -277,9 +277,9 @@ print(f"Quantile Loss (50th): {q_loss_50:.4f}")  # Output: Quantile Loss (50th):
 print(f"Quantile Loss (90th): {q_loss_90:.4f}")  # Output: Quantile Loss (90th): 0.1800
 ```
 
-Slide 11: Real-world Application: Time Series Forecasting
+Trang trình chiếu 11: Ứng dụng thực tế: Dự báo thời gian chuỗi
 
-This comprehensive example demonstrates the application of multiple regression metrics in a time series forecasting scenario, including data preprocessing and model evaluation with confidence intervals.
+Ví dụ này có thể hiện việc áp dụng nhiều quy trình khôi phục dữ liệu trong thời gian chuỗi báo cáo kịch bản, bao gồm tiền xử lý dữ liệu và đánh giá mô hình với khoảng tin cậy.
 
 ```python
 import numpy as np
@@ -329,7 +329,7 @@ for metric, value in metrics.items():
     print(f"{metric}: {value:.4f}")
 ```
 
-Slide 12: Results for Time Series Forecasting
+Slide 12: Kết quả chuỗi thời gian dự báo
 
 ```python
 # Example output from previous slide
@@ -349,9 +349,9 @@ Performance Analysis:
 """
 ```
 
-Slide 13: Weighted Mean Squared Error
+Trang trình bày 13: Error bình luận phương pháp trung bình có tầm quan trọng
 
-Weighted Mean Squared Error extends MSE by allowing different importance weights for each sample, enabling focus on specific regions or times in the prediction space that are deemed more critical for the application.
+Lỗi phương pháp trung bình có MSE mở rộng số lượng quan trọng bằng cách cho phép các số lượng quan trọng khác nhau cho từng mẫu, cho phép tập tin trung vào các vùng hoặc thời gian cụ thể trong thời gian không thể mong đợi được coi là quan trọng hơn đối với ứng dụng.
 
 ```python
 import numpy as np
@@ -381,13 +381,13 @@ wmse = calculate_weighted_mse(y_true, y_pred, weights)
 print(f"Weighted MSE: {wmse:.4f}")  # Output: Weighted MSE: 0.0456
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-*   "A Comprehensive Review of Loss Functions in Machine Learning"
-    *   [https://arxiv.org/abs/2011.00564](https://arxiv.org/abs/2011.00564)
-*   "On the Properties of Regression Evaluation Metrics"
-    *   [https://arxiv.org/abs/2006.04863](https://arxiv.org/abs/2006.04863)
-*   "Statistical Properties of Common Error Measures for Time Series Forecasting"
-    *   Search on Google Scholar: "Statistical Properties Error Measures Time Series"
-*   "Robust Regression Loss Functions for Machine Learning Applications"
-    *   Search on Google Scholar: "Robust Regression Loss Functions ML"
+* "Đánh giá toàn diện về hàm mất mát trong máy học"
+    * [https://arxiv.org/abs/2011.00564](https://arxiv.org/abs/2011.00564)
+* "Về thuộc tính của số liệu đánh giá thu hồi"
+    * [https://arxiv.org/abs/2006.04863](https://arxiv.org/abs/2006.04863)
+* "Thuộc tính thống kê của các phổ biến đo lường sai lầm để dự báo thời gian chuỗi"
+    * Tìm kiếm trên Google Scholar: "Lỗi thuộc tính thống kê đo thời gian chuỗi"
+* "Hàm mất hồi quy mạnh mạnh cho các ứng dụng học"
+    * Tìm kiếm trên Google Scholar: "Hàm mất hồi quy mạnh mẽ ML"

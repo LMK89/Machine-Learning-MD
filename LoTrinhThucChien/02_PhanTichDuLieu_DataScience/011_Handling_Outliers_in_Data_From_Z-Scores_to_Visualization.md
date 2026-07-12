@@ -1,7 +1,7 @@
-## Handling Outliers in Data From Z-Scores to Visualization
-Slide 1: Understanding Z-Scores for Outlier Detection
+## Xử lý các ngoại lệ trong dữ liệu từ điểm Z đến trực quan hóa
+Trang trình bày 1: Tìm hiểu về Điểm Z để phát hiện ngoại lệ
 
-Z-scores represent the number of standard deviations a data point lies from the mean. This statistical measure helps identify potential outliers by quantifying how extreme each value is relative to the overall distribution, with values beyond ±3 typically considered outliers.
+Điểm Z biểu thị số độ lệch chuẩn mà một điểm dữ liệu nằm so với giá trị trung bình. Biện pháp thống kê này giúp xác định các giá trị ngoại lệ tiềm năng bằng cách định lượng mức độ cực đoan của mỗi giá trị so với phân bổ tổng thể, với các giá trị vượt quá ±3 thường được coi là các giá trị ngoại lệ.
 
 ```python
 import numpy as np
@@ -30,9 +30,9 @@ print("\nOutliers (|z| > 3):")
 print(outliers)
 ```
 
-Slide 2: Advanced Z-Score Analysis with Modified Z-Scores
+Trang trình bày 2: Phân tích điểm Z nâng cao với điểm Z được sửa đổi
 
-The modified Z-score approach uses median and median absolute deviation instead of mean and standard deviation, making it more robust against extreme values and multiple outliers in the dataset.
+Phương pháp điểm Z được sửa đổi sử dụng độ lệch tuyệt đối trung vị và trung vị thay vì độ lệch trung bình và độ lệch chuẩn, làm cho phương pháp này trở nên chắc chắn hơn trước các giá trị cực trị và nhiều giá trị ngoại lệ trong tập dữ liệu.
 
 ```python
 def modified_zscore(data):
@@ -59,9 +59,9 @@ print("Modified Z-score Analysis:")
 print(results)
 ```
 
-Slide 3: IQR Method Implementation
+Trang trình bày 3: Thực hiện phương pháp IQR
 
-The Interquartile Range (IQR) method defines outliers as values falling outside 1.5 times the IQR below the first quartile or above the third quartile, providing a robust approach less sensitive to extreme values.
+Phương pháp Phạm vi liên tứ phân vị (IQR) xác định các giá trị ngoại lệ là các giá trị nằm ngoài 1,5 lần IQR dưới tứ phân vị thứ nhất hoặc cao hơn tứ phân vị thứ ba, cung cấp một cách tiếp cận mạnh mẽ ít nhạy cảm hơn với các giá trị cực đoan.
 
 ```python
 def iqr_outliers(data):
@@ -92,9 +92,9 @@ print("IQR-based Outlier Detection:")
 print(results)
 ```
 
-Slide 4: Data Visualization for Outlier Detection
+Trang trình bày 4: Trực quan hóa dữ liệu để phát hiện ngoại lệ
 
-Understanding the distribution of data through visualization is crucial for outlier detection. This implementation combines box plots and scatter plots to provide a comprehensive view of potential outliers.
+Hiểu được sự phân phối dữ liệu thông qua trực quan hóa là rất quan trọng để phát hiện ngoại lệ. Việc triển khai này kết hợp các ô hình hộp và các ô phân tán để cung cấp cái nhìn toàn diện về các giá trị ngoại lai tiềm năng.
 
 ```python
 import matplotlib.pyplot as plt
@@ -128,9 +128,9 @@ fig = visualize_outliers(data)
 plt.show()
 ```
 
-Slide 5: Outlier Transformation Techniques
+Trang trình bày 5: Kỹ thuật chuyển đổi ngoại lệ
 
-Data transformation techniques can help minimize the impact of outliers while preserving their relative positions in the dataset. Common methods include logarithmic, square root, and Box-Cox transformations.
+Kỹ thuật chuyển đổi dữ liệu có thể giúp giảm thiểu tác động của các ngoại lệ trong khi vẫn duy trì vị trí tương đối của chúng trong tập dữ liệu. Các phương pháp phổ biến bao gồm phép biến đổi logarit, căn bậc hai và Box-Cox.
 
 ```python
 import scipy.stats as stats
@@ -158,9 +158,9 @@ print(transformed_data)
 print(f"\nBox-Cox transformation lambda: {lambda_param:.3f}")
 ```
 
-Slide 6: Robust Statistical Methods for Outlier Handling
+Trang trình bày 6: Các phương pháp thống kê mạnh mẽ để xử lý ngoại lệ
 
-Robust statistical methods provide reliable estimates of central tendency and dispersion even in the presence of outliers. This implementation demonstrates the use of robust estimators for location and scale.
+Các phương pháp thống kê mạnh mẽ cung cấp các ước tính đáng tin cậy về xu hướng trung tâm và độ phân tán ngay cả khi có sự xuất hiện của các giá trị ngoại lệ. Việc triển khai này thể hiện việc sử dụng các công cụ ước tính mạnh mẽ cho vị trí và quy mô.
 
 ```python
 from scipy.stats import trim_mean, iqr
@@ -197,9 +197,9 @@ print("Robust Statistics Comparison:")
 print(results)
 ```
 
-Slide 7: Automated Outlier Detection with Isolation Forest
+Trang trình bày 7: Tự động phát hiện ngoại lệ với Rừng cách ly
 
-The Isolation Forest algorithm isolates outliers by randomly selecting a feature and split value, making it particularly effective for high-dimensional datasets and requiring minimal assumptions about the data distribution.
+Thuật toán Rừng cách ly tách biệt các ngoại lệ bằng cách chọn ngẫu nhiên một tính năng và phân tách giá trị, làm cho thuật toán này đặc biệt hiệu quả đối với các tập dữ liệu nhiều chiều và yêu cầu các giả định tối thiểu về phân phối dữ liệu.
 
 ```python
 from sklearn.ensemble import IsolationForest
@@ -240,9 +240,9 @@ print("Isolation Forest Results (Top 10 potential outliers):")
 print(results.head(10))
 ```
 
-Slide 8: Local Outlier Factor (LOF) Implementation
+Trang trình bày 8: Triển khai hệ số ngoại lệ cục bộ (LOF)
 
-LOF identifies outliers by measuring the local deviation of a point with respect to its neighbors, making it effective for detecting outliers in datasets with varying densities.
+LOF xác định các ngoại lệ bằng cách đo độ lệch cục bộ của một điểm so với các điểm lân cận, giúp phát hiện các ngoại lệ trong các tập dữ liệu có mật độ khác nhau một cách hiệu quả.
 
 ```python
 from sklearn.neighbors import LocalOutlierFactor
@@ -283,9 +283,9 @@ print("LOF Detection Results (Top 10 potential outliers):")
 print(results.head(10))
 ```
 
-Slide 9: DBSCAN for Density-Based Outlier Detection
+Trang trình bày 9: DBSCAN để phát hiện ngoại lệ dựa trên mật độ
 
-DBSCAN (Density-Based Spatial Clustering of Applications with Noise) effectively identifies outliers as points that don't belong to any cluster, particularly useful for datasets with clusters of varying shapes and densities.
+DBSCAN (Phân cụm ứng dụng không gian dựa trên mật độ có nhiễu) xác định hiệu quả các điểm ngoại lệ là các điểm không thuộc bất kỳ cụm nào, đặc biệt hữu ích cho các tập dữ liệu có các cụm có hình dạng và mật độ khác nhau.
 
 ```python
 from sklearn.cluster import DBSCAN
@@ -327,9 +327,9 @@ print("\nCluster Statistics:")
 print(stats)
 ```
 
-Slide 10: Real-World Application - Financial Time Series Outliers
+Trang trình bày 10: Ứng dụng trong thế giới thực - Các ngoại lệ của chuỗi thời gian tài chính
 
-Financial data often contains anomalies due to market events or recording errors. This implementation demonstrates a comprehensive approach to detecting and handling outliers in stock price data.
+Dữ liệu tài chính thường chứa đựng những bất thường do các sự kiện thị trường hoặc lỗi ghi chép. Việc triển khai này thể hiện một cách tiếp cận toàn diện để phát hiện và xử lý các giá trị ngoại lệ trong dữ liệu giá cổ phiếu.
 
 ```python
 import pandas as pd
@@ -375,7 +375,7 @@ print("Financial Outlier Analysis Results:")
 print(results[results['is_zscore_outlier']].head())
 ```
 
-Slide 11: Source Code for Financial Time Series Visualization
+Trang trình bày 11: Mã nguồn để trực quan hóa chuỗi thời gian tài chính
 
 ```python
 def visualize_financial_outliers(results):
@@ -413,9 +413,9 @@ fig = visualize_financial_outliers(results)
 plt.show()
 ```
 
-Slide 12: Real-World Application - Sensor Data Anomaly Detection
+Slide 12: Ứng dụng trong thế giới thực - Phát hiện bất thường dữ liệu cảm biến
 
-Sensor networks often produce data with various types of anomalies. This implementation shows how to detect and classify different types of sensor data outliers.
+Mạng cảm biến thường tạo ra dữ liệu với nhiều loại dị thường khác nhau. Việc triển khai này cho thấy cách phát hiện và phân loại các loại ngoại lệ dữ liệu cảm biến khác nhau.
 
 ```python
 def analyze_sensor_data(timestamps, values, window_size=12):
@@ -459,7 +459,7 @@ print("Sensor Data Analysis Results:")
 print(results[results[['spike', 'level_shift', 'variance_change']].any(axis=1)].head())
 ```
 
-Slide 13: Source Code for Sensor Data Visualization
+Trang trình bày 13: Mã nguồn để trực quan hóa dữ liệu cảm biến
 
 ```python
 def visualize_sensor_anomalies(results):
@@ -512,9 +512,9 @@ fig = visualize_sensor_anomalies(results)
 plt.show()
 ```
 
-Slide 14: Ensemble Method for Robust Outlier Detection
+Trang trình bày 14: Phương pháp tập hợp để phát hiện ngoại lệ mạnh mẽ
 
-This implementation combines multiple outlier detection methods to create a more robust and reliable detection system, using a voting mechanism to reduce false positives.
+Việc triển khai này kết hợp nhiều phương pháp phát hiện ngoại lệ để tạo ra một hệ thống phát hiện mạnh mẽ và đáng tin cậy hơn, sử dụng cơ chế bỏ phiếu để giảm kết quả dương tính giả.
 
 ```python
 class EnsembleOutlierDetector:
@@ -582,10 +582,10 @@ print(f"Total outliers detected: {sum(predictions == -1)}")
 print(results[results['is_outlier']].describe())
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-*   "A Study of Outlier Detection Methods and Their Applications" - [https://arxiv.org/abs/2202.01048](https://arxiv.org/abs/2202.01048)
-*   "Isolation Forest Algorithm and Its Applications" - [https://arxiv.org/abs/1811.02141](https://arxiv.org/abs/1811.02141)
-*   "Survey on Deep Learning Methods for Anomaly Detection" - [https://arxiv.org/abs/2009.14017](https://arxiv.org/abs/2009.14017)
-*   "Robust Statistics for Outlier Detection: A Comparative Study" - [https://arxiv.org/abs/1904.02181](https://arxiv.org/abs/1904.02181)
-*   "Local Outlier Factor: A Density-Based Approach to Outlier Detection" - [https://arxiv.org/abs/1906.03509](https://arxiv.org/abs/1906.03509)
+* "Nghiên cứu về các phương pháp phát hiện ngoại lệ và ứng dụng của chúng" - [https://arxiv.org/abs/2202.01048](https://arxiv.org/abs/2202.01048)
+* "Thuật toán rừng cô lập và các ứng dụng của nó" - [https://arxiv.org/abs/1811.02141](https://arxiv.org/abs/1811.02141)
+* "Khảo sát về các phương pháp học sâu để phát hiện sự bất thường" - [https://arxiv.org/abs/2009.14017](https://arxiv.org/abs/2009.14017)
+* "Thống kê mạnh mẽ để phát hiện ngoại lệ: Một nghiên cứu so sánh" - [https://arxiv.org/abs/1904.02181](https://arxiv.org/abs/1904.02181)
+* "Yếu tố ngoại lệ cục bộ: Phương pháp tiếp cận dựa trên mật độ để phát hiện ngoại lệ" - [https://arxiv.org/abs/1906.03509](https://arxiv.org/abs/1906.03509)

@@ -1,7 +1,7 @@
-## Currying in Python A Functional Programming Technique
-Slide 1: Understanding Currying in Python
+## Currying trong Python Kỹ thuật lập trình hàm
+Trang trình bày 1: Tìm hiểu về Currying trong Python
 
-Currying is a functional programming technique that transforms a function with multiple arguments into a sequence of functions, each taking a single argument. This concept is named after mathematician Haskell Curry and is widely used in functional programming languages. In Python, we can implement currying to create more flexible and reusable code.
+Currying là một kỹ thuật lập trình hàm biến đổi một hàm có nhiều đối số thành một chuỗi các hàm, mỗi hàm lấy một đối số duy nhất. Khái niệm này được đặt theo tên của nhà toán học Haskell Curry và được sử dụng rộng rãi trong các ngôn ngữ lập trình hàm. Trong Python, chúng ta có thể triển khai Currying để tạo mã linh hoạt hơn và có thể sử dụng lại được.
 
 ```python
 def add(x):
@@ -14,9 +14,9 @@ result = add_5(3)
 print(result)  # Output: 8
 ```
 
-Slide 2: Basic Currying Example
+Slide 2: Ví dụ nấu cà ri cơ bản
 
-Let's start with a simple example to illustrate currying. We'll create a curried function that adds two numbers. Instead of taking both arguments at once, we'll split it into two nested functions.
+Hãy bắt đầu với một ví dụ đơn giản để minh họa món cà ri. Chúng ta sẽ tạo một hàm curried để cộng hai số. Thay vì lấy cả hai đối số cùng một lúc, chúng ta sẽ chia nó thành hai hàm lồng nhau.
 
 ```python
 def curry_add(x):
@@ -33,9 +33,9 @@ print(result)  # Output: 8
 print(curry_add(2)(7))  # Output: 9
 ```
 
-Slide 3: Currying vs. Partial Application
+Trang trình bày 3: Cà ri và ứng dụng từng phần
 
-While currying and partial application are related concepts, they're not identical. Currying always produces a chain of unary functions (functions with one argument), while partial application can fix any number of arguments. Let's compare the two:
+Mặc dù cà ri và ứng dụng một phần là những khái niệm có liên quan nhưng chúng không giống nhau. Currying luôn tạo ra một chuỗi các hàm đơn nguyên (các hàm có một đối số), trong khi ứng dụng một phần có thể sửa bất kỳ số lượng đối số nào. Hãy so sánh hai:
 
 ```python
 from functools import partial
@@ -57,9 +57,9 @@ print(curried_double(5))  # Output: 10
 print(partial_double(5))  # Output: 10
 ```
 
-Slide 4: Automatic Currying
+Slide 4: Cà ri tự động
 
-We can create a decorator to automatically curry any function with multiple arguments. This allows us to use the function in both curried and uncurried forms.
+Chúng ta có thể tạo một trình trang trí để tự động xử lý bất kỳ hàm nào có nhiều đối số. Điều này cho phép chúng ta sử dụng hàm này ở cả dạng đã nấu chín và chưa nấu chín.
 
 ```python
 def curry(func):
@@ -78,9 +78,9 @@ print(add_three_numbers(1, 2)(3))  # Output: 6
 print(add_three_numbers(1, 2, 3))  # Output: 6
 ```
 
-Slide 5: Real-Life Example: Text Processing
+Trang trình chiếu 5: Ví dụ thực tế: Xử lý văn bản
 
-Currying can be useful in text processing tasks. Let's create a curried function to replace words in a sentence:
+Currying có thể hữu ích trong các tác vụ xử lý văn bản. Hãy tạo một hàm cà ri để thay thế các từ trong câu:
 
 ```python
 def replace_word(old_word):
@@ -99,9 +99,9 @@ modified_text = replace_with_java(original_text)
 print(modified_text)  # Output: Java is a versatile programming language.
 ```
 
-Slide 6: Currying for Function Composition
+Trang trình bày 6: Currying cho bố cục chức năng
 
-Currying facilitates function composition, allowing us to create new functions by combining existing ones. Here's an example of how currying can be used to create a pipeline of operations:
+Currying tạo điều kiện thuận lợi cho việc kết hợp hàm, cho phép chúng ta tạo các hàm mới bằng cách kết hợp các hàm hiện có. Dưới đây là một ví dụ về cách sử dụng Currying để tạo ra một hệ thống hoạt động:
 
 ```python
 def curry(func):
@@ -125,9 +125,9 @@ result = pipeline(5)
 print(result)  # Output: 16 ((5 + 3) * 2)
 ```
 
-Slide 7: Currying for Memoization
+Slide 7: Cà ri để ghi nhớ
 
-Currying can be combined with memoization to create efficient, reusable functions that cache their results. This is particularly useful for expensive computations:
+Currying có thể được kết hợp với tính năng ghi nhớ để tạo ra các hàm hiệu quả, có thể tái sử dụng và lưu trữ kết quả của chúng. Điều này đặc biệt hữu ích cho các tính toán tốn kém:
 
 ```python
 def memoize(func):
@@ -147,9 +147,9 @@ def fibonacci(n):
 print(fibonacci(100))  # Output: 354224848179261915075 (calculated quickly due to memoization)
 ```
 
-Slide 8: Real-Life Example: Configuration Management
+Slide 8: Ví dụ thực tế: Quản lý cấu hình
 
-Currying can be useful in configuration management scenarios. Let's create a curried function to generate configuration objects:
+Currying có thể hữu ích trong các tình huống quản lý cấu hình. Hãy tạo một hàm curried để tạo các đối tượng cấu hình:
 
 ```python
 def config_generator(environment):
@@ -171,9 +171,9 @@ print(final_config)
 # Output: {'environment': 'production', 'database': 'mysql', 'port': 3306}
 ```
 
-Slide 9: Currying with Type Hints
+Slide 9: Cà ri với gợi ý kiểu
 
-We can use type hints to make our curried functions more readable and maintainable. Here's an example of a curried function with type hints:
+Chúng ta có thể sử dụng gợi ý kiểu để làm cho các hàm được xử lý dễ đọc và dễ bảo trì hơn. Đây là một ví dụ về hàm curried với gợi ý kiểu:
 
 ```python
 from typing import Callable
@@ -193,9 +193,9 @@ format_euro = curried_formatter("€")("EUR")
 print(format_euro(100))  # Output: €100EUR
 ```
 
-Slide 10: Currying and Decorators
+Slide 10: Cà ri và trang trí
 
-Currying can be combined with decorators to create powerful and flexible function transformations. Here's an example of a curried decorator that adds logging to a function:
+Currying có thể được kết hợp với các bộ trang trí để tạo ra các phép biến đổi hàm mạnh mẽ và linh hoạt. Dưới đây là ví dụ về trình trang trí cà ri có thêm tính năng ghi nhật ký vào một hàm:
 
 ```python
 import functools
@@ -222,9 +222,9 @@ print(greet("Alice"))
 # Hello, Alice!
 ```
 
-Slide 11: Performance Considerations
+Trang trình bày 11: Cân nhắc về hiệu suất
 
-While currying can lead to more flexible and composable code, it's important to consider its performance implications. Curried functions often involve multiple function calls and closures, which can introduce overhead:
+Mặc dù cà ri có thể tạo ra mã linh hoạt và có khả năng tổng hợp hơn nhưng điều quan trọng là phải xem xét ý nghĩa hiệu suất của nó. Các hàm được xử lý thường liên quan đến nhiều lệnh gọi và đóng hàm, điều này có thể gây ra chi phí chung:
 
 ```python
 import timeit
@@ -245,9 +245,9 @@ print(f"Curried function time: {curried_time:.6f} seconds")
 print(f"Overhead: {(curried_time - regular_time) / regular_time * 100:.2f}%")
 ```
 
-Slide 12: Currying in Functional Programming Paradigms
+Slide 12: Currying trong các mô hình lập trình hàm
 
-Currying is particularly useful in functional programming paradigms, where it facilitates function composition and partial application. Let's explore how currying can be used to create a simple data processing pipeline:
+Currying đặc biệt hữu ích trong các mô hình lập trình hàm, nơi nó tạo điều kiện thuận lợi cho việc kết hợp hàm và ứng dụng từng phần. Hãy cùng khám phá cách sử dụng cà ri để tạo một quy trình xử lý dữ liệu đơn giản:
 
 ```python
 from functools import reduce
@@ -281,9 +281,9 @@ result = pipeline(range(5))
 print(result)  # Output: 18 (2*3 + 2*4)
 ```
 
-Slide 13: Currying and Lazy Evaluation
+Slide 13: Đánh giá sự lười biếng và lười biếng
 
-Currying can be combined with lazy evaluation to create efficient data processing pipelines. Here's an example using Python's itertools module:
+Currying có thể được kết hợp với đánh giá lười biếng để tạo ra các quy trình xử lý dữ liệu hiệu quả. Đây là một ví dụ sử dụng mô-đun itertools của Python:
 
 ```python
 import itertools
@@ -317,11 +317,11 @@ result = list(pipeline(itertools.count()))
 print(result)  # Output: [0, 4, 16]
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-For those interested in diving deeper into currying and functional programming in Python, here are some additional resources:
+Đối với những người quan tâm đến việc tìm hiểu sâu hơn về cà ri và lập trình chức năng trong Python, đây là một số tài nguyên bổ sung:
 
-1. "Functional Programming in Python" by David Mertz (ArXiv:1904.04206) URL: [https://arxiv.org/abs/1904.04206](https://arxiv.org/abs/1904.04206)
-2. "A Gentle Introduction to Functional Programming in Python" by Cristian Medina (ArXiv:1904.04207) URL: [https://arxiv.org/abs/1904.04207](https://arxiv.org/abs/1904.04207)
+1. "Lập trình hàm trong Python" của David Mertz (ArXiv:1904.04206) URL: [https://arxiv.org/abs/1904.04206](https://arxiv.org/abs/1904.04206)
+2. "Giới thiệu nhẹ nhàng về lập trình hàm trong Python" của Cristian Medina (ArXiv:1904.04207) URL: [https://arxiv.org/abs/1904.04207](https://arxiv.org/abs/1904.04207)
 
-These papers provide a comprehensive overview of functional programming concepts, including currying, and their implementation in Python.
+Các bài viết này cung cấp một cái nhìn tổng quan toàn diện về các khái niệm lập trình chức năng, bao gồm cả cà ri và cách triển khai chúng trong Python.

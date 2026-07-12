@@ -1,7 +1,7 @@
-## Exploring Conditional Probability with Python
-Slide 1: Introduction to Conditional Probability
+## Khám phá xác suất có điều kiện với Python
+Slide 1: Giới thiệu về Xác suất có điều kiện
 
-Conditional probability is a fundamental concept in statistics that allows us to calculate the likelihood of an event occurring given that another event has already occurred. This powerful tool helps us make informed decisions in various fields, from medicine to machine learning.
+Xác suất có điều kiện là một khái niệm cơ bản trong thống kê cho phép chúng ta tính toán khả năng xảy ra một sự kiện nếu một sự kiện khác đã xảy ra. Công cụ mạnh mẽ này giúp chúng tôi đưa ra quyết định sáng suốt trong nhiều lĩnh vực khác nhau, từ y học đến học máy.
 
 ```python
 # Simulating a simple conditional probability scenario
@@ -29,9 +29,9 @@ p_second_head_given_first_head = two_heads / at_least_one_head
 print(f"P(Second coin is Heads | First coin is Heads) ≈ {p_second_head_given_first_head:.4f}")
 ```
 
-Slide 2: The Basics of Conditional Probability
+Slide 2: Khái niệm cơ bản về xác suất có điều kiện
 
-Conditional probability is expressed as P(A|B), which reads as "the probability of event A occurring given that event B has occurred." This concept helps us update our beliefs based on new information, allowing for more accurate predictions and decision-making.
+Xác suất có điều kiện được biểu thị bằng P(A|B), được đọc là "xác suất xảy ra sự kiện A nếu sự kiện B đã xảy ra". Khái niệm này giúp chúng ta cập nhật niềm tin của mình dựa trên thông tin mới, cho phép đưa ra những dự đoán và ra quyết định chính xác hơn.
 
 ```python
 # Visualizing conditional probability with a Venn diagram
@@ -51,9 +51,9 @@ plt.title('Conditional Probability: P(A|B)')
 plt.show()
 ```
 
-Slide 3: The Conditional Probability Formula
+Slide 3: Công thức xác suất có điều kiện
 
-The formula for conditional probability is P(A|B) = P(A ∩ B) / P(B), where P(A ∩ B) is the probability of both events A and B occurring, and P(B) is the probability of event B occurring. This formula allows us to calculate the probability of an event given that another event has occurred.
+Công thức tính xác suất có điều kiện là P(A|B) = P(A ∩ B) / P(B), trong đó P(A ∩ B) là xác suất xảy ra cả hai sự kiện A và B, và P(B) là xác suất xảy ra sự kiện B. Công thức này cho phép chúng ta tính xác suất của một sự kiện khi một sự kiện khác đã xảy ra.
 
 ```python
 def conditional_probability(p_a_and_b, p_b):
@@ -76,9 +76,9 @@ result = conditional_probability(p_a_and_b, p_b)
 print(f"P(A|B) = {result:.4f}")
 ```
 
-Slide 4: Bayes' Theorem
+Slide 4: Định lý Bayes
 
-Bayes' Theorem is a powerful extension of conditional probability that allows us to reverse the condition and calculate P(B|A) from P(A|B). The formula is: P(B|A) = P(A|B) \* P(B) / P(A). This theorem is crucial in many applications, including medical diagnosis and machine learning.
+Định lý Bayes là một phần mở rộng mạnh mẽ của xác suất có điều kiện cho phép chúng ta đảo ngược điều kiện và tính P(B|A) từ P(A|B). Công thức là: P(B|A) = P(A|B) \* P(B) / P(A). Định lý này rất quan trọng trong nhiều ứng dụng, bao gồm chẩn đoán y tế và học máy.
 
 ```python
 def bayes_theorem(p_a_given_b, p_b, p_a):
@@ -103,9 +103,9 @@ p_disease_given_positive = bayes_theorem(p_positive_given_disease, p_disease, p_
 print(f"Probability of having the disease given a positive test: {p_disease_given_positive:.4f}")
 ```
 
-Slide 5: The Law of Total Probability
+Slide 5: Định luật xác suất tổng
 
-The Law of Total Probability is a fundamental rule that relates marginal probabilities to conditional probabilities. It states that for a partition of the sample space into events B1, B2, ..., Bn, the probability of an event A is the sum of the conditional probabilities of A given each Bi, weighted by the probability of Bi.
+Luật Tổng xác suất là một quy tắc cơ bản liên quan đến xác suất cận biên với xác suất có điều kiện. Nó phát biểu rằng đối với việc phân chia không gian mẫu thành các sự kiện B1, B2, ..., Bn, xác suất của sự kiện A là tổng các xác suất có điều kiện của A cho mỗi Bi, được tính theo xác suất của Bi.
 
 ```python
 import numpy as np
@@ -141,9 +141,9 @@ plt.show()
 print(f"Overall probability of having a picnic: {p_picnic:.4f}")
 ```
 
-Slide 6: Independence and Conditional Independence
+Slide 6: Độc lập và Độc lập có điều kiện
 
-Two events A and B are independent if the occurrence of one does not affect the probability of the other. Mathematically, A and B are independent if P(A|B) = P(A) or equivalently, if P(A ∩ B) = P(A) \* P(B). Conditional independence is a similar concept but in the context of a third event C.
+Hai biến cố A và B độc lập nếu sự xuất hiện của biến cố này không ảnh hưởng đến xác suất của biến cố kia. Về mặt toán học, A và B độc lập nếu P(A|B) = P(A) hoặc tương đương, nếu P(A ∩ B) = P(A) \* P(B). Độc lập có điều kiện là một khái niệm tương tự nhưng trong bối cảnh của sự kiện thứ ba C.
 
 ```python
 import numpy as np
@@ -169,9 +169,9 @@ independent = check_independence(p_even_first, p_sum_greater_than_7, p_even_firs
 print(f"Are the events independent? {independent}")
 ```
 
-Slide 7: The Chain Rule of Probability
+Slide 7: Quy tắc chuỗi xác suất
 
-The Chain Rule of Probability allows us to calculate the joint probability of multiple events by decomposing it into a product of conditional probabilities. For events A, B, and C, P(A ∩ B ∩ C) = P(A) \* P(B|A) \* P(C|A ∩ B).
+Quy tắc xác suất chuỗi cho phép chúng ta tính toán xác suất chung của nhiều sự kiện bằng cách phân tách nó thành tích của các xác suất có điều kiện. Đối với các sự kiện A, B và C, P(A ∩ B ∩ C) = P(A) \* P(B|A) \* P(C|A ∩ B).
 
 ```python
 def chain_rule(probabilities):
@@ -192,9 +192,9 @@ joint_prob = chain_rule([p_ace, p_king_given_ace, p_queen_given_ace_king])
 print(f"Probability of drawing Ace, King, Queen in that order: {joint_prob:.6f}")
 ```
 
-Slide 8: Conditional Probability in Machine Learning
+Slide 8: Xác suất có điều kiện trong Machine Learning
 
-Conditional probability is a fundamental concept in many machine learning algorithms, particularly in Bayesian methods and probabilistic graphical models. One common application is in Naive Bayes classifiers, which use Bayes' theorem to predict the most likely class for a given input.
+Xác suất có điều kiện là một khái niệm cơ bản trong nhiều thuật toán học máy, đặc biệt là trong các phương pháp Bayes và mô hình đồ họa xác suất. Một ứng dụng phổ biến là trong các bộ phân loại Naive Bayes, sử dụng định lý Bayes để dự đoán lớp có khả năng xảy ra nhất đối với một đầu vào nhất định.
 
 ```python
 from sklearn.naive_bayes import GaussianNB
@@ -225,9 +225,9 @@ class_probabilities = nb_classifier.predict_proba(sample)
 print(f"Class probabilities for the sample: {class_probabilities[0]}")
 ```
 
-Slide 9: Conditional Probability in Natural Language Processing
+Slide 9: Xác suất có điều kiện trong xử lý ngôn ngữ tự nhiên
 
-Conditional probability plays a crucial role in various Natural Language Processing (NLP) tasks, such as language modeling, part-of-speech tagging, and named entity recognition. One common application is in n-gram language models, which use conditional probabilities to predict the next word in a sequence.
+Xác suất có điều kiện đóng một vai trò quan trọng trong các nhiệm vụ Xử lý ngôn ngữ tự nhiên (NLP) khác nhau, chẳng hạn như mô hình hóa ngôn ngữ, gắn thẻ một phần lời nói và nhận dạng thực thể được đặt tên. Một ứng dụng phổ biến là trong các mô hình ngôn ngữ n-gram, sử dụng xác suất có điều kiện để dự đoán từ tiếp theo trong một chuỗi.
 
 ```python
 import nltk
@@ -272,9 +272,9 @@ for _ in range(10):
 print(" ".join(sequence))
 ```
 
-Slide 10: Monte Carlo Methods and Conditional Probability
+Trang trình bày 10: Phương pháp Monte Carlo và Xác suất có điều kiện
 
-Monte Carlo methods are computational algorithms that use repeated random sampling to obtain numerical results. These methods are particularly useful when dealing with complex probability distributions or high-dimensional problems. We can use Monte Carlo simulations to estimate conditional probabilities in scenarios where analytical solutions are difficult to obtain.
+Phương pháp Monte Carlo là các thuật toán tính toán sử dụng việc lấy mẫu ngẫu nhiên lặp đi lặp lại để thu được kết quả bằng số. Những phương pháp này đặc biệt hữu ích khi xử lý các phân bố xác suất phức tạp hoặc các vấn đề có nhiều chiều. Chúng ta có thể sử dụng mô phỏng Monte Carlo để ước tính xác suất có điều kiện trong các tình huống khó có được giải pháp phân tích.
 
 ```python
 import numpy as np
@@ -317,9 +317,9 @@ ax.set_ylabel('Y')
 plt.show()
 ```
 
-Slide 11: Conditional Probability in Bayesian Networks
+Trang trình bày 11: Xác suất có điều kiện trong Mạng Bayesian
 
-Bayesian networks are graphical models that represent probabilistic relationships among a set of variables. They use conditional probability tables (CPTs) to define the relationships between connected nodes. Bayesian networks are powerful tools for reasoning under uncertainty and are widely used in artificial intelligence and expert systems.
+Mạng Bayes là các mô hình đồ họa thể hiện mối quan hệ xác suất giữa một tập hợp các biến. Họ sử dụng bảng xác suất có điều kiện (CPT) để xác định mối quan hệ giữa các nút được kết nối. Mạng Bayes là công cụ mạnh mẽ để suy luận trong điều kiện không chắc chắn và được sử dụng rộng rãi trong trí tuệ nhân tạo và hệ thống chuyên gia.
 
 ```python
 from pgmpy.models import BayesianNetwork
@@ -354,9 +354,9 @@ print("Probability of wet grass given that it's cloudy:")
 print(result)
 ```
 
-Slide 12: Real-Life Example: Disease Diagnosis
+Slide 12: Ví dụ thực tế: Chẩn đoán bệnh tật
 
-Conditional probability is crucial in medical diagnosis. Let's consider a scenario where a doctor is trying to determine the probability of a patient having a certain disease given a positive test result. This example demonstrates the practical application of Bayes' theorem in a real-world context.
+Xác suất có điều kiện là rất quan trọng trong chẩn đoán y tế. Hãy xem xét một tình huống trong đó một bác sĩ đang cố gắng xác định xác suất một bệnh nhân mắc một căn bệnh nào đó có kết quả xét nghiệm dương tính. Ví dụ này thể hiện ứng dụng thực tế của định lý Bayes trong bối cảnh thế giới thực.
 
 ```python
 def calculate_disease_probability(prevalence, sensitivity, specificity, test_result):
@@ -393,9 +393,9 @@ p_disease_given_negative = calculate_disease_probability(prevalence, sensitivity
 print(f"Probability of having the disease given a negative test: {p_disease_given_negative:.4f}")
 ```
 
-Slide 13: Real-Life Example: Spam Email Classification
+Trang trình chiếu 13: Ví dụ thực tế: Phân loại email rác
 
-Email spam filters often use conditional probability techniques, such as Naive Bayes classifiers, to determine whether an incoming email is spam or not. This example demonstrates how to implement a simple spam filter using the Naive Bayes algorithm.
+Bộ lọc thư rác email thường sử dụng các kỹ thuật xác suất có điều kiện, chẳng hạn như bộ phân loại Naive Bayes, để xác định xem email đến có phải là thư rác hay không. Ví dụ này trình bày cách triển khai bộ lọc thư rác đơn giản bằng thuật toán Naive Bayes.
 
 ```python
 from collections import defaultdict
@@ -440,9 +440,9 @@ result = spam_filter.classify(test_email)
 print(f"The email '{test_email}' is classified as: {result}")
 ```
 
-Slide 14: Conditional Probability in A/B Testing
+Trang trình bày 14: Xác suất có điều kiện trong thử nghiệm A/B
 
-A/B testing is a common technique used in marketing and web design to compare two versions of a webpage or app to determine which one performs better. Conditional probability plays a crucial role in analyzing the results of these tests and making data-driven decisions.
+Thử nghiệm A/B là một kỹ thuật phổ biến được sử dụng trong tiếp thị và thiết kế web để so sánh hai phiên bản của trang web hoặc ứng dụng nhằm xác định phiên bản nào hoạt động tốt hơn. Xác suất có điều kiện đóng một vai trò quan trọng trong việc phân tích kết quả của các thử nghiệm này và đưa ra quyết định dựa trên dữ liệu.
 
 ```python
 import numpy as np
@@ -488,15 +488,15 @@ print(f"Is the difference statistically significant? {is_significant}")
 print(f"P-value: {p_value:.4f}")
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-For those interested in delving deeper into conditional probability and its applications, here are some valuable resources:
+Đối với những người quan tâm đến việc tìm hiểu sâu hơn về xác suất có điều kiện và các ứng dụng của nó, đây là một số tài nguyên có giá trị:
 
-1. "Probabilistic Graphical Models: Principles and Techniques" by Daphne Koller and Nir Friedman (MIT Press, 2009)
-2. "Pattern Recognition and Machine Learning" by Christopher M. Bishop (Springer, 2006)
-3. "Introduction to Probability" by Joseph K. Blitzstein and Jessica Hwang (Chapman and Hall/CRC, 2019)
-4. ArXiv.org papers:
-   * "A Tutorial on Bayesian Optimization" by Peter I. Frazier (ArXiv:1807.02811)
-   * "Probabilistic Machine Learning and Artificial Intelligence" by Zoubin Ghahramani (ArXiv:1502.05336)
+1. "Mô hình đồ họa xác suất: Nguyên tắc và kỹ thuật" của Daphne Koller và Nir Friedman (MIT Press, 2009)
+2. "Nhận dạng mẫu và học máy" của Christopher M. Bishop (Springer, 2006)
+3. "Giới thiệu về Xác suất" của Joseph K. Blitzstein và Jessica Hwang (Chapman và Hall/CRC, 2019)
+4. Các bài viết của ArXiv.org:
+   * "Hướng dẫn về Tối ưu hóa Bayes" của Peter I. Frazier (ArXiv:1807.02811)
+   * "Học máy xác suất và trí tuệ nhân tạo" của Zoubin Ghahramani (ArXiv:1502.05336)
 
-These resources provide in-depth explanations and advanced topics related to conditional probability and its applications in various fields.
+Những tài nguyên này cung cấp những giải thích sâu sắc và các chủ đề nâng cao liên quan đến xác suất có điều kiện và ứng dụng của nó trong các lĩnh vực khác nhau.

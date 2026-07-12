@@ -1,9 +1,9 @@
-## Decorating Python Classes
-Slide 1: Understanding Class Decorators in Python
+## Trang trí lớp Python
+Trang trình bày 1: Tìm hiểu về Trình trang trí lớp trong Python
 
-Class decorators are a powerful feature in Python that allow you to modify or enhance the behavior of classes. They are similar to function decorators but operate on entire classes instead of individual functions. Class decorators can be used to add functionality, modify attributes, or even completely transform the class definition.
+Trình trang trí lớp là một tính năng mạnh mẽ trong Python cho phép bạn sửa đổi hoặc nâng cao hành vi của các lớp. Chúng tương tự như các trình trang trí hàm nhưng hoạt động trên toàn bộ các lớp thay vì các hàm riêng lẻ. Trình trang trí lớp có thể được sử dụng để thêm chức năng, sửa đổi các thuộc tính hoặc thậm chí chuyển đổi hoàn toàn định nghĩa lớp.
 
-Slide 2: Source Code for Understanding Class Decorators in Python
+Trang trình bày 2: Mã nguồn để hiểu các trình trang trí lớp trong Python
 
 ```python
 def class_decorator(cls):
@@ -31,7 +31,7 @@ print(obj.original_method())
 print(obj.new_method())
 ```
 
-Slide 3: Results for Understanding Class Decorators in Python
+Trang trình bày 3: Kết quả tìm hiểu về Trình trang trí lớp trong Python
 
 ```
 Initializing with decorator
@@ -74,7 +74,7 @@ p3 = Point(x=1, y=2)
 print(p1, p2, p3)
 ```
 
-Slide 6: Results for Decorators with Parameters
+Slide 6: Kết quả cho Decorator có tham số
 
 ```
 Point(10, 20) Point(5, 20) Point(1, 2)
@@ -121,7 +121,7 @@ result = calc.add(5, 3)
 result = calc.subtract(10, 4)
 ```
 
-Slide 9: Results for Real-Life Example: Logging Decorator
+Trang trình bày 9: Kết quả cho ví dụ thực tế: Logging Decorator
 
 ```
 INFO:root:Creating instance of Calculator
@@ -170,7 +170,7 @@ except ValueError as e:
     print(f"Validation error: {e}")
 ```
 
-Slide 12: Results for Real-Life Example: Validation Decorator
+Trang trình bày 12: Kết quả cho ví dụ thực tế: Trình trang trí xác thực
 
 ```
 Created person: Alice, 30
@@ -215,7 +215,7 @@ print("\nDecorator:")
 DecoratedClass()
 ```
 
-Slide 15: Results for Class Decorators vs. Inheritance
+Trang trình bày 15: Kết quả giữa Trình trang trí lớp và Kế thừa
 
 ```
 Inheritance:
@@ -227,11 +227,11 @@ DecoratedClass init
 Extended init via decorator
 ```
 
-Slide 16: Additional Resources
+Trang trình bày 16: Tài nguyên bổ sung
 
-For more information on Python decorators and their advanced uses, refer to the following resources:
+Để biết thêm thông tin về trình trang trí Python và cách sử dụng nâng cao của chúng, hãy tham khảo các tài nguyên sau:
 
-1.  "Python Decorators: A Powerful and Expressive Feature" by Guido van Rossum (Python's creator): [https://arxiv.org/abs/2010.06545](https://arxiv.org/abs/2010.06545)
-2.  "Design Patterns in Python: Implementing the Gang of Four Patterns" by Bruno Preiss: [https://arxiv.org/abs/2004.10177](https://arxiv.org/abs/2004.10177)
+1. "Trình trang trí Python: Tính năng mạnh mẽ và biểu cảm" của Guido van Rossum (người tạo ra Python): [https://arxiv.org/abs/2010.06545](https://arxiv.org/abs/2010.06545)
+2. "Các mẫu thiết kế bằng Python: Triển khai Nhóm bốn mẫu" của Bruno Preiss: [https://arxiv.org/abs/2004.10177](https://arxiv.org/abs/2004.10177)
 
-These papers provide in-depth discussions on the design and implementation of decorators in Python, as well as their applications in various programming patterns.
+Các bài viết này cung cấp các cuộc thảo luận chuyên sâu về thiết kế và triển khai các trình trang trí trong Python, cũng như các ứng dụng của chúng trong các mẫu lập trình khác nhau.

@@ -1,7 +1,7 @@
-## Mastering Matplotlib Visualizations in Python
-Slide 1: Introduction to Matplotlib
+## Làm chủ trực quan hóa Matplotlib bằng Python
+Slide 1: Giới thiệu về Matplotlib
 
-Matplotlib is a powerful plotting library for Python, widely used for creating static, animated, and interactive visualizations. It provides a MATLAB-like interface and can produce publication-quality figures in various formats.
+Matplotlib là một thư viện vẽ đồ thị mạnh mẽ dành cho Python, được sử dụng rộng rãi để tạo trực quan hóa tĩnh, hoạt hình và tương tác. Nó cung cấp giao diện giống MATLAB và có thể tạo ra các số liệu chất lượng xuất bản ở nhiều định dạng khác nhau.
 
 ```python
 import matplotlib.pyplot as plt
@@ -17,9 +17,9 @@ plt.ylabel('Y-axis')
 plt.show()
 ```
 
-Slide 2: Basic Line Plot
+Trang trình bày 2: Sơ đồ đường cơ bản
 
-Line plots are fundamental in data visualization. They show trends over a continuous interval and are great for displaying time series data.
+Biểu đồ đường là cơ bản trong trực quan hóa dữ liệu. Chúng hiển thị xu hướng trong một khoảng thời gian liên tục và rất phù hợp để hiển thị dữ liệu chuỗi thời gian.
 
 ```python
 import matplotlib.pyplot as plt
@@ -36,9 +36,9 @@ plt.grid(True)
 plt.show()
 ```
 
-Slide 3: Customizing Plot Styles
+Slide 3: Tùy chỉnh kiểu vẽ
 
-Matplotlib offers various styles to customize the appearance of your plots. You can change colors, line styles, markers, and more.
+Matplotlib cung cấp nhiều kiểu khác nhau để tùy chỉnh giao diện của ô của bạn. Bạn có thể thay đổi màu sắc, kiểu đường kẻ, điểm đánh dấu, v.v.
 
 ```python
 import matplotlib.pyplot as plt
@@ -58,9 +58,9 @@ plt.grid(True)
 plt.show()
 ```
 
-Slide 4: Scatter Plots
+Trang trình bày 4: Đồ thị phân tán
 
-Scatter plots are useful for displaying the relationship between two variables. They can reveal patterns, correlations, or clusters in data.
+Biểu đồ phân tán rất hữu ích trong việc hiển thị mối quan hệ giữa hai biến. Chúng có thể tiết lộ các mẫu, mối tương quan hoặc cụm trong dữ liệu.
 
 ```python
 import matplotlib.pyplot as plt
@@ -79,9 +79,9 @@ plt.grid(True)
 plt.show()
 ```
 
-Slide 5: Bar Charts
+Trang trình bày 5: Biểu đồ thanh
 
-Bar charts are excellent for comparing quantities across different categories. They can be vertical or horizontal.
+Biểu đồ thanh là công cụ tuyệt vời để so sánh số lượng giữa các danh mục khác nhau. Chúng có thể dọc hoặc ngang.
 
 ```python
 import matplotlib.pyplot as plt
@@ -100,9 +100,9 @@ for i, v in enumerate(quantities):
 plt.show()
 ```
 
-Slide 6: Histograms
+Slide 6: Biểu đồ
 
-Histograms display the distribution of a dataset. They're useful for understanding the underlying frequency distribution of a set of continuous data.
+Biểu đồ hiển thị sự phân bố của một tập dữ liệu. Chúng hữu ích để hiểu phân bố tần số cơ bản của một tập hợp dữ liệu liên tục.
 
 ```python
 import matplotlib.pyplot as plt
@@ -120,9 +120,9 @@ plt.grid(True)
 plt.show()
 ```
 
-Slide 7: Subplots
+Trang trình bày 7: Các ô phụ
 
-Subplots allow you to create multiple plots in a single figure, which is useful for comparing different datasets or visualizing various aspects of the same data.
+Ô phụ cho phép bạn tạo nhiều ô trong một hình duy nhất, rất hữu ích để so sánh các tập dữ liệu khác nhau hoặc trực quan hóa các khía cạnh khác nhau của cùng một dữ liệu.
 
 ```python
 import matplotlib.pyplot as plt
@@ -149,9 +149,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 8: 3D Plots
+Trang trình bày 8: Sơ đồ 3D
 
-Matplotlib can create 3D plots, which are useful for visualizing three-dimensional data or surfaces.
+Matplotlib có thể tạo các biểu đồ 3D, rất hữu ích để hiển thị dữ liệu hoặc bề mặt ba chiều.
 
 ```python
 import matplotlib.pyplot as plt
@@ -175,9 +175,9 @@ fig.colorbar(surf)
 plt.show()
 ```
 
-Slide 9: Pie Charts
+Trang trình bày 9: Biểu đồ hình tròn
 
-Pie charts are used to show the composition of a whole, divided into parts. They're effective for displaying percentage or proportional data.
+Biểu đồ hình tròn được sử dụng để thể hiện thành phần của một tổng thể, được chia thành các phần. Chúng có hiệu quả trong việc hiển thị dữ liệu phần trăm hoặc tỷ lệ.
 
 ```python
 import matplotlib.pyplot as plt
@@ -193,9 +193,9 @@ plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle
 plt.show()
 ```
 
-Slide 10: Heatmaps
+Trang trình bày 10: Bản đồ nhiệt
 
-Heatmaps are useful for visualizing matrix data, showing patterns, correlations, or relative intensities.
+Bản đồ nhiệt rất hữu ích để trực quan hóa dữ liệu ma trận, hiển thị các mẫu, mối tương quan hoặc cường độ tương đối.
 
 ```python
 import matplotlib.pyplot as plt
@@ -218,9 +218,9 @@ for i in range(10):
 plt.show()
 ```
 
-Slide 11: Animation
+Trang trình chiếu 11: Hoạt hình
 
-Matplotlib can create animated plots, which are great for visualizing changing data over time or iterations.
+Matplotlib có thể tạo các biểu đồ hoạt hình, rất phù hợp để trực quan hóa dữ liệu thay đổi theo thời gian hoặc các lần lặp lại.
 
 ```python
 import matplotlib.pyplot as plt
@@ -241,9 +241,9 @@ plt.title('Animated Sine Wave')
 plt.show()
 ```
 
-Slide 12: Customizing Ticks and Labels
+Trang trình bày 12: Tùy chỉnh đánh dấu và nhãn
 
-Fine-tuning axis ticks and labels can greatly improve the readability and appearance of your plots.
+Việc tinh chỉnh các dấu trục và nhãn có thể cải thiện đáng kể khả năng đọc và hình thức của đồ thị của bạn.
 
 ```python
 import matplotlib.pyplot as plt
@@ -271,9 +271,9 @@ ax.grid(True)
 plt.show()
 ```
 
-Slide 13: Real-Life Example: Weather Data Visualization
+Trang trình bày 13: Ví dụ thực tế: Trực quan hóa dữ liệu thời tiết
 
-Let's visualize monthly temperature data for a city, showcasing how to handle time series data and create informative plots.
+Hãy trực quan hóa dữ liệu nhiệt độ hàng tháng của một thành phố, trình bày cách xử lý dữ liệu chuỗi thời gian và tạo các biểu đồ giàu thông tin.
 
 ```python
 import matplotlib.pyplot as plt
@@ -314,9 +314,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 14: Real-Life Example: Population Pyramid
+Slide 14: Ví dụ thực tế: Tháp dân số
 
-A population pyramid is a graphical representation of the age and sex distribution of a population. Let's create one using Matplotlib.
+Tháp dân số là biểu đồ thể hiện sự phân bổ độ tuổi và giới tính của dân số. Hãy tạo một cái bằng Matplotlib.
 
 ```python
 import matplotlib.pyplot as plt
@@ -351,12 +351,12 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-For further exploration of Matplotlib and its capabilities, consider the following resources:
+Để khám phá thêm về Matplotlib và các khả năng của nó, hãy xem xét các tài nguyên sau:
 
-1. Matplotlib Official Documentation: [https://matplotlib.org/stable/contents.html](https://matplotlib.org/stable/contents.html)
-2. "Visualization with Matplotlib" by Jake VanderPlas (ArXiv:1412.3590): [https://arxiv.org/abs/1412.3590](https://arxiv.org/abs/1412.3590)
-3. "Scientific Visualization: Python + Matplotlib" by Nicolas P. Rougier (ArXiv:1401.4127): [https://arxiv.org/abs/1401.4127](https://arxiv.org/abs/1401.4127)
+1. Tài liệu chính thức của Matplotlib: [https://matplotlib.org/stable/contents.html](https://matplotlib.org/stable/contents.html)
+2. "Trực quan hóa bằng Matplotlib" của Jake VanderPlas (ArXiv:1412.3590): [https://arxiv.org/abs/1412.3590](https://arxiv.org/abs/1412.3590)
+3. "Trực quan hóa khoa học: Python + Matplotlib" của Nicolas P. Rougier (ArXiv:1401.4127): [https://arxiv.org/abs/1401.4127](https://arxiv.org/abs/1401.4127)
 
-These resources provide in-depth tutorials, examples, and advanced techniques for mastering Matplotlib.
+Những tài nguyên này cung cấp các hướng dẫn, ví dụ chuyên sâu và các kỹ thuật nâng cao để thành thạo Matplotlib.

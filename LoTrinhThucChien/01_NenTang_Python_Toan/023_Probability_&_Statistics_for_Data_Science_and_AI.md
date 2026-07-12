@@ -1,7 +1,7 @@
-## Probability & Statistics for Data Science and AI
-Slide 1: Probability Distributions in Python
+## Xác suất & Thống kê cho Khoa học Dữ liệu và AI
+Trang trình bày 1: Phân phối xác suất trong Python
 
-Understanding probability distributions is fundamental to data science and machine learning. They describe the likelihood of different outcomes occurring in a random experiment and form the basis for statistical inference, modeling uncertainty, and making predictions.
+Hiểu phân phối xác suất là nền tảng cho khoa học dữ liệu và học máy. Chúng mô tả khả năng xảy ra các kết quả khác nhau trong một thử nghiệm ngẫu nhiên và tạo cơ sở cho suy luận thống kê, mô hình hóa sự không chắc chắn và đưa ra dự đoán.
 
 ```python
 import numpy as np
@@ -25,9 +25,9 @@ std = np.std(data)
 print(f"Mean: {mean:.2f}, Standard Deviation: {std:.2f}")
 ```
 
-Slide 2: Maximum Likelihood Estimation
+Trang trình bày 2: Ước tính khả năng xảy ra tối đa
 
-Maximum Likelihood Estimation (MLE) is a statistical method used to estimate the parameters of a probability distribution by maximizing the likelihood function. It's crucial for parameter estimation in machine learning models.
+Ước tính khả năng xảy ra tối đa (MLE) là một phương pháp thống kê được sử dụng để ước tính các tham số của phân bố xác suất bằng cách tối đa hóa hàm khả năng. Điều quan trọng là ước tính tham số trong các mô hình học máy.
 
 ```python
 import numpy as np
@@ -51,9 +51,9 @@ print(f"True parameters: μ={true_params[0]}, σ={true_params[1]}")
 print(f"Estimated parameters: μ={estimated_mu:.2f}, σ={estimated_sigma:.2f}")
 ```
 
-Slide 3: Bayesian Inference Implementation
+Trang trình bày 3: Triển khai suy luận Bayesian
 
-Bayesian inference combines prior knowledge with observed data to update probability distributions. This approach is particularly powerful in machine learning for uncertainty quantification and sequential learning problems.
+Suy luận Bayes kết hợp kiến ​​thức trước đó với dữ liệu quan sát được để cập nhật phân bố xác suất. Cách tiếp cận này đặc biệt hiệu quả trong học máy đối với các vấn đề định lượng không chắc chắn và học tuần tự.
 
 ```python
 import numpy as np
@@ -88,9 +88,9 @@ print(f"Posterior mean: {post_mean:.2f}")
 print(f"Posterior std: {post_std:.2f}")
 ```
 
-Slide 4: Markov Chain Monte Carlo (MCMC)
+Trang trình bày 4: Chuỗi Markov Monte Carlo (MCMC)
 
-MCMC is a powerful sampling method used to approximate complicated probability distributions. It's essential in Bayesian inference and probabilistic machine learning for sampling from high-dimensional distributions.
+MCMC là một phương pháp lấy mẫu mạnh mẽ được sử dụng để ước tính các phân bố xác suất phức tạp. Điều này rất cần thiết trong suy luận Bayes và học máy xác suất để lấy mẫu từ các phân phối nhiều chiều.
 
 ```python
 import numpy as np
@@ -126,9 +126,9 @@ plt.plot(x, target(x))
 plt.title('MCMC Sampling Results')
 ```
 
-Slide 5: Hypothesis Testing Framework
+Slide 5: Khung kiểm tra giả thuyết
 
-Statistical hypothesis testing forms the foundation for making data-driven decisions under uncertainty. This implementation provides a comprehensive framework for conducting various statistical tests with proper error control.
+Kiểm tra giả thuyết thống kê tạo nền tảng cho việc đưa ra quyết định dựa trên dữ liệu trong điều kiện không chắc chắn. Việc triển khai này cung cấp một khuôn khổ toàn diện để tiến hành các thử nghiệm thống kê khác nhau với khả năng kiểm soát lỗi thích hợp.
 
 ```python
 import numpy as np
@@ -171,9 +171,9 @@ print(f"P-value: {result['p_value']:.3f}")
 print(f"Decision: {result['decision']}")
 ```
 
-Slide 6: Bootstrap Confidence Intervals
+Trang trình bày 6: Khoảng tin cậy của Bootstrap
 
-Bootstrap methods provide powerful tools for estimating uncertainty in statistical estimates without making strong distributional assumptions. This implementation shows both parametric and non-parametric bootstrapping.
+Các phương pháp Bootstrap cung cấp các công cụ mạnh mẽ để ước tính độ không đảm bảo trong ước tính thống kê mà không cần đưa ra các giả định phân phối mạnh mẽ. Việc triển khai này cho thấy cả quá trình khởi động tham số và không tham số.
 
 ```python
 import numpy as np
@@ -217,9 +217,9 @@ plt.axvline(result['estimate'], color='r', linestyle='--')
 plt.title('Bootstrap Distribution of Mean')
 ```
 
-Slide 7: Kernel Density Estimation
+Trang trình bày 7: Ước tính mật độ hạt nhân
 
-Kernel Density Estimation (KDE) is a non-parametric method for estimating probability densities. It's crucial for understanding data distributions and creating smooth density estimates from discrete samples.
+Ước tính mật độ hạt nhân (KDE) là một phương pháp phi tham số để ước tính mật độ xác suất. Điều quan trọng là phải hiểu được sự phân bố dữ liệu và tạo ra các ước tính mật độ mượt mà từ các mẫu rời rạc.
 
 ```python
 import numpy as np
@@ -268,9 +268,9 @@ plt.plot(x_eval, density, 'r-', lw=2)
 plt.title('Kernel Density Estimation')
 ```
 
-Slide 8: Time Series Analysis
+Slide 8: Phân tích chuỗi thời gian
 
-Time series analysis is essential for understanding temporal patterns and making predictions. This implementation includes decomposition, stationarity testing, and forecasting components.
+Phân tích chuỗi thời gian là điều cần thiết để hiểu các mô hình thời gian và đưa ra dự đoán. Việc triển khai này bao gồm các thành phần phân rã, kiểm tra tính dừng và dự báo.
 
 ```python
 import numpy as np
@@ -342,9 +342,9 @@ print(f"ADF Statistic: {stationarity_test['test_statistic']:.3f}")
 print(f"p-value: {stationarity_test['p_value']:.3f}")
 ```
 
-Slide 9: Advanced Regression Diagnostics
+Trang trình bày 9: Chẩn đoán hồi quy nâng cao
 
-Regression diagnostics are crucial for validating model assumptions and identifying potential issues in statistical modeling. This implementation provides comprehensive tools for assessing model fit and assumptions.
+Chẩn đoán hồi quy rất quan trọng để xác thực các giả định của mô hình và xác định các vấn đề tiềm ẩn trong mô hình thống kê. Việc triển khai này cung cấp các công cụ toàn diện để đánh giá sự phù hợp và giả định của mô hình.
 
 ```python
 import numpy as np
@@ -410,9 +410,9 @@ influence = diagnostics.calculate_influence_measures()
 print(f"Number of high leverage points: {len(influence['high_leverage_points'])}")
 ```
 
-Slide 10: Information Theory Metrics
+Slide 10: Các thước đo lý thuyết thông tin
 
-Information theory provides fundamental tools for measuring uncertainty, mutual information, and entropy in probabilistic systems. These metrics are essential for feature selection and model evaluation in machine learning.
+Lý thuyết thông tin cung cấp các công cụ cơ bản để đo lường độ không đảm bảo, thông tin lẫn nhau và entropy trong các hệ thống xác suất. Các số liệu này rất cần thiết cho việc lựa chọn tính năng và đánh giá mô hình trong học máy.
 
 ```python
 import numpy as np
@@ -472,9 +472,9 @@ print(f"Mutual Information I(X;Y): {metrics.mutual_information(X, Y):.3f} bits")
 print(f"Information Gain Ratio: {metrics.information_gain_ratio(X, Y):.3f}")
 ```
 
-Slide 11: Probabilistic Graphical Models
+Slide 11: Mô hình đồ họa xác suất
 
-Probabilistic graphical models represent complex probability distributions through graphs. This implementation demonstrates a simple Bayesian Network with exact inference capabilities for discrete variables.
+Các mô hình đồ họa xác suất thể hiện sự phân bố xác suất phức tạp thông qua đồ thị. Việc triển khai này thể hiện một Mạng Bayesian đơn giản với khả năng suy luận chính xác cho các biến rời rạc.
 
 ```python
 import numpy as np
@@ -568,9 +568,9 @@ query = network.exact_inference('Grass', {'Weather': 'Sunny'})
 print(f"P(Grass|Weather=Sunny): Wet={query[0]:.3f}, Dry={query[1]:.3f}")
 ```
 
-Slide 12: Survival Analysis Implementation
+Trang trình bày 12: Thực hiện phân tích tỷ lệ sống sót
 
-Survival analysis is crucial for analyzing time-to-event data. This implementation provides tools for Kaplan-Meier estimation and Cox proportional hazards modeling.
+Phân tích tỷ lệ sống sót là rất quan trọng để phân tích dữ liệu theo thời gian xảy ra sự kiện. Việc triển khai này cung cấp các công cụ để ước tính Kaplan-Meier và lập mô hình mối nguy theo tỷ lệ Cox.
 
 ```python
 import numpy as np
@@ -662,9 +662,9 @@ median = survival.median_survival_time()
 print(f"Median survival time: {median:.2f}")
 ```
 
-Slide 13: Advanced Time Series Forecasting
+Trang trình bày 13: Dự báo chuỗi thời gian nâng cao
 
-This implementation showcases modern time series forecasting techniques including SARIMA models, Prophet-style decomposition, and handling multiple seasonal patterns with complex trend components.
+Việc triển khai này giới thiệu các kỹ thuật dự báo chuỗi thời gian hiện đại bao gồm mô hình SARIMA, phân tách kiểu Nhà tiên tri và xử lý nhiều mô hình theo mùa với các thành phần xu hướng phức tạp.
 
 ```python
 import numpy as np
@@ -777,19 +777,19 @@ print(f"Mean forecast: {forecast.mean():.2f}")
 print(f"Confidence Interval: ({conf_int.mean()[0]:.2f}, {conf_int.mean()[1]:.2f})")
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-*   Research on Advanced Statistical Methods in Machine Learning
-    *   "A Survey of Deep Learning Approaches for Bayesian Inference" Search: [https://arxiv.org/search/?query=bayesian+deep+learning&searchtype=all](https://arxiv.org/search/?query=bayesian+deep+learning&searchtype=all)
-*   State-of-the-art Time Series Analysis
-    *   "Neural Forecasting: Introduction and Literature Overview" Search: [https://arxiv.org/search/?query=neural+forecasting&searchtype=all](https://arxiv.org/search/?query=neural+forecasting&searchtype=all)
-*   Modern Approaches to Probabilistic Programming
-    *   "Probabilistic Programming in Machine Learning" Search: [https://arxiv.org/search/?query=probabilistic+programming&searchtype=all](https://arxiv.org/search/?query=probabilistic+programming&searchtype=all)
-*   Recommended Learning Resources:
-    *   Google Scholar: "Advanced Statistical Methods in Data Science"
-    *   MIT OpenCourseWare: Statistical Learning Theory
-    *   Stanford CS229: Machine Learning Course Materials
-*   Implementation References:
-    *   Python Scientific Computing Documentation
-    *   SciPy Stats Reference Guide
-    *   StatsModels Time Series Analysis Guide
+* Nghiên cứu các phương pháp thống kê nâng cao trong học máy
+    * Tìm kiếm "Khảo sát các phương pháp học sâu cho suy luận Bayesian": [https://arxiv.org/search/?query=bayesian+deep+learning&searchtype=all](https://arxiv.org/search/?query=bayesian+deep+learning&searchtype=all)
+* Phân tích chuỗi thời gian tiên tiến nhất
+    * "Dự báo thần kinh: Giới thiệu và Tổng quan về tài liệu" Tìm kiếm: [https://arxiv.org/search/?query=neural+forecasting&searchtype=all](https://arxiv.org/search/?query=neural+forecasting&searchtype=all)
+* Các phương pháp tiếp cận hiện đại đối với lập trình xác suất
+    * Tìm kiếm "Lập trình xác suất trong học máy": [https://arxiv.org/search/?query=probabilistic+programming&searchtype=all](https://arxiv.org/search/?query=probabilistic+programming&searchtype=all)
+* Tài nguyên học tập được đề xuất:
+    * Google Scholar: "Phương pháp thống kê nâng cao trong khoa học dữ liệu"
+    * MIT OpenCourseWare: Lý thuyết học tập thống kê
+    * Stanford CS229: Tài liệu khóa học về máy học
+* Tài liệu tham khảo thực hiện:
+    * Tài liệu tính toán khoa học Python
+    * Hướng dẫn tham khảo thống kê SciPy
+    * Hướng dẫn phân tích chuỗi thời gian StatsModels

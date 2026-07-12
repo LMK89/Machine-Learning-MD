@@ -1,7 +1,7 @@
-## Visualizing High-Dimensional Data with UMAP in Python
-Slide 1: Introduction to Large Language Models (LLMs)
+## Trực quan hóa dữ liệu nhiều chiều bằng UMAP trong Python
+Trang trình bày 1: Giới thiệu về Mô hình ngôn ngữ lớn (LLM)
 
-Large Language Models are AI systems trained on vast amounts of text data to understand and generate human-like text. They form the foundation for many modern natural language processing tasks.
+Mô hình ngôn ngữ lớn là hệ thống AI được đào tạo trên lượng lớn dữ liệu văn bản để hiểu và tạo ra văn bản giống con người. Chúng tạo thành nền tảng cho nhiều nhiệm vụ xử lý ngôn ngữ tự nhiên hiện đại.
 
 ```python
 import transformers
@@ -19,9 +19,9 @@ output = model.generate(input_ids, max_length=50, num_return_sequences=1)
 print(tokenizer.decode(output[0], skip_special_tokens=True))
 ```
 
-Slide 2: Training Large Language Models
+Slide 2: Đào tạo các mô hình ngôn ngữ lớn
 
-LLMs are typically trained using unsupervised learning on large corpora of text data. The training process involves predicting the next word in a sequence, allowing the model to learn patterns and relationships in language.
+LLM thường được đào tạo bằng cách sử dụng phương pháp học tập không giám sát trên một lượng lớn dữ liệu văn bản. Quá trình đào tạo bao gồm việc dự đoán từ tiếp theo trong một chuỗi, cho phép mô hình tìm hiểu các mẫu và mối quan hệ trong ngôn ngữ.
 
 ```python
 import torch
@@ -65,9 +65,9 @@ trainer = Trainer(
 trainer.train()
 ```
 
-Slide 3: Limitations of Traditional LLMs
+Trang trình bày 3: Hạn chế của LLM truyền thống
 
-While powerful, traditional LLMs have limitations such as outdated knowledge, inability to access external information, and potential for hallucinations or incorrect information.
+Mặc dù LLM truyền thống mạnh mẽ nhưng có những hạn chế như kiến ​​thức lỗi thời, không có khả năng truy cập thông tin bên ngoài và tiềm ẩn ảo giác hoặc thông tin không chính xác.
 
 ```python
 import openai
@@ -89,9 +89,9 @@ print(f"LLM Response: {result}")
 print("Note: This information might be outdated or inaccurate.")
 ```
 
-Slide 4: Introduction to Retrieval-Augmented Generation (RAG)
+Trang trình bày 4: Giới thiệu về thế hệ tăng cường truy xuất (RAG)
 
-RAG is a technique that combines the power of LLMs with the ability to retrieve relevant information from external sources, addressing some limitations of traditional LLMs.
+RAG là một kỹ thuật kết hợp sức mạnh của LLM với khả năng truy xuất thông tin liên quan từ các nguồn bên ngoài, giải quyết một số hạn chế của LLM truyền thống.
 
 ```python
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
@@ -118,9 +118,9 @@ print(f"Question: {question}")
 print(f"Generated Answer: {answer}")
 ```
 
-Slide 5: Components of RAG Systems
+Slide 5: Các thành phần của hệ thống RAG
 
-RAG systems typically consist of three main components: a retriever, a generator (LLM), and a fusion mechanism that combines retrieved information with the LLM's output.
+Các hệ thống RAG thường bao gồm ba thành phần chính: bộ truy xuất, bộ tạo (LLM) và cơ chế tổng hợp kết hợp thông tin được truy xuất với đầu ra của LLM.
 
 ```python
 import faiss
@@ -163,9 +163,9 @@ class Generator:
 # answer = generator.generate(query, retrieved_passages)
 ```
 
-Slide 6: Implementing RAG with Hugging Face Transformers
+Slide 6: Triển khai RAG với Transformers ôm mặt
 
-Hugging Face provides tools and models to implement RAG systems easily. Here's an example using their RAG implementation.
+Ôm Mặt cung cấp các công cụ và mô hình để triển khai hệ thống RAG một cách dễ dàng. Đây là một ví dụ sử dụng triển khai RAG của họ.
 
 ```python
 from transformers import RagTokenizer, RagRetriever, RagSequenceForGeneration
@@ -194,9 +194,9 @@ for sample in dataset:
     print(f"RAG Answer: {answer}\n")
 ```
 
-Slide 7: Advantages of RAG over Traditional LLMs
+Trang trình bày 7: Ưu điểm của RAG so với LLM truyền thống
 
-RAG systems offer several advantages, including up-to-date information, reduced hallucinations, and the ability to cite sources for generated information.
+Hệ thống RAG cung cấp một số lợi thế, bao gồm thông tin cập nhật, giảm ảo giác và khả năng trích dẫn nguồn thông tin được tạo ra.
 
 ```python
 import random
@@ -231,9 +231,9 @@ print(f"Traditional LLM: {llm.generate(prompt)}")
 print(f"RAG System: {rag.generate(prompt)}")
 ```
 
-Slide 8: Fine-tuning RAG Models
+Slide 8: Tinh chỉnh mô hình RAG
 
-Fine-tuning allows RAG models to adapt to specific domains or tasks, improving their performance on targeted applications.
+Tinh chỉnh cho phép các mô hình RAG thích ứng với các miền hoặc tác vụ cụ thể, cải thiện hiệu suất của chúng trên các ứng dụng được nhắm mục tiêu.
 
 ```python
 from transformers import RagTokenizer, RagRetriever, RagSequenceForGeneration
@@ -280,9 +280,9 @@ trainer = Trainer(
 trainer.train()
 ```
 
-Slide 9: Evaluating RAG Systems
+Slide 9: Đánh giá hệ thống RAG
 
-Evaluation of RAG systems involves assessing both the retrieval component and the overall generation quality. Metrics like ROUGE, BLEU, and human evaluation are commonly used.
+Đánh giá hệ thống RAG bao gồm việc đánh giá cả thành phần truy xuất và chất lượng tạo tổng thể. Các số liệu như ROUGE, BLEU và đánh giá con người thường được sử dụng.
 
 ```python
 from rouge_score import rouge_scorer
@@ -328,9 +328,9 @@ def evaluate_rag(rag_model, test_data):
 # print(evaluation_results)
 ```
 
-Slide 10: Introduction to Agentic RAG
+Slide 10: Giới thiệu về Agentic RAG
 
-Agentic RAG extends the RAG concept by incorporating autonomous decision-making and task-planning capabilities, allowing the system to perform more complex, multi-step tasks.
+Agentic RAG mở rộng khái niệm RAG bằng cách kết hợp khả năng ra quyết định và lập kế hoạch nhiệm vụ tự động, cho phép hệ thống thực hiện các nhiệm vụ nhiều bước, phức tạp hơn.
 
 ```python
 import random
@@ -385,9 +385,9 @@ for query in user_queries:
     print(f"Agent: {response}\n")
 ```
 
-Slide 11: Components of Agentic RAG Systems
+Slide 11: Các thành phần của hệ thống Agentic RAG
 
-Agentic RAG systems typically include components for planning, decision-making, and task execution, in addition to the retrieval and generation components of traditional RAG.
+Các hệ thống RAG tác nhân thường bao gồm các thành phần lập kế hoạch, ra quyết định và thực hiện nhiệm vụ, bên cạnh các thành phần truy xuất và tạo của RAG truyền thống.
 
 ```python
 import random
@@ -435,9 +435,9 @@ print(f"Task: {task_goal}")
 print(f"Result: {result}")
 ```
 
-Slide 12: Real-Life Example: Personal Assistant
+Slide 12: Ví dụ thực tế: Trợ lý cá nhân
 
-An Agentic RAG system can be used to create a more advanced personal assistant capable of handling complex, multi-step tasks.
+Hệ thống Agentic RAG có thể được sử dụng để tạo ra một trợ lý cá nhân tiên tiến hơn có khả năng xử lý các nhiệm vụ phức tạp, gồm nhiều bước.
 
 ```python
 import random
@@ -477,9 +477,9 @@ daily_plan = assistant.plan_day()
 print(daily_plan)
 ```
 
-Slide 13: Real-Life Example: Automated Research Assistant
+Trang trình chiếu 13: Ví dụ thực tế: Trợ lý nghiên cứu tự động
 
-An Agentic RAG system can assist researchers by automating literature reviews and summarizing findings across multiple sources.
+Hệ thống Agentic RAG có thể hỗ trợ các nhà nghiên cứu bằng cách tự động hóa việc đánh giá tài liệu và tóm tắt các phát hiện trên nhiều nguồn.
 
 ```python
 class ResearchAssistantRAG:
@@ -511,9 +511,9 @@ research_report = assistant.conduct_research(research_topic)
 print(research_report)
 ```
 
-Slide 14: Challenges and Future Directions
+Slide 14: Thách thức và định hướng tương lai
 
-Agentic RAG systems face challenges such as maintaining coherence across multiple steps, handling ambiguity, and ensuring ethical decision-making. Future research directions include improving planning algorithms, enhancing retrieval accuracy, and developing more robust evaluation metrics.
+Các hệ thống RAG tác nhân phải đối mặt với những thách thức như duy trì sự gắn kết qua nhiều bước, xử lý sự mơ hồ và đảm bảo việc ra quyết định có đạo đức. Các hướng nghiên cứu trong tương lai bao gồm cải thiện các thuật toán lập kế hoạch, nâng cao độ chính xác khi truy xuất và phát triển các số liệu đánh giá mạnh mẽ hơn.
 
 ```python
 import random
@@ -548,12 +548,12 @@ result = future_rag.execute_task(task)
 print(result)
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-For more information on LLMs, RAG, and Agentic RAG, consider exploring these resources:
+Để biết thêm thông tin về LLM, RAG và RAG đại lý, hãy xem xét khám phá các tài nguyên sau:
 
-1. "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks" (Lewis et al., 2020) ArXiv: [https://arxiv.org/abs/2005.11401](https://arxiv.org/abs/2005.11401)
-2. "Language Models are Few-Shot Learners" (Brown et al., 2020) ArXiv: [https://arxiv.org/abs/2005.14165](https://arxiv.org/abs/2005.14165)
-3. "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models" (Wei et al., 2022) ArXiv: [https://arxiv.org/abs/2201.11903](https://arxiv.org/abs/2201.11903)
+1. "Thế hệ tăng cường truy xuất cho các nhiệm vụ NLP chuyên sâu về tri thức" (Lewis và cộng sự, 2020) ArXiv: [https://arxiv.org/abs/2005.11401](https://arxiv.org/abs/2005.11401)
+2. "Mô hình ngôn ngữ là những người học ít cơ hội" (Brown và cộng sự, 2020) ArXiv: [https://arxiv.org/abs/2005.14165](https://arxiv.org/abs/2005.14165)
+3. "Chuỗi tư duy thúc đẩy suy luận trong các mô hình ngôn ngữ lớn" (Wei và cộng sự, 2022) ArXiv: [https://arxiv.org/abs/2201.11903](https://arxiv.org/abs/2201.11903)
 
-These papers provide in-depth insights into the development and applications of advanced language models and retrieval-augmented systems.
+Những bài viết này cung cấp những hiểu biết sâu sắc về sự phát triển và ứng dụng của các mô hình ngôn ngữ tiên tiến và các hệ thống tăng cường truy xuất.

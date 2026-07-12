@@ -1,7 +1,7 @@
-## NLP FastText! Word Embedding with Python
-Slide 1: Introduction to FastText
+## Văn bản nhanh NLP! Nhúng từ bằng Python
+Slide 1: Giới thiệu về FastText
 
-FastText is an open-source library developed by Facebook's AI Research lab for efficient learning of word representations and sentence classification. It extends the word2vec model by representing each word as a bag of character n-grams, allowing it to capture subword information and handle out-of-vocabulary words effectively.
+FastText là thư viện mã nguồn mở được phát triển bởi phòng thí nghiệm Nghiên cứu AI của Facebook để học cách trình bày từ và phân loại câu một cách hiệu quả. Nó mở rộng mô hình word2vec bằng cách biểu diễn mỗi từ dưới dạng một túi ký tự n-gram, cho phép nó nắm bắt thông tin từ phụ và xử lý các từ ngoài từ vựng một cách hiệu quả.
 
 ```python
 import fasttext
@@ -14,9 +14,9 @@ word_vector = model.get_word_vector('example')
 print(word_vector)
 ```
 
-Slide 2: Word Embeddings Basics
+Trang trình bày 2: Kiến thức cơ bản về nhúng Word
 
-Word embeddings are dense vector representations of words in a continuous vector space. They capture semantic relationships between words, allowing similar words to have similar vector representations. FastText builds upon this concept by incorporating subword information.
+Việc nhúng từ là cách biểu diễn vectơ dày đặc của các từ trong không gian vectơ liên tục. Chúng nắm bắt các mối quan hệ ngữ nghĩa giữa các từ, cho phép các từ tương tự có cách biểu diễn vectơ tương tự. FastText xây dựng dựa trên khái niệm này bằng cách kết hợp thông tin từ phụ.
 
 ```python
 import numpy as np
@@ -34,9 +34,9 @@ plt.title('Word Embeddings Visualization')
 plt.show()
 ```
 
-Slide 3: FastText Model Architecture
+Trang trình bày 3: Kiến trúc mô hình FastText
 
-FastText uses a shallow neural network with an input layer, a hidden layer, and an output layer. The input layer represents words or n-grams, the hidden layer learns the embeddings, and the output layer predicts the context words or labels for classification tasks.
+FastText sử dụng mạng thần kinh nông với lớp đầu vào, lớp ẩn và lớp đầu ra. Lớp đầu vào biểu thị các từ hoặc n-gram, lớp ẩn tìm hiểu các phần nhúng và lớp đầu ra dự đoán các từ ngữ cảnh hoặc nhãn cho các tác vụ phân loại.
 
 ```python
 import torch.nn as nn
@@ -56,9 +56,9 @@ class SimplifiedFastText(nn.Module):
 model = SimplifiedFastText(vocab_size=10000, embedding_dim=100)
 ```
 
-Slide 4: Subword Information
+Slide 4: Thông tin từ phụ
 
-FastText represents words as bags of character n-grams, allowing it to capture morphological information and handle out-of-vocabulary words. This approach is particularly useful for languages with rich morphology or for dealing with rare words.
+FastText biểu diễn các từ dưới dạng các túi ký tự n-gram, cho phép nó nắm bắt thông tin hình thái và xử lý các từ nằm ngoài từ vựng. Cách tiếp cận này đặc biệt hữu ích cho các ngôn ngữ có hình thái phong phú hoặc để xử lý các từ hiếm.
 
 ```python
 def get_ngrams(word, n_min=3, n_max=6):
@@ -73,9 +73,9 @@ word = "example"
 print(f"N-grams for '{word}':", get_ngrams(word))
 ```
 
-Slide 5: Training a FastText Model
+Slide 5: Huấn luyện mô hình FastText
 
-Training a FastText model involves preparing a corpus, setting hyperparameters, and using either the supervised or unsupervised learning mode. The unsupervised mode learns word representations, while the supervised mode is used for text classification.
+Huấn luyện mô hình FastText bao gồm việc chuẩn bị một kho dữ liệu, thiết lập siêu tham số và sử dụng chế độ học có giám sát hoặc không giám sát. Chế độ không giám sát học cách biểu diễn từ, trong khi chế độ giám sát được sử dụng để phân loại văn bản.
 
 ```python
 import fasttext
@@ -96,9 +96,9 @@ model = fasttext.train_unsupervised('corpus.txt',
 model.save_model("fasttext_model.bin")
 ```
 
-Slide 6: Word Similarity and Analogies
+Slide 6: Từ tương đồng và tương tự
 
-FastText embeddings can be used to find similar words and solve word analogies. This is useful for various NLP tasks and applications, such as recommendation systems or language understanding.
+Việc nhúng FastText có thể được sử dụng để tìm các từ tương tự và giải quyết các từ tương tự. Điều này hữu ích cho các nhiệm vụ và ứng dụng NLP khác nhau, chẳng hạn như hệ thống khuyến nghị hoặc hiểu ngôn ngữ.
 
 ```python
 import fasttext
@@ -115,9 +115,9 @@ result = model.get_analogies("king", "man", "woman")
 print("king - man + woman =", result)
 ```
 
-Slide 7: Text Classification with FastText
+Slide 7: Phân loại văn bản bằng FastText
 
-FastText can be used for efficient text classification tasks. It's particularly useful for large-scale problems with many categories. The model can handle both single-label and multi-label classification.
+FastText có thể được sử dụng cho các nhiệm vụ phân loại văn bản hiệu quả. Nó đặc biệt hữu ích cho các vấn đề quy mô lớn với nhiều loại. Mô hình có thể xử lý cả phân loại một nhãn và đa nhãn.
 
 ```python
 import fasttext
@@ -137,9 +137,9 @@ print(f"Text: {text}")
 print(f"Predicted label: {predictions[0][0]}, Probability: {predictions[1][0]:.2f}")
 ```
 
-Slide 8: Handling Out-of-Vocabulary Words
+Slide 8: Xử lý từ ngoài từ vựng
 
-FastText's use of subword information allows it to generate embeddings for words not seen during training. This is a significant advantage over traditional word embedding methods.
+Việc sử dụng thông tin từ phụ của FastText cho phép nó tạo ra các phần nhúng cho những từ không được nhìn thấy trong quá trình đào tạo. Đây là một lợi thế đáng kể so với các phương pháp nhúng từ truyền thống.
 
 ```python
 import fasttext
@@ -159,9 +159,9 @@ nearest_neighbors = model.get_nearest_neighbors(oov_word, k=5)
 print(f"Nearest neighbors for '{oov_word}':", nearest_neighbors)
 ```
 
-Slide 9: FastText vs Word2Vec
+Trang trình bày 9: FastText so với Word2Vec
 
-FastText builds upon Word2Vec by incorporating subword information. This comparison highlights the key differences and advantages of FastText over traditional word embedding techniques.
+FastText xây dựng dựa trên Word2Vec bằng cách kết hợp thông tin từ phụ. Sự so sánh này nêu bật những điểm khác biệt và ưu điểm chính của FastText so với các kỹ thuật nhúng từ truyền thống.
 
 ```python
 import fasttext
@@ -185,9 +185,9 @@ print("FastText OOV:", fasttext_model.get_word_vector(oov_word)[:5])
 # Word2Vec will raise KeyError for OOV words
 ```
 
-Slide 10: Preprocessing for FastText
+Slide 10: Tiền xử lý FastText
 
-Proper text preprocessing is crucial for optimal FastText performance. This includes tokenization, lowercasing, and handling special characters. FastText's subword approach reduces the need for extensive preprocessing compared to other models.
+Việc xử lý trước văn bản phù hợp là rất quan trọng để có hiệu suất FastText tối ưu. Điều này bao gồm mã thông báo, viết thường và xử lý các ký tự đặc biệt. Cách tiếp cận từ phụ của FastText giúp giảm nhu cầu xử lý trước rộng rãi so với các mô hình khác.
 
 ```python
 import re
@@ -212,9 +212,9 @@ print("Raw text:", raw_text)
 print("Processed text:", processed_text)
 ```
 
-Slide 11: FastText for Multilingual Applications
+Slide 11: FastText cho ứng dụng đa ngôn ngữ
 
-FastText's ability to handle subword information makes it particularly useful for multilingual applications. It can generate meaningful embeddings for languages with complex morphology or limited training data.
+Khả năng xử lý thông tin từ phụ của FastText khiến nó đặc biệt hữu ích cho các ứng dụng đa ngôn ngữ. Nó có thể tạo ra các phần nhúng có ý nghĩa cho các ngôn ngữ có hình thái phức tạp hoặc dữ liệu huấn luyện hạn chế.
 
 ```python
 import fasttext
@@ -237,9 +237,9 @@ for lang in languages:
     print(f"Embedding for '{word}' in {lang}:", vector[:5])
 ```
 
-Slide 12: Real-Life Example: Sentiment Analysis
+Trang trình chiếu 12: Ví dụ thực tế: Phân tích cảm xúc
 
-FastText can be effectively used for sentiment analysis tasks, such as analyzing customer reviews or social media posts. This example demonstrates how to train and use a FastText model for sentiment classification.
+FastText có thể được sử dụng một cách hiệu quả cho các nhiệm vụ phân tích cảm xúc, chẳng hạn như phân tích đánh giá của khách hàng hoặc bài đăng trên mạng xã hội. Ví dụ này trình bày cách đào tạo và sử dụng mô hình FastText để phân loại cảm tính.
 
 ```python
 import fasttext
@@ -266,9 +266,9 @@ for review in new_reviews:
     print(f"Sentiment: {label[0]}, Probability: {prob[0]:.2f}\n")
 ```
 
-Slide 13: Real-Life Example: Language Identification
+Slide 13: Ví dụ thực tế: Nhận dạng ngôn ngữ
 
-FastText can be used for language identification, which is useful for processing multilingual content. This example shows how to train and use a FastText model for identifying languages in short text snippets.
+FastText có thể được sử dụng để nhận dạng ngôn ngữ, rất hữu ích cho việc xử lý nội dung đa ngôn ngữ. Ví dụ này cho thấy cách đào tạo và sử dụng mô hình FastText để xác định ngôn ngữ trong các đoạn văn bản ngắn.
 
 ```python
 import fasttext
@@ -295,9 +295,9 @@ for text in texts:
     print(f"Detected language: {lang[0]}, Probability: {prob[0]:.2f}\n")
 ```
 
-Slide 14: FastText Optimization and Performance Tuning
+Trang trình bày 14: Tối ưu hóa FastText và điều chỉnh hiệu suất
 
-Optimizing FastText models involves tuning hyperparameters and considering trade-offs between model size, training speed, and performance. Key parameters include learning rate, embedding dimension, and n-gram sizes.
+Tối ưu hóa mô hình FastText liên quan đến việc điều chỉnh siêu tham số và cân nhắc sự cân bằng giữa kích thước mô hình, tốc độ đào tạo và hiệu suất. Các thông số chính bao gồm tốc độ học, thứ nguyên nhúng và kích thước n-gram.
 
 ```python
 import fasttext
@@ -328,13 +328,13 @@ for i, config in enumerate(configs):
     print(f"  Model Size: {model_size:.2f} MB\n")
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-For more information on FastText and its applications, consider exploring the following resources:
+Để biết thêm thông tin về FastText và các ứng dụng của nó, hãy cân nhắc khám phá các tài nguyên sau:
 
-1. FastText official documentation: [https://fasttext.cc/docs/en/support.html](https://fasttext.cc/docs/en/support.html)
-2. "Enriching Word Vectors with Subword Information" by P. Bojanowski et al. (2017): [https://arxiv.org/abs/1607.04606](https://arxiv.org/abs/1607.04606)
-3. "Bag of Tricks for Efficient Text Classification" by A. Joulin et al. (2016): [https://arxiv.org/abs/1607.01759](https://arxiv.org/abs/1607.01759)
-4. "FastText.zip: Compressing text classification models" by A. Joulin et al. (2016): [https://arxiv.org/abs/1612.03651](https://arxiv.org/abs/1612.03651)
+1. Tài liệu chính thức của FastText: [https://fasttext.cc/docs/en/support.html](https://fasttext.cc/docs/en/support.html)
+2. "Làm phong phú vectơ từ bằng thông tin từ phụ" của P. Bojanowski và cộng sự. (2017): [https://arxiv.org/abs/1607.04606](https://arxiv.org/abs/1607.04606)
+3. "Túi thủ thuật phân loại văn bản hiệu quả" của A. Joulin và cộng sự. (2016): [https://arxiv.org/abs/1607.01759](https://arxiv.org/abs/1607.01759)
+4. "FastText.zip: Nén các mô hình phân loại văn bản" của A. Joulin và cộng sự. (2016): [https://arxiv.org/abs/1612.03651](https://arxiv.org/abs/1612.03651)
 
-These resources provide in-depth information on the FastText algorithm, its implementation, and various applications in natural language processing tasks.
+Các tài nguyên này cung cấp thông tin chuyên sâu về thuật toán FastText, cách triển khai nó và các ứng dụng khác nhau trong các tác vụ xử lý ngôn ngữ tự nhiên.

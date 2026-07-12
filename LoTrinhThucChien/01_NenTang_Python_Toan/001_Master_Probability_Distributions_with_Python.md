@@ -1,7 +1,7 @@
-## Master Probability Distributions with Python
-Slide 1: Understanding Probability Distributions
+## Phân phối xác suất chính với Python
+Trang trình bày 1: Tìm hiểu về phân phối xác suất
 
-Probability distributions are mathematical functions that describe the likelihood of different outcomes in a random event. They are fundamental to statistics and data science, helping us model uncertainty and make predictions. In this presentation, we'll explore key probability distributions and how to work with them using Python.
+Phân phối xác suất là các hàm toán học mô tả khả năng xảy ra các kết quả khác nhau trong một sự kiện ngẫu nhiên. Chúng là nền tảng của thống kê và khoa học dữ liệu, giúp chúng ta lập mô hình về sự không chắc chắn và đưa ra dự đoán. Trong phần trình bày này, chúng ta sẽ khám phá các phân bố xác suất chính và cách làm việc với chúng bằng Python.
 
 ```python
 import numpy as np
@@ -19,9 +19,9 @@ plt.ylabel('Frequency')
 plt.show()
 ```
 
-Slide 2: Normal Distribution
+Trang trình bày 2: Phân phối bình thường
 
-The normal distribution, also known as the Gaussian distribution, is a symmetric bell-shaped curve. It's widely used in natural and social sciences to represent real-valued random variables. In Python, we can generate and visualize a normal distribution using NumPy and Matplotlib.
+Phân phối chuẩn, còn được gọi là phân phối Gaussian, là một đường cong hình chuông đối xứng. Nó được sử dụng rộng rãi trong khoa học tự nhiên và xã hội để biểu diễn các biến ngẫu nhiên có giá trị thực. Trong Python, chúng ta có thể tạo và trực quan hóa phân phối chuẩn bằng NumPy và Matplotlib.
 
 ```python
 import numpy as np
@@ -41,9 +41,9 @@ plt.grid(True)
 plt.show()
 ```
 
-Slide 3: Uniform Distribution
+Trang trình bày 3: Phân phối đồng đều
 
-The uniform distribution represents a constant probability over a specified range. It's often used in simulations and random number generation. Here's how to create and visualize a uniform distribution in Python:
+Sự phân bố đồng đều thể hiện xác suất không đổi trên một phạm vi xác định. Nó thường được sử dụng trong mô phỏng và tạo số ngẫu nhiên. Dưới đây là cách tạo và trực quan hóa phân phối đồng đều trong Python:
 
 ```python
 import numpy as np
@@ -60,9 +60,9 @@ plt.ylabel('Frequency')
 plt.show()
 ```
 
-Slide 4: Binomial Distribution
+Trang trình bày 4: Phân phối nhị thức
 
-The binomial distribution models the number of successes in a fixed number of independent Bernoulli trials. It's commonly used in scenarios involving yes/no outcomes, such as coin flips or quality control. Let's simulate coin flips using the binomial distribution:
+Phân phối nhị thức mô hình hóa số lần thành công trong một số thử nghiệm Bernoulli độc lập cố định. Nó thường được sử dụng trong các tình huống liên quan đến kết quả có/không, chẳng hạn như tung đồng xu hoặc kiểm soát chất lượng. Hãy mô phỏng việc lật đồng xu bằng cách sử dụng phân phối nhị thức:
 
 ```python
 import numpy as np
@@ -85,9 +85,9 @@ plt.ylabel('Probability')
 plt.show()
 ```
 
-Slide 5: Poisson Distribution
+Trang trình bày 5: Phân phối Poisson
 
-The Poisson distribution models the number of events occurring in a fixed interval of time or space. It's often used in queueing theory, traffic flow, and rare event modeling. Here's an example of generating a Poisson distribution:
+Phân phối Poisson mô hình hóa số lượng sự kiện xảy ra trong một khoảng thời gian hoặc không gian cố định. Nó thường được sử dụng trong lý thuyết xếp hàng, luồng giao thông và mô hình sự kiện hiếm gặp. Dưới đây là ví dụ về việc tạo phân phối Poisson:
 
 ```python
 import numpy as np
@@ -109,9 +109,9 @@ plt.ylabel('Probability')
 plt.show()
 ```
 
-Slide 6: Exponential Distribution
+Trang trình bày 6: Phân phối theo cấp số nhân
 
-The exponential distribution models the time between events in a Poisson process. It's commonly used in reliability engineering and queueing theory. Let's create an exponential distribution and plot its probability density function:
+Phân bố hàm mũ mô hình hóa thời gian giữa các sự kiện trong quy trình Poisson. Nó thường được sử dụng trong kỹ thuật độ tin cậy và lý thuyết xếp hàng. Hãy tạo một phân bố hàm mũ và vẽ hàm mật độ xác suất của nó:
 
 ```python
 import numpy as np
@@ -134,9 +134,9 @@ plt.grid(True)
 plt.show()
 ```
 
-Slide 7: Real-life Example: Customer Arrivals
+Trang trình bày 7: Ví dụ thực tế: Khách hàng đến
 
-Let's model customer arrivals at a coffee shop using a Poisson distribution. Assume that on average, 20 customers arrive per hour. We'll simulate the number of arrivals for a 12-hour day:
+Hãy lập mô hình khách hàng đến quán cà phê bằng cách sử dụng phân phối Poisson. Giả sử trung bình mỗi giờ có 20 khách hàng đến. Chúng tôi sẽ mô phỏng số lượng khách đến trong một ngày 12 giờ:
 
 ```python
 import numpy as np
@@ -159,9 +159,9 @@ plt.show()
 print(f"Total customers: {sum(arrivals)}")
 ```
 
-Slide 8: Real-life Example: Manufacturing Quality Control
+Slide 8: Ví dụ thực tế: Kiểm soát chất lượng sản xuất
 
-In a manufacturing process, we can use the binomial distribution to model the number of defective items in a batch. Let's simulate quality control for a production line where each item has a 5% chance of being defective:
+Trong quy trình sản xuất, chúng ta có thể sử dụng phân phối nhị thức để lập mô hình số lượng mặt hàng bị lỗi trong một lô. Hãy mô phỏng việc kiểm soát chất lượng cho một dây chuyền sản xuất trong đó mỗi mặt hàng có 5% khả năng bị lỗi:
 
 ```python
 import numpy as np
@@ -186,9 +186,9 @@ plt.show()
 print(f"Average defects per batch: {np.mean(defects):.2f}")
 ```
 
-Slide 9: Probability Distribution Fitting
+Slide 9: Phù hợp phân bố xác suất
 
-Often, we need to determine which probability distribution best fits our data. SciPy provides tools for distribution fitting. Let's generate some random data and try to fit a distribution to it:
+Thông thường, chúng ta cần xác định phân bố xác suất nào phù hợp nhất với dữ liệu của mình. SciPy cung cấp các công cụ để phân phối phù hợp. Hãy tạo một số dữ liệu ngẫu nhiên và cố gắng phân phối phù hợp với nó:
 
 ```python
 import numpy as np
@@ -217,9 +217,9 @@ print(f"True shape: {true_shape}, Fitted shape: {fitted_shape:.2f}")
 print(f"True scale: {true_scale}, Fitted scale: {fitted_scale:.2f}")
 ```
 
-Slide 10: Multivariate Normal Distribution
+Trang trình bày 10: Phân phối chuẩn đa biến
 
-The multivariate normal distribution is an extension of the one-dimensional normal distribution to higher dimensions. It's useful for modeling correlated random variables. Let's create and visualize a 2D multivariate normal distribution:
+Phân phối chuẩn đa biến là sự mở rộng của phân phối chuẩn một chiều đến các chiều cao hơn. Nó hữu ích cho việc mô hình hóa các biến ngẫu nhiên tương quan. Hãy tạo và trực quan hóa phân phối chuẩn đa biến 2D:
 
 ```python
 import numpy as np
@@ -244,9 +244,9 @@ plt.colorbar()
 plt.show()
 ```
 
-Slide 11: Kernel Density Estimation
+Trang trình bày 11: Ước tính mật độ hạt nhân
 
-Kernel Density Estimation (KDE) is a non-parametric way to estimate the probability density function of a random variable. It's useful when you don't know the underlying distribution of your data. Let's use KDE to estimate the distribution of some sample data:
+Ước tính mật độ hạt nhân (KDE) là một cách phi tham số để ước tính hàm mật độ xác suất của một biến ngẫu nhiên. Điều này hữu ích khi bạn không biết phân phối cơ bản của dữ liệu của mình. Hãy sử dụng KDE để ước tính mức phân bổ của một số dữ liệu mẫu:
 
 ```python
 import numpy as np
@@ -271,9 +271,9 @@ plt.legend()
 plt.show()
 ```
 
-Slide 12: Cumulative Distribution Function (CDF)
+Slide 12: Hàm phân phối tích lũy (CDF)
 
-The Cumulative Distribution Function (CDF) gives the probability that a random variable is less than or equal to a certain value. It's useful for calculating probabilities and quantiles. Let's plot the CDF of a normal distribution:
+Hàm phân phối tích lũy (CDF) cho biết xác suất một biến ngẫu nhiên nhỏ hơn hoặc bằng một giá trị nhất định. Nó rất hữu ích cho việc tính toán xác suất và lượng tử. Hãy vẽ CDF của phân phối chuẩn:
 
 ```python
 import numpy as np
@@ -296,9 +296,9 @@ plt.show()
 print(f"P(X <= 1) = {stats.norm.cdf(1):.4f}")
 ```
 
-Slide 13: Monte Carlo Simulation
+Trang trình bày 13: Mô phỏng Monte Carlo
 
-Monte Carlo simulations use repeated random sampling to solve problems that might be deterministic in principle. They're widely used in finance, physics, and engineering. Let's use a Monte Carlo simulation to estimate π:
+Mô phỏng Monte Carlo sử dụng việc lấy mẫu ngẫu nhiên lặp đi lặp lại để giải quyết các vấn đề về nguyên tắc có thể mang tính quyết định. Chúng được sử dụng rộng rãi trong tài chính, vật lý và kỹ thuật. Hãy sử dụng mô phỏng Monte Carlo để ước tính π:
 
 ```python
 import numpy as np
@@ -329,11 +329,11 @@ plt.axis('equal')
 plt.show()
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-For further exploration of probability distributions and their applications in Python:
+Để khám phá thêm về phân bố xác suất và ứng dụng của chúng trong Python:
 
-1. SciPy Documentation: Comprehensive guide on statistical functions and probability distributions. [https://docs.scipy.org/doc/scipy/reference/stats.html](https://docs.scipy.org/doc/scipy/reference/stats.html)
-2. "Probability Theory: The Logic of Science" by E. T. Jaynes: A foundational text on probability theory. ArXiv: [https://arxiv.org/abs/math/0312635](https://arxiv.org/abs/math/0312635)
-3. "An Introduction to Statistical Learning" by James, Witten, Hastie, and Tibshirani: Covers statistical learning methods with applications in R. (Note: While not on ArXiv, this is a widely recognized resource in the field)
-4. "Probabilistic Programming & Bayesian Methods for Hackers" by Cameron Davidson-Pilon: A practical introduction to Bayesian methods and probabilistic programming. GitHub: [https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers](https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers)
+1. Tài liệu SciPy: Hướng dẫn toàn diện về các hàm thống kê và phân bố xác suất. [https://docs.scipy.org/doc/scipy/reference/stats.html](https://docs.scipy.org/doc/scipy/reference/stats.html)
+2. "Lý thuyết xác suất: Logic của khoa học" của E. T. Jaynes: Văn bản nền tảng về lý thuyết xác suất. ArXiv: [https://arxiv.org/abs/math/0312635](https://arxiv.org/abs/math/0312635)
+3. "Giới thiệu về học thống kê" của James, Witten, Hastie và Tibshirani: Bao gồm các phương pháp học thống kê với các ứng dụng trong R. (Lưu ý: Mặc dù không có trên ArXiv nhưng đây là tài nguyên được công nhận rộng rãi trong lĩnh vực này)
+4. "Lập trình xác suất & Phương pháp Bayesian dành cho tin tặc" của Cameron Davidson-Pilon: Giới thiệu thực tế về phương pháp Bayesian và lập trình xác suất. GitHub: [https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers](https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers)

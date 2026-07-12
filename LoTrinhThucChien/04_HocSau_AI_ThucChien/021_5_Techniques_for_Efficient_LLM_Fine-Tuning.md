@@ -1,7 +1,7 @@
-## 5 Techniques for Efficient LLM Fine-Tuning
-Slide 1: Understanding LoRA Architecture
+##5 Kỹ Thuật Tinh Chỉnh LLM Hiệu Quả
+Trang trình bày 1: Tìm hiểu kiến trúc LoRA
 
-Low-Rank Adaptation (LoRA) revolutionizes LLM fine-tuning by introducing two matrices A ∈ ℝ^(r×d) and B ∈ ℝ^(d×r) where r << d, significantly reducing trainable parameters while maintaining model performance through low-rank decomposition of weight updates.
+Thích ứng Xếp hạng Thấp (LoRA) cách mạng hóa việc tinh chỉnh LLM bằng cách giới thiệu hai ma trận A ∈ ℝ^(r×d) và B ∈ ℝ^(d×r) trong đó r << d, giảm đáng kể các tham số có thể huấn luyện trong khi vẫn duy trì hiệu suất mô hình thông qua việc phân rã cấp thấp của các cập nhật trọng số.
 
 ```python
 import torch
@@ -25,9 +25,9 @@ class LoRALayer(nn.Module):
         return x @ self.lora_A.T @ self.lora_B.T * self.scaling
 ```
 
-Slide 2: LoRA Implementation Example
+Trang trình bày 2: Ví dụ triển khai LoRA
 
-Let's implement a practical example of LoRA by fine-tuning a pre-trained transformer layer, demonstrating how to integrate LoRA modules into existing neural network architectures.
+Hãy triển khai một ví dụ thực tế về LoRA bằng cách tinh chỉnh lớp biến áp được đào tạo trước, trình bày cách tích hợp các mô-đun LoRA vào các kiến ​​trúc mạng thần kinh hiện có.
 
 ```python
 class LoRATransformerLayer(nn.Module):
@@ -67,9 +67,9 @@ class LoRAFALayer(nn.Module):
         return x @ self.lora_A.T @ self.lora_B.T * self.scaling
 ```
 
-Slide 4: VeRA Implementation
+Trang trình bày 4: Triển khai VeRA
 
-VeRA's innovative approach uses shared, frozen random matrices across layers while introducing trainable scaling vectors b and d, drastically reducing parameter count compared to traditional LoRA implementations.
+Cách tiếp cận đổi mới của VeRA sử dụng các ma trận ngẫu nhiên được chia sẻ, cố định trên các lớp đồng thời giới thiệu các vectơ tỷ lệ b và d có thể huấn luyện được, giảm đáng kể số lượng tham số so với triển khai LoRA truyền thống.
 
 ```python
 class VeRALayer(nn.Module):
@@ -117,9 +117,9 @@ class DeltaLoRALayer(nn.Module):
         return x @ (self.base_weight + current_AB * self.scaling).T
 ```
 
-Slide 6: LoRA+ Implementation
+Trang trình bày 6: Triển khai LoRA+
 
-LoRA+ enhances the original LoRA by implementing different learning rates for matrices A and B, with matrix B receiving a higher learning rate for optimal convergence during the training process.
+LoRA+ nâng cao LoRA ban đầu bằng cách triển khai các tốc độ học khác nhau cho ma trận A và B, trong đó ma trận B nhận được tốc độ học cao hơn để hội tụ tối ưu trong quá trình đào tạo.
 
 ```python
 class LoraPlusLayer(nn.Module):
@@ -177,9 +177,9 @@ class LoRATrainer:
         return loss.item()
 ```
 
-Slide 8: Real-world Example - Sentiment Analysis
+Slide 8: Ví dụ thực tế - Phân tích tình cảm
 
-Implementation of LoRA fine-tuning for sentiment analysis task using a pre-trained BERT model, demonstrating practical application in text classification.
+Triển khai tinh chỉnh LoRA cho nhiệm vụ phân tích cảm xúc bằng mô hình BERT được đào tạo trước, thể hiện ứng dụng thực tế trong phân loại văn bản.
 
 ```python
 import transformers
@@ -225,9 +225,9 @@ class SentimentLoRAFineTuner:
         return trainer.train()
 ```
 
-Slide 9: Results for Sentiment Analysis
+Slide 9: Kết quả phân tích cảm xúc
 
-Performance metrics and evaluation results from the sentiment analysis implementation using LoRA fine-tuning techniques.
+Các số liệu hiệu suất và kết quả đánh giá từ việc triển khai phân tích cảm tính bằng các kỹ thuật tinh chỉnh LoRA.
 
 ```python
 # Sample output from training run
@@ -261,9 +261,9 @@ $$\text{Delta-LoRA: } W_{t+1} = W_t + \alpha(B_tA_t - B_{t-1}A_{t-1})$$
 """
 ```
 
-Slide 11: Real-world Example - Text Generation
+Slide 11: Ví dụ thực tế - Tạo văn bản
 
-Implementing LoRA fine-tuning for custom text generation task, demonstrating integration with GPT-style models and showcasing practical prompt engineering.
+Triển khai tinh chỉnh LoRA cho tác vụ tạo văn bản tùy chỉnh, thể hiện khả năng tích hợp với các mô hình kiểu GPT và thể hiện kỹ thuật nhanh chóng thực tế.
 
 ```python
 class TextGenLoRATrainer:
@@ -320,9 +320,9 @@ context with unprecedented accuracy. These systems will revolutionize..."
 """
 ```
 
-Slide 13: Memory Optimization Techniques
+Slide 13: Kỹ thuật tối ưu hóa bộ nhớ
 
-Advanced implementation of memory-efficient LoRA variants, incorporating gradient checkpointing and activation memory reduction strategies.
+Triển khai nâng cao các biến thể LoRA tiết kiệm bộ nhớ, kết hợp các chiến lược kiểm tra độ dốc và giảm bộ nhớ kích hoạt.
 
 ```python
 class MemoryEfficientLoRA(nn.Module):
@@ -414,9 +414,9 @@ class LoRAHyperOptimizer:
         return validation_score  # Return performance metric
 ```
 
-Slide 16: Dynamic Rank Adaptation
+Trang trình bày 16: Điều chỉnh thứ hạng động
 
-Implementation of a novel approach that dynamically adjusts LoRA rank during training based on performance metrics and computational constraints.
+Triển khai một phương pháp tiếp cận mới giúp điều chỉnh linh hoạt thứ hạng LoRA trong quá trình đào tạo dựa trên các số liệu hiệu suất và các ràng buộc tính toán.
 
 ```python
 class DynamicRankLoRA(nn.Module):
@@ -490,9 +490,9 @@ class LoRAVisualizer:
         return memory_in_mb
 ```
 
-Slide 18: Integration with Gradient Checkpointing
+Slide 18: Tích hợp với gradient Checkpointing
 
-Advanced implementation combining LoRA with gradient checkpointing to optimize memory usage during training while maintaining performance.
+Triển khai nâng cao kết hợp LoRA với điểm kiểm tra độ dốc để tối ưu hóa việc sử dụng bộ nhớ trong quá trình đào tạo trong khi vẫn duy trì hiệu suất.
 
 ```python
 class CheckpointedLoRA(nn.Module):
@@ -556,9 +556,9 @@ class QuantizedLoRA(nn.Module):
         self.lora_B_quantized.data.copy_(B_quant)
 ```
 
-Slide 20: Performance Benchmarking Suite
+Trang trình bày 20: Bộ điểm chuẩn hiệu suất
 
-Comprehensive benchmarking implementation for comparing different LoRA variants and configurations.
+Triển khai điểm chuẩn toàn diện để so sánh các biến thể và cấu hình LoRA khác nhau.
 
 ```python
 class LoRABenchmark:

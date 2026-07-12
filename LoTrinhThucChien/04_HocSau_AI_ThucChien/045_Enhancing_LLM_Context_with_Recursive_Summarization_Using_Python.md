@@ -1,7 +1,7 @@
-## Enhancing LLM Context with Recursive Summarization Using Python
-Slide 1: Introduction to LLM Context Enhancement
+## Nâng cao bối cảnh LLM bằng tóm tắt đệ quy bằng Python
+Trang trình bày 1: Giới thiệu về Nâng cao bối cảnh LLM
 
-Large Language Models (LLMs) have limited context windows. Recursive summarization is a technique to extend this context by iteratively condensing information. This approach allows LLMs to process larger documents while retaining key information.
+Mô hình ngôn ngữ lớn (LLM) có cửa sổ ngữ cảnh hạn chế. Tóm tắt đệ quy là một kỹ thuật để mở rộng bối cảnh này bằng cách cô đọng thông tin lặp đi lặp lại. Cách tiếp cận này cho phép LLM xử lý các tài liệu lớn hơn trong khi vẫn giữ được thông tin quan trọng.
 
 ```python
 import transformers
@@ -14,9 +14,9 @@ def load_llm():
 model, tokenizer = load_llm()
 ```
 
-Slide 2: Understanding Context Windows
+Slide 2: Tìm hiểu ngữ cảnh của Windows
 
-Context windows define the maximum amount of text an LLM can process at once. For example, GPT-3 has a context window of 4096 tokens. Recursive summarization helps overcome this limitation by condensing long texts into shorter, informative summaries.
+Cửa sổ ngữ cảnh xác định số lượng văn bản tối đa mà LLM có thể xử lý cùng một lúc. Ví dụ: GPT-3 có cửa sổ ngữ cảnh gồm 4096 mã thông báo. Tóm tắt đệ quy giúp khắc phục hạn chế này bằng cách cô đọng các văn bản dài thành các bản tóm tắt ngắn hơn, giàu thông tin hơn.
 
 ```python
 def get_context_window(model):
@@ -26,9 +26,9 @@ context_window = get_context_window(model)
 print(f"Model context window: {context_window} tokens")
 ```
 
-Slide 3: Text Chunking
+Trang trình bày 3: Phân đoạn văn bản
 
-The first step in recursive summarization is dividing the input text into manageable chunks that fit within the LLM's context window. This ensures that each chunk can be processed independently.
+Bước đầu tiên trong quá trình tóm tắt đệ quy là chia văn bản đầu vào thành các phần có thể quản lý được, vừa với cửa sổ ngữ cảnh của LLM. Điều này đảm bảo rằng mỗi đoạn có thể được xử lý độc lập.
 
 ```python
 def chunk_text(text, max_chunk_size):
@@ -49,9 +49,9 @@ def chunk_text(text, max_chunk_size):
     return chunks
 ```
 
-Slide 4: Summarizing Individual Chunks
+Slide 4: Tóm tắt từng phần riêng lẻ
 
-After chunking, each text segment is summarized independently. This reduces the content while preserving key information. The summarization process can be customized based on the specific requirements of your application.
+Sau khi phân đoạn, mỗi đoạn văn bản được tóm tắt độc lập. Điều này làm giảm nội dung trong khi vẫn giữ được thông tin quan trọng. Quá trình tóm tắt có thể được tùy chỉnh dựa trên các yêu cầu cụ thể của ứng dụng của bạn.
 
 ```python
 def summarize_chunk(chunk, model, tokenizer):
@@ -77,9 +77,9 @@ def recursive_summarize(text, model, tokenizer, max_chunk_size, target_size):
     return recursive_summarize(combined_summary, model, tokenizer, max_chunk_size, target_size)
 ```
 
-Slide 6: Handling Long Documents
+Slide 6: Xử lý tài liệu dài
 
-For extremely long documents, the recursive summarization process may need to be applied multiple times. This ensures that the final summary fits within the LLM's context window while still capturing the essence of the entire document.
+Đối với những tài liệu cực kỳ dài, quá trình tóm tắt đệ quy có thể cần phải được áp dụng nhiều lần. Điều này đảm bảo rằng bản tóm tắt cuối cùng vừa với cửa sổ ngữ cảnh của LLM trong khi vẫn nắm bắt được bản chất của toàn bộ tài liệu.
 
 ```python
 def process_long_document(document, model, tokenizer, max_chunk_size, target_size):
@@ -93,9 +93,9 @@ def process_long_document(document, model, tokenizer, max_chunk_size, target_siz
     return " ".join(section_summaries)
 ```
 
-Slide 7: Preserving Context Hierarchy
+Trang trình bày 7: Bảo toàn hệ thống phân cấp bối cảnh
 
-To maintain the document's structure, it's important to preserve the hierarchy of information during summarization. This can be achieved by summarizing at different levels (e.g., paragraphs, sections, chapters) and combining the results.
+Để duy trì cấu trúc của tài liệu, điều quan trọng là phải duy trì thứ bậc thông tin trong quá trình tóm tắt. Điều này có thể đạt được bằng cách tóm tắt ở các cấp độ khác nhau (ví dụ: đoạn văn, phần, chương) và kết hợp các kết quả.
 
 ```python
 def hierarchical_summarization(document, model, tokenizer, max_chunk_size, target_size):
@@ -116,9 +116,9 @@ def hierarchical_summarization(document, model, tokenizer, max_chunk_size, targe
     return " ".join(chapter_summaries)
 ```
 
-Slide 8: Balancing Compression and Information Retention
+Slide 8: Cân bằng nén và lưu giữ thông tin
 
-Finding the right balance between compression and information retention is crucial. Experiment with different summarization ratios and techniques to achieve optimal results for your specific use case.
+Tìm sự cân bằng phù hợp giữa nén và lưu giữ thông tin là rất quan trọng. Thử nghiệm các tỷ lệ và kỹ thuật tóm tắt khác nhau để đạt được kết quả tối ưu cho trường hợp sử dụng cụ thể của bạn.
 
 ```python
 def adaptive_summarization(text, model, tokenizer, max_chunk_size, target_size, compression_ratio=0.5):
@@ -145,9 +145,9 @@ def adaptive_summarization(text, model, tokenizer, max_chunk_size, target_size, 
         return adaptive_summarization(combined_summary, model, tokenizer, max_chunk_size, target_size, compression_ratio * 0.9)
 ```
 
-Slide 9: Implementing Custom Tokenization
+Trang trình bày 9: Triển khai mã thông báo tùy chỉnh
 
-For more control over the summarization process, implement custom tokenization tailored to your specific domain or language. This can improve the quality of summaries for specialized texts.
+Để kiểm soát nhiều hơn quá trình tóm tắt, hãy triển khai mã thông báo tùy chỉnh phù hợp với miền hoặc ngôn ngữ cụ thể của bạn. Điều này có thể cải thiện chất lượng tóm tắt cho các văn bản chuyên ngành.
 
 ```python
 from tokenizers import Tokenizer
@@ -166,9 +166,9 @@ def train_custom_tokenizer(texts):
 custom_tokenizer = train_custom_tokenizer(your_text_corpus)
 ```
 
-Slide 10: Enhancing Summaries with Key Information Extraction
+Slide 10: Tăng cường tóm tắt bằng cách trích xuất thông tin chính
 
-Improve the quality of summaries by extracting and prioritizing key information such as named entities, dates, or domain-specific terms. This ensures that critical details are preserved in the final summary.
+Cải thiện chất lượng của bản tóm tắt bằng cách trích xuất và ưu tiên thông tin chính như thực thể được đặt tên, ngày tháng hoặc thuật ngữ dành riêng cho tên miền. Điều này đảm bảo rằng các chi tiết quan trọng được giữ nguyên trong bản tóm tắt cuối cùng.
 
 ```python
 import spacy
@@ -188,9 +188,9 @@ def enhanced_summarization(chunk, model, tokenizer, key_info):
     return enhanced_summary
 ```
 
-Slide 11: Handling Multi-modal Input
+Slide 11: Xử lý đầu vào đa phương thức
 
-Extend the recursive summarization technique to handle multi-modal input, such as text with images or tables. This requires adapting the summarization process to incorporate information from different modalities.
+Mở rộng kỹ thuật tóm tắt đệ quy để xử lý đầu vào đa phương thức, chẳng hạn như văn bản có hình ảnh hoặc bảng. Điều này đòi hỏi phải điều chỉnh quy trình tóm tắt để kết hợp thông tin từ các phương thức khác nhau.
 
 ```python
 from PIL import Image
@@ -207,9 +207,9 @@ def summarize_multimodal_content(text, image_paths, model, tokenizer, max_chunk_
     return recursive_summarize(combined_text, model, tokenizer, max_chunk_size, target_size)
 ```
 
-Slide 12: Evaluating Summary Quality
+Slide 12: Đánh giá chất lượng tóm tắt
 
-Assess the quality of generated summaries using metrics like ROUGE scores or semantic similarity. This helps in fine-tuning the summarization process and ensuring that the recursive approach maintains content accuracy.
+Đánh giá chất lượng của các bản tóm tắt được tạo bằng cách sử dụng các số liệu như điểm ROUGE hoặc độ tương tự về ngữ nghĩa. Điều này giúp tinh chỉnh quá trình tóm tắt và đảm bảo rằng phương pháp đệ quy duy trì độ chính xác của nội dung.
 
 ```python
 from rouge import Rouge
@@ -230,9 +230,9 @@ def evaluate_summary(original_text, summary):
     }
 ```
 
-Slide 13: Optimizing for Real-time Applications
+Trang trình bày 13: Tối ưu hóa cho các ứng dụng thời gian thực
 
-For real-time applications, optimize the recursive summarization process to reduce latency. Implement caching mechanisms and parallel processing to improve performance when dealing with large volumes of text.
+Đối với các ứng dụng thời gian thực, hãy tối ưu hóa quy trình tóm tắt đệ quy để giảm độ trễ. Triển khai cơ chế bộ nhớ đệm và xử lý song song để cải thiện hiệu suất khi xử lý khối lượng văn bản lớn.
 
 ```python
 import concurrent.futures
@@ -250,9 +250,9 @@ def parallel_summarize(chunks, model_name, tokenizer_name, max_workers=4):
     return summaries
 ```
 
-Slide 14: Integrating with Document Retrieval Systems
+Slide 14: Tích hợp với hệ thống truy xuất tài liệu
 
-Combine recursive summarization with document retrieval systems to enhance search capabilities. Use the generated summaries to create more informative search indices and improve query matching.
+Kết hợp tóm tắt đệ quy với hệ thống truy xuất tài liệu để nâng cao khả năng tìm kiếm. Sử dụng các bản tóm tắt được tạo để tạo thêm chỉ mục tìm kiếm nhiều thông tin hơn và cải thiện khả năng kết hợp truy vấn.
 
 ```python
 from elasticsearch import Elasticsearch
@@ -280,8 +280,8 @@ index_document_with_summary(es, "doc1", original_text, summary)
 search_results = search_documents(es, "your search query")
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-1. "Recursive Summarization for Long Document Understanding" by Balachandran et al. (2023) arXiv:2301.13703 \[cs.CL\] [https://arxiv.org/abs/2301.13703](https://arxiv.org/abs/2301.13703)
-2. "Longformer: The Long-Document Transformer" by Beltagy et al. (2020) arXiv:2004.05150 \[cs.CL\] [https://arxiv.org/abs/2004.05150](https://arxiv.org/abs/2004.05150)
-3. "BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension" by Lewis et al. (2019) arXiv:1910.13461 \[cs.CL\] [https://arxiv.org/abs/1910.13461](https://arxiv.org/abs/1910.13461)
+1. "Tóm tắt đệ quy để hiểu tài liệu dài" của Balachandran et al. (2023) arXiv:2301.13703 \[cs.CL\] [https://arxiv.org/abs/2301.13703](https://arxiv.org/abs/2301.13703)
+2. "Longformer: Máy biến áp tài liệu dài" của Beltagy et al. (2020) arXiv:2004.05150 \[cs.CL\] [https://arxiv.org/abs/2004.05150](https://arxiv.org/abs/2004.05150)
+3. "BART: Đào tạo trước về khử nhiễu từ trình tự này sang trình tự khác để tạo, dịch và hiểu ngôn ngữ tự nhiên" của Lewis và cộng sự. (2019) arXiv:1910.13461 \[cs.CL\] [https://arxiv.org/abs/1910.13461](https://arxiv.org/abs/1910.13461)

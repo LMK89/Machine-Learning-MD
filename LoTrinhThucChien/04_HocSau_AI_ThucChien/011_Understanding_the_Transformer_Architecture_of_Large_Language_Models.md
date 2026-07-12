@@ -1,7 +1,7 @@
-## Understanding the Transformer Architecture of Large Language Models
-Slide 1: Transformer Architecture Implementation
+## Tìm hiểu kiến trúc Transformer của các mô hình ngôn ngữ lớn
+Slide 1: Triển khai kiến trúc máy biến áp
 
-The transformer architecture forms the backbone of modern LLMs, utilizing self-attention mechanisms to process sequential data. This implementation demonstrates the core components including multi-head attention, positional encoding, and feed-forward networks in a clean, modular approach.
+Kiến trúc máy biến áp tạo thành xương sống của LLM hiện đại, sử dụng cơ chế tự chú ý để xử lý dữ liệu tuần tự. Việc triển khai này thể hiện các thành phần cốt lõi bao gồm sự chú ý đa đầu, mã hóa vị trí và mạng chuyển tiếp nguồn cấp dữ liệu theo cách tiếp cận mô-đun rõ ràng.
 
 ```python
 import numpy as np
@@ -36,9 +36,9 @@ class MultiHeadAttention(nn.Module):
         return self.output_proj(out)
 ```
 
-Slide 2: Positional Encoding
+Slide 2: Mã hóa vị trí
 
-Positional encoding enables transformers to understand sequence order by injecting position information into input embeddings. This implementation shows both sinusoidal and learnable position encodings, with the former being parameter-free and the latter learned during training.
+Mã hóa vị trí cho phép máy biến áp hiểu thứ tự trình tự bằng cách đưa thông tin vị trí vào phần nhúng đầu vào. Việc triển khai này hiển thị cả mã hóa vị trí hình sin và có thể học được, với mã đầu tiên là không có tham số và mã sau được học trong quá trình đào tạo.
 
 ```python
 class PositionalEncoding(nn.Module):
@@ -105,9 +105,9 @@ class SubwordTokenizer:
         return pairs
 ```
 
-Slide 4: Feed-Forward Network Implementation
+Trang trình bày 4: Triển khai mạng chuyển tiếp nguồn cấp dữ liệu
 
-The feed-forward network in transformers processes token representations independently at each position. This implementation shows the standard architecture with two linear transformations and a ReLU activation, including dropout for regularization.
+Mạng chuyển tiếp nguồn cấp dữ liệu trong máy biến áp xử lý các biểu diễn mã thông báo một cách độc lập ở mỗi vị trí. Việc triển khai này cho thấy kiến ​​trúc tiêu chuẩn với hai phép biến đổi tuyến tính và kích hoạt ReLU, bao gồm cả việc bỏ qua để chính quy hóa.
 
 ```python
 class FeedForward(nn.Module):
@@ -133,9 +133,9 @@ sample_input = torch.randn(32, 100, 512)  # (batch_size, seq_len, d_model)
 output = ff_network(sample_input)
 ```
 
-Slide 5: Layer Normalization in Transformers
+Slide 5: Chuẩn hóa lớp trong Transformers
 
-Layer normalization stabilizes training by normalizing activations across feature dimensions. This implementation shows the transformer-specific layer norm with learned affine parameters and numerical stability considerations.
+Chuẩn hóa lớp giúp ổn định quá trình đào tạo bằng cách chuẩn hóa kích hoạt trên các kích thước tính năng. Việc triển khai này hiển thị định mức lớp dành riêng cho máy biến áp với các tham số affine đã học và các cân nhắc về độ ổn định số.
 
 ```python
 class LayerNorm(nn.Module):
@@ -160,9 +160,9 @@ sample_input = torch.randn(32, 100, 512)
 normalized_output = layer_norm(sample_input)
 ```
 
-Slide 6: Transformer Encoder Block
+Slide 6: Khối mã hóa máy biến áp
 
-The encoder block combines multi-head attention, feed-forward networks, and normalization layers. This implementation demonstrates the complete architecture with residual connections and proper ordering of operations.
+Khối mã hóa kết hợp sự chú ý nhiều đầu, mạng chuyển tiếp nguồn cấp dữ liệu và các lớp chuẩn hóa. Việc triển khai này thể hiện kiến ​​trúc hoàn chỉnh với các kết nối còn lại và thứ tự hoạt động hợp lý.
 
 ```python
 class TransformerEncoderBlock(nn.Module):
@@ -230,9 +230,9 @@ fake_attention = torch.rand(8, 5, 5)  # (num_heads, seq_len, seq_len)
 visualize_attention(fake_attention, tokens)
 ```
 
-Slide 8: Embedding Layer Implementation
+Trang trình bày 8: Triển khai lớp nhúng
 
-The embedding layer converts input tokens into continuous vector representations. This implementation includes learned token embeddings with optional weight tying and proper scaling to maintain appropriate magnitude of activations.
+Lớp nhúng chuyển đổi mã thông báo đầu vào thành biểu diễn vectơ liên tục. Việc triển khai này bao gồm việc nhúng mã thông báo đã học với việc buộc trọng lượng tùy chọn và chia tỷ lệ phù hợp để duy trì cường độ kích hoạt phù hợp.
 
 ```python
 class TransformerEmbedding(nn.Module):
@@ -259,9 +259,9 @@ sample_input = torch.randint(0, 30000, (32, 100))  # (batch_size, seq_len)
 embedded_output = embedding_layer(sample_input)
 ```
 
-Slide 9: Training Loop Implementation
+Trang trình bày 9: Thực hiện vòng lặp đào tạo
 
-The training loop orchestrates the model training process with gradient accumulation, learning rate scheduling, and proper handling of padding tokens in loss calculation.
+Vòng đào tạo điều phối quá trình đào tạo mô hình bằng cách tích lũy độ dốc, lập lịch tốc độ học và xử lý thích hợp các mã thông báo đệm trong tính toán tổn thất.
 
 ```python
 def train_transformer(model, train_dataloader, optimizer, scheduler, num_epochs, pad_idx):
@@ -360,9 +360,9 @@ class BeamSearchGenerator:
         return sequences[torch.arange(sequences.size(0)), best_idx]
 ```
 
-Slide 11: Attention Mechanism Implementation
+Slide 11: Thực hiện cơ chế chú ý
 
-A detailed implementation of scaled dot-product attention with masking support, demonstrating the core mathematical operations that enable contextual understanding in transformer models.
+Triển khai chi tiết sự chú ý của sản phẩm chấm theo tỷ lệ với hỗ trợ mặt nạ, thể hiện các phép toán cốt lõi cho phép hiểu biết theo ngữ cảnh trong các mô hình máy biến áp.
 
 ```python
 class ScaledDotProductAttention(nn.Module):
@@ -400,9 +400,9 @@ attention = ScaledDotProductAttention(temperature=np.sqrt(d_k))
 output, attention_weights = attention(q, k, v)
 ```
 
-Slide 12: Preprocessing Pipeline
+Slide 12: Quy trình tiền xử lý
 
-Implementation of a robust preprocessing pipeline for transformer models, including text cleaning, tokenization, and dynamic batching with proper padding and attention mask generation.
+Triển khai quy trình tiền xử lý mạnh mẽ cho các mô hình máy biến áp, bao gồm làm sạch văn bản, mã thông báo và phân khối động với phần đệm thích hợp và tạo mặt nạ chú ý.
 
 ```python
 class TransformerPreprocessor:
@@ -453,9 +453,9 @@ texts = [
 batch = preprocessor.preprocess_batch(texts)
 ```
 
-Slide 13: Loss Functions and Metrics
+Trang trình bày 13: Hàm mất mát và số liệu
 
-Implementation of specialized loss functions and evaluation metrics for transformer models, including label smoothing and perplexity calculation.
+Triển khai các hàm tổn thất chuyên dụng và số liệu đánh giá cho các mô hình máy biến áp, bao gồm tính toán làm mịn nhãn và tính toán độ phức tạp.
 
 ```python
 class TransformerLoss:
@@ -506,9 +506,9 @@ perplexity = criterion.calculate_perplexity(loss)
 accuracy = criterion.sequence_accuracy(pred, target)
 ```
 
-Slide 14: Real-World Example - Text Classification
+Slide 14: Ví dụ thực tế - Phân loại văn bản
 
-Implementation of a complete text classification system using transformers, demonstrating data preprocessing, model training, and evaluation on a sentiment analysis task.
+Triển khai hệ thống phân loại văn bản hoàn chỉnh bằng cách sử dụng máy biến áp, thể hiện quá trình tiền xử lý dữ liệu, đào tạo mô hình và đánh giá nhiệm vụ phân tích cảm tính.
 
 ```python
 class TextClassificationTransformer:
@@ -565,9 +565,9 @@ def train_classifier():
         scheduler.step()
 ```
 
-Slide 15: Results Display for Text Classification
+Slide 15: Hiển thị kết quả phân loại văn bản
 
-Comprehensive evaluation results from the text classification model, including confusion matrix, precision-recall curves, and error analysis.
+Kết quả đánh giá toàn diện từ mô hình phân loại văn bản, bao gồm ma trận nhầm lẫn, đường cong thu hồi chính xác và phân tích lỗi.
 
 ```python
 def evaluate_classifier(model, test_dataloader):

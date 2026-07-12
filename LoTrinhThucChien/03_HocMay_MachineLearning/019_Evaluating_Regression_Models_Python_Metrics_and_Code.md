@@ -1,7 +1,7 @@
-## Evaluating Regression Models Python Metrics and Code
-Slide 1: Mean Squared Error (MSE)
+##Đánh giá các mô hình phục hồi Số liệu và mã Python
+Trang trình bày 1: Lỗi bình bình trung bình (MSE)
 
-The Mean Squared Error is a fundamental metric for evaluating regression models, measuring the average squared difference between predicted and actual values. It penalizes larger errors more heavily due to the squaring operation, making it particularly sensitive to outliers in the dataset.
+Sai số bình phương trung bình là số liệu cơ bản để đánh giá các mô hình hồi phục, đo độ chênh lệch bình phương trung bình giữa giá dự đoán và giá trị thực tế. Nó phạt nặng hơn các lỗi lớn hơn là cho phép tính toán phương pháp, tạo ra nó đặc biệt nhạy cảm với các ngoại lệ giá trị trong dữ liệu.
 
 ```python
 import numpy as np
@@ -27,9 +27,9 @@ print(f"MSE: {calculate_mse(y_true, y_pred):.4f}")
 # Output: MSE: 0.0675
 ```
 
-Slide 2: Root Mean Squared Error (RMSE)
+Trang trình bày 2: Error normal normal (RMSE)
 
-RMSE extends MSE by taking the square root of the result, providing a metric in the same unit as the target variable. This makes interpretation more intuitive and allows direct comparison with the original scale of the data.
+RMSE mở rộng MSE bằng cách lấy kết quả cấp hai, cung cấp số liệu có cùng vị trí cho tiêu điểm biến. Điều này làm cho việc giải quyết trở nên trực quan hơn và cho phép so sánh trực tiếp với quy định cấm đầu dữ liệu.
 
 ```python
 def calculate_rmse(y_true, y_pred):
@@ -53,9 +53,9 @@ print(f"RMSE: {calculate_rmse(y_true, y_pred):.4f}")
 # Output: RMSE: 0.2598
 ```
 
-Slide 3: Mean Absolute Error (MAE)
+Trang trình bày 3: Lỗi tuyệt đối trung bình (MAE)
 
-Mean Absolute Error calculates the average absolute differences between predictions and actual values, providing a linear penalization of errors. Unlike MSE, MAE is less sensitive to outliers and provides a more robust metric for datasets with significant anomalies.
+Sai số tuyệt đối trung bình tính toán khác biệt tuyệt đối trung bình giữa dự đoán và giá trị thực tế, đưa ra hình phạt tuyến tính cho các lỗi. Không giống như MSE, MAE ít nhạy cảm hơn các giá trị ngoại lệ và cung cấp số liệu mạnh mẽ hơn cho các tập dữ liệu có những điểm bất thường đáng kể.
 
 ```python
 def calculate_mae(y_true, y_pred):
@@ -79,9 +79,9 @@ print(f"MAE: {calculate_mae(y_true, y_pred):.4f}")
 # Output: MAE: 0.2250
 ```
 
-Slide 4: R-squared (Coefficient of Determination)
+Slide 4: R-squared (Hệ số xác định)
 
-R-squared measures the proportion of variance in the dependent variable explained by the independent variables. This metric ranges from 0 to 1, where 1 indicates perfect prediction and 0 indicates the model performs no better than predicting the mean.
+R phương pháp đo tỷ lệ phương pháp sai trong các biến phụ thuộc được giải quyết bởi các biến độc lập. Số dữ liệu này dao động từ 0 đến 1, trong đó 1 biểu hiện mong đợi hoàn hảo và 0 biểu hiện mô hình hoạt động không tốt hơn dự đoán giá trị trung bình.
 
 ```python
 def calculate_r2(y_true, y_pred):
@@ -114,9 +114,9 @@ print(f"R²: {calculate_r2(y_true, y_pred):.4f}")
 # Output: R²: 0.9327
 ```
 
-Slide 5: Adjusted R-squared
+Slide 5: Bình phương R đã điều chỉnh
 
-Adjusted R-squared modifies the R-squared metric to account for the number of predictors in the model, penalizing the addition of variables that don't improve the model's explanatory power significantly. This prevents overfitting through excessive feature inclusion.
+R bình phương đã điều chỉnh chỉnh sửa chỉ số R bình phương để tính số lượng yếu tố dự đoán trong mô hình, xử lý phạt bổ sung các biến thể không cải thiện đáng kể khả năng giải thích của mô hình. Điều này ngăn chặn trang bị quá trình thông tin được đưa vào quá nhiều tính năng.
 
 ```python
 def calculate_adjusted_r2(y_true, y_pred, n_features):
@@ -145,9 +145,9 @@ print(f"Adjusted R²: {calculate_adjusted_r2(y_true, y_pred, n_features):.4f}")
 # Output: Adjusted R²: 0.8872
 ```
 
-Slide 6: Real-world Implementation - House Price Prediction
+Trang trình bày 6: Triển khai thực tế - Dự kiến ​​giá nhà
 
-A comprehensive implementation of regression metrics for a house price prediction model, demonstrating the practical application of various evaluation metrics in a real estate context using the California Housing dataset.
+Triển khai các phản hồi số liệu cho mô hình dự đoán của nhà sản xuất, có thể thực hiện ứng dụng thực tế của các giá trị đánh giá dữ liệu khác nhau trong bối cảnh bất động bằng cách sử dụng bộ dữ liệu Nhà ở California.
 
 ```python
 from sklearn.datasets import fetch_california_housing
@@ -182,9 +182,9 @@ for metric, value in metrics.items():
     print(f"{metric}: {value:.4f}")
 ```
 
-Slide 7: Results for House Price Prediction
+Slide 7: Kết quả dự đoán giá nhà
 
-The evaluation results from our house price prediction model demonstrate the relationships between different metrics and their interpretation in a practical context. This analysis helps in understanding model performance from multiple perspectives.
+Kết quả đánh giá từ mô hình mong đợi giá nhà của chúng tôi bằng chứng minh mối liên hệ giữa các số liệu khác nhau và giải pháp chúng trong bối cảnh thực tế. Phân tích này giúp hiểu được hiệu suất của mô hình từ nhiều góc độ.
 
 ```python
 """
@@ -209,9 +209,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 8: Explained Variance Score
+Trang trình bày 8: Giải thích điểm phương sai
 
-The Explained Variance Score measures the proportion of variance that is predictable from the independent variables. This metric provides insight into how much of the variance in the target variable is captured by the model's predictions.
+Các điểm phương pháp được giải thích theo tỷ lệ sai lệch có thể được dự đoán từ các biến độc lập. Số liệu này cung cấp cái nhìn sâu sắc về độ lệch của các mục tiêu được mong đợi của mô hình bắt.
 
 ```python
 def calculate_explained_variance(y_true, y_pred):
@@ -240,9 +240,9 @@ print(f"Explained Variance: {calculate_explained_variance(y_true, y_pred):.4f}")
 # Output: Explained Variance: 0.9331
 ```
 
-Slide 9: Mean Absolute Percentage Error (MAPE)
+Trang trình bày 9: Lỗi phần trăm tuyệt đối trung bình (MAPE)
 
-Mean Absolute Percentage Error provides a percentage-based measurement of prediction accuracy, making it particularly useful when comparing models across different scales. It expresses accuracy as a percentage, facilitating intuitive interpretation across diverse datasets.
+Lỗi phần trăm tuyệt đối trung bình cung cấp phép đo độ chính xác dự đoán dựa trên tỷ lệ phần trăm, tạo ra nó đặc biệt hữu ích khi so sánh các mô hình trên các thước đo khác nhau. Nó có thể hiển thị độ chính xác dưới một phần trăm, tạo điều kiện cho diễn đàn giải trực tiếp trên đa dạng dữ liệu.
 
 ```python
 def calculate_mape(y_true, y_pred):
@@ -266,9 +266,9 @@ print(f"MAPE: {calculate_mape(y_true, y_pred):.2f}%")
 # Output: MAPE: 7.83%
 ```
 
-Slide 10: Real-world Implementation - Time Series Forecasting
+Trang trình bày 10: Triển khai thực tế - Dự báo thời gian chuỗi
 
-Implementation of comprehensive regression metrics for time series forecasting, demonstrating the evaluation of predictions across multiple time steps with consideration for temporal dependencies.
+Triển khai các phản hồi dữ liệu toàn diện để dự báo thời gian chuỗi, có thể thực hiện đánh giá các kỳ vọng qua nhiều bước thời gian có xem xét đến sự phụ thuộc theo thời gian.
 
 ```python
 import numpy as np
@@ -316,9 +316,9 @@ for metric, value in metrics.items():
     print(f"{metric}: {value:.4f}")
 ```
 
-Slide 11: Results for Time Series Forecasting
+Trang trình chiếu 11: Chuỗi thời gian dự báo kết quả
 
-The comprehensive evaluation of our time series forecasting model reveals the interplay between different error metrics and their significance in temporal prediction tasks.
+Việc đánh giá mô hình mô hình thời gian chuỗi dự án của chúng tôi đã tìm thấy sự tương tác giữa các lỗi khác nhau và tầm quan trọng của chúng trong các nhiệm vụ dự kiến ​​​​theo thời gian.
 
 ```python
 """
@@ -342,9 +342,9 @@ plt.grid(True)
 plt.show()
 ```
 
-Slide 12: Weighted Mean Squared Error (WMSE)
+Trang trình bày 12: Error bình luận phương bình luận có trọng số (WMSE)
 
-Weighted Mean Squared Error extends MSE by allowing different weights for different samples or time points, enabling customized error penalization based on domain knowledge or sample importance in the prediction context.
+Lỗi phương pháp trung bình có MSE mở rộng số lượng quan trọng bằng cách cho phép các số khác nhau cho các mẫu hoặc thời gian khác nhau, cho phép hình phạt tùy chỉnh lỗi dựa trên phạm vi kiến ​​thức hoặc tầm quan trọng của mẫu trong dự đoán bối cảnh.
 
 ```python
 def calculate_wmse(y_true, y_pred, weights=None):
@@ -377,10 +377,10 @@ print(f"WMSE: {calculate_wmse(y_true, y_pred, weights):.4f}")
 # Output: WMSE: 0.0331
 ```
 
-Slide 13: Additional Resources
+Trang trình bày 13: Tài nguyên bổ sung
 
-*   A Comprehensive Survey of Regression Based Loss Functions for Time Series Forecasting [https://arxiv.org/abs/2201.09755](https://arxiv.org/abs/2201.09755)
-*   Evaluation Metrics for Regression Problems: A Unified Approach [https://arxiv.org/abs/2006.13799](https://arxiv.org/abs/2006.13799)
-*   Deep Learning for Time Series Forecasting: A Survey [https://arxiv.org/abs/2004.13408](https://arxiv.org/abs/2004.13408)
-*   Robust Regression Loss Functions for Time Series Analysis [https://arxiv.org/abs/2008.04687](https://arxiv.org/abs/2008.04687)
-*   Machine Learning Model Evaluation Metrics: A Comparative Study Search on Google Scholar: "machine learning regression metrics comparative analysis"
+* Khảo sát toàn diện về các cơ sở tổn thất phức tạp dựa trên cơ sở hồi phục để dự báo thời gian chuỗi [https://arxiv.org/abs/2201.09755](https://arxiv.org/abs/2201.09755)
+* Số liệu đánh giá cho các vấn đề hồi phục: Phương pháp tiếp cận nhất nhất [https://arxiv.org/abs/2006.13799](https://arxiv.org/abs/2006.13799)
+* Học sâu để dự báo thời gian chuỗi: Khảo sát [https://arxiv.org/abs/2004.13408](https://arxiv.org/abs/2004.13408)
+* Hàm mất hồi sức mạnh để phân tích chuỗi thời gian [https://arxiv.org/abs/2008.04687](https://arxiv.org/abs/2008.04687)
+* Số liệu đánh giá mô hình học máy: Tìm kiếm nghiên cứu so sánh trên Google Scholar: "phân tích so sánh số hồi phục học máy"

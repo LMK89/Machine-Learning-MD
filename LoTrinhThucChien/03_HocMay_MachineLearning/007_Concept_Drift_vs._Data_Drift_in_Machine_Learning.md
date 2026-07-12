@@ -1,7 +1,7 @@
-## Concept Drift vs. Data Drift in Machine Learning
-Slide 1: Understanding Concept Drift Detection
+## Khái niệm Trôi so với Trôi dữ liệu trong Machine Learning
+Slide 1: Tìm hiểu khái niệm phát hiện dạng trôi
 
-Concept drift detection requires monitoring changes in the relationship between features and target variables over time. This implementation demonstrates a basic statistical approach using a sliding window to detect significant changes in prediction error patterns.
+Phát triển các khái niệm yêu cầu sai lệch theo các thay đổi trong mối quan hệ giữa các đặc điểm và biến mục tiêu theo thời gian. Việc phát triển này có thể hiện ra cách tiếp cận cơ sở thống kê bằng cách sử dụng cửa sổ trượt để phát hiện những thay đổi đáng kể trong các lỗi dự đoán về mẫu.
 
 ```python
 import numpy as np
@@ -31,9 +31,9 @@ class ConceptDriftDetector(BaseEstimator):
         return (recent_mean - mean_error) / (std_error + 1e-8)
 ```
 
-Slide 2: Implementing Adaptive Model Retraining
+Trang trình bày 2: Thực hiện đào tạo lại mô hình thích ứng
 
-A practical approach to handling concept drift involves implementing an adaptive retraining strategy. This system monitors prediction errors and automatically triggers model updates when significant drift is detected.
+Một cách tiếp cận thực tế để xử lý sai khái niệm khái niệm liên quan đến việc thực hiện chiến lược đào tạo lại thích ứng. Hệ thống này giám sát các lỗi được mong đợi và tự động kích hoạt cập nhật mô hình khi phát hiện ra mức độ đáng kể.
 
 ```python
 import pandas as pd
@@ -68,9 +68,9 @@ class AdaptiveModelTrainer:
         self.recent_labels = []
 ```
 
-Slide 3: Feature-Target Relationship Analysis
+Trang trình bày 3: Phân tích mối liên hệ giữa tính năng và mục tiêu
 
-This implementation provides tools to analyze and visualize changes in feature-target relationships over time, helping identify specific features contributing to concept drift through correlation analysis.
+Việc phát triển này cung cấp các công cụ để phân tích và trực quan hóa các thay đổi trong mối liên hệ giữa địa lý đối tượng và tiêu điểm theo thời gian, giúp xác định các công cụ địa chỉ đối tượng có thể góp phần làm khái niệm sai lệch thông tin phân tích tương quan.
 
 ```python
 import matplotlib.pyplot as plt
@@ -104,9 +104,9 @@ class FeatureTargetAnalyzer:
         plt.show()
 ```
 
-Slide 4: Real-time Drift Monitoring System
+Slide 4: Hệ thống giám sát thực tế trôi thời gian
 
-This comprehensive system implements real-time monitoring of both concept and data drift, using statistical tests and visualization tools to track model performance degradation and data distribution changes.
+Hệ thống toàn diện này phát triển khai báo giám sát thời gian thực hiện các khái niệm và sự trôi dạt dữ liệu, sử dụng các thử nghiệm thống kê và công cụ trực quan hóa để theo dõi sự giảm hiệu suất của mô hình và những thay đổi về phân phối dữ liệu.
 
 ```python
 from scipy.stats import ks_2samp
@@ -134,9 +134,9 @@ class DriftMonitoringSystem:
         return drift_detected
 ```
 
-Slide 5: Statistical Process Control for Drift Detection
+Trang trình bày 5: Kiểm soát quy trình thống kê để phát hiện dạng trôi
 
-Statistical Process Control (SPC) provides a robust framework for detecting concept drift by monitoring the stability of model predictions. This implementation uses CUSUM (Cumulative Sum) charts to detect subtle changes in prediction patterns.
+Kiểm soát quy trình thống kê (SPC) cung cấp một lỗ hổng mạnh mẽ để phát hiện khái niệm sai lệch bằng cách giám sát ổn định của các mô hình dự đoán. Việc phát triển này sử dụng biểu đồ CUSUM (Tổng tích lũy) để phát hiện những thay đổi về tính tế trong các mẫu dự kiến.
 
 ```python
 import numpy as np
@@ -165,9 +165,9 @@ class CUSUMDriftDetector:
                 self.neg_cusum > self.threshold), max(self.pos_cusum, self.neg_cusum)
 ```
 
-Slide 6: Incremental Learning with Concept Drift
+Trang trình bày 6: Học tăng dần với Concept Drift
 
-This implementation showcases an incremental learning approach that adapts to concept drift by maintaining an ensemble of base learners and dynamically adjusting their weights based on recent performance.
+Việc phát triển này có thể thực hiện một phương pháp học tập tăng dần thích ứng với khái niệm trôi dạt bằng cách duy trì một nhóm người học cơ bản và linh hoạt điều chỉnh số lượng của họ dựa trên hiệu suất gần đây.
 
 ```python
 from sklearn.base import BaseEstimator, ClassifierMixin
@@ -205,9 +205,9 @@ class IncrementalDriftLearner(BaseEstimator, ClassifierMixin):
         return np.average(predictions, axis=0, weights=self.weights)
 ```
 
-Slide 7: Temporal Validation Framework
+Trang trình bày 7: Khung xác thực tạm thời
 
-Implementing a temporal validation framework is crucial for evaluating models under concept drift. This implementation creates time-based cross-validation splits while maintaining temporal order.
+Việc phát triển khẳng định tạm thời là rất quan trọng để đánh giá các khái niệm trôi dạt. Việc phát triển này tạo ra sự phân chia xác thực dựa trên thời gian trong khi vẫn duy trì trật tự theo thời gian.
 
 ```python
 import pandas as pd
@@ -234,9 +234,9 @@ class TemporalValidator:
             yield np.where(train_mask)[0], np.where(test_mask)[0]
 ```
 
-Slide 8: Feature Importance Drift Monitor
+Slide 8: Tầm quan trọng của tính năng Drift Monitor
 
-This implementation tracks changes in feature importance over time to identify which features are becoming more or less relevant, helping understand the nature of concept drift.
+Việc phát triển này theo dõi những thay đổi về tầm quan trọng của các tính chất theo thời gian để xác định những tính năng nào đang trở nên phù hợp ít nhiều, giúp hiểu được bản chất của khái niệm trôi dạt.
 
 ```python
 from sklearn.ensemble import RandomForestClassifier
@@ -275,9 +275,9 @@ class FeatureImportanceDriftMonitor:
         return drift_scores
 ```
 
-Slide 9: Concept Drift Visualization System
+Slide 9: Hệ thống trực quan hóa ý tưởng Drift
 
-This implementation creates an interactive visualization system for monitoring concept drift patterns, including distribution shifts, performance metrics, and feature importance changes over time.
+Việc phát triển này tạo ra một hệ thống trực quan tương tác để theo dõi các khái niệm mô hình lệch, bao gồm những thay đổi về phân phối, hiệu suất số liệu và những thay đổi quan trọng về tính năng theo thời gian.
 
 ```python
 import plotly.graph_objects as go
@@ -330,9 +330,9 @@ class DriftVisualizerSystem:
         return fig
 ```
 
-Slide 10: Real-World Application: Credit Scoring Model
+Trang tham khảo 10: Ứng dụng thực tế: Mô hình dấu chấm tín dụng
 
-Implementation of a credit scoring system that handles concept drift in customer behavior patterns, demonstrating practical application in financial services.
+Triển khai hệ thống tính điểm tín dụng để xử lý các khái niệm sai lệch trong mô hình hành động của khách hàng, có thể hiện thực hóa ứng dụng trong các tài chính dịch vụ.
 
 ```python
 import pandas as pd
@@ -392,7 +392,7 @@ class AdaptiveCreditScoringSystem:
         }
 ```
 
-Slide 11: Source Code for Credit Scoring Model Results
+Trang tham khảo 11: Mã nguồn của mô hình tín hiệu chấm điểm kết quả
 
 ```python
 # Example usage and results for Credit Scoring System
@@ -428,9 +428,9 @@ if drift_results['importance_drift']:
         print(f"{feature}: {drift:.3f}")
 ```
 
-Slide 12: Windowed Probability Distribution Tracker
+Trang trình bày 12: Trình theo dõi phân phối cụ thể theo cửa sổ
 
-This implementation monitors changes in probability distributions over time using sliding windows and statistical tests, providing detailed insights into the nature and magnitude of concept drift.
+Việc phát triển này giám sát những thay đổi trong trình bày xác thực theo thời gian bằng cách sử dụng cửa sổ trượt và kiểm tra thống kê, cung cấp những hiểu biết chi tiết về chất liệu và tốc độ của khái niệm dạ dày.
 
 ```python
 import numpy as np
@@ -470,9 +470,9 @@ class ProbabilityDistributionTracker:
         return distance
 ```
 
-Slide 13: Real-World Application: Customer Churn Prediction
+Trang trình bày 13: Ứng dụng thực tế: Dự kiến ​​tỷ lệ bỏ rơi khách hàng
 
-A comprehensive implementation of a churn prediction system that adapts to changing customer behavior patterns while maintaining interpretability and performance monitoring.
+Việc phát triển hệ thống dự kiến ​​​​sẽ loại bỏ tỷ lệ thích ứng với việc thay đổi mô hình hành động của khách hàng trong khi vẫn duy trì khả năng giải quyết và giám sát hiệu suất.
 
 ```python
 from sklearn.ensemble import RandomForestClassifier
@@ -548,10 +548,10 @@ class AdaptiveChurnPredictor:
         return {'predictions': predictions}
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-1.  "Adaptive Concept Drift Detection via Online Learning" [https://arxiv.org/abs/2105.07742](https://arxiv.org/abs/2105.07742)
-2.  "Deep Learning for Concept Drift Detection in Streaming Data" [https://arxiv.org/abs/2004.00066](https://arxiv.org/abs/2004.00066)
-3.  "A Survey on Concept Drift Adaptation" [https://arxiv.org/abs/1010.4784](https://arxiv.org/abs/1010.4784)
-4.  "Learning under Concept Drift: A Review" [https://arxiv.org/abs/2004.05785](https://arxiv.org/abs/2004.05785)
-5.  "Concept Drift Detection Through Resampling" [https://arxiv.org/abs/1704.00023](https://arxiv.org/abs/1704.00023)
+1. "Phát hiện sai khái niệm thích ứng thông qua học tập trực tuyến" [https://arxiv.org/abs/2105.07742](https://arxiv.org/abs/2105.07742)
+2. "Học sâu để phát hiện sai khái niệm sai lệch trong truyền dữ liệu trực tuyến" [https://arxiv.org/abs/2004.00066](https://arxiv.org/abs/2004.00066)
+3. "Khảo sát về khả năng thích hợp với khái niệm trôi dạt" [https://arxiv.org/abs/1010.4784](https://arxiv.org/abs/1010.4784)
+4. "Học theo Concept Drift: Đánh giá" [https://arxiv.org/abs/2004.05785](https://arxiv.org/abs/2004.05785)
+5. "Phát hiện sai lệch khái niệm thông qua việc lấy lại mẫu" [https://arxiv.org/abs/1704.00023](https://arxiv.org/abs/1704.00023)

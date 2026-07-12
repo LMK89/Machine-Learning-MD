@@ -1,7 +1,7 @@
-## Probability Distributions Cheatsheet
-Slide 1: Foundations of Probability Distributions
+## Bảng tính phân phối xác suất
+Slide 1: Cơ sở của phân phối xác suất
 
-Probability distributions form the backbone of statistical modeling and machine learning. They describe the likelihood of different outcomes occurring in a random process, providing essential mathematical tools for data analysis, inference, and prediction.
+Phân phối xác suất tạo thành xương sống của mô hình thống kê và học máy. Chúng mô tả khả năng xảy ra các kết quả khác nhau trong một quá trình ngẫu nhiên, cung cấp các công cụ toán học cần thiết để phân tích, suy luận và dự đoán dữ liệu.
 
 ```python
 import numpy as np
@@ -25,9 +25,9 @@ print(f"Normal mean: {normal_data.mean():.2f}, std: {normal_data.std():.2f}")
 print(f"Uniform mean: {uniform_data.mean():.2f}, std: {uniform_data.std():.2f}")
 ```
 
-Slide 2: Normal Distribution Mathematics
+Slide 2: Toán phân phối chuẩn
 
-The normal distribution, also known as Gaussian distribution, is characterized by its probability density function (PDF). The mathematical foundation involves key parameters μ (mean) and σ (standard deviation).
+Phân phối chuẩn, còn được gọi là phân phối Gaussian, được đặc trưng bởi hàm mật độ xác suất (PDF). Nền tảng toán học bao gồm các tham số chính μ (trung bình) và σ (độ lệch chuẩn).
 
 ```python
 # Mathematical representation of Normal Distribution PDF
@@ -52,9 +52,9 @@ plt.grid(True)
 plt.show()
 ```
 
-Slide 3: Exponential Distribution Implementation
+Trang trình bày 3: Thực hiện phân phối theo cấp số nhân
 
-The exponential distribution models the time between events in a Poisson process. It's commonly used in reliability engineering and queuing theory to model time intervals between independent events.
+Phân bố hàm mũ mô hình hóa thời gian giữa các sự kiện trong quy trình Poisson. Nó thường được sử dụng trong kỹ thuật độ tin cậy và lý thuyết xếp hàng để mô hình hóa các khoảng thời gian giữa các sự kiện độc lập.
 
 ```python
 def exponential_pdf(x, lambda_param):
@@ -81,9 +81,9 @@ samples = np.random.exponential(scale=1/2, size=1000)
 print(f"Mean: {samples.mean():.2f} (Expected: {1/2})")
 ```
 
-Slide 4: Chi-Square Distribution Analysis
+Trang trình bày 4: Phân tích phân phối Chi-Square
 
-The chi-square distribution emerges from the sum of squared standard normal variables. It's fundamental in hypothesis testing and confidence interval construction for variance estimation.
+Phân phối chi bình phương xuất hiện từ tổng bình phương các biến chuẩn chuẩn. Đó là nền tảng trong việc kiểm tra giả thuyết và xây dựng khoảng tin cậy để ước tính phương sai.
 
 ```python
 def chi_square_pdf(x, df):
@@ -110,9 +110,9 @@ samples = np.random.chisquare(df=2, size=1000)
 print(f"Mean: {samples.mean():.2f} (Expected: 2)")
 ```
 
-Slide 5: Poisson Distribution Implementation
+Trang trình bày 5: Triển khai phân phối Poisson
 
-The Poisson distribution models the number of events occurring in a fixed interval when these events happen with a known average rate and independently of the time since the last event.
+Phân phối Poisson mô hình hóa số lượng sự kiện xảy ra trong một khoảng thời gian cố định khi những sự kiện này xảy ra với tỷ lệ trung bình đã biết và độc lập với thời gian kể từ sự kiện cuối cùng.
 
 ```python
 def poisson_pmf(k, lambda_param):
@@ -140,9 +140,9 @@ samples = np.random.poisson(lam=4, size=1000)
 print(f"Mean: {samples.mean():.2f} (Expected: 4)")
 ```
 
-Slide 6: Binomial Distribution and Applications
+Slide 6: Phân phối nhị thức và ứng dụng
 
-The binomial distribution models the number of successes in a fixed number of independent Bernoulli trials. Each trial has the same probability of success and is independent of other trials.
+Phân phối nhị thức mô hình hóa số lần thành công trong một số thử nghiệm Bernoulli độc lập cố định. Mỗi phép thử có xác suất thành công như nhau và độc lập với các phép thử khác.
 
 ```python
 def binomial_pmf(n, k, p):
@@ -173,9 +173,9 @@ samples = np.random.binomial(n=20, p=0.3, size=1000)
 print(f"Mean: {samples.mean():.2f} (Expected: {n*p})")
 ```
 
-Slide 7: Beta Distribution and Bayesian Applications
+Trang trình bày 7: Phân phối Beta và ứng dụng Bayesian
 
-The Beta distribution is crucial in Bayesian statistics, serving as a conjugate prior for the Bernoulli and Binomial distributions. It models continuous probabilities in the interval \[0,1\].
+Phân phối Beta rất quan trọng trong thống kê Bayes, đóng vai trò là phân phối liên hợp trước cho phân phối Bernoulli và nhị thức. Nó mô hình hóa các xác suất liên tục trong khoảng \[0,1\].
 
 ```python
 def plot_beta_distribution(alphas, betas):
@@ -205,9 +205,9 @@ samples = np.random.beta(a=2, b=5, size=1000)
 print(f"Mean: {samples.mean():.3f}")
 ```
 
-Slide 8: Multivariate Normal Distribution
+Trang trình bày 8: Phân phối chuẩn đa biến
 
-The multivariate normal distribution extends the normal distribution to higher dimensions, essential for modeling correlated random variables and in many machine learning applications.
+Phân phối chuẩn đa biến mở rộng phân phối chuẩn tới các chiều cao hơn, cần thiết cho việc mô hình hóa các biến ngẫu nhiên tương quan và trong nhiều ứng dụng học máy.
 
 ```python
 def multivariate_normal_example():
@@ -237,9 +237,9 @@ def multivariate_normal_example():
 multivariate_normal_example()
 ```
 
-Slide 9: Gamma Distribution Implementation
+Trang trình bày 9: Triển khai phân phối Gamma
 
-The Gamma distribution generalizes the exponential distribution and is widely used in modeling waiting times, life testing, and as a conjugate prior in Bayesian statistics.
+Phân phối Gamma khái quát hóa phân bố theo cấp số nhân và được sử dụng rộng rãi trong mô hình hóa thời gian chờ đợi, kiểm tra tuổi thọ và như là phân phối liên hợp trước trong thống kê Bayes.
 
 ```python
 def plot_gamma_distribution(alphas, betas):
@@ -269,9 +269,9 @@ samples = np.random.gamma(shape=2, scale=1/2, size=1000)
 print(f"Mean: {samples.mean():.3f} (Expected: {2/(2)})")
 ```
 
-Slide 10: Real-world Application - Network Traffic Analysis
+Slide 10: Ứng dụng thực tế - Phân tích lưu lượng mạng
 
-Network packet arrivals are commonly modeled using probability distributions. This example demonstrates analyzing network traffic patterns using Poisson and Exponential distributions for inter-arrival times.
+Các gói tin đến mạng thường được mô hình hóa bằng cách sử dụng phân phối xác suất. Ví dụ này thể hiện việc phân tích các mẫu lưu lượng truy cập mạng bằng cách sử dụng phân phối Poisson và hàm mũ cho thời gian giữa các lần đến.
 
 ```python
 import numpy as np
@@ -318,9 +318,9 @@ print(f"Standard deviation: {std_packets:.2f}")
 print(f"Theoretical std (Poisson): {np.sqrt(mean_packets):.2f}")
 ```
 
-Slide 11: Real-world Application - Financial Risk Modeling
+Slide 11: Ứng dụng thực tế - Mô hình hóa rủi ro tài chính
 
-This implementation demonstrates using probability distributions to model financial returns and estimate Value at Risk (VaR) using both normal and Student's t-distributions.
+Việc triển khai này thể hiện việc sử dụng phân phối xác suất để lập mô hình lợi nhuận tài chính và ước tính Giá trị rủi ro (VaR) bằng cách sử dụng cả phân phối t thông thường và phân phối t của Sinh viên.
 
 ```python
 def calculate_var_metrics(returns, confidence_levels=[0.95, 0.99]):
@@ -377,9 +377,9 @@ for conf, metrics in var_results.items():
     print(f"Student's t VaR: {metrics['VaR_student']:.4f}")
 ```
 
-Slide 12: Kernel Density Estimation (KDE)
+Trang trình bày 12: Ước tính mật độ hạt nhân (KDE)
 
-KDE is a non-parametric method to estimate probability density functions. It's particularly useful when data doesn't follow standard distributions and requires flexible density estimation.
+KDE là một phương pháp phi tham số để ước tính các hàm mật độ xác suất. Nó đặc biệt hữu ích khi dữ liệu không tuân theo phân bố chuẩn và yêu cầu ước tính mật độ linh hoạt.
 
 ```python
 def kde_estimation(data, bandwidths=[0.1, 0.3, 0.5]):
@@ -417,9 +417,9 @@ print(f"Skewness: {stats.skew(data):.3f}")
 print(f"Kurtosis: {stats.kurtosis(data):.3f}")
 ```
 
-Slide 13: Mixture Models Implementation
+Trang trình bày 13: Triển khai mô hình hỗn hợp
 
-Mixture models combine multiple probability distributions to model complex data patterns. This implementation showcases Gaussian Mixture Models (GMM) with expectation-maximization for parameter estimation.
+Các mô hình hỗn hợp kết hợp nhiều phân bố xác suất để mô hình hóa các mẫu dữ liệu phức tạp. Triển khai này giới thiệu Mô hình hỗn hợp Gaussian (GMM) với khả năng tối đa hóa kỳ vọng để ước tính tham số.
 
 ```python
 from sklearn.mixture import GaussianMixture
@@ -472,9 +472,9 @@ for i, (mean, covar, weight) in enumerate(zip(
     print(f"Weight: {weight:.3f}")
 ```
 
-Slide 14: Distribution Testing and Goodness of Fit
+Trang trình bày 14: Kiểm tra phân phối và mức độ phù hợp
 
-Statistical tests help determine whether data follows a particular distribution. This implementation covers multiple goodness-of-fit tests and their interpretations.
+Kiểm tra thống kê giúp xác định xem dữ liệu có tuân theo một phân phối cụ thể hay không. Việc triển khai này bao gồm nhiều bài kiểm tra mức độ phù hợp và diễn giải của chúng.
 
 ```python
 def distribution_testing(data, alpha=0.05):
@@ -530,10 +530,10 @@ print("\nTesting Skewed Data:")
 distribution_testing(skewed_data)
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-*   "A Survey of Probability Distributions with Applications" - arXiv:1907.09952
-*   "Modern Statistical Methods for Heavy-Tailed Distributions" - arXiv:2104.12883
-*   "Nonparametric Statistical Testing of Distributions" - arXiv:1904.12956
-*   "Practical Methods for Fitting Mixture Models" - [https://www.sciencedirect.com/topics/mathematics/mixture-distribution](https://www.sciencedirect.com/topics/mathematics/mixture-distribution)
-*   "Computational Methods for Distribution Testing" - [https://dl.acm.org/doi/10.1145/3460120](https://dl.acm.org/doi/10.1145/3460120)
+* "Khảo sát về phân bố xác suất với các ứng dụng" - arXiv:1907.09952
+* "Các phương pháp thống kê hiện đại cho phân phối đuôi nặng" - arXiv:2104.12883
+* "Kiểm tra thống kê phi tham số về phân phối" - arXiv:1904.12956
+* "Các phương pháp thực tế để lắp mô hình hỗn hợp" - [https://www.sciencedirect.com/topics/mathematics/mixture-distribution](https://www.sciencedirect.com/topics/mathematics/mixture-distribution)
+* "Phương pháp tính toán để kiểm tra phân phối" - [https://dl.acm.org/doi/10.1145/3460120](https://dl.acm.org/doi/10.1145/3460120)

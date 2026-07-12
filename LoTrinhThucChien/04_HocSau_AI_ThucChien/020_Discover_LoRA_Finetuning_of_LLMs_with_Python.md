@@ -1,7 +1,7 @@
-## Discover LoRA Finetuning of LLMs with Python
-Slide 1: Introduction to LoRA Finetuning
+## Khám phá Tinh chỉnh LoRA của LLM bằng Python
+Slide 1: Giới thiệu về LoRA Finetuning
 
-LoRA (Low-Rank Adaptation) is a technique for efficiently fine-tuning large language models (LLMs) with minimal computational resources. It works by adding small, trainable matrices to the model's attention layers, allowing for task-specific adaptation without modifying the entire model. This approach significantly reduces the number of trainable parameters and memory requirements.
+LoRA (Thích ứng cấp thấp) là một kỹ thuật để tinh chỉnh hiệu quả các mô hình ngôn ngữ lớn (LLM) với tài nguyên tính toán tối thiểu. Nó hoạt động bằng cách thêm các ma trận nhỏ, có thể huấn luyện vào các lớp chú ý của mô hình, cho phép điều chỉnh theo nhiệm vụ cụ thể mà không cần sửa đổi toàn bộ mô hình. Cách tiếp cận này làm giảm đáng kể số lượng tham số có thể huấn luyện và yêu cầu bộ nhớ.
 
 ```python
 import torch
@@ -13,9 +13,9 @@ lora_config = LoraConfig(r=8, lora_alpha=32, target_modules=["q_proj", "v_proj"]
 model = get_peft_model(model, lora_config)
 ```
 
-Slide 2: Understanding LoRA Architecture
+Trang trình bày 2: Tìm hiểu kiến ​​trúc LoRA
 
-LoRA introduces low-rank decomposition matrices (A and B) to the attention layers of the pre-trained model. These matrices are initialized randomly and trained on the specific task. The original weight matrix W is frozen, and the adaptation is performed through the low-rank matrices: W + AB^T. This approach allows for efficient fine-tuning with minimal parameter updates.
+LoRA giới thiệu các ma trận phân rã cấp thấp (A và B) cho các lớp chú ý của mô hình được đào tạo trước. Các ma trận này được khởi tạo ngẫu nhiên và được huấn luyện theo nhiệm vụ cụ thể. Ma trận trọng số ban đầu W bị cố định và việc điều chỉnh được thực hiện thông qua các ma trận cấp thấp: W + AB^T. Cách tiếp cận này cho phép tinh chỉnh hiệu quả với việc cập nhật tham số tối thiểu.
 
 ```python
 class LoRALayer(torch.nn.Module):
@@ -30,9 +30,9 @@ class LoRALayer(torch.nn.Module):
         return self.W(x) + torch.matmul(torch.matmul(x, self.A), self.B)
 ```
 
-Slide 3: Setting Up the Environment
+Slide 3: Thiết lập môi trường
 
-To get started with LoRA finetuning, we need to set up our Python environment with the necessary libraries. We'll be using Hugging Face's Transformers library along with the PEFT (Parameter-Efficient Fine-Tuning) library, which implements LoRA.
+Để bắt đầu tinh chỉnh LoRA, chúng ta cần thiết lập môi trường Python với các thư viện cần thiết. Chúng tôi sẽ sử dụng thư viện Transformers của Hugging Face cùng với thư viện PEFT (Tinh chỉnh hiệu quả tham số), triển khai LoRA.
 
 ```python
 !pip install transformers peft datasets torch
@@ -56,9 +56,9 @@ tokenizer = AutoTokenizer.from_pretrained("gpt2")
 tokenized_dataset = dataset.map(preprocess_function, batched=True)
 ```
 
-Slide 5: Initializing the Model with LoRA
+Slide 5: Khởi tạo Model với LoRA
 
-We'll start with a pre-trained GPT-2 model and apply LoRA to it. This involves configuring LoRA parameters and wrapping our model with the PEFT library.
+Chúng tôi sẽ bắt đầu với mô hình GPT-2 được đào tạo trước và áp dụng LoRA cho mô hình đó. Điều này liên quan đến việc định cấu hình các tham số LoRA và gói mô hình của chúng tôi bằng thư viện PEFT.
 
 ```python
 model = AutoModelForCausalLM.from_pretrained("gpt2")
@@ -76,9 +76,9 @@ model = get_peft_model(model, lora_config)
 model.print_trainable_parameters()
 ```
 
-Slide 6: Defining Training Arguments
+Slide 6: Xác định đối số đào tạo
 
-Before we start training, we need to set up our training arguments. These parameters control various aspects of the training process, such as learning rate, batch size, and number of epochs.
+Trước khi bắt đầu đào tạo, chúng ta cần thiết lập các đối số đào tạo của mình. Các tham số này kiểm soát các khía cạnh khác nhau của quá trình đào tạo, chẳng hạn như tốc độ học tập, kích thước lô và số lượng kỷ nguyên.
 
 ```python
 training_args = TrainingArguments(
@@ -98,9 +98,9 @@ trainer = Trainer(
 )
 ```
 
-Slide 7: Training the Model
+Slide 7: Đào tạo người mẫu
 
-Now that we have our model, dataset, and training arguments set up, we can start the finetuning process. The Trainer class handles the training loop for us.
+Bây giờ chúng ta đã thiết lập xong mô hình, tập dữ liệu và đối số đào tạo, chúng ta có thể bắt đầu quá trình tinh chỉnh. Lớp Trainer xử lý vòng lặp đào tạo cho chúng ta.
 
 ```python
 trainer.train()
@@ -109,9 +109,9 @@ trainer.train()
 model.save_pretrained("./lora_finetuned_model")
 ```
 
-Slide 8: Inference with the Finetuned Model
+Slide 8: Suy luận với mô hình tinh chỉnh
 
-After training, we can use our finetuned model for inference. Here's how to load the model and generate text based on a prompt.
+Sau khi đào tạo, chúng ta có thể sử dụng mô hình đã tinh chỉnh của mình để suy luận. Đây là cách tải mô hình và tạo văn bản dựa trên lời nhắc.
 
 ```python
 from peft import PeftModel, PeftConfig
@@ -129,9 +129,9 @@ outputs = model.generate(input_ids=input_ids, max_length=50, num_return_sequence
 print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 ```
 
-Slide 9: Real-Life Example: Sentiment Analysis
+Trang trình chiếu 9: Ví dụ thực tế: Phân tích cảm xúc
 
-Let's apply our LoRA-finetuned model to a real-world task: sentiment analysis. We'll use it to classify movie reviews as positive or negative.
+Hãy áp dụng mô hình được tinh chỉnh LoRA của chúng tôi cho một nhiệm vụ trong thế giới thực: phân tích tình cảm. Chúng tôi sẽ sử dụng thông tin này để phân loại các bài đánh giá phim là tích cực hay tiêu cực.
 
 ```python
 def classify_sentiment(review):
@@ -150,9 +150,9 @@ for review in reviews:
     print(f"Review: {review}\nSentiment: {sentiment}\n")
 ```
 
-Slide 10: Real-Life Example: Text Summarization
+Slide 10: Ví dụ thực tế: Tóm tắt văn bản
 
-Another practical application of our LoRA-finetuned model is text summarization. We can use it to generate concise summaries of longer texts.
+Một ứng dụng thực tế khác của mô hình được tinh chỉnh LoRA của chúng tôi là tóm tắt văn bản. Chúng ta có thể sử dụng nó để tạo ra những bản tóm tắt ngắn gọn cho những văn bản dài hơn.
 
 ```python
 def summarize_text(text):
@@ -174,9 +174,9 @@ summary = summarize_text(long_text)
 print(f"Original text:\n{long_text}\n\nSummary:\n{summary}")
 ```
 
-Slide 11: Hyperparameter Tuning for LoRA
+Trang trình bày 11: Điều chỉnh siêu tham số cho LoRA
 
-Optimizing LoRA hyperparameters can significantly impact the model's performance. Key parameters include the rank (r), alpha, and target modules. Here's an example of how to perform a simple grid search for these parameters.
+Tối ưu hóa siêu tham số LoRA có thể tác động đáng kể đến hiệu suất của mô hình. Các tham số chính bao gồm các mô-đun xếp hạng (r), alpha và đích. Đây là ví dụ về cách thực hiện tìm kiếm lưới đơn giản cho các tham số này.
 
 ```python
 import itertools
@@ -207,9 +207,9 @@ for r, alpha, modules in itertools.product(r_values, alpha_values, target_module
 print(f"Best parameters: r={best_params[0]}, alpha={best_params[1]}, target_modules={best_params[2]}")
 ```
 
-Slide 12: Visualizing LoRA's Impact
+Trang trình bày 12: Hình dung tác động của LoRA
 
-To better understand how LoRA affects the model, we can visualize the attention patterns before and after finetuning. This can provide insights into how the model's focus changes for specific tasks.
+Để hiểu rõ hơn về cách LoRA ảnh hưởng đến mô hình, chúng ta có thể hình dung các mẫu chú ý trước và sau khi tinh chỉnh. Điều này có thể cung cấp thông tin chi tiết về cách thay đổi trọng tâm của mô hình đối với các nhiệm vụ cụ thể.
 
 ```python
 import matplotlib.pyplot as plt
@@ -236,9 +236,9 @@ print("\nAttention pattern after LoRA finetuning:")
 plot_attention(model, text)
 ```
 
-Slide 13: Merging LoRA Weights
+Trang trình bày 13: Hợp nhất các trọng số LoRA
 
-After finetuning, we can merge the LoRA weights with the base model for efficient inference. This step combines the original model weights with the learned LoRA adaptations.
+Sau khi tinh chỉnh, chúng ta có thể hợp nhất các trọng số LoRA với mô hình cơ sở để suy luận hiệu quả. Bước này kết hợp các trọng số mô hình ban đầu với các điều chỉnh LoRA đã học.
 
 ```python
 from peft import PeftModel
@@ -263,13 +263,13 @@ outputs = merged_model.generate(input_ids=input_ids, max_length=50)
 print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-For those interested in diving deeper into LoRA and efficient fine-tuning techniques, here are some valuable resources:
+Đối với những người quan tâm đến việc tìm hiểu sâu hơn về LoRA và các kỹ thuật tinh chỉnh hiệu quả, đây là một số tài nguyên có giá trị:
 
-1. Original LoRA paper: "LoRA: Low-Rank Adaptation of Large Language Models" (arXiv:2106.09685)
-2. Hugging Face PEFT library documentation: [https://huggingface.co/docs/peft/index](https://huggingface.co/docs/peft/index)
-3. "Parameter-Efficient Transfer Learning for NLP" (arXiv:1902.00751)
-4. "Scaling Down to Scale Up: A Guide to Parameter-Efficient Fine-Tuning" (arXiv:2303.15647)
+1. Bài viết gốc của LoRA: "LoRA: Sự thích ứng ở cấp độ thấp của các mô hình ngôn ngữ lớn" (arXiv:2106.09685)
+2. Tài liệu thư viện PEFT ôm mặt: [https://huggingface.co/docs/peft/index](https://huggingface.co/docs/peft/index)
+3. "Học chuyển giao tham số hiệu quả cho NLP" (arXiv:1902.00751)
+4. "Thu nhỏ để tăng quy mô: Hướng dẫn tinh chỉnh tham số hiệu quả" (arXiv:2303.15647)
 
-These resources provide in-depth explanations of LoRA and related techniques, as well as their applications in various natural language processing tasks.
+Các tài nguyên này cung cấp những giải thích sâu sắc về LoRA và các kỹ thuật liên quan, cũng như các ứng dụng của chúng trong các tác vụ xử lý ngôn ngữ tự nhiên khác nhau.

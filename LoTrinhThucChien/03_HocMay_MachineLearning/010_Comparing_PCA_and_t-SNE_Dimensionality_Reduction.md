@@ -1,8 +1,8 @@
-## Comparing PCA and t-SNE Dimensionality Reduction
+## So sánh PCA và t-SNE giảm kích thước
 
-Slide 1: Key Differences Between PCA and t-SNE
+Trang trình bày 1: Sự khác biệt chính giữa PCA và t-SNE
 
-Principal Component Analysis (PCA) and t-distributed Stochastic Neighbor Embedding (t-SNE) are two popular dimensionality reduction techniques used in data science and machine learning. While both aim to reduce the dimensionality of high-dimensional data, they differ significantly in their approach and applications. This presentation will explore the key differences between PCA and t-SNE, providing insights into when to use each method.
+Phân tích thành phần chính (PCA) và Nhúng hàng ngẫu nhiên phân phối t (t-SNE) là hai kỹ thuật giảm kích thước phổ biến được sử dụng trong khoa học dữ liệu và học máy. Mặc dù cả hai đều hướng tới mục tiêu giảm chiều của dữ liệu nhiều chiều nhưng chúng khác nhau đáng kể về cách tiếp cận và ứng dụng. Bài trình bày này sẽ khám phá những điểm khác biệt chính giữa PCA và t-SNE, cung cấp thông tin chi tiết về thời điểm sử dụng từng phương pháp.
 
 ```python
 import matplotlib.pyplot as plt
@@ -38,9 +38,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 2: Linear vs. Non-linear
+Trang trình bày 2: Tuyến tính và phi tuyến tính
 
-PCA is a linear dimensionality reduction technique that assumes relationships between variables are linear. It works by finding the directions of maximum variance in the data and projecting the data onto these directions. In contrast, t-SNE is a non-linear technique that can capture complex, non-linear relationships in the data. This makes t-SNE better suited for revealing intricate data structures that might be missed by linear methods like PCA.
+PCA là một kỹ thuật giảm kích thước tuyến tính, giả định mối liên hệ giữa các biến là tuyến tính. Nó hoạt động bằng cách tìm kiếm mức tối đa sai lệch phương tiện theo hướng trong dữ liệu và tham chiếu dữ liệu lên các hướng này. Ngược lại, t-SNE là một kỹ thuật phi tuyến tính có thể nắm bắt các mối quan hệ phi tuyến tính phức tạp trong dữ liệu. Điều này làm cho t-SNE phù hợp hơn để tiết lộ các cấu trúc hỗn hợp dữ liệu mà các phương pháp tuyến tính như PCA có thể bỏ qua.
 
 ```python
 import matplotlib.pyplot as plt
@@ -79,9 +79,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 3: Global vs. Local Structure
+Trang trình bày 3: Cấu hình toàn cầu và cục bộ
 
-PCA focuses on preserving the global structure of the data by maximizing the variance along each principal component. This approach is effective for capturing overall trends and patterns in the dataset. On the other hand, t-SNE prioritizes the preservation of local relationships, keeping similar data points close together in the reduced space. This local focus allows t-SNE to reveal clusters and local patterns that might be obscured in a global analysis.
+PCA tập trung vào công việc duy trì cấu trúc tổng thể của dữ liệu bằng cách tối đa hóa phương pháp sai theo chiều dọc theo từng thành phần chính. Cách tiếp cận này có kết quả hiệu quả để nắm bắt các xu hướng và tổng hợp mẫu trong dữ liệu. Mặt khác, t-SNE ưu tiên duy trì các mối quan hệ cục bộ, giữ các dữ liệu tương tự gần nhau trong không gian được giảm bớt. Trọng tâm cục bộ này cho phép t-SNE tiết lộ các cụm và hình cục bộ có thể bị ẩn trong phân tích toàn cầu.
 
 ```python
 import matplotlib.pyplot as plt
@@ -117,9 +117,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 4: Deterministic vs. Stochastic
+Trang trình bày 4: Xác định và ngẫu nhiên
 
-PCA is a deterministic algorithm, meaning it always produces the same result for a given dataset. This property makes PCA results reproducible and consistent across multiple runs. In contrast, t-SNE is a stochastic algorithm that involves randomness in its optimization process. As a result, t-SNE can produce slightly different results each time it's run on the same data, even with the same random seed.
+PCA là một thuật toán xác định chính xác, có nghĩa là nó luôn tạo ra cùng một kết quả cho một dữ liệu tối đa. Thuộc tính này làm cho kết quả PCA có thể lặp lại và chạy ít nhất qua nhiều lần. Ngược lại, t-SNE là một thuật toán ngẫu nhiên liên quan đến tính ngẫu nhiên trong quá trình tối ưu hóa của nó. Kết quả là, t-SNE có thể tạo ra các kết quả hơi nước khác nhau mỗi lần nó chạy trên cùng một dữ liệu, ngay lập tức cùng một hạt giống ngẫu nhiên.
 
 ```python
 import matplotlib.pyplot as plt
@@ -156,9 +156,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 5: Interpretability
+Slide 5: Giải mã khả năng
 
-PCA offers straightforward, interpretable results. Each principal component is a linear combination of the original features, allowing us to understand which features contribute most to the variance in the data. This interpretability makes PCA useful for feature selection and understanding the underlying structure of the data. t-SNE, while excellent for visualization, is harder to interpret. The resulting components don't have a clear relationship to the original features, making t-SNE primarily useful for data exploration and visualization rather than feature interpretation.
+PCA đưa ra những kết quả đơn giản và dễ hiểu. Mỗi thành phần chính là tính chất tuyến đường hợp lý của các đầu ban đặc biệt, cho phép chúng hiểu những đặc điểm nào đóng góp nhiều nhất vào các đặc biệt trong dữ liệu. Khả năng giải quyết này giúp PCA trở nên hữu ích trong việc lựa chọn tính năng và hiểu cơ sở cấu trúc của dữ liệu. t-SNE, mặc dù có khả năng hiển thị tuyệt vời nhưng lại khó diễn giải hơn. Các thành phần được không có mối quan hệ rõ ràng với các tính năng ban đầu, khiến t-SNE chủ yếu hữu ích cho công việc khám phá và trực quan hóa dữ liệu hơn là diễn giải tính năng.
 
 ```python
 import matplotlib.pyplot as plt
@@ -200,9 +200,9 @@ plt.show()
 print("Explained variance ratio:", pca.explained_variance_ratio_)
 ```
 
-Slide 6: Computational Cost
+Slide 6: Chi phí tính toán
 
-PCA is computationally efficient and scales well to large datasets. Its time complexity is O(min(n^2d, nd^2)), where n is the number of samples and d is the number of features. This efficiency makes PCA suitable for high-dimensional data reduction tasks. In contrast, t-SNE is computationally expensive, especially for larger datasets. Its time complexity is O(n^2), which can become prohibitive for very large datasets. As a result, t-SNE is often applied to smaller datasets or used as a final visualization step after initial dimensionality reduction with other methods.
+PCA có hiệu suất tính toán và khả năng mở rộng tốt trên các dữ liệu lớn. Độ phức tạp của thời gian là O(min(n^2d, nd^2)), trong đó n là mẫu số lượng và d là số lượng đặc biệt. Hiệu quả này làm cho PCA phù hợp với các nhiệm vụ giảm dữ liệu nhiều chiều. Ngược lại, t-SNE có giá thành cao hơn về mặt tính toán, đặc biệt đối với các bộ dữ liệu lớn hơn. Độ phức tạp của thời gian của nó là O(n^2), có thể trở nên hạn chế đối với các dữ liệu rất lớn. Do đó, t-SNE thường được áp dụng cho các dữ liệu nhỏ hơn hoặc được sử dụng như bước trực tiếp hóa cuối cùng sau khi giảm kích thước ban đầu bằng các phương pháp khác.
 
 ```python
 import time
@@ -249,9 +249,9 @@ plt.grid(True)
 plt.show()
 ```
 
-Slide 7: When to Use PCA
+Trang trình bày 7: Khi nào nên sử dụng PCA
 
-PCA is particularly useful when you need a simple, interpretable reduction method for high-dimensional data. It's ideal for preparing data for machine learning models that require linear transformations or when you want to reduce noise by eliminating less important features. PCA is also valuable for exploratory data analysis, helping to identify the most significant variables in your dataset.
+PCA đặc biệt hữu ích khi bạn cần một phương pháp rút gọn đơn giản, dễ hiểu cho dữ liệu nhiều chiều. Đây là giải pháp lý tưởng để chuẩn bị dữ liệu cho các mô hình máy học yêu cầu cho phép biến đổi tuyến tính hoặc khi bạn muốn giảm nhiễu bằng cách loại bỏ ít tính năng hơn. PCA cũng có giá trị trong việc phân tích dòng truy cập dữ liệu, giúp xác định các biến quan trọng nhất trong dữ liệu của bạn.
 
 ```python
 import matplotlib.pyplot as plt
@@ -287,9 +287,9 @@ plt.show()
 print("Explained variance ratio:", pca.explained_variance_ratio_)
 ```
 
-Slide 8: When to Use t-SNE
+Trang trình bày 8: Khi nào nên sử dụng t-SNE
 
-t-SNE is particularly effective when you're looking to visualize high-dimensional data in 2D or 3D while maintaining local data clusters. It's ideal for exploring datasets with complex, non-linear relationships that PCA might miss. t-SNE is also useful for clustering and exploring the intrinsic structure of the data, especially when local relationships are more important than global structure.
+t-SNE có hiệu quả đặc biệt khi bạn muốn trực tiếp hóa dữ liệu chiều cao ở dạng 2D hoặc 3D trong khi vẫn duy trì bộ cụm dữ liệu cục bộ. Đây là giải pháp lý tưởng để khám phá các tập dữ liệu có quan hệ phức tạp, phi tuyến tính mà PCA có thể bỏ đi. t-SNE cũng hữu ích cho việc phân cụm và khám phá nội dung cấu trúc tại dữ liệu, đặc biệt khi các mối quan hệ cục bộ quan trọng hơn cấu trúc toàn cầu.
 
 ```python
 import matplotlib.pyplot as plt
@@ -323,9 +323,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 9: Real-Life Example: Image Processing
+Slide 9: Ví dụ thực tế: Xử lý hình ảnh
 
-In image processing, PCA can be used for tasks like image compression and feature extraction. For instance, we can use PCA to reduce the dimensionality of image data while preserving the most important visual information. This technique is particularly useful in facial recognition systems, where PCA is often referred to as the "eigenface" method.
+Trong quá trình xử lý ảnh, PCA có thể được sử dụng cho các tác vụ như nén ảnh và trích xuất đặc điểm. Ví dụ: chúng tôi có thể sử dụng PCA để giảm kích thước của hình ảnh dữ liệu trong khi vẫn giữ mức quan trọng nhất của hình ảnh thông tin. Kỹ thuật này đặc biệt hữu ích trong các hệ thống nhận dạng khuôn mặt, trong đó PCA thường được gọi là phương pháp "khuôn mặt riêng".
 
 ```python
 import matplotlib.pyplot as plt
@@ -362,9 +362,9 @@ plt.show()
 print("Explained variance ratio sum:", sum(pca.explained_variance_ratio_))
 ```
 
-Slide 10: Real-Life Example: Genomic Data Analysis
+Trang trình bày 10: Ví dụ thực tế: Phân tích bộ gen dữ liệu
 
-In genomics, t-SNE is often used to visualize high-dimensional gene expression data. It can reveal clusters of genes with similar expression patterns or groups of samples with similar genetic profiles. This application is crucial in understanding complex biological systems and identifying potential biomarkers for diseases.
+Trong bộ gen, t-SNE thường được sử dụng để trực tiếp hóa dữ liệu biểu hiện chiều cao của gen. Nó có thể tiết lộ các cụm gen có kiểu biểu hiện tương tự hoặc các mẫu nhóm có cấu hình truyền tải tương thích. Ứng dụng này rất quan trọng trong việc tìm hiểu các hệ thống sinh học phức tạp và xác định dấu ấn sinh học tiềm ẩn đối với bệnh tật.
 
 ```python
 import matplotlib.pyplot as plt
@@ -394,9 +394,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 11: Combining PCA and t-SNE
+Slide 11: Kết hợp PCA và t-SNE
 
-In practice, it's often beneficial to combine PCA and t-SNE, especially when dealing with very high-dimensional data. PCA can be used as a preprocessing step to reduce the dimensionality of the data before applying t-SNE. This approach can significantly speed up the t-SNE computation while still preserving important structures in the data.
+Trong thực tế, việc kết hợp PCA và t-SNE thường có lợi, đặc biệt khi xử lý dữ liệu có nhiều chiều. PCA can be used as step tiền xử lý để giảm chiều của dữ liệu trước khi áp dụng t-SNE. Cách tiếp cận này có thể tăng tốc độ đáng kể quá trình tính toán t-SNE trong khi vẫn đảm bảo an toàn cho các cấu trúc quan trọng trong dữ liệu.
 
 ```python
 import matplotlib.pyplot as plt
@@ -428,9 +428,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 12: Hyperparameter Tuning in t-SNE
+Trang trình bày 12: Điều chỉnh siêu tham số trong t-SNE
 
-While PCA has few hyperparameters, t-SNE has several that can significantly affect its output. The most important ones are perplexity and the number of iterations. Perplexity balances local and global aspects of the data, while the number of iterations affects how well the algorithm optimizes the embedding. It's crucial to experiment with these parameters to find the best visualization for your data.
+Trong khi PCA có ít siêu tham số, t-SNE có một số siêu tham số có thể gây ảnh hưởng đáng kể đến đầu ra của nó. Điều quan trọng nhất là sự phức tạp và số lần lặp lại. Sự phức tạp cân bằng các cạnh cục bộ và toàn cầu của dữ liệu, trong khi số lần lặp lại ảnh hưởng đến mức độ ưu tiên của thuật toán khi nhúng. Điều quan trọng là phải thử nghiệm các tham số này để tìm ra hình ảnh trực quan tốt nhất cho dữ liệu của bạn.
 
 ```python
 import matplotlib.pyplot as plt
@@ -460,9 +460,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 13: Limitations and Considerations
+Trang trình bày 13: Chế độ và cân bằng nhanh
 
-While PCA and t-SNE are powerful tools, they have limitations. PCA assumes linear relationships and may miss important non-linear structures. t-SNE can sometimes create misleading visualizations, especially when the perplexity is not well-tuned. Both methods can struggle with very high-dimensional data. It's important to understand these limitations and use these techniques as part of a broader analytical approach, rather than relying on them exclusively.
+Mặc dù PCA và t-SNE là những công cụ mạnh mẽ nhưng chúng cũng có những chế độ hạn chế. PCA giả định các tính chất tuyến tính quan hệ và có thể loại bỏ các cấu trúc quan trọng của tuyến tính. t-SNE double khi có thể tạo ra những hình ảnh trực quan gây hiểu lầm, đặc biệt khi rối loạn không thể điều chỉnh tốt. Cả hai phương pháp đều có thể gặp khó khăn với dữ liệu có chiều rất cao. Điều quan trọng là phải hiểu những giới hạn chế độ này và sử dụng các kỹ thuật này như một phần rộng hơn của phương pháp phân tích phương pháp, thay vì chỉ dựa vào chúng.
 
 ```python
 import matplotlib.pyplot as plt
@@ -497,13 +497,13 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-For those interested in diving deeper into PCA and t-SNE, here are some valuable resources:
+Đối với những người muốn tìm hiểu sâu hơn về PCA và t-SNE, đây là một số tài nguyên có giá trị:
 
-1. "Dimensionality Reduction: A Comparative Review" by L.J.P. van der Maaten, E.O. Postma, and H.J. van den Herik (ArXiv:0904.3383)
-2. "Visualizing Data using t-SNE" by Laurens van der Maaten and Geoffrey Hinton (Journal of Machine Learning Research, 2008)
-3. "A Tutorial on Principal Component Analysis" by Jonathon Shlens (ArXiv:1404.1100)
-4. "How to Use t-SNE Effectively" by Martin Wattenberg, Fernanda Viégas, and Ian Johnson (Distill, 2016)
+1. "Giảm kích thước: Đánh giá so sánh" của L.J.P. van der Maaten, E.O. Postma và H.J. van den Herik (ArXiv:0904.3383)
+2. "Trực quan hóa dữ liệu bằng t-SNE" của Laurens van der Maaten và Geoffrey Hinton (Tạp chí Nghiên cứu Máy học, 2008)
+3. "Hướng dẫn phân tích thành phần chính" của Jonathon Shlens (ArXiv:1404.1100)
+4. “Cách sử dụng hiệu quả t-SNE” của Martin Wattenberg, Fernanda Viégas và Ian Johnson (Distill, 2016)
 
-These papers provide in-depth explanations of the algorithms, their mathematical foundations, and best practices for their application in various domains.
+Bài viết này cung cấp những giải pháp sâu sắc về thuật toán, nền tảng toán học của họ và các phương pháp hay nhất để ứng dụng chúng trong các lĩnh vực khác nhau.

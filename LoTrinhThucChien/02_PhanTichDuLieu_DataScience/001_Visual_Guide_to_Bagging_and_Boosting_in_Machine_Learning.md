@@ -1,7 +1,7 @@
-## Visual Guide to Bagging and Boosting in Machine Learning
-Slide 1: Understanding Bagging in Machine Learning
+## Hướng dẫn trực quan về đóng bao và tăng cường trong Machine Learning
+Trang trình bày 1: Tìm hiểu về đóng bao trong Machine Learning
 
-Bagging, short for Bootstrap Aggregating, is a fundamental ensemble technique that creates multiple training subsets through random sampling with replacement. This method reduces overfitting by training independent models on different data distributions and combining their predictions through averaging or voting mechanisms.
+Đóng gói, viết tắt của Bootstrap Aggregating, là một kỹ thuật tổng hợp cơ bản tạo ra nhiều tập hợp con đào tạo thông qua lấy mẫu ngẫu nhiên có thay thế. Phương pháp này làm giảm việc trang bị quá mức bằng cách đào tạo các mô hình độc lập trên các phân phối dữ liệu khác nhau và kết hợp các dự đoán của chúng thông qua cơ chế tính trung bình hoặc bỏ phiếu.
 
 ```python
 import numpy as np
@@ -31,9 +31,9 @@ class BaggingFromScratch:
         return np.round(np.mean(predictions, axis=0))
 ```
 
-Slide 2: Implementing Basic Boosting Algorithm
+Slide 2: Triển khai thuật toán tăng tốc cơ bản
 
-Boosting builds an ensemble sequentially, where each model attempts to correct the errors made by previous models. The algorithm assigns higher weights to misclassified samples, forcing subsequent models to focus on challenging cases and improve overall performance.
+Việc tăng cường xây dựng một tập hợp một cách tuần tự, trong đó mỗi mô hình cố gắng sửa các lỗi do các mô hình trước đó mắc phải. Thuật toán gán trọng số cao hơn cho các mẫu bị phân loại sai, buộc các mô hình tiếp theo phải tập trung vào các trường hợp khó khăn và cải thiện hiệu suất tổng thể.
 
 ```python
 import numpy as np
@@ -67,9 +67,9 @@ class SimpleAdaBoost:
             self.estimator_weights.append(estimator_weight)
 ```
 
-Slide 3: Practical Example - Credit Card Fraud Detection
+Slide 3: Ví dụ thực tế - Phát hiện gian lận thẻ tín dụng
 
-Financial fraud detection represents a perfect use case for ensemble methods due to its inherent class imbalance and complex patterns. This implementation demonstrates how bagging can be effectively used to detect fraudulent transactions while handling imbalanced datasets.
+Phát hiện gian lận tài chính là một trường hợp sử dụng hoàn hảo cho các phương pháp tổng hợp do tính mất cân bằng lớp vốn có và các mô hình phức tạp của nó. Việc triển khai này cho thấy cách đóng bao có thể được sử dụng một cách hiệu quả để phát hiện các giao dịch gian lận trong khi xử lý các tập dữ liệu mất cân bằng.
 
 ```python
 import pandas as pd
@@ -97,9 +97,9 @@ y_pred = bagging_clf.predict(X_test_scaled)
 print(classification_report(y_test, y_pred))
 ```
 
-Slide 4: Mathematics Behind Bagging
+Trang trình bày 4: Toán học đằng sau việc đóng bao
 
-The mathematical foundation of bagging involves statistical concepts of bootstrap sampling and aggregation. Understanding these principles helps in grasping how variance reduction is achieved through ensemble averaging.
+Nền tảng toán học của việc đóng bao liên quan đến các khái niệm thống kê về lấy mẫu và tổng hợp bootstrap. Hiểu những nguyên tắc này sẽ giúp nắm bắt được cách đạt được mức giảm phương sai thông qua tính trung bình tổng thể.
 
 ```python
 # Mathematical formulas for Bagging
@@ -121,9 +121,9 @@ $$\rho$$ is the correlation between models
 """
 ```
 
-Slide 5: Advanced Boosting Implementation
+Trang trình bày 5: Triển khai tăng cường nâng cao
 
-AdaBoost's sophisticated weighting mechanism adjusts sample importance based on previous model performance. This implementation showcases the intricate details of weight updates and model combination in boosting algorithms.
+Cơ chế tính trọng số phức tạp của AdaBoost điều chỉnh tầm quan trọng của mẫu dựa trên hiệu suất của mô hình trước đó. Việc triển khai này thể hiện các chi tiết phức tạp về cập nhật trọng lượng và kết hợp mô hình trong các thuật toán tăng cường.
 
 ```python
 class AdvancedAdaBoost:
@@ -213,9 +213,9 @@ class RandomForestFromScratch:
         )
 ```
 
-Slide 7: Gradient Boosting Implementation
+Trang trình bày 7: Triển khai tăng cường độ dốc
 
-Gradient Boosting builds an ensemble by fitting new models to the residuals of previous predictions. This implementation shows how to create a basic gradient boosting machine for regression tasks.
+Tăng cường độ dốc xây dựng một tổ hợp bằng cách khớp các mô hình mới với phần dư của các dự đoán trước đó. Việc triển khai này cho thấy cách tạo một máy tăng cường độ dốc cơ bản cho các tác vụ hồi quy.
 
 ```python
 class GradientBoostingFromScratch:
@@ -283,9 +283,9 @@ y_pred = rf_model.predict(X.values)
 print(f"ROC-AUC Score: {roc_auc_score(y, y_pred)}")
 ```
 
-Slide 9: Mathematics of Gradient Boosting
+Slide 9: Toán học tăng cường độ dốc
 
-The mathematical foundations of gradient boosting involve optimization through gradient descent in function space. These formulas illustrate the core concepts behind the algorithm.
+Cơ sở toán học của việc tăng cường độ dốc liên quan đến việc tối ưu hóa thông qua việc giảm độ dốc trong không gian hàm. Những công thức này minh họa các khái niệm cốt lõi đằng sau thuật toán.
 
 ```python
 """
@@ -305,9 +305,9 @@ $$r_{im} = -\left[\frac{\partial L(y_i, F(x_i))}{\partial F(x_i)}\right]_{F=F_{m
 """
 ```
 
-Slide 10: XGBoost Implementation Core Concepts
+Trang trình bày 10: Các khái niệm cốt lõi triển khai XGBoost
 
-XGBoost represents a highly optimized implementation of gradient boosting, incorporating regularization and system optimization. This implementation demonstrates key concepts of the XGBoost algorithm including weighted quantile sketch and sparse-aware split finding.
+XGBoost đại diện cho việc triển khai tăng cường độ dốc được tối ưu hóa cao, kết hợp chính quy hóa và tối ưu hóa hệ thống. Việc triển khai này thể hiện các khái niệm chính của thuật toán XGBoost bao gồm phác thảo lượng tử có trọng số và tìm kiếm phân tách nhận biết thưa thớt.
 
 ```python
 class SimpleXGBoost:
@@ -394,9 +394,9 @@ class ImbalancedEnsemble:
         return np.argmax(probas, axis=1)
 ```
 
-Slide 12: Real-world Application - Financial Market Prediction
+Slide 12: Ứng dụng thực tế - Dự đoán thị trường tài chính
 
-This implementation demonstrates how ensemble methods can be applied to predict stock market movements using technical indicators and market data.
+Việc triển khai này cho thấy cách áp dụng các phương pháp tổng hợp để dự đoán diễn biến thị trường chứng khoán bằng cách sử dụng các chỉ báo kỹ thuật và dữ liệu thị trường.
 
 ```python
 import pandas as pd
@@ -444,9 +444,9 @@ model = GradientBoostingFromScratch(n_estimators=100, learning_rate=0.1)
 model.fit(X, y)
 ```
 
-Slide 13: Advanced Ensemble Stacking Implementation
+Trang trình bày 13: Triển khai xếp chồng tập hợp nâng cao
 
-Stacking combines predictions from multiple models using a meta-learner. This implementation shows how to create a stacked ensemble that leverages the strengths of different base models while avoiding overfitting through cross-validation.
+Xếp chồng kết hợp các dự đoán từ nhiều mô hình bằng cách sử dụng trình học meta. Việc triển khai này cho thấy cách tạo một nhóm xếp chồng lên nhau nhằm tận dụng điểm mạnh của các mô hình cơ sở khác nhau đồng thời tránh trang bị quá mức thông qua xác thực chéo.
 
 ```python
 from sklearn.model_selection import KFold
@@ -490,9 +490,9 @@ class StackingEnsemble:
         return self.meta_model.predict(meta_features)
 ```
 
-Slide 14: Time Series Forecasting with Ensemble Methods
+Slide 14: Dự báo chuỗi thời gian bằng các phương pháp tập hợp
 
-This implementation demonstrates how to adapt ensemble methods for time series forecasting, incorporating temporal dependencies and handling seasonal patterns.
+Việc triển khai này thể hiện cách điều chỉnh các phương pháp tổng hợp để dự báo chuỗi thời gian, kết hợp các phụ thuộc theo thời gian và xử lý các mô hình theo mùa.
 
 ```python
 class TimeSeriesEnsemble:

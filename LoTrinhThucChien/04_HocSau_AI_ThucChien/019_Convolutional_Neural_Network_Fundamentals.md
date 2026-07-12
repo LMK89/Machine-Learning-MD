@@ -1,7 +1,7 @@
-## Convolutional Neural Network Fundamentals
-Slide 1: CNN Basic Architecture Implementation
+## Nguyên tắc cơ bản của mạng nơ-ron chuyển đổi
+Slide 1: Triển khai kiến trúc cơ bản CNN
 
-A convolutional neural network implementation focusing on the fundamental building blocks using NumPy. This base architecture demonstrates the core concepts of convolution operations, activation functions, and forward propagation through multiple layers.
+Triển khai mạng nơ-ron tích chập tập trung vào các khối xây dựng cơ bản bằng NumPy. Kiến trúc cơ sở này thể hiện các khái niệm cốt lõi về hoạt động tích chập, các hàm kích hoạt và truyền lan về phía trước qua nhiều lớp.
 
 ```python
 import numpy as np
@@ -35,9 +35,9 @@ class CNN:
         return output
 ```
 
-Slide 2: Activation Functions and Pooling
+Trang trình bày 2: Chức năng kích hoạt và gộp chung
 
-Essential components of CNNs include activation functions for introducing non-linearity and pooling operations for reducing spatial dimensions. This implementation shows ReLU activation and max pooling operations.
+Các thành phần thiết yếu của CNN bao gồm các chức năng kích hoạt để giới thiệu các hoạt động phi tuyến tính và gộp để giảm kích thước không gian. Việc triển khai này cho thấy hoạt động kích hoạt ReLU và gộp tối đa.
 
 ```python
 class CNNComponents:
@@ -75,9 +75,9 @@ print(f"Input shape: {input_data.shape}")
 print(f"Pooled shape: {pooled.shape}")
 ```
 
-Slide 3: Forward Propagation Implementation
+Trang trình bày 3: Thực hiện lan truyền chuyển tiếp
 
-Forward propagation in CNNs involves sequential application of convolution, activation, and pooling operations. This implementation demonstrates the complete forward pass through multiple layers of the network.
+Sự lan truyền thuận trong CNN liên quan đến việc áp dụng tuần tự các hoạt động tích chập, kích hoạt và gộp. Việc triển khai này thể hiện quá trình chuyển tiếp hoàn chỉnh qua nhiều lớp của mạng.
 
 ```python
 class CNNForward(CNN):
@@ -112,9 +112,9 @@ output = cnn.forward(input_image)
 print(f"Output shape: {output.shape}")
 ```
 
-Slide 4: Loss Function and Gradient Computation
+Trang trình bày 4: Hàm mất mát và tính toán độ dốc
 
-The implementation of loss computation and gradient calculation is crucial for training CNNs. This code demonstrates the categorical cross-entropy loss and its gradient computation for backpropagation.
+Việc thực hiện tính toán tổn thất và tính toán độ dốc là rất quan trọng để đào tạo CNN. Mã này thể hiện sự mất mát entropy chéo được phân loại và tính toán độ dốc của nó đối với lan truyền ngược.
 
 ```python
 def categorical_crossentropy(predictions, targets):
@@ -148,9 +148,9 @@ loss, gradient = loss_computer.compute_gradients(output, target)
 print(f"Loss: {loss:.4f}")
 ```
 
-Slide 5: Backpropagation Through Convolution Layers
+Trang trình bày 5: Lan truyền ngược thông qua các lớp chập
 
-A detailed implementation of backpropagation through convolutional layers, showing how gradients flow backward through the network to update weights. This process is essential for training CNNs effectively.
+Triển khai chi tiết về lan truyền ngược thông qua các lớp tích chập, cho thấy độ dốc chảy ngược qua mạng để cập nhật trọng số. Quá trình này rất cần thiết để đào tạo CNN một cách hiệu quả.
 
 ```python
 class CNNBackprop(CNNForward):
@@ -243,9 +243,9 @@ for epoch in range(10):
     print(f"Epoch {epoch+1}, Loss: {epoch_loss:.4f}")
 ```
 
-Slide 7: Data Processing and Augmentation
+Slide 7: Xử lý và tăng cường dữ liệu
 
-Implementation of data preprocessing and augmentation techniques crucial for improving CNN performance. This code shows image normalization, random rotations, flips, and other transformations.
+Việc triển khai các kỹ thuật tiền xử lý và tăng cường dữ liệu rất quan trọng để cải thiện hiệu suất CNN. Mã này hiển thị chuẩn hóa hình ảnh, xoay ngẫu nhiên, lật và các biến đổi khác.
 
 ```python
 import cv2
@@ -286,9 +286,9 @@ print(f"Original shape: {sample_image.shape}")
 print(f"Augmented shape: {augmented.shape}")
 ```
 
-Slide 8: CNN Image Classification Example
+Trang trình bày 8: Ví dụ về phân loại hình ảnh CNN
 
-A complete example of using CNN for image classification, including data preparation, model training, and evaluation. This implementation demonstrates the practical application of CNNs for real-world image recognition tasks.
+Một ví dụ hoàn chỉnh về việc sử dụng CNN để phân loại hình ảnh, bao gồm chuẩn bị dữ liệu, đào tạo mô hình và đánh giá. Việc triển khai này thể hiện ứng dụng thực tế của CNN cho các nhiệm vụ nhận dạng hình ảnh trong thế giới thực.
 
 ```python
 class ImageClassifier(CNNBackprop):
@@ -323,9 +323,9 @@ print(f"Predicted class: {predicted_class}")
 print(f"Class probabilities:\n{predictions[0]}")
 ```
 
-Slide 9: Model Evaluation Metrics
+Slide 9: Các thước đo đánh giá mô hình
 
-Implementation of comprehensive evaluation metrics for CNN models, including accuracy, precision, recall, and F1-score calculations. This code provides essential tools for assessing model performance.
+Triển khai các số liệu đánh giá toàn diện cho các mô hình CNN, bao gồm tính toán độ chính xác, độ chính xác, khả năng thu hồi và điểm F1. Mã này cung cấp các công cụ cần thiết để đánh giá hiệu suất của mô hình.
 
 ```python
 class ModelEvaluator:
@@ -376,9 +376,9 @@ print("Model Performance Metrics:")
 print(f"Accuracy: {metrics['accuracy']:.4f}")
 ```
 
-Slide 10: Real-world Application: Face Detection CNN
+Slide 10: Ứng dụng thực tế: Nhận diện khuôn mặt CNN
 
-Implementation of a face detection system using CNN architecture. This practical example demonstrates handling real image data, preprocessing, and detection pipeline implementation for face recognition tasks.
+Triển khai hệ thống nhận diện khuôn mặt sử dụng kiến ​​trúc CNN. Ví dụ thực tế này thể hiện việc xử lý dữ liệu hình ảnh thực, tiền xử lý và triển khai quy trình phát hiện cho các tác vụ nhận dạng khuôn mặt.
 
 ```python
 import numpy as np
@@ -443,9 +443,9 @@ detections = detector.sliding_window_detect(processed)
 print(f"Found {len(detections)} potential faces")
 ```
 
-Slide 11: Transfer Learning Implementation
+Trang trình chiếu 11: Thực hiện chuyển giao học tập
 
-A comprehensive implementation of transfer learning capabilities for CNNs, allowing the reuse of pre-trained weights and fine-tuning for specific tasks. This approach significantly reduces training time and improves performance on limited datasets.
+Triển khai toàn diện khả năng học chuyển giao cho CNN, cho phép tái sử dụng các trọng số đã được huấn luyện trước và tinh chỉnh cho các nhiệm vụ cụ thể. Cách tiếp cận này giúp giảm đáng kể thời gian đào tạo và cải thiện hiệu suất trên các tập dữ liệu hạn chế.
 
 ```python
 class TransferLearningCNN:
@@ -509,9 +509,9 @@ predictions = transfer_model.forward(test_input)
 print(f"Output shape: {predictions.shape}")
 ```
 
-Slide 12: Attention Mechanism in CNNs
+Slide 12: Cơ chế chú ý trong CNN
 
-Implementation of attention mechanisms in CNNs to focus on relevant features in the input. This advanced technique improves model performance by learning to weight important spatial locations differently.
+Triển khai cơ chế chú ý trong CNN để tập trung vào các tính năng liên quan trong đầu vào. Kỹ thuật tiên tiến này cải thiện hiệu suất của mô hình bằng cách học cách tính trọng số các vị trí không gian quan trọng một cách khác nhau.
 
 ```python
 class AttentionCNN:
@@ -570,9 +570,9 @@ print(f"Output shape: {output.shape}")
 print(f"Attention weights shape: {attention_weights.shape}")
 ```
 
-Slide 13: Visualization and Interpretability
+Slide 13: Trực quan hóa và dễ hiểu
 
-Implementation of visualization techniques for understanding CNN decisions, including activation maps, gradient-based saliency, and class activation mapping (CAM) to provide insights into model behavior.
+Triển khai các kỹ thuật trực quan hóa để hiểu các quyết định của CNN, bao gồm bản đồ kích hoạt, độ nổi dựa trên độ dốc và ánh xạ kích hoạt lớp (CAM) để cung cấp thông tin chuyên sâu về hành vi của mô hình.
 
 ```python
 class CNNVisualizer:
@@ -653,9 +653,9 @@ print(f"Grad-CAM shape: {gradcam.shape}")
 print(f"Filter visualizations shape: {filters.shape}")
 ```
 
-Slide 14: Advanced Loss Functions
+Trang trình bày 14: Hàm mất nâng cao
 
-Implementation of specialized loss functions for CNN training, including focal loss for handling class imbalance and contrastive loss for similarity learning tasks.
+Triển khai các chức năng mất mát chuyên dụng cho đào tạo CNN, bao gồm mất tiêu điểm để xử lý mất cân bằng lớp và mất tương phản cho các nhiệm vụ học tập tương tự.
 
 ```python
 class AdvancedLossFunctions:
@@ -741,10 +741,10 @@ print(f"Focal Loss: {focal_loss:.4f}")
 print(f"Contrastive Loss: {cont_loss:.4f}")
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-*   "Deep Residual Learning for Image Recognition" [https://arxiv.org/abs/1512.03385](https://arxiv.org/abs/1512.03385)
-*   "Squeeze-and-Excitation Networks" [https://arxiv.org/abs/1709.01507](https://arxiv.org/abs/1709.01507)
-*   "EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks" [https://arxiv.org/abs/1905.11946](https://arxiv.org/abs/1905.11946)
-*   "Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization" [https://arxiv.org/abs/1610.02391](https://arxiv.org/abs/1610.02391)
-*   "Focal Loss for Dense Object Detection" [https://arxiv.org/abs/1708.02002](https://arxiv.org/abs/1708.02002)
+* "Học tập dư thừa sâu để nhận dạng hình ảnh" [https://arxiv.org/abs/1512.03385](https://arxiv.org/abs/1512.03385)
+* "Mạng ép và kích thích" [https://arxiv.org/abs/1709.01507](https://arxiv.org/abs/1709.01507)
+* "EfficientNet: Xem xét lại việc mở rộng mô hình cho Mạng thần kinh tích chập" [https://arxiv.org/abs/1905.11946](https://arxiv.org/abs/1905.11946)
+* "Grad-CAM: Giải thích trực quan từ Mạng sâu thông qua bản địa hóa dựa trên gradient" [https://arxiv.org/abs/1610.02391](https://arxiv.org/abs/1610.02391)
+* "Mất tiêu điểm khi phát hiện vật thể dày đặc" [https://arxiv.org/abs/1708.02002](https://arxiv.org/abs/1708.02002)

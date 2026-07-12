@@ -1,7 +1,7 @@
-## Probability Distributions Python Cheat Sheet
-Slide 1: Introduction to Probability Distributions
+## Phân phối xác suất Bảng cheat Python
+Slide 1: Giới thiệu về phân phối xác suất
 
-Probability distributions are mathematical functions that describe the likelihood of different outcomes in a random experiment. They are fundamental to statistics and data science, providing a framework for modeling uncertainty and making predictions. This cheat sheet will cover key probability distributions, their properties, and how to work with them using Python.
+Phân phối xác suất là các hàm toán học mô tả khả năng xảy ra các kết quả khác nhau trong một thử nghiệm ngẫu nhiên. Chúng là nền tảng của thống kê và khoa học dữ liệu, cung cấp một khuôn khổ để mô hình hóa sự không chắc chắn và đưa ra dự đoán. Bảng tóm tắt này sẽ bao gồm các phân bố xác suất chính, các thuộc tính của chúng và cách làm việc với chúng bằng Python.
 
 ```python
 import random
@@ -15,9 +15,9 @@ print(f"Heads count: {results.count('H')}")
 print(f"Tails count: {results.count('T')}")
 ```
 
-Slide 2: Uniform Distribution
+Trang trình bày 2: Phân phối đồng đều
 
-The uniform distribution represents a constant probability over a continuous interval. It's often used to model random selection from a range of values with equal likelihood. In Python, we can use the random module to generate uniform random numbers.
+Sự phân bố đồng đều thể hiện xác suất không đổi trong một khoảng thời gian liên tục. Nó thường được sử dụng để lập mô hình lựa chọn ngẫu nhiên từ một phạm vi giá trị có khả năng như nhau. Trong Python, chúng ta có thể sử dụng mô-đun ngẫu nhiên để tạo các số ngẫu nhiên thống nhất.
 
 ```python
 import random
@@ -33,7 +33,7 @@ print(f"Min: {min(samples):.4f}")
 print(f"Max: {max(samples):.4f}")
 ```
 
-Slide 3: Results for: Uniform Distribution
+Slide 3: Kết quả cho: Phân phối đồng đều
 
 ```
 Mean: 0.5021
@@ -67,7 +67,7 @@ print(f"Variance: {variance:.4f}")
 print(f"Standard Deviation: {math.sqrt(variance):.4f}")
 ```
 
-Slide 5: Results for: Normal (Gaussian) Distribution
+Trang trình bày 5: Kết quả cho: Phân bố chuẩn (Gaussian)
 
 ```
 Mean: -0.0124
@@ -101,7 +101,7 @@ results = [binomial_experiment(10, 0.5) for _ in range(1000)]
 print(f"Average number of heads: {sum(results) / len(results):.2f}")
 ```
 
-Slide 7: Results for: Binomial Distribution
+Slide 7: Kết quả cho: Phân phối nhị thức
 
 ```
 Probability of exactly 3 heads in 10 flips: 0.1172
@@ -140,7 +140,7 @@ mean = sum(samples) / len(samples)
 print(f"Sample mean: {mean:.2f}")
 ```
 
-Slide 9: Results for: Poisson Distribution
+Slide 9: Kết quả cho: Phân phối Poisson
 
 ```
 Probability of exactly 3 events: 0.1804
@@ -170,7 +170,7 @@ print(f"Theoretical variance: {1 / (lambda_param ** 2):.4f}")
 print(f"Sample variance: {variance:.4f}")
 ```
 
-Slide 11: Results for: Exponential Distribution
+Trang trình chiếu 11: Kết quả cho: Phân phối lũy thừa
 
 ```
 Theoretical mean: 2.0000
@@ -210,7 +210,7 @@ call_times = simulate_call_times(workday_calls, 6)
 print(f"Average time between calls: {sum(call_times)/len(call_times):.2f} minutes")
 ```
 
-Slide 13: Results for: Real-Life Example: Customer Service
+Trang trình bày 13: Kết quả cho: Ví dụ thực tế: Dịch vụ khách hàng
 
 ```
 Total calls in 8 hours: 85
@@ -248,7 +248,7 @@ out_of_tolerance = sum(abs(m - 10) > 0.3 for m in measurements)
 print(f"Products out of tolerance: {out_of_tolerance}")
 ```
 
-Slide 15: Results for: Real-Life Example: Quality Control
+Trang trình chiếu 15: Kết quả cho: Ví dụ thực tế: Kiểm soát chất lượng
 
 ```
 Defective items in batch of 1000: 8

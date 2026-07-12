@@ -1,7 +1,7 @@
-## Exploratory Data Analysis with Python
-Slide 1: Introduction to Exploratory Data Analysis (EDA)
+## Phân tích dữ liệu khám phá bằng Python
+Trang trình bày 1: Giới thiệu về Phân tích dữ liệu thăm dò (EDA)
 
-Exploratory Data Analysis is a crucial step in the data science process, allowing us to understand the structure, patterns, and characteristics of our dataset before formal modeling. EDA helps us identify trends, detect outliers, and formulate hypotheses about the data.
+Phân tích dữ liệu khám phá là một bước quan trọng trong quy trình khoa học dữ liệu, cho phép chúng tôi hiểu cấu trúc, mẫu và đặc điểm của tập dữ liệu trước khi lập mô hình chính thức. EDA giúp chúng tôi xác định xu hướng, phát hiện các ngoại lệ và hình thành các giả thuyết về dữ liệu.
 
 ```python
 import pandas as pd
@@ -18,9 +18,9 @@ print(df.info())
 print(df.head())
 ```
 
-Slide 2: Loading and Inspecting Data
+Slide 2: Tải và kiểm tra dữ liệu
 
-The first step in EDA is loading the data and getting a quick overview. We'll use pandas to load a CSV file and display basic information about the dataset.
+Bước đầu tiên trong EDA là tải dữ liệu và xem nhanh tổng quan. Chúng tôi sẽ sử dụng gấu trúc để tải tệp CSV và hiển thị thông tin cơ bản về tập dữ liệu.
 
 ```python
 import pandas as pd
@@ -38,9 +38,9 @@ print(df.head())
 print(df.describe())
 ```
 
-Slide 3: Handling Missing Values
+Slide 3: Xử lý các giá trị bị thiếu
 
-Identifying and handling missing values is crucial in EDA. We'll explore ways to detect and visualize missing data.
+Xác định và xử lý các giá trị còn thiếu là rất quan trọng trong EDA. Chúng ta sẽ khám phá các cách phát hiện và trực quan hóa dữ liệu bị thiếu.
 
 ```python
 import pandas as pd
@@ -62,9 +62,9 @@ plt.show()
 print("Percentage of missing values:\n", missing_percentage)
 ```
 
-Slide 4: Data Distribution Analysis
+Slide 4: Phân tích phân phối dữ liệu
 
-Understanding the distribution of variables is essential. We'll use histograms and kernel density plots to visualize distributions.
+Hiểu sự phân phối của các biến là điều cần thiết. Chúng ta sẽ sử dụng biểu đồ và biểu đồ mật độ hạt nhân để trực quan hóa các phân bố.
 
 ```python
 import pandas as pd
@@ -89,9 +89,9 @@ plt.legend()
 plt.show()
 ```
 
-Slide 5: Correlation Analysis
+Slide 5: Phân tích tương quan
 
-Exploring relationships between variables is crucial. We'll use correlation matrices and heatmaps to visualize these relationships.
+Khám phá mối quan hệ giữa các biến là rất quan trọng. Chúng ta sẽ sử dụng ma trận tương quan và bản đồ nhiệt để trực quan hóa các mối quan hệ này.
 
 ```python
 import pandas as pd
@@ -116,9 +116,9 @@ plt.suptitle('Pairplot of Iris Dataset', y=1.02)
 plt.show()
 ```
 
-Slide 6: Outlier Detection
+Trang trình bày 6: Phát hiện ngoại lệ
 
-Identifying outliers is important for understanding data quality and potential anomalies. We'll use box plots and scatter plots for outlier detection.
+Việc xác định các ngoại lệ rất quan trọng để hiểu được chất lượng dữ liệu và các điểm bất thường tiềm ẩn. Chúng tôi sẽ sử dụng biểu đồ hình hộp và biểu đồ phân tán để phát hiện ngoại lệ.
 
 ```python
 import pandas as pd
@@ -143,9 +143,9 @@ plt.title('Scatter Plot: Sepal Length vs Sepal Width')
 plt.show()
 ```
 
-Slide 7: Categorical Data Analysis
+Slide 7: Phân tích dữ liệu phân loại
 
-Analyzing categorical variables is essential for understanding the composition of our dataset. We'll use bar plots and pie charts for this purpose.
+Phân tích các biến phân loại là điều cần thiết để hiểu thành phần của tập dữ liệu của chúng tôi. Chúng tôi sẽ sử dụng biểu đồ thanh và biểu đồ hình tròn cho mục đích này.
 
 ```python
 import pandas as pd
@@ -170,9 +170,9 @@ plt.ylabel('')
 plt.show()
 ```
 
-Slide 8: Time Series Analysis
+Slide 8: Phân tích chuỗi thời gian
 
-For time-series data, we need to analyze trends, seasonality, and patterns over time. We'll use line plots and rolling statistics for this purpose.
+Đối với dữ liệu chuỗi thời gian, chúng ta cần phân tích xu hướng, tính thời vụ và mô hình theo thời gian. Chúng tôi sẽ sử dụng biểu đồ đường và số liệu thống kê cuộn cho mục đích này.
 
 ```python
 import pandas as pd
@@ -202,9 +202,9 @@ plt.legend()
 plt.show()
 ```
 
-Slide 9: Feature Engineering
+Trang trình bày 9: Kỹ thuật tính năng
 
-Feature engineering is the process of creating new features from existing ones. We'll demonstrate how to create interaction terms and polynomial features.
+Kỹ thuật tính năng là quá trình tạo ra các tính năng mới từ những tính năng hiện có. Chúng tôi sẽ trình bày cách tạo các thuật ngữ tương tác và các tính năng đa thức.
 
 ```python
 import pandas as pd
@@ -229,9 +229,9 @@ df_engineered = pd.concat([df, poly_features_df], axis=1)
 print(df_engineered.head())
 ```
 
-Slide 10: Dimensionality Reduction
+Slide 10: Giảm kích thước
 
-When dealing with high-dimensional data, dimensionality reduction techniques like PCA can be useful for visualization and feature selection.
+Khi xử lý dữ liệu nhiều chiều, các kỹ thuật giảm kích thước như PCA có thể hữu ích cho việc trực quan hóa và lựa chọn tính năng.
 
 ```python
 import pandas as pd
@@ -265,9 +265,9 @@ plt.show()
 print("Explained variance ratio:", pca.explained_variance_ratio_)
 ```
 
-Slide 11: Statistical Tests
+Slide 11: Kiểm tra thống kê
 
-Performing statistical tests can help us understand the significance of our findings. We'll demonstrate how to perform a t-test and chi-square test.
+Thực hiện các bài kiểm tra thống kê có thể giúp chúng tôi hiểu được tầm quan trọng của những phát hiện của chúng tôi. Chúng tôi sẽ trình bày cách thực hiện bài kiểm tra t và bài kiểm tra chi bình phương.
 
 ```python
 import pandas as pd
@@ -295,9 +295,9 @@ print(f"Chi-square statistic: {chi2}")
 print(f"P-value: {p_value}")
 ```
 
-Slide 12: Data Visualization with Seaborn
+Slide 12: Trực quan hóa dữ liệu với Seaborn
 
-Seaborn is a powerful library for statistical data visualization. We'll use it to create more advanced plots for our EDA.
+Seaborn là một thư viện mạnh mẽ để trực quan hóa dữ liệu thống kê. Chúng tôi sẽ sử dụng nó để tạo các sơ đồ nâng cao hơn cho EDA của mình.
 
 ```python
 import pandas as pd
@@ -324,9 +324,9 @@ plt.suptitle('Joint Plot of Sepal Length vs Sepal Width', y=1.02)
 plt.show()
 ```
 
-Slide 13: Real-Life Example: Weather Data Analysis
+Trang trình chiếu 13: Ví dụ thực tế: Phân tích dữ liệu thời tiết
 
-Let's analyze a weather dataset to demonstrate EDA in a real-world scenario. We'll explore temperature trends and precipitation patterns.
+Hãy phân tích tập dữ liệu thời tiết để chứng minh EDA trong kịch bản thế giới thực. Chúng ta sẽ khám phá xu hướng nhiệt độ và lượng mưa.
 
 ```python
 import pandas as pd
@@ -361,9 +361,9 @@ plt.ylabel('Precipitation (mm)')
 plt.show()
 ```
 
-Slide 14: Real-Life Example: Customer Churn Analysis
+Trang trình bày 14: Ví dụ thực tế: Phân tích tỷ lệ rời bỏ khách hàng
 
-In this example, we'll explore a dataset related to customer churn in a telecommunications company, demonstrating how EDA can provide insights into business problems.
+Trong ví dụ này, chúng ta sẽ khám phá tập dữ liệu liên quan đến tình trạng rời bỏ khách hàng trong một công ty viễn thông, chứng minh cách EDA có thể cung cấp thông tin chuyên sâu về các vấn đề kinh doanh.
 
 ```python
 import pandas as pd
@@ -393,14 +393,14 @@ plt.title('Correlation Heatmap of Numerical Features')
 plt.show()
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-For further exploration of Exploratory Data Analysis techniques and best practices, consider the following resources:
+Để khám phá thêm về các kỹ thuật Phân tích dữ liệu khám phá và các phương pháp hay nhất, hãy xem xét các tài nguyên sau:
 
-1. "Exploratory Data Analysis" by John W. Tukey (1977) - The foundational book on EDA.
-2. "Python for Data Analysis" by Wes McKinney - Covers pandas and numpy for data manipulation and analysis.
-3. "Data Science from Scratch" by Joel Grus - Provides a comprehensive introduction to data science concepts.
-4. "Statistical Rethinking" by Richard McElreath - Offers a Bayesian perspective on data analysis.
-5. ArXiv paper: "A Survey on Exploratory Data Analysis and Visualization Techniques for Big Data" ([https://arxiv.org/abs/2005.02218](https://arxiv.org/abs/2005.02218)) - Discusses modern EDA techniques for large datasets.
+1. "Phân tích dữ liệu khám phá" của John W. Tukey (1977) - Cuốn sách nền tảng về EDA.
+2. "Python để phân tích dữ liệu" của Wes McKinney - Bao gồm gấu trúc và numpy để thao tác và phân tích dữ liệu.
+3. "Khoa học dữ liệu từ đầu" của Joel Grus - Cung cấp phần giới thiệu toàn diện về các khái niệm khoa học dữ liệu.
+4. "Suy nghĩ lại về thống kê" của Richard McElreath - Đưa ra quan điểm Bayes về phân tích dữ liệu.
+5. Bài viết ArXiv: "Khảo sát về Kỹ thuật phân tích và hiển thị dữ liệu khám phá cho dữ liệu lớn" ([https://arxiv.org/abs/2005.02218](https://arxiv.org/abs/2005.02218)) - Thảo luận về các kỹ thuật EDA hiện đại cho các tập dữ liệu lớn.
 
-Remember to adapt these techniques to your specific dataset and research questions. EDA is an iterative process, and the insights gained often lead to further questions and analyses.
+Hãy nhớ điều chỉnh các kỹ thuật này cho phù hợp với tập dữ liệu và câu hỏi nghiên cứu cụ thể của bạn. EDA là một quá trình lặp đi lặp lại và những hiểu biết sâu sắc thu được thường dẫn đến những câu hỏi và phân tích sâu hơn.

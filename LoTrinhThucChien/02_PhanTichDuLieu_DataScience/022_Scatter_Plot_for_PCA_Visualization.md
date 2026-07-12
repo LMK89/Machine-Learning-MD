@@ -1,7 +1,7 @@
-## Scatter Plot for PCA Visualization
-Slide 1: Introduction to PCA Visualization
+## Biểu đồ phân tán để trực quan hóa PCA
+Slide 1: Giới thiệu về Trực quan hóa PCA
 
-Principal Component Analysis (PCA) visualization commonly employs scatter plots to represent relationships between the first two principal components. These plots reveal clustering patterns, outliers, and the overall structure of high-dimensional data projected onto a 2D space.
+Trực quan hóa Phân tích thành phần chính (PCA) thường sử dụng các biểu đồ phân tán để thể hiện mối quan hệ giữa hai thành phần chính đầu tiên. Các biểu đồ này tiết lộ các mô hình phân cụm, các ngoại lệ và cấu trúc tổng thể của dữ liệu nhiều chiều được chiếu lên không gian 2D.
 
 ```python
 import numpy as np
@@ -32,9 +32,9 @@ plt.grid(True)
 plt.show()
 ```
 
-Slide 2: Loading Plot Visualization
+Trang trình bày 2: Đang tải trực quan hóa sơ đồ
 
-Loading plots display the contribution of original features to principal components, represented as vectors in a 2D coordinate system. The length and direction of vectors indicate the strength and relationship of features to principal components.
+Đang tải các ô hiển thị sự đóng góp của các tính năng ban đầu cho các thành phần chính, được biểu diễn dưới dạng vectơ trong hệ tọa độ 2D. Độ dài và hướng của vectơ biểu thị cường độ và mối quan hệ của các đặc điểm với các thành phần chính.
 
 ```python
 def plot_loadings(pca, feature_names):
@@ -85,9 +85,9 @@ def create_biplot(X_pca, loadings, features, scale=1):
     plt.grid(True)
 ```
 
-Slide 4: Explained Variance Plot
+Slide 4: Giải thích sơ đồ phương sai
 
-The explained variance plot visualizes the cumulative proportion of variance explained by each principal component, helping determine the optimal number of components to retain in the analysis.
+Biểu đồ phương sai được giải thích trực quan hóa tỷ lệ phương sai tích lũy được giải thích bởi từng thành phần chính, giúp xác định số lượng thành phần tối ưu cần giữ lại trong phân tích.
 
 ```python
 def plot_explained_variance(pca):
@@ -145,9 +145,9 @@ plt.colorbar(scatter)
 plt.show()
 ```
 
-Slide 6: 3D PCA Visualization
+Trang trình bày 6: Trực quan hóa PCA 3D
 
-Three-dimensional PCA plots utilize the first three principal components to provide additional insight into data structure. This visualization technique is particularly useful when two components alone don't explain sufficient variance.
+Sơ đồ PCA ba chiều sử dụng ba thành phần chính đầu tiên để cung cấp thêm thông tin chi tiết về cấu trúc dữ liệu. Kỹ thuật trực quan này đặc biệt hữu ích khi chỉ riêng hai thành phần không giải thích đủ phương sai.
 
 ```python
 from mpl_toolkits.mplot3d import Axes3D
@@ -172,9 +172,9 @@ def plot_pca_3d(X_pca, labels=None, title="3D PCA Visualization"):
     return fig
 ```
 
-Slide 7: Interactive PCA Visualization with Plotly
+Trang trình bày 7: Trực quan hóa PCA tương tác với Plotly
 
-Modern PCA visualization benefits from interactive plotting libraries like Plotly, enabling users to zoom, rotate, and hover over data points for additional information.
+Trực quan hóa PCA hiện đại được hưởng lợi từ các thư viện vẽ đồ thị tương tác như Plotly, cho phép người dùng phóng to, xoay và di chuột qua các điểm dữ liệu để biết thêm thông tin.
 
 ```python
 import plotly.express as px
@@ -203,9 +203,9 @@ def create_interactive_pca_plot(X_pca, labels=None, feature_names=None):
     return fig
 ```
 
-Slide 8: Real-World Example - Wine Quality Dataset
+Trang trình bày 8: Ví dụ thực tế - Bộ dữ liệu chất lượng rượu vang
 
-The Wine Quality dataset demonstrates PCA visualization for complex chemical compositions, revealing underlying patterns in wine characteristics and their relationships.
+Bộ dữ liệu Chất lượng Rượu vang thể hiện trực quan hóa PCA đối với các thành phần hóa học phức tạp, tiết lộ các mô hình cơ bản về đặc tính của rượu vang và mối quan hệ của chúng.
 
 ```python
 from sklearn.datasets import load_wine
@@ -243,9 +243,9 @@ def analyze_wine_dataset():
     return fig
 ```
 
-Slide 9: Hierarchical Clustering with PCA
+Trang trình bày 9: Phân cụm theo cấp bậc với PCA
 
-Combining hierarchical clustering with PCA visualization reveals both cluster structure and dimensional relationships, providing insights into natural groupings within the data.
+Việc kết hợp phân cụm theo cấp bậc với trực quan hóa PCA cho thấy cả cấu trúc cụm và mối quan hệ thứ nguyên, cung cấp thông tin chi tiết về các nhóm tự nhiên trong dữ liệu.
 
 ```python
 from scipy.cluster.hierarchy import dendrogram, linkage
@@ -281,9 +281,9 @@ def plot_hierarchical_pca(X_pca, n_clusters=3):
     return fig
 ```
 
-Slide 10: Contribution Plot Analysis
+Trang trình bày 10: Phân tích lô đất đóng góp
 
-Contribution plots reveal the relative importance of each feature to the principal components, helping identify which variables drive the most variation in the transformed space.
+Các biểu đồ đóng góp cho thấy tầm quan trọng tương đối của từng tính năng đối với các thành phần chính, giúp xác định biến nào tạo ra nhiều biến thể nhất trong không gian được chuyển đổi.
 
 ```python
 def plot_feature_contributions(pca, feature_names):
@@ -353,9 +353,9 @@ def plot_confidence_ellipses(X_pca, labels, confidence=0.95):
     return plt.gcf()
 ```
 
-Slide 12: Time Series PCA Trajectory
+Trang trình bày 12: Quỹ đạo PCA chuỗi thời gian
 
-Visualizing PCA trajectories for time series data reveals temporal patterns and cyclic behavior in the principal component space.
+Trực quan hóa quỹ đạo PCA cho dữ liệu chuỗi thời gian cho thấy các mô hình thời gian và hành vi tuần hoàn trong không gian thành phần chính.
 
 ```python
 def plot_pca_trajectory(X_pca, time_points=None):
@@ -431,10 +431,10 @@ def calculate_visualization_metrics(X, X_pca, pca):
     return plt.gcf(), reconstruction_error
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-*   "A Tutorial on Principal Component Analysis" - [https://arxiv.org/abs/1404.1100](https://arxiv.org/abs/1404.1100)
-*   "Visualizing Data using t-SNE" - [https://arxiv.org/abs/1808.01120](https://arxiv.org/abs/1808.01120)
-*   "Understanding the Role of Individual Units in a Deep Neural Network" - [https://arxiv.org/abs/2009.05041](https://arxiv.org/abs/2009.05041)
-*   "Dimensionality Reduction: A Comparative Review" - [https://arxiv.org/abs/0904.1796](https://arxiv.org/abs/0904.1796)
-*   "Visual Analytics of High-Dimensional Data" - [https://arxiv.org/abs/1909.04729](https://arxiv.org/abs/1909.04729)
+* "Hướng dẫn về phân tích thành phần chính" - [https://arxiv.org/abs/1404.1100](https://arxiv.org/abs/1404.1100)
+* "Trực quan hóa dữ liệu bằng t-SNE" - [https://arxiv.org/abs/1808.01120](https://arxiv.org/abs/1808.01120)
+* "Hiểu vai trò của các đơn vị riêng lẻ trong Mạng lưới thần kinh sâu" - [https://arxiv.org/abs/2009.05041](https://arxiv.org/abs/2009.05041)
+* "Giảm kích thước: Đánh giá so sánh" - [https://arxiv.org/abs/0904.1796](https://arxiv.org/abs/0904.1796)
+* "Phân tích trực quan về dữ liệu thứ nguyên cao" - [https://arxiv.org/abs/1909.04729](https://arxiv.org/abs/1909.04729)

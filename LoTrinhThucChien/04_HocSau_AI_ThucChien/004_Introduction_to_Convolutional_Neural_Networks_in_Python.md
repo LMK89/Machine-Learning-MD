@@ -1,7 +1,7 @@
-## Introduction to Convolutional Neural Networks in Python
-Slide 1: Introduction to Convolutional Neural Networks
+## Giới thiệu về Mạng nơ-ron tích chập trong Python
+Trang trình bày 1: Giới thiệu về Mạng thần kinh chuyển đổi
 
-Convolutional Neural Networks (CNNs) are a class of deep learning models primarily used for processing grid-like data, such as images. They are designed to automatically and adaptively learn spatial hierarchies of features from input data.
+Mạng thần kinh chuyển đổi (CNN) là một lớp mô hình học sâu chủ yếu được sử dụng để xử lý dữ liệu dạng lưới, chẳng hạn như hình ảnh. Chúng được thiết kế để học một cách tự động và thích ứng các hệ thống phân cấp không gian của các tính năng từ dữ liệu đầu vào.
 
 ```python
 import tensorflow as tf
@@ -22,9 +22,9 @@ model = models.Sequential([
 model.summary()
 ```
 
-Slide 2: Core Components of CNNs
+Slide 2: Các thành phần cốt lõi của CNN
 
-The key components of CNNs are convolutional layers, pooling layers, and fully connected layers. Convolutional layers apply filters to detect features, pooling layers reduce spatial dimensions, and fully connected layers perform classification.
+Các thành phần chính của CNN là các lớp tích chập, các lớp gộp và các lớp được kết nối đầy đủ. Các lớp tích chập áp dụng các bộ lọc để phát hiện các tính năng, các lớp gộp làm giảm kích thước không gian và các lớp được kết nối đầy đủ thực hiện phân loại.
 
 ```python
 # Convolutional Layer
@@ -43,9 +43,9 @@ print(f"Conv2D output shape: {conv_layer(tf.zeros(input_shape)).shape}")
 print(f"MaxPooling2D output shape: {pool_layer(conv_layer(tf.zeros(input_shape))).shape}")
 ```
 
-Slide 3: Convolutional Layers
+Trang trình bày 3: Lớp chập
 
-Convolutional layers are the core building blocks of CNNs. They use filters to detect features in the input data, such as edges, textures, and patterns. The filters slide over the input, performing element-wise multiplication and summation.
+Các lớp tích chập là các khối xây dựng cốt lõi của CNN. Họ sử dụng các bộ lọc để phát hiện các đặc điểm trong dữ liệu đầu vào, chẳng hạn như các cạnh, họa tiết và mẫu. Các bộ lọc trượt qua đầu vào, thực hiện phép nhân và tổng theo từng phần tử.
 
 ```python
 import numpy as np
@@ -84,9 +84,9 @@ ax3.set_title('Output')
 plt.show()
 ```
 
-Slide 4: Activation Functions
+Slide 4: Chức năng kích hoạt
 
-Activation functions introduce non-linearity into the network, allowing it to learn complex patterns. Common activation functions include ReLU, sigmoid, and tanh. ReLU is widely used due to its simplicity and effectiveness in mitigating the vanishing gradient problem.
+Các chức năng kích hoạt đưa tính phi tuyến tính vào mạng, cho phép mạng tìm hiểu các mẫu phức tạp. Các hàm kích hoạt phổ biến bao gồm ReLU, sigmoid và tanh. ReLU được sử dụng rộng rãi do tính đơn giản và hiệu quả trong việc giảm thiểu vấn đề biến mất gradient.
 
 ```python
 import numpy as np
@@ -115,9 +115,9 @@ plt.grid(True)
 plt.show()
 ```
 
-Slide 5: Pooling Layers
+Trang trình bày 5: Các lớp gộp
 
-Pooling layers reduce the spatial dimensions of the feature maps, decreasing the computational load and helping to achieve spatial invariance. Common pooling operations include max pooling and average pooling.
+Các lớp gộp làm giảm kích thước không gian của bản đồ đặc trưng, ​​giảm tải tính toán và giúp đạt được tính bất biến về không gian. Các hoạt động gộp chung bao gồm gộp tối đa và gộp trung bình.
 
 ```python
 import numpy as np
@@ -152,9 +152,9 @@ ax2.set_title('Max Pooled Output')
 plt.show()
 ```
 
-Slide 6: Fully Connected Layers
+Slide 6: Các lớp được kết nối đầy đủ
 
-Fully connected layers are typically used at the end of the CNN architecture for classification tasks. They take the flattened output of the convolutional and pooling layers and produce the final output predictions.
+Các lớp được kết nối đầy đủ thường được sử dụng ở phần cuối của kiến ​​trúc CNN cho các nhiệm vụ phân loại. Họ lấy đầu ra đã được làm phẳng của các lớp tích chập và lớp gộp và tạo ra các dự đoán đầu ra cuối cùng.
 
 ```python
 import numpy as np
@@ -181,9 +181,9 @@ print(probabilities)
 print("\nPredicted class:", np.argmax(probabilities))
 ```
 
-Slide 7: Training CNNs
+Slide 7: Đào tạo CNN
 
-Training CNNs involves forward propagation, loss calculation, backpropagation, and parameter updates. The process aims to minimize the difference between predicted and actual outputs.
+Việc đào tạo CNN liên quan đến việc truyền dữ liệu về phía trước, tính toán tổn hao, truyền ngược và cập nhật tham số. Quá trình này nhằm mục đích giảm thiểu sự khác biệt giữa đầu ra dự đoán và đầu ra thực tế.
 
 ```python
 import tensorflow as tf
@@ -220,9 +220,9 @@ plt.legend()
 plt.show()
 ```
 
-Slide 8: CNN Architectures
+Trang trình bày 8: Kiến trúc CNN
 
-Various CNN architectures have been developed over time, each with its unique characteristics. Some popular architectures include LeNet, AlexNet, VGGNet, and ResNet.
+Nhiều kiến ​​trúc CNN khác nhau đã được phát triển theo thời gian, mỗi kiến ​​trúc đều có những đặc điểm riêng. Một số kiến ​​trúc phổ biến bao gồm LeNet, AlexNet, VGGNet và ResNet.
 
 ```python
 import tensorflow as tf
@@ -245,9 +245,9 @@ lenet = create_lenet()
 lenet.summary()
 ```
 
-Slide 9: Transfer Learning
+Slide 9: Chuyển giao học tập
 
-Transfer learning allows us to leverage pre-trained models on large datasets and fine-tune them for specific tasks. This approach is particularly useful when working with limited data.
+Học chuyển giao cho phép chúng tôi tận dụng các mô hình được đào tạo trước trên các tập dữ liệu lớn và tinh chỉnh chúng cho các nhiệm vụ cụ thể. Cách tiếp cận này đặc biệt hữu ích khi làm việc với dữ liệu hạn chế.
 
 ```python
 import tensorflow as tf
@@ -272,9 +272,9 @@ model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accur
 model.summary()
 ```
 
-Slide 10: Data Augmentation
+Trang trình bày 10: Tăng cường dữ liệu
 
-Data augmentation is a technique used to artificially increase the size of the training dataset by applying various transformations to existing images. This helps improve model generalization and reduces overfitting.
+Tăng cường dữ liệu là một kỹ thuật được sử dụng để tăng kích thước của tập dữ liệu huấn luyện một cách giả tạo bằng cách áp dụng các phép biến đổi khác nhau cho các hình ảnh hiện có. Điều này giúp cải thiện việc khái quát hóa mô hình và giảm việc trang bị quá mức.
 
 ```python
 import tensorflow as tf
@@ -308,9 +308,9 @@ for i in range(4):
 plt.show()
 ```
 
-Slide 11: Real-Life Example: Image Classification
+Slide 11: Ví dụ thực tế: Phân loại hình ảnh
 
-CNNs are widely used in image classification tasks. Let's demonstrate this with a simple example of classifying handwritten digits using the MNIST dataset.
+CNN được sử dụng rộng rãi trong các nhiệm vụ phân loại hình ảnh. Hãy chứng minh điều này bằng một ví dụ đơn giản về phân loại các chữ số viết tay bằng bộ dữ liệu MNIST.
 
 ```python
 import tensorflow as tf
@@ -355,9 +355,9 @@ for i in range(5):
 plt.show()
 ```
 
-Slide 12: Real-Life Example: Object Detection
+Trang trình bày 12: Ví dụ thực tế: Phát hiện đối tượng
 
-CNNs are also used in object detection tasks, where the goal is to identify and locate objects within an image. Here's a simplified example using a pre-trained model for object detection.
+CNN cũng được sử dụng trong các nhiệm vụ phát hiện đối tượng, trong đó mục tiêu là xác định và định vị các đối tượng trong một hình ảnh. Đây là một ví dụ đơn giản sử dụng mô hình được đào tạo trước để phát hiện đối tượng.
 
 ```python
 import tensorflow as tf
@@ -404,9 +404,9 @@ plt.axis('off')
 plt.show()
 ```
 
-Slide 13: CNN Applications in Medical Imaging
+Slide 13: Ứng dụng CNN trong chẩn đoán hình ảnh y tế
 
-CNNs have found significant applications in medical imaging, particularly in the analysis of X-rays, MRIs, and CT scans. They can assist in detecting abnormalities, classifying diseases, and segmenting organs or tumors.
+CNN đã tìm thấy những ứng dụng quan trọng trong hình ảnh y tế, đặc biệt là trong phân tích tia X, MRI và quét CT. Chúng có thể hỗ trợ phát hiện những bất thường, phân loại bệnh và phân chia các cơ quan hoặc khối u.
 
 ```python
 import tensorflow as tf
@@ -437,9 +437,9 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 model.summary()
 ```
 
-Slide 14: CNN Applications in Natural Language Processing
+Slide 14: Ứng dụng CNN trong xử lý ngôn ngữ tự nhiên
 
-While CNNs are primarily associated with image processing, they have also been applied to natural language processing tasks. In NLP, CNNs can be used for text classification, sentiment analysis, and even machine translation.
+Mặc dù CNN chủ yếu liên quan đến xử lý hình ảnh nhưng chúng cũng đã được áp dụng cho các tác vụ xử lý ngôn ngữ tự nhiên. Trong NLP, CNN có thể được sử dụng để phân loại văn bản, phân tích tình cảm và thậm chí cả dịch máy.
 
 ```python
 import tensorflow as tf
@@ -469,13 +469,13 @@ model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accur
 model.summary()
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-For those interested in delving deeper into Convolutional Neural Networks, here are some valuable resources:
+Đối với những người quan tâm đến việc tìm hiểu sâu hơn về Mạng thần kinh chuyển đổi, đây là một số tài nguyên có giá trị:
 
-1. LeCun, Y., Bengio, Y., & Hinton, G. (2015). Deep learning. Nature, 521(7553), 436-444. ArXiv: [https://arxiv.org/abs/1807.07987](https://arxiv.org/abs/1807.07987)
-2. Krizhevsky, A., Sutskever, I., & Hinton, G. E. (2012). ImageNet classification with deep convolutional neural networks. Advances in neural information processing systems, 25. ArXiv: [https://arxiv.org/abs/1404.5997](https://arxiv.org/abs/1404.5997)
-3. Simonyan, K., & Zisserman, A. (2014). Very deep convolutional networks for large-scale image recognition. ArXiv: [https://arxiv.org/abs/1409.1556](https://arxiv.org/abs/1409.1556)
-4. He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep residual learning for image recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 770-778). ArXiv: [https://arxiv.org/abs/1512.03385](https://arxiv.org/abs/1512.03385)
+1. LeCun, Y., Bengio, Y., & Hinton, G. (2015). Học sâu. Thiên nhiên, 521(7553), 436-444. ArXiv: [https://arxiv.org/abs/1807.07987](https://arxiv.org/abs/1807.07987)
+2. Krizhevsky, A., Sutskever, I., & Hinton, G. E. (2012). Phân loại ImageNet với mạng lưới thần kinh tích chập sâu. Những tiến bộ trong hệ thống xử lý thông tin thần kinh, 25. ArXiv: [https://arxiv.org/abs/1404.5997](https://arxiv.org/abs/1404.5997)
+3. Simonyan, K., & Zisserman, A. (2014). Mạng tích chập rất sâu để nhận dạng hình ảnh quy mô lớn. ArXiv: [https://arxiv.org/abs/1409.1556](https://arxiv.org/abs/1409.1556)
+4. He, K., Zhang, X., Ren, S., & Sun, J. (2016). Học dư sâu để nhận dạng hình ảnh. Trong Kỷ yếu của hội nghị IEEE về thị giác máy tính và nhận dạng mẫu (trang 770-778). ArXiv: [https://arxiv.org/abs/1512.03385](https://arxiv.org/abs/1512.03385)
 
-These papers provide foundational knowledge and advanced concepts in CNN architectures and applications.
+Những bài viết này cung cấp kiến ​​thức nền tảng và các khái niệm nâng cao về kiến ​​trúc và ứng dụng CNN.

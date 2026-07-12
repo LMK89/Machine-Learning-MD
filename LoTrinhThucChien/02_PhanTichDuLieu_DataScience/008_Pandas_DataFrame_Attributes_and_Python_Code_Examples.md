@@ -1,7 +1,7 @@
-## Pandas DataFrame Attributes and Python Code Examples
-Slide 1: Pandas DataFrame Attributes
+## Thuộc tính khung dữ liệu Pandas và ví dụ về mã Python
+Trang trình bày 1: Thuộc tính Pandas DataFrame
 
-DataFrames are the most commonly used data structure in pandas. They are two-dimensional labeled data structures with columns of potentially different types. Understanding DataFrame attributes is crucial for effective data manipulation and analysis.
+DataFrames là cấu trúc dữ liệu được sử dụng phổ biến nhất trong gấu trúc. Chúng là các cấu trúc dữ liệu được dán nhãn hai chiều với các cột có thể có các kiểu khác nhau. Hiểu các thuộc tính DataFrame là rất quan trọng để thao tác và phân tích dữ liệu hiệu quả.
 
 ```python
 import pandas as pd
@@ -16,9 +16,9 @@ df = pd.DataFrame({
 print(df)
 ```
 
-Slide 2: DataFrame.shape
+Trang trình bày 2: DataFrame.shape
 
-The shape attribute returns a tuple representing the dimensionality of the DataFrame. It provides the number of rows and columns in the DataFrame.
+Thuộc tính hình dạng trả về một bộ dữ liệu biểu thị chiều của DataFrame. Nó cung cấp số lượng hàng và cột trong DataFrame.
 
 ```python
 # Get the shape of the DataFrame
@@ -28,9 +28,9 @@ print(f"Number of rows: {shape[0]}")
 print(f"Number of columns: {shape[1]}")
 ```
 
-Slide 3: DataFrame.dtypes
+Trang trình bày 3: DataFrame.dtypes
 
-The dtypes attribute returns the data types of each column in the DataFrame. This is essential for understanding the nature of your data and performing appropriate operations.
+Thuộc tính dtypes trả về kiểu dữ liệu của từng cột trong DataFrame. Điều này rất cần thiết để hiểu bản chất dữ liệu của bạn và thực hiện các hoạt động thích hợp.
 
 ```python
 # Display the data types of each column
@@ -41,9 +41,9 @@ df['Age'] = df['Age'].astype(float)
 print(df.dtypes)
 ```
 
-Slide 4: DataFrame.index
+Trang trình bày 4: DataFrame.index
 
-The index attribute represents the row labels of the DataFrame. It can be customized to use meaningful identifiers instead of default integer indices.
+Thuộc tính chỉ mục đại diện cho nhãn hàng của DataFrame. Nó có thể được tùy chỉnh để sử dụng các mã định danh có ý nghĩa thay vì các chỉ số nguyên mặc định.
 
 ```python
 # Display the current index
@@ -55,9 +55,9 @@ print(df)
 print(df.index)
 ```
 
-Slide 5: DataFrame.columns
+Trang trình bày 5: DataFrame.columns
 
-The columns attribute returns the column labels of the DataFrame. It can be used to access, modify, or rename columns.
+Thuộc tính cột trả về nhãn cột của DataFrame. Nó có thể được sử dụng để truy cập, sửa đổi hoặc đổi tên các cột.
 
 ```python
 # Display column names
@@ -68,9 +68,9 @@ df.columns = ['Years', 'Location']
 print(df)
 ```
 
-Slide 6: DataFrame.values
+Trang trình bày 6: DataFrame.values
 
-The values attribute returns a NumPy array containing the data in the DataFrame. This is useful when you need to perform operations that require a pure NumPy array.
+Thuộc tính giá trị trả về mảng NumPy chứa dữ liệu trong DataFrame. Điều này hữu ích khi bạn cần thực hiện các thao tác yêu cầu mảng NumPy thuần túy.
 
 ```python
 # Get the values as a NumPy array
@@ -92,9 +92,9 @@ empty_df = pd.DataFrame()
 print(f"Is the new DataFrame empty? {empty_df.empty}")
 ```
 
-Slide 8: DataFrame.size
+Trang trình bày 8: DataFrame.size
 
-The size attribute returns the total number of elements in the DataFrame. It is equal to the number of rows multiplied by the number of columns.
+Thuộc tính size trả về tổng số phần tử trong DataFrame. Nó bằng số hàng nhân với số cột.
 
 ```python
 # Get the size of the DataFrame
@@ -105,9 +105,9 @@ total_elements = df.shape[0] * df.shape[1]
 print(f"Calculated total elements: {total_elements}")
 ```
 
-Slide 9: DataFrame.ndim
+Trang trình bày 9: DataFrame.ndim
 
-The ndim attribute returns the number of dimensions of the DataFrame. For a standard DataFrame, this will always be 2 (rows and columns).
+Thuộc tính ndim trả về số thứ nguyên của DataFrame. Đối với DataFrame tiêu chuẩn, giá trị này sẽ luôn là 2 (hàng và cột).
 
 ```python
 # Get the number of dimensions
@@ -118,9 +118,9 @@ series = pd.Series([1, 2, 3])
 print(f"Number of dimensions in a Series: {series.ndim}")
 ```
 
-Slide 10: DataFrame.axes
+Trang trình bày 10: DataFrame.axes
 
-The axes attribute returns a list of the row axis labels and column axis labels. This can be useful for understanding the structure of your DataFrame.
+Thuộc tính trục trả về danh sách nhãn trục hàng và nhãn trục cột. Điều này có thể hữu ích để hiểu cấu trúc DataFrame của bạn.
 
 ```python
 # Get the axes of the DataFrame
@@ -141,9 +141,9 @@ df.info()
 df.info(memory_usage="deep")
 ```
 
-Slide 12: Real-life Example: Weather Data Analysis
+Trang trình bày 12: Ví dụ thực tế: Phân tích dữ liệu thời tiết
 
-Let's use DataFrame attributes to analyze weather data for different cities.
+Hãy sử dụng thuộc tính DataFrame để phân tích dữ liệu thời tiết cho các thành phố khác nhau.
 
 ```python
 import pandas as pd
@@ -163,9 +163,9 @@ print(f"\nData Types:\n{weather_data.dtypes}")
 print(f"\nColumn Names: {weather_data.columns}")
 ```
 
-Slide 13: Real-life Example: Student Performance Analysis
+Slide 13: Ví dụ thực tế: Phân tích kết quả học tập của sinh viên
 
-Let's use DataFrame attributes to analyze student performance data.
+Hãy sử dụng thuộc tính DataFrame để phân tích dữ liệu hiệu suất của học sinh.
 
 ```python
 # Create a DataFrame with student performance data
@@ -183,12 +183,12 @@ print(f"\nSize: {student_data.size}")
 print(f"\nMean Scores:\n{student_data.mean()}")
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-For more advanced topics and in-depth explanations of pandas DataFrame attributes, consider exploring the following resources:
+Để biết thêm các chủ đề nâng cao và giải thích chuyên sâu về thuộc tính DataFrame của gấu trúc, hãy cân nhắc khám phá các tài nguyên sau:
 
-1. Official pandas documentation: [https://pandas.pydata.org/docs/](https://pandas.pydata.org/docs/)
-2. "Effective Pandas" by Matt Harrison: [https://github.com/mattharrison/effective\_pandas](https://github.com/mattharrison/effective_pandas)
-3. "Python for Data Analysis" by Wes McKinney (creator of pandas): [https://wesmckinney.com/book/](https://wesmckinney.com/book/)
+1. Tài liệu chính thức về gấu trúc: [https://pandas.pydata.org/docs/](https://pandas.pydata.org/docs/)
+2. "Những chú gấu trúc hiệu quả" của Matt Harrison: [https://github.com/mattharrison/effect\_pandas](https://github.com/mattharrison/effect_pandas)
+3. "Python để phân tích dữ liệu" của Wes McKinney (người tạo ra gấu trúc): [https://wesmckinney.com/book/](https://wesmckinney.com/book/)
 
-These resources provide comprehensive coverage of pandas and its capabilities, helping you master DataFrame manipulation and analysis.
+Các tài nguyên này cung cấp thông tin toàn diện về gấu trúc và các khả năng của nó, giúp bạn nắm vững thao tác và phân tích DataFrame.

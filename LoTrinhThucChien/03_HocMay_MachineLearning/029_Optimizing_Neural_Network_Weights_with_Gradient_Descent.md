@@ -1,7 +1,7 @@
-## Optimizing Neural Network Weights with Gradient Descent
-Slide 1: Gradient Descent Fundamentals
+## Tối ưu hóa chất lượng mạng thần kinh bằng cách giảm độ dốc
+Trang trình bày 1: Nguyên tắc cơ bản về độ dốc tăng dần
 
-Gradient descent forms the backbone of neural network optimization by iteratively adjusting weights to minimize the loss function. The process involves computing partial derivatives with respect to each weight and updating them in the direction that reduces the error.
+Giảm dần độ dốc tạo thành xương của công việc tối ưu hóa thần kinh bằng cách điều chỉnh vòng lặp đi lặp lại các số để giảm thiểu những tổn thất nhỏ. Quá trình này bao gồm các công việc tính toán đạo đức riêng theo từng số và cập nhật chúng theo hướng làm giảm sai số.
 
 ```python
 import numpy as np
@@ -26,9 +26,9 @@ weights = np.random.randn(2)
 optimized_weights = gradient_descent(X, y, weights)
 ```
 
-Slide 2: Stochastic Gradient Descent Implementation
+Trang trình bày 2: Triển khai ngẫu nhiên giảm dần độ dốc
 
-Stochastic Gradient Descent (SGD) processes one sample at a time, making it computationally efficient and helping escape local minima. This implementation includes mini-batch processing and momentum for improved convergence.
+Xử lý ngẫu nhiên (SGD) giảm dần theo từng mẫu một, làm cho mẫu này trở thành nên hiệu quả về mặt tính toán và giúp thoát khỏi bộ tối thiểu cục bộ. Việc phát triển này bao gồm các quy trình xử lý hàng loạt nhỏ và động lực để cải thiện khả năng tụ hội.
 
 ```python
 def sgd_optimizer(X, y, weights, learning_rate=0.01, batch_size=32, momentum=0.9):
@@ -79,9 +79,9 @@ def adam_optimizer(params, gradients, state, learning_rate=0.001,
     return params, state
 ```
 
-Slide 4: Weight Initialization Strategies
+Slide 4: Năng lượng khởi động chiến lược
 
-Proper weight initialization prevents vanishing/exploding gradients and ensures effective training. This implementation demonstrates various initialization methods including Xavier/Glorot and He initialization.
+Việc khởi tạo sức mạnh phù hợp sẽ ngăn chặn sự biến mất/bùng nổ độ dốc và đảm bảo việc luyện tập hiệu quả. Việc phát triển này có thể hiện thực hóa các phương pháp khởi động khác nhau bao gồm các phương pháp khởi tạo Xavier/Glorot và He.
 
 ```python
 def initialize_weights(layer_dims, initialization='he'):
@@ -137,9 +137,9 @@ def bptt(inputs, targets, hidden_state, weights, sequence_length):
     return {'Wx': dWx, 'Wh': dWh, 'Wy': dWy}, np.mean(losses)
 ```
 
-Slide 6: Learning Rate Scheduling
+Trang trình bày 6: Lập kế hoạch tỷ lệ học tập
 
-Learning rate scheduling dynamically adjusts the learning rate during training to improve convergence and prevent oscillations. This implementation showcases various scheduling strategies including step decay and cosine annealing.
+Lập kế hoạch tốc độ học tập sẽ điều chỉnh tốc độ học tập linh hoạt trong quá trình đào tạo để cải thiện khả năng tụ và giải dao động. Việc phát triển này có thể thực hiện các kế hoạch thiết lập chiến lược khác nhau bao gồm các phân đoạn bước và cosine.
 
 ```python
 class LRScheduler:
@@ -164,9 +164,9 @@ for epoch in range(100):
     # Use current_lr in optimizer
 ```
 
-Slide 7: Weight Regularization Techniques
+Slide 7: Kỹ thuật điều chỉnh số
 
-Regularization prevents overfitting by adding penalty terms to the loss function. This implementation demonstrates L1, L2, and elastic net regularization methods for neural network training.
+Quá trình hóa quy trình ngăn chặn trang bằng cách bổ sung thêm số lượng phạt vào hàm mất mát. Việc phát triển này có thể thực hiện các phương pháp chính quy hóa L1, L2 và mạng đàn hồi để đào tạo mạng lưới thần kinh.
 
 ```python
 def compute_regularization(weights, lambda_l1=0.01, lambda_l2=0.01):
@@ -224,9 +224,9 @@ class BatchNorm:
         return out
 ```
 
-Slide 9: Dropout Implementation
+Trang trình bày 9: Thực hiện bỏ học
 
-Dropout is a powerful regularization technique that randomly deactivates neurons during training. This implementation shows both training and inference phases with proper scaling.
+Dropout là một kỹ thuật chính quy hóa mạnh mẽ giúp vô hiệu hóa ngẫu nhiên các tế bào thần kinh kinh trong quá trình luyện tập. Việc phát triển này cho thấy giai đoạn đào tạo và suy luận với quy mô phù hợp.
 
 ```python
 class Dropout:
@@ -252,9 +252,9 @@ training_output = layer.forward(x, training=True)
 inference_output = layer.forward(x, training=False)
 ```
 
-Slide 10: Momentum-based Weight Updates
+Trang trình bày 10: Cập nhật cơ sở cân nặng dựa trên năng lượng
 
-Momentum optimization accelerates gradient descent by accumulating past gradients, helping overcome local minima and saddle points. This implementation demonstrates classical momentum and Nesterov accelerated gradient.
+Tối ưu hóa năng lượng tăng tốc độ giảm độ dốc bằng cách tích lũy độ dốc trong quá khứ, giúp vượt qua các yên yên và cực tiểu địa phương. Việc phát triển này có thể tạo ra một cuốn sách cổ điển và tốc độ dốc của Nesterov.
 
 ```python
 class MomentumOptimizer:
@@ -330,9 +330,9 @@ class GradualPruning:
         return current_sparsity
 ```
 
-Slide 12: Distributed Weight Updates
+Trang trình bày 12: Cập nhật phân tích khối lượng
 
-Distributed training enables parallel weight updates across multiple devices. This implementation shows parameter averaging and gradient accumulation for distributed scenarios.
+Đào tạo phân tán cho phép cập nhật bài hát cân nặng trên nhiều thiết bị. Việc phát triển này hiển thị tính trung bình của tham số và độ dốc tích lũy cho các phân tích bản kịch bản.
 
 ```python
 class DistributedOptimizer:
@@ -414,9 +414,9 @@ class AdaptiveClipper:
         return clipped_grads
 ```
 
-Slide 14: Layer-wise Adaptive Learning Rates
+Trang trình bày 14: Tỷ lệ học tập thích ứng theo từng lớp
 
-Layer-wise adaptation of learning rates improves training stability by considering the different scales of gradients across layers. This implementation shows per-layer learning rate adjustment.
+Điều chỉnh tỷ lệ học tập theo từng lớp giúp cải thiện tính ổn định trong quá trình đào tạo bằng cách xem xét các độ dốc khác nhau giữa các lớp. Việc phát triển điều này cho thấy sự điều chỉnh tốc độ học tập trên mỗi lớp.
 
 ```python
 class LayerAdaptiveLR:

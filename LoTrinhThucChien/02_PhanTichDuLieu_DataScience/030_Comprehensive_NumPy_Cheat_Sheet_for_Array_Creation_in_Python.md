@@ -1,7 +1,7 @@
-## Comprehensive NumPy Cheat Sheet for Array Creation in Python
-Slide 1: Introduction to NumPy Arrays
+## Bảng cheat NumPy toàn diện để tạo mảng trong Python
+Slide 1: Giới thiệu về mảng NumPy
 
-NumPy is a powerful library for numerical computing in Python. At its core are NumPy arrays, which are efficient, multi-dimensional containers for homogeneous data. These arrays form the foundation for many scientific and mathematical operations in Python.
+NumPy là một thư viện mạnh mẽ để tính toán số bằng Python. Cốt lõi của nó là mảng NumPy, là những vùng chứa đa chiều, hiệu quả cho dữ liệu đồng nhất. Các mảng này tạo thành nền tảng cho nhiều phép toán khoa học và toán học trong Python.
 
 ```python
 import numpy as np
@@ -21,9 +21,9 @@ print("2D array:\n", arr_2d)
 #  [4 5 6]]
 ```
 
-Slide 2: Array Creation Functions
+Slide 2: Hàm tạo mảng
 
-NumPy provides various functions to create arrays with specific properties. These functions are essential for initializing data structures efficiently.
+NumPy cung cấp nhiều chức năng khác nhau để tạo mảng với các thuộc tính cụ thể. Các hàm này rất cần thiết để khởi tạo cấu trúc dữ liệu một cách hiệu quả.
 
 ```python
 import numpy as np
@@ -54,9 +54,9 @@ print("Identity matrix:\n", identity_matrix)
 #  [0. 0. 1.]]
 ```
 
-Slide 3: Array Ranges and Sequences
+Slide 3: Dãy mảng và dãy
 
-NumPy offers functions to create arrays with evenly spaced values, which are useful for generating sequences and ranges.
+NumPy cung cấp các hàm để tạo mảng với các giá trị cách đều nhau, rất hữu ích cho việc tạo chuỗi và phạm vi.
 
 ```python
 import numpy as np
@@ -79,9 +79,9 @@ print("Logspace array:", logspace_arr)
 # Logspace array: [  1.           3.16227766  10.          31.6227766  100.        ]
 ```
 
-Slide 4: Reshaping and Transposing Arrays
+Slide 4: Định hình lại và hoán vị mảng
 
-NumPy allows easy manipulation of array shapes and dimensions, enabling efficient data restructuring.
+NumPy cho phép dễ dàng thao tác với hình dạng và kích thước mảng, cho phép tái cơ cấu dữ liệu hiệu quả.
 
 ```python
 import numpy as np
@@ -111,9 +111,9 @@ print("Transposed array:\n", transposed_arr)
 #  [ 3  7 11]]
 ```
 
-Slide 5: Array Indexing and Slicing
+Slide 5: Lập chỉ mục và cắt mảng
 
-Efficient data access and manipulation in NumPy arrays is achieved through indexing and slicing operations.
+Truy cập và thao tác dữ liệu hiệu quả trong mảng NumPy đạt được thông qua các hoạt động lập chỉ mục và cắt.
 
 ```python
 import numpy as np
@@ -145,9 +145,9 @@ print("Elements greater than 5:\n", arr[mask])
 # [ 6  7  8  9 10 11 12]
 ```
 
-Slide 6: Basic Array Operations
+Slide 6: Các thao tác mảng cơ bản
 
-NumPy provides efficient element-wise operations on arrays, simplifying mathematical computations.
+NumPy cung cấp các phép toán hiệu quả theo từng phần tử trên mảng, đơn giản hóa các phép tính toán học.
 
 ```python
 import numpy as np
@@ -175,9 +175,9 @@ print("Dot product:", np.dot(a, b))
 # Dot product: 32
 ```
 
-Slide 7: Array Broadcasting
+Slide 7: Phát sóng mảng
 
-Broadcasting allows NumPy to perform operations on arrays with different shapes, expanding smaller arrays to match larger ones.
+Việc phát sóng cho phép NumPy thực hiện các thao tác trên các mảng có hình dạng khác nhau, mở rộng các mảng nhỏ hơn để phù hợp với các mảng lớn hơn.
 
 ```python
 import numpy as np
@@ -205,9 +205,9 @@ print(scalar_result)
 #  [ 8 10 12]]
 ```
 
-Slide 8: Array Aggregation Functions
+Slide 8: Hàm tổng hợp mảng
 
-NumPy provides various functions for performing aggregate operations on arrays, such as computing sums, means, and extrema.
+NumPy cung cấp nhiều hàm khác nhau để thực hiện các phép toán tổng hợp trên mảng, chẳng hạn như tính tổng, phương tiện và cực trị.
 
 ```python
 import numpy as np
@@ -245,9 +245,9 @@ print("Mean along rows:", np.mean(arr, axis=1))
 # Mean along rows: [2. 5. 8.]
 ```
 
-Slide 9: Array Sorting and Searching
+Slide 9: Sắp xếp và tìm kiếm mảng
 
-NumPy provides efficient functions for sorting arrays and searching for specific elements or conditions.
+NumPy cung cấp các hàm hiệu quả để sắp xếp mảng và tìm kiếm các phần tử hoặc điều kiện cụ thể.
 
 ```python
 import numpy as np
@@ -281,9 +281,9 @@ print(f"Indices where {value_to_search} is found:", indices[0])
 # Indices where 5 is found: [4 8 10]
 ```
 
-Slide 10: Array Concatenation and Splitting
+Slide 10: Nối và tách mảng
 
-NumPy allows for easy combination and division of arrays along specified axes.
+NumPy cho phép dễ dàng kết hợp và phân chia mảng dọc theo các trục được chỉ định.
 
 ```python
 import numpy as np
@@ -327,9 +327,9 @@ for i, sub_arr in enumerate(vertical_split):
 #  [[ 9 10 11 12]]
 ```
 
-Slide 11: Array Random Sampling
+Slide 11: Lấy mẫu ngẫu nhiên mảng
 
-NumPy's random module provides functions for generating random numbers and sampling from various probability distributions.
+Mô-đun ngẫu nhiên của NumPy cung cấp các chức năng tạo số ngẫu nhiên và lấy mẫu từ các phân bố xác suất khác nhau.
 
 ```python
 import numpy as np
@@ -361,9 +361,9 @@ print("Shuffled array:", arr)
 # Shuffled array: [2 8 4 9 1 6 7 3 0 5]
 ```
 
-Slide 12: Real-life Example: Image Processing
+Slide 12: Ví dụ thực tế: Xử lý ảnh
 
-NumPy is extensively used in image processing tasks. Here's an example of how to load an image, convert it to grayscale, and apply a simple filter.
+NumPy được sử dụng rộng rãi trong các tác vụ xử lý ảnh. Đây là ví dụ về cách tải hình ảnh, chuyển đổi nó sang thang độ xám và áp dụng bộ lọc đơn giản.
 
 ```python
 import numpy as np
@@ -394,9 +394,9 @@ Image.fromarray(blurred).save('blurred.jpg')
 # and the necessary permissions to read and write files.
 ```
 
-Slide 13: Real-life Example: Data Analysis
+Trang trình chiếu 13: Ví dụ thực tế: Phân tích dữ liệu
 
-NumPy is crucial for data analysis tasks. Here's an example of analyzing temperature data for a city over a year.
+NumPy rất quan trọng cho các nhiệm vụ phân tích dữ liệu. Đây là ví dụ về phân tích dữ liệu nhiệt độ của một thành phố trong hơn một năm.
 
 ```python
 import numpy as np
@@ -439,15 +439,15 @@ print("Temperature analysis plot saved as 'temperature_analysis.png'")
 # in your working directory.
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-For further exploration of NumPy and its applications in scientific computing, consider the following resources:
+Để khám phá thêm về NumPy và các ứng dụng của nó trong điện toán khoa học, hãy xem xét các tài nguyên sau:
 
-1. NumPy official documentation: [https://numpy.org/doc/](https://numpy.org/doc/) This comprehensive guide covers all aspects of NumPy, from basic to advanced topics.
-2. "From Python to NumPy" by Nicolas P. Rougier Available at: [https://www.labri.fr/perso/nrougier/from-python-to-numpy/](https://www.labri.fr/perso/nrougier/from-python-to-numpy/) This free online book provides an in-depth look at NumPy's capabilities and optimizations.
-3. "Python Data Science Handbook" by Jake VanderPlas This book includes extensive coverage of NumPy and its integration with other data science tools.
-4. SciPy Lecture Notes Available at: [https://scipy-lectures.org/](https://scipy-lectures.org/) These lecture notes cover NumPy along with other scientific Python libraries.
-5. NumPy tutorials on Real Python Available at: [https://realpython.com/tutorials/numpy/](https://realpython.com/tutorials/numpy/) A collection of practical tutorials covering various aspects of NumPy.
-6. ArXiv paper: "Array programming with NumPy" by Harris et al. (2020) ArXiv URL: [https://arxiv.org/abs/2006.10256](https://arxiv.org/abs/2006.10256) This paper provides insights into NumPy's design and its impact on scientific computing.
+1. Tài liệu chính thức của NumPy: [https://numpy.org/doc/](https://numpy.org/doc/) Hướng dẫn toàn diện này bao gồm tất cả các khía cạnh của NumPy, từ các chủ đề cơ bản đến nâng cao.
+2. "Từ Python đến NumPy" của Nicolas P. Rougier Có tại: [https://www.labri.fr/perso/nrougier/from-python-to-numpy/](https://www.labri.fr/perso/nrougier/from-python-to-numpy/) Cuốn sách trực tuyến miễn phí này cung cấp cái nhìn sâu sắc về các khả năng và sự tối ưu hóa của NumPy.
+3. "Cẩm nang khoa học dữ liệu Python" của Jake VanderPlas Cuốn sách này bao gồm nội dung bao quát về NumPy và sự tích hợp của nó với các công cụ khoa học dữ liệu khác.
+4. Ghi chú bài giảng SciPy Có sẵn tại: [https://scipy-lectures.org/](https://scipy-lectures.org/) Các ghi chú bài giảng này bao gồm NumPy cùng với các thư viện Python khoa học khác.
+5. Hướng dẫn NumPy về Python thực Có tại: [https://realpython.com/tutorials/numpy/](https://realpython.com/tutorials/numpy/) Tập hợp các hướng dẫn thực tế bao gồm các khía cạnh khác nhau của NumPy.
+6. Bài viết ArXiv: "Lập trình mảng với NumPy" của Harris et al. (2020) URL ArXiv: [https://arxiv.org/abs/2006.10256](https://arxiv.org/abs/2006.10256) Bài viết này cung cấp thông tin chi tiết về thiết kế của NumPy và tác động của nó đối với điện toán khoa học.
 
-These resources offer a mix of official documentation, books, tutorials, and academic papers to deepen your understanding of NumPy and its applications in scientific computing and data analysis.
+Các tài nguyên này cung cấp sự kết hợp giữa tài liệu chính thức, sách, hướng dẫn và tài liệu học thuật để giúp bạn hiểu sâu hơn về NumPy và các ứng dụng của nó trong tính toán khoa học và phân tích dữ liệu.

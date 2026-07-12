@@ -1,7 +1,7 @@
-## Data Cleaning With Python
-Slide 1: Introduction to Data Cleaning
+## Làm sạch dữ liệu bằng Python
+Slide 1: Giới thiệu về làm sạch dữ liệu
 
-Data cleaning is a crucial step in the data analysis process. It involves identifying and correcting errors, inconsistencies, and inaccuracies in datasets to ensure the quality and reliability of your analysis. Python offers powerful tools and libraries for efficient data cleaning, making it an essential skill for any data scientist or analyst.
+Làm sạch dữ liệu là một bước quan trọng trong quá trình phân tích dữ liệu. Nó liên quan đến việc xác định và sửa lỗi, sự không nhất quán và không chính xác trong bộ dữ liệu để đảm bảo chất lượng và độ tin cậy cho phân tích của bạn. Python cung cấp các công cụ và thư viện mạnh mẽ để làm sạch dữ liệu hiệu quả, khiến nó trở thành một kỹ năng cần thiết cho bất kỳ nhà khoa học hoặc nhà phân tích dữ liệu nào.
 
 ```python
 # Example: Loading a dataset and checking for missing values
@@ -17,9 +17,9 @@ print("Missing values in each column:")
 print(missing_values)
 ```
 
-Slide 2: Handling Missing Data
+Slide 2: Xử lý dữ liệu bị thiếu
 
-One common issue in datasets is missing values. Python provides various methods to handle missing data, such as dropping rows with missing values or filling them with appropriate values.
+Một vấn đề phổ biến trong bộ dữ liệu là thiếu giá trị. Python cung cấp nhiều phương pháp khác nhau để xử lý dữ liệu bị thiếu, chẳng hạn như loại bỏ các hàng có giá trị bị thiếu hoặc điền chúng bằng các giá trị thích hợp.
 
 ```python
 # Example: Handling missing data
@@ -44,7 +44,7 @@ print("\nDataFrame after filling missing values with column means:")
 print(df_filled)
 ```
 
-Slide 3: Results for: Handling Missing Data
+Slide 3: Kết quả: Xử lý dữ liệu bị thiếu
 
 ```
 Original DataFrame:
@@ -67,9 +67,9 @@ DataFrame after filling missing values with column means:
 3  4.0  8.0  12
 ```
 
-Slide 4: Removing Duplicates
+Slide 4: Loại bỏ trùng lặp
 
-Duplicate entries can skew your analysis and lead to incorrect conclusions. Python's pandas library offers simple methods to identify and remove duplicate rows from your dataset.
+Các mục trùng lặp có thể làm sai lệch phân tích của bạn và dẫn đến kết luận không chính xác. Thư viện pandas của Python cung cấp các phương pháp đơn giản để xác định và xóa các hàng trùng lặp khỏi tập dữ liệu của bạn.
 
 ```python
 # Example: Removing duplicate rows
@@ -93,7 +93,7 @@ print("\nDataFrame after removing duplicates:")
 print(df_unique)
 ```
 
-Slide 5: Results for: Removing Duplicates
+Slide 5: Kết quả cho: Xóa nội dung trùng lặp
 
 ```
 Original DataFrame:
@@ -120,9 +120,9 @@ DataFrame after removing duplicates:
 4  4  8
 ```
 
-Slide 6: Handling Outliers
+Slide 6: Xử lý các ngoại lệ
 
-Outliers can significantly impact your analysis and should be carefully handled. One common method is the Interquartile Range (IQR) technique to identify and remove outliers.
+Các ngoại lệ có thể tác động đáng kể đến phân tích của bạn và cần được xử lý cẩn thận. Một phương pháp phổ biến là kỹ thuật Phạm vi liên tứ phân vị (IQR) để xác định và loại bỏ các giá trị ngoại lệ.
 
 ```python
 # Example: Handling outliers using IQR
@@ -151,7 +151,7 @@ print("\nDataFrame after removing outliers:")
 print(df_clean)
 ```
 
-Slide 7: Results for: Handling Outliers
+Slide 7: Kết quả cho: Xử lý ngoại lệ
 
 ```
 Original DataFrame:
@@ -180,9 +180,9 @@ DataFrame after removing outliers:
 8       9
 ```
 
-Slide 8: Data Type Conversion
+Slide 8: Chuyển đổi kiểu dữ liệu
 
-Ensuring correct data types is crucial for accurate analysis. Python provides methods to check and convert data types as needed.
+Đảm bảo các loại dữ liệu chính xác là rất quan trọng để phân tích chính xác. Python cung cấp các phương thức để kiểm tra và chuyển đổi các kiểu dữ liệu khi cần thiết.
 
 ```python
 # Example: Converting data types
@@ -209,7 +209,7 @@ print("\nConverted DataFrame:")
 print(df)
 ```
 
-Slide 9: Results for: Data Type Conversion
+Slide 9: Kết quả cho: Chuyển đổi kiểu dữ liệu
 
 ```
 Initial data types:
@@ -231,9 +231,9 @@ Converted DataFrame:
 2  3  6.5   True
 ```
 
-Slide 10: String Cleaning and Normalization
+Slide 10: Làm sạch và chuẩn hóa chuỗi
 
-String data often requires cleaning and normalization to ensure consistency. This includes tasks like removing whitespace, converting to lowercase, and handling special characters.
+Dữ liệu chuỗi thường yêu cầu làm sạch và chuẩn hóa để đảm bảo tính nhất quán. Điều này bao gồm các tác vụ như xóa khoảng trắng, chuyển đổi sang chữ thường và xử lý các ký tự đặc biệt.
 
 ```python
 # Example: String cleaning and normalization
@@ -252,7 +252,7 @@ print("\nCleaned DataFrame:")
 print(df)
 ```
 
-Slide 11: Results for: String Cleaning and Normalization
+Slide 11: Kết quả cho: Làm sạch và chuẩn hóa chuỗi
 
 ```
 Original DataFrame:
@@ -266,9 +266,9 @@ Cleaned DataFrame:
 3   Alice
 ```
 
-Slide 12: Handling Date and Time Data
+Slide 12: Xử lý dữ liệu ngày giờ
 
-Date and time data often require special handling and conversion to ensure proper analysis and formatting.
+Dữ liệu ngày và giờ thường yêu cầu xử lý và chuyển đổi đặc biệt để đảm bảo phân tích và định dạng phù hợp.
 
 ```python
 # Example: Handling date and time data
@@ -291,7 +291,7 @@ print("Processed DataFrame:")
 print(df)
 ```
 
-Slide 13: Results for: Handling Date and Time Data
+Slide 13: Kết quả: Xử lý dữ liệu ngày giờ
 
 ```
 Processed DataFrame:
@@ -341,7 +341,7 @@ print("Cleaned Weather Data:")
 print(df)
 ```
 
-Slide 15: Results for: Real-Life Example: Cleaning Weather Data
+Trang trình chiếu 15: Kết quả cho: Ví dụ thực tế: Làm sạch dữ liệu thời tiết
 
 ```
 Cleaned Weather Data:
@@ -391,7 +391,7 @@ print("Cleaned Survey Data:")
 print(df)
 ```
 
-Slide 17: Results for: Real-Life Example: Cleaning Survey Data
+Trang trình bày 17: Kết quả cho: Ví dụ thực tế: Dữ liệu khảo sát vệ sinh
 
 ```
 Cleaned Survey Data:

@@ -1,10 +1,10 @@
-## Introduction to Data Cleaning with Pandas and Python
+## Giới thiệu về Làm sạch dữ liệu bằng Pandas và Python
 
-Slide 1: Introduction to Data Cleaning with Pandas
+Slide 1: Giới thiệu về làm sạch dữ liệu với Pandas
 
-Data cleaning is a crucial step in data analysis, ensuring the data is accurate, consistent, and ready for analysis. Pandas, a powerful Python library, provides various tools and functions to handle data cleaning tasks efficiently.
+Làm sạch dữ liệu là một bước quan trọng trong phân tích dữ liệu, đảm bảo dữ liệu chính xác, nhất quán và sẵn sàng để phân tích. Pandas, một thư viện Python mạnh mẽ, cung cấp nhiều công cụ và chức năng khác nhau để xử lý các tác vụ dọn dẹp dữ liệu một cách hiệu quả.
 
-Code:
+Mã số:
 
 ```python
 import pandas as pd
@@ -27,11 +27,11 @@ df.fillna(0, inplace=True)
 df['column_name'] = df['column_name'].fillna(df['column_name'].mean())
 ```
 
-Slide 3: Removing Duplicates
+Slide 3: Loại bỏ trùng lặp
 
-Duplicate data can lead to inaccurate analysis and skewed results. Pandas offers methods to identify and remove duplicate rows or columns from a DataFrame.
+Dữ liệu trùng lặp có thể dẫn đến phân tích không chính xác và kết quả sai lệch. Pandas cung cấp các phương pháp để xác định và xóa các hàng hoặc cột trùng lặp khỏi DataFrame.
 
-Code:
+Mã số:
 
 ```python
 # Remove duplicate rows
@@ -41,11 +41,11 @@ df.drop_duplicates(inplace=True)
 df.drop_duplicates(subset=['column1', 'column2'], inplace=True)
 ```
 
-Slide 4: Data Transformation
+Slide 4: Chuyển đổi dữ liệu
 
-Data transformation involves converting data into a more suitable format for analysis. Pandas provides functions to perform operations like data type conversion, string manipulation, and date/time handling.
+Chuyển đổi dữ liệu liên quan đến việc chuyển đổi dữ liệu sang định dạng phù hợp hơn để phân tích. Pandas cung cấp các chức năng để thực hiện các hoạt động như chuyển đổi kiểu dữ liệu, thao tác chuỗi và xử lý ngày/giờ.
 
-Code:
+Mã số:
 
 ```python
 # Convert data types
@@ -58,11 +58,11 @@ df['column_name'] = df['column_name'].str.lower()
 df['date_column'] = pd.to_datetime(df['date_column'])
 ```
 
-Slide 5: Handling Outliers
+Slide 5: Xử lý các ngoại lệ
 
-Outliers can significantly impact the analysis results. Pandas offers various techniques to identify and handle outliers, such as using statistical methods or applying domain-specific rules.
+Các ngoại lệ có thể tác động đáng kể đến kết quả phân tích. Pandas cung cấp nhiều kỹ thuật khác nhau để xác định và xử lý các ngoại lệ, chẳng hạn như sử dụng các phương pháp thống kê hoặc áp dụng các quy tắc dành riêng cho từng miền.
 
-Code:
+Mã số:
 
 ```python
 # Identify outliers using z-scores
@@ -73,11 +73,11 @@ outliers = df[z_scores > 3]
 df.loc[z_scores > 3, 'column_name'] = df['column_name'].median()
 ```
 
-Slide 6: Data Filtering
+Trang trình bày 6: Lọc dữ liệu
 
-Data filtering is the process of selecting a subset of data based on specific criteria. Pandas provides powerful filtering capabilities using boolean indexing and conditional statements.
+Lọc dữ liệu là quá trình chọn một tập hợp con dữ liệu dựa trên các tiêu chí cụ thể. Pandas cung cấp khả năng lọc mạnh mẽ bằng cách sử dụng lập chỉ mục boolean và các câu lệnh có điều kiện.
 
-Code:
+Mã số:
 
 ```python
 # Filter rows based on a condition
@@ -87,11 +87,11 @@ filtered_df = df[df['column_name'] > 10]
 filtered_df = df[(df['column1'] > 5) & (df['column2'] == 'value')]
 ```
 
-Slide 7: Handling Categorical Data
+Slide 7: Xử lý dữ liệu phân loại
 
-Categorical data represents distinct categories or groups. Pandas offers tools to work with categorical data, such as encoding categorical variables and performing operations like grouping and aggregation.
+Dữ liệu phân loại đại diện cho các danh mục hoặc nhóm riêng biệt. Pandas cung cấp các công cụ để làm việc với dữ liệu phân loại, chẳng hạn như mã hóa các biến phân loại và thực hiện các hoạt động như nhóm và tổng hợp.
 
-Code:
+Mã số:
 
 ```python
 # Convert a column to categorical data type
@@ -101,11 +101,11 @@ df['column_name'] = df['column_name'].astype('category')
 encoded_df = pd.get_dummies(df, columns=['column_name'])
 ```
 
-Slide 8: Data Merging and Joining
+Slide 8: Hợp nhất và nối dữ liệu
 
-Merging and joining data from multiple sources is a common task in data analysis. Pandas provides methods to combine datasets based on common columns or indexes.
+Hợp nhất và nối dữ liệu từ nhiều nguồn là một nhiệm vụ phổ biến trong phân tích dữ liệu. Pandas cung cấp các phương pháp để kết hợp các tập dữ liệu dựa trên các cột hoặc chỉ mục chung.
 
-Code:
+Mã số:
 
 ```python
 # Merge two DataFrames based on a common column
@@ -115,11 +115,11 @@ merged_df = pd.merge(df1, df2, on='common_column')
 joined_df = df1.join(df2, how='inner')
 ```
 
-Slide 9: Data Reshaping
+Slide 9: Định hình lại dữ liệu
 
-Data reshaping involves transforming the structure of a DataFrame, such as pivoting or unpivoting data. Pandas offers functions like `melt` and `pivot` to reshape data for better analysis.
+Định hình lại dữ liệu liên quan đến việc chuyển đổi cấu trúc của DataFrame, chẳng hạn như dữ liệu xoay vòng hoặc không xoay vòng. Pandas cung cấp các chức năng như `melt` và `pivot` để định hình lại dữ liệu nhằm phân tích tốt hơn.
 
-Code:
+Mã số:
 
 ```python
 # Unpivot (melt) data
@@ -129,11 +129,11 @@ melted_df = pd.melt(df, id_vars=['column1', 'column2'], var_name='variable', val
 pivoted_df = df.pivot(index='column1', columns='column2', values='column3')
 ```
 
-Slide 10: Data Imputation
+Trang trình bày 10: Tính toán dữ liệu
 
-Data imputation is the process of replacing missing data with substituted values. Pandas provides various imputation techniques, such as mean, median, or mode imputation, as well as more advanced methods like regression imputation.
+Việc tính toán dữ liệu là quá trình thay thế dữ liệu bị thiếu bằng các giá trị thay thế. Pandas cung cấp nhiều kỹ thuật quy định khác nhau, chẳng hạn như quy định trung bình, trung bình hoặc chế độ, cũng như các phương pháp nâng cao hơn như quy mô hồi quy.
 
-Code:
+Mã số:
 
 ```python
 # Mean imputation
@@ -146,11 +146,11 @@ regressor.fit(X_train, y_train)
 df['column_name'] = df['column_name'].fillna(regressor.predict(X_test))
 ```
 
-Slide 11: Data Normalization
+Slide 11: Chuẩn hóa dữ liệu
 
-Data normalization is a technique used to rescale data to a common range, often between 0 and 1 or -1 and 1. This can be useful for certain machine learning algorithms or when dealing with different scales of data.
+Chuẩn hóa dữ liệu là một kỹ thuật được sử dụng để thay đổi tỷ lệ dữ liệu về một phạm vi chung, thường là từ 0 đến 1 hoặc -1 và 1. Điều này có thể hữu ích cho một số thuật toán học máy nhất định hoặc khi xử lý các quy mô dữ liệu khác nhau.
 
-Code:
+Mã số:
 
 ```python
 # Min-max normalization
@@ -164,11 +164,11 @@ scaler = StandardScaler()
 standardized_df = pd.DataFrame(scaler.fit_transform(df), columns=df.columns)
 ```
 
-Slide 12: Data Validation
+Trang trình bày 12: Xác thực dữ liệu
 
-Data validation is the process of ensuring that data adheres to specific rules, constraints, or formats. Pandas provides methods to validate data and handle violations, such as raising errors or applying custom functions.
+Xác thực dữ liệu là quá trình đảm bảo rằng dữ liệu tuân thủ các quy tắc, ràng buộc hoặc định dạng cụ thể. Pandas cung cấp các phương pháp để xác thực dữ liệu và xử lý các vi phạm, chẳng hạn như phát sinh lỗi hoặc áp dụng các chức năng tùy chỉnh.
 
-Code:
+Mã số:
 
 ```python
 # Validate data types
@@ -183,11 +183,11 @@ def validate_age(age):
 df['age'] = df['age'].apply(validate_age)
 ```
 
-Slide 13: Data Profiling
+Slide 13: Hồ sơ dữ liệu
 
-Data profiling involves summarizing and understanding the characteristics of a dataset. Pandas offers various methods to generate descriptive statistics, identify data types, and detect missing values or outliers.
+Hồ sơ dữ liệu liên quan đến việc tóm tắt và hiểu các đặc điểm của tập dữ liệu. Pandas cung cấp nhiều phương pháp khác nhau để tạo số liệu thống kê mô tả, xác định loại dữ liệu và phát hiện các giá trị hoặc giá trị ngoại lệ bị thiếu.
 
-Code:
+Mã số:
 
 ```python
 # Generate descriptive statistics
@@ -203,6 +203,6 @@ df.isnull().sum()
 df.duplicated().sum()
 ```
 
-Slide 14: Conclusion
+Slide 14: Kết luận
 
-Data cleaning is an essential step in the data analysis process. Pandas provides a powerful and flexible toolset to handle various data cleaning tasks, from handling missing data and duplicates to data transformation, filtering, and reshaping. By mastering these techniques, you can ensure your data is accurate, consistent, and ready for meaningful analysis.
+Làm sạch dữ liệu là một bước thiết yếu trong quá trình phân tích dữ liệu. Pandas cung cấp bộ công cụ mạnh mẽ và linh hoạt để xử lý các tác vụ làm sạch dữ liệu khác nhau, từ xử lý dữ liệu bị thiếu và trùng lặp đến chuyển đổi, lọc và định hình lại dữ liệu. Bằng cách nắm vững các kỹ thuật này, bạn có thể đảm bảo dữ liệu của mình chính xác, nhất quán và sẵn sàng để phân tích có ý nghĩa.

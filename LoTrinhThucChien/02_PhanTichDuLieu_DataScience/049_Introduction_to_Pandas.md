@@ -1,10 +1,10 @@
-## Introduction to Pandas
+## Giới thiệu về gấu trúc
 
-Slide 1: Introduction to Pandas
+Slide 1: Giới thiệu về Pandas
 
-Pandas is a powerful open-source Python library for data analysis and manipulation. It provides easy-to-use data structures and data analysis tools for working with structured (tabular, multidimensional, potentially heterogeneous) and time series data.
+Pandas là thư viện Python mã nguồn mở mạnh mẽ để phân tích và thao tác dữ liệu. Nó cung cấp các cấu trúc dữ liệu và công cụ phân tích dữ liệu dễ sử dụng để làm việc với dữ liệu chuỗi thời gian và dữ liệu có cấu trúc (dạng bảng, đa chiều, có khả năng không đồng nhất).
 
-Slide 2: Importing Pandas
+Trang trình bày 2: Nhập gấu trúc
 
 ```python
 import pandas as pd
@@ -21,7 +21,7 @@ data = pd.Series([1, 2, 3, 4, 5])
 print(data)
 ```
 
-Output:
+Đầu ra:
 
 ```
 0    1
@@ -43,7 +43,7 @@ df = pd.DataFrame(data)
 print(df)
 ```
 
-Output:
+Đầu ra:
 
 ```
    Name  Age
@@ -61,9 +61,9 @@ Pandas can read data from various file formats like CSV, Excel, SQL databases, a
 df = pd.read_csv('data.csv')
 ```
 
-Slide 6: Data Selection
+Slide 6: Lựa chọn dữ liệu
 
-Selecting data from a DataFrame is easy with Pandas indexing.
+Việc chọn dữ liệu từ DataFrame thật dễ dàng với tính năng lập chỉ mục của Pandas.
 
 ```python
 print(df['Name'])    # Select a column
@@ -81,9 +81,9 @@ df.dropna(inplace=True)             # Drop rows with missing values
 df.rename(columns={'Age': 'Years'}, inplace=True) # Rename a column
 ```
 
-Slide 8: Grouping and Aggregating
+Slide 8: Phân nhóm và tổng hợp
 
-Grouping and aggregating data is a common operation in data analysis.
+Nhóm và tổng hợp dữ liệu là một thao tác phổ biến trong phân tích dữ liệu.
 
 ```python
 grouped = df.groupby('Name')['Age'].sum()
@@ -101,9 +101,9 @@ John    25
 Name: Age, dtype: int64
 ```
 
-Slide 9: Plotting
+Slide 9: Vẽ đồ thị
 
-Pandas integrates well with Matplotlib and other data visualization libraries.
+Pandas tích hợp tốt với Matplotlib và các thư viện trực quan hóa dữ liệu khác.
 
 ```python
 import matplotlib.pyplot as plt
@@ -128,9 +128,9 @@ df.drop_duplicates(inplace=True)
 df['Age'] = df['Age'].fillna(df['Age'].mean())
 ```
 
-Slide 12: Merging and Joining
+Slide 12: Sáp nhập và tham gia
 
-Pandas makes it easy to combine datasets using merges and joins.
+Pandas giúp dễ dàng kết hợp các tập dữ liệu bằng cách hợp nhất và nối.
 
 ```python
 # Merge two DataFrames
@@ -140,9 +140,9 @@ pd.merge(df1, df2, on='key', how='inner')
 df1.join(df2, lsuffix='_left', rsuffix='_right')
 ```
 
-Slide 13: Time Series Data
+Trang trình bày 13: Dữ liệu chuỗi thời gian
 
-Pandas has excellent support for working with time series data.
+Pandas có sự hỗ trợ tuyệt vời để làm việc với dữ liệu chuỗi thời gian.
 
 ```python
 # Convert to datetime
@@ -155,9 +155,9 @@ df = df.set_index('Date')
 df.resample('M').mean()
 ```
 
-Slide 14: Handling Large Datasets
+Slide 14: Xử lý bộ dữ liệu lớn
 
-Pandas provides tools for efficient handling of large datasets.
+Pandas cung cấp các công cụ để xử lý hiệu quả các bộ dữ liệu lớn.
 
 ```python
 # Chunking data
@@ -168,9 +168,9 @@ for chunk in pd.read_csv('large_file.csv', chunksize=10000):
 df.info(memory_usage='deep')
 ```
 
-Slide 15: Integration with Other Libraries
+Slide 15: Tích hợp với các thư viện khác
 
-Pandas integrates well with other data science libraries in Python.
+Pandas tích hợp tốt với các thư viện khoa học dữ liệu khác trong Python.
 
 ```python
 # NumPy for numerical operations
@@ -183,17 +183,17 @@ y = df['Target']
 model = LinearRegression().fit(X, y)
 ```
 
-These additional slides cover more advanced topics in Pandas, such as data cleaning, merging and joining datasets, working with time series data, handling large datasets, and integrating Pandas with other Python libraries like NumPy and Scikit-learn.
+Các trang trình bày bổ sung này đề cập đến các chủ đề nâng cao hơn trong Pandas, chẳng hạn như làm sạch dữ liệu, hợp nhất và nối các tập dữ liệu, làm việc với dữ liệu chuỗi thời gian, xử lý các tập dữ liệu lớn và tích hợp Pandas với các thư viện Python khác như NumPy và Scikit-learn.
 
 ## Meta
-Here's a title, description, and hashtags for a TikTok about Pandas fundamentals, with an institutional tone:
+Đây là tiêu đề, mô tả và hashtag cho TikTok về các nguyên tắc cơ bản của Pandas, với giọng điệu mang tính thể chế:
 
-Mastering Pandas: A Comprehensive Guide for Data Analysis
+Làm chủ Pandas: Hướng dẫn toàn diện về phân tích dữ liệu
 
-Enhance your data analysis skills with Pandas, the powerful Python library for data manipulation and analysis. This comprehensive guide covers the fundamentals of Pandas, providing a solid foundation for working with structured data.
+Nâng cao kỹ năng phân tích dữ liệu của bạn với Pandas, thư viện Python mạnh mẽ để thao tác và phân tích dữ liệu. Hướng dẫn toàn diện này bao gồm các nguyên tắc cơ bản của Pandas, cung cấp nền tảng vững chắc để làm việc với dữ liệu có cấu trúc.
 
-From importing data to cleaning and preprocessing, merging datasets to handling time series data, this course equips you with the essential tools and techniques to unlock the full potential of your data. Learn how to leverage Pandas' intuitive data structures, perform data selection and manipulation, and gain insights through grouping, aggregation, and visualization.
+Từ nhập dữ liệu đến làm sạch và tiền xử lý, hợp nhất các tập dữ liệu đến xử lý dữ liệu chuỗi thời gian, khóa học này trang bị cho bạn các công cụ và kỹ thuật cần thiết để khai thác toàn bộ tiềm năng dữ liệu của bạn. Tìm hiểu cách tận dụng cấu trúc dữ liệu trực quan của Pandas, thực hiện lựa chọn và thao tác dữ liệu cũng như hiểu rõ hơn thông qua việc nhóm, tổng hợp và trực quan hóa.
 
-Whether you're a data analyst, researcher, or simply passionate about data exploration, this course is designed to empower you with the knowledge and practical examples to tackle complex data analysis challenges. Join us on this journey and unlock new possibilities in your data-driven endeavors.
+Cho dù bạn là nhà phân tích dữ liệu, nhà nghiên cứu hay chỉ đơn giản là đam mê khám phá dữ liệu, khóa học này được thiết kế để trang bị cho bạn kiến ​​thức và ví dụ thực tế để giải quyết các thách thức phân tích dữ liệu phức tạp. Hãy tham gia cùng chúng tôi trên hành trình này và mở khóa những khả năng mới trong nỗ lực dựa trên dữ liệu của bạn.
 
 Hashtags: #PandasFundamentals #DataAnalysis #PythonLibrary #DataScience #DataManipulation #DataInsights #LearningOpportunity #SkillsForSuccess

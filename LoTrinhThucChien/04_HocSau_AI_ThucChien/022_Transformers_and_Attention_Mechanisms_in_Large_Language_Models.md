@@ -1,7 +1,7 @@
-## Transformers and Attention Mechanisms in Large Language Models
-Slide 1: Understanding Attention Mechanism Fundamentals
+## Máy biến áp và cơ chế chú ý trong mô hình ngôn ngữ lớn
+Trang trình bày 1: Tìm hiểu các nguyên tắc cơ bản về Cơ chế chú ý
 
-The attention mechanism enables neural networks to selectively focus on specific parts of the input sequence when generating output. This fundamental concept allows models to assign different importance weights to different elements, dramatically improving performance in sequence-to-sequence tasks.
+Cơ chế chú ý cho phép mạng thần kinh tập trung có chọn lọc vào các phần cụ thể của chuỗi đầu vào khi tạo đầu ra. Khái niệm cơ bản này cho phép các mô hình gán các trọng số quan trọng khác nhau cho các phần tử khác nhau, cải thiện đáng kể hiệu suất trong các tác vụ theo trình tự.
 
 ```python
 import numpy as np
@@ -21,9 +21,9 @@ print(f"Attention weights shape: {attention_weights.shape}")
 print(f"Sum of weights: {np.sum(attention_weights)}")  # Should be close to 1
 ```
 
-Slide 2: Self-Attention Implementation
+Trang trình bày 2: Thực hiện việc tự chú ý
 
-Self-attention allows each position in a sequence to attend to all positions in the same sequence. This mechanism is crucial for capturing long-range dependencies and understanding contextual relationships within the input data.
+Sự tự chú ý cho phép mỗi vị trí trong một chuỗi có thể chú ý tới tất cả các vị trí trong cùng một trình tự. Cơ chế này rất quan trọng để nắm bắt các mối quan hệ phụ thuộc tầm xa và hiểu các mối quan hệ theo ngữ cảnh trong dữ liệu đầu vào.
 
 ```python
 import torch
@@ -52,9 +52,9 @@ class SelfAttention(nn.Module):
         return output, attention
 ```
 
-Slide 3: Mathematical Foundation of Attention
+Slide 3: Cơ sở toán học của sự chú ý
 
-The attention mechanism computes a weighted sum of values, where weights are determined by compatibility between queries and keys. The mathematical formulation provides the theoretical foundation for implementing attention in neural networks.
+Cơ chế chú ý tính toán tổng giá trị có trọng số, trong đó trọng số được xác định bằng khả năng tương thích giữa các truy vấn và khóa. Công thức toán học cung cấp nền tảng lý thuyết để thực hiện sự chú ý trong mạng lưới thần kinh.
 
 ```python
 # Mathematical formulation of attention
@@ -81,9 +81,9 @@ def scaled_dot_product_attention(Q, K, V, mask=None):
     return output, attention_weights
 ```
 
-Slide 4: Multi-Head Attention Architecture
+Trang trình bày 4: Kiến trúc chú ý nhiều đầu
 
-Multi-head attention allows the model to jointly attend to information from different representation subspaces. This enables the model to capture various aspects of the relationships between elements in the input sequence.
+Sự chú ý của nhiều người cho phép mô hình cùng tham gia vào thông tin từ các không gian con biểu diễn khác nhau. Điều này cho phép mô hình nắm bắt được các khía cạnh khác nhau của mối quan hệ giữa các phần tử trong chuỗi đầu vào.
 
 ```python
 class MultiHeadAttention(nn.Module):
@@ -144,9 +144,9 @@ pos_enc = positional_encoding(max_length, embedding_dim)
 print(f"Positional encoding shape: {pos_enc.shape}")
 ```
 
-Slide 6: Implementing TransformerPreLN Architecture
+Slide 6: Triển khai kiến ​​trúc TransformerPreLN
 
-The TransformerPreLN variant applies layer normalization before the self-attention and feed-forward layers, providing better training stability and faster convergence compared to the original transformer architecture.
+Biến thể TransformerPreLN áp dụng chuẩn hóa lớp trước các lớp tự chú ý và chuyển tiếp nguồn cấp dữ liệu, mang lại độ ổn định huấn luyện tốt hơn và độ hội tụ nhanh hơn so với kiến ​​trúc máy biến áp ban đầu.
 
 ```python
 class TransformerPreLNLayer(nn.Module):
@@ -204,9 +204,9 @@ decoder_input = torch.randn(batch_size, seq_len, d_model)
 encoder_output = torch.randn(batch_size, seq_len, d_model)
 ```
 
-Slide 8: Vision Transformer Implementation
+Slide 8: Triển khai Vision Transformer
 
-Vision Transformers (ViT) adapt the transformer architecture for image processing by splitting images into patches and treating them as sequence elements. This implementation shows the core components of the ViT architecture.
+Vision Transformers (ViT) điều chỉnh kiến ​​trúc máy biến áp để xử lý hình ảnh bằng cách chia hình ảnh thành các phần và xử lý chúng dưới dạng các thành phần chuỗi. Việc triển khai này cho thấy các thành phần cốt lõi của kiến ​​trúc ViT.
 
 ```python
 class PatchEmbedding(nn.Module):
@@ -246,9 +246,9 @@ class ViTEmbedding(nn.Module):
         return x
 ```
 
-Slide 9: Translation Model Implementation
+Slide 9: Triển khai mô hình dịch thuật
 
-This implementation demonstrates a complete sequence-to-sequence translation model using transformers, incorporating both encoder and decoder components with practical attention mechanisms for language translation tasks.
+Việc triển khai này thể hiện mô hình dịch theo trình tự hoàn chỉnh bằng cách sử dụng máy biến áp, kết hợp cả thành phần bộ mã hóa và bộ giải mã với các cơ chế chú ý thực tế cho các tác vụ dịch ngôn ngữ.
 
 ```python
 class TranslationTransformer(nn.Module):
@@ -331,9 +331,9 @@ attention_matrix = torch.rand(len(tgt_tokens), len(src_tokens))
 fig = plot_attention_weights(attention_matrix.numpy(), src_tokens, tgt_tokens)
 ```
 
-Slide 11: Training Pipeline Implementation
+Slide 11: Triển khai quy trình đào tạo
 
-A comprehensive training pipeline for transformer models, including loss calculation, optimization, and training loop with proper gradient handling and learning rate scheduling.
+Một quy trình đào tạo toàn diện cho các mô hình máy biến áp, bao gồm tính toán tổn thất, tối ưu hóa và vòng lặp đào tạo với khả năng xử lý độ dốc thích hợp và lập kế hoạch tốc độ học tập.
 
 ```python
 class TransformerTrainer:
@@ -435,9 +435,9 @@ print(f"Source: {src_text}")
 print(f"Translation: {translation}")
 ```
 
-Slide 13: Real-world Application: Document Classification
+Slide 13: Ứng dụng thực tế: Phân loại tài liệu
 
-Implementation of a transformer-based document classification system, showing how attention mechanisms can be applied to long-form text analysis and categorization.
+Triển khai hệ thống phân loại tài liệu dựa trên máy biến áp, cho thấy cách áp dụng các cơ chế chú ý để phân tích và phân loại văn bản dạng dài.
 
 ```python
 class DocumentClassifier(nn.Module):
@@ -492,10 +492,10 @@ def train_classifier(model, train_loader, optimizer, num_epochs=5):
                 print(f'Epoch {epoch}, Batch {batch_idx}, Loss: {loss.item():.4f}')
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-*   "Attention Is All You Need" - [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
-*   "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding" - [https://arxiv.org/abs/1810.04805](https://arxiv.org/abs/1810.04805)
-*   "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale" - [https://arxiv.org/abs/2010.11929](https://arxiv.org/abs/2010.11929)
-*   "Layer Normalization" - [https://arxiv.org/abs/1607.06450](https://arxiv.org/abs/1607.06450)
-*   "Neural Machine Translation by Jointly Learning to Align and Translate" - [https://arxiv.org/abs/1409.0473](https://arxiv.org/abs/1409.0473)
+* "Tất cả những gì bạn cần là sự chú ý" - [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
+* "BERT: Đào tạo trước Máy biến áp hai chiều sâu để hiểu ngôn ngữ" - [https://arxiv.org/abs/1810.04805](https://arxiv.org/abs/1810.04805)
+* "Một hình ảnh có giá trị 16x16 từ: Máy biến áp để nhận dạng hình ảnh ở quy mô lớn" - [https://arxiv.org/abs/2010.11929](https://arxiv.org/abs/2010.11929)
+* "Chuẩn hóa lớp" - [https://arxiv.org/abs/1607.06450](https://arxiv.org/abs/1607.06450)
+* "Dịch máy thần kinh bằng cách cùng học cách căn chỉnh và dịch" - [https://arxiv.org/abs/1409.0473](https://arxiv.org/abs/1409.0473)

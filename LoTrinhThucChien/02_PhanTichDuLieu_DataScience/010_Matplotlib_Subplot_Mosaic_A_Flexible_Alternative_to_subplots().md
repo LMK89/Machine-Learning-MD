@@ -1,7 +1,7 @@
-## Matplotlib Subplot Mosaic A Flexible Alternative to subplots()
-Slide 1: Introduction to Subplot Mosaic
+## Matplotlib Subplot Khảm Một giải pháp thay thế linh hoạt cho subplots()
+Slide 1: Giới thiệu về Subplot Khảm
 
-The plt.subplot\_mosaic() method revolutionizes how we create complex subplot layouts in Matplotlib. Unlike traditional plt.subplots(), it allows defining custom arrangements using simple ASCII-art style strings, providing an intuitive and flexible way to design multi-plot visualizations.
+Phương thức plt.subplot\_mosaic() cách mạng hóa cách chúng ta tạo các bố cục ô con phức tạp trong Matplotlib. Không giống như plt.subplots() truyền thống, nó cho phép xác định các sắp xếp tùy chỉnh bằng cách sử dụng các chuỗi kiểu nghệ thuật ASCII đơn giản, cung cấp một cách trực quan và linh hoạt để thiết kế trực quan hóa nhiều ô.
 
 ```python
 import matplotlib.pyplot as plt
@@ -36,9 +36,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 2: Complex Mosaic Layouts
+Trang trình bày 2: Bố cục khảm phức tạp
 
-Subplot mosaic supports intricate layouts through nested lists of strings, enabling creation of complex grid arrangements with varying sizes. This approach eliminates the need for GridSpec manipulation while maintaining full control over subplot positioning and spanning.
+Subplot khảm hỗ trợ các bố cục phức tạp thông qua các danh sách chuỗi lồng nhau, cho phép tạo các sắp xếp lưới phức tạp với các kích cỡ khác nhau. Cách tiếp cận này loại bỏ nhu cầu thao tác GridSpec trong khi vẫn duy trì toàn quyền kiểm soát việc định vị và mở rộng ô phụ.
 
 ```python
 import matplotlib.pyplot as plt
@@ -73,9 +73,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 3: Dynamic Height Ratios
+Trang trình bày 3: Tỷ lệ chiều cao động
 
-Matplotlib's subplot mosaic allows for sophisticated control over subplot dimensions through height ratios. This feature enables precise layout customization while maintaining the intuitive string-based layout definition system.
+Khảm ô phụ của Matplotlib cho phép kiểm soát tinh vi các kích thước ô phụ thông qua tỷ lệ chiều cao. Tính năng này cho phép tùy chỉnh bố cục chính xác trong khi vẫn duy trì hệ thống định nghĩa bố cục dựa trên chuỗi trực quan.
 
 ```python
 import matplotlib.pyplot as plt
@@ -112,9 +112,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 4: Advanced Mosaic Patterns
+Slide 4: Các mẫu tranh khảm nâng cao
 
-The subplot mosaic method supports sophisticated patterns including nested layouts and empty spaces. This feature enables creation of complex dashboards and publication-quality figure arrangements with minimal code complexity.
+Phương pháp khảm subplot hỗ trợ các mẫu phức tạp bao gồm bố cục lồng nhau và khoảng trống. Tính năng này cho phép tạo các trang tổng quan phức tạp và sắp xếp các số liệu có chất lượng xuất bản với độ phức tạp mã tối thiểu.
 
 ```python
 import matplotlib.pyplot as plt
@@ -154,9 +154,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 5: Real-world Application: Financial Dashboard
+Trang trình bày 5: Ứng dụng thực tế: Bảng thông tin tài chính
 
-Creating a financial dashboard using subplot mosaic demonstrates its practical application in data visualization. This example shows how to arrange multiple financial metrics in a coherent and visually appealing layout.
+Việc tạo bảng điều khiển tài chính bằng cách sử dụng khảm ô phụ thể hiện ứng dụng thực tế của nó trong việc trực quan hóa dữ liệu. Ví dụ này cho thấy cách sắp xếp nhiều số liệu tài chính theo bố cục mạch lạc và hấp dẫn về mặt trực quan.
 
 ```python
 import matplotlib.pyplot as plt
@@ -196,9 +196,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 6: Scientific Data Visualization
+Slide 6: Trực quan hóa dữ liệu khoa học
 
-Subplot mosaic excels in scientific visualization where complex data relationships need to be displayed simultaneously. This implementation demonstrates how to create a comprehensive view of experimental data with different visualization techniques.
+Subplot khảm vượt trội trong trực quan hóa khoa học trong đó các mối quan hệ dữ liệu phức tạp cần được hiển thị đồng thời. Việc triển khai này trình bày cách tạo chế độ xem toàn diện về dữ liệu thử nghiệm bằng các kỹ thuật trực quan hóa khác nhau.
 
 ```python
 import matplotlib.pyplot as plt
@@ -243,9 +243,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 7: Interactive Data Analysis Dashboard
+Trang trình bày 7: Bảng điều khiển phân tích dữ liệu tương tác
 
-The mosaic layout enables creation of interactive dashboards where multiple data aspects can be analyzed simultaneously. This example demonstrates a comprehensive data analysis interface with synchronized visualizations.
+Bố cục khảm cho phép tạo bảng thông tin tương tác nơi có thể phân tích đồng thời nhiều khía cạnh dữ liệu. Ví dụ này thể hiện giao diện phân tích dữ liệu toàn diện với hình ảnh trực quan được đồng bộ hóa.
 
 ```python
 import matplotlib.pyplot as plt
@@ -293,9 +293,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 8: Time Series Visualization
+Slide 8: Trực quan hóa chuỗi thời gian
 
-Mosaic layouts are particularly effective for time series analysis, allowing multiple temporal aspects to be visualized simultaneously while maintaining clear relationships between different components.
+Bố cục khảm đặc biệt hiệu quả để phân tích chuỗi thời gian, cho phép hiển thị đồng thời nhiều khía cạnh thời gian trong khi vẫn duy trì mối quan hệ rõ ràng giữa các thành phần khác nhau.
 
 ```python
 import matplotlib.pyplot as plt
@@ -342,9 +342,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 9: Machine Learning Model Evaluation
+Trang trình bày 9: Đánh giá mô hình học máy
 
-The subplot mosaic layout provides an excellent framework for visualizing machine learning model performance metrics. This example demonstrates a comprehensive model evaluation dashboard with multiple assessment criteria.
+Bố cục khảm ô phụ cung cấp một khuôn khổ tuyệt vời để trực quan hóa các số liệu hiệu suất của mô hình học máy. Ví dụ này minh họa bảng thông tin đánh giá mô hình toàn diện với nhiều tiêu chí đánh giá.
 
 ```python
 import matplotlib.pyplot as plt
@@ -395,9 +395,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 10: Geospatial Data Visualization
+Slide 10: Trực quan hóa dữ liệu không gian địa lý
 
-Subplot mosaic facilitates the creation of complex geospatial visualizations by allowing multiple map views and associated analytics to be displayed coherently.
+Khảm subplot tạo điều kiện thuận lợi cho việc tạo trực quan hóa không gian địa lý phức tạp bằng cách cho phép hiển thị nhiều chế độ xem bản đồ và phân tích liên quan một cách mạch lạc.
 
 ```python
 import matplotlib.pyplot as plt
@@ -444,9 +444,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 11: Custom Annotation Capabilities
+Trang trình bày 11: Khả năng chú thích tùy chỉnh
 
-The subplot mosaic system provides powerful capabilities for adding custom annotations and connecting different plot elements, enhancing the narrative flow of complex visualizations.
+Hệ thống khảm cốt truyện phụ cung cấp các khả năng mạnh mẽ để thêm chú thích tùy chỉnh và kết nối các yếu tố cốt truyện khác nhau, nâng cao dòng tường thuật của các hình ảnh trực quan phức tạp.
 
 ```python
 import matplotlib.pyplot as plt
@@ -507,9 +507,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 12: Dynamic Layout Adjustment
+Slide 12: Điều chỉnh bố cục động
 
-The subplot mosaic system allows for dynamic layout adjustments based on data characteristics. This implementation demonstrates how to create responsive layouts that adapt to different data configurations and aspect ratios.
+Hệ thống khảm ô phụ cho phép điều chỉnh bố cục động dựa trên đặc điểm dữ liệu. Việc triển khai này trình bày cách tạo bố cục đáp ứng thích ứng với các cấu hình dữ liệu và tỷ lệ khung hình khác nhau.
 
 ```python
 import matplotlib.pyplot as plt
@@ -557,9 +557,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 13: Advanced Statistical Visualization
+Slide 13: Trực quan hóa thống kê nâng cao
 
-This implementation showcases how subplot mosaic can be used to create comprehensive statistical analysis dashboards with multiple coordinated views of the same dataset.
+Việc triển khai này cho thấy cách sử dụng khảm ô phụ để tạo bảng thông tin phân tích thống kê toàn diện với nhiều chế độ xem phối hợp của cùng một tập dữ liệu.
 
 ```python
 import matplotlib.pyplot as plt
@@ -618,12 +618,12 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-*   ArXiv paper on advanced visualization techniques: [https://arxiv.org/abs/2007.07799](https://arxiv.org/abs/2007.07799)
-*   Statistical visualization methods review: [https://arxiv.org/abs/1909.03083](https://arxiv.org/abs/1909.03083)
-*   Matplotlib subplot mosaic documentation: [https://matplotlib.org/stable/](https://matplotlib.org/stable/)
-*   Recommended searches on Google:
-    *   "Matplotlib subplot mosaic examples"
-    *   "Advanced subplot layouts in Python"
-    *   "Custom visualization layouts with Matplotlib"
+* Bài viết ArXiv về kỹ thuật hiển thị nâng cao: [https://arxiv.org/abs/2007.07799](https://arxiv.org/abs/2007.07799)
+* Đánh giá phương pháp trực quan hóa thống kê: [https://arxiv.org/abs/1909.03083](https://arxiv.org/abs/1909.03083)
+* Tài liệu khảm ô phụ Matplotlib: [https://matplotlib.org/stable/](https://matplotlib.org/stable/)
+* Tìm kiếm được đề xuất trên Google:
+    * "Ví dụ về khảm subplot của Matplotlib"
+    * "Bố cục ô phụ nâng cao trong Python"
+    * "Bố cục trực quan hóa tùy chỉnh với Matplotlib"

@@ -1,7 +1,7 @@
-## Choosing the Right Machine Learning Algorithm for Regression
-Slide 1: Regression Analysis Overview
+##Chọn thuật toán học máy phù hợp cho hồi quy
+Slide 1: Tổng quan về phân tích hồi phục
 
-Regression analysis forms the foundation of predictive modeling, enabling us to understand relationships between variables and make quantitative predictions. We'll explore implementing multiple regression techniques using Python's scikit-learn library, focusing on practical implementation with real-world datasets.
+Phân tích phân tích tạo nền tảng của mô hình dự kiến, cho phép chúng tôi hiểu mối liên hệ giữa các biến thể và mức độ mong đợi được đưa ra. Chúng tôi sẽ khám phá việc phát triển nhiều kỹ thuật phục hồi bằng thư viện scikit-learn của Python, tập trung vào việc phát triển khai thực tế với các bộ dữ liệu trong thế giới thực.
 
 ```python
 # Basic regression analysis setup
@@ -32,9 +32,9 @@ $$\epsilon$$ is the error term
 '''
 ```
 
-Slide 2: Stochastic Gradient Descent Implementation
+Trang trình bày 2: Triển khai ngẫu nhiên giảm dần độ dốc
 
-Stochastic Gradient Descent (SGD) is an efficient optimization method for fitting linear regression models on large datasets. It updates model parameters iteratively using individual training examples, making it memory-efficient and suitable for online learning scenarios.
+Giảm dần độ ngẫu nhiên ngẫu nhiên (SGD) là một kết quả hiệu ứng tối ưu hóa phương pháp để phù hợp với các tính năng tuyến tính phục hồi mô hình trên các dữ liệu lớn. Nó cập nhật các tham số mô hình đi lặp lại bằng cách sử dụng các ví dụ đào tạo riêng biệt, giúp tiết kiệm bộ nhớ và phù hợp với các vấn đề học tập trực tuyến.
 
 ```python
 from sklearn.linear_model import SGDRegressor
@@ -54,9 +54,9 @@ print(f"MSE: {mse_sgd:.4f}")
 print(f"R2 Score: {r2_sgd:.4f}")
 ```
 
-Slide 3: Least Angle Regression (LARS) Implementation
+Trang trình bày 3: Triển khai thu hồi góc nhỏ nhất (LARS)
 
-LARS provides a highly efficient method for computing the entire Lasso path with the same computational cost as a single least squares fit. It's particularly useful when dealing with high-dimensional data where the number of features exceeds observations.
+LARS cung cấp một phương pháp hiệu quả cao để tính toán toàn bộ đường Lasso cùng với chi phí tính toán như một phương pháp nhỏ nhất phù hợp. Nó đặc biệt hữu ích khi xử lý nhiều dữ liệu trong số lượng đối tượng vượt quá mức độ giám sát.
 
 ```python
 from sklearn.linear_model import LarsCV
@@ -81,9 +81,9 @@ print(f"Best alpha: {lars_cv.alpha_}")
 print(f"R2 Score: {r2_score(y_test, y_pred_lars):.4f}")
 ```
 
-Slide 4: Lasso and Elastic Net Implementation
+Trang trình bày 4: Triển khai Lasso và Elastic Net
 
-Lasso and Elastic Net combine L1 and L2 regularization to handle multicollinearity and perform feature selection. These methods are essential for high-dimensional datasets where feature selection and model interpretability are crucial.
+Lasso và Elastic Net kết hợp chính xác hóa L1 và L2 để xử lý đa tuyến và thực hiện lựa chọn tính năng. Phương pháp này rất cần thiết cho các bộ dữ liệu nhiều chiều, trong đó việc lựa chọn tính năng và khả năng giải mô hình là rất quan trọng.
 
 ```python
 from sklearn.linear_model import LassoCV, ElasticNetCV
@@ -112,9 +112,9 @@ results = pd.DataFrame({
 print(results)
 ```
 
-Slide 5: Ridge Regression Implementation
+Trang trình bày 5: Thực hiện phục hồi sườn núi
 
-Ridge regression addresses multicollinearity by adding an L2 penalty term to the ordinary least squares objective function. This technique helps prevent overfitting and stabilizes the model when predictors are highly correlated.
+Hồi quy giải quyết hiện đa tuyến cộng đồng bằng cách bổ sung số phạt L2 vào hàm tiêu bình phương pháp nhỏ nhất thông thường. Kỹ thuật này giúp ngăn chặn việc trang bị quá mạnh và ổn định mô hình khi các yếu tố dự đoán có mối tương quan cao.
 
 ```python
 from sklearn.linear_model import RidgeCV
@@ -141,9 +141,9 @@ print(f"Best alpha: {ridge_cv.alpha_}")
 print(f"R2 Score: {r2_score(y_test, y_pred_ridge):.4f}")
 ```
 
-Slide 6: Support Vector Regressor with Linear Kernel
+Trình bày 6: Hỗ trợ bộ thu hồi với nhân tuyến tính
 
-SVR with a linear kernel performs regression using linear support vectors, making it effective for problems where the relationship between features and target is approximately linear while maintaining robust prediction capabilities.
+SVR with nhân tuyến tính thực hiện khôi phục quy trình bằng cách sử dụng tính năng hỗ trợ tuyến tính, giúp giải quyết hiệu quả này đối với các vấn đề trong đó mối liên hệ giữa các đối tượng và mục tiêu gần như tuyến tính trong khi vẫn duy trì khả năng dự đoán mạnh mẽ.
 
 ```python
 from sklearn.svm import SVR
@@ -169,9 +169,9 @@ print("Best parameters:", grid_search.best_params_)
 print(f"R2 Score: {r2_score(y_test, y_pred_linear_svr):.4f}")
 ```
 
-Slide 7: Support Vector Regressor with RBF Kernel
+Slide 7: Hỗ trợ Vector Regressor với RBF Kernel
 
-The RBF kernel transforms the feature space non-linearly, enabling SVR to capture complex patterns in the data. This implementation demonstrates how to optimize hyperparameters for non-linear regression tasks.
+Biến RBF nhân không có một tính chất tuyến tính cụ thể, cho phép SVR thu thập các mẫu phức tạp trong dữ liệu. Việc phát triển này trình bày cách siêu tham số tối ưu hóa cho các tính năng phục hồi quy tuyến của các tác vụ.
 
 ```python
 # Initialize RBF SVR
@@ -204,9 +204,9 @@ $$||x - x'||^2$$ is the squared Euclidean distance
 '''
 ```
 
-Slide 8: Decision Tree and Ensemble Methods
+Slide 8: Cây quyết định và tập hợp phương pháp
 
-Decision trees and ensemble methods combine multiple models to create robust predictors. This implementation showcases Random Forests and Gradient Boosting, two powerful ensemble techniques for regression tasks.
+Cây định và phương pháp tập hợp quyết định kết hợp nhiều mô hình để tạo ra các yếu tố dự phòng mạnh mẽ. Triển khai giới thiệu Rừng ngẫu nhiên và Tăng cường độ dốc, hai kỹ thuật tổng hợp mạnh mẽ cho các nhiệm vụ phục hồi quy mô.
 
 ```python
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
@@ -238,9 +238,9 @@ results_df = pd.DataFrame(results).T
 print(results_df)
 ```
 
-Slide 9: Ordinary Least Squares Implementation
+Trang trình bày 9: Thực hiện phương pháp tối thiểu thông tin
 
-Ordinary Least Squares (OLS) provides the foundation for linear regression by minimizing the sum of squared residuals. This implementation includes diagnostic tools and statistical tests to evaluate model assumptions and fit quality.
+Bình phương pháp tối thiểu thông thường (OLS) cung cấp nền tảng cho tính toán tuyến tính bằng cách giảm thiểu tổng phương pháp dư. Việc phát triển này bao gồm các công cụ mong đợi và kiểm tra thống kê để đánh giá các giá trị giả định của mô hình và chất lượng phù hợp.
 
 ```python
 from sklearn.linear_model import LinearRegression
@@ -268,9 +268,9 @@ print(results.summary())
 print(f"\nNormality test p-value: {normality_test.pvalue:.4f}")
 ```
 
-Slide 10: Linear Support Vector Classification
+Trình bày 10: Phân loại tuyến hỗ trợ thuộc tính
 
-Linear SVC implements support vector classification using a linear kernel, offering efficient classification for linearly separable data with built-in regularization and margin optimization capabilities.
+Hỗ trợ phát triển tuyến tính SVC khai báo loại hỗ trợ bằng cách sử dụng tính năng tuyến nhân hạt, cung cấp khả năng phân loại kết quả hiệu quả cho dữ liệu có thể phân tích tuyến tính với khả năng chuẩn hóa và hợp lý trang web tối ưu.
 
 ```python
 from sklearn.svm import LinearSVC
@@ -308,9 +308,9 @@ $$C$$ is the penalty parameter
 '''
 ```
 
-Slide 11: Naive Bayes Implementation
+Trang trình bày 11: Triển khai Naive Bayes
 
-Naive Bayes classifiers implement Bayes' theorem with strong independence assumptions between features. This implementation shows Gaussian, Multinomial, and Bernoulli variants for different data distributions.
+Các bộ phân loại Naive Bayes thực hiện định lý Bayes với các giả định độc lập mạnh mẽ giữa các đặc điểm. Việc phát triển này hiển thị các biến Gaussian, Multinomial và Bernoulli cho các phân phối dữ liệu khác nhau.
 
 ```python
 from sklearn.naive_bayes import GaussianNB, MultinomialNB, BernoulliNB
@@ -342,9 +342,9 @@ for name, (clf, X_train_transformed) in classifiers.items():
 print(pd.DataFrame(results).round(3))
 ```
 
-Slide 12: K-Nearest Neighbors Classifier
+Trang trình bày 12: Bộ phân loại hàng xóm gần nhất K
 
-K-Nearest Neighbors is a versatile non-parametric classifier that makes predictions based on the majority class of the k nearest training samples. This implementation includes distance metrics optimization and neighbor weighting schemes.
+K-Nearest Neighbors là một công cụ phân loại phi tham số linh hoạt, đưa ra các kỳ vọng dựa trên lớp đa số của k mẫu đào tạo gần nhất. Việc phát triển này bao gồm các khoảng cách vật liệu tối ưu hóa và các sơ đồ kỹ thuật số cận cảnh.
 
 ```python
 from sklearn.neighbors import KNeighborsClassifier
@@ -385,9 +385,9 @@ print(f"Optimal k: {optimal_k}")
 print(f"Best cross-validation score: {max(cv_scores):.4f}")
 ```
 
-Slide 13: SVC with RBF Kernel Implementation
+Trang trình bày 13: SVC với phát triển hạt nhân RBF
 
-Support Vector Classification with RBF kernel enables non-linear decision boundaries through implicit feature space transformation. This implementation focuses on kernel parameter optimization and boundary visualization.
+Phân loại hỗ trợ RBF nhân cho phép các ranh giới quyết định tuyến tính thông qua chuyển đổi không ẩn biểu tượng gian lận. Việc phát triển tập trung vào hạt nhân tham số tối ưu hóa và trực quan hóa ranh giới.
 
 ```python
 from sklearn.svm import SVC
@@ -432,10 +432,10 @@ print(f"Best parameters: {grid_search.best_params_}")
 print(f"Accuracy score: {grid_search.best_score_:.4f}")
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-*   "A Tutorial on Support Vector Machines for Pattern Recognition" - [https://www.research.microsoft.com/pubs/67119/svmtutorial.pdf](https://www.research.microsoft.com/pubs/67119/svmtutorial.pdf)
-*   "Random Forests" by Leo Breiman - [https://link.springer.com/article/10.1023/A:1010933404324](https://link.springer.com/article/10.1023/A:1010933404324)
-*   "Gradient Boosting Machines: A Tutorial" - [https://arxiv.org/abs/1609.04747](https://arxiv.org/abs/1609.04747)
-*   "An Introduction to Statistical Learning" - [https://www.statlearning.com/](https://www.statlearning.com/)
-*   "Pattern Recognition and Machine Learning" - [https://www.springer.com/gp/book/9780387310732](https://www.springer.com/gp/book/9780387310732)
+* " Hướng dẫn sử dụng máy hỗ trợ để nhận dạng mẫu" - [https://www.research.microsoft.com/pubs/67119/svmtutorial.pdf](https://www.research.microsoft.com/pubs/67119/svmtutorial.pdf)
+* "Những khu rừng ngẫu nhiên" của Leo Breiman - [https://link.springer.com/article/10.1023/A:1010933404324](https://link.springer.com/article/10.1023/A:1010933404324)
+* "Máy tăng cường độ dốc: Hướng dẫn" - [https://arxiv.org/abs/1609.04747](https://arxiv.org/abs/1609.04747)
+* "Giới thiệu về Học Thống kê" - [https://www.statlearning.com/](https://www.statlearning.com/)
+* "Nhận dạng mẫu và máy học" - [https://www.springer.com/gp/book/9780387310732](https://www.springer.com/gp/book/9780387310732)

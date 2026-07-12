@@ -1,11 +1,11 @@
-## Advanced SQL Techniques! CTEs, Subqueries, and More
-Slide 1: Common Table Expressions (CTEs)
+## Kỹ thuật SQL nâng cao! CTE, truy vấn phụ và hơn thế nữa
+Trang trình bày 1: Biểu thức bảng chung (CTE)
 
-Common Table Expressions (CTEs)
+Biểu thức bảng chung (CTE)
 
-CTEs are temporary named result sets that exist within the scope of a single SQL statement. They simplify complex queries by breaking them into smaller, more manageable parts.
+CTE là các tập kết quả được đặt tên tạm thời tồn tại trong phạm vi của một câu lệnh SQL. Họ đơn giản hóa các truy vấn phức tạp bằng cách chia chúng thành các phần nhỏ hơn, dễ quản lý hơn.
 
-Code:
+Mã số:
 
 ```sql
 WITH sales_summary AS (
@@ -47,13 +47,13 @@ WHERE salary > (
 ORDER BY salary DESC;
 ```
 
-Slide 3: Self Joins
+Slide 3: Tự tham gia
 
-Self Joins
+Tự tham gia
 
-Self joins are used when a table needs to be joined with itself, typically to compare rows within the same table or to establish hierarchical relationships.
+Tự nối được sử dụng khi một bảng cần được nối với chính nó, thường là để so sánh các hàng trong cùng một bảng hoặc để thiết lập mối quan hệ phân cấp.
 
-Code:
+Mã số:
 
 ```sql
 SELECT
@@ -83,13 +83,13 @@ FROM employees
 ORDER BY department, salary DESC;
 ```
 
-Slide 5: Unions
+Slide 5: Công đoàn
 
-Unions
+Công đoàn
 
-UNION combines the result sets of two or more SELECT statements, removing duplicate rows by default. UNION ALL retains all rows, including duplicates.
+UNION kết hợp các tập hợp kết quả của hai hoặc nhiều câu lệnh SELECT, loại bỏ các hàng trùng lặp theo mặc định. UNION ALL giữ lại tất cả các hàng, kể cả các hàng trùng lặp.
 
-Code:
+Mã số:
 
 ```sql
 SELECT product_name, 'In Stock' AS status
@@ -105,13 +105,13 @@ WHERE stock_quantity = 0
 ORDER BY product_name;
 ```
 
-Slide 6: Date Manipulation
+Slide 6: Thao tác ngày tháng
 
-Date Manipulation
+Thao tác ngày
 
-SQL provides various functions to work with dates, allowing for complex date-based calculations and filtering.
+SQL cung cấp nhiều hàm khác nhau để làm việc với ngày tháng, cho phép tính toán và lọc dựa trên ngày phức tạp.
 
-Code:
+Mã số:
 
 ```sql
 SELECT
@@ -149,13 +149,13 @@ GROUP BY product_category
 ORDER BY product_category;
 ```
 
-Slide 8: Unpivoting Techniques
+Trang trình bày 8: Kỹ thuật không xoay vòng
 
-Unpivoting Techniques
+Kỹ thuật không xoay vòng
 
-Unpivoting converts columns into rows, useful for normalizing data or preparing it for analysis.
+Việc bỏ xoay chuyển đổi các cột thành hàng, hữu ích cho việc chuẩn hóa dữ liệu hoặc chuẩn bị dữ liệu để phân tích.
 
-Code:
+Mã số:
 
 ```sql
 SELECT
@@ -221,13 +221,13 @@ CREATE TABLE enrollments (
 );
 ```
 
-Slide 10: Communicating Your Code
+Trang trình bày 10: Truyền đạt mã của bạn
 
-Communicating Your Code
+Truyền đạt mã của bạn
 
-Clear communication of SQL code is crucial for collaboration and maintenance. Use comments, consistent formatting, and meaningful names for tables, columns, and aliases.
+Việc truyền đạt mã SQL rõ ràng là rất quan trọng cho sự cộng tác và bảo trì. Sử dụng nhận xét, định dạng nhất quán và tên có ý nghĩa cho bảng, cột và bí danh.
 
-Code:
+Mã số:
 
 ```sql
 -- Calculate the average order value per customer
@@ -298,13 +298,13 @@ ORDER BY growth_percentage DESC
 LIMIT 5;
 ```
 
-Slide 12: Query Optimization
+Trang trình bày 12: Tối ưu hóa truy vấn
 
-Query Optimization
+Tối ưu hóa truy vấn
 
-Query optimization involves improving the performance of SQL queries. Techniques include proper indexing, avoiding subqueries when possible, and using EXPLAIN to analyze query execution plans.
+Tối ưu hóa truy vấn liên quan đến việc cải thiện hiệu suất của các truy vấn SQL. Các kỹ thuật bao gồm lập chỉ mục thích hợp, tránh truy vấn phụ khi có thể và sử dụng EXPLAIN để phân tích kế hoạch thực hiện truy vấn.
 
-Code:
+Mã số:
 
 ```sql
 -- Before optimization
@@ -336,13 +336,13 @@ ORDER BY order_count DESC;
 CREATE INDEX idx_orders_customer_date ON orders (customer_id, order_date);
 ```
 
-Slide 13: QAing Data
+Trang trình bày 13: Dữ liệu QAing
 
-QAing Data
+Dữ liệu QAing
 
-Quality Assurance (QA) in SQL involves validating data integrity, consistency, and accuracy. This includes checking for null values, duplicate records, and ensuring data meets business rules.
+Đảm bảo chất lượng (QA) trong SQL liên quan đến việc xác thực tính toàn vẹn, tính nhất quán và độ chính xác của dữ liệu. Điều này bao gồm việc kiểm tra các giá trị null, bản ghi trùng lặp và đảm bảo dữ liệu đáp ứng các quy tắc kinh doanh.
 
-Code:
+Mã số:
 
 ```sql
 -- Check for null values in important columns
@@ -373,14 +373,14 @@ LEFT JOIN categories c ON p.category_id = c.category_id
 WHERE c.category_id IS NULL;
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-Additional Resources
+Tài nguyên bổ sung
 
-To further enhance your SQL skills, consider exploring the following resources:
+Để nâng cao hơn nữa các kỹ năng SQL của bạn, hãy xem xét khám phá các tài nguyên sau:
 
-1. "Efficient Query Processing for Data Science Workloads on Many-Core CPUs" by Orestis Polychroniou et al. (2019) ArXiv URL: [https://arxiv.org/abs/1906.01560](https://arxiv.org/abs/1906.01560)
-2. "Automating the Database Schema Evolution Process" by Isak Karlsson et al. (2020) ArXiv URL: [https://arxiv.org/abs/2010.05761](https://arxiv.org/abs/2010.05761)
-3. "Query Processing for Graph Analytics" by Angela Bonifati et al. (2020) ArXiv URL: [https://arxiv.org/abs/2012.06889](https://arxiv.org/abs/2012.06889)
+1. "Xử lý truy vấn hiệu quả cho khối lượng công việc khoa học dữ liệu trên CPU nhiều lõi" của Orestis Polychroniou và cộng sự. (2019) URL ArXiv: [https://arxiv.org/abs/1906.01560](https://arxiv.org/abs/1906.01560)
+2. "Tự động hóa quá trình phát triển lược đồ cơ sở dữ liệu" của Isak Karlsson và cộng sự. (2020) URL ArXiv: [https://arxiv.org/abs/2010.05761](https://arxiv.org/abs/2010.05761)
+3. "Xử lý truy vấn để phân tích đồ thị" của Angela Bonifati et al. (2020) URL ArXiv: [https://arxiv.org/abs/2012.06889](https://arxiv.org/abs/2012.06889)
 
-These papers provide insights into advanced SQL techniques, database optimization, and emerging trends in data management.
+Các bài viết này cung cấp cái nhìn sâu sắc về các kỹ thuật SQL nâng cao, tối ưu hóa cơ sở dữ liệu và các xu hướng mới nổi trong quản lý dữ liệu.

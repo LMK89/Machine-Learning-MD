@@ -1,7 +1,7 @@
-## SQL's Execution Flow
-Slide 1: SQL Query Order Processing in Python
+## Luồng thực thi của SQL
+Slide 1: Xử lý thứ tự truy vấn SQL trong Python
 
-SQL's logical processing order differs from its written syntax. Understanding this sequence is crucial for query optimization and debugging. We'll implement a Python class that demonstrates the actual execution flow of SQL operations.
+Thứ tự xử lý logic của SQL khác với cú pháp viết của nó. Hiểu trình tự này là rất quan trọng để tối ưu hóa và gỡ lỗi truy vấn. Chúng ta sẽ triển khai một lớp Python thể hiện luồng thực thi thực tế của các hoạt động SQL.
 
 ```python
 class SQLQueryProcessor:
@@ -33,9 +33,9 @@ class SQLQueryProcessor:
         return self
 ```
 
-Slide 2: Implementing GROUP BY and HAVING Operations
+Slide 2: Triển khai các thao tác GROUP BY và HAVING
 
-The GROUP BY operation aggregates data based on specified columns, while HAVING filters these groups. This implementation showcases how Python can mirror SQL's grouping mechanisms using dictionary-based aggregation.
+Hoạt động GROUP BY tổng hợp dữ liệu dựa trên các cột được chỉ định, trong khi HAVING lọc các nhóm này. Việc triển khai này cho thấy cách Python có thể phản chiếu các cơ chế nhóm của SQL bằng cách sử dụng tính năng tổng hợp dựa trên từ điển.
 
 ```python
 def group_by_clause(self, key_func, agg_func):
@@ -63,9 +63,9 @@ def having_clause(self, condition):
     return self
 ```
 
-Slide 3: SELECT and ORDER BY Implementation
+Slide 3: CHỌN VÀ ĐẶT HÀNG BẰNG CÁCH THỰC HIỆN
 
-The SELECT phase determines which columns appear in the final output, while ORDER BY sorts the results. This implementation demonstrates how to handle column selection and sorting operations in Python.
+Giai đoạn SELECT xác định cột nào xuất hiện trong kết quả cuối cùng, trong khi ORDER BY sắp xếp kết quả. Việc triển khai này trình bày cách xử lý các thao tác chọn và sắp xếp cột trong Python.
 
 ```python
 def select_clause(self, columns):
@@ -89,9 +89,9 @@ def order_by_clause(self, key_func, reverse=False):
     return self
 ```
 
-Slide 4: LIMIT and OFFSET Implementation
+Slide 4: Thực hiện GIỚI HẠN và BẮT ĐẦU
 
-The LIMIT clause controls the number of rows returned, while OFFSET determines the starting point. This implementation demonstrates how Python list slicing can effectively replicate SQL's pagination functionality.
+Mệnh đề LIMIT kiểm soát số hàng được trả về, trong khi OFFSET xác định điểm bắt đầu. Việc triển khai này chứng tỏ cách cắt danh sách Python có thể sao chép một cách hiệu quả chức năng phân trang của SQL.
 
 ```python
 def limit_clause(self, limit, offset=0):
@@ -104,9 +104,9 @@ def execute(self):
     return self.current_state
 ```
 
-Slide 5: Real-World Example - Sales Data Analysis
+Trang trình bày 5: Ví dụ thực tế - Phân tích dữ liệu bán hàng
 
-Using our SQLQueryProcessor to analyze sales data demonstrates the practical application of SQL execution order. This example processes customer transactions to identify top-performing products by revenue.
+Việc sử dụng SQLQueryProcessor của chúng tôi để phân tích dữ liệu bán hàng thể hiện ứng dụng thực tế của thứ tự thực thi SQL. Ví dụ này xử lý các giao dịch của khách hàng để xác định các sản phẩm có hiệu suất cao nhất theo doanh thu.
 
 ```python
 # Sample sales data
@@ -134,9 +134,9 @@ results = processor.from_clause('transactions')\
     .execute()
 ```
 
-Slide 6: Implementing Window Functions
+Slide 6: Thực hiện các chức năng của cửa sổ
 
-Window functions perform calculations across related rows. This implementation shows how to create moving averages and running totals while maintaining SQL's execution order.
+Các hàm cửa sổ thực hiện tính toán trên các hàng liên quan. Việc triển khai này cho thấy cách tạo các đường trung bình động và tổng chạy trong khi vẫn duy trì thứ tự thực thi của SQL.
 
 ```python
 def window_function(self, partition_by, window_func, window_size=None):
@@ -192,9 +192,9 @@ def subquery(self, subquery_processor, correlation_condition=None):
     return self
 ```
 
-Slide 8: Advanced Aggregation Functions
+Slide 8: Hàm tổng hợp nâng cao
 
-Implementation of complex aggregation functions that go beyond basic operations like SUM and COUNT. This showcases how to handle statistical computations while maintaining SQL's execution order.
+Triển khai các hàm tổng hợp phức tạp vượt xa các phép toán cơ bản như SUM và COUNT. Phần này trình bày cách xử lý các phép tính thống kê trong khi vẫn duy trì thứ tự thực thi của SQL.
 
 ```python
 class AdvancedAggregations:
@@ -245,9 +245,9 @@ def calculate_moving_average(processor, window_size=3):
         .execute()
 ```
 
-Slide 10: CTE (Common Table Expression) Implementation
+Trang trình bày 10: Triển khai CTE (Biểu thức bảng chung)
 
-Common Table Expressions provide a way to create temporary named result sets. This implementation shows how to handle CTEs while maintaining proper execution order and scope.
+Biểu thức bảng chung cung cấp một cách để tạo các tập kết quả được đặt tên tạm thời. Việc triển khai này cho thấy cách xử lý CTE trong khi vẫn duy trì thứ tự và phạm vi thực hiện phù hợp.
 
 ```python
 class CTEManager:
@@ -279,9 +279,9 @@ result = cte_manager\
     .execute()
 ```
 
-Slide 11: Query Optimization Implementation
+Trang trình bày 11: Triển khai tối ưu hóa truy vấn
 
-This implementation demonstrates how to optimize query execution by rewriting predicates and analyzing execution paths while maintaining SQL's logical order.
+Việc triển khai này thể hiện cách tối ưu hóa việc thực thi truy vấn bằng cách viết lại các biến vị ngữ và phân tích các đường dẫn thực thi trong khi vẫn duy trì trật tự logic của SQL.
 
 ```python
 class QueryOptimizer:
@@ -339,9 +339,9 @@ class QueryProfiler:
         return self.metrics
 ```
 
-Slide 13: Error Handling and Query Validation
+Slide 13: Xử lý lỗi và xác thực truy vấn
 
-Implementation of comprehensive error handling and query validation mechanisms to ensure data integrity and proper execution order throughout the query processing pipeline.
+Triển khai cơ chế xử lý lỗi và xác thực truy vấn toàn diện để đảm bảo tính toàn vẹn dữ liệu và thứ tự thực hiện phù hợp trong suốt quy trình xử lý truy vấn.
 
 ```python
 class QueryValidator:
@@ -399,10 +399,10 @@ class TransactionManager:
         del self.active_transactions[transaction_id]
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-*   ArXiv: "Query Processing in Modern Database Systems" - [https://arxiv.org/abs/2201.00249](https://arxiv.org/abs/2201.00249)
-*   ArXiv: "Optimization Techniques for Complex Database Queries" - [https://arxiv.org/abs/2103.09391](https://arxiv.org/abs/2103.09391)
-*   ArXiv: "Transaction Processing: Concepts and Techniques" - [https://arxiv.org/abs/1909.05658](https://arxiv.org/abs/1909.05658)
-*   Reference: Database Systems: The Complete Book (Garcia-Molina et al.)
-*   Search Keywords: "SQL Query Optimization", "Database Query Processing", "Transaction Management Systems"
+* ArXiv: "Xử lý truy vấn trong hệ thống cơ sở dữ liệu hiện đại" - [https://arxiv.org/abs/2201.00249](https://arxiv.org/abs/2201.00249)
+* ArXiv: "Kỹ thuật tối ưu hóa cho các truy vấn cơ sở dữ liệu phức tạp" - [https://arxiv.org/abs/2103.09391](https://arxiv.org/abs/2103.09391)
+* ArXiv: "Xử lý giao dịch: Khái niệm và kỹ thuật" - [https://arxiv.org/abs/1909.05658](https://arxiv.org/abs/1909.05658)
+* Tham khảo: Hệ thống cơ sở dữ liệu: Cuốn sách hoàn chỉnh (Garcia-Molina et al.)
+* Từ khóa tìm kiếm: “Tối ưu hóa truy vấn SQL”, “Xử lý truy vấn cơ sở dữ liệu”, “Hệ thống quản lý giao dịch”

@@ -1,7 +1,7 @@
-## Class-Based Decorators in Python
-Slide 1: Introduction to Class-Based Decorators
+## Trình trang trí dựa trên lớp trong Python
+Trang trình bày 1: Giới thiệu về Trang trí dựa trên lớp
 
-Class-based decorators represent an advanced implementation pattern in Python that allows classes to modify or enhance the behavior of functions or methods. Unlike function decorators, class decorators maintain state and provide a more object-oriented approach to extending functionality.
+Các trình trang trí dựa trên lớp đại diện cho một mẫu triển khai nâng cao trong Python cho phép các lớp sửa đổi hoặc nâng cao hoạt động của các hàm hoặc phương thức. Không giống như các trình trang trí hàm, các trình trang trí lớp duy trì trạng thái và cung cấp một cách tiếp cận hướng đối tượng hơn để mở rộng chức năng.
 
 ```python
 class CountCalls:
@@ -23,9 +23,9 @@ print(example())  # Output: Call count: 1 \n Function executed
 print(example())  # Output: Call count: 2 \n Function executed
 ```
 
-Slide 2: State Management in Decorators
+Slide 2: Quản lý trạng thái trong trang trí
 
-Class decorators excel at maintaining state between function calls, offering a powerful mechanism for tracking execution history, caching results, or implementing complex behavioral patterns that persist across multiple invocations.
+Trình trang trí lớp vượt trội trong việc duy trì trạng thái giữa các lệnh gọi hàm, cung cấp cơ chế mạnh mẽ để theo dõi lịch sử thực thi, lưu kết quả vào bộ đệm hoặc triển khai các mẫu hành vi phức tạp tồn tại qua nhiều lệnh gọi.
 
 ```python
 class Memoize:
@@ -49,9 +49,9 @@ print(fibonacci(10))  # Output: 55 (computed once)
 print(fibonacci(10))  # Output: 55 (retrieved from cache)
 ```
 
-Slide 3: Method Decoration
+Slide 3: Phương pháp trang trí
 
-Class-based decorators can modify both instance methods and class methods, requiring careful handling of the self parameter and proper method binding to maintain the correct context and accessibility of instance attributes.
+Trình trang trí dựa trên lớp có thể sửa đổi cả phương thức phiên bản và phương thức lớp, yêu cầu xử lý cẩn thận tham số self và liên kết phương thức thích hợp để duy trì ngữ cảnh chính xác và khả năng truy cập của các thuộc tính phiên bản.
 
 ```python
 class ValidateArguments:
@@ -77,9 +77,9 @@ e = Example()
 print(e.process_data("test"))  # Output: Processing: test
 ```
 
-Slide 4: Decorator Factories
+Slide 4: Trang trí nhà xưởng
 
-A decorator factory pattern allows for customizable class-based decorators that can accept parameters to modify their behavior, providing a flexible framework for creating specialized decorators with configurable features.
+Mẫu nhà máy trang trí cho phép các trình trang trí dựa trên lớp có thể tùy chỉnh có thể chấp nhận các tham số để sửa đổi hành vi của chúng, cung cấp một khung linh hoạt để tạo các trình trang trí chuyên dụng với các tính năng có thể định cấu hình.
 
 ```python
 class Retry:
@@ -113,9 +113,9 @@ def unstable_operation():
     return "Success"
 ```
 
-Slide 5: Parametrized Class Decorators
+Slide 5: Trang trí lớp có tham số
 
-Class decorators can accept initialization parameters to customize their behavior while still maintaining the ability to access and modify the decorated function. This pattern enables flexible configuration of decorator behavior at decoration time.
+Trình trang trí lớp có thể chấp nhận các tham số khởi tạo để tùy chỉnh hành vi của chúng trong khi vẫn duy trì khả năng truy cập và sửa đổi chức năng được trang trí. Mẫu này cho phép cấu hình linh hoạt hành vi trang trí tại thời điểm trang trí.
 
 ```python
 class RateLimiter:
@@ -148,9 +148,9 @@ for _ in range(3):
 print(f"Execution time: {time.time() - start:.2f} seconds")
 ```
 
-Slide 6: Nested Class Decorators
+Trang trình bày 6: Trang trí lớp lồng nhau
 
-Multiple class decorators can be applied to a single function, creating a chain of modifications where each decorator adds its own functionality. Understanding the order of execution is crucial for proper implementation.
+Nhiều trình trang trí lớp có thể được áp dụng cho một hàm duy nhất, tạo ra một chuỗi sửa đổi trong đó mỗi trình trang trí thêm chức năng riêng của nó. Hiểu thứ tự thực hiện là rất quan trọng để thực hiện đúng.
 
 ```python
 class LogCalls:
@@ -185,9 +185,9 @@ def complex_operation(x, y):
 result = complex_operation(3, 4)
 ```
 
-Slide 7: Class Decorator Implementation for Data Validation
+Trang trình bày 7: Triển khai trang trí lớp để xác thực dữ liệu
 
-Class decorators provide an elegant solution for implementing data validation and type checking, ensuring that function arguments meet specific criteria before execution proceeds.
+Trình trang trí lớp cung cấp một giải pháp tinh tế để triển khai xác thực dữ liệu và kiểm tra kiểu, đảm bảo rằng các đối số của hàm đáp ứng các tiêu chí cụ thể trước khi tiến hành thực thi.
 
 ```python
 class ValidateTypes:
@@ -218,9 +218,9 @@ except TypeError as e:
     print(f"Error: {e}")
 ```
 
-Slide 8: Context-Aware Class Decorators
+Trang trình bày 8: Trình trang trí lớp nhận biết ngữ cảnh
 
-Context-aware decorators can modify their behavior based on the runtime environment or the state of the decorated object, providing dynamic functionality adaptation.
+Trình trang trí nhận biết ngữ cảnh có thể sửa đổi hành vi của chúng dựa trên môi trường thời gian chạy hoặc trạng thái của đối tượng được trang trí, cung cấp khả năng thích ứng chức năng động.
 
 ```python
 class EnvironmentAware:
@@ -261,9 +261,9 @@ os.environ['ENV'] = 'development'
 print(process_data("test"))
 ```
 
-Slide 9: Performance Monitoring with Class Decorators
+Slide 9: Giám sát hiệu suất với Class Decorators
 
-Class decorators can implement sophisticated performance monitoring by tracking execution metrics across multiple invocations, providing valuable insights into function behavior and resource utilization patterns.
+Trình trang trí lớp có thể triển khai giám sát hiệu suất phức tạp bằng cách theo dõi số liệu thực thi qua nhiều lệnh gọi, cung cấp thông tin chi tiết có giá trị về hành vi chức năng và mô hình sử dụng tài nguyên.
 
 ```python
 class PerformanceMonitor:
@@ -302,9 +302,9 @@ for i in range(5):
     result = complex_calculation(1000 * i)
 ```
 
-Slide 10: Thread Safety in Class Decorators
+Slide 10: An toàn chỉ trong trang trí lớp học
 
-Implementing thread-safe class decorators requires careful consideration of shared state and concurrent access patterns to ensure reliable behavior in multi-threaded environments.
+Việc triển khai các trình trang trí lớp an toàn theo luồng đòi hỏi phải xem xét cẩn thận trạng thái chia sẻ và các mẫu truy cập đồng thời để đảm bảo hoạt động đáng tin cậy trong môi trường đa luồng.
 
 ```python
 import threading
@@ -349,9 +349,9 @@ for t in threads:
     t.join()
 ```
 
-Slide 11: Real-World Application: API Rate Limiting
+Trang trình bày 11: Ứng dụng thực tế: Giới hạn tốc độ API
 
-This implementation demonstrates a practical application of class decorators for API rate limiting, including request tracking and automatic throttling for multiple endpoints.
+Việc triển khai này thể hiện ứng dụng thực tế của trình trang trí lớp để giới hạn tốc độ API, bao gồm theo dõi yêu cầu và điều chỉnh tự động cho nhiều điểm cuối.
 
 ```python
 from time import time
@@ -403,9 +403,9 @@ for i in range(4):
         print(f"Request {i}: {str(e)}")
 ```
 
-Slide 12: Real-World Application: Database Connection Pool
+Slide 12: Ứng dụng thực tế: Nhóm kết nối cơ sở dữ liệu
 
-This implementation showcases a practical database connection pooling system using class decorators, managing connection lifecycle and ensuring efficient resource utilization.
+Việc triển khai này giới thiệu một hệ thống tổng hợp kết nối cơ sở dữ liệu thực tế bằng cách sử dụng các trình trang trí lớp, quản lý vòng đời kết nối và đảm bảo sử dụng tài nguyên hiệu quả.
 
 ```python
 import queue
@@ -484,9 +484,9 @@ for t in threads:
     t.join()
 ```
 
-Slide 13: Advanced Error Handling with Class Decorators
+Slide 13: Xử lý lỗi nâng cao với Class Decorators
 
-This implementation demonstrates sophisticated error handling and recovery mechanisms using class decorators, including custom exception handling, logging, and automatic retry logic.
+Việc triển khai này thể hiện các cơ chế phục hồi và xử lý lỗi phức tạp bằng cách sử dụng các trình trang trí lớp, bao gồm xử lý ngoại lệ tùy chỉnh, ghi nhật ký và logic thử lại tự động.
 
 ```python
 import functools
@@ -558,15 +558,15 @@ except ConnectionError as e:
     print(f"Final error: {e}")
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-*   Advanced Python Decorators: Real-World Use Cases and Patterns
-    *   Search: "class based decorators python patterns site:arxiv.org"
-*   Performance Optimization with Python Decorators
-    *   [https://docs.python.org/3/howto/descriptor.html](https://docs.python.org/3/howto/descriptor.html)
-    *   [https://realpython.com/primer-on-python-decorators/](https://realpython.com/primer-on-python-decorators/)
-*   Concurrent Programming with Python Decorators
-    *   Search: "concurrent programming decorators python site:python.org"
-*   Thread Safety and Synchronization Patterns in Python
-    *   [https://docs.python.org/3/library/threading.html](https://docs.python.org/3/library/threading.html)
-    *   Search: "thread safe decorators python implementation site:github.com"
+* Trình trang trí Python nâng cao: Các trường hợp và mẫu sử dụng trong thế giới thực
+    * Tìm kiếm: "trang web mẫu python trang trí dựa trên lớp: arxiv.org"
+* Tối ưu hóa hiệu suất với Python Decorators
+    * [https://docs.python.org/3/howto/descriptor.html](https://docs.python.org/3/howto/descriptor.html)
+    * [https://realpython.com/primer-on-python-designators/](https://realpython.com/primer-on-python-designators/)
+* Lập trình đồng thời với Python Decorators
+    * Tìm kiếm: "trang web lập trình đồng thời python:python.org"
+* Các mẫu đồng bộ hóa và an toàn luồng trong Python
+    * [https://docs.python.org/3/library/threading.html](https://docs.python.org/3/library/threading.html)
+    * Tìm kiếm: "trang web triển khai python trang trí an toàn luồng: github.com"

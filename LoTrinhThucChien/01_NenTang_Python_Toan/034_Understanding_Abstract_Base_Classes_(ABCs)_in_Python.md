@@ -1,7 +1,7 @@
-## Understanding Abstract Base Classes (ABCs) in Python
-Slide 1: Introduction to Abstract Base Classes
+## Tìm hiểu các lớp cơ sở trừu tượng (ABC) trong Python
+Slide 1: Giới thiệu về các lớp cơ sở trừu tượng
 
-Abstract Base Classes (ABCs) provide a way to define interfaces in Python, enforcing a contract that derived classes must fulfill. They act as a blueprint for other classes, establishing a set of methods and properties that concrete implementations must provide.
+Các lớp cơ sở trừu tượng (ABC) cung cấp một cách để xác định các giao diện trong Python, thực thi một hợp đồng mà các lớp dẫn xuất phải thực hiện. Chúng hoạt động như một kế hoạch chi tiết cho các lớp khác, thiết lập một tập hợp các phương thức và thuộc tính mà việc triển khai cụ thể phải cung cấp.
 
 ```python
 from abc import ABC, abstractmethod
@@ -19,9 +19,9 @@ class Shape(ABC):
 # shape = Shape()  # TypeError: Can't instantiate abstract class
 ```
 
-Slide 2: Implementing Abstract Classes
+Slide 2: Triển khai các lớp trừu tượng
 
-Abstract classes define an interface contract that subclasses must follow. When a class inherits from an abstract base class, it must implement all abstract methods, or it will raise a TypeError when instantiated.
+Các lớp trừu tượng xác định một hợp đồng giao diện mà các lớp con phải tuân theo. Khi một lớp kế thừa từ một lớp cơ sở trừu tượng, nó phải triển khai tất cả các phương thức trừu tượng, nếu không nó sẽ gây ra TypeError khi được khởi tạo.
 
 ```python
 class Rectangle(Shape):
@@ -40,9 +40,9 @@ rect = Rectangle(5, 3)
 print(f"Area: {rect.area()}")  # Output: Area: 15
 ```
 
-Slide 3: Abstract Properties and Methods
+Slide 3: Thuộc tính và phương thức trừu tượng
 
-Abstract classes can define both abstract methods and abstract properties, requiring implementing classes to provide both behavioral and data interfaces. This ensures complete contract fulfillment.
+Các lớp trừu tượng có thể định nghĩa cả phương thức trừu tượng và thuộc tính trừu tượng, yêu cầu các lớp triển khai phải cung cấp cả giao diện hành vi và dữ liệu. Điều này đảm bảo thực hiện đầy đủ hợp đồng.
 
 ```python
 class Vehicle(ABC):
@@ -64,9 +64,9 @@ class ElectricCar(Vehicle):
         return "Starting electric motor"
 ```
 
-Slide 4: Multiple Abstract Base Classes
+Trang trình bày 4: Nhiều lớp cơ sở trừu tượng
 
-Python supports inheriting from multiple abstract base classes, allowing for complex interface combinations. This enables flexible contract definition while maintaining strict implementation requirements.
+Python hỗ trợ kế thừa từ nhiều lớp cơ sở trừu tượng, cho phép kết hợp giao diện phức tạp. Điều này cho phép định nghĩa hợp đồng linh hoạt trong khi vẫn duy trì các yêu cầu thực hiện nghiêm ngặt.
 
 ```python
 class Drawable(ABC):
@@ -85,9 +85,9 @@ class GameSprite(Drawable, Moveable):
         return "Moving sprite"
 ```
 
-Slide 5: Real-World Example - Data Processing Pipeline
+Trang trình bày 5: Ví dụ thực tế - Quy trình xử lý dữ liệu
 
-Abstract base classes excel in defining processing pipelines where different implementations may handle various data types or sources while maintaining a consistent interface.
+Các lớp cơ sở trừu tượng vượt trội trong việc xác định các quy trình xử lý trong đó các cách triển khai khác nhau có thể xử lý các loại dữ liệu hoặc nguồn khác nhau trong khi vẫn duy trì một giao diện nhất quán.
 
 ```python
 class DataProcessor(ABC):
@@ -114,9 +114,9 @@ class CSVProcessor(DataProcessor):
         return f"Saving to {destination}"
 ```
 
-Slide 6: Abstract Methods with Implementation
+Slide 6: Các phương pháp trừu tượng và triển khai
 
-Abstract classes can provide default implementations while still requiring method override, offering both flexibility and default behavior when needed.
+Các lớp trừu tượng có thể cung cấp các triển khai mặc định trong khi vẫn yêu cầu ghi đè phương thức, cung cấp cả tính linh hoạt và hành vi mặc định khi cần.
 
 ```python
 class DataValidator(ABC):
@@ -138,9 +138,9 @@ validator = NumericValidator()
 print(validator.validate(42))  # Output: True
 ```
 
-Slide 7: Abstract Base Classes with Metaclasses
+Trang trình bày 7: Các lớp cơ sở trừu tượng với siêu dữ liệu
 
-Understanding metaclasses in abstract base classes provides deeper control over class creation and validation, enabling custom behavior during class definition.
+Hiểu siêu dữ liệu trong các lớp cơ sở trừu tượng cung cấp khả năng kiểm soát sâu hơn đối với việc tạo và xác thực lớp, cho phép hành vi tùy chỉnh trong quá trình định nghĩa lớp.
 
 ```python
 from abc import ABCMeta
@@ -157,9 +157,9 @@ class BaseValidator(metaclass=ValidatorMeta):
     pass
 ```
 
-Slide 8: Design Patterns with ABCs - Observer Pattern
+Slide 8: Mẫu thiết kế với ABC - Observer Pattern
 
-Abstract base classes are fundamental in implementing design patterns. Here's an implementation of the Observer pattern using ABCs.
+Các lớp cơ sở trừu tượng là nền tảng trong việc triển khai các mẫu thiết kế. Đây là cách triển khai mẫu Observer bằng cách sử dụng ABC.
 
 ```python
 class Subject(ABC):
@@ -182,7 +182,7 @@ class Observer(ABC):
         pass
 ```
 
-Slide 9: Source Code for Observer Pattern Implementation
+Trang trình bày 9: Mã nguồn để triển khai mẫu quan sát
 
 ```python
 class ConcreteSubject(Subject):
@@ -214,9 +214,9 @@ subject.attach(observer)
 subject.state = "New State"  # Output: Observer updated with state: New State
 ```
 
-Slide 10: Template Method Pattern Using ABCs
+Trang trình bày 10: Mẫu phương thức mẫu sử dụng ABC
 
-The Template Method pattern defines an algorithm's skeleton in a base class while letting subclasses override specific steps without changing the algorithm's structure.
+Mẫu Phương thức mẫu xác định khung của thuật toán trong lớp cơ sở trong khi cho phép các lớp con ghi đè các bước cụ thể mà không thay đổi cấu trúc của thuật toán.
 
 ```python
 class DataMiner(ABC):
@@ -267,9 +267,9 @@ result = pdf_miner.mine("document.pdf")
 print(result)  # Output: Loading transformed PDF data: Transforming PDF data: Extracting PDF data from document.pdf
 ```
 
-Slide 12: Unit Testing with ABCs
+Slide 12: Unit Test với ABCs
 
-Abstract base classes provide a powerful foundation for unit testing, allowing test cases to verify that concrete implementations satisfy the required interface.
+Các lớp cơ sở trừu tượng cung cấp nền tảng mạnh mẽ cho thử nghiệm đơn vị, cho phép các trường hợp thử nghiệm xác minh rằng việc triển khai cụ thể đáp ứng giao diện được yêu cầu.
 
 ```python
 import unittest
@@ -289,9 +289,9 @@ if __name__ == '__main__':
     unittest.main()
 ```
 
-Slide 13: Advanced ABC Features - Abstract Class Properties
+Slide 13: Tính năng ABC nâng cao - Thuộc tính lớp trừu tượng
 
-Understanding advanced features of ABCs includes working with class properties and static methods while maintaining the abstract contract.
+Hiểu các tính năng nâng cao của ABC bao gồm làm việc với các thuộc tính lớp và các phương thức tĩnh trong khi vẫn duy trì hợp đồng trừu tượng.
 
 ```python
 class PaymentProcessor(ABC):
@@ -315,9 +315,9 @@ class StripeProcessor(PaymentProcessor):
         return currency_code in ['USD', 'EUR', 'GBP']
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-*   [https://arxiv.org/abs/1809.03193](https://arxiv.org/abs/1809.03193) - "Design Patterns in Python: A Systematic Literature Review"
-*   [https://arxiv.org/abs/2007.08983](https://arxiv.org/abs/2007.08983) - "Object-Oriented Design Pattern Detection Using Machine Learning"
-*   [https://arxiv.org/abs/1906.11678](https://arxiv.org/abs/1906.11678) - "On the Impact of Programming Language Abstractions"
-*   [https://arxiv.org/abs/2012.14631](https://arxiv.org/abs/2012.14631) - "Automated Detection of Python Code Smells"
+* [https://arxiv.org/abs/1809.03193](https://arxiv.org/abs/1809.03193) - "Các mẫu thiết kế trong Python: Đánh giá tài liệu có hệ thống"
+* [https://arxiv.org/abs/2007.08983](https://arxiv.org/abs/2007.08983) - "Phát hiện mẫu thiết kế hướng đối tượng bằng máy học"
+* [https://arxiv.org/abs/1906.11678](https://arxiv.org/abs/1906.11678) - "Về tác động của việc trừu tượng hóa ngôn ngữ lập trình"
+* [https://arxiv.org/abs/2012.14631](https://arxiv.org/abs/2012.14631) - "Tự động phát hiện mùi mã Python"

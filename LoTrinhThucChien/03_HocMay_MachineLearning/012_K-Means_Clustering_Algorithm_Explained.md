@@ -1,7 +1,7 @@
-## K-Means Clustering Algorithm Explained
-Slide 1: K-Means Implementation from Scratch
+## Giải thích thuật toán phân cụm K-Means
+Trình bày 1: Triển khai K-Means từ đầu
 
-The fundamental k-means clustering algorithm implements iterative refinement to partition n observations into k clusters. Each cluster is represented by the mean of its points, called the centroid. This implementation demonstrates the core algorithm without external libraries.
+Thuật toán phân cụm k-có nghĩa là cơ sở thực hiện sẵn sàng lọc lại để phân tích phân tích thành cụm. Mỗi cụm được biểu hiện bằng giá trị trung bình của các điểm của nó, được gọi là tâm. Việc phát triển này có thể xây dựng cốt lõi thuật toán mà không cần bên ngoài thư viện.
 
 ```python
 import numpy as np
@@ -38,9 +38,9 @@ kmeans = KMeans(k=3)
 labels = kmeans.fit(X)
 ```
 
-Slide 2: Mathematical Foundations of K-Means
+Slide 2: Cơ sở toán học của K-Means
 
-The k-means algorithm minimizes the within-cluster sum of squares (WCSS) through an objective function. This slide presents the mathematical formulation and demonstrates how to compute the objective function value.
+Thuật toán k-trung bình giảm thiểu tổng hợp phương pháp trong cụm (WCSS) thông qua hàm mục tiêu. Slide này trình bày công thức toán học và trình bày cách tính toán các mục tiêu giá trị.
 
 ```python
 def compute_wcss(X, labels, centroids):
@@ -68,9 +68,9 @@ wcss = compute_wcss(X, labels, kmeans.centroids)
 print(f"Within-cluster sum of squares: {wcss:.2f}")
 ```
 
-Slide 3: Elbow Method Implementation
+Slide 3: Thực hiện phương pháp xẹp tay
 
-The elbow method helps determine the optimal number of clusters by plotting the WCSS against different k values. The "elbow" point represents diminishing returns in cluster compactness as k increases.
+Phương pháp giải pháp giúp xác định các cụm tối ưu bằng cách vẽ sơ đồ WCSS theo các k giá trị khác nhau. Điểm "khuỷu tay" biểu thị hiệu suất giảm dần về độ nén của cụm khi k tăng.
 
 ```python
 import matplotlib.pyplot as plt
@@ -97,9 +97,9 @@ def plot_elbow_curve(X, k_range):
     plt.show()
 ```
 
-Slide 4: Silhouette Analysis Implementation
+Trình bày 4: Triển khai phân tích bóng tối
 
-Silhouette analysis measures how similar an object is to its own cluster compared to other clusters. The silhouette score ranges from -1 to 1, where higher values indicate better-defined clusters and optimal cluster separation.
+Phân tích bóng đo cường độ tương tự nhau của một đối tượng với cụm chính của nó và các cụm khác. Điểm bóng dao động từ -1 đến 1, trong đó giá trị cao hơn biểu thức các cụm được xác định rõ hơn và khả năng phân tích cụm tối ưu.
 
 ```python
 def silhouette_score(X, labels, centroids):
@@ -137,9 +137,9 @@ score = silhouette_score(X, labels, kmeans.centroids)
 print(f"Silhouette Score: {score:.3f}")
 ```
 
-Slide 5: K-Means++ Initialization
+Trang trình bày 5: Khởi tạo K-Means++
 
-K-means++ initialization improves the standard k-means by selecting initial centroids that are far apart, leading to better convergence and final clustering results. This implementation demonstrates the probabilistic selection process.
+Việc khởi tạo K-means++ cải thiện tiêu chuẩn k-mean bằng cách chọn các tâm điểm đầu cách xa nhau, dẫn đến kết quả phân cụm cuối cùng và hội tụ tốt hơn. Việc thực hiện này có thể thực hiện quá trình lựa chọn cụ thể.
 
 ```python
 def kmeans_plus_plus_init(X, k):
@@ -174,9 +174,9 @@ kmeans_pp = KMeansPlusPlus(k=3)
 labels = kmeans_pp.fit(X)
 ```
 
-Slide 6: Real-World Application - Customer Segmentation
+Slide 6: Ứng dụng thực tế - Phân khúc khách hàng
 
-The following implementation demonstrates customer segmentation using k-means clustering on customer purchase data. The example includes data preprocessing, scaling, and visualization of customer segments.
+Việc phát triển khai sau đây có thể thực hiện phân khúc khách hàng bằng cách sử dụng phân cụm k-mean trên dữ liệu mua hàng của khách hàng. Ví dụ này bao gồm tiền xử lý dữ liệu, chia tỷ lệ và trực quan hóa các phân khúc khách hàng.
 
 ```python
 import pandas as pd
@@ -211,9 +211,9 @@ plt.colorbar(scatter, label='Cluster')
 plt.show()
 ```
 
-Slide 7: Handling High-Dimensional Data
+Slide 7: Xử lý chiều cao dữ liệu
 
-When dealing with high-dimensional data, k-means requires additional considerations for distance calculations and visualization. This implementation includes dimensionality reduction using PCA before clustering and visualization tools.
+Khi xử lý dữ liệu nhiều chiều, k-mean yêu cầu cân bổ sung bổ sung để tính toán khoảng cách và trực quan hóa. Việc phát triển điều này bao gồm việc giảm kích thước bằng cách sử dụng PCA trước các công cụ phân tích và trực quan hóa.
 
 ```python
 import numpy as np
@@ -254,9 +254,9 @@ X_reduced, labels = hd_kmeans.fit_transform(X)
 hd_kmeans.plot_clusters(X_reduced)
 ```
 
-Slide 8: Mini-Batch K-Means Implementation
+Trang trình bày 8: Triển khai K-Means theo thời gian nhỏ
 
-Mini-batch k-means processes subsets of the data in each iteration, making it more memory-efficient for large datasets. This implementation includes batch processing and incremental centroid updates.
+K-mean lô nhỏ xử lý các tập dữ liệu trong mỗi chu kỳ, giúp tiết kiệm bộ nhớ hơn cho các tập dữ liệu lớn. Việc phát triển này bao gồm xử lý hàng loạt và cập nhật trung tâm gia tăng.
 
 ```python
 class MiniBatchKMeans:
@@ -298,9 +298,9 @@ mini_batch = MiniBatchKMeans(k=5, batch_size=500)
 labels = mini_batch.fit(X_large)
 ```
 
-Slide 9: Cluster Validation Metrics
+Trang trình bày 9: Số xác thực cụm
 
-A comprehensive set of metrics to validate cluster quality, including Calinski-Harabasz Index and Davies-Bouldin Index, helps in assessing clustering performance beyond the silhouette score.
+Một bộ dữ liệu toàn diện để xác thực chất lượng cụm, bao Chỉ bao gồm số Calinski-Harabasz và Chỉ số Davies-Bouldin, giúp đánh giá hiệu suất phân cụm ngoài điểm bóng.
 
 ```python
 def cluster_validation_metrics(X, labels, centroids):
@@ -366,9 +366,9 @@ metrics = cluster_validation_metrics(X, labels, kmeans.centroids)
 print(f"Validation Metrics:\n{metrics}")
 ```
 
-Slide 10: Online K-Means for Streaming Data
+Trang trình bày 10: K-Means trực tuyến để truyền dữ liệu
 
-This implementation handles streaming data by updating clusters incrementally as new data points arrive. The algorithm maintains running statistics and adapts centroids in real-time without storing all historical data.
+Việc khai báo này xử lý dữ liệu phát trực tuyến bằng cách cập nhật các cụm tăng dần khi có dữ liệu mới. Thuật toán duy trì số thống kê dữ liệu đang chạy và điều chỉnh tâm trí theo thời gian thực mà không lưu trữ tất cả lịch sử dữ liệu.
 
 ```python
 class OnlineKMeans:
@@ -427,9 +427,9 @@ for _ in range(5):
     plt.show()
 ```
 
-Slide 11: Weighted K-Means Implementation
+Trang trình bày 11: Triển khai K-Means has important
 
-Weighted k-means assigns different importance to data points during clustering, useful when certain observations are more significant or reliable than others.
+Phương tiện k có số phân bổ tầm quan trọng khác nhau cho các điểm dữ liệu trong quá trình phân cụm, hữu ích khi một số lượng sát nhất được xác định có ý nghĩa hoặc đáng tin cậy hơn các lượng sát khác.
 
 ```python
 class WeightedKMeans:
@@ -478,9 +478,9 @@ plt.title('Weighted K-Means Clustering')
 plt.show()
 ```
 
-Slide 12: Robust K-Means with Median Centers
+Trang trình bày 12: K-Means mạnh mẽ với trung tâm trung bình
 
-This implementation uses medians instead of means for centroid calculation, making the algorithm more robust to outliers and non-spherical cluster shapes. The median-based approach provides better stability in the presence of noise.
+Việc phát triển này sử dụng trung vị trí thay vì phương tiện để tính toán tâm trí, làm cho thuật toán trở nên mạnh mẽ hơn đối với các giá trị ngoại lệ và mô hình không phải hình cầu. Cách tiếp cận dựa trên trung tâm mang lại sự ổn định tốt hơn khi có nhiễu.
 
 ```python
 class RobustKMeans:
@@ -546,9 +546,9 @@ ax2.set_title('Robust K-Means')
 plt.show()
 ```
 
-Slide 13: Real-World Application - Image Segmentation
+Slide 13: Ứng dụng thực tế - Phân đoạn ảnh
 
-This implementation demonstrates k-means clustering for image segmentation, converting an image into a specified number of dominant colors. The example includes color space conversion and pixel clustering.
+Việc phát triển này có thể cung cấp khả năng phân cụm k-mean để phân tích hình ảnh, chuyển đổi hình ảnh thành một số chủ đạo màu được chỉ định. Ví dụ bao gồm chuyển đổi màu không gian và phân cụm pixel.
 
 ```python
 import numpy as np
@@ -612,9 +612,9 @@ def segment_image_example(image_path, k=5):
 # segment_image_example('example_image.jpg', k=5)
 ```
 
-Slide 14: Parallel K-Means Implementation
+Trang trình bày 14: Triển khai ca khúc K-Means
 
-This implementation leverages multiprocessing to parallelize the computation of distances and cluster assignments, significantly improving performance for large datasets while maintaining clustering quality.
+Việc phát triển này khai thác khả năng xử lý đa năng để bài hát hóa việc tính toán khoảng cách và phân công cụm, cải thiện đáng kể hiệu suất cho các tập dữ liệu lớn trong khi vẫn duy trì chất lượng phân cụm.
 
 ```python
 import multiprocessing as mp
@@ -684,17 +684,17 @@ X_large = np.random.randn(100000, 10)
 compare_performance(X_large, k=5)
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-The following ArXiv papers provide comprehensive insights into k-means clustering algorithms, optimizations, and applications:
+Các bài viết ArXiv sau đây cung cấp những hiểu biết toàn diện về các thuật toán, tối ưu hóa và ứng dụng phân cụm k-means:
 
-*   [https://arxiv.org/abs/1503.00900](https://arxiv.org/abs/1503.00900) - "Mini-batch k-means clustering of streaming and evolving data"
-*   [https://arxiv.org/abs/1908.04664](https://arxiv.org/abs/1908.04664) - "A Survey of Clustering With Deep Learning: From the Perspective of Network Architecture"
-*   [https://arxiv.org/abs/2002.11645](https://arxiv.org/abs/2002.11645) - "Accelerated k-means clustering algorithm using dimensionality reduction and parallelization"
-*   [https://arxiv.org/abs/1912.00643](https://arxiv.org/abs/1912.00643) - "A Comprehensive Survey of Clustering Algorithms: State-of-the-Art Machine Learning Applications, Taxonomy, Challenges, and Future Research Prospects"
-*   [https://arxiv.org/abs/1902.04938](https://arxiv.org/abs/1902.04938) - "Clustering with Deep Learning: Taxonomy and New Methods"
+* [https://arxiv.org/abs/1503.00900](https://arxiv.org/abs/1503.00900) - "Mini-batch k-có nghĩa là phân cụm dữ liệu phát trực tuyến và phát triển"
+* [https://arxiv.org/abs/1908.04664](https://arxiv.org/abs/1908.04664) - "Khảo sát về phân cụm với học sâu: Từ góc nhìn của kiến trúc mạng"
+* [https://arxiv.org/abs/2002.11645](https://arxiv.org/abs/2002.11645) - "Thuật toán phân cụm k-mean được tăng tốc bằng cách giảm kích thước và song hóa"
+* [https://arxiv.org/abs/1912.00643](https://arxiv.org/abs/1912.00643) - "Khảo sát toàn diện về chiến thuật phân phân: Ứng dụng học máy tiên tiến, phân loại, tinh thức và triển vọng nghiên cứu trong tương lai"
+* [https://arxiv.org/abs/1902.04938](https://arxiv.org/abs/1902.04938) - "Phân cụm với Deep Learning: Phân loại và phương pháp mới"
 
-Slide 16: Results and Performance Metrics
+Trang trình bày 16: Kết quả và Hiệu suất
 
 ```python
 def generate_performance_report(X, algorithms):

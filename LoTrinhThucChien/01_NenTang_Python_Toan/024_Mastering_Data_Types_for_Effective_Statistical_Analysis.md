@@ -1,8 +1,8 @@
-## Mastering Data Types for Effective Statistical Analysis
+## Nắm vững các loại dữ liệu để phân tích thống kê hiệu quả
 
-Slide 1: Understanding Data Types and Their Statistical Properties
+Trang trình bày 1: Tìm hiểu các loại dữ liệu và thuộc tính thống kê của chúng
 
-Statistical analysis requires proper understanding of variable types - categorical, ordinal, and continuous data. Different types demand specific statistical approaches and visualizations. This code demonstrates how to identify, analyze and visualize different data types using Python's pandas and seaborn libraries.
+Phân tích thống kê đòi hỏi sự hiểu biết đúng đắn về các loại biến - dữ liệu phân loại, thứ tự và liên tục. Các loại khác nhau đòi hỏi cách tiếp cận thống kê và trực quan hóa cụ thể. Mã này trình bày cách xác định, phân tích và trực quan hóa các loại dữ liệu khác nhau bằng cách sử dụng thư viện pandas và seaborn của Python.
 
 ```python
 import pandas as pd
@@ -52,9 +52,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 2: Descriptive Statistics Implementation
+Slide 2: Triển khai thống kê mô tả
 
-Understanding central tendencies and data spread is crucial for initial data analysis. This implementation calculates comprehensive descriptive statistics including mean, median, mode, range, standard deviation, skewness, and kurtosis with proper statistical interpretations.
+Hiểu xu hướng trung tâm và sự lan truyền dữ liệu là rất quan trọng để phân tích dữ liệu ban đầu. Việc triển khai này tính toán số liệu thống kê mô tả toàn diện bao gồm giá trị trung bình, trung vị, chế độ, phạm vi, độ lệch chuẩn, độ lệch và độ nhọn với các diễn giải thống kê thích hợp.
 
 ```python
 import pandas as pd
@@ -114,9 +114,9 @@ for key, value in stats_analyzer.distribution_test().items():
         print(f"{key}: {value:.4f}")
 ```
 
-Slide 3: Advanced Data Visualization Strategy
+Trang trình bày 3: Chiến lược trực quan hóa dữ liệu nâng cao
 
-Data visualization requires a systematic approach to reveal patterns, relationships, and anomalies effectively. The technique combines statistical analysis with visual representation to create meaningful insights from complex datasets through advanced plotting mechanisms.
+Trực quan hóa dữ liệu đòi hỏi một cách tiếp cận có hệ thống để phát hiện các mô hình, mối quan hệ và sự bất thường một cách hiệu quả. Kỹ thuật này kết hợp phân tích thống kê với biểu diễn trực quan để tạo ra những hiểu biết có ý nghĩa từ các bộ dữ liệu phức tạp thông qua các cơ chế vẽ đồ thị nâng cao.
 
 ```python
 import pandas as pd
@@ -156,9 +156,9 @@ plot = create_advanced_plots(data, 'feature1', 'feature2')
 plt.show()
 ```
 
-Slide 4: Outlier Detection and Handling
+Trang trình bày 4: Phát hiện và xử lý ngoại lệ
 
-Statistical outlier detection implements robust methods to identify anomalous data points using z-scores and interquartile ranges. This implementation provides automated detection and visualization of outliers in numerical datasets.
+Phát hiện ngoại lệ thống kê triển khai các phương pháp mạnh mẽ để xác định các điểm dữ liệu bất thường bằng cách sử dụng điểm z và phạm vi liên vùng. Việc triển khai này cung cấp khả năng phát hiện và trực quan hóa tự động các ngoại lệ trong bộ dữ liệu số.
 
 ```python
 import numpy as np
@@ -195,9 +195,9 @@ print(f"Z-score outliers found: {len(zscore_outliers)}")
 print(f"IQR outliers found: {len(iqr_outliers)}")
 ```
 
-Slide 5: Statistical Correlation Analysis Framework
+Slide 5: Khung phân tích tương quan thống kê
 
-This implementation provides a comprehensive framework for analyzing correlations between variables using multiple statistical methods. It includes significance testing and visualization capabilities for deeper insights into variable relationships.
+Việc triển khai này cung cấp một khuôn khổ toàn diện để phân tích mối tương quan giữa các biến bằng nhiều phương pháp thống kê. Nó bao gồm khả năng kiểm tra ý nghĩa và trực quan hóa để hiểu sâu hơn về các mối quan hệ có thể thay đổi.
 
 ```python
 import numpy as np
@@ -254,9 +254,9 @@ analyzer.plot_correlation_matrix()
 plt.show()
 ```
 
-Slide 6: Hypothesis Testing Framework
+Trang trình bày 6: Khung kiểm tra giả thuyết
 
-The hypothesis testing framework implements common statistical tests including t-tests, chi-square, and ANOVA. This code provides a structured approach to conducting and interpreting statistical significance tests.
+Khung kiểm tra giả thuyết thực hiện các kiểm tra thống kê phổ biến bao gồm kiểm định t, chi bình phương và ANOVA. Mã này cung cấp một cách tiếp cận có cấu trúc để tiến hành và giải thích các thử nghiệm có ý nghĩa thống kê.
 
 ```python
 import numpy as np
@@ -310,9 +310,9 @@ print(f"P-value: {anova_result['p_value']:.4f}")
 print(f"Significant: {anova_result['significant']}")
 ```
 
-Slide 7: Statistical Assumptions Validation
+Trang trình bày 7: Xác thực các giả định thống kê
 
-Statistical assumption testing ensures the validity of analytical methods. This implementation provides tools for checking normality, homoscedasticity, and independence assumptions required for parametric tests.
+Kiểm tra giả định thống kê đảm bảo tính hợp lệ của các phương pháp phân tích. Việc triển khai này cung cấp các công cụ để kiểm tra tính chuẩn, tính đồng nhất và các giả định độc lập cần thiết cho các thử nghiệm tham số.
 
 ```python
 import numpy as np
@@ -388,9 +388,9 @@ tester.plot_diagnostics()
 plt.show()
 ```
 
-Slide 8: Confidence Intervals Implementation
+Trang trình bày 8: Thực hiện khoảng tin cậy
 
-A robust implementation for calculating and visualizing confidence intervals across different statistical scenarios. This approach includes bootstrap methods and parametric interval estimation with visualization capabilities.
+Triển khai mạnh mẽ để tính toán và trực quan hóa khoảng tin cậy trong các kịch bản thống kê khác nhau. Cách tiếp cận này bao gồm các phương pháp khởi động và ước tính khoảng tham số với khả năng trực quan hóa.
 
 ```python
 import numpy as np
@@ -451,9 +451,9 @@ print(f"95% CI: ({boot_ci['lower_bound']:.2f}, "
       f"{boot_ci['upper_bound']:.2f})")
 ```
 
-Slide 9: Regression Analysis Framework
+Slide 9: Khung phân tích hồi quy
 
-This comprehensive regression framework implements multiple regression techniques with built-in diagnostics and model validation. The implementation includes feature selection, model evaluation, and residual analysis.
+Khung hồi quy toàn diện này thực hiện nhiều kỹ thuật hồi quy với chẩn đoán tích hợp và xác thực mô hình. Việc thực hiện bao gồm lựa chọn tính năng, đánh giá mô hình và phân tích phần dư.
 
 ```python
 import numpy as np
@@ -519,9 +519,9 @@ print(f"Mean: {residual_analysis['mean']:.4f}")
 print(f"Std: {residual_analysis['std']:.4f}")
 ```
 
-Slide 10: Advanced Time Series Analysis
+Trang trình bày 10: Phân tích chuỗi thời gian nâng cao
 
-Time series analysis requires specialized statistical methods for handling temporal dependencies and patterns. This implementation provides core functionality for decomposition, stationarity testing, and forecasting using established statistical techniques.
+Phân tích chuỗi thời gian đòi hỏi các phương pháp thống kê chuyên biệt để xử lý các mẫu và sự phụ thuộc theo thời gian. Việc triển khai này cung cấp chức năng cốt lõi để phân rã, kiểm tra tính dừng và dự báo bằng cách sử dụng các kỹ thuật thống kê đã được thiết lập.
 
 ```python
 import numpy as np
@@ -590,9 +590,9 @@ print(f"Trend variance: {np.var(components['trend']):.4f}")
 print(f"Residual variance: {np.var(components['residual']):.4f}")
 ```
 
-Slide 11: Statistical Power Analysis
+Slide 11: Phân tích sức mạnh thống kê
 
-Statistical power analysis is crucial for experiment design and result interpretation. This implementation provides tools for calculating sample sizes and power for various statistical tests.
+Phân tích sức mạnh thống kê là rất quan trọng cho việc thiết kế thử nghiệm và giải thích kết quả. Việc triển khai này cung cấp các công cụ để tính toán cỡ mẫu và công suất cho các thử nghiệm thống kê khác nhau.
 
 ```python
 import numpy as np
@@ -660,9 +660,9 @@ effect_size = analyzer.effect_size_estimation(control, treatment)
 print(f"\nObserved effect size: {effect_size:.4f}")
 ```
 
-Slide 12: Multivariate Analysis Tools
+Slide 12: Công cụ phân tích đa biến
 
-This implementation provides essential tools for multivariate statistical analysis, including principal component analysis and factor analysis implementations from scratch.
+Việc triển khai này cung cấp các công cụ cần thiết để phân tích thống kê đa biến, bao gồm triển khai phân tích thành phần chính và phân tích nhân tố từ đầu.
 
 ```python
 import numpy as np
@@ -732,9 +732,9 @@ print("\nFeature loadings for first component:")
 print(loadings[:, 0])
 ```
 
-Slide 13: Machine Learning Model Diagnostics
+Trang trình bày 13: Chẩn đoán mô hình học máy
 
-This implementation provides comprehensive tools for diagnosing and validating machine learning models, focusing on key metrics, cross-validation, and learning curve analysis.
+Việc triển khai này cung cấp các công cụ toàn diện để chẩn đoán và xác thực các mô hình học máy, tập trung vào các số liệu chính, xác thực chéo và phân tích đường cong học tập.
 
 ```python
 import numpy as np
@@ -808,9 +808,9 @@ print(f"Accuracy: {metrics['accuracy']:.4f}")
 print(f"F1 Score: {metrics['f1_score']:.4f}")
 ```
 
-Slide 14: Feature Selection and Importance Analysis
+Slide 14: Lựa chọn tính năng và phân tích tầm quan trọng
 
-This implementation provides tools for analyzing feature importance and selecting relevant features using statistical methods and machine learning techniques.
+Việc triển khai này cung cấp các công cụ để phân tích tầm quan trọng của tính năng và chọn các tính năng có liên quan bằng phương pháp thống kê và kỹ thuật học máy.
 
 ```python
 import numpy as np
@@ -885,10 +885,10 @@ print(f"Features selected by both methods: "
       f"{len(selection_results['intersection'])}")
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-1.  arxiv.org/abs/1810.03993 - "A Comprehensive Survey of Model Validation Techniques"
-2.  arxiv.org/abs/1904.06836 - "Statistical Learning: Contemporary Applications"
-3.  arxiv.org/abs/1811.12808 - "Modern Statistical Methods for Data Science"
-4.  arxiv.org/abs/1903.11714 - "Advanced Time Series Analysis Methods"
-5.  arxiv.org/abs/1902.03129 - "Feature Selection in High-Dimensional Data"
+1. arxiv.org/abs/1810.03993 - "Khảo sát toàn diện về kỹ thuật xác thực mô hình"
+2. arxiv.org/abs/1904.06836 - "Học thống kê: Ứng dụng đương đại"
+3. arxiv.org/abs/1811.12808 - "Phương pháp thống kê hiện đại cho khoa học dữ liệu"
+4. arxiv.org/abs/1903.11714 - "Phương pháp phân tích chuỗi thời gian nâng cao"
+5. arxiv.org/abs/1902.03129 - "Lựa chọn tính năng trong dữ liệu chiều cao"

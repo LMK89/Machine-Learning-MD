@@ -1,7 +1,7 @@
-## Gradient Descent from Scratch in Python
-Slide 1: Introduction to Gradient Descent
+## Giảm độ dốc từ đầu trong Python
+Slide 1: Giới thiệu về Độ dốc giảm dần
 
-Gradient descent is a fundamental optimization algorithm used in machine learning to minimize the cost function of a model. It iteratively adjusts the model's parameters in the direction of steepest descent of the cost function.
+Độ dốc giảm dần là một cơ sở hóa ưu tiên tối ưu thuật toán được sử dụng trong máy học để giảm thiểu các chức năng tối thiểu của mô hình. Nó điều chỉnh vòng lặp lặp lại các tham số của mô hình theo hướng tăng dần của hàm chi phí.
 
 ```python
 import numpy as np
@@ -20,9 +20,9 @@ plt.ylabel('Cost')
 plt.show()
 ```
 
-Slide 2: The Gradient
+Trang trình bày 2: Độ dốc
 
-The gradient is a vector of partial derivatives that points in the direction of steepest ascent. In gradient descent, we move in the opposite direction to minimize the cost function.
+Độ dốc là một cường đạo chức năng riêng biệt hướng đi lên dốc nhất. Trong quá trình giảm độ dốc, chúng tôi chuyển hướng ngược lại để giảm thiểu chi phí.
 
 ```python
 def gradient(x):
@@ -39,9 +39,9 @@ plt.axhline(y=0, color='r', linestyle='--')
 plt.show()
 ```
 
-Slide 3: Basic Gradient Descent Algorithm
+Slide 3: Thuật toán giảm dần cơ sở dữ liệu
 
-The algorithm updates the parameters iteratively by subtracting the product of the learning rate and the gradient from the current parameter values.
+Cập nhật thuật toán các vòng tham số đi lặp lại bằng cách trừ đi tốc độ học và độ dốc của các tham số giá trị hiện tại.
 
 ```python
 def gradient_descent(start_x, learning_rate, num_iterations):
@@ -56,9 +56,9 @@ optimal_x = gradient_descent(start_x=5, learning_rate=0.1, num_iterations=20)
 print(f"Optimal x: {optimal_x:.4f}")
 ```
 
-Slide 4: Learning Rate
+Slide 4: Tỷ lệ học tập
 
-The learning rate determines the step size at each iteration. A too large learning rate may overshoot the minimum, while a too small one may result in slow convergence.
+Bước xác định tốc độ học ở mỗi vòng lặp. Tốc độ học quá lớn có thể vượt quá mức tối thiểu, trong khi tốc độ học quá nhỏ có thể dẫn đến tốc độ học chậm.
 
 ```python
 learning_rates = [0.01, 0.1, 0.5]
@@ -81,9 +81,9 @@ plt.ylabel('x')
 plt.show()
 ```
 
-Slide 5: Stochastic Gradient Descent
+Trang trình bày 5: Giảm dần độ dốc ngẫu nhiên
 
-Stochastic Gradient Descent (SGD) computes the gradient using a single random sample from the dataset, making it faster and able to escape local minima more easily.
+Giảm dần độ dốc ngẫu nhiên (SGD) tính toán độ dốc bằng cách sử dụng một mẫu ngẫu nhiên duy nhất từ ​​​​tập dữ liệu, làm cho nó nhanh hơn và có thể thoát khỏi bộ cực tiểu địa phương dễ dàng hơn.
 
 ```python
 import random
@@ -106,9 +106,9 @@ w, b = stochastic_gradient_descent(data, labels, 0.01, 1000)
 print(f"Learned parameters: w = {w:.4f}, b = {b:.4f}")
 ```
 
-Slide 6: Mini-batch Gradient Descent
+Trang trình bày 6: Giảm dần độ dốc theo chiều nhỏ
 
-Mini-batch gradient descent combines the advantages of both batch and stochastic gradient descent by using a small random subset of the data for each update.
+Giảm dần độ dốc theo lô nhỏ kết hợp các ưu tiên của độ dốc tăng dần theo lô và ngẫu nhiên bằng cách sử dụng một tập hợp dữ liệu ngẫu nhiên nhỏ cho mỗi lần cập nhật.
 
 ```python
 def mini_batch_gradient_descent(data, labels, batch_size, learning_rate, num_iterations):
@@ -137,9 +137,9 @@ w, b = mini_batch_gradient_descent(data, labels, batch_size=2, learning_rate=0.0
 print(f"Learned parameters: w = {w:.4f}, b = {b:.4f}")
 ```
 
-Slide 7: Momentum
+Trang trình bày 7: Động lực
 
-Momentum helps accelerate gradient descent in the relevant direction and dampens oscillations. It does this by adding a fraction of the previous update to the current one.
+Động lực giúp tăng tốc độ giảm độ dốc theo hướng thích hợp và làm giảm dao động. Nó thực hiện điều này bằng cách thêm một phần của bản cập nhật or trước vào bản cập nhật or hiện tại.
 
 ```python
 def momentum_gradient_descent(start_x, learning_rate, momentum, num_iterations):
@@ -156,9 +156,9 @@ optimal_x = momentum_gradient_descent(start_x=5, learning_rate=0.1, momentum=0.9
 print(f"Optimal x: {optimal_x:.4f}")
 ```
 
-Slide 8: Adaptive Learning Rates
+Trình bày 8: Tỷ lệ học ứng dụng
 
-Adaptive learning rate methods adjust the learning rate for each parameter. One popular method is AdaGrad, which adapts the learning rate to the parameters, performing smaller updates for frequently occurring features.
+Phương pháp điều chỉnh tốc độ học thích ứng với điều chỉnh tốc độ học cho từng tham số. Một phương pháp phổ biến là AdaGrad, phương pháp này điều chỉnh tốc độ học theo các tham số, thực hiện cập nhật nhỏ hơn cho các tính năng thường xuyên xuất hiện.
 
 ```python
 def adagrad(start_x, learning_rate, num_iterations):
@@ -179,9 +179,9 @@ optimal_x = adagrad(start_x=5, learning_rate=1, num_iterations=20)
 print(f"Optimal x: {optimal_x:.4f}")
 ```
 
-Slide 9: Gradient Descent for Multivariable Functions
+Trang trình bày 9: Độ dốc giảm dần cho các hàm đa biến
 
-In practice, we often deal with functions of multiple variables. Gradient descent can be extended to work with these functions by computing partial derivatives for each variable.
+Trong thực tế, họ thường xử lý nhiều hàm. Độ dốc giảm dần có thể được mở rộng để hoạt động với các hàm này bằng cách tính toán hàm riêng cho từng biến.
 
 ```python
 def multivariable_cost(x, y):
@@ -205,9 +205,9 @@ optimal_point = multivariable_gradient_descent(start_x=5, start_y=5, learning_ra
 print(f"Optimal point: x = {optimal_point[0]:.4f}, y = {optimal_point[1]:.4f}")
 ```
 
-Slide 10: Visualizing Gradient Descent
+Trang trình bày 10: Tăng dần độ dốc trực quan
 
-Visualizing the path of gradient descent can help understand how the algorithm converges to the minimum. Let's create a contour plot and show the optimization path.
+Hình dung đường dốc tăng dần có thể giúp hiểu được thuật toán lũy tiến đến mức tối thiểu. Vui lòng tạo một đường viền biểu đồ và hiển thị mức độ ưu tiên của đường dẫn.
 
 ```python
 def plot_gradient_descent(start_x, start_y, learning_rate, num_iterations):
@@ -237,9 +237,9 @@ def plot_gradient_descent(start_x, start_y, learning_rate, num_iterations):
 plot_gradient_descent(start_x=8, start_y=8, learning_rate=0.1, num_iterations=50)
 ```
 
-Slide 11: Real-life Example: Linear Regression
+Slide 11: Ví dụ thực tế: Hồi quy tuyến tính
 
-Gradient descent is commonly used in linear regression to find the best-fitting line for a set of data points.
+Độ dốc giảm dần thường được sử dụng trong tuyến tính hồi phục để tìm đường phù hợp nhất cho một tập dữ liệu.
 
 ```python
 import numpy as np
@@ -275,9 +275,9 @@ plt.show()
 print(f"Estimated parameters: intercept = {theta[0][0]:.4f}, slope = {theta[1][0]:.4f}")
 ```
 
-Slide 12: Real-life Example: Image Classification
+Slide 12: Ví dụ thực tế: Phân loại hình ảnh
 
-Gradient descent is crucial in training neural networks for image classification tasks. Let's use a simple example with the MNIST dataset.
+Giảm dần độ dốc là rất quan trọng trong công việc đào tạo mạng lưới thần kinh cho các nhiệm vụ phân loại hình ảnh. Vui lòng sử dụng một ví dụ đơn giản cho MNIST data file.
 
 ```python
 from tensorflow.keras.datasets import mnist
@@ -314,9 +314,9 @@ plt.legend()
 plt.show()
 ```
 
-Slide 13: Challenges and Considerations
+Slide 13: Các công thức và cân nhắc
 
-Gradient descent, while powerful, faces challenges such as getting stuck in local minima, slow convergence for ill-conditioned problems, and the need for careful hyperparameter tuning. Advanced variants like Adam and RMSprop address some of these issues.
+Việc giảm độ dốc, mặc dù mạnh mẽ nhưng phải đối mặt với các công thức như bị kẹt trong cực tiểu cục bộ, hội tụ chậm đối với các vấn đề không được điều chỉnh và nhu cầu điều chỉnh siêu kỹ thuật số cẩn thận. Các biến có thể nâng cao như Adam và RMSprop giải quyết một số vấn đề này.
 
 ```python
 import numpy as np
@@ -337,12 +337,12 @@ plt.axhline(y=0, color='r', linestyle='--')
 plt.show()
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-For those interested in diving deeper into gradient descent and optimization algorithms, here are some recommended resources:
+Đối với những người muốn tìm hiểu sâu hơn về các thuật toán tối ưu hóa và giảm độ dốc, dưới đây là một số tài nguyên được xuất bản:
 
-1. "Optimization for Machine Learning" by Suvrit Sra, Sebastian Nowozin, and Stephen J. Wright (MIT Press)
-2. "Gradient Descent Revisited: A New Perspective Based on Path-Following" by Bin Shi et al. (arXiv:2008.11266)
-3. "An Overview of Gradient Descent Optimization Algorithms" by Sebastian Ruder (arXiv:1609.04747)
+1. "Tối ưu hóa cho máy học" của Suvrit Sra, Sebastian Nowozin và Stephen J. Wright (Nhà xuất bản MIT)
+2. "Xem lại phần gốc theo độ dốc: Một góc nhìn mới dựa trên việc đi theo con đường" của Bin Shi et al. (arXiv:2008.11266)
+3. "Tổng quan về các thuật toán tối ưu hóa giảm dần độ dốc" của Sebastian Ruder (arXiv:1609.04747)
 
-These papers can be found on ArXiv.org by searching for their respective arXiv IDs.
+Bạn có thể tìm thấy những tờ giấy này trên ArXiv.org bằng cách tìm kiếm ID arXiv tương ứng của chúng.

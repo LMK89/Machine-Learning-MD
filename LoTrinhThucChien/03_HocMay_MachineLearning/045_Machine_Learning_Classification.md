@@ -1,7 +1,7 @@
-## Machine Learning Classification
-Slide 1: Introduction to Classification
+## Phân loại máy học
+Slide 1: Giới thiệu về phân loại
 
-Classification is a fundamental task in machine learning where we predict discrete class labels for input data. It's widely used in various applications, from spam detection to medical diagnosis.
+Phân loại là một cơ sở nhiệm vụ trong máy học, nơi chúng tôi mong đợi các lớp nhãn riêng biệt cho đầu vào dữ liệu. Nó được sử dụng rộng rãi trong nhiều ứng dụng khác nhau, từ phát hiện thư rác đến dự đoán y tế.
 
 ```python
 from sklearn import datasets
@@ -25,9 +25,9 @@ y_pred = clf.predict(X_test)
 print(f"Accuracy: {clf.score(X_test, y_test):.2f}")
 ```
 
-Slide 2: Binary Classification
+Slide 2: Phân loại nhị phân
 
-Binary classification involves categorizing instances into one of two classes. It's commonly used in scenarios like spam detection or disease diagnosis.
+Phân loại nhị phân phân loại liên quan đến việc phân loại các trường hợp thành một trong hai lớp. Nó thường được sử dụng trong các vấn đề như phát hiện thư rác hoặc dự đoán bệnh.
 
 ```python
 from sklearn.linear_model import LogisticRegression
@@ -51,9 +51,9 @@ print(f"Predicted class: {prediction[0]}")
 print(f"Probability of class 1: {probability[0][1]:.2f}")
 ```
 
-Slide 3: Multiclass Classification
+Slide 3: Phân loại nhiều lớp
 
-Multiclass classification extends binary classification to problems with more than two classes. It's used in scenarios like digit recognition or species identification.
+Phân loại nhiều lớp phân loại nhị phân mở rộng cho các vấn đề có nhiều hơn hai lớp. Nó được sử dụng trong các vấn đề như nhận dạng chữ số hoặc nhận dạng loại.
 
 ```python
 from sklearn.svm import SVC
@@ -78,9 +78,9 @@ prediction = svm.predict(new_sample)
 print(f"Predicted class: {iris.target_names[prediction[0]]}")
 ```
 
-Slide 4: Multilabel Classification
+Trang trình bày 4: Phân loại nhiều nhãn
 
-Multilabel classification allows each instance to belong to multiple classes simultaneously. It's useful in scenarios like image tagging or document categorization.
+Phân loại đa nhãn cho phép mỗi phiên bản thuộc về nhiều lớp cùng một lúc. Nó hữu ích trong các vấn đề như gắn thẻ hình ảnh hoặc phân loại tài liệu.
 
 ```python
 from sklearn.multioutput import MultiOutputClassifier
@@ -103,9 +103,9 @@ prediction = multi_target_forest.predict(new_sample)
 print(f"Predicted labels: {prediction[0]}")
 ```
 
-Slide 5: Confusion Matrix
+Slide 5: Ma trận trộn lẫn
 
-A confusion matrix is a table that visualizes the performance of a classification model, showing the counts of true positives, true negatives, false positives, and false negatives.
+Ma trận hỗn loạn là một loại hiệu suất hóa trực tiếp của các loại mô hình, hiển thị số lượng kết quả dương tính thực, âm tính thực, dương tính giả và âm tính giả.
 
 ```python
 from sklearn.metrics import confusion_matrix
@@ -128,9 +128,9 @@ plt.title('Confusion Matrix')
 plt.show()
 ```
 
-Slide 6: Precision
+Trang trình bày 6: Độ chính xác
 
-Precision measures the accuracy of positive predictions. It's the ratio of true positives to the total number of positive predictions.
+Độ chính xác đo độ chính xác của cực kỳ vọng. Đó là tỷ lệ số lượng kết quả dương tính thực sự trên tổng số lượng dự kiến ​​​​cực.
 
 ```python
 from sklearn.metrics import precision_score
@@ -149,9 +149,9 @@ manual_precision = true_positives / predicted_positives
 print(f"Manual Precision: {manual_precision:.2f}")
 ```
 
-Slide 7: Recall
+Trang trình bày 7: Nhớ lại
 
-Recall measures the ability to find all positive instances. It's the ratio of true positives to the total number of actual positive instances.
+Thu thập các phép đo khả năng tìm thấy ở tất cả các trường hợp tích cực. Đó là tỷ lệ các trường hợp lý tính thực tế trên tổng số trường hợp dương tính thực tế.
 
 ```python
 from sklearn.metrics import recall_score
@@ -170,9 +170,9 @@ manual_recall = true_positives / actual_positives
 print(f"Manual Recall: {manual_recall:.2f}")
 ```
 
-Slide 8: F1 Score
+Trang trình bày 8: Điểm F1
 
-The F1 score is the harmonic mean of precision and recall, providing a single score that balances both metrics. It's particularly useful when you have an uneven class distribution.
+Điểm F1 là giá trị trung bình hài hòa của độ chính xác và khả năng thu hồi, cung cấp một điểm duy nhất cân bằng cả hai chỉ số. Nó đặc biệt hữu ích khi bạn có phân tích bổ sung lớp học không đồng đều.
 
 ```python
 from sklearn.metrics import f1_score
@@ -191,9 +191,9 @@ manual_f1 = 2 * (precision * recall) / (precision + recall)
 print(f"Manual F1 Score: {manual_f1:.2f}")
 ```
 
-Slide 9: ROC Curve and AUC
+Trang trình bày 9: Đường công ROC và AUC
 
-The Receiver Operating Characteristic (ROC) curve and Area Under the Curve (AUC) are used to evaluate the performance of binary classifiers across various threshold settings.
+Đường đặc tính hoạt động của máy thu (ROC) và Zone under the path (AUC) được sử dụng để đánh giá hiệu suất của các loại nhị phân phân loại trên các ngưỡng cài đặt khác nhau.
 
 ```python
 from sklearn.metrics import roc_curve, auc
@@ -221,9 +221,9 @@ plt.legend(loc="lower right")
 plt.show()
 ```
 
-Slide 10: Cross-Validation
+Trang trình bày 10: Xác thực chéo
 
-Cross-validation is a technique used to assess model performance and prevent overfitting by splitting the data into multiple training and validation sets.
+Xác thực chéo là một kỹ thuật được sử dụng để đánh giá hiệu suất của hình và ngăn chặn công việc bằng cách chia dữ liệu thành nhiều huấn luyện và xác thực.
 
 ```python
 from sklearn.model_selection import cross_val_score
@@ -244,9 +244,9 @@ print(f"Mean CV score: {cv_scores.mean():.2f}")
 print(f"Standard deviation of CV scores: {cv_scores.std():.2f}")
 ```
 
-Slide 11: Real-Life Example: Sentiment Analysis
+Trang trình bày 11: Ví dụ thực tế: Phân tích cảm xúc
 
-Sentiment analysis is a common application of text classification, used to determine the emotional tone behind words.
+Phân tích cảm xúc là một ứng dụng phổ biến của phân loại văn bản, được sử dụng để xác định sắc thái cảm xúc sau từ ngữ.
 
 ```python
 from sklearn.feature_extraction.text import CountVectorizer
@@ -280,9 +280,9 @@ sentiment_map = {0: "Negative", 1: "Positive", 2: "Neutral"}
 print(f"Predicted sentiment: {sentiment_map[prediction[0]]}")
 ```
 
-Slide 12: Real-Life Example: Image Classification
+Slide 12: Ví dụ thực tế: Phân loại hình ảnh
 
-Image classification is widely used in computer vision applications, from facial recognition to medical imaging diagnostics.
+Phân loại hình ảnh được sử dụng rộng rãi trong các ứng dụng thị giác máy tính, từ việc nhận dạng khuôn mặt đến siêu hình ảnh y tế.
 
 ```python
 from tensorflow.keras.applications import MobileNetV2
@@ -309,9 +309,9 @@ for i, (imagenet_id, label, score) in enumerate(decoded_preds):
     print(f"{i + 1}: {label} ({score:.2f})")
 ```
 
-Slide 13: Error Analysis
+Slide 13: Lỗi phân tích
 
-Error analysis involves examining misclassified instances to understand model weaknesses and guide improvements.
+Phân tích lỗi bao gồm việc kiểm tra các trường hợp được phân loại sai để hiểu điểm yếu của mô hình và hướng dẫn cải tiến.
 
 ```python
 from sklearn.metrics import classification_report
@@ -334,9 +334,9 @@ for true, pred in misclassified:
     print(f"True: {true}, Predicted: {pred}")
 ```
 
-Slide 14: Model Interpretation: Feature Importance
+Slide 14: thích mô hình: Tầm quan trọng của tính năng
 
-Understanding feature importance helps interpret model decisions and can guide feature engineering efforts.
+Hiểu tầm quan trọng của tính năng giúp diễn đàn giải quyết các quyết định về mô hình và có thể hướng dẫn các nỗ lực kỹ thuật tính năng.
 
 ```python
 from sklearn.ensemble import RandomForestClassifier
@@ -366,12 +366,12 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-For further exploration of classification techniques and performance metrics, consider these peer-reviewed articles:
+Để khám phá thêm về kỹ thuật phân loại và số hiệu suất, hãy xem xét các bài viết được bình duyệt sau:
 
-1. "A Survey of Deep Learning Techniques for Image Classification" - arXiv:2009.09809
-2. "Understanding Confusion Matrices" - arXiv:2008.05786
-3. "An Introduction to ROC Analysis" - arXiv:2008.04635
+1. "Khảo sát các kỹ thuật học sâu để phân loại hình ảnh" - arXiv:2009.09809
+2. "Hiểu về ma trận hỗn loạn" - arXiv:2008.05786
+3. "Giới thiệu về Phân tích ROC" - arXiv:2008.04635
 
-These resources provide in-depth discussions of advanced topics in machine learning classification.
+Những tài nguyên này cung cấp các bài thảo luận chuyên sâu về các chủ đề nâng cao trong phân loại máy học.

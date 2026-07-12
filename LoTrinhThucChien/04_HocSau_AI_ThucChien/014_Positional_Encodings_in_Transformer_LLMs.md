@@ -1,7 +1,7 @@
-## Positional Encodings in Transformer LLMs
-Slide 1: Understanding Positional Encodings Fundamentals
+## Mã hóa vị trí trong LLM máy biến áp
+Trang trình bày 1: Tìm hiểu các nguyên tắc cơ bản về mã hóa vị trí
 
-Positional encodings form the backbone of modern transformer architectures, enabling models to understand sequential information. They inject position-dependent signals into input embeddings through sophisticated mathematical transformations, preserving word order information during parallel processing.
+Mã hóa vị trí tạo thành xương sống của kiến ​​trúc máy biến áp hiện đại, cho phép các mô hình hiểu được thông tin tuần tự. Chúng đưa các tín hiệu phụ thuộc vào vị trí vào phần nhúng đầu vào thông qua các phép biến đổi toán học phức tạp, bảo toàn thông tin thứ tự từ trong quá trình xử lý song song.
 
 ```python
 import numpy as np
@@ -28,9 +28,9 @@ print("\nFirst position encoding (partial):")
 print(encodings[0, :10])  # Show first 10 values
 ```
 
-Slide 2: Implementing Absolute Positional Encodings
+Trang trình bày 2: Triển khai mã hóa vị trí tuyệt đối
 
-Absolute positional encodings assign unique position-dependent values to each token in the sequence. This implementation demonstrates how to create learnable position embeddings that can be trained alongside the model parameters.
+Mã hóa vị trí tuyệt đối chỉ định các giá trị phụ thuộc vào vị trí duy nhất cho mỗi mã thông báo trong chuỗi. Việc triển khai này trình bày cách tạo các phần nhúng vị trí có thể học được có thể được đào tạo cùng với các tham số mô hình.
 
 ```python
 import torch
@@ -57,9 +57,9 @@ output = pos_encoder(input_embeddings)
 print(f"Output shape: {output.shape}")
 ```
 
-Slide 3: Relative Positional Encodings Implementation
+Trang trình bày 3: Triển khai mã hóa vị trí tương đối
 
-Relative positional encodings capture relationships between tokens based on their relative distances. This approach offers better generalization for varying sequence lengths and creates more flexible position-aware representations.
+Mã hóa vị trí tương đối nắm bắt mối quan hệ giữa các mã thông báo dựa trên khoảng cách tương đối của chúng. Cách tiếp cận này cung cấp khả năng khái quát hóa tốt hơn cho các độ dài chuỗi khác nhau và tạo ra các biểu diễn nhận biết vị trí linh hoạt hơn.
 
 ```python
 import torch
@@ -94,9 +94,9 @@ rel_scores = rel_pos(queries, keys)
 print(f"Relative attention scores shape: {rel_scores.shape}")
 ```
 
-Slide 4: Sinusoidal Position Encoding Mathematics
+Slide 4: Toán mã hóa vị trí hình sin
 
-The mathematical foundation of sinusoidal position encodings relies on wavelength variations across dimensions. This implementation demonstrates the core mathematical concepts using numpy, showing how different frequency components create unique position signatures.
+Nền tảng toán học của mã hóa vị trí hình sin dựa vào sự thay đổi bước sóng theo các chiều. Việc triển khai này thể hiện các khái niệm toán học cốt lõi bằng cách sử dụng numpy, cho thấy các thành phần tần số khác nhau tạo ra các chữ ký vị trí duy nhất như thế nào.
 
 ```python
 import numpy as np
@@ -129,9 +129,9 @@ encodings = sinusoidal_position_encoding(seq_length, d_model)
 print(f"Position encoding matrix shape: {encodings.shape}")
 ```
 
-Slide 5: Transformer Position-Aware Self-Attention
+Trang trình bày 5: Sự tự chú ý đến vị trí của máy biến áp
 
-Position-aware self-attention integrates positional information directly into the attention mechanism. This implementation shows how positional encodings influence token relationships during the attention computation phase.
+Tự chú ý theo vị trí tích hợp thông tin vị trí trực tiếp vào cơ chế chú ý. Việc triển khai này cho thấy cách mã hóa vị trí ảnh hưởng đến mối quan hệ mã thông báo trong giai đoạn tính toán sự chú ý.
 
 ```python
 import torch
@@ -181,9 +181,9 @@ output = attention(x)
 print(f"Output shape: {output.shape}")
 ```
 
-Slide 6: Custom Learned Positional Encodings
+Trang trình bày 6: Mã hóa vị trí đã học tùy chỉnh
 
-This implementation showcases learned positional encodings that adapt to the specific characteristics of the training data. The model learns optimal position representations through backpropagation.
+Việc triển khai này giới thiệu các mã hóa vị trí đã học thích ứng với các đặc điểm cụ thể của dữ liệu huấn luyện. Mô hình học cách biểu diễn vị trí tối ưu thông qua lan truyền ngược.
 
 ```python
 import torch
@@ -238,9 +238,9 @@ for _ in range(5):
     print(f"Training loss: {loss.item():.4f}")
 ```
 
-Slide 7: Positional Encoding Visualization Tools
+Trang trình bày 7: Công cụ trực quan hóa mã hóa vị trí
 
-The visualization module provides comprehensive tools for analyzing and understanding positional encoding patterns. This implementation creates detailed visualizations of encoding matrices and attention patterns for debugging and analysis.
+Mô-đun trực quan hóa cung cấp các công cụ toàn diện để phân tích và hiểu các mẫu mã hóa vị trí. Việc triển khai này tạo ra hình ảnh trực quan chi tiết về ma trận mã hóa và các mẫu chú ý để gỡ lỗi và phân tích.
 
 ```python
 import numpy as np
@@ -295,9 +295,9 @@ visualizer.visualize_encodings(sine_cos_encodings, "Sinusoidal Positional Encodi
 visualizer.compare_encoding_methods()
 ```
 
-Slide 8: Real-world Application: Machine Translation
+Slide 8: Ứng dụng thực tế: Dịch máy
 
-Implementation of a translation system demonstrating how positional encodings enhance sequence-to-sequence translation tasks. This example shows preprocessing, model implementation, and translation results.
+Triển khai hệ thống dịch chứng minh cách mã hóa vị trí nâng cao các tác vụ dịch theo trình tự. Ví dụ này cho thấy kết quả tiền xử lý, triển khai mô hình và dịch thuật.
 
 ```python
 import torch
@@ -357,9 +357,9 @@ output = model(src_tokens, tgt_tokens)
 print(f"Translation output shape: {output.shape}")
 ```
 
-Slide 9: Attention Visualization with Position Information
+Slide 9: Trực quan hóa sự chú ý với thông tin vị trí
 
-This implementation creates detailed visualizations of attention patterns, showing how positional information influences token relationships in transformer models. The visualization helps understand position-aware attention mechanisms.
+Việc triển khai này tạo ra hình ảnh trực quan chi tiết về các mẫu chú ý, cho thấy thông tin vị trí ảnh hưởng như thế nào đến mối quan hệ mã thông báo trong các mô hình máy biến áp. Hình dung giúp hiểu được cơ chế chú ý nhận biết vị trí.
 
 ```python
 import torch
@@ -432,9 +432,9 @@ visualizer.plot_attention_heads(attention_weights, sample_tokens)
 visualizer.visualize_position_influence()
 ```
 
-Slide 10: Position-Aware Text Generation Model
+Trang trình bày 10: Mô hình tạo văn bản nhận biết vị trí
 
-This implementation demonstrates how positional encodings enhance text generation capabilities. The model uses position information to maintain coherence and context awareness during generation.
+Việc triển khai này thể hiện cách mã hóa vị trí nâng cao khả năng tạo văn bản. Mô hình sử dụng thông tin vị trí để duy trì sự mạch lạc và nhận thức về bối cảnh trong quá trình tạo.
 
 ```python
 import torch
@@ -513,9 +513,9 @@ generated = model.generate(start_sequence)
 print(f"Generated sequence shape: {generated.shape}")
 ```
 
-Slide 11: Performance Analysis and Benchmarking
+Trang trình bày 11: Phân tích hiệu suất và đo điểm chuẩn
 
-This implementation provides tools for measuring and comparing the effectiveness of different positional encoding schemes, including metrics for sequence modeling tasks and attention pattern analysis.
+Việc triển khai này cung cấp các công cụ để đo lường và so sánh tính hiệu quả của các sơ đồ mã hóa vị trí khác nhau, bao gồm số liệu cho các nhiệm vụ lập mô hình trình tự và phân tích mẫu chú ý.
 
 ```python
 import torch
@@ -622,9 +622,9 @@ def run_benchmarks():
 run_benchmarks()
 ```
 
-Slide 12: Dynamic Position Adaptation System
+Slide 12: Hệ thống điều chỉnh vị trí động
 
-This implementation showcases a dynamic positional encoding system that adapts to varying sequence lengths and content types, demonstrating advanced position-aware processing capabilities.
+Việc triển khai này giới thiệu một hệ thống mã hóa vị trí động thích ứng với các loại nội dung và độ dài chuỗi khác nhau, thể hiện khả năng xử lý nhận biết vị trí nâng cao.
 
 ```python
 import torch
@@ -716,9 +716,9 @@ def test_dynamic_encoder():
 test_dynamic_encoder()
 ```
 
-Slide 13: Advanced Position-Aware Attention Mechanism
+Trang trình bày 13: Cơ chế chú ý nhận biết vị trí nâng cao
 
-This implementation introduces a sophisticated attention mechanism that dynamically adjusts to both local and global positional relationships, demonstrating enhanced context awareness in sequence processing.
+Việc triển khai này giới thiệu một cơ chế chú ý tinh vi tự động điều chỉnh theo các mối quan hệ vị trí cục bộ và toàn cầu, thể hiện nhận thức về bối cảnh nâng cao trong xử lý trình tự.
 
 ```python
 import torch
@@ -841,10 +841,10 @@ def test_advanced_attention():
 test_advanced_attention()
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-1.  "Attention Is All You Need" - Original Transformer Paper [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
-2.  "On Position Embeddings in BERT" [https://arxiv.org/abs/2010.15099](https://arxiv.org/abs/2010.15099)
-3.  "RoFormer: Enhanced Transformer with Rotary Position Embedding" [https://arxiv.org/abs/2104.09864](https://arxiv.org/abs/2104.09864)
-4.  "Position Information in Transformers: An Overview" [https://arxiv.org/abs/2102.11090](https://arxiv.org/abs/2102.11090)
-5.  "Realformer: Transformer Likes Residual Attention" [https://arxiv.org/abs/2012.11747](https://arxiv.org/abs/2012.11747)
+1. "Tất cả những gì bạn cần là sự chú ý" - Giấy biến thế gốc [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
+2. "Nhúng vị trí trong BERT" [https://arxiv.org/abs/2010.15099](https://arxiv.org/abs/2010.15099)
+3. "RoFormer: Máy biến áp nâng cao có nhúng vị trí quay" [https://arxiv.org/abs/2104.09864](https://arxiv.org/abs/2104.09864)
+4. "Thông tin vị trí trong Máy biến áp: Tổng quan" [https://arxiv.org/abs/2102.11090](https://arxiv.org/abs/2102.11090)
+5. "Realformer: Transformer thích sự chú ý còn lại" [https://arxiv.org/abs/2012.11747](https://arxiv.org/abs/2012.11747)

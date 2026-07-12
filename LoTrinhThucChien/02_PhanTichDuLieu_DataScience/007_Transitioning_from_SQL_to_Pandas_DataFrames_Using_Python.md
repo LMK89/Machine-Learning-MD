@@ -1,9 +1,9 @@
-## Transitioning from SQL to Pandas DataFrames Using Python
-Slide 1: Introduction to Pandas DataFrames
+## Chuyển đổi từ SQL sang Pandas DataFrames bằng Python
+Trang trình bày 1: Giới thiệu về Pandas DataFrames
 
-Pandas DataFrames are powerful data structures in Python that offer SQL-like functionality with added flexibility. They allow for efficient data manipulation and analysis, making them an excellent choice for data scientists and analysts transitioning from SQL.
+Pandas DataFrames là các cấu trúc dữ liệu mạnh mẽ trong Python cung cấp chức năng giống như SQL với tính linh hoạt cao hơn. Chúng cho phép thao tác và phân tích dữ liệu hiệu quả, khiến chúng trở thành lựa chọn tuyệt vời cho các nhà khoa học và nhà phân tích dữ liệu đang chuyển đổi từ SQL.
 
-Code:
+Mã số:
 
 ```python
 import pandas as pd
@@ -16,11 +16,11 @@ df = pd.DataFrame(data)
 print(df)
 ```
 
-Slide 2: Loading Data from CSV Files
+Trang trình bày 2: Tải dữ liệu từ tệp CSV
 
-One of the most common ways to create a DataFrame is by loading data from a CSV file. This process is straightforward and allows you to quickly import large datasets.
+Một trong những cách phổ biến nhất để tạo DataFrame là tải dữ liệu từ tệp CSV. Quá trình này rất đơn giản và cho phép bạn nhanh chóng nhập các tập dữ liệu lớn.
 
-Code:
+Mã số:
 
 ```python
 import pandas as pd
@@ -30,11 +30,11 @@ df = pd.read_csv('data.csv')
 print(df.head())
 ```
 
-Slide 3: Basic Data Exploration
+Slide 3: Khám phá dữ liệu cơ bản
 
-After loading your data, it's essential to get an overview of its structure and contents. Pandas provides several methods to quickly explore your DataFrame.
+Sau khi tải dữ liệu của bạn, điều cần thiết là phải có cái nhìn tổng quan về cấu trúc và nội dung của nó. Pandas cung cấp một số phương pháp để nhanh chóng khám phá DataFrame của bạn.
 
-Code:
+Mã số:
 
 ```python
 # Display basic information about the DataFrame
@@ -50,11 +50,11 @@ print(df.head())
 print(df.tail())
 ```
 
-Slide 4: Selecting Columns
+Slide 4: Chọn cột
 
-In SQL, you would use the SELECT statement to choose specific columns. In Pandas, you can easily select one or multiple columns using various methods.
+Trong SQL, bạn sẽ sử dụng câu lệnh SELECT để chọn các cột cụ thể. Trong Pandas, bạn có thể dễ dàng chọn một hoặc nhiều cột bằng nhiều phương pháp khác nhau.
 
-Code:
+Mã số:
 
 ```python
 # Select a single column
@@ -67,11 +67,11 @@ subset = df[['Name', 'City']]
 names = df.Name
 ```
 
-Slide 5: Filtering Data
+Trang trình bày 5: Lọc dữ liệu
 
-Filtering data in Pandas is similar to using the WHERE clause in SQL. You can apply boolean conditions to select rows that meet specific criteria.
+Lọc dữ liệu trong Pandas tương tự như sử dụng mệnh đề WHERE trong SQL. Bạn có thể áp dụng các điều kiện boolean để chọn các hàng đáp ứng tiêu chí cụ thể.
 
-Code:
+Mã số:
 
 ```python
 # Filter rows where Age is greater than 30
@@ -81,11 +81,11 @@ older_than_30 = df[df['Age'] > 30]
 new_yorkers_over_25 = df[(df['City'] == 'New York') & (df['Age'] > 25)]
 ```
 
-Slide 6: Sorting Data
+Trang trình bày 6: Sắp xếp dữ liệu
 
-Sorting data in Pandas is equivalent to using the ORDER BY clause in SQL. You can sort by one or multiple columns in ascending or descending order.
+Sắp xếp dữ liệu trong Pandas tương đương với việc sử dụng mệnh đề ORDER BY trong SQL. Bạn có thể sắp xếp theo một hoặc nhiều cột theo thứ tự tăng dần hoặc giảm dần.
 
-Code:
+Mã số:
 
 ```python
 # Sort by a single column
@@ -95,11 +95,11 @@ sorted_by_age = df.sort_values('Age')
 sorted_by_city_and_age = df.sort_values(['City', 'Age'], ascending=[True, False])
 ```
 
-Slide 7: Grouping and Aggregation
+Slide 7: Phân nhóm và tổng hợp
 
-Grouping and aggregation in Pandas are similar to GROUP BY and aggregate functions in SQL. This allows you to perform calculations on groups of data.
+Việc nhóm và tổng hợp trong Pandas tương tự như các hàm GROUP BY và tổng hợp trong SQL. Điều này cho phép bạn thực hiện tính toán trên các nhóm dữ liệu.
 
-Code:
+Mã số:
 
 ```python
 # Group by City and calculate mean Age
@@ -109,11 +109,11 @@ average_age_by_city = df.groupby('City')['Age'].mean()
 stats_by_city = df.groupby('City').agg({'Age': ['mean', 'max', 'min']})
 ```
 
-Slide 8: Joining DataFrames
+Trang trình bày 8: Tham gia DataFrames
 
-Joining DataFrames in Pandas is similar to JOIN operations in SQL. You can combine data from multiple DataFrames based on common columns or indexes.
+Việc tham gia DataFrames trong Pandas tương tự như các hoạt động THAM GIA trong SQL. Bạn có thể kết hợp dữ liệu từ nhiều DataFrame dựa trên các cột hoặc chỉ mục chung.
 
-Code:
+Mã số:
 
 ```python
 # Create two DataFrames
@@ -125,11 +125,11 @@ merged_df = pd.merge(df1, df2, on='ID', how='inner')
 print(merged_df)
 ```
 
-Slide 9: Adding and Modifying Columns
+Slide 9: Thêm và sửa đổi cột
 
-In Pandas, you can easily add new columns or modify existing ones using simple operations or apply custom functions.
+Trong Pandas, bạn có thể dễ dàng thêm các cột mới hoặc sửa đổi các cột hiện có bằng các thao tác đơn giản hoặc áp dụng các hàm tùy chỉnh.
 
-Code:
+Mã số:
 
 ```python
 # Add a new column
@@ -145,11 +145,11 @@ def age_category(age):
 df['AgeCategory'] = df['Age'].apply(age_category)
 ```
 
-Slide 10: Handling Missing Data
+Slide 10: Xử lý dữ liệu bị thiếu
 
-Pandas provides various methods to handle missing data, which is a common task in data preprocessing and cleaning.
+Pandas cung cấp nhiều phương pháp khác nhau để xử lý dữ liệu bị thiếu, đây là một nhiệm vụ phổ biến trong quá trình tiền xử lý và làm sạch dữ liệu.
 
-Code:
+Mã số:
 
 ```python
 # Fill missing values with a specific value
@@ -162,11 +162,11 @@ df_cleaned = df.dropna()
 df['Age'].fillna(df['Age'].mean(), inplace=True)
 ```
 
-Slide: 11: Pivot Tables
+Trang trình bày: 11: Bảng tổng hợp
 
-Pivot tables in Pandas allow you to reshape and summarize data, similar to PIVOT operations in SQL.
+Bảng tổng hợp trong Pandas cho phép bạn định hình lại và tóm tắt dữ liệu, tương tự như các thao tác PIVOT trong SQL.
 
-Code:
+Mã số:
 
 ```python
 # Create a pivot table
@@ -192,11 +192,11 @@ ts_df.set_index('Date', inplace=True)
 monthly_avg = ts_df.resample('M').mean()
 ```
 
-Slide 13: Data Visualization with Pandas
+Slide 13: Trực quan hóa dữ liệu với Pandas
 
-Pandas integrates well with plotting libraries, allowing you to create quick visualizations directly from your DataFrame.
+Pandas tích hợp tốt với các thư viện vẽ đồ thị, cho phép bạn tạo trực quan hóa nhanh chóng trực tiếp từ DataFrame của mình.
 
-Code:
+Mã số:
 
 ```python
 import matplotlib.pyplot as plt
@@ -214,11 +214,11 @@ plt.title('Age vs Year of Birth')
 plt.show()
 ```
 
-Slide 14: Exporting Data
+Trang trình bày 14: Xuất dữ liệu
 
-After manipulating your data with Pandas, you can easily export it to various formats for further use or sharing.
+Sau khi thao tác dữ liệu của bạn với Pandas, bạn có thể dễ dàng xuất dữ liệu đó sang nhiều định dạng khác nhau để sử dụng hoặc chia sẻ thêm.
 
-Code:
+Mã số:
 
 ```python
 # Export to CSV
@@ -231,12 +231,12 @@ df.to_excel('output.xlsx', sheet_name='Sheet1', index=False)
 df.to_json('output.json', orient='records')
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-To further your understanding of Pandas and its applications in data science, consider exploring these peer-reviewed articles from arXiv.org:
+Để nâng cao hiểu biết của bạn về Pandas và các ứng dụng của nó trong khoa học dữ liệu, hãy xem xét khám phá các bài viết được bình duyệt này từ arXiv.org:
 
-1. "Pandas: Powerful Python Data Analysis Toolkit" by Wes McKinney arXiv:1501.00007
-2. "Data Manipulation with Pandas: A Comprehensive Guide" by John Doe arXiv:2003.12345
-3. "From SQL to Pandas: A Comparative Study of Data Analysis Techniques" by Jane Smith arXiv:2105.67890
+1. "Pandas: Bộ công cụ phân tích dữ liệu Python mạnh mẽ" của Wes McKinney arXiv:1501.00007
+2. "Thao tác dữ liệu với gấu trúc: Hướng dẫn toàn diện" của John Doe arXiv:2003.12345
+3. "Từ SQL đến Pandas: Nghiên cứu so sánh các kỹ thuật phân tích dữ liệu" của Jane Smith arXiv:2105.67890
 
-These articles provide in-depth discussions on Pandas functionality, performance optimizations, and comparisons with SQL-based approaches.
+Các bài viết này cung cấp các cuộc thảo luận chuyên sâu về chức năng của Pandas, tối ưu hóa hiệu suất và so sánh với các phương pháp tiếp cận dựa trên SQL.

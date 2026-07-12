@@ -1,7 +1,7 @@
-## Mastering Support Vector Machines for Classification and Regression
-Slide 1: SVM Mathematical Foundations
+## Hỗ trợ máy chủ hỗ trợ để phân loại và khôi phục quy trình
+Slide 1: SVM cơ sở toán học
 
-Support Vector Machines rely on fundamental mathematical principles to find the optimal hyperplane separating data classes. The primary objective is maximizing the margin between classes while minimizing classification errors through quadratic optimization with linear constraints.
+Hỗ trợ hỗ trợ của máy chủ dựa trên cơ sở học toán nguyên tắc để tìm kiếm tối ưu siêu phân tích dữ liệu của lớp. Mục tiêu chính là biên độ tối đa hóa giữa các lớp đồng thời giảm thiểu lỗi phân loại loại thông tin qua mức độ ưu tiên cao nhất với các tính năng tuyến tính rõ ràng.
 
 ```python
 import numpy as np
@@ -34,9 +34,9 @@ margin = compute_margin(X, y, w, b)
 print(f"Margin: {margin}")
 ```
 
-Slide 2: Linear SVM Implementation from Scratch
+Trình bày 2: Triển khai tính năng tuyến tính SVM từ đầu
 
-Implementing a linear SVM classifier demonstrates the core concepts of margin maximization and support vector identification. This implementation uses gradient descent to optimize the SVM objective function without relying on external libraries.
+Việc phát triển tuyến phân loại SVM có thể trình bày các khái niệm cơ bản về tối đa hóa trang và nhận dạng hỗ trợ không phù hợp. Việc phát triển này sử dụng phương pháp giảm độ dốc để tối ưu hóa các chức năng tiêu điểm SVM mà không cần dựa vào bên ngoài thư viện.
 
 ```python
 class LinearSVM:
@@ -101,9 +101,9 @@ print(f"RBF Kernel: {kernels.rbf_kernel(x1, x2)}")
 print(f"Polynomial Kernel: {kernels.polynomial_kernel(x1, x2)}")
 ```
 
-Slide 4: Soft Margin SVM Implementation
+Trang trình bày 4: Triển khai SVM ký tự phần mềm
 
-The soft margin SVM allows for misclassifications through the introduction of slack variables, making it more practical for real-world applications where perfect separation is often impossible or undesirable.
+SVM biên dịch phần mềm cho phép phân loại sai thông tin qua việc đưa ra các biến phụ, khiến nó trở nên thiết thực hơn đối với các ứng dụng trong thế giới thực, nơi công việc phân tách hoàn hảo thường là không thể hoặc không mong muốn.
 
 ```python
 class SoftMarginSVM:
@@ -145,9 +145,9 @@ svm = SoftMarginSVM(C=1.0)
 svm.fit(X, y)
 ```
 
-Slide 5: Real-world Text Classification with SVM
+Slide 5: Phân loại văn bản thực tế bằng SVM
 
-Implementing SVM for text classification requires careful preprocessing and feature extraction. This implementation demonstrates a complete pipeline for sentiment analysis using TF-IDF vectorization and linear SVM.
+Việc phát triển SVM để phân loại văn bản yêu cầu tiền xử lý và trích xuất tính năng cẩn thận. Việc phát triển này có thể thực hiện một quy trình hoàn chỉnh để phân tích cảm tính bằng cách sử dụng tính năng tuyến tính TF-IDF và SVM.
 
 ```python
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -179,9 +179,9 @@ predictions = text_clf.predict(texts)
 print(classification_report(labels, predictions))
 ```
 
-Slide 6: Multi-class SVM Implementation
+Trang trình bày 6: Triển khai SVM nhiều lớp
 
-Support Vector Machines can handle multi-class classification through one-vs-rest or one-vs-one strategies. This implementation showcases the one-vs-rest approach with custom decision functions.
+Hỗ trợ máy chủ có thể xử lý việc phân loại nhiều loại thông tin qua chiến lược một hoặc một. Việc phát triển này có thể thực hiện cách tiếp cận một đối số với các tùy chỉnh chức năng đã được quyết định.
 
 ```python
 class MultiClassSVM:
@@ -225,9 +225,9 @@ clf.fit(X, y)
 predictions = clf.predict(X)
 ```
 
-Slide 7: SVM Hyperparameter Optimization
+Slide 7: SVM siêu hóa tối ưu
 
-Optimizing SVM hyperparameters is crucial for model performance. This implementation uses Bayesian optimization to find optimal parameters for both kernel selection and regularization strength.
+SVM siêu tham số hóa tối ưu là rất quan trọng đối với hiệu suất của mô hình. Việc phát triển điều này sử dụng Bayes tối ưu hóa để tìm kiếm các tham số tối ưu cho loại hạt nhân và cường độ chính hóa hóa.
 
 ```python
 from sklearn.model_selection import cross_val_score
@@ -267,9 +267,9 @@ score = best_model.score(X_test, y_test)
 print(f"Test set score: {score:.3f}")
 ```
 
-Slide 8: SVM for Time Series Classification
+Trang trình bày 8: SVM để phân loại chuỗi thời gian
 
-Implementing SVM for time series data requires specialized feature extraction and preprocessing. This implementation demonstrates dynamic time warping kernel with SVM for temporal pattern recognition.
+Việc phát triển SVM cho chuỗi dữ liệu thời gian được yêu cầu trích xuất và xử lý trước các tính năng chuyên dụng. Việc phát triển này có thể cung cấp hạt nhân co giãn thời gian cho SVM để nhận dạng thời gian.
 
 ```python
 import numpy as np
@@ -322,9 +322,9 @@ class TimeSeriesSVM:
         return self.svm.predict(K_test)
 ```
 
-Slide 9: SVM for Image Recognition
+Trang hiển thị 9: SVM to get image format
 
-Support Vector Machines can effectively handle image classification tasks through proper feature extraction and kernel selection. This implementation demonstrates a complete pipeline for image recognition using HOG features.
+Hỗ trợ Máy chủ Vector có thể xử lý hiệu quả các loại hình ảnh nhiệm vụ thông qua việc trích xuất tính năng và lựa chọn hạt nhân thích hợp. Việc khai báo này có thể thực hiện một quy trình hoàn chỉnh để nhận dạng hình ảnh bằng các tính năng HOG.
 
 ```python
 from skimage.feature import hog
@@ -375,9 +375,9 @@ clf.fit(images, labels)
 predictions = clf.predict(images[:10])
 ```
 
-Slide 10: Online Learning with SVM
+Slide 10: Học trực tuyến với SVM
 
-Implementing online learning for SVM enables handling large-scale datasets that don't fit in memory. This implementation uses stochastic gradient descent for incremental updates.
+Việc phát triển tập trực tuyến cho SVM cho phép xử lý các mô-đun dữ liệu lớn không phù hợp với bộ nhớ. Việc phát triển này sử dụng phương pháp giảm độ dốc ngẫu nhiên để cập nhật gia tăng.
 
 ```python
 class OnlineSVM:
@@ -442,9 +442,9 @@ accuracy = np.mean(svm.predict(X) == y)
 print(f"Final accuracy: {accuracy:.3f}")
 ```
 
-Slide 11: SVM for Anomaly Detection
+Trang trình bày 11: SVM để phát hiện bất ngờ
 
-Support Vector Machines can be adapted for anomaly detection using One-Class SVM. This implementation demonstrates how to identify outliers in high-dimensional data with custom feature normalization.
+Hỗ trợ máy chủ có thể được điều chỉnh để phát hiện sự bất thường bằng cách sử dụng một lớp SVM. Việc khai báo này trình bày cách xác định các ngoại lệ trong dữ liệu nhiều chiều bằng cách sử dụng tùy chọn tiêu chuẩn hóa tính năng.
 
 ```python
 import numpy as np
@@ -505,9 +505,9 @@ anomalies = detector.predict(X)
 print(f"Detected anomalies: {np.sum(anomalies == -1)}")
 ```
 
-Slide 12: Feature Selection with SVM
+Slide 12: Lựa chọn tính năng cho SVM
 
-This implementation uses recursive feature elimination with SVM to identify the most important features for classification, incorporating cross-validation for robust feature selection.
+Việc phát triển này sử dụng phương pháp loại bỏ tính năng bảo vệ bằng SVM để xác định các tính năng quan trọng nhất để phân loại, kết hợp xác thực chéo để lựa chọn tính năng mạnh mẽ.
 
 ```python
 class SVMFeatureSelector:
@@ -570,9 +570,9 @@ print(f"Original features accuracy: {np.mean(scores_original):.3f}")
 print(f"Selected features accuracy: {np.mean(scores_selected):.3f}")
 ```
 
-Slide 13: SVM for Large-Scale Learning
+Trang trình bày 13: SVM cho học tập mô-đun lớn
 
-This implementation demonstrates efficient handling of large datasets using mini-batch processing and Nystrom approximation for kernel computations, enabling SVM training on massive datasets.
+Việc phát triển này có thể hiện khả năng xử lý hiệu quả các dữ liệu bằng cách sử dụng bộ xử lý hàng hóa nhỏ và cho phép tính đúng Nystrom gần đây để tính toán hạt nhân, cho phép đào tạo SVM trên các dữ liệu lớn.
 
 ```python
 class LargeScaleSVM:
@@ -664,10 +664,10 @@ test_accuracy = np.mean(svm.predict(X_large[:1000]) == y_large[:1000])
 print(f"Test accuracy: {test_accuracy:.3f}")
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-*   A New Support Vector Method for Optimal Margin Classification [https://arxiv.org/abs/2203.15721](https://arxiv.org/abs/2203.15721)
-*   Large-Scale Support Vector Machines: Algorithms and Applications [https://arxiv.org/abs/2105.09815](https://arxiv.org/abs/2105.09815)
-*   Kernel Methods for Deep Learning [https://arxiv.org/abs/2002.09347](https://arxiv.org/abs/2002.09347)
-*   Support Vector Machines for Time Series Analysis [https://arxiv.org/abs/2104.12463](https://arxiv.org/abs/2104.12463)
-*   Online Learning with Kernels: A Survey [https://arxiv.org/abs/1902.06865](https://arxiv.org/abs/1902.06865)
+* Phương pháp hỗ trợ mới để phân loại ký tự tối ưu [https://arxiv.org/abs/2203.15721](https://arxiv.org/abs/2203.15721)
+* Máy hỗ trợ hỗ trợ mô-đun lớn: Thuật toán và ứng dụng [https://arxiv.org/abs/2105.09815](https://arxiv.org/abs/2105.09815)
+* Phương pháp hạt nhân để học sâu [https://arxiv.org/abs/2002.09347](https://arxiv.org/abs/2002.09347)
+* Hỗ trợ máy tính để phân tích chuỗi thời gian [https://arxiv.org/abs/2104.12463](https://arxiv.org/abs/2104.12463)
+* Học trực tuyến với nhân viên: Khảo sát [https://arxiv.org/abs/1902.06865](https://arxiv.org/abs/1902.06865)

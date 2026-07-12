@@ -1,7 +1,7 @@
-## Exploring Python Docstring Formats
-Slide 1: Python Docstring Basics - reStructuredText Style
+## Khám phá các định dạng chuỗi tài liệu Python
+Trang trình bày 1: Khái niệm cơ bản về chuỗi tài liệu Python - Kiểu văn bản được cấu trúc lại
 
-The reStructuredText (reST) docstring format, originally developed for Python documentation, uses a semantic markup syntax to define documentation elements. It's the default format recognized by Sphinx and provides rich features for creating detailed API documentation.
+Định dạng chuỗi tài liệu reStructuredText (reST), ban đầu được phát triển cho tài liệu Python, sử dụng cú pháp đánh dấu ngữ nghĩa để xác định các thành phần tài liệu. Đây là định dạng mặc định được Sphinx công nhận và cung cấp các tính năng phong phú để tạo tài liệu API chi tiết.
 
 ```python
 def calculate_mean(numbers: list) -> float:
@@ -22,9 +22,9 @@ def calculate_mean(numbers: list) -> float:
     return sum(numbers) / len(numbers)
 ```
 
-Slide 2: Google Style Docstrings
+Trang trình bày 2: Tài liệu kiểu Google
 
-Google's docstring format emphasizes readability through clear section headers and indentation. This style has gained popularity due to its clean structure and ease of writing, making it particularly suitable for projects where simplicity is valued.
+Định dạng chuỗi tài liệu của Google nhấn mạnh khả năng đọc thông qua tiêu đề và thụt lề phần rõ ràng. Phong cách này đã trở nên phổ biến do cấu trúc rõ ràng và dễ viết, khiến nó đặc biệt phù hợp với các dự án đề cao sự đơn giản.
 
 ```python
 def process_text_data(text: str, max_length: int = 100) -> dict:
@@ -104,9 +104,9 @@ def analyze_dataset(data: np.ndarray, features: list,
     return statistics, normalized_data
 ```
 
-Slide 4: Class Documentation with Epytext Style
+Slide 4: Tài liệu lớp học với kiểu Epytext
 
-Epytext style, derived from Epydoc, offers a format particularly well-suited for documenting complex class hierarchies and their interactions, making it valuable for object-oriented Python applications.
+Kiểu Epytext, bắt nguồn từ Epydoc, cung cấp một định dạng đặc biệt phù hợp để ghi lại các hệ thống phân cấp lớp phức tạp và các tương tác của chúng, làm cho nó có giá trị đối với các ứng dụng Python hướng đối tượng.
 
 ```python
 class DataProcessor:
@@ -148,9 +148,9 @@ class DataProcessor:
         }
 ```
 
-Slide 5: Real-world Example - Data Analysis Documentation
+Trang trình bày 5: Ví dụ thực tế - Tài liệu phân tích dữ liệu
 
-This example demonstrates comprehensive docstring documentation in a real-world data analysis scenario, implementing a complete data preprocessing pipeline with proper documentation that follows industry best practices.
+Ví dụ này minh họa tài liệu chuỗi tài liệu toàn diện trong kịch bản phân tích dữ liệu trong thế giới thực, triển khai quy trình tiền xử lý dữ liệu hoàn chỉnh với tài liệu phù hợp tuân theo các phương pháp hay nhất trong ngành.
 
 ```python
 from typing import Tuple, Optional
@@ -254,9 +254,9 @@ class DataPreprocessor:
         return X
 ```
 
-Slide 6: Scientific Computing Documentation
+Slide 6: Tài liệu tính toán khoa học
 
-This slide demonstrates documenting scientific computing functions with mathematical formulas and comprehensive parameter descriptions using NumPy style docstrings.
+Trang trình bày này trình bày việc ghi lại các hàm tính toán khoa học bằng các công thức toán học và mô tả tham số toàn diện bằng cách sử dụng chuỗi tài liệu kiểu NumPy.
 
 ```python
 def calculate_metrics(y_true: np.ndarray, y_pred: np.ndarray,
@@ -380,9 +380,9 @@ def neural_layer_forward(
     return A, cache
 ```
 
-Slide 8: Documenting Custom Data Structures
+Trang trình bày 8: Ghi lại cấu trúc dữ liệu tùy chỉnh
 
-This example shows how to document custom data structures with inheritance, demonstrating proper documentation of class hierarchies and their relationships.
+Ví dụ này cho thấy cách ghi lại các cấu trúc dữ liệu tùy chỉnh bằng tính kế thừa, thể hiện tài liệu thích hợp về hệ thống phân cấp lớp và các mối quan hệ của chúng.
 
 ```python
 class DataNode:
@@ -543,9 +543,9 @@ def quicksort(arr: list, low: int = None, high: int = None) -> list:
     return arr
 ```
 
-Slide 10: Database Interface Documentation
+Slide 10: Tài liệu giao diện cơ sở dữ liệu
 
-Documentation for database interfaces requires clear specification of connection parameters, transaction handling, and error cases, demonstrated here using reStructuredText style.
+Tài liệu về giao diện cơ sở dữ liệu yêu cầu đặc tả rõ ràng về các tham số kết nối, xử lý giao dịch và các trường hợp lỗi, được trình bày ở đây bằng cách sử dụng kiểu reStructuredText.
 
 ```python
 class DatabaseManager:
@@ -754,9 +754,9 @@ class GradientBoostingClassifier:
         return exp_x / np.sum(exp_x, axis=1, keepdims=True)
 ```
 
-Slide 12: API Documentation with Error Handling
+Trang trình bày 12: Tài liệu API xử lý lỗi
 
-This example demonstrates comprehensive API documentation with detailed error handling specifications and response schemas using NumPy style docstrings.
+Ví dụ này minh họa tài liệu API toàn diện với các thông số kỹ thuật xử lý lỗi chi tiết và lược đồ phản hồi bằng cách sử dụng chuỗi tài liệu kiểu NumPy.
 
 ```python
 from typing import Dict, Optional, Union, Any
@@ -888,9 +888,9 @@ class APIEndpoint:
         return f"req_{timestamp}"
 ```
 
-Slide 13: Advanced Testing Documentation
+Slide 13: Tài liệu kiểm tra nâng cao
 
-This example shows how to document test cases and testing utilities with proper docstrings that explain test coverage and assertions.
+Ví dụ này cho thấy cách ghi lại các trường hợp kiểm thử và tiện ích kiểm thử bằng các chuỗi tài liệu thích hợp giải thích phạm vi kiểm thử và các xác nhận.
 
 ```python
 import unittest
@@ -973,9 +973,9 @@ class TestCase(unittest.TestCase):
         return decorator
 ```
 
-Slide 14: Advanced Error Handling Documentation
+Slide 14: Tài liệu xử lý lỗi nâng cao
 
-This example demonstrates comprehensive error handling documentation with inheritance hierarchies and custom exception types using reStructuredText style.
+Ví dụ này trình bày tài liệu xử lý lỗi toàn diện với hệ thống phân cấp kế thừa và các loại ngoại lệ tùy chỉnh bằng cách sử dụng kiểu reStructuredText.
 
 ```python
 class BaseError(Exception):
@@ -1067,19 +1067,19 @@ class AuthenticationError(BaseError):
         )
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-*   Enhancing Code Documentation with Neural Language Models
-    *   [https://arxiv.org/abs/2105.14079](https://arxiv.org/abs/2105.14079)
-*   Automated Python Documentation Generation: A Survey
-    *   [https://arxiv.org/abs/2010.12687](https://arxiv.org/abs/2010.12687)
-*   Best Practices for Scientific Computing Documentation
-    *   [https://arxiv.org/abs/1810.08055](https://arxiv.org/abs/1810.08055)
-*   Useful search terms for finding more resources:
-    *   "Python docstring automation"
-    *   "Documentation generation best practices"
-    *   "Code documentation metrics"
-*   Recommended tools:
-    *   Sphinx Documentation Generator
-    *   pydocstyle for docstring validation
-    *   doctest for testing code examples
+* Nâng cao tài liệu mã bằng các mô hình ngôn ngữ thần kinh
+    * [https://arxiv.org/abs/2105.14079](https://arxiv.org/abs/2105.14079)
+* Tạo tài liệu Python tự động: Một cuộc khảo sát
+    * [https://arxiv.org/abs/2010.12687](https://arxiv.org/abs/2010.12687)
+* Các phương pháp thực hành tốt nhất cho tài liệu máy tính khoa học
+    * [https://arxiv.org/abs/1810.08055](https://arxiv.org/abs/1810.08055)
+* Thuật ngữ tìm kiếm hữu ích để tìm thêm tài nguyên:
+    * "Tự động hóa chuỗi tài liệu Python"
+    * "Các phương pháp hay nhất về tạo tài liệu"
+    * "Số liệu tài liệu mã"
+* Công cụ được đề xuất:
+    * Trình tạo tài liệu Sphinx
+    * pydocstyle để xác thực chuỗi tài liệu
+    * doctest để kiểm tra các ví dụ về mã

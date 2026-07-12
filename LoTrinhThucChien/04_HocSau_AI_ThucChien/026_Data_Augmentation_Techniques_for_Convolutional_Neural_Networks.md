@@ -1,7 +1,7 @@
-## Data Augmentation Techniques for Convolutional Neural Networks
-Slide 1: Data Augmentation in CNNs
+## Kỹ thuật tăng cường dữ liệu cho mạng nơ-ron tích chập
+Slide 1: Tăng cường dữ liệu trong CNN
 
-Data augmentation is a powerful technique used to increase the diversity of training data for convolutional neural networks (CNNs). It involves creating new training samples by applying various transformations to existing images. This process helps improve model generalization and reduces overfitting, especially when working with limited datasets.
+Tăng cường dữ liệu là một kỹ thuật mạnh mẽ được sử dụng để tăng tính đa dạng của dữ liệu huấn luyện cho mạng thần kinh tích chập (CNN). Nó liên quan đến việc tạo các mẫu đào tạo mới bằng cách áp dụng các phép biến đổi khác nhau cho các hình ảnh hiện có. Quá trình này giúp cải thiện khả năng khái quát hóa mô hình và giảm tình trạng trang bị quá mức, đặc biệt khi làm việc với các tập dữ liệu hạn chế.
 
 ```python
 import numpy as np
@@ -48,9 +48,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 2: Image Rotation
+Trang trình bày 2: Xoay ảnh
 
-Rotation is a common augmentation technique that involves rotating the image by a random angle within a specified range. This helps the model become invariant to the orientation of objects in the image.
+Xoay là một kỹ thuật tăng cường phổ biến liên quan đến việc xoay hình ảnh theo một góc ngẫu nhiên trong phạm vi xác định. Điều này giúp mô hình trở nên bất biến với hướng của các đối tượng trong ảnh.
 
 ```python
 import cv2
@@ -82,9 +82,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 3: Horizontal and Vertical Flipping
+Slide 3: Lật ngang và lật dọc
 
-Flipping is another effective augmentation technique that creates mirror images of the original data. This is particularly useful for objects that can appear in different orientations.
+Lật là một kỹ thuật tăng cường hiệu quả khác giúp tạo ra hình ảnh phản chiếu của dữ liệu gốc. Điều này đặc biệt hữu ích cho các đối tượng có thể xuất hiện theo các hướng khác nhau.
 
 ```python
 import cv2
@@ -121,9 +121,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 4: Random Cropping
+Slide 4: Cắt ngẫu nhiên
 
-Random cropping involves selecting a random portion of the image and using it as a new training sample. This technique helps the model focus on different parts of the image and become more robust to partial occlusions.
+Cắt ngẫu nhiên bao gồm việc chọn một phần ngẫu nhiên của hình ảnh và sử dụng nó làm mẫu huấn luyện mới. Kỹ thuật này giúp mô hình tập trung vào các phần khác nhau của hình ảnh và trở nên chắc chắn hơn đối với hiện tượng che khuất một phần.
 
 ```python
 import cv2
@@ -160,9 +160,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 5: Color Jittering
+Trang trình bày 5: Hiện tượng nhiễu màu
 
-Color jittering involves randomly altering the brightness, contrast, saturation, and hue of an image. This technique helps the model become more robust to variations in lighting conditions and color balance.
+Hiện tượng biến đổi màu sắc liên quan đến việc thay đổi ngẫu nhiên độ sáng, độ tương phản, độ bão hòa và màu sắc của hình ảnh. Kỹ thuật này giúp mô hình trở nên chắc chắn hơn trước những thay đổi trong điều kiện ánh sáng và cân bằng màu sắc.
 
 ```python
 import cv2
@@ -211,9 +211,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 6: Gaussian Noise Addition
+Trang trình bày 6: Bổ sung nhiễu Gaussian
 
-Adding Gaussian noise to images can help improve the model's robustness to noise in real-world scenarios. This technique simulates imperfections in image capture or transmission.
+Việc thêm nhiễu Gaussian vào hình ảnh có thể giúp cải thiện độ bền của mô hình đối với nhiễu trong các tình huống thực tế. Kỹ thuật này mô phỏng sự không hoàn hảo trong việc chụp hoặc truyền hình ảnh.
 
 ```python
 import cv2
@@ -250,9 +250,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 7: Elastic Deformation
+Slide 7: Biến dạng đàn hồi
 
-Elastic deformation is an advanced augmentation technique that applies non-linear transformations to images. This is particularly useful for handwritten digit recognition tasks, as it simulates natural variations in handwriting.
+Biến dạng đàn hồi là một kỹ thuật tăng cường nâng cao áp dụng các phép biến đổi phi tuyến tính cho hình ảnh. Điều này đặc biệt hữu ích cho các tác vụ nhận dạng chữ số viết tay vì nó mô phỏng các biến thể tự nhiên trong chữ viết tay.
 
 ```python
 import numpy as np
@@ -297,9 +297,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 8: Mixup
+Slide 8: Hỗn hợp
 
-Mixup is a data augmentation technique that creates new training samples by linearly interpolating between pairs of images and their labels. This helps the model learn smoother decision boundaries and improve generalization.
+Mixup là một kỹ thuật tăng cường dữ liệu nhằm tạo ra các mẫu huấn luyện mới bằng cách nội suy tuyến tính giữa các cặp hình ảnh và nhãn của chúng. Điều này giúp mô hình tìm hiểu các ranh giới quyết định mượt mà hơn và cải thiện tính khái quát hóa.
 
 ```python
 import numpy as np
@@ -344,9 +344,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 9: Random Erasing
+Trang trình bày 9: Xóa ngẫu nhiên
 
-Random Erasing is an augmentation technique that randomly selects rectangular regions in an image and replaces them with random noise or a constant value. This helps the model become more robust to occlusions and missing parts in images.
+Xóa ngẫu nhiên là một kỹ thuật tăng cường chọn ngẫu nhiên các vùng hình chữ nhật trong ảnh và thay thế chúng bằng nhiễu ngẫu nhiên hoặc giá trị không đổi. Điều này giúp mô hình trở nên chắc chắn hơn đối với các phần bị che khuất và thiếu trong hình ảnh.
 
 ```python
 import numpy as np
@@ -395,9 +395,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 10: Cutout
+Trang trình bày 10: Cắt bỏ
 
-Cutout is a simple yet effective data augmentation technique that involves randomly masking out square regions of input images. This encourages the model to focus on the entire object in the image, rather than relying on specific features.
+Cutout là một kỹ thuật tăng cường dữ liệu đơn giản nhưng hiệu quả, bao gồm việc che giấu ngẫu nhiên các vùng hình vuông của hình ảnh đầu vào. Điều này khuyến khích người mẫu tập trung vào toàn bộ đối tượng trong ảnh, thay vì dựa vào các đặc điểm cụ thể.
 
 ```python
 import numpy as np
@@ -453,9 +453,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 11: CutMix
+Trang trình bày 11: CutMix
 
-CutMix is an advanced data augmentation technique that combines aspects of both Mixup and Cutout. It involves cutting and pasting patches from one training image onto another, adjusting the labels proportionally to the area of the patch.
+CutMix là một kỹ thuật tăng cường dữ liệu nâng cao kết hợp các khía cạnh của cả Mixup và Cutout. Nó liên quan đến việc cắt và dán các bản vá từ hình ảnh đào tạo này sang hình ảnh đào tạo khác, điều chỉnh nhãn tương ứng với diện tích của bản vá.
 
 ```python
 import numpy as np
@@ -513,9 +513,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 12: Real-life Example: Facial Expression Recognition
+Trang trình chiếu 12: Ví dụ thực tế: Nhận dạng nét mặt
 
-Data augmentation is crucial in facial expression recognition tasks to improve model performance and generalization. Here's an example of how various augmentation techniques can be applied to a facial expression dataset.
+Tăng cường dữ liệu là rất quan trọng trong các nhiệm vụ nhận dạng biểu cảm khuôn mặt để cải thiện hiệu suất và tính tổng quát của mô hình. Dưới đây là ví dụ về cách áp dụng các kỹ thuật tăng cường khác nhau cho tập dữ liệu biểu cảm khuôn mặt.
 
 ```python
 import cv2
@@ -561,9 +561,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 13: Real-life Example: Plant Disease Detection
+Trang trình chiếu 13: Ví dụ thực tế: Phát hiện bệnh cây
 
-Data augmentation plays a crucial role in improving plant disease detection models, especially when dealing with limited datasets. Here's an example of how various augmentation techniques can be applied to plant leaf images for disease classification.
+Tăng cường dữ liệu đóng một vai trò quan trọng trong việc cải thiện các mô hình phát hiện bệnh cây trồng, đặc biệt là khi xử lý các bộ dữ liệu hạn chế. Dưới đây là ví dụ về cách áp dụng các kỹ thuật tăng cường khác nhau cho hình ảnh lá cây để phân loại bệnh.
 
 ```python
 import cv2
@@ -610,14 +610,14 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-For more in-depth information on data augmentation techniques and their applications in CNNs, consider exploring the following research papers:
+Để biết thêm thông tin chuyên sâu về các kỹ thuật tăng cường dữ liệu và ứng dụng của chúng trong CNN, hãy xem xét khám phá các tài liệu nghiên cứu sau:
 
-1. "A survey on Image Data Augmentation for Deep Learning" by Connor Shorten and Taghi M. Khoshgoftaar (2019) ArXiv: [https://arxiv.org/abs/1912.11899](https://arxiv.org/abs/1912.11899)
-2. "AutoAugment: Learning Augmentation Strategies from Data" by Ekin D. Cubuk et al. (2018) ArXiv: [https://arxiv.org/abs/1805.09501](https://arxiv.org/abs/1805.09501)
-3. "RandAugment: Practical automated data augmentation with a reduced search space" by Ekin D. Cubuk et al. (2019) ArXiv: [https://arxiv.org/abs/1909.13719](https://arxiv.org/abs/1909.13719)
-4. "Improved Regularization of Convolutional Neural Networks with Cutout" by Terrance DeVries and Graham W. Taylor (2017) ArXiv: [https://arxiv.org/abs/1708.04552](https://arxiv.org/abs/1708.04552)
-5. "CutMix: Regularization Strategy to Train Strong Classifiers with Localizable Features" by Sangdoo Yun et al. (2019) ArXiv: [https://arxiv.org/abs/1905.04899](https://arxiv.org/abs/1905.04899)
+1. "Khảo sát về Tăng cường dữ liệu hình ảnh cho học sâu" của Connor Shorten và Taghi M. Khoshgoftaar (2019) ArXiv: [https://arxiv.org/abs/1912.11899](https://arxiv.org/abs/1912.11899)
+2. "Tự động tăng cường: Học các chiến lược tăng cường từ dữ liệu" của Ekin D. Cubuk và cộng sự. (2018) ArXiv: [https://arxiv.org/abs/1805.09501](https://arxiv.org/abs/1805.09501)
+3. "RandAugment: Tăng cường dữ liệu tự động thực tế với không gian tìm kiếm giảm" của Ekin D. Cubuk et al. (2019) ArXiv: [https://arxiv.org/abs/1909.13719](https://arxiv.org/abs/1909.13719)
+4. "Cải thiện việc chính quy hóa các mạng thần kinh phức tạp có phần cắt bỏ" của Terrance DeVries và Graham W. Taylor (2017) ArXiv: [https://arxiv.org/abs/1708.04552](https://arxiv.org/abs/1708.04552)
+5. "CutMix: Chiến lược chính quy hóa để đào tạo các bộ phân loại mạnh với các tính năng có thể bản địa hóa" của Sangdoo Yun và cộng sự. (2019) ArXiv: [https://arxiv.org/abs/1905.04899](https://arxiv.org/abs/1905.04899)
 
-These resources provide valuable insights into the latest advancements in data augmentation techniques for CNNs and their impact on model performance.
+Những tài nguyên này cung cấp những hiểu biết sâu sắc có giá trị về những tiến bộ mới nhất trong kỹ thuật tăng cường dữ liệu cho CNN và tác động của chúng đối với hiệu suất mô hình.

@@ -1,7 +1,7 @@
-## Gradient Descent Fundamentals in Python
-Slide 1: Understanding Loss Functions in Gradient Descent
+## Nguyên tắc cơ bản về độ dốc trong Python
+Trang trình bày 1: Tìm hiểu về hàm mất mát trong quá trình tăng dần độ dốc
 
-The Mean Squared Error (MSE) loss function measures the average squared difference between predicted and actual values. For linear regression, it quantifies how far our predictions deviate from ground truth, providing a differentiable metric we can optimize.
+Hàm mất mát Sai số bình phương trung bình (MSE) đo chênh lệch bình phương trung bình giữa giá trị dự đoán và giá trị thực tế. Đối với việc khôi phục tính năng tuyến tính, chúng tôi không xác định mức độ dự kiến ​​của chúng tôi bị lệch nên thực tế cơ bản, cung cấp một số liệu khác biệt mà chúng tôi có thể tối ưu hóa.
 
 ```python
 import numpy as np
@@ -20,9 +20,9 @@ loss = mse_loss(y_true, y_pred)
 print(f"MSE Loss: {loss:.4f}")  # Output: MSE Loss: 0.0675
 ```
 
-Slide 2: Implementing Gradient Calculation
+Slide 2: Thực hiện tính toán gradient
 
-The gradient represents the slope of the loss function with respect to each parameter. For linear regression, we compute partial derivatives of MSE with respect to weights and bias to determine the direction of steepest descent.
+Độ dốc biểu hiện độ dốc của hàm bị mất đối với từng tham số. Đối với việc khôi phục tính năng tuyến tính, chúng tôi tính toán các hàm đạo đức riêng của MSE theo số và độ lệch để xác định hướng đi xuống dốc nhất.
 
 ```python
 def compute_gradients(X, y_true, y_pred, weights, bias):
@@ -52,9 +52,9 @@ print(f"Weight gradient: {dw[0]:.4f}")
 print(f"Bias gradient: {db:.4f}")
 ```
 
-Slide 3: Basic Gradient Descent Implementation
+Trang trình bày 3: Triển khai cơ sở hạ tầng tăng dần
 
-A complete implementation of batch gradient descent optimizes model parameters iteratively. The learning rate controls step size, while the number of iterations determines convergence opportunity.
+Việc phát triển hoàn thiện việc giảm độ dốc hàng loạt sẽ tối ưu hóa các tham số mô hình bằng cách lặp đi lặp lại. Kiểm tra tốc độ học Kiểm soát bước kích thước, trong số lần chu trình quyết định cơ hội hội tụ.
 
 ```python
 class GradientDescent:
@@ -94,9 +94,9 @@ model = GradientDescent(learning_rate=0.01, iterations=100)
 weights, bias = model.fit(X, y)
 ```
 
-Slide 4: Mini-batch Gradient Descent Implementation
+Trang trình bày 4: Triển khai giảm dần độ dốc theo chiều nhỏ
 
-Mini-batch gradient descent offers a balance between computational efficiency and update stability by processing small batches of data. This implementation includes batch sampling and iteration through multiple epochs.
+Giảm độ loạt hàng loạt thu nhỏ cân bằng giữa hiệu quả tính toán và cập nhật ổn định bằng cách xử lý các lô dữ liệu nhỏ. Việc phát triển này bao gồm việc lấy hàng mẫu và lặp lại qua nhiều kỷ nguyên.
 
 ```python
 def create_mini_batches(X, y, batch_size):
@@ -132,9 +132,9 @@ class MiniBatchGradientDescent:
         return self.weights, self.bias
 ```
 
-Slide 5: Momentum-based Gradient Descent
+Trang trình bày 5: Giảm dần độ dốc dựa trên động lượng
 
-Momentum helps accelerate gradient descent by accumulating past gradients, enabling faster convergence and better navigation of ravines in the loss landscape. This implementation adds velocity terms to parameter updates.
+Động lượng giúp tăng tốc độ giảm độ dốc bằng cách tích lũy độ dốc trong quá khứ, cho phép hội tụ nhanh hơn và điều hướng tốt hơn các khe núi trong cảnh quan bị mất. Việc triển khai này thêm các điều khoản vận tốc vào các cập nhật tham số.
 
 ```python
 class MomentumGradientDescent:
@@ -174,9 +174,9 @@ weights, bias = model.fit(X, y)
 print(f"Learned weights: {weights}, bias: {bias:.4f}")
 ```
 
-Slide 6: Adaptive Learning Rate Implementation
+Trang trình bày 6: Thực hiện tỷ lệ học tập ứng dụng
 
-Adaptive learning rates adjust automatically for each parameter based on historical gradients. This implementation includes both RMSprop and Adam optimization techniques for improved convergence.
+Ứng dụng tốc độ học sẽ tự động điều chỉnh cho từng tham số dựa trên độ dốc lịch sử. Việc phát triển này bao gồm các kỹ thuật tối ưu hóa RMSprop và Adam để cải thiện khả năng tụ điện.
 
 ```python
 class AdaptiveGradientDescent:
@@ -279,9 +279,9 @@ model = GradientDescentWithEarlyStopping(learning_rate=0.01, patience=10)
 weights, bias, best_loss = model.fit(X_train, y_train, X_val, y_val)
 ```
 
-Slide 8: Learning Rate Scheduling
+Trang trình bày 8: Lập kế hoạch tỷ lệ học tập
 
-Learning rate scheduling dynamically adjusts the learning rate during training to improve convergence. This implementation includes step decay and exponential decay schedules.
+Lập kế hoạch tốc độ học tập sẽ điều chỉnh tốc độ học tập linh hoạt trong quá trình đào tạo để cải thiện khả năng tụ hội. Việc phát triển này bao gồm lịch trình phân chia theo bước và phân tích theo cấp số nhân.
 
 ```python
 class LearningRateScheduler:
@@ -329,9 +329,9 @@ model = GradientDescentWithScheduler(scheduler)
 weights, bias, history = model.fit(X_train, y_train)
 ```
 
-Slide 9: Regularized Gradient Descent
+Trang trình bày 9: Giảm dần độ dốc đều
 
-Regularization prevents overfitting by adding penalty terms to the loss function. This implementation includes L1 (Lasso) and L2 (Ridge) regularization options.
+Quá trình hóa quy trình ngăn chặn trang bằng cách bổ sung thêm số lượng phạt vào hàm mất mát. Việc phát triển bao gồm các tùy chọn chính hóa L1 (Lasso) và L2 (Ridge).
 
 ```python
 def regularized_loss(y_true, y_pred, weights, lambda_reg, reg_type='l2'):
@@ -350,9 +350,9 @@ def regularized_loss(y_true, y_pred, weights, lambda_reg, reg_type='l2'):
 [Continuing with the remaining slides...]
 ```
 
-Slide 10: Regularized Gradient Descent Implementation
+Trang trình bày 10: Triển khai tăng dần độ dốc đều đặn
 
-This implementation extends our previous gradient descent algorithm to include both L1 and L2 regularization terms in the parameter updates, helping prevent overfitting while maintaining model performance.
+Việc phát triển này mở rộng phạm vi độ dốc thuật toán trước đây của chúng tôi để bao gồm cả thuật ngữ chính quy L1 và L2 trong các bản cập nhật tham số, giúp ngăn chặn công việc quá mạnh trong khi vẫn duy trì hiệu suất mô hình.
 
 ```python
 class RegularizedGradientDescent:
@@ -406,9 +406,9 @@ model_l1 = RegularizedGradientDescent(learning_rate=0.01, lambda_reg=0.1, reg_ty
 weights_l1, bias_l1, history_l1 = model_l1.fit(X, y)
 ```
 
-Slide 11: Real-world Application: Housing Price Prediction
+Slide 11: Ứng dụng thực tế: Dự đoán giá nhà ở
 
-Implementation of gradient descent for predicting housing prices using multiple features, including data preprocessing and model evaluation metrics.
+Triển khai tính năng giảm độ dốc để mong đợi giá nhà ở bằng nhiều tính năng, bao gồm tiền xử lý dữ liệu và mô hình đánh giá dữ liệu.
 
 ```python
 import pandas as pd
@@ -463,9 +463,9 @@ for metric, value in metrics.items():
     print(f"{metric}: {value:.2f}")
 ```
 
-Slide 12: Real-world Application: Stock Price Movement Prediction
+Slide 12: Ứng dụng thực tế: Dự đoán biến động giá cổ phiếu
 
-This implementation demonstrates gradient descent for predicting stock price movements using technical indicators and showcases feature engineering for time series data.
+Việc phát triển này có thể hiện thực hóa việc giảm dần độ dốc để dự đoán giá cổ phiếu bằng cách sử dụng các chỉ báo kỹ thuật và giới thiệu kỹ thuật tính năng cho dữ liệu chuỗi thời gian.
 
 ```python
 class StockPricePredictor:
@@ -531,9 +531,9 @@ print(f"Training Accuracy: {results['train_accuracy']:.4f}")
 print(f"Testing Accuracy: {results['test_accuracy']:.4f}")
 ```
 
-Slide 13: Visualizing Gradient Descent Convergence
+Trang trình bày 13: Độ dốc tăng dần liên tục
 
-Implementation of a visualization tool to understand how gradient descent converges to the optimal solution across different optimization techniques.
+Triển khai công cụ trực quan hóa để tìm hiểu cách thức giảm dần độ dốc xuống giải pháp tối ưu trên các kỹ năng tối ưu hóa khác nhau.
 
 ```python
 class GradientDescentVisualizer:
@@ -599,9 +599,9 @@ visualizer = GradientDescentVisualizer()
 fig = visualizer.plot_convergence()
 ```
 
-Slide 14: Stochastic Gradient Descent Implementation
+Trang trình bày 14: Triển khai ngẫu nhiên tăng dần độ dốc
 
-This implementation focuses on stochastic updates, processing one sample at a time, which can be particularly useful for very large datasets or online learning scenarios.
+Việc triển khai này tập trung vào các cập nhật ngẫu nhiên, xử lý từng mẫu một, điều này có thể đặc biệt hữu ích cho các tập dữ liệu rất lớn hoặc các tình huống học tập trực tuyến.
 
 ```python
 class StochasticGradientDescent:
@@ -688,14 +688,14 @@ test_mse = np.mean((y_test - y_pred)**2)
 print(f"Test MSE: {test_mse:.6f}")
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-Latest research papers on gradient descent optimization:
+Các tài liệu nghiên cứu mới nhất về tối ưu hóa độ dốc:
 
-*   "Adaptive Learning Rate Selection for Deep Neural Networks" - [https://arxiv.org/abs/2203.12172](https://arxiv.org/abs/2203.12172)
-*   "On the Convergence of Adam and Beyond" - [https://arxiv.org/abs/1904.09237](https://arxiv.org/abs/1904.09237)
-*   "Why Momentum Really Works" - [https://arxiv.org/abs/1505.05075](https://arxiv.org/abs/1505.05075)
-*   "An Overview of Gradient Descent Optimization Algorithms" - [https://arxiv.org/abs/1609.04747](https://arxiv.org/abs/1609.04747)
-*   "Nesterov's Accelerated Gradient and Momentum as approximations to Regularised Update Descent" - [https://arxiv.org/abs/1607.01981](https://arxiv.org/abs/1607.01981)
+* "Lựa chọn tỷ lệ học tập thích hợp cho mạng lưới thần kinh sâu" - [https://arxiv.org/abs/2203.12172](https://arxiv.org/abs/2203.12172)
+* "Về sự hội tụ của Adam và xa hơn" - [https://arxiv.org/abs/1904.09237](https://arxiv.org/abs/1904.09237)
+* "Tại sao Động lực thực sự có tác dụng" - [https://arxiv.org/abs/1505.05075](https://arxiv.org/abs/1505.05075)
+* "Tổng quan về các thuật toán tối ưu hóa giảm dần độ dốc" - [https://arxiv.org/abs/1609.04747](https://arxiv.org/abs/1609.04747)
+* "Tốc độ tăng tốc độ dốc và động lượng của Nesterov gần đúng với bản cập nhật chính xác Độ dốc nâng cấp" - [https://arxiv.org/abs/1607.01981](https://arxiv.org/abs/1607.01981)
 
-Note: These papers serve as foundational reading for understanding modern optimization techniques in machine learning. For the most current research, please verify these citations and check recent publications in the field.
+Lưu ý: Những bài viết này đóng vai trò là tài liệu đọc nền tảng để hiểu các kỹ thuật tối ưu hóa hiện đại trong học máy. Đối với nghiên cứu mới nhất, vui lòng xác minh các trích dẫn này và kiểm tra các ấn phẩm gần đây trong lĩnh vực này.

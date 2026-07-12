@@ -1,9 +1,9 @@
-## ZFNet CNN for CIFAR-10 Image Classification in Python
-Slide 1:
+## ZFNet CNN để phân loại hình ảnh CIFAR-10 trong Python
+Trang trình bày 1:
 
-Introduction to ZFNet for CIFAR-10 Classification
+Giới thiệu ZFNet để phân loại CIFAR-10
 
-ZFNet, introduced by Zeiler and Fergus in 2013, is a Convolutional Neural Network (CNN) architecture that achieved state-of-the-art results on the CIFAR-10 image classification dataset. In this presentation, we will explore how to implement ZFNet using Python and the Pandas library for data preprocessing and manipulation.
+ZFNet, được Zeiler và Fergus giới thiệu vào năm 2013, là kiến ​​trúc Mạng thần kinh chuyển đổi (CNN) đã đạt được kết quả tiên tiến trên bộ dữ liệu phân loại hình ảnh CIFAR-10. Trong phần trình bày này, chúng ta sẽ khám phá cách triển khai ZFNet bằng Python và thư viện Pandas để xử lý và thao tác trước dữ liệu.
 
 ```python
 import pandas as pd
@@ -21,11 +21,11 @@ The CIFAR-10 dataset consists of 60,000 32x32 color images in 10 classes, with 6
 (X_train, y_train), (X_test, y_test) = cifar10.load_data()
 ```
 
-Slide 3:
+Trang trình bày 3:
 
-Data Preprocessing
+Tiền xử lý dữ liệu
 
-Before feeding the data to the ZFNet model, we need to preprocess it. This typically involves normalization and reshaping the data to the expected input format.
+Trước khi cung cấp dữ liệu cho mô hình ZFNet, chúng ta cần xử lý trước dữ liệu. Điều này thường liên quan đến việc chuẩn hóa và định hình lại dữ liệu theo định dạng đầu vào dự kiến.
 
 ```python
 X_train = X_train.astype('float32') / 255
@@ -35,11 +35,11 @@ X_train = X_train.reshape(-1, 32, 32, 3)
 X_test = X_test.reshape(-1, 32, 32, 3)
 ```
 
-Slide 4:
+Trang trình bày 4:
 
-One-Hot Encoding the Labels
+Mã hóa một lần các nhãn
 
-Since the labels in the CIFAR-10 dataset are integers, we need to one-hot encode them before using them as targets for the classification task.
+Vì các nhãn trong tập dữ liệu CIFAR-10 là số nguyên nên chúng tôi cần mã hóa chúng một lần trước khi sử dụng chúng làm mục tiêu cho nhiệm vụ phân loại.
 
 ```python
 from keras.utils import to_categorical
@@ -48,11 +48,11 @@ y_train = to_categorical(y_train, num_classes=10)
 y_test = to_categorical(y_test, num_classes=10)
 ```
 
-Slide 5:
+Trang trình bày 5:
 
-Defining the ZFNet Architecture
+Xác định kiến ​​trúc ZFNet
 
-ZFNet is a CNN architecture that consists of several convolutional, pooling, and fully connected layers. We can define the architecture using the Keras library.
+ZFNet là một kiến ​​trúc CNN bao gồm một số lớp chập, gộp và được kết nối đầy đủ. Chúng ta có thể xác định kiến ​​trúc bằng thư viện Keras.
 
 ```python
 from keras.models import Sequential
@@ -65,11 +65,11 @@ model = Sequential([
 ])
 ```
 
-Slide 6:
+Trang trình bày 6:
 
-Compiling the Model
+Biên dịch mô hình
 
-Once the model architecture is defined, we need to compile it with an optimizer, loss function, and evaluation metrics.
+Sau khi xác định được kiến ​​trúc mô hình, chúng ta cần biên dịch nó bằng trình tối ưu hóa, hàm mất mát và số liệu đánh giá.
 
 ```python
 model.compile(optimizer='adam',
@@ -90,11 +90,11 @@ model.fit(X_train, y_train,
           validation_data=(X_test, y_test))
 ```
 
-Slide 8:
+Trang trình bày 8:
 
-Evaluating the Model
+Đánh giá mô hình
 
-After training, we can evaluate the model's performance on the test set using the `evaluate` method.
+Sau khi đào tạo, chúng ta có thể đánh giá hiệu suất của mô hình trên tập kiểm tra bằng phương pháp `evaluate`.
 
 ```python
 test_loss, test_acc = model.evaluate(X_test, y_test)
@@ -128,11 +128,11 @@ plt.title(f'Prediction: {class_name}')
 plt.show()
 ```
 
-Slide 10:
+Trang trình bày 10:
 
-Data Augmentation
+Tăng cường dữ liệu
 
-Data augmentation can be used to artificially increase the size of the training dataset and improve model performance. We can use the ImageDataGenerator class from Keras for this purpose.
+Tăng cường dữ liệu có thể được sử dụng để tăng kích thước của tập dữ liệu huấn luyện một cách giả tạo và cải thiện hiệu suất mô hình. Chúng ta có thể sử dụng lớp ImageDataGenerator từ Keras cho mục đích này.
 
 ```python
 from keras.preprocessing.image import ImageDataGenerator
@@ -149,11 +149,11 @@ datagen = ImageDataGenerator(
 train_generator = datagen.flow(X_train, y_train, batch_size=64)
 ```
 
-Slide 11:
+Trang trình bày 11:
 
-Transfer Learning with ZFNet
+Chuyển giao học tập với ZFNet
 
-Transfer learning is a technique where we can use the pre-trained weights from a model trained on a large dataset and fine-tune it on our specific task. This can lead to better performance and faster convergence.
+Học chuyển là một kỹ thuật trong đó chúng ta có thể sử dụng các trọng số được đào tạo trước từ một mô hình được đào tạo trên một tập dữ liệu lớn và tinh chỉnh nó cho nhiệm vụ cụ thể của chúng ta. Điều này có thể dẫn đến hiệu suất tốt hơn và hội tụ nhanh hơn.
 
 ```python
 from keras.applications import ZFNet
@@ -179,11 +179,11 @@ transfer_model.compile(optimizer='adam', loss='categorical_crossentropy', metric
 transfer_model.fit(train_generator, epochs=10, validation_data=(X_test, y_test))
 ```
 
-Slide 12:
+Trang trình bày 12:
 
-ZFNet Visualization
+Trực quan hóa ZFNet
 
-We can visualize the learned filters and feature maps of the ZFNet model to gain insights into its internal representations.
+Chúng ta có thể trực quan hóa các bộ lọc đã học và bản đồ tính năng của mô hình ZFNet để hiểu rõ hơn về các biểu diễn bên trong của nó.
 
 ```python
 from keras.models import Model
@@ -205,11 +205,11 @@ for i, activation in enumerate(activations):
 plt.show()
 ```
 
-Slide 13:
+Trang trình bày 13:
 
-ZFNet Performance Analysis
+Phân tích hiệu suất ZFNet
 
-We can analyze the performance of the ZFNet model by evaluating its accuracy, precision, recall, and F1-score on the test set.
+Chúng tôi có thể phân tích hiệu suất của mô hình ZFNet bằng cách đánh giá độ chính xác, độ chính xác, khả năng thu hồi và điểm F1 của nó trên bộ kiểm tra.
 
 ```python
 from sklearn.metrics import precision_score, recall_score, f1_score
@@ -229,16 +229,16 @@ print(f'Recall: {recall:.4f}')
 print(f'F1-score: {f1:.4f}')
 ```
 
-Slide 14:
+Trang trình bày 14:
 
-Additional Resources
+Tài nguyên bổ sung
 
-For further reading and exploration, here are some additional resources on ZFNet and related topics from ArXiv.org:
+Để đọc và khám phá thêm, đây là một số tài nguyên bổ sung trên ZFNet và các chủ đề liên quan từ ArXiv.org:
 
-1. Zeiler, M. D., & Fergus, R. (2013). Visualizing and Understanding Convolutional Networks. arXiv:1311.2901 \[cs.CV\] [https://arxiv.org/abs/1311.2901](https://arxiv.org/abs/1311.2901)
-2. Krizhevsky, A., Sutskever, I., & Hinton, G. E. (2012). ImageNet Classification with Deep Convolutional Neural Networks. arXiv:1202.2683 \[cs.CV\] [https://arxiv.org/abs/1202.2683](https://arxiv.org/abs/1202.2683)
-3. Simonyan, K., & Zisserman, A. (2014). Very Deep Convolutional Networks for Large-Scale Image Recognition. arXiv:1409.1556 \[cs.CV\] [https://arxiv.org/abs/1409.1556](https://arxiv.org/abs/1409.1556)
-4. Szegedy, C., Liu, W., Jia, Y., Sermanet, P., Reed, S., Anguelov, D., ... & Rabinovich, A. (2015). Going Deeper with Convolutions. arXiv:1409.4842 \[cs.CV\] [https://arxiv.org/abs/1409.4842](https://arxiv.org/abs/1409.4842)
-5. He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep Residual Learning for Image Recognition. arXiv:1512.03385 \[cs.CV\] [https://arxiv.org/abs/1512.03385](https://arxiv.org/abs/1512.03385)
+1. Zeiler, MD, & Fergus, R. (2013). Trực quan hóa và hiểu các mạng tích chập. arXiv:1311.2901 \[cs.CV\] [https://arxiv.org/abs/1311.2901](https://arxiv.org/abs/1311.2901)
+2. Krizhevsky, A., Sutskever, I., & Hinton, G. E. (2012). Phân loại ImageNet với Mạng thần kinh chuyển đổi sâu. arXiv:1202.2683 \[cs.CV\] [https://arxiv.org/abs/1202.2683](https://arxiv.org/abs/1202.2683)
+3. Simonyan, K., & Zisserman, A. (2014). Mạng tích chập rất sâu để nhận dạng hình ảnh quy mô lớn. arXiv:1409.1556 \[cs.CV\] [https://arxiv.org/abs/1409.1556](https://arxiv.org/abs/1409.1556)
+4. Szegedy, C., Liu, W., Jia, Y., Sermanet, P., Reed, S., Anguelov, D., ... & Rabinovich, A. (2015). Đi sâu hơn với các kết cấu. arXiv:1409.4842 \[cs.CV\] [https://arxiv.org/abs/1409.4842](https://arxiv.org/abs/1409.4842)
+5. He, K., Zhang, X., Ren, S., & Sun, J. (2016). Học tập dư thừa sâu để nhận dạng hình ảnh. arXiv:1512.03385 \[cs.CV\] [https://arxiv.org/abs/1512.03385](https://arxiv.org/abs/1512.03385)
 
-These papers cover the original ZFNet architecture, the AlexNet architecture that inspired ZFNet, deeper CNN architectures like VGGNet and GoogLeNet, and the groundbreaking ResNet architecture, which built upon the ideas from previous architectures like ZFNet.
+Các bài viết này bao gồm kiến ​​trúc ZFNet ban đầu, kiến ​​trúc AlexNet đã truyền cảm hứng cho ZFNet, các kiến ​​trúc CNN sâu hơn như VGGNet và GoogLeNet, cũng như kiến ​​trúc ResNet đột phá, được xây dựng dựa trên ý tưởng từ các kiến ​​trúc trước đó như ZFNet.

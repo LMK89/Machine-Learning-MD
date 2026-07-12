@@ -1,7 +1,7 @@
-## Machine Learning Classification Metrics with Python
-Slide 1: Understanding Classification Metrics Fundamentals
+## Số liệu phân loại học máy với Python
+Trang trình bày 1: Tìm hiểu các nguyên tắc cơ bản về số liệu phân loại
 
-Classification metrics form the foundation for evaluating machine learning model performance. These metrics help quantify how well a model can distinguish between different classes, measuring various aspects of predictive accuracy through statistical calculations derived from the confusion matrix.
+Các số liệu phân loại tạo thành nền tảng để đánh giá hiệu suất của mô hình học máy. Các số liệu này giúp định lượng mức độ một mô hình có thể phân biệt giữa các lớp khác nhau, đo lường các khía cạnh khác nhau của độ chính xác dự đoán thông qua các tính toán thống kê bắt nguồn từ ma trận nhầm lẫn.
 
 ```python
 import numpy as np
@@ -32,9 +32,9 @@ y_pred = [0, 1, 0, 0, 1, 0, 1, 1]
 result = create_confusion_matrix(y_true, y_pred)
 ```
 
-Slide 2: Accuracy and Precision Metrics
+Trang trình bày 2: Độ chính xác và số liệu chính xác
 
-These fundamental metrics provide different perspectives on model performance. Accuracy measures overall correctness, while precision focuses on the reliability of positive predictions, making them essential for different use cases and business requirements.
+Cơ sở dữ liệu này cung cấp những quan điểm khác nhau về hiệu suất của mô hình. Tổng hợp độ chính xác của phép đo chính xác, khi độ tin cậy của các dự đoán cực kỳ chính xác cao, khiến chúng trở nên cần thiết cho các trường hợp sử dụng và yêu cầu kinh doanh khác nhau.
 
 ```python
 def calculate_basic_metrics(y_true, y_pred):
@@ -64,9 +64,9 @@ print(f"Accuracy: {metrics['accuracy']:.3f}")
 print(f"Precision: {metrics['precision']:.3f}")
 ```
 
-Slide 3: Recall and F1-Score Implementation
+Trang trình bày 3: Thu hồi và Thực hiện Điểm F1
 
-Recall measures the model's ability to find all relevant cases, while F1-score provides a balanced measure between precision and recall. These metrics are crucial when dealing with imbalanced datasets where accuracy alone might be misleading.
+Khả năng thu hồi đo lường khả năng của mô hình trong việc tìm thấy tất cả các trường hợp liên quan, trong khi điểm F1 cung cấp thước đo cân bằng giữa độ chính xác và khả năng thu hồi. Các số liệu này rất quan trọng khi xử lý các tập dữ liệu mất cân bằng trong đó độ chính xác có thể gây hiểu nhầm.
 
 ```python
 def calculate_advanced_metrics(y_true, y_pred):
@@ -95,9 +95,9 @@ print(f"Recall: {metrics['recall']:.3f}")
 print(f"F1-Score: {metrics['f1_score']:.3f}")
 ```
 
-Slide 4: ROC Curve Implementation
+Trang trình bày 4: Triển khai đường cong ROC
 
-The Receiver Operating Characteristic curve visualizes the trade-off between true positive rate and false positive rate across various classification thresholds. This metric is essential for understanding model performance across different decision boundaries.
+Đường cong Đặc tính hoạt động của máy thu hiển thị sự cân bằng giữa tỷ lệ dương tính thực và tỷ lệ dương tính giả trên các ngưỡng phân loại khác nhau. Số liệu này rất cần thiết để hiểu hiệu suất của mô hình trên các ranh giới quyết định khác nhau.
 
 ```python
 import matplotlib.pyplot as plt
@@ -132,9 +132,9 @@ y_prob = [0.1, 0.9, 0.2, 0.7, 0.8, 0.1, 0.9, 0.3]
 plot_roc_curve(y_true, y_prob)
 ```
 
-Slide 5: Precision-Recall Curve
+Trang trình bày 5: Đường cong thu hồi chính xác
 
-The Precision-Recall curve is particularly useful for imbalanced datasets where ROC curves might present an overly optimistic view of model performance. It shows the trade-off between precision and recall at various threshold settings.
+Đường cong Precision-Recall đặc biệt hữu ích cho các bộ dữ liệu mất cân bằng trong đó đường cong ROC có thể thể hiện cái nhìn quá lạc quan về hiệu suất mô hình. Nó cho thấy sự cân bằng giữa độ chính xác và thu hồi ở các cài đặt ngưỡng khác nhau.
 
 ```python
 from sklearn.metrics import precision_recall_curve, average_precision_score
@@ -165,9 +165,9 @@ y_prob = [0.1, 0.9, 0.2, 0.7, 0.8, 0.1, 0.9, 0.3]
 plot_precision_recall_curve(y_true, y_prob)
 ```
 
-Slide 6: Multi-Class Classification Metrics
+Trang trình bày 6: Số liệu phân loại nhiều lớp
 
-Multi-class classification requires specialized metrics that can handle multiple categories simultaneously. These implementations focus on macro and micro averaging techniques to provide comprehensive performance evaluation across all classes.
+Phân loại nhiều lớp yêu cầu các số liệu chuyên biệt có thể xử lý đồng thời nhiều danh mục. Những triển khai này tập trung vào các kỹ thuật lấy trung bình vĩ mô và vi mô để cung cấp đánh giá hiệu suất toàn diện trên tất cả các lớp.
 
 ```python
 def calculate_multiclass_metrics(y_true, y_pred, num_classes):
@@ -211,9 +211,9 @@ metrics = calculate_multiclass_metrics(y_true, y_pred, num_classes=3)
 print(f"Macro Precision: {metrics['macro_precision']:.3f}")
 ```
 
-Slide 7: Cohen's Kappa Score Implementation
+Trang trình bày 7: Thực hiện Điểm Kappa của Cohen
 
-Cohen's Kappa Score measures inter-rater agreement for categorical items, accounting for agreement occurring by chance. This metric is particularly useful when evaluating model performance on imbalanced datasets.
+Điểm Kappa của Cohen đo lường sự đồng thuận giữa những người đánh giá đối với các hạng mục được phân loại, tính đến sự đồng thuận xảy ra một cách tình cờ. Số liệu này đặc biệt hữu ích khi đánh giá hiệu suất của mô hình trên các tập dữ liệu không cân bằng.
 
 ```python
 def cohen_kappa_score(y_true, y_pred):
@@ -247,9 +247,9 @@ kappa = cohen_kappa_score(y_true, y_pred)
 print(f"Cohen's Kappa Score: {kappa:.3f}")
 ```
 
-Slide 8: Balanced Accuracy and Matthews Correlation Coefficient
+Trang trình bày 8: Độ chính xác cân bằng và Hệ số tương quan Matthews
 
-These metrics provide robust evaluation measures for imbalanced datasets. Balanced accuracy normalizes true positive and true negative rates, while Matthews Correlation Coefficient considers all confusion matrix elements in a balanced way.
+Các số liệu này cung cấp các biện pháp đánh giá mạnh mẽ cho các bộ dữ liệu mất cân bằng. Độ chính xác cân bằng bình thường hóa tỷ lệ dương thực và âm thực, trong khi Hệ số Tương quan Matthews xem xét tất cả các phần tử ma trận nhầm lẫn một cách cân bằng.
 
 ```python
 def advanced_imbalanced_metrics(y_true, y_pred):
@@ -286,9 +286,9 @@ print(f"Balanced Accuracy: {metrics['balanced_accuracy']:.3f}")
 print(f"Matthews Correlation Coefficient: {metrics['mcc']:.3f}")
 ```
 
-Slide 9: Cross-Validation Implementation for Classification Metrics
+Trang trình bày 9: Triển khai xác thực chéo các số liệu phân loại
 
-Cross-validation provides a robust method for assessing model performance by evaluating metrics across different data splits. This implementation focuses on stratified k-fold cross-validation to maintain class distribution across folds.
+Xác thực chéo cung cấp một phương pháp mạnh mẽ để đánh giá hiệu suất mô hình bằng cách đánh giá các số liệu trên các phần tách dữ liệu khác nhau. Việc triển khai này tập trung vào xác thực chéo k-fold phân tầng để duy trì sự phân bổ lớp trên các nếp gấp.
 
 ```python
 from sklearn.model_selection import StratifiedKFold
@@ -345,9 +345,9 @@ for metric, value in results.items():
     print(f"{metric}: {value:.3f}")
 ```
 
-Slide 10: Calibration Metrics and Reliability Diagram
+Slide 10: Biểu đồ đo lường hiệu chuẩn và độ tin cậy
 
-Model calibration assesses how well the predicted probabilities of a classifier reflect the actual probabilities of the outcomes. This implementation includes both calibration curve plotting and Brier score calculation.
+Hiệu chuẩn mô hình đánh giá xác suất dự đoán của bộ phân loại phản ánh xác suất thực tế của kết quả tốt đến mức nào. Việc triển khai này bao gồm cả việc vẽ đường cong hiệu chuẩn và tính điểm Brier.
 
 ```python
 from sklearn.calibration import calibration_curve
@@ -397,9 +397,9 @@ results = analyze_calibration(y_true, y_prob)
 print(f"Brier Score: {results['brier_score']:.3f}")
 ```
 
-Slide 11: Custom Scoring Function Implementation
+Trang trình bày 11: Triển khai chức năng chấm điểm tùy chỉnh
 
-Developing custom scoring metrics allows for domain-specific evaluation criteria. This implementation demonstrates how to create and validate custom scoring functions that can be used with scikit-learn's cross-validation framework.
+Việc phát triển các số liệu chấm điểm tùy chỉnh cho phép đưa ra các tiêu chí đánh giá theo từng miền cụ thể. Việc triển khai này trình bày cách tạo và xác thực các chức năng tính điểm tùy chỉnh có thể được sử dụng với khung xác thực chéo của scikit-learn.
 
 ```python
 from sklearn.metrics import make_scorer
@@ -446,9 +446,9 @@ results = evaluate_with_custom_metric(X, y, model)
 print(f"Custom Metric - Mean: {results['mean_score']:.3f} ± {results['std_score']:.3f}")
 ```
 
-Slide 12: Real-World Example - Credit Card Fraud Detection
+Trang trình chiếu 12: Ví dụ thực tế - Phát hiện gian lận thẻ tín dụng
 
-This implementation demonstrates a complete workflow for evaluating a fraud detection model, where class imbalance and cost-sensitive errors require careful metric selection and interpretation.
+Việc triển khai này thể hiện một quy trình làm việc hoàn chỉnh để đánh giá mô hình phát hiện gian lận, trong đó sự mất cân bằng lớp và các lỗi nhạy cảm về chi phí đòi hỏi phải lựa chọn và giải thích số liệu cẩn thận.
 
 ```python
 import pandas as pd
@@ -518,9 +518,9 @@ for key, value in metrics.items():
         print(f"{key}:\n{value}")
 ```
 
-Slide 13: Real-World Example - Medical Diagnosis Classification
+Trang trình bày 13: Ví dụ thực tế - Phân loại chẩn đoán y tế
 
-This implementation showcases a medical diagnosis classifier evaluation where false negatives have serious implications and multiple metrics must be considered together.
+Việc triển khai này thể hiện đánh giá của bộ phân loại chẩn đoán y tế, trong đó các kết quả âm tính giả có ý nghĩa nghiêm trọng và nhiều số liệu phải được xem xét cùng nhau.
 
 ```python
 def evaluate_medical_classifier(X, y, disease_names):
@@ -590,10 +590,10 @@ for disease, metrics in results.items():
         print(f"{metric}: {value:.3f}")
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-*   "A Survey on Deep Learning for Named Entity Recognition" - [https://arxiv.org/abs/1812.09449](https://arxiv.org/abs/1812.09449)
-*   "Deep Neural Networks for Learning Graph Representations" - [https://arxiv.org/abs/1704.06483](https://arxiv.org/abs/1704.06483)
-*   "Calibration in Modern Neural Networks" - [https://arxiv.org/abs/2106.07998](https://arxiv.org/abs/2106.07998)
-*   "Why Should I Trust You?: Explaining the Predictions of Any Classifier" - [https://arxiv.org/abs/1602.04938](https://arxiv.org/abs/1602.04938)
-*   "Learning Deep Features for One-Class Classification" - [https://arxiv.org/abs/1801.05365](https://arxiv.org/abs/1801.05365)
+* "Khảo sát về học sâu để nhận dạng thực thể được đặt tên" - [https://arxiv.org/abs/1812.09449](https://arxiv.org/abs/1812.09449)
+* "Mạng lưới thần kinh sâu để biểu diễn đồ thị học tập" - [https://arxiv.org/abs/1704.06483](https://arxiv.org/abs/1704.06483)
+* "Hiệu chỉnh trong Mạng thần kinh hiện đại" - [https://arxiv.org/abs/2106.07998](https://arxiv.org/abs/2106.07998)
+* "Tại sao tôi nên tin tưởng bạn?: Giải thích dự đoán của bất kỳ bộ phân loại nào" - [https://arxiv.org/abs/1602.04938](https://arxiv.org/abs/1602.04938)
+* "Tìm hiểu các tính năng chuyên sâu để phân loại một lớp" - [https://arxiv.org/abs/1801.05365](https://arxiv.org/abs/1801.05365)

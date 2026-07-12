@@ -1,7 +1,7 @@
-## Principal Curves for Nonlinear Data Analysis
-Slide 1: Understanding Principal Curves with Simple Datasets
+## Đường cong chính cho phân tích dữ liệu phi tuyến
+Trang trình bày 1: Tìm hiểu các đường cong chính với bộ dữ liệu đơn giản
 
-Principal curves provide a nonlinear generalization of principal components analysis, offering a smooth, self-consistent curve that passes through the middle of a data distribution. The implementation starts with synthetic data generation and visualization to understand the concept.
+Các đường cong chính cung cấp sự khái quát hóa phi tuyến tính của phân tích các thành phần chính, mang lại một đường cong mượt mà, tự nhất quán đi qua phần giữa của phân phối dữ liệu. Việc triển khai bắt đầu bằng việc tạo và trực quan hóa dữ liệu tổng hợp để hiểu khái niệm.
 
 ```python
 import numpy as np
@@ -24,9 +24,9 @@ plt.xlabel('X'); plt.ylabel('Y')
 plt.show()
 ```
 
-Slide 2: Basic Principal Curve Implementation
+Slide 2: Triển khai đường cong chính cơ bản
 
-The core algorithm iteratively projects points onto the curve and updates the curve to minimize the average squared distance to the projected points. This implementation demonstrates the fundamental concepts without optimization techniques.
+Thuật toán cốt lõi lặp đi lặp lại chiếu các điểm lên đường cong và cập nhật đường cong để giảm thiểu khoảng cách bình phương trung bình đến các điểm được chiếu. Việc triển khai này thể hiện các khái niệm cơ bản mà không cần kỹ thuật tối ưu hóa.
 
 ```python
 class SimplePrincipalCurve:
@@ -72,9 +72,9 @@ plt.title('Principal Curve Fitted to Spiral Data')
 plt.show()
 ```
 
-Slide 3: Advanced Principal Curve Implementation
+Trang trình bày 3: Triển khai đường cong chính nâng cao
 
-This implementation incorporates local polynomial smoothing and adaptive segmentation, providing better curve estimation for complex data structures. The algorithm uses dynamic programming for optimal segment placement.
+Việc triển khai này kết hợp việc làm mịn đa thức cục bộ và phân đoạn thích ứng, cung cấp ước tính đường cong tốt hơn cho các cấu trúc dữ liệu phức tạp. Thuật toán sử dụng lập trình động để đặt vị trí phân khúc tối ưu.
 
 ```python
 class AdvancedPrincipalCurve:
@@ -168,9 +168,9 @@ def calculate_distances(curve_points, data, metric='euclidean'):
         return distances
 ```
 
-Slide 5: Principal Curves for High-Dimensional Data
+Trang trình bày 5: Đường cong chính cho dữ liệu chiều cao
 
-When dealing with high-dimensional data, principal curves require specialized techniques for efficient computation and visualization. This implementation includes dimensionality reduction and projection methods.
+Khi xử lý dữ liệu nhiều chiều, các đường cong chính đòi hỏi các kỹ thuật chuyên biệt để tính toán và hiển thị hiệu quả. Việc triển khai này bao gồm các phương pháp giảm kích thước và chiếu.
 
 ```python
 import numpy as np
@@ -225,9 +225,9 @@ class HighDimPrincipalCurve:
         return curve_points
 ```
 
-Slide 6: Optimization Techniques for Principal Curves
+Trang trình bày 6: Kỹ thuật tối ưu hóa đường cong chính
 
-Advanced optimization methods significantly improve the convergence and stability of principal curve fitting. This implementation uses gradient descent with momentum and adaptive learning rates to optimize curve positions.
+Các phương pháp tối ưu hóa nâng cao cải thiện đáng kể độ hội tụ và độ ổn định của việc khớp đường cong chính. Việc triển khai này sử dụng phương pháp giảm độ dốc với động lượng và tốc độ học thích ứng để tối ưu hóa các vị trí đường cong.
 
 ```python
 class OptimizedPrincipalCurve:
@@ -338,9 +338,9 @@ class CrossValidatedPrincipalCurve:
         plt.show()
 ```
 
-Slide 8: Handling Missing Data in Principal Curves
+Slide 8: Xử lý dữ liệu bị thiếu trong đường cong chính
 
-Real-world datasets often contain missing values. This implementation provides methods for handling missing data through imputation and robust curve fitting.
+Bộ dữ liệu trong thế giới thực thường chứa các giá trị bị thiếu. Việc triển khai này cung cấp các phương pháp để xử lý dữ liệu bị thiếu thông qua phép tính và khớp đường cong mạnh mẽ.
 
 ```python
 class RobustPrincipalCurve:
@@ -445,9 +445,9 @@ class TimeSeriesPrincipalCurve:
         return np.argmin(distances, axis=1)
 ```
 
-Slide 10: Robust Error Metrics for Principal Curves
+Trang trình bày 10: Số liệu sai số chắc chắn cho các đường cong chính
 
-Implementing robust error metrics helps evaluate the quality of principal curve fits and detect potential issues in the fitting process.
+Việc triển khai các số liệu lỗi mạnh mẽ giúp đánh giá chất lượng của việc khớp đường cong chính và phát hiện các vấn đề tiềm ẩn trong quá trình khớp.
 
 ```python
 class PrincipalCurveMetrics:
@@ -578,9 +578,9 @@ class HierarchicalPrincipalCurve:
         plt.show()
 ```
 
-Slide 12: Principal Curves for Dataset Visualization
+Trang trình bày 12: Đường cong chính để hiển thị tập dữ liệu
 
-This implementation focuses on advanced visualization techniques for principal curves, including confidence regions and density estimation along the curve.
+Việc triển khai này tập trung vào các kỹ thuật trực quan hóa nâng cao cho các đường cong chính, bao gồm các vùng tin cậy và ước tính mật độ dọc theo đường cong.
 
 ```python
 class VisualizationPrincipalCurve:
@@ -745,9 +745,9 @@ class GeneExpressionPrincipalCurve:
         plt.show()
 ```
 
-Slide 14: Principal Surfaces Extension
+Slide 14: Mở rộng bề mặt chính
 
-Extending principal curves to principal surfaces allows for more complex manifold learning. This implementation provides methods for fitting and analyzing principal surfaces in high-dimensional data.
+Việc mở rộng các đường cong chính tới các bề mặt chính cho phép việc học đa dạng phức tạp hơn. Việc triển khai này cung cấp các phương pháp để khớp và phân tích các bề mặt chính trong dữ liệu nhiều chiều.
 
 ```python
 class PrincipalSurface:

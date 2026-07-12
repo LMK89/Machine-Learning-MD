@@ -1,7 +1,7 @@
-## How to Create Custom Exception in Python
-Slide 1: Understanding Custom Exceptions
+## Cách tạo ngoại lệ tùy chỉnh trong Python
+Trang trình bày 1: Tìm hiểu các ngoại lệ tùy chỉnh
 
-Custom exceptions in Python extend the built-in Exception class to create specialized error handling mechanisms. These allow developers to define application-specific error conditions and provide meaningful error messages tailored to their program's requirements.
+Các ngoại lệ tùy chỉnh trong Python mở rộng lớp Ngoại lệ tích hợp để tạo các cơ chế xử lý lỗi chuyên dụng. Điều này cho phép các nhà phát triển xác định các điều kiện lỗi dành riêng cho ứng dụng và cung cấp các thông báo lỗi có ý nghĩa phù hợp với yêu cầu chương trình của họ.
 
 ```python
 # Basic structure of a custom exception
@@ -26,9 +26,9 @@ class InvalidWeightError(Exception):
         return f"Weight Error: {self.message}"
 ```
 
-Slide 3: Implementing Weight Calculator with Custom Exception
+Trang trình bày 3: Triển khai Công cụ tính trọng lượng với ngoại lệ tùy chỉnh
 
-The weight calculator demonstrates practical usage of custom exceptions by validating input parameters and raising appropriate errors when conditions are not met. This ensures robust error handling in real-world applications.
+Công cụ tính trọng lượng thể hiện cách sử dụng thực tế các ngoại lệ tùy chỉnh bằng cách xác thực các tham số đầu vào và đưa ra các lỗi thích hợp khi không đáp ứng các điều kiện. Điều này đảm bảo xử lý lỗi mạnh mẽ trong các ứng dụng trong thế giới thực.
 
 ```python
 def calculate_moon_weight(earth_weight):
@@ -62,9 +62,9 @@ class ExcessiveWeightError(WeightError):
         super().__init__(f"Weight {weight} exceeds limit of {limit}")
 ```
 
-Slide 5: Advanced Exception Attributes
+Trang trình bày 5: Thuộc tính ngoại lệ nâng cao
 
-Complex applications often require exceptions to carry additional data for debugging and logging purposes. Custom exceptions can include specialized attributes and methods to enhance error reporting.
+Các ứng dụng phức tạp thường yêu cầu ngoại lệ để mang dữ liệu bổ sung cho mục đích gỡ lỗi và ghi nhật ký. Các ngoại lệ tùy chỉnh có thể bao gồm các thuộc tính và phương pháp chuyên biệt để nâng cao khả năng báo cáo lỗi.
 
 ```python
 class DataValidationError(Exception):
@@ -80,9 +80,9 @@ class DataValidationError(Exception):
         return f"Validation failed for value {self.value} (type: {type(self.value)})"
 ```
 
-Slide 6: Exception Context Management
+Trang trình bày 6: Quản lý bối cảnh ngoại lệ
 
-Custom exceptions can be integrated with context managers to ensure proper resource handling and cleanup, even when errors occur during execution.
+Các ngoại lệ tùy chỉnh có thể được tích hợp với trình quản lý bối cảnh để đảm bảo xử lý và dọn dẹp tài nguyên phù hợp, ngay cả khi xảy ra lỗi trong quá trình thực thi.
 
 ```python
 class DatabaseConnection:
@@ -101,9 +101,9 @@ class DatabaseConnection:
         self.disconnect()
 ```
 
-Slide 7: Real-world Example - Data Processing Pipeline
+Trang trình bày 7: Ví dụ thực tế - Đường ống xử lý dữ liệu
 
-This example demonstrates a practical implementation of custom exceptions in a data processing pipeline, handling various error conditions that might occur during data transformation.
+Ví dụ này minh họa cách triển khai thực tế các ngoại lệ tùy chỉnh trong quy trình xử lý dữ liệu, xử lý các tình trạng lỗi khác nhau có thể xảy ra trong quá trình chuyển đổi dữ liệu.
 
 ```python
 class DataProcessingError(Exception):
@@ -130,9 +130,9 @@ def process_dataset(data):
         return None
 ```
 
-Slide 8: Exception Chaining
+Trang trình bày 8: Chuỗi ngoại lệ
 
-Exception chaining allows preservation of the original error while raising a new, more specific exception. This maintains the full error context for debugging purposes.
+Chuỗi ngoại lệ cho phép giữ lại lỗi ban đầu trong khi đưa ra một ngoại lệ mới, cụ thể hơn. Điều này duy trì bối cảnh lỗi đầy đủ cho mục đích gỡ lỗi.
 
 ```python
 class FileProcessingError(Exception):
@@ -152,9 +152,9 @@ def process_config_file(filename):
         ) from e
 ```
 
-Slide 9: Custom Exception with Error Codes
+Trang trình bày 9: Ngoại lệ tùy chỉnh với mã lỗi
 
-Custom exceptions can incorporate error codes to provide standardized error handling across an application. This approach facilitates automated error processing and internationalization of error messages.
+Các ngoại lệ tùy chỉnh có thể kết hợp các mã lỗi để cung cấp khả năng xử lý lỗi được tiêu chuẩn hóa trên một ứng dụng. Cách tiếp cận này tạo điều kiện thuận lợi cho việc xử lý lỗi tự động và quốc tế hóa các thông báo lỗi.
 
 ```python
 class SystemError(Exception):
@@ -172,9 +172,9 @@ class SystemError(Exception):
         return cls("E403", f"Permission denied for operation: {operation}")
 ```
 
-Slide 10: Custom Exception with Logging Integration
+Trang trình bày 10: Ngoại lệ tùy chỉnh với tích hợp ghi nhật ký
 
-Integrating logging capabilities into custom exceptions enables automatic tracking of error occurrences and simplified debugging in production environments.
+Việc tích hợp khả năng ghi nhật ký vào các ngoại lệ tùy chỉnh cho phép tự động theo dõi các lần xuất hiện lỗi và đơn giản hóa việc gỡ lỗi trong môi trường sản xuất.
 
 ```python
 import logging
@@ -197,9 +197,9 @@ class LoggedError(Exception):
         self.logger.error(f"Error occurred: {error_info}")
 ```
 
-Slide 11: Real-world Example - API Request Handler
+Trang trình bày 11: Ví dụ thực tế - Trình xử lý yêu cầu API
 
-This implementation shows how custom exceptions can be used in an API request handler to manage different types of request failures and provide appropriate responses.
+Việc triển khai này cho thấy cách sử dụng các ngoại lệ tùy chỉnh trong trình xử lý yêu cầu API để quản lý các loại lỗi yêu cầu khác nhau và cung cấp phản hồi thích hợp.
 
 ```python
 class APIError(Exception):
@@ -232,9 +232,9 @@ class RequestHandler:
             }
 ```
 
-Slide 12: Exception Handler Decorator
+Trang trình bày 12: Trang trí xử lý ngoại lệ
 
-Creating a decorator for exception handling provides a clean way to implement consistent error handling across multiple functions while maintaining code readability.
+Việc tạo một trình trang trí để xử lý ngoại lệ mang lại một cách rõ ràng để triển khai việc xử lý lỗi nhất quán trên nhiều chức năng trong khi vẫn duy trì khả năng đọc mã.
 
 ```python
 from functools import wraps
@@ -264,9 +264,9 @@ def process_data(data):
     pass
 ```
 
-Slide 13: Enhanced Exception Traceback
+Trang trình bày 13: Truy nguyên ngoại lệ nâng cao
 
-Custom exceptions can be enhanced with detailed traceback information to provide comprehensive debugging capabilities in complex applications.
+Các ngoại lệ tùy chỉnh có thể được nâng cao bằng thông tin truy nguyên chi tiết để cung cấp khả năng gỡ lỗi toàn diện trong các ứng dụng phức tạp.
 
 ```python
 import traceback
@@ -292,10 +292,10 @@ class DetailedError(Exception):
         }
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-*   Building Better Python Exceptions: [https://arxiv.org/abs/cs/0701072](https://arxiv.org/abs/cs/0701072)
-*   Exception Handling Patterns in Large-Scale Systems: [https://ieeexplore.ieee.org/document/8445076](https://ieeexplore.ieee.org/document/8445076)
-*   Best Practices for Python Exception Handling: [https://docs.python.org/3/tutorial/errors.html](https://docs.python.org/3/tutorial/errors.html)
-*   Error Handling Patterns in Distributed Systems: [https://www.sciencedirect.com/science/article/pii/S0167642309000343](https://www.sciencedirect.com/science/article/pii/S0167642309000343)
-*   Python Exception Handling - Advanced Topics: [https://realpython.com/python-exceptions/](https://realpython.com/python-exceptions/)
+* Xây dựng các ngoại lệ Python tốt hơn: [https://arxiv.org/abs/cs/0701072](https://arxiv.org/abs/cs/0701072)
+* Các mẫu xử lý ngoại lệ trong hệ thống quy mô lớn: [https://ieeexplore.ieee.org/document/8445076](https://ieeexplore.ieee.org/document/8445076)
+* Các phương pháp hay nhất để xử lý ngoại lệ Python: [https://docs.python.org/3/tutorial/errors.html](https://docs.python.org/3/tutorial/errors.html)
+* Các mẫu xử lý lỗi trong hệ thống phân tán: [https://www.sciencedirect.com/science/article/pii/S0167642309000343](https://www.sciencedirect.com/science/article/pii/S0167642309000343)
+* Xử lý ngoại lệ Python - Chủ đề nâng cao: [https://realpython.com/python-Exceptions/](https://realpython.com/python-Exceptions/)

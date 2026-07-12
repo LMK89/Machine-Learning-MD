@@ -1,7 +1,7 @@
-## Data Preprocessing Techniques with Pandas and NumPy
-Slide 1: Data Preprocessing with Pandas and NumPy
+## Kỹ thuật tiền xử lý dữ liệu với Pandas và NumPy
+Slide 1: Tiền xử lý dữ liệu với Pandas và NumPy
 
-Modern data analysis requires robust preprocessing to handle missing values, outliers, and inconsistent formats. This implementation demonstrates essential techniques for cleaning and transforming raw data using Pandas and NumPy, including handling missing values and feature scaling.
+Phân tích dữ liệu hiện đại yêu cầu tiền xử lý mạnh mẽ để xử lý các giá trị bị thiếu, các giá trị ngoại lệ và các định dạng không nhất quán. Việc triển khai này thể hiện các kỹ thuật thiết yếu để làm sạch và chuyển đổi dữ liệu thô bằng cách sử dụng Pandas và NumPy, bao gồm việc xử lý các giá trị bị thiếu và chia tỷ lệ tính năng.
 
 ```python
 import pandas as pd
@@ -39,9 +39,9 @@ cleaned_data = preprocess_dataset(data)
 print("Processed Dataset:\n", cleaned_data)
 ```
 
-Slide 2: Time Series Analysis with Prophet
+Slide 2: Phân tích chuỗi thời gian với nhà tiên tri
 
-Time series forecasting is crucial for business planning and trend analysis. Facebook's Prophet library excels at handling seasonal patterns and holiday effects while providing robust uncertainty estimates.
+Dự báo chuỗi thời gian rất quan trọng cho việc lập kế hoạch kinh doanh và phân tích xu hướng. Thư viện Prophet của Facebook vượt trội trong việc xử lý các mô hình theo mùa và hiệu ứng ngày lễ, đồng thời cung cấp các ước tính chắc chắn về mức độ không chắc chắn.
 
 ```python
 from prophet import Prophet
@@ -81,9 +81,9 @@ forecast = forecast_timeseries(df)
 print("Forecast Results:\n", forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail())
 ```
 
-Slide 3: Deep Learning with PyTorch
+Trang trình bày 3: Học sâu với PyTorch
 
-PyTorch provides a dynamic computational framework for building and training neural networks. This implementation shows a complete neural network architecture for classification tasks with modern best practices.
+PyTorch cung cấp một khung tính toán động để xây dựng và đào tạo mạng lưới thần kinh. Việc triển khai này cho thấy kiến ​​trúc mạng thần kinh hoàn chỉnh dành cho các nhiệm vụ phân loại với các phương pháp thực hành tốt nhất hiện đại.
 
 ```python
 import torch
@@ -127,9 +127,9 @@ model = DeepNetwork(10, 64, 2)
 train_model(model, X, y)
 ```
 
-Slide 4: Natural Language Processing with Transformers
+Slide 4: Xử lý ngôn ngữ tự nhiên với Transformers
 
-Modern NLP leverages transformer architectures for superior text understanding. This implementation demonstrates fine-tuning BERT for text classification, including preprocessing and model training with the Transformers library.
+NLP hiện đại tận dụng kiến ​​trúc biến áp để hiểu văn bản vượt trội. Việc triển khai này thể hiện tinh chỉnh BERT để phân loại văn bản, bao gồm tiền xử lý và đào tạo mô hình với thư viện Transformers.
 
 ```python
 from transformers import BertTokenizer, BertForSequenceClassification
@@ -185,9 +185,9 @@ classifier = TextClassifier()
 classifier.train(texts, labels)
 ```
 
-Slide 5: Advanced Data Visualization with Plotly
+Slide 5: Trực quan hóa dữ liệu nâng cao với Plotly
 
-Interactive visualizations enhance data exploration and presentation. This implementation creates sophisticated, interactive plots using Plotly, demonstrating multiple chart types and customization options.
+Trực quan hóa tương tác tăng cường khám phá và trình bày dữ liệu. Việc triển khai này tạo ra các biểu đồ tương tác phức tạp bằng cách sử dụng Plotly, thể hiện nhiều loại biểu đồ và tùy chọn tùy chỉnh.
 
 ```python
 import plotly.express as px
@@ -241,9 +241,9 @@ scatter, bubble, surface = create_advanced_dashboard(data)
 # Figures can be displayed using .show() in a Jupyter notebook
 ```
 
-Slide 6: Custom Neural Network Architectures
+Trang trình bày 6: Kiến trúc mạng thần kinh tùy chỉnh
 
-Understanding neural network internals is crucial for deep learning. This implementation builds a neural network from scratch using only NumPy, including forward and backward propagation.
+Hiểu nội bộ mạng lưới thần kinh là rất quan trọng cho việc học sâu. Việc triển khai này xây dựng một mạng lưới thần kinh từ đầu chỉ sử dụng NumPy, bao gồm cả việc truyền tiến và lùi.
 
 ```python
 import numpy as np
@@ -311,9 +311,9 @@ for epoch in range(100):
         print(f"Epoch {epoch}, MSE: {mse:.4f}")
 ```
 
-Slide 7: Large-Scale Data Processing with PySpark
+Trang trình bày 7: Xử lý dữ liệu quy mô lớn với PySpark
 
-PySpark enables distributed data processing at scale. This implementation shows how to perform complex aggregations and transformations on large datasets using PySpark's DataFrame API.
+PySpark cho phép xử lý dữ liệu phân tán trên quy mô lớn. Việc triển khai này cho thấy cách thực hiện các phép tổng hợp và chuyển đổi phức tạp trên các tập dữ liệu lớn bằng API DataFrame của PySpark.
 
 ```python
 from pyspark.sql import SparkSession
@@ -365,9 +365,9 @@ query = process_large_dataset()
 query.awaitTermination()
 ```
 
-Slide 8: Advanced Time Series Forecasting
+Trang trình bày 8: Dự báo chuỗi thời gian nâng cao
 
-Implementing sophisticated time series models requires handling multiple seasonal patterns and external regressors. This code demonstrates a custom implementation combining statistical and machine learning approaches.
+Việc triển khai các mô hình chuỗi thời gian phức tạp đòi hỏi phải xử lý nhiều mô hình theo mùa và các biến hồi quy bên ngoài. Mã này thể hiện cách triển khai tùy chỉnh kết hợp các phương pháp học máy và thống kê.
 
 ```python
 import numpy as np
@@ -443,9 +443,9 @@ forecast = forecaster.predict(steps=30)
 print("30-day forecast:", forecast)
 ```
 
-Slide 9: Computer Vision with PyTorch
+Trang trình bày 9: Thị giác máy tính với PyTorch
 
-Modern computer vision tasks require sophisticated neural network architectures. This implementation shows a custom CNN with attention mechanisms for image classification.
+Nhiệm vụ thị giác máy tính hiện đại đòi hỏi kiến ​​trúc mạng lưới thần kinh phức tạp. Việc triển khai này hiển thị một CNN tùy chỉnh với các cơ chế chú ý để phân loại hình ảnh.
 
 ```python
 import torch
@@ -506,9 +506,9 @@ output = model(dummy_input)
 print("Output shape:", output.shape)
 ```
 
-Slide 10: Natural Language Understanding with Custom Attention
+Slide 10: Hiểu ngôn ngữ tự nhiên với sự chú ý tùy chỉnh
 
-This implementation demonstrates a custom attention mechanism for sequence processing, particularly useful for tasks like machine translation and text summarization.
+Việc triển khai này thể hiện cơ chế chú ý tùy chỉnh để xử lý trình tự, đặc biệt hữu ích cho các tác vụ như dịch máy và tóm tắt văn bản.
 
 ```python
 import torch
@@ -568,9 +568,9 @@ print(f"Output shape: {output.shape}")
 print(f"Attention weights shape: {attention_weights.shape}")
 ```
 
-Slide 11: Advanced Data Cleaning Pipeline
+Trang trình bày 11: Quy trình làm sạch dữ liệu nâng cao
 
-Real-world data requires sophisticated cleaning techniques. This implementation shows a comprehensive pipeline for handling complex data quality issues.
+Dữ liệu trong thế giới thực đòi hỏi các kỹ thuật làm sạch phức tạp. Việc triển khai này cho thấy một quy trình toàn diện để xử lý các vấn đề phức tạp về chất lượng dữ liệu.
 
 ```python
 import pandas as pd
@@ -650,9 +650,9 @@ cleaned_data = cleaner.clean_data(data)
 print("Cleaned data summary:\n", cleaned_data.describe())
 ```
 
-Slide 12: Feature Engineering for Machine Learning
+Trang trình bày 12: Kỹ thuật tính năng cho Machine Learning
 
-Advanced feature engineering techniques can significantly improve model performance. This implementation demonstrates automated feature generation and selection using statistical methods.
+Các kỹ thuật kỹ thuật tính năng nâng cao có thể cải thiện đáng kể hiệu suất của mô hình. Việc triển khai này thể hiện việc tạo và lựa chọn tính năng tự động bằng các phương pháp thống kê.
 
 ```python
 import numpy as np
@@ -766,16 +766,16 @@ print("Transformed features:", list(transformed_data.columns))
 print("\nFeature importances:\n", engineer.feature_importances_.sort_values(ascending=False))
 ```
 
-Slide 13: Additional Resources
+Trang trình bày 13: Tài nguyên bổ sung
 
-*   "Attention Is All You Need" - [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
-*   "Deep Residual Learning for Image Recognition" - [https://arxiv.org/abs/1512.03385](https://arxiv.org/abs/1512.03385)
-*   "Efficient Estimation of Word Representations in Vector Space" - [https://arxiv.org/abs/1301.3781](https://arxiv.org/abs/1301.3781)
-*   "XGBoost: A Scalable Tree Boosting System" - [https://arxiv.org/abs/1603.02754](https://arxiv.org/abs/1603.02754)
-*   "Facebook Prophet: Forecasting at Scale" - [https://research.facebook.com/publications/forecasting-at-scale/](https://research.facebook.com/publications/forecasting-at-scale/)
+* "Tất cả những gì bạn cần là sự chú ý" - [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
+* "Học tập dư thừa sâu để nhận dạng hình ảnh" - [https://arxiv.org/abs/1512.03385](https://arxiv.org/abs/1512.03385)
+* "Ước tính hiệu quả cách biểu diễn từ trong không gian vectơ" - [https://arxiv.org/abs/1301.3781](https://arxiv.org/abs/1301.3781)
+* "XGBoost: Hệ thống tăng cường cây có thể mở rộng" - [https://arxiv.org/abs/1603.02754](https://arxiv.org/abs/1603.02754)
+* "Nhà tiên tri Facebook: Dự báo ở quy mô" - [https://research.facebook.com/publications/forecasting-at-scale/](https://research.facebook.com/publications/forecasting-at-scale/)
 
-For further research on these topics:
+Để nghiên cứu thêm về các chủ đề này:
 
-*   Google Scholar: [https://scholar.google.com](https://scholar.google.com)
-*   Papers With Code: [https://paperswithcode.com](https://paperswithcode.com)
-*   arXiv Machine Learning section: [https://arxiv.org/list/cs.LG/recent](https://arxiv.org/list/cs.LG/recent)
+* Google Scholar: [https://scholar.google.com](https://scholar.google.com)
+* Giấy tờ có mã: [https://paperswithcode.com](https://paperswithcode.com)
+* Phần Học máy arXiv: [https://arxiv.org/list/cs.LG/recent](https://arxiv.org/list/cs.LG/recent)

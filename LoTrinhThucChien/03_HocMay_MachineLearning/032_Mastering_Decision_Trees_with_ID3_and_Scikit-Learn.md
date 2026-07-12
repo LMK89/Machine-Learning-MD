@@ -1,7 +1,7 @@
-## Mastering Decision Trees with ID3 and Scikit-Learn
-Slide 1: Understanding Decision Trees and ID3 Algorithm
+## Làm chủ cây quyết định ID3 và Scikit-Learn
+Trang trình bày 1: Tìm hiểu về quyết định của cây và thuật toán ID3
 
-Decision trees are hierarchical structures that make decisions through sequential splits based on features. The ID3 algorithm builds trees by selecting the best feature at each node using information gain, maximizing the purity of resulting subsets through entropy calculations.
+Cây định nghĩa là cấp độ phân tích cấu trúc được đưa ra để quyết định thông tin phân tích tuần tự thông tin dựa trên các tính năng. Thuật toán ID3 xây dựng cây bằng cách chọn tính năng tốt nhất ở mỗi nút bằng cách sử dụng thông tin thu được, tối đa hóa độ tinh khiết của các kết quả tập hợp thông qua entropy tính toán.
 
 ```python
 import numpy as np
@@ -27,9 +27,9 @@ class DecisionTree:
         return parent_entropy - weighted_entropy
 ```
 
-Slide 2: Feature Selection in ID3
+Slide 2: Lựa chọn tính năng trong ID3
 
-The core of ID3 lies in its feature selection mechanism, which iteratively chooses the attribute that maximizes information gain. This process continues recursively until a stopping condition is met, such as pure leaf nodes or maximum depth reached.
+Cốt lõi của ID3 nằm ở cơ chế lựa chọn tính năng, cơ chế này lặp lại để lựa chọn khả năng tối đa hóa trợ giúp thuộc tính để thu được thông tin. Quá trình này tiếp tục đệ quy cho đến khi đạt được điều kiện dừng lại, đưa ra giới hạn như các nút lá tinh hoặc đạt đến độ sâu tối đa.
 
 ```python
 def find_best_split(self, X, y):
@@ -60,9 +60,9 @@ class Node:
         self.value = value        # Leaf node prediction value
 ```
 
-Slide 4: Recursive Tree Construction
+Slide 4: Xây dựng trình đệ quy cây
 
-The recursive nature of decision tree building requires careful handling of base cases and split conditions. This implementation shows how to grow the tree by repeatedly finding the best splits and creating child nodes.
+Bản chất đệm của việc xây dựng cây quyết định Yêu cầu phải xử lý cẩn thận các cơ sở hợp lý và phân tích điều kiện. Việc phát triển khai báo này đã tìm ra cách phát triển cây bằng cách liên tục tìm các phần phân tích tốt nhất và tạo các nút con.
 
 ```python
 def build_tree(self, X, y, depth=0):
@@ -117,9 +117,9 @@ Where:
 """
 ```
 
-Slide 6: Implementing Prediction Logic
+Slide 6: Triển khai logic dự kiến
 
-The prediction process traverses the tree from root to leaf, following the appropriate path based on feature comparisons at each node. The final prediction is obtained from the leaf node's stored value.
+Quá trình dự đoán sẽ đi qua cây từ gốc đến lá, đi theo đường dẫn thích hợp dựa trên việc so sánh tính năng tại mỗi nút. Dự kiến ​​cuối cùng sẽ được lấy từ giá trị được lưu trữ của nút lá.
 
 ```python
 def predict_single(self, root, x):
@@ -137,9 +137,9 @@ def predict(self, X):
     return np.array([self.predict_single(self.root, x) for x in X])
 ```
 
-Slide 7: Real-World Example - Iris Classification
+Trang trình bày 7: Ví dụ thực tế - Phân loại mống mắt
 
-This implementation demonstrates decision tree classification on the classic Iris dataset, showcasing data preprocessing, model training, and evaluation using our custom implementation.
+Việc phát triển này có thể cung cấp khả năng phân loại cây được quyết định trên Iris cổ điển tập dữ liệu, hiển thị quá trình xử lý trước dữ liệu, đào tạo mô hình và đánh giá giá bằng cách sử dụng khai báo tùy chỉnh của chúng tôi.
 
 ```python
 from sklearn.datasets import load_iris
@@ -160,9 +160,9 @@ dt.fit(X_train, y_train)
 predictions = dt.predict(X_test)
 ```
 
-Slide 8: Results for Iris Classification
+Slide 8: Kết quả phân loại mống mắt
 
-The performance metrics demonstrate the effectiveness of our ID3 implementation on the Iris dataset, showing accuracy and confusion matrix analysis.
+Các bằng chứng hiệu quả về hiệu suất của việc phát triển ID3 của chúng tôi trên Iris dữ liệu, cho thấy độ chính xác và phân tích ma trận ở giữa.
 
 ```python
 from sklearn.metrics import accuracy_score, confusion_matrix
@@ -186,9 +186,9 @@ print(cm)
 #  [ 0  0 10]]
 ```
 
-Slide 9: Handling Continuous Features
+Slide 9: Xử lý các tính năng liên tục
 
-Continuous feature handling requires implementing efficient splitting strategies. This implementation uses a binary search approach to find optimal thresholds for numerical attributes.
+Xử lý tính năng liên tục Yêu cầu phải thực hiện các kết quả phân chia chiến lược hiệu quả. Việc khai báo này sử dụng phương pháp tìm kiếm nhị phân để tìm mức độ ưu tiên của các thuộc tính.
 
 ```python
 def find_best_threshold(self, X, y, feature):
@@ -247,9 +247,9 @@ credit_tree = DecisionTree(
 credit_tree.fit(X, y)
 ```
 
-Slide 11: Pruning Implementation
+Slide 11: Thực hiện cắt xén
 
-Pruning helps prevent overfitting by removing nodes that don't significantly contribute to model performance. This implementation uses reduced error pruning, evaluating each subtree's contribution using a validation set.
+Việc cắt giúp ngăn chặn trang bị quá trình bằng cách loại bỏ các nút không đóng góp đáng kể vào hiệu suất của mô hình. Việc phát triển tính năng này sử dụng khả năng cắt giảm lỗi, đánh giá sự đóng góp của từng cây bằng cách sử dụng bộ xác thực.
 
 ```python
 def prune_tree(self, node, X_val, y_val):
@@ -316,9 +316,9 @@ def cross_validate(X, y, k_folds=5):
 # print(f"Accuracy: {mean_acc:.3f} ± {std_acc:.3f}")
 ```
 
-Slide 13: Visualization of Decision Boundaries
+Slide 13: Quyết định trực tuyến ranh giới
 
-This implementation creates a visual representation of decision boundaries created by the tree, helping understand how the model partitions the feature space.
+Việc phát triển này tạo ra khả năng thực hiện trực quan về ranh giới quyết định tạo cây ra, giúp hiểu cách mô hình phân vùng không đối tượng.
 
 ```python
 def plot_decision_boundary(tree, X, y, feature_names):
@@ -349,10 +349,10 @@ def plot_decision_boundary(tree, X, y, feature_names):
 # plt.show()
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-1.  "Optimal Classification Trees" - [https://arxiv.org/abs/1711.05297](https://arxiv.org/abs/1711.05297)
-2.  "Learning Decision Trees Using the Fourier Spectrum" - [https://arxiv.org/abs/0903.0544](https://arxiv.org/abs/0903.0544)
-3.  "Deep Neural Decision Trees" - [https://arxiv.org/abs/1806.06988](https://arxiv.org/abs/1806.06988)
-4.  "Monotone Decision Trees" - [https://arxiv.org/abs/1909.05925](https://arxiv.org/abs/1909.05925)
-5.  "Fast and Accurate Decision Trees" - [https://arxiv.org/abs/2012.00174](https://arxiv.org/abs/2012.00174)
+1. "Cây phân loại tối ưu" - [https://arxiv.org/abs/1711.05297](https://arxiv.org/abs/1711.05297)
+2. "Học cây quyết định bằng phổ Fourier" - [https://arxiv.org/abs/0903.0544](https://arxiv.org/abs/0903.0544)
+3. "Cây quyết định thần kinh sâu" - [https://arxiv.org/abs/1806.06988](https://arxiv.org/abs/1806.06988)
+4. "Cây quyết định đơn điệu" - [https://arxiv.org/abs/1909.05925](https://arxiv.org/abs/1909.05925)
+5. "Cây quyết định nhanh và chính xác" - [https://arxiv.org/abs/2012.00174](https://arxiv.org/abs/2012.00174)

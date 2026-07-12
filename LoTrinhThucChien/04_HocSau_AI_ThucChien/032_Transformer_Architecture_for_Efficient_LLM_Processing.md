@@ -1,7 +1,7 @@
-## Transformer Architecture for Efficient LLM Processing
-Slide 1: Self-Attention Mechanism Implementation
+## Kiến trúc máy biến áp để xử lý LLM hiệu quả
+Trang trình bày 1: Thực hiện Cơ chế Tự chú ý
 
-The self-attention mechanism calculates attention scores between all pairs of input tokens, enabling the model to weigh the importance of different parts of the input sequence dynamically. This implementation demonstrates the core mathematical operations behind self-attention computation.
+Cơ chế tự chú ý tính toán điểm chú ý giữa tất cả các cặp mã thông báo đầu vào, cho phép mô hình cân nhắc tầm quan trọng của các phần khác nhau của chuỗi đầu vào một cách linh hoạt. Việc triển khai này thể hiện các hoạt động toán học cốt lõi đằng sau tính toán tự chú ý.
 
 ```python
 import numpy as np
@@ -35,9 +35,9 @@ print(f"Output shape: {output.shape}")
 print(f"Attention weights shape: {weights.shape}")
 ```
 
-Slide 2: Positional Encoding Generation
+Trang trình bày 2: Tạo mã hóa vị trí
 
-Positional encodings inject sequential information into the self-attention mechanism, which is otherwise position-invariant. This implementation creates sinusoidal position embeddings as described in the original Transformer paper.
+Mã hóa vị trí đưa thông tin tuần tự vào cơ chế tự chú ý, cơ chế này không thay đổi vị trí. Việc triển khai này tạo ra các phần nhúng vị trí hình sin như được mô tả trong bài báo Transformer gốc.
 
 ```python
 def positional_encoding(max_seq_length, d_model):
@@ -64,9 +64,9 @@ plt.title('Positional Encoding Visualization')
 plt.show()
 ```
 
-Slide 3: Multi-Head Attention Implementation
+Trang trình bày 3: Thực hiện chú ý bằng nhiều đầu
 
-Multi-head attention allows the model to jointly attend to information from different representation subspaces, enhancing the model's ability to capture various aspects of the input sequence simultaneously.
+Sự chú ý nhiều đầu cho phép mô hình cùng tham gia xử lý thông tin từ các không gian con biểu diễn khác nhau, nâng cao khả năng của mô hình trong việc nắm bắt đồng thời các khía cạnh khác nhau của chuỗi đầu vào.
 
 ```python
 class MultiHeadAttention:
@@ -144,9 +144,9 @@ class TransformerLayer:
         return x * mask / (1 - self.dropout_rate)
 ```
 
-Slide 5: Tokenization and Vocabulary Implementation
+Trang trình bày 5: Mã hóa và triển khai từ vựng
 
-Tokenization transforms raw text into numerical sequences that can be processed by the transformer. This implementation showcases a basic subword tokenizer using byte-pair encoding (BPE) principles for handling out-of-vocabulary words.
+Mã thông báo chuyển đổi văn bản thô thành các chuỗi số có thể được xử lý bởi máy biến áp. Việc triển khai này giới thiệu một trình mã thông báo từ phụ cơ bản sử dụng các nguyên tắc mã hóa cặp byte (BPE) để xử lý các từ nằm ngoài từ vựng.
 
 ```python
 class SimpleTokenizer:
@@ -204,9 +204,9 @@ print(f"Encoded: {encoded}")
 print(f"Decoded: {decoded}")
 ```
 
-Slide 6: Training Loss Implementation
+Trang trình bày 6: Thực hiện đào tạo mất mát
 
-The transformer's training process relies on calculating cross-entropy loss for next-token prediction. This implementation shows how to compute the loss while handling padding tokens correctly.
+Quá trình huấn luyện của máy biến áp dựa vào việc tính toán tổn thất entropy chéo để dự đoán mã thông báo tiếp theo. Việc triển khai này cho thấy cách tính toán tổn thất trong khi xử lý mã thông báo đệm một cách chính xác.
 
 ```python
 import numpy as np
@@ -260,9 +260,9 @@ loss = compute_loss(logits, targets)
 print(f"Training loss: {loss:.4f}")
 ```
 
-Slide 7: Scaled Dot-Product Attention Implementation
+Trang trình bày 7: Triển khai chú ý đến sản phẩm chấm theo tỷ lệ
 
-The scaled dot-product attention is the fundamental building block of the transformer architecture, computing attention weights while accounting for sequence length through scaling.
+Sự chú ý của tích số chấm được chia tỷ lệ là khối xây dựng cơ bản của kiến ​​trúc máy biến áp, tính toán các trọng số chú ý trong khi tính toán độ dài chuỗi thông qua việc chia tỷ lệ.
 
 ```python
 def scaled_dot_product_attention(query, key, value, mask=None, scale=True):
@@ -312,9 +312,9 @@ print(f"Output shape: {output.shape}")
 print(f"Attention weights shape: {attention.shape}")
 ```
 
-Slide 8: Layer Normalization Implementation
+Trang trình bày 8: Triển khai chuẩn hóa lớp
 
-Layer normalization stabilizes training by normalizing activations across the feature dimension. This implementation shows the forward and backward passes of layer normalization with learnable parameters.
+Chuẩn hóa lớp giúp ổn định quá trình đào tạo bằng cách chuẩn hóa các kích hoạt trên kích thước tính năng. Việc triển khai này hiển thị các bước tiến và lùi của quá trình chuẩn hóa lớp với các tham số có thể học được.
 
 ```python
 class LayerNorm:
@@ -360,9 +360,9 @@ print(f"Input mean: {np.mean(x):.4f}, std: {np.std(x):.4f}")
 print(f"Output mean: {np.mean(normalized):.4f}, std: {np.std(normalized):.4f}")
 ```
 
-Slide 9: Transformer Training Loop Implementation
+Slide 9: Thực hiện vòng lặp đào tạo máy biến áp
 
-This implementation demonstrates a complete training loop for a transformer model, including gradient computation, parameter updates, and learning rate scheduling with warmup steps.
+Việc triển khai này thể hiện một vòng huấn luyện hoàn chỉnh cho mô hình máy biến áp, bao gồm tính toán độ dốc, cập nhật tham số và lập lịch tốc độ học với các bước khởi động.
 
 ```python
 class TransformerTrainer:
@@ -428,9 +428,9 @@ trainer = TransformerTrainer(model)
 print("Training started...")
 ```
 
-Slide 10: Beam Search Decoding Implementation
+Trang trình bày 10: Triển khai giải mã Beam Search
 
-Beam search improves text generation quality by maintaining multiple hypotheses during decoding. This implementation shows how to perform beam search with length normalization and early stopping.
+Tìm kiếm chùm cải thiện chất lượng tạo văn bản bằng cách duy trì nhiều giả thuyết trong quá trình giải mã. Việc triển khai này cho thấy cách thực hiện tìm kiếm chùm tia với chuẩn hóa độ dài và dừng sớm.
 
 ```python
 class BeamSearch:
@@ -501,9 +501,9 @@ generated_text = detokenize(generated_ids)  # Placeholder for detokenization
 print(f"Generated text: {generated_text}")
 ```
 
-Slide 11: Attention Visualization Implementation
+Trang trình bày 11: Thực hiện trực quan hóa sự chú ý
 
-This implementation provides tools to visualize attention patterns in transformer models, helping understand how the model processes different parts of the input sequence.
+Việc triển khai này cung cấp các công cụ để trực quan hóa các mẫu chú ý trong các mô hình máy biến áp, giúp hiểu cách mô hình xử lý các phần khác nhau của chuỗi đầu vào.
 
 ```python
 import matplotlib.pyplot as plt
@@ -575,9 +575,9 @@ text = "The transformer model processes text efficiently."
 visualizer.plot_attention_summary(text)
 ```
 
-Slide 12: Custom Learning Rate Scheduler Implementation
+Trang trình bày 12: Triển khai Trình lập lịch học tập tùy chỉnh
 
-This implementation showcases a custom learning rate scheduler with warmup and cosine decay, essential for stable transformer training and optimal convergence.
+Quá trình triển khai này giới thiệu một bộ lập lịch tốc độ học tập tùy chỉnh với khả năng khởi động và phân rã cosine, điều cần thiết cho quá trình huấn luyện máy biến áp ổn định và khả năng hội tụ tối ưu.
 
 ```python
 import numpy as np
@@ -649,9 +649,9 @@ scheduler = TransformerLRScheduler(
 scheduler.plot_schedule()
 ```
 
-Slide 13: Transformer Inference with Cache Implementation
+Trang trình bày 13: Suy luận về máy biến áp với việc triển khai bộ nhớ đệm
 
-This implementation demonstrates how to cache key and value tensors during autoregressive generation to improve inference speed by avoiding redundant computations.
+Việc triển khai này trình bày cách lưu vào bộ đệm các tensor khóa và giá trị trong quá trình tạo tự hồi quy để cải thiện tốc độ suy luận bằng cách tránh các tính toán dư thừa.
 
 ```python
 class CachedTransformerDecoder:
@@ -752,15 +752,15 @@ for _ in range(max_length):
         break
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-*   Attention Is All You Need (Original Transformer Paper)
-    *   [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
-*   BERT: Pre-training of Deep Bidirectional Transformers
-    *   [https://arxiv.org/abs/1810.04805](https://arxiv.org/abs/1810.04805)
-*   GPT: Improving Language Understanding by Generative Pre-Training
-    *   [https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language\_understanding\_paper.pdf](https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf)
-*   Layer Normalization in Transformer Models
-    *   [https://arxiv.org/abs/1607.06450](https://arxiv.org/abs/1607.06450)
-*   Synthesizer: Rethinking Self-Attention in Transformer Models
-    *   [https://arxiv.org/abs/2005.00743](https://arxiv.org/abs/2005.00743)
+* Sự chú ý là tất cả những gì bạn cần (Giấy biến áp gốc)
+    * [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
+* BERT: Đào tạo trước Máy biến áp hai chiều sâu
+    * [https://arxiv.org/abs/1810.04805](https://arxiv.org/abs/1810.04805)
+* GPT: Cải thiện khả năng hiểu ngôn ngữ bằng đào tạo trước mang tính sáng tạo
+    * [https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/lingu-unsupervised/lingu\_knowing\_paper.pdf](https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/lingu-unsupervised/lingu_under Hiểu_paper.pdf)
+* Chuẩn hóa lớp trong các mô hình máy biến áp
+    * [https://arxiv.org/abs/1607.06450](https://arxiv.org/abs/1607.06450)
+* Tổng hợp: Suy nghĩ lại về việc tự chú ý trong các mô hình máy biến áp
+    * [https://arxiv.org/abs/2005.00743](https://arxiv.org/abs/2005.00743)

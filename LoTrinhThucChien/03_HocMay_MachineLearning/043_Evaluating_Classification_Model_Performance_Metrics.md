@@ -1,7 +1,7 @@
-## Evaluating Classification Model Performance Metrics
-Slide 1: Understanding Confusion Matrix Components
+##Đánh giá hiệu suất dữ liệu của loại phân loại mô hình
+Trang trình bày 1: Tìm hiểu các phần hỗn hợp của các thành phần
 
-The confusion matrix provides essential information about a model's classification performance by organizing predictions into four fundamental categories: True Positives (TP), True Negatives (TN), False Positives (FP), and False Negatives (FN). This organization enables comprehensive performance analysis.
+Ma trận hỗn hợp cung cấp thông tin cần mô tả về loại hiệu suất của hình học bằng cách sắp xếp các dự kiến ​​thành loại cơ sở: Kết quả dương tính thực (TP), Âm tính thực (TN), Kết quả dương tính giả (FP) và Âm tính giả (FN). Tổ chức này cho phép phân tích biểu hiện toàn diện.
 
 ```python
 import numpy as np
@@ -24,9 +24,9 @@ def plot_confusion_matrix(y_true, y_pred):
     plot_confusion_matrix(y_true, y_pred)
 ```
 
-Slide 2: Computing Accuracy Metric
+Slide 2: Tính toán chính xác
 
-Accuracy represents the proportion of correct predictions among all predictions made. While commonly used, it may not be suitable for imbalanced datasets where one class significantly outnumbers the other classes.
+Độ chính xác có thể hiển thị tỷ lệ dự kiến ​​​​trong số tất cả các dự đoán đúng được thực hiện. Mặc dù được sử dụng phổ biến nhưng nó có thể không phù hợp với các loại dữ liệu bị mất cân bằng trong đó một lớp vượt trội hơn đáng kể so với các lớp khác.
 
 ```python
 def calculate_accuracy(y_true, y_pred):
@@ -66,9 +66,9 @@ def calculate_precision(y_true, y_pred):
     return precision
 ```
 
-Slide 4: Computing Recall (Sensitivity)
+Slide 4: Nhớ lại máy tính (Độ nhạy)
 
-Recall quantifies a model's ability to identify all positive instances correctly. This metric is particularly important in medical diagnosis and fraud detection where missing positive cases can have serious consequences.
+Việc thu thập khả năng định lượng của mô hình trong việc xác định chính xác tất cả các trường hợp tích tích. Số liệu này đặc biệt quan trọng trong dự đoán y tế và phát hiện khoa học viễn tưởng khi thiếu các trường hợp dương tính có thể gây ra hậu quả nghiêm trọng.
 
 ```python
 def calculate_recall(y_true, y_pred):
@@ -110,9 +110,9 @@ def calculate_specificity(y_true, y_pred):
     return specificity
 ```
 
-Slide 6: F1-Score Implementation
+Trang trình bày 6: Thực hiện điểm F1
 
-The F1-Score provides a balanced measure of model performance by computing the harmonic mean of precision and recall. This metric is particularly useful when dealing with imbalanced datasets where accuracy alone might be misleading.
+Điểm F1 cung cấp thước đo cân bằng hiệu suất của mô hình bằng cách tính giá trị trung bình hài hòa của độ chính xác và khả năng thu hồi. Số liệu này đặc biệt hữu ích khi xử lý các dữ liệu cân bằng mà chỉ xác định chính xác cũng có thể gây nhầm lẫn.
 
 ```python
 def calculate_f1_score(y_true, y_pred):
@@ -152,9 +152,9 @@ $$F1 = 2 \times \frac{Precision \times Recall}{Precision + Recall}$$
 """
 ```
 
-Slide 8: Real-world Example: Credit Card Fraud Detection
+Trang trình bày 8: Ví dụ thực tế: Phát hiện mãng thẻ tín dụng
 
-A practical implementation of confusion matrix metrics in credit card fraud detection demonstrates the importance of balanced evaluation metrics when dealing with highly imbalanced datasets typical in fraud detection scenarios.
+Việc phát triển các loại vật liệu hỗn hợp trong việc phát hiện thẻ tín dụng nano để tìm ra tầm quan trọng của số liệu đánh giá cân bằng cách xử lý các dữ liệu cân bằng bằng cao điển hình trong các vấn đề phát hiện gian nan.
 
 ```python
 import pandas as pd
@@ -181,7 +181,7 @@ def fraud_detection_example():
     return y_test, y_pred
 ```
 
-Slide 9: Results for Credit Card Fraud Detection
+Trang trình bày 9: Kết quả phát hiện thẻ tín dụng nano
 
 ```python
 y_test, y_pred = fraud_detection_example()
@@ -199,9 +199,9 @@ for metric, value in metrics.items():
     print(f"{metric}: {value:.4f}")
 ```
 
-Slide 10: Real-world Example: Medical Diagnosis
+Trang trình chiếu 10: Ví dụ thực tế: Chẩn đoán y khoa
 
-Medical diagnosis requires careful consideration of false negatives and false positives, making it an excellent case study for understanding the practical importance of different evaluation metrics in classification tasks.
+Chẩn đoán y tế đòi hỏi phải xem xét cẩn thận các kết quả âm tính giả và dương tính giả, làm cho nó trở thành một nghiên cứu điển hình tuyệt vời để hiểu được tầm quan trọng thực tế của các số liệu đánh giá khác nhau trong các loại phân tích nhiệm vụ.
 
 ```python
 import numpy as np
@@ -235,7 +235,7 @@ def medical_diagnosis_example():
     return y_test, y_pred
 ```
 
-Slide 11: Results for Medical Diagnosis Model
+Slide 11: Kết quả mô hình dự đoán y khoa
 
 ```python
 # Execute medical diagnosis example
@@ -259,9 +259,9 @@ def print_medical_metrics(y_test, y_pred):
 print_medical_metrics(y_test, y_pred)
 ```
 
-Slide 12: Implementing Cross-Validation with Metrics
+Trang trình bày 12: Triển khai xác thực chéo bằng dữ liệu
 
-Cross-validation provides a more robust evaluation of model performance by assessing metrics across multiple data splits, essential for reliable model evaluation in production environments.
+Xác thực chéo cung cấp máy mạnh hơn về hiệu suất mô hình bằng cách đánh giá số liệu trên nhiều dữ liệu phân tích, điều cần thiết để đánh giá mô tả đáng tin cậy trong môi trường sản xuất.
 
 ```python
 from sklearn.model_selection import KFold
@@ -293,9 +293,9 @@ def cross_validate_metrics(X, y, model, n_splits=5):
     return {k: np.mean(v) for k, v in metrics_dict.items()}
 ```
 
-Slide 13: Visualization of Metric Trade-offs
+Trang trình bày 13: Số liệu đánh giá trực quan
 
-Understanding the relationships between different metrics helps in selecting appropriate thresholds and making informed decisions about model deployment in real-world applications.
+Tìm hiểu mối quan hệ giữa các vật liệu khác nhau giúp lựa chọn ngưỡng thích hợp và đưa ra quyết định sáng suốt về việc phát triển mô hình trong các ứng dụng trong thế giới thực.
 
 ```python
 def plot_metric_tradeoffs(y_true, y_pred_proba):

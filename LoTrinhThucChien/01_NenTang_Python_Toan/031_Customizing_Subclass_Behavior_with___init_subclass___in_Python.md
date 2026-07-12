@@ -1,7 +1,7 @@
-## Customizing Subclass Behavior with __init_subclass__ in Python
-Slide 1: Understanding **init\_subclass** in Python
+## Tùy chỉnh hành vi của lớp con với __init_subclass__ trong Python
+Trang trình bày 1: Tìm hiểu **init\_subclass** trong Python
 
-Class parameterization during inheritance is a powerful feature introduced in Python 3.6 through **init\_subclass**. This method allows parent classes to customize subclass creation behavior by intercepting and modifying the subclass definition process, providing a cleaner alternative to metaclasses.
+Tham số hóa lớp trong quá trình kế thừa là một tính năng mạnh mẽ được giới thiệu trong Python 3.6 thông qua **init\_subclass**. Phương pháp này cho phép các lớp cha tùy chỉnh hành vi tạo lớp con bằng cách chặn và sửa đổi quy trình định nghĩa lớp con, cung cấp một giải pháp thay thế rõ ràng hơn cho siêu dữ liệu.
 
 ```python
 # Base class that customizes subclass creation
@@ -24,9 +24,9 @@ worker = Worker()
 print(worker.worker_process())  # Output: Processing data
 ```
 
-Slide 2: Metaclass Implementation Pre-Python 3.6
+Trang trình bày 2: Triển khai siêu dữ liệu trước Python 3.6
 
-Before **init\_subclass**, developers relied on metaclasses to achieve similar subclass customization. This approach requires understanding Python's type system and class creation process, making it more complex but offering greater control over class creation.
+Trước **init\_subclass**, các nhà phát triển đã dựa vào siêu dữ liệu để đạt được khả năng tùy chỉnh lớp con tương tự. Cách tiếp cận này đòi hỏi phải hiểu hệ thống kiểu và quy trình tạo lớp của Python, làm cho nó phức tạp hơn nhưng mang lại khả năng kiểm soát tốt hơn đối với việc tạo lớp.
 
 ```python
 class ParameterizedMeta(type):
@@ -56,9 +56,9 @@ worker = Worker()
 print(worker.worker_process())  # Output: Processing data
 ```
 
-Slide 3: Advanced Method Decoration with **init\_subclass**
+Slide 3: Trang trí phương thức nâng cao với **init\_subclass**
 
-The **init\_subclass** method enables sophisticated method decoration patterns, allowing parent classes to automatically enhance or modify subclass methods. This approach maintains clean inheritance hierarchies while adding powerful functionality to all derived classes.
+Phương thức **init\_subclass** cho phép các mẫu trang trí phương thức phức tạp, cho phép các lớp cha tự động nâng cao hoặc sửa đổi các phương thức của lớp con. Cách tiếp cận này duy trì hệ thống phân cấp kế thừa rõ ràng đồng thời bổ sung chức năng mạnh mẽ cho tất cả các lớp dẫn xuất.
 
 ```python
 class LoggedBase:
@@ -89,9 +89,9 @@ processor = DataProcessor()
 processor.process_data("sample")
 ```
 
-Slide 4: Dynamic Interface Enforcement
+Slide 4: Thực thi giao diện động
 
-**init\_subclass** can be used to enforce interface requirements dynamically during class definition. This pattern ensures that subclasses implement required methods while providing helpful error messages during development.
+**init\_subclass** có thể được sử dụng để thực thi các yêu cầu giao diện một cách linh hoạt trong quá trình định nghĩa lớp. Mẫu này đảm bảo rằng các lớp con triển khai các phương thức được yêu cầu đồng thời cung cấp các thông báo lỗi hữu ích trong quá trình phát triển.
 
 ```python
 class InterfaceEnforcer:
@@ -127,9 +127,9 @@ except TypeError as e:
     print(e)
 ```
 
-Slide 5: Parameterized Validation Framework
+Trang trình bày 5: Khung xác thực tham số
 
-This implementation demonstrates how **init\_subclass** can be used to create a robust validation framework where validation rules are defined through class parameters, enabling flexible and reusable data validation patterns.
+Việc triển khai này chứng tỏ cách **init\_subclass** có thể được sử dụng để tạo một khung xác thực mạnh mẽ trong đó các quy tắc xác thực được xác định thông qua các tham số lớp, cho phép các mẫu xác thực dữ liệu linh hoạt và có thể tái sử dụng.
 
 ```python
 class Validator:
@@ -172,9 +172,9 @@ except ValueError as e:
     print(e)  # Output: username must be at least 3 characters
 ```
 
-Slide 6: Factory Pattern Using **init\_subclass**
+Trang trình bày 6: Mẫu nhà máy sử dụng **init\_subclass**
 
-The **init\_subclass** method enables elegant implementation of the factory pattern, allowing automatic registration of subclasses. This approach eliminates the need for manual registration and provides a centralized creation mechanism for related classes.
+Phương thức **init\_subclass** cho phép triển khai mẫu nhà máy một cách tinh tế, cho phép đăng ký tự động các lớp con. Cách tiếp cận này loại bỏ nhu cầu đăng ký thủ công và cung cấp cơ chế tạo tập trung cho các lớp liên quan.
 
 ```python
 class ServiceFactory:
@@ -205,9 +205,9 @@ email_service = ServiceFactory.create("email")
 print(email_service.send("Hello!"))  # Output: Sending email: Hello!
 ```
 
-Slide 7: Attribute Validation Framework
+Slide 7: Khung xác thực thuộc tính
 
-This implementation creates a framework for automatic attribute validation in classes. It demonstrates how **init\_subclass** can be used to implement descriptor-like behavior with class-level configuration.
+Việc triển khai này tạo ra một khung để xác thực thuộc tính tự động trong các lớp. Nó minh họa cách **init\_subclass** có thể được sử dụng để triển khai hành vi giống như bộ mô tả với cấu hình cấp lớp.
 
 ```python
 class ValidatedAttribute:
@@ -251,9 +251,9 @@ except ValueError:
     print("Invalid age")
 ```
 
-Slide 8: Dynamic Method Generation
+Slide 8: Tạo phương thức động
 
-This advanced implementation shows how **init\_subclass** can be used to dynamically generate methods based on class attributes, creating a powerful and flexible API generation system.
+Triển khai nâng cao này cho thấy cách **init\_subclass** có thể được sử dụng để tạo động các phương thức dựa trên thuộc tính lớp, tạo ra một hệ thống tạo API mạnh mẽ và linh hoạt.
 
 ```python
 class APIEndpoint:
@@ -293,9 +293,9 @@ print(api.get_user(id=1))
 print(api.create_user(name="John", email="john@example.com"))
 ```
 
-Slide 9: Configurable Serialization
+Trang trình bày 9: Tuần tự hóa có thể cấu hình
 
-This implementation demonstrates how **init\_subclass** can be used to create a flexible serialization framework that automatically handles different data types and formats based on class configuration.
+Việc triển khai này cho thấy cách **init\_subclass** có thể được sử dụng để tạo khung tuần tự hóa linh hoạt tự động xử lý các loại và định dạng dữ liệu khác nhau dựa trên cấu hình lớp.
 
 ```python
 from datetime import datetime
@@ -349,9 +349,9 @@ user_dict = user.to_dict()
 print(json.dumps(user_dict, indent=2))
 ```
 
-Slide 10: Real-World Example: Database ORM Implementation
+Trang trình bày 10: Ví dụ thực tế: Triển khai ORM cơ sở dữ liệu
 
-A practical implementation of an Object-Relational Mapping (ORM) system using **init\_subclass** for automatic table creation and field validation. This example demonstrates how to build a lightweight database abstraction layer.
+Triển khai thực tế hệ thống Ánh xạ quan hệ đối tượng (ORM) bằng cách sử dụng **init\_subclass** để tạo bảng tự động và xác thực trường. Ví dụ này trình bày cách xây dựng một lớp trừu tượng hóa cơ sở dữ liệu nhẹ.
 
 ```python
 import sqlite3
@@ -437,9 +437,9 @@ user.created_at = datetime.now()
 user_id = user.save()
 ```
 
-Slide 11: Real-World Example: Event-Driven Architecture
+Trang trình bày 11: Ví dụ thực tế: Kiến trúc hướng sự kiện
 
-Implementation of an event-driven system using **init\_subclass** for automatic event handler registration and management, demonstrating practical application in large-scale applications.
+Triển khai hệ thống hướng sự kiện bằng cách sử dụng **init\_subclass** để đăng ký và quản lý trình xử lý sự kiện tự động, thể hiện ứng dụng thực tế trong các ứng dụng quy mô lớn.
 
 ```python
 from typing import Callable, Dict, List
@@ -513,9 +513,9 @@ user_system = UserSystem()
 user_system.create_user("alice@example.com", "Alice")
 ```
 
-Slide 12: Performance Monitoring Decorator System
+Slide 12: Hệ thống trang trí giám sát hiệu suất
 
-This implementation showcases how **init\_subclass** can be used to create a sophisticated performance monitoring system that automatically tracks method execution times and resource usage across inherited classes.
+Việc triển khai này cho thấy cách **init\_subclass** có thể được sử dụng để tạo một hệ thống giám sát hiệu suất phức tạp, tự động theo dõi thời gian thực hiện phương thức và mức sử dụng tài nguyên trên các lớp kế thừa.
 
 ```python
 import time
@@ -609,9 +609,9 @@ print(f"Success rate: {stats['success_rate']}%")
 print(f"Total calls: {stats['total_calls']}")
 ```
 
-Slide 13: Adaptive Configuration System
+Slide 13: Hệ thống cấu hình thích ứng
 
-An implementation of an adaptive configuration system that uses **init\_subclass** to manage hierarchical settings with inheritance and environment-specific overrides.
+Việc triển khai hệ thống cấu hình thích ứng sử dụng **init\_subclass** để quản lý các cài đặt phân cấp bằng tính năng kế thừa và ghi đè dành riêng cho môi trường.
 
 ```python
 import os
@@ -696,10 +696,10 @@ db_config2 = DatabaseConfig()
 print(f"New database port: {db_config2.port}")
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-* [https://arxiv.org/abs/2304.12210](https://arxiv.org/abs/2304.12210) - "Python Metaclasses and Class Decorators: A Comparative Analysis"
-* [https://arxiv.org/abs/2203.15544](https://arxiv.org/abs/2203.15544) - "Design Patterns in Modern Python: Implementation and Best Practices"
-* [https://arxiv.org/abs/2202.09640](https://arxiv.org/abs/2202.09640) - "Advanced Python Class Customization: A Deep Dive into **init\_subclass** and Metaclasses"
-* [https://arxiv.org/abs/2201.08780](https://arxiv.org/abs/2201.08780) - "Performance Implications of Python Class Initialization Patterns"
-* [https://arxiv.org/abs/2112.14582](https://arxiv.org/abs/2112.14582) - "Modern Python Design Patterns for Large-Scale Applications"
+* [https://arxiv.org/abs/2304.12210](https://arxiv.org/abs/2304.12210) - "Siêu lớp Python và Trình trang trí lớp: Phân tích so sánh"
+* [https://arxiv.org/abs/2203.15544](https://arxiv.org/abs/2203.15544) - "Các mẫu thiết kế trong Python hiện đại: Triển khai và các phương pháp hay nhất"
+* [https://arxiv.org/abs/2202.09640](https://arxiv.org/abs/2202.09640) - "Tùy chỉnh lớp Python nâng cao: Tìm hiểu sâu về **init\_subclass** và Metaclasses"
+* [https://arxiv.org/abs/2201.08780](https://arxiv.org/abs/2201.08780) - "Ý nghĩa về hiệu suất của các mẫu khởi tạo lớp Python"
+* [https://arxiv.org/abs/2112.14582](https://arxiv.org/abs/2112.14582) - "Các mẫu thiết kế Python hiện đại cho các ứng dụng quy mô lớn"

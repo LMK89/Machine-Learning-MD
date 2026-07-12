@@ -1,7 +1,7 @@
-## Bag of Words in NLP using Python
-Slide 1: Introduction to Bag of Words (BoW) in NLP
+## Túi từ trong NLP sử dụng Python
+Slide 1: Giới thiệu về Bag of Words (BoW) trong NLP
 
-Bag of Words is a fundamental technique in Natural Language Processing that represents text as a collection of words, disregarding grammar and word order. This method is used to create feature vectors for text classification, sentiment analysis, and information retrieval tasks.
+Bag of Words là một kỹ thuật cơ bản trong Xử lý ngôn ngữ tự nhiên, thể hiện văn bản dưới dạng tập hợp các từ, không quan tâm đến ngữ pháp và trật tự từ. Phương pháp này được sử dụng để tạo các vectơ đặc trưng cho các tác vụ phân loại văn bản, phân tích tình cảm và truy xuất thông tin.
 
 ```python
 from collections import Counter
@@ -11,9 +11,9 @@ bow = Counter(text.lower().split())
 print(bow)
 ```
 
-Slide 2: Tokenization: The First Step
+Trang trình bày 2: Token hóa: Bước đầu tiên
 
-Tokenization is the process of breaking down text into individual words or tokens. It's a crucial step in creating a Bag of Words representation. We'll use the NLTK library for more advanced tokenization.
+Mã thông báo là quá trình chia nhỏ văn bản thành các từ hoặc mã thông báo riêng lẻ. Đây là một bước quan trọng trong việc tạo ra một bản trình bày Bag of Words. Chúng tôi sẽ sử dụng thư viện NLTK để mã thông báo nâng cao hơn.
 
 ```python
 import nltk
@@ -24,9 +24,9 @@ tokens = nltk.word_tokenize(text)
 print(tokens)
 ```
 
-Slide 3: Creating a Vocabulary
+Slide 3: Tạo từ vựng
 
-After tokenization, we need to create a vocabulary of unique words. This vocabulary will be used to create our feature vectors.
+Sau khi token hóa, chúng ta cần tạo ra một vốn từ vựng gồm những từ duy nhất. Từ vựng này sẽ được sử dụng để tạo các vectơ đặc trưng của chúng tôi.
 
 ```python
 corpus = [
@@ -43,9 +43,9 @@ print(f"Vocabulary size: {len(vocabulary)}")
 print(f"Vocabulary: {vocabulary}")
 ```
 
-Slide 4: Encoding Text as BoW Vectors
+Slide 4: Mã hóa văn bản dưới dạng vectơ BoW
 
-Once we have our vocabulary, we can encode each text as a vector of word frequencies.
+Khi đã có vốn từ vựng, chúng ta có thể mã hóa từng văn bản dưới dạng vectơ tần số từ.
 
 ```python
 def bow_encoding(text, vocabulary):
@@ -62,9 +62,9 @@ for i, encoded_text in enumerate(encoded_texts):
     print(f"Text {i + 1}: {encoded_text}")
 ```
 
-Slide 5: Handling Stop Words
+Slide 5: Xử lý các từ dừng
 
-Stop words are common words that often don't contribute much to the meaning of a text. Removing them can improve the performance of NLP models.
+Từ dừng là những từ phổ biến thường không đóng góp nhiều vào ý nghĩa của văn bản. Loại bỏ chúng có thể cải thiện hiệu suất của các mô hình NLP.
 
 ```python
 from nltk.corpus import stopwords
@@ -80,9 +80,9 @@ print(f"Original: {tokens}")
 print(f"Filtered: {filtered_tokens}")
 ```
 
-Slide 6: Stemming and Lemmatization
+Slide 6: Từ gốc và bổ ngữ
 
-Stemming and lemmatization reduce words to their base or root form, which can help in creating more meaningful BoW representations.
+Bắt nguồn và từ vựng hóa làm giảm các từ về dạng cơ sở hoặc dạng gốc của chúng, điều này có thể giúp tạo ra các cách biểu diễn BoW có ý nghĩa hơn.
 
 ```python
 from nltk.stem import PorterStemmer, WordNetLemmatizer
@@ -98,9 +98,9 @@ for word in words:
     print(f"{word:9} | {stemmer.stem(word):7} | {lemmatizer.lemmatize(word)}")
 ```
 
-Slide 7: TF-IDF: Improving BoW
+Slide 7: TF-IDF: Cải thiện BoW
 
-Term Frequency-Inverse Document Frequency (TF-IDF) is an improvement over simple BoW. It considers the importance of words across the entire corpus.
+Tần số tài liệu nghịch đảo tần số (TF-IDF) là một cải tiến so với BoW đơn giản. Nó xem xét tầm quan trọng của các từ trong toàn bộ kho ngữ liệu.
 
 ```python
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -120,9 +120,9 @@ print("\nFeature names:")
 print(vectorizer.get_feature_names_out())
 ```
 
-Slide 8: Implementing BoW for Text Classification
+Slide 8: Triển khai BoW để phân loại văn bản
 
-Let's use BoW for a simple text classification task using the Naive Bayes classifier.
+Hãy sử dụng BoW cho tác vụ phân loại văn bản đơn giản bằng trình phân loại Naive Bayes.
 
 ```python
 from sklearn.feature_extraction.text import CountVectorizer
@@ -153,9 +153,9 @@ clf.fit(X_train_bow, y_train)
 print(f"Accuracy: {clf.score(X_test_bow, y_test)}")
 ```
 
-Slide 9: Visualizing BoW with Word Clouds
+Slide 9: Trực quan hóa BoW bằng Word Clouds
 
-Word clouds provide a visual representation of word frequencies in a corpus, which can be useful for understanding the most common terms in a BoW model.
+Các đám mây từ cung cấp sự trình bày trực quan về tần số từ trong kho văn bản, điều này có thể hữu ích để hiểu các thuật ngữ phổ biến nhất trong mô hình BoW.
 
 ```python
 from wordcloud import WordCloud
@@ -171,9 +171,9 @@ plt.title('Word Cloud Representation of BoW')
 plt.show()
 ```
 
-Slide 10: Handling Out-of-Vocabulary Words
+Slide 10: Xử lý từ ngoài từ vựng
 
-When applying a BoW model to new text, we may encounter words that weren't in our original vocabulary. Let's explore how to handle this situation.
+Khi áp dụng mô hình BoW cho văn bản mới, chúng ta có thể gặp phải những từ không có trong vốn từ vựng ban đầu của mình. Hãy cùng khám phá cách xử lý tình huống này.
 
 ```python
 def bow_encoding(text, vocabulary):
@@ -192,9 +192,9 @@ encoded_text = bow_encoding(new_text, vocabulary)
 print(encoded_text)
 ```
 
-Slide 11: N-grams: Capturing Word Order
+Slide 11: N-gram: Nắm bắt thứ tự từ
 
-N-grams extend the BoW model by considering sequences of N words, which can capture some word order information.
+N-gram mở rộng mô hình BoW bằng cách xem xét các chuỗi N từ, có thể nắm bắt một số thông tin về thứ tự từ.
 
 ```python
 from nltk import ngrams
@@ -207,9 +207,9 @@ print("Bigrams:", list(ngrams(tokens, 2)))
 print("Trigrams:", list(ngrams(tokens, 3)))
 ```
 
-Slide 12: Real-Life Example: Spam Detection
+Trang trình bày 12: Ví dụ thực tế: Phát hiện thư rác
 
-Let's use BoW for a practical spam detection task using a public dataset.
+Hãy sử dụng BoW cho nhiệm vụ phát hiện thư rác thực tế bằng cách sử dụng tập dữ liệu công khai.
 
 ```python
 import pandas as pd
@@ -238,9 +238,9 @@ y_pred = clf.predict(X_test_bow)
 print(classification_report(y_test, y_pred))
 ```
 
-Slide 13: Real-Life Example: Document Similarity
+Slide 13: Ví dụ thực tế: Tính tương đồng của tài liệu
 
-BoW can be used to measure similarity between documents, which is useful for tasks like recommendation systems or plagiarism detection.
+BoW có thể được sử dụng để đo lường mức độ tương tự giữa các tài liệu, điều này rất hữu ích cho các nhiệm vụ như hệ thống đề xuất hoặc phát hiện đạo văn.
 
 ```python
 from sklearn.feature_extraction.text import CountVectorizer
@@ -276,16 +276,16 @@ print(f"Doc 1: {documents[max_pair[0]]}")
 print(f"Doc 2: {documents[max_pair[1]]}")
 ```
 
-Slide 14: Limitations of Bag of Words
+Slide 14: Hạn chế của túi từ
 
-While BoW is simple and effective, it has limitations:
+Mặc dù BoW đơn giản và hiệu quả nhưng nó có những hạn chế:
 
-1. Loss of word order information
-2. Inability to capture semantics
-3. High dimensionality for large vocabularies
-4. Sensitivity to vocabulary choice
+1. Mất thông tin trật tự từ
+2. Không có khả năng nắm bắt ngữ nghĩa
+3. Tính chiều cao cho vốn từ vựng lớn
+4. Nhạy cảm trong việc lựa chọn từ vựng
 
-These limitations have led to the development of more advanced techniques like word embeddings (e.g., Word2Vec, GloVe) and transformer-based models (e.g., BERT, GPT).
+Những hạn chế này đã dẫn đến sự phát triển của các kỹ thuật tiên tiến hơn như nhúng từ (ví dụ: Word2Vec, GloVe) và các mô hình dựa trên máy biến áp (ví dụ: BERT, GPT).
 
 ```python
 # Demonstrating loss of word order
@@ -300,12 +300,12 @@ print("BoW for sentence 2:", bow2)
 print("Are the BoW representations identical?", bow1 == bow2)
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-For further exploration of Bag of Words and related NLP techniques, consider the following resources:
+Để khám phá thêm về Bag of Words và các kỹ thuật NLP có liên quan, hãy xem xét các tài nguyên sau:
 
-1. "Efficient Estimation of Word Representations in Vector Space" by Mikolov et al. (2013) ArXiv: [https://arxiv.org/abs/1301.3781](https://arxiv.org/abs/1301.3781)
-2. "GloVe: Global Vectors for Word Representation" by Pennington et al. (2014) ArXiv: [https://arxiv.org/abs/1405.4053](https://arxiv.org/abs/1405.4053)
-3. "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding" by Devlin et al. (2018) ArXiv: [https://arxiv.org/abs/1810.04805](https://arxiv.org/abs/1810.04805)
+1. "Ước tính hiệu quả các biểu diễn từ trong không gian vectơ" của Mikolov và cộng sự. (2013) ArXiv: [https://arxiv.org/abs/1301.3781](https://arxiv.org/abs/1301.3781)
+2. "GloVe: Các vectơ toàn cầu để thể hiện từ" của Pennington và cộng sự. (2014) ArXiv: [https://arxiv.org/abs/1405.4053](https://arxiv.org/abs/1405.4053)
+3. "BERT: Đào tạo trước về Máy biến áp hai chiều sâu để hiểu ngôn ngữ" của Devlin và cộng sự. (2018) ArXiv: [https://arxiv.org/abs/1810.04805](https://arxiv.org/abs/1810.04805)
 
-These papers introduce more advanced techniques that address some of the limitations of the basic Bag of Words model.
+Các bài viết này giới thiệu các kỹ thuật tiên tiến hơn nhằm giải quyết một số hạn chế của mô hình Bag of Words cơ bản.

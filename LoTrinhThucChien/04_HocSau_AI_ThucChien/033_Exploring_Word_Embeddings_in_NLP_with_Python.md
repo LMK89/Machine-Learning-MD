@@ -1,7 +1,7 @@
-## Exploring Word Embeddings in NLP with Python
-Slide 1: Introduction to Word Embeddings
+## Khám phá nhúng từ trong NLP bằng Python
+Slide 1: Giới thiệu về Word Embeddings
 
-Word embeddings are dense vector representations of words that capture semantic meanings and relationships. They are fundamental to many NLP tasks.
+Việc nhúng từ là cách biểu diễn vectơ dày đặc của các từ nhằm nắm bắt các ý nghĩa và mối quan hệ ngữ nghĩa. Chúng là nền tảng cho nhiều nhiệm vụ NLP.
 
 ```python
 import numpy as np
@@ -29,9 +29,9 @@ plt.title("2D Visualization of Word Embeddings")
 plt.show()
 ```
 
-Slide 2: Word Embedding Techniques
+Slide 2: Kỹ thuật nhúng từ
 
-There are various techniques to create word embeddings, including Word2Vec, GloVe, and FastText. We'll focus on Word2Vec in this presentation.
+Có nhiều kỹ thuật khác nhau để tạo phần nhúng từ, bao gồm Word2Vec, GloVe và FastText. Chúng tôi sẽ tập trung vào Word2Vec trong bài trình bày này.
 
 ```python
 from gensim.models import Word2Vec
@@ -51,9 +51,9 @@ vector = model.wv["language"]
 print(f"Vector for 'language': {vector[:5]}...")  # Showing first 5 dimensions
 ```
 
-Slide 3: Word2Vec: Skip-gram Model
+Trang trình bày 3: Word2Vec: Mô hình Skip-gram
 
-The Skip-gram model predicts context words given a target word. It's effective for learning word representations.
+Mô hình Skip-gram dự đoán các từ ngữ cảnh cho một từ mục tiêu. Nó có hiệu quả cho việc học cách biểu diễn từ.
 
 ```python
 import torch
@@ -81,9 +81,9 @@ output = model(input_word)
 print(f"Output shape: {output.shape}")
 ```
 
-Slide 4: Word2Vec: Continuous Bag of Words (CBOW) Model
+Slide 4: Word2Vec: Mô hình túi từ liên tục (CBOW)
 
-CBOW predicts a target word given its context words. It's faster to train compared to Skip-gram but may be less accurate for infrequent words.
+CBOW dự đoán một từ mục tiêu dựa trên các từ ngữ cảnh của nó. Nó được đào tạo nhanh hơn so với Skip-gram nhưng có thể kém chính xác hơn đối với những từ không thường xuyên.
 
 ```python
 class CBOWModel(nn.Module):
@@ -109,9 +109,9 @@ output = model(context_words)
 print(f"Output shape: {output.shape}")
 ```
 
-Slide 5: Training Word Embeddings
+Slide 5: Luyện tập cách nhúng từ
 
-Training word embeddings involves optimizing the model to predict words based on their context or vice versa.
+Việc đào tạo nhúng từ liên quan đến việc tối ưu hóa mô hình để dự đoán các từ dựa trên ngữ cảnh của chúng hoặc ngược lại.
 
 ```python
 import torch.optim as optim
@@ -134,9 +134,9 @@ for epoch in range(num_epochs):
     print(f"Epoch {epoch+1}, Loss: {loss.item()}")
 ```
 
-Slide 6: Using Pre-trained Word Embeddings
+Trang trình bày 6: Sử dụng tính năng nhúng từ được đào tạo trước
 
-Pre-trained embeddings like GloVe can be used to jumpstart NLP tasks without training from scratch.
+Các phần nhúng được đào tạo trước như GloVe có thể được sử dụng để khởi động các tác vụ NLP mà không cần đào tạo lại từ đầu.
 
 ```python
 import numpy as np
@@ -160,9 +160,9 @@ similar_words = embeddings.most_similar('python', topn=5)
 print("Words similar to 'python':", similar_words)
 ```
 
-Slide 7: Word Similarity and Analogy
+Slide 7: Từ tương đồng và tương đồng
 
-Word embeddings capture semantic relationships, enabling word similarity and analogy tasks.
+Việc nhúng từ nắm bắt các mối quan hệ ngữ nghĩa, cho phép thực hiện các tác vụ tương tự và tương tự từ.
 
 ```python
 from gensim.models import KeyedVectors
@@ -193,9 +193,9 @@ plt.title("Word Relationships Visualization")
 plt.show()
 ```
 
-Slide 8: Handling Out-of-Vocabulary Words
+Slide 8: Xử lý từ ngoài từ vựng
 
-Dealing with words not present in the vocabulary is crucial for robust NLP systems.
+Xử lý các từ không có trong từ vựng là điều quan trọng đối với các hệ thống NLP mạnh mẽ.
 
 ```python
 import numpy as np
@@ -226,9 +226,9 @@ print(simple_embed.handle_oov("cat"))  # Known word
 print(simple_embed.handle_oov("catdog"))  # OOV word
 ```
 
-Slide 9: Word Embeddings for Text Classification
+Slide 9: Nhúng từ để phân loại văn bản
 
-Word embeddings can significantly improve text classification tasks.
+Việc nhúng từ có thể cải thiện đáng kể các nhiệm vụ phân loại văn bản.
 
 ```python
 import numpy as np
@@ -269,9 +269,9 @@ accuracy = accuracy_score(y_test, y_pred)
 print(f"Accuracy: {accuracy:.2f}")
 ```
 
-Slide 10: Fine-tuning Word Embeddings
+Slide 10: Tinh chỉnh cách nhúng từ
 
-Fine-tuning pre-trained embeddings can adapt them to specific tasks or domains.
+Tinh chỉnh các phần nhúng được đào tạo trước có thể điều chỉnh chúng cho phù hợp với các nhiệm vụ hoặc miền cụ thể.
 
 ```python
 import torch
@@ -314,9 +314,9 @@ for epoch in range(num_epochs):
     print(f"Epoch {epoch+1}, Loss: {loss.item()}")
 ```
 
-Slide 11: Evaluating Word Embeddings
+Slide 11: Đánh giá việc nhúng từ
 
-Evaluating word embeddings is crucial to ensure their quality and suitability for downstream tasks.
+Đánh giá các phần nhúng từ là rất quan trọng để đảm bảo chất lượng và sự phù hợp của chúng cho các nhiệm vụ tiếp theo.
 
 ```python
 import numpy as np
@@ -350,9 +350,9 @@ correlation = evaluate_similarity(embeddings, similarity_dataset)
 print(f"Spearman correlation: {correlation:.4f}")
 ```
 
-Slide 12: Word Embeddings in Neural Networks
+Trang trình bày 12: Nhúng từ trong mạng thần kinh
 
-Incorporating word embeddings into neural networks can enhance their performance on various NLP tasks.
+Việc kết hợp các từ nhúng vào mạng thần kinh có thể nâng cao hiệu suất của chúng trên các nhiệm vụ NLP khác nhau.
 
 ```python
 import torch
@@ -392,9 +392,9 @@ output = model(input_text)
 print(f"Output shape: {output.shape}")
 ```
 
-Slide 13: Word Embeddings for Named Entity Recognition (NER)
+Trang trình bày 13: Nhúng từ để nhận dạng thực thể được đặt tên (NER)
 
-Word embeddings enhance Named Entity Recognition by capturing semantic information.
+Việc nhúng từ nâng cao khả năng nhận dạng thực thể được đặt tên bằng cách nắm bắt thông tin ngữ nghĩa.
 
 ```python
 import torch
@@ -423,9 +423,9 @@ output = model(dummy_input)
 print(f"Output shape: {output.shape}")
 ```
 
-Slide 14: Contextualized Word Embeddings
+Trang trình bày 14: Nhúng từ theo ngữ cảnh
 
-Recent advancements have led to contextualized word embeddings, which capture word meaning based on context.
+Những tiến bộ gần đây đã dẫn đến việc nhúng từ theo ngữ cảnh, giúp nắm bắt nghĩa của từ dựa trên ngữ cảnh.
 
 ```python
 from transformers import BertTokenizer, BertModel
@@ -453,9 +453,9 @@ for sentence in sentences:
     print()
 ```
 
-Slide 15: Word Embeddings in Multilingual NLP
+Trang trình bày 15: Nhúng từ trong NLP đa ngôn ngữ
 
-Word embeddings can be used for multilingual NLP tasks, enabling cross-lingual understanding.
+Việc nhúng từ có thể được sử dụng cho các tác vụ NLP đa ngôn ngữ, cho phép hiểu nhiều ngôn ngữ.
 
 ```python
 from gensim.models import KeyedVectors
@@ -477,10 +477,10 @@ print(translate('dog', en_embeddings, fr_embeddings))
 print(translate('chat', fr_embeddings, en_embeddings))
 ```
 
-Slide 16: Additional Resources
+Trang trình bày 16: Tài nguyên bổ sung
 
-For further exploration of word embeddings in NLP:
+Để khám phá thêm về cách nhúng từ trong NLP:
 
-1. "Efficient Estimation of Word Representations in Vector Space" by Mikolov et al. (2013) ArXiv: [https://arxiv.org/abs/1301.3781](https://arxiv.org/abs/1301.3781)
-2. "GloVe: Global Vectors for Word Representation" by Pennington et al. (2014) ArXiv: [https://arxiv.org/abs/1405.3531](https://arxiv.org/abs/1405.3531)
-3. "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding" by Devlin et al. (2018) ArXiv: [https://arxiv.org/abs/1810.04805](https://arxiv.org/abs/1810.04805)
+1. "Ước tính hiệu quả các biểu diễn từ trong không gian vectơ" của Mikolov và cộng sự. (2013) ArXiv: [https://arxiv.org/abs/1301.3781](https://arxiv.org/abs/1301.3781)
+2. "GloVe: Các vectơ toàn cầu để thể hiện từ" của Pennington và cộng sự. (2014) ArXiv: [https://arxiv.org/abs/1405.3531](https://arxiv.org/abs/1405.3531)
+3. "BERT: Đào tạo trước về Máy biến áp hai chiều sâu để hiểu ngôn ngữ" của Devlin và cộng sự. (2018) ArXiv: [https://arxiv.org/abs/1810.04805](https://arxiv.org/abs/1810.04805)

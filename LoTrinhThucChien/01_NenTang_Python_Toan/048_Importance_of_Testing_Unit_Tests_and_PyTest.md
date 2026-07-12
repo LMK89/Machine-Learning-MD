@@ -1,7 +1,7 @@
-## Importance of Testing Unit Tests and PyTest
-Slide 1: Unit Testing Fundamentals with PyTest
+## Tầm quan trọng của Unit Test và PyTest
+Slide 1: Nguyên tắc cơ bản về kiểm thử đơn vị với PyTest
 
-Unit testing forms the foundation of a robust testing strategy, focusing on validating individual functions and methods in isolation. PyTest provides a powerful framework for writing and executing unit tests in Python, offering features like fixtures, parametrization, and detailed assertion introspection for effective testing.
+Thử nghiệm đơn vị tạo thành nền tảng của một chiến lược thử nghiệm mạnh mẽ, tập trung vào việc xác nhận các chức năng và phương pháp riêng lẻ một cách riêng biệt. PyTest cung cấp một khuôn khổ mạnh mẽ để viết và thực hiện các bài kiểm tra đơn vị trong Python, cung cấp các tính năng như cố định, tham số hóa và xem xét nội tâm xác nhận chi tiết để kiểm tra hiệu quả.
 
 ```python
 import pytest
@@ -32,9 +32,9 @@ def test_calculate_statistics():
 # Run with: pytest test_statistics.py -v
 ```
 
-Slide 2: Integration Testing with FastAPI
+Slide 2: Kiểm tra tích hợp với FastAPI
 
-Integration testing validates the interaction between different components of a system. Using FastAPI, we can create comprehensive tests that verify API endpoints, database operations, and service layer integrations while maintaining isolation through dependency injection.
+Kiểm thử tích hợp xác nhận sự tương tác giữa các thành phần khác nhau của hệ thống. Bằng cách sử dụng FastAPI, chúng tôi có thể tạo các thử nghiệm toàn diện để xác minh các điểm cuối API, hoạt động cơ sở dữ liệu và tích hợp lớp dịch vụ trong khi vẫn duy trì sự cô lập thông qua việc chèn phụ thuộc.
 
 ```python
 from fastapi import FastAPI, HTTPException
@@ -63,9 +63,9 @@ def test_get_user_integration():
     assert "Invalid user ID" in response.json()["detail"]
 ```
 
-Slide 3: End-to-End Testing with Selenium
+Trang trình bày 3: Thử nghiệm toàn diện với Selenium
 
-End-to-end testing ensures that all components work together as expected from a user's perspective. Selenium provides a powerful way to automate browser interactions and validate complete user workflows in web applications.
+Thử nghiệm từ đầu đến cuối đảm bảo rằng tất cả các thành phần hoạt động cùng nhau như mong đợi từ quan điểm của người dùng. Selenium cung cấp một cách mạnh mẽ để tự động hóa các tương tác của trình duyệt và xác thực quy trình làm việc hoàn chỉnh của người dùng trong các ứng dụng web.
 
 ```python
 from selenium import webdriver
@@ -98,9 +98,9 @@ class TestUserLogin:
         self.driver.quit()
 ```
 
-Slide 4: Regression Testing Framework
+Slide 4: Khung kiểm tra hồi quy
 
-Regression testing ensures that new code changes don't break existing functionality. This framework automates the process of running regression tests, capturing test results, and generating comprehensive reports to track system stability over time.
+Kiểm tra hồi quy đảm bảo rằng những thay đổi mã mới không phá vỡ chức năng hiện có. Khung này tự động hóa quá trình chạy thử nghiệm hồi quy, thu thập kết quả thử nghiệm và tạo báo cáo toàn diện để theo dõi độ ổn định của hệ thống theo thời gian.
 
 ```python
 import logging
@@ -150,9 +150,9 @@ framework.run_test("basic_math", test_feature_calculation)
 print(framework.generate_report())
 ```
 
-Slide 5: Performance Testing with Locust
+Slide 5: Kiểm tra hiệu suất với Locust
 
-Performance testing is crucial for understanding system behavior under load. Locust provides a Python-based solution for writing scalable performance tests that simulate real user behavior and measure response times, throughput, and error rates.
+Kiểm tra hiệu suất là rất quan trọng để hiểu hành vi của hệ thống khi tải. Locust cung cấp giải pháp dựa trên Python để viết các bài kiểm tra hiệu suất có thể mở rộng nhằm mô phỏng hành vi của người dùng thực và đo lường thời gian phản hồi, thông lượng và tỷ lệ lỗi.
 
 ```python
 from locust import HttpUser, task, between
@@ -191,9 +191,9 @@ class WebsiteUser(HttpUser):
 # Run with: locust -f locustfile.py --host=http://example.com
 ```
 
-Slide 6: Security Testing Implementation
+Trang trình bày 6: Triển khai kiểm tra bảo mật
 
-Security testing identifies vulnerabilities in application code and infrastructure. This implementation focuses on common security tests including input validation, authentication checks, and SQL injection prevention.
+Kiểm tra bảo mật xác định các lỗ hổng trong mã ứng dụng và cơ sở hạ tầng. Việc triển khai này tập trung vào các thử nghiệm bảo mật phổ biến bao gồm xác thực đầu vào, kiểm tra xác thực và ngăn chặn việc tiêm SQL.
 
 ```python
 import re
@@ -240,9 +240,9 @@ test_input = "'; DROP TABLE users; --"
 print(f"SQL Injection detected: {tester.test_sql_injection(test_input)}")
 ```
 
-Slide 7: Mutation Testing Framework
+Slide 7: Khung kiểm tra đột biến
 
-Mutation testing evaluates test suite effectiveness by introducing small changes (mutations) to the source code and verifying if tests detect these changes. This implementation creates a framework for automated mutation testing with detailed reporting capabilities.
+Kiểm thử đột biến đánh giá tính hiệu quả của bộ kiểm thử bằng cách đưa ra các thay đổi nhỏ (đột biến) cho mã nguồn và xác minh xem các kiểm thử có phát hiện ra những thay đổi này hay không. Việc triển khai này tạo ra một khuôn khổ để kiểm tra đột biến tự động với khả năng báo cáo chi tiết.
 
 ```python
 import ast
@@ -313,9 +313,9 @@ results = tester.run_mutation_tests(test_suite)
 print(f"Mutation Testing Results: {results}")
 ```
 
-Slide 8: Usability Testing with Event Tracking
+Trang trình bày 8: Kiểm tra khả năng sử dụng với Theo dõi sự kiện
 
-Usability testing captures and analyzes user interactions to improve interface design. This implementation provides a framework for tracking user events, generating heatmaps, and calculating key usability metrics.
+Kiểm tra khả năng sử dụng nắm bắt và phân tích các tương tác của người dùng để cải thiện thiết kế giao diện. Việc triển khai này cung cấp một khuôn khổ để theo dõi các sự kiện của người dùng, tạo bản đồ nhiệt và tính toán các số liệu chính về khả năng sử dụng.
 
 ```python
 from datetime import datetime
@@ -394,9 +394,9 @@ metrics = tracker.generate_metrics()
 print(json.dumps(metrics, indent=2))
 ```
 
-Slide 9: Acceptance Testing with BDD
+Slide 9: Kiểm tra chấp nhận với BDD
 
-Behavior-Driven Development (BDD) bridges the gap between business requirements and technical implementation. This framework implements a Gherkin-style syntax parser and test executor for writing and running acceptance tests.
+Phát triển theo hướng hành vi (BDD) thu hẹp khoảng cách giữa yêu cầu kinh doanh và triển khai kỹ thuật. Khung này triển khai trình phân tích cú pháp và trình thực thi kiểm tra kiểu Gherkin để viết và chạy các bài kiểm tra chấp nhận.
 
 ```python
 from typing import Dict, List, Callable
@@ -483,9 +483,9 @@ results = bdd.execute_feature(feature)
 print(f"Test Results: {results}")
 ```
 
-Slide 10: Test Coverage Analysis
+Trang trình bày 10: Phân tích phạm vi kiểm thử
 
-Test coverage analysis helps identify untested code paths and potential vulnerabilities. This implementation provides detailed coverage metrics including branch, line, and condition coverage with visualization capabilities.
+Phân tích phạm vi kiểm tra giúp xác định các đường dẫn mã chưa được kiểm tra và các lỗ hổng tiềm ẩn. Việc triển khai này cung cấp các số liệu phạm vi chi tiết bao gồm phạm vi chi nhánh, tuyến và điều kiện với khả năng trực quan hóa.
 
 ```python
 import ast
@@ -575,9 +575,9 @@ coverage_report = analyzer.run_coverage(test_function)
 print(f"Coverage Report: {coverage_report}")
 ```
 
-Slide 11: Performance Benchmark Testing
+Slide 11: Kiểm tra điểm chuẩn hiệu suất
 
-Performance benchmark testing measures system performance across different scenarios and loads. This framework implements automated benchmarking with statistical analysis and performance regression detection capabilities.
+Kiểm tra điểm chuẩn hiệu suất đo lường hiệu suất hệ thống trong các tình huống và tải khác nhau. Khung này thực hiện đo điểm chuẩn tự động với khả năng phân tích thống kê và phát hiện hồi quy hiệu suất.
 
 ```python
 import time
@@ -682,9 +682,9 @@ result_optimized = benchmark.benchmark(optimized_function, "square_sum")
 print(benchmark.generate_report())
 ```
 
-Slide 12: Test Data Generation Framework
+Trang trình bày 12: Khung tạo dữ liệu thử nghiệm
 
-This framework generates realistic test data for various testing scenarios, supporting both random and structured data generation with customizable constraints and relationships between fields.
+Khung này tạo ra dữ liệu thử nghiệm thực tế cho các tình huống thử nghiệm khác nhau, hỗ trợ cả việc tạo dữ liệu ngẫu nhiên và có cấu trúc với các ràng buộc và mối quan hệ có thể tùy chỉnh giữa các trường.
 
 ```python
 import random
@@ -767,9 +767,9 @@ test_data = generator.generate_dataset(schema, count=5)
 print(json.dumps(test_data, indent=2, default=str))
 ```
 
-Slide 13: API Contract Testing
+Trang trình bày 13: Kiểm tra hợp đồng API
 
-API contract testing ensures that service interfaces maintain compatibility across different versions and implementations. This framework validates request/response schemas, data types, and business rules for REST APIs.
+Kiểm tra hợp đồng API đảm bảo rằng giao diện dịch vụ duy trì khả năng tương thích trên các phiên bản và cách triển khai khác nhau. Khung này xác thực các lược đồ yêu cầu/phản hồi, loại dữ liệu và quy tắc nghiệp vụ cho API REST.
 
 ```python
 from typing import Dict, Any, List, Optional
@@ -900,10 +900,10 @@ result = tester.test_contract("create_user", test_data)
 print(tester.generate_report())
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-*   Research Paper: "Effective Test Automation Strategies" (arXiv:2301.12345) [https://arxiv.org/abs/2301.12345](https://arxiv.org/abs/2301.12345)
-*   Research Paper: "Modern Approaches to Test Data Generation" (arXiv:2302.54321) [https://arxiv.org/abs/2302.54321](https://arxiv.org/abs/2302.54321)
-*   Research Paper: "Automated Testing in Continuous Integration Environments" (arXiv:2303.98765) [https://arxiv.org/abs/2303.98765](https://arxiv.org/abs/2303.98765)
-*   General Resource: Software Testing Best Practices [https://testing-guidelines.dev](https://testing-guidelines.dev)
-*   Testing Documentation and Standards [https://software-testing-handbook.org](https://software-testing-handbook.org)
+* Tài liệu nghiên cứu: "Chiến lược tự động hóa thử nghiệm hiệu quả" (arXiv:2301.12345) [https://arxiv.org/abs/2301.12345](https://arxiv.org/abs/2301.12345)
+* Tài liệu nghiên cứu: "Các phương pháp tiếp cận hiện đại để kiểm tra việc tạo dữ liệu" (arXiv:2302.54321) [https://arxiv.org/abs/2302.54321](https://arxiv.org/abs/2302.54321)
+* Tài liệu nghiên cứu: "Thử nghiệm tự động trong môi trường tích hợp liên tục" (arXiv:2303.98765) [https://arxiv.org/abs/2303.98765](https://arxiv.org/abs/2303.98765)
+* Tài nguyên chung: Các phương pháp hay nhất về kiểm thử phần mềm [https://testing-guidelines.dev](https://testing-guidelines.dev)
+* Tài liệu và tiêu chuẩn kiểm thử [https://software-testing-handbook.org](https://software-testing-handbook.org)

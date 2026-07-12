@@ -1,7 +1,7 @@
-## Mastering Gradient Descent for Smarter Predictions
-Slide 1: Understanding Gradient Descent Fundamentals
+## Làm tăng dần độ dốc của chủ nhà để mong đợi thông tin hơn
+Trang trình bày 1: Tìm hiểu các nguyên tắc cơ bản về độ dốc tăng dần
 
-Gradient descent is an iterative optimization algorithm that finds the minimum of a function by taking steps proportional to the negative of the gradient. In machine learning, it's used to minimize the loss function and find optimal model parameters.
+Độ dốc giảm là một thuật toán tối ưu hóa lặp lại của vòng lặp để tìm mức tối thiểu của hàm bằng cách thực hiện tỷ lệ bước với âm của độ dốc. Trong máy học, nó được sử dụng để giảm thiểu các lỗi mát xa và tìm kiếm mức độ ưu tiên của các mô hình tham số.
 
 ```python
 import numpy as np
@@ -27,9 +27,9 @@ x_min, history = gradient_descent(f, df, x0=2.0)
 print(f"Minimum found at x = {x_min:.6f}")
 ```
 
-Slide 2: The Mathematics Behind Gradient Descent
+Trang trình bày 2: Toán học đằng sau việc giảm độ dốc
 
-The core principle of gradient descent relies on calculus to find the direction of steepest descent. The gradient represents the direction of maximum increase, so we move in the opposite direction to minimize our function.
+Nguyên tắc cơ bản của việc giảm độ dốc dựa vào tính toán được phép để tìm ra hướng giảm độ dốc tăng dần nhất. Độ dốc biểu thị mức độ tăng tối đa theo hướng, vì vậy chúng tôi chuyển hướng ngược lại để giảm thiểu các chức năng tối thiểu của mình.
 
 ```python
 # Mathematical representation in code block (LaTeX format)
@@ -60,9 +60,9 @@ def batch_gradient_descent(X, y, theta, alpha, epochs):
     return theta, cost_history
 ```
 
-Slide 3: Implementing Linear Regression with Gradient Descent
+Trang trình bày 3: Thực hiện khôi phục tuyến tính với độ dốc tăng dần
 
-Linear regression serves as an excellent example to understand gradient descent in practice. We'll implement it from scratch, calculating the gradients manually and updating our parameters iteratively.
+Hồi quy tuyến tính đóng vai trò là một ví dụ tuyệt vời để hiểu mức độ tăng dần trong thực tế. Chúng tôi sẽ phát triển nó từ đầu, tính toán độ dốc theo cách thủ công và cập nhật các tham số của chúng tôi nhiều lần.
 
 ```python
 import numpy as np
@@ -94,9 +94,9 @@ class LinearRegressionGD:
         return np.dot(X, self.weights) + self.bias
 ```
 
-Slide 4: Stochastic Gradient Descent Implementation
+Trang trình bày 4: Triển khai ngẫu nhiên giảm dần độ dốc
 
-Stochastic Gradient Descent (SGD) processes one sample at a time, making it more memory-efficient and often faster to converge than batch gradient descent. This implementation shows the key differences in approach.
+Giảm dần độ dốc ngẫu nhiên (SGD) xử lý từng mẫu một, giúp tiết kiệm bộ nhớ hơn và thường xuyên hội tụ nhanh hơn so với chuỗi giảm độ dốc. Việc thực hiện này chọn một sự khác biệt chính yếu trong cách tiếp cận.
 
 ```python
 def stochastic_gradient_descent(X, y, learning_rate=0.01, epochs=100):
@@ -123,9 +123,9 @@ theta = stochastic_gradient_descent(X, y)
 print("Optimized parameters:", theta)
 ```
 
-Slide 5: Mini-batch Gradient Descent
+Trang trình bày 5: Giảm dần độ dốc theo nhỏ
 
-Mini-batch gradient descent combines the best of both batch and stochastic approaches, processing small batches of data at a time. This implementation demonstrates the practical balance between computation efficiency and convergence stability.
+Giảm dần độ dốc hàng loạt nhỏ kết hợp tốt nhất cả phương pháp tiếp cận hàng loạt và ngẫu nhiên, xử lý các lô dữ liệu nhỏ cùng một lúc. Việc phát triển này có thể thực hiện cân bằng thực tế giữa hiệu quả tính toán và độ ổn định của tụ điện.
 
 ```python
 class MiniBatchGD:
@@ -192,9 +192,9 @@ model = MomentumGD()
 optimal_weights = model.fit(X, y)
 ```
 
-Slide 7: Adaptive Learning Rate with AdaGrad
+Trang trình bày 7: Tốc độ học tập thích hợp với AdaGrad
 
-AdaGrad adapts the learning rate for each parameter individually, which is particularly useful when dealing with sparse data or when parameters have different scales of importance.
+AdaGrad điều chỉnh tốc độ học cho từng tham số riêng lẻ, điều này đặc biệt hữu ích khi xử lý dữ liệu thưa thớt hoặc khi các tham số có mức độ quan trọng khác nhau.
 
 ```python
 class AdaGrad:
@@ -232,9 +232,9 @@ optimizer = AdaGrad()
 final_weights, loss_history = optimizer.optimize(X, y, np.zeros(10), 100)
 ```
 
-Slide 8: RMSprop Implementation
+Trang trình bày 8: Triển khai RMSprop
 
-RMSprop improves upon AdaGrad by using an exponentially decaying average of squared gradients, preventing the learning rate from decreasing too quickly.
+RMSprop cải thiện dựa trên AdaGrad bằng cách sử dụng gradient bình phương bình bình giảm dần theo cấp số nhân, giảm tốc độ học giảm quá nhanh.
 
 ```python
 class RMSprop:
@@ -268,9 +268,9 @@ optimizer = RMSprop()
 final_params = optimizer.optimize(example_gradient_function, initial_params, 1000)
 ```
 
-Slide 9: Adam Optimizer Implementation
+Trang trình bày 9: Triển khai Adam trình độ tối ưu
 
-Adam combines the benefits of both momentum and RMSprop, using first and second moments of the gradients to adapt learning rates for each parameter individually.
+Adam kết hợp lợi ích của năng lượng và RMSprop, sử dụng khoảnh khắc thứ nhất và thứ hai của độ dốc để điều chỉnh tốc độ học tập cho từng tham số riêng lẻ.
 
 ```python
 class Adam:
@@ -313,9 +313,9 @@ for _ in range(1000):
     params = optimizer.update(params, gradients)
 ```
 
-Slide 10: Real-world Application - Time Series Prediction
+Slide 10: Ứng dụng thực tế - Expected time string
 
-This implementation demonstrates gradient descent for predicting stock prices using a simple neural network architecture. The example includes data preprocessing and model evaluation with real-world considerations.
+Công việc khai triển này có thể thực hiện việc giảm độ dốc để dự đoán giá cổ phiếu bằng cách sử dụng kiến ​​trúc mạng thần kinh đơn giản. Ví dụ này bao gồm tiền xử lý dữ liệu và đánh giá mô hình cân bằng nhanh chóng trong thế giới thực.
 
 ```python
 import numpy as np
@@ -376,9 +376,9 @@ class TimeSeriesPredictor:
             self.b2 -= self.learning_rate * db2
 ```
 
-Slide 11: Results for Time Series Prediction
+Trang trình bày 11: Kết quả mong đợi về thời gian chuỗi
 
-Analysis of the time series prediction model's performance on real stock market data, showing training progression and prediction accuracy.
+Phân tích hiệu suất của mô hình dự kiến ​​​​thời gian chuỗi trên chứng thực thị trường dữ liệu, cho thấy quá trình đào tạo và độ chính xác của dự đoán.
 
 ```python
 # Example usage and results
@@ -412,9 +412,9 @@ print(f"Training MSE: {train_mse:.4f}")
 print(f"Testing MSE: {test_mse:.4f}")
 ```
 
-Slide 12: Real-world Application - Image Classification
+Slide 12: Ứng dụng thực tế - Phân loại hình ảnh
 
-Implementation of gradient descent for a convolutional neural network trained on the MNIST dataset, showcasing practical considerations for image processing tasks.
+Việc phát triển giảm độ dốc cho mạng nơron thần tốc được đào tạo trên bộ dữ liệu MNIST, có thể hiện thực hóa cân thực tế cho các tác vụ xử lý hình ảnh.
 
 ```python
 class ConvolutionalNeuralNetwork:
@@ -503,9 +503,9 @@ for epoch, train_loss, val_loss in zip(
     print(f"Epoch {epoch}: Train Loss = {train_loss:.3f}, Val Loss = {val_loss:.3f}")
 ```
 
-Slide 14: Advanced Gradient Descent Techniques - Line Search
+Slide 14: Kỹ thuật nâng cao độ dốc - Tìm kiếm dòng
 
-Implementation of backtracking line search to automatically determine optimal step sizes in gradient descent, improving convergence stability.
+Triển khai tìm kiếm đường quay lui để tự động xác định mức độ ưu tiên kích thước khi giảm độ dốc, cải thiện độ ổn định của tụ hội.
 
 ```python
 class LineSearchGD:
@@ -559,13 +559,13 @@ x_min, history = optimizer.optimize(rosenbrock, rosenbrock_gradient, x0)
 print(f"Minimum found at: {x_min}")
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-*   "A Theoretical Analysis of Gradient Flow in Deep Linear Networks" - [https://arxiv.org/abs/2006.09361](https://arxiv.org/abs/2006.09361)
-*   "Stochastic Gradient Descent with Warm Starts" - [https://arxiv.org/abs/1512.07838](https://arxiv.org/abs/1512.07838)
-*   "An Overview of Gradient Descent Optimization Algorithms" - [https://arxiv.org/abs/1609.04747](https://arxiv.org/abs/1609.04747)
-*   "Deep Learning with Limited Numerical Precision" - [https://arxiv.org/abs/1502.02551](https://arxiv.org/abs/1502.02551)
-*   Recommended search terms for further exploration:
-    *   "Adaptive gradient methods convergence analysis"
-    *   "Natural gradient descent deep learning"
-    *   "Second-order optimization methods machine learning"
+* "Phân tích lý thuyết về dòng chuyển màu trong mạng tính toán sâu" - [https://arxiv.org/abs/2006.09361](https://arxiv.org/abs/2006.09361)
+* "Giảm dần độ dốc ngẫu nhiên với khởi đầu ấm áp" - [https://arxiv.org/abs/1512.07838](https://arxiv.org/abs/1512.07838)
+* "Tổng quan về các thuật toán tối ưu hóa giảm dần độ dốc" - [https://arxiv.org/abs/1609.04747](https://arxiv.org/abs/1609.04747)
+* "Học sâu với giới hạn chính xác" - [https://arxiv.org/abs/1502.02551](https://arxiv.org/abs/1502.02551)
+* Cụm từ tìm kiếm được xuất ra để khám phá thêm:
+    * "Phân tích hội tụ các phương pháp gradient thích ứng"
+    * "Học sâu giảm dần độ dốc tự nhiên"
+    * "Phương pháp học máy tối ưu hoá bậc hai"

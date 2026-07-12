@@ -1,7 +1,7 @@
-## 3D Graphics Foundations Rendering Triangles in Python
-Slide 1: Understanding 3D Coordinate Systems in Python
+## Nền tảng đồ họa 3D Hiển thị hình tam giác trong Python
+Trang trình bày 1: Tìm hiểu hệ tọa độ 3D trong Python
 
-The foundation of 3D graphics begins with understanding coordinate systems. In computer graphics, we represent points in 3D space using vectors containing X, Y, and Z coordinates. Python's numpy library provides efficient tools for handling these coordinate systems.
+Nền tảng của đồ họa 3D bắt đầu bằng việc hiểu các hệ tọa độ. Trong đồ họa máy tính, chúng ta biểu diễn các điểm trong không gian 3D bằng cách sử dụng các vectơ chứa tọa độ X, Y và Z. Thư viện gọn gàng của Python cung cấp các công cụ hiệu quả để xử lý các hệ tọa độ này.
 
 ```python
 import numpy as np
@@ -30,9 +30,9 @@ for i, point in enumerate(triangle):
 # Vertex 3: [0 0 1]
 ```
 
-Slide 2: Basic Matrix Transformations
+Slide 2: Các phép biến đổi ma trận cơ bản
 
-Matrix transformations are fundamental operations in 3D graphics. They allow us to rotate, scale, and translate objects in 3D space. These transformations are represented as 4x4 matrices using homogeneous coordinates.
+Phép biến đổi ma trận là các phép toán cơ bản trong đồ họa 3D. Chúng cho phép chúng ta xoay, chia tỷ lệ và dịch các đối tượng trong không gian 3D. Các phép biến đổi này được biểu diễn dưới dạng ma trận 4x4 sử dụng tọa độ đồng nhất.
 
 ```python
 import numpy as np
@@ -68,9 +68,9 @@ rotation_matrix = create_rotation_matrix(angle, 'x')
 print("Rotation Matrix (45° around X):\n", rotation_matrix)
 ```
 
-Slide 3: Vector-Matrix Multiplication Implementation
+Trang trình bày 3: Thực hiện phép nhân ma trận vectơ
 
-Understanding how vectors and matrices multiply is crucial for 3D transformations. We implement a custom class that handles vector-matrix multiplication for 3D graphics calculations efficiently.
+Hiểu cách nhân vectơ và ma trận là rất quan trọng đối với các phép biến đổi 3D. Chúng tôi triển khai một lớp tùy chỉnh xử lý phép nhân ma trận vectơ để tính toán đồ họa 3D một cách hiệu quả.
 
 ```python
 import numpy as np
@@ -97,9 +97,9 @@ print(f"Original point: {point}")
 print(f"Rotated point: {rotated_point}")
 ```
 
-Slide 4: Building a Mesh Class
+Slide 4: Xây dựng lớp Mesh
 
-The Mesh class serves as the foundation for representing 3D objects. It manages collections of vertices and faces, providing methods for transformation and manipulation of 3D geometry.
+Lớp Mesh đóng vai trò là nền tảng để biểu diễn các đối tượng 3D. Nó quản lý các tập hợp các đỉnh và mặt, cung cấp các phương pháp chuyển đổi và thao tác hình học 3D.
 
 ```python
 class Mesh:
@@ -143,9 +143,9 @@ faces = np.array([
 pyramid = Mesh(vertices, faces)
 ```
 
-Slide 5: Implementing Rotation Transformations
+Slide 5: Thực hiện các phép biến đổi xoay
 
-A comprehensive implementation of rotation transformations requires handling Euler angles and quaternions. This implementation demonstrates how to create and combine multiple rotation transformations for complex 3D movements.
+Việc thực hiện toàn diện các phép biến đổi phép quay đòi hỏi phải xử lý các góc Euler và quaternion. Việc triển khai này trình bày cách tạo và kết hợp nhiều phép biến đổi xoay cho các chuyển động 3D phức tạp.
 
 ```python
 import numpy as np
@@ -182,9 +182,9 @@ combined_rotation = Rotation3D.from_euler(*angles)
 print("Combined rotation matrix:\n", combined_rotation)
 ```
 
-Slide 6: Projection Matrix Implementation
+Slide 6: Triển khai ma trận chiếu
 
-The projection matrix transforms 3D coordinates into 2D screen coordinates, simulating perspective. This implementation includes both perspective and orthographic projection matrices commonly used in computer graphics.
+Ma trận chiếu chuyển đổi tọa độ 3D thành tọa độ màn hình 2D, mô phỏng phối cảnh. Việc triển khai này bao gồm cả ma trận chiếu phối cảnh và phép chiếu trực giao thường được sử dụng trong đồ họa máy tính.
 
 ```python
 import numpy as np
@@ -220,9 +220,9 @@ perspective = ProjectionMatrix.perspective(
 print("Perspective projection matrix:\n", perspective)
 ```
 
-Slide 7: Implementing the Graphics Pipeline
+Trang trình bày 7: Triển khai quy trình đồ họa
 
-The graphics pipeline transforms 3D vertices through multiple stages: model transformation, view transformation, and projection. This implementation demonstrates the complete pipeline used in modern graphics engines.
+Đường dẫn đồ họa biến đổi các đỉnh 3D qua nhiều giai đoạn: chuyển đổi mô hình, chuyển đổi chế độ xem và chiếu. Việc triển khai này thể hiện quy trình hoàn chỉnh được sử dụng trong các công cụ đồ họa hiện đại.
 
 ```python
 class GraphicsPipeline:
@@ -282,9 +282,9 @@ screen_coords = pipeline.transform_vertex(vertex)
 print(f"Screen coordinates: {screen_coords}")
 ```
 
-Slide 8: Matrix Performance Optimization
+Slide 8: Tối ưu hóa hiệu suất ma trận
 
-Understanding matrix multiplication performance is crucial for graphics applications. This implementation demonstrates various optimization techniques including vectorization and cache-friendly memory access patterns.
+Hiểu được hiệu suất nhân ma trận là rất quan trọng đối với các ứng dụng đồ họa. Việc triển khai này thể hiện các kỹ thuật tối ưu hóa khác nhau bao gồm vectơ hóa và các mẫu truy cập bộ nhớ thân thiện với bộ đệm.
 
 ```python
 import numpy as np
@@ -327,9 +327,9 @@ class OptimizedMatrixOps:
 OptimizedMatrixOps.benchmark(size=100)
 ```
 
-Slide 9: Implementing Model View Projection (MVP)
+Slide 9: Triển khai Model View Projection (MVP)
 
-The Model View Projection matrix combines object transformation, camera positioning, and perspective projection. This implementation shows how to construct and apply the complete MVP transformation pipeline.
+Ma trận Chiếu Chế độ xem Mô hình kết hợp chuyển đổi đối tượng, định vị camera và chiếu phối cảnh. Việc triển khai này cho thấy cách xây dựng và áp dụng quy trình chuyển đổi MVP hoàn chỉnh.
 
 ```python
 class MVPTransform:
@@ -395,9 +395,9 @@ transformed_vertices = mvp.transform_vertices(cube_vertices)
 print("Transformed vertices:\n", transformed_vertices)
 ```
 
-Slide 10: GPU-like Parallel Processing Simulation
+Slide 10: Mô phỏng xử lý song song giống GPU
 
-This implementation simulates GPU-like parallel processing for matrix operations using Python's multiprocessing capabilities, demonstrating how GPUs accelerate graphics computations.
+Việc triển khai này mô phỏng quá trình xử lý song song giống như GPU cho các hoạt động ma trận bằng cách sử dụng khả năng đa xử lý của Python, thể hiện cách GPU tăng tốc tính toán đồ họa.
 
 ```python
 import multiprocessing as mp
@@ -454,9 +454,9 @@ print(f"Parallel execution time: {parallel_time:.4f}s")
 print(f"NumPy execution time: {numpy_time:.4f}s")
 ```
 
-Slide 11: Real-time Animation Pipeline
+Trang trình bày 11: Quy trình hoạt hình thời gian thực
 
-This implementation demonstrates a complete animation pipeline for real-time 3D graphics, including interpolation between keyframes and smooth transformations for continuous motion.
+Việc triển khai này thể hiện một quy trình hoạt hình hoàn chỉnh cho đồ họa 3D thời gian thực, bao gồm cả nội suy giữa các khung hình chính và các phép biến đổi mượt mà cho chuyển động liên tục.
 
 ```python
 import numpy as np
@@ -534,9 +534,9 @@ for _ in range(5):
           f"Rotation: {frame.rotation}")
 ```
 
-Slide 12: Optimized Triangle Rasterization
+Trang trình bày 12: Rasterization tam giác được tối ưu hóa
 
-A crucial part of the graphics pipeline is converting 3D triangles into pixels. This implementation shows an efficient scanline algorithm for triangle rasterization with edge walking.
+Một phần quan trọng của quy trình đồ họa là chuyển đổi các hình tam giác 3D thành pixel. Việc triển khai này cho thấy một thuật toán đường quét hiệu quả để tạo rasterization tam giác với việc đi theo cạnh.
 
 ```python
 import numpy as np
@@ -607,9 +607,9 @@ print("Number of pixels rasterized:",
       np.sum(rasterizer.framebuffer > 0))
 ```
 
-Slide 13: Implementing Face Culling and Clipping
+Trang trình bày 13: Thực hiện loại bỏ và cắt khuôn mặt
 
-Face culling and clipping are essential optimizations in 3D graphics. This implementation demonstrates how to efficiently remove hidden faces and clip geometry against the view frustum.
+Việc loại bỏ và cắt bớt khuôn mặt là những tối ưu hóa cần thiết trong đồ họa 3D. Việc triển khai này trình bày cách loại bỏ hiệu quả các khuôn mặt ẩn và cắt hình học khỏi chế độ xem bị thất vọng.
 
 ```python
 import numpy as np
@@ -693,9 +693,9 @@ print(f"Original vertices: {len(triangle)}")
 print(f"Clipped vertices: {len(clipped_vertices)}")
 ```
 
-Slide 14: Scene Graph Implementation
+Trang trình bày 14: Triển khai đồ thị cảnh
 
-A scene graph organizes 3D objects hierarchically, allowing for complex transformations and relationships between objects. This implementation shows how to build and traverse a scene graph efficiently.
+Biểu đồ cảnh tổ chức các đối tượng 3D theo thứ bậc, cho phép thực hiện các phép biến đổi phức tạp và mối quan hệ giữa các đối tượng. Việc triển khai này cho thấy cách xây dựng và duyệt qua biểu đồ cảnh một cách hiệu quả.
 
 ```python
 from typing import Optional, List
@@ -783,11 +783,11 @@ def print_node(node):
 robot.traverse(print_node)
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-*   "Efficient GPU-based Matrix Multiplication for Large-Scale Graphics Applications" [https://arxiv.org/abs/2103.12345](https://arxiv.org/abs/2103.12345)
-*   "Modern Approaches to Real-Time 3D Graphics Pipeline Optimization" [https://arxiv.org/abs/2104.54321](https://arxiv.org/abs/2104.54321)
-*   "Scene Graph Optimization Techniques for Virtual Reality Applications" [https://arxiv.org/abs/2105.98765](https://arxiv.org/abs/2105.98765)
-*   "Advanced Triangle Rasterization Algorithms for Real-Time Rendering" [https://arxiv.org/abs/2106.11111](https://arxiv.org/abs/2106.11111)
+* "Nhân ma trận dựa trên GPU hiệu quả cho các ứng dụng đồ họa quy mô lớn" [https://arxiv.org/abs/2103.12345](https://arxiv.org/abs/2103.12345)
+* "Các phương pháp tiếp cận hiện đại để tối ưu hóa đường ống đồ họa 3D theo thời gian thực" [https://arxiv.org/abs/2104.54321](https://arxiv.org/abs/2104.54321)
+* "Kỹ thuật tối ưu hóa đồ thị cảnh cho các ứng dụng thực tế ảo" [https://arxiv.org/abs/2105.98765](https://arxiv.org/abs/2105.98765)
+* "Thuật toán rasterization tam giác nâng cao để hiển thị thời gian thực" [https://arxiv.org/abs/2106.11111](https://arxiv.org/abs/2106.11111)
 
-Note: The URLs provided are examples and may not correspond to actual papers, as I cannot verify their existence.
+Lưu ý: Các URL được cung cấp chỉ là ví dụ và có thể không tương ứng với các giấy tờ thực tế vì tôi không thể xác minh sự tồn tại của chúng.

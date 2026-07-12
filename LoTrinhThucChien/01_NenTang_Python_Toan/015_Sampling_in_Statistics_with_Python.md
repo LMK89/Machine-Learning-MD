@@ -1,7 +1,7 @@
-## Sampling in Statistics with Python
-Slide 1: Introduction to Sampling in Statistics
+## Lấy mẫu trong thống kê bằng Python
+Slide 1: Giới thiệu về lấy mẫu trong thống kê
 
-Sampling is a fundamental concept in statistics that involves selecting a subset of individuals from a larger population to make inferences about the entire population. This process is crucial for conducting research, surveys, and data analysis when it's impractical or impossible to study every member of a population. In this presentation, we'll explore various sampling techniques and their implementation using Python.
+Lấy mẫu là một khái niệm cơ bản trong thống kê liên quan đến việc chọn một tập hợp con các cá nhân từ một quần thể lớn hơn để đưa ra suy luận về toàn bộ quần thể. Quá trình này rất quan trọng để tiến hành nghiên cứu, khảo sát và phân tích dữ liệu khi việc nghiên cứu từng thành viên trong dân số là không thực tế hoặc không thể. Trong phần trình bày này, chúng ta sẽ khám phá các kỹ thuật lấy mẫu khác nhau và cách triển khai chúng bằng Python.
 
 ```python
 import numpy as np
@@ -18,9 +18,9 @@ plt.ylabel("Frequency")
 plt.show()
 ```
 
-Slide 2: Simple Random Sampling
+Slide 2: Lấy mẫu ngẫu nhiên đơn giản
 
-Simple random sampling is a basic technique where each member of the population has an equal probability of being selected. This method ensures unbiased representation of the population. Let's implement simple random sampling using Python's NumPy library.
+Lấy mẫu ngẫu nhiên đơn giản là một kỹ thuật cơ bản trong đó mỗi thành viên của quần thể có xác suất được chọn như nhau. Phương pháp này đảm bảo sự đại diện khách quan của dân số. Hãy triển khai lấy mẫu ngẫu nhiên đơn giản bằng thư viện NumPy của Python.
 
 ```python
 import numpy as np
@@ -37,9 +37,9 @@ print("Sample Mean:", np.mean(simple_random_sample))
 print("Population Mean:", np.mean(population))
 ```
 
-Slide 3: Systematic Sampling
+Slide 3: Lấy mẫu có hệ thống
 
-Systematic sampling involves selecting every k-th element from the population after a random start. This method is useful when the population is ordered and we want to ensure even coverage across the entire range. Here's how to implement systematic sampling in Python.
+Lấy mẫu có hệ thống bao gồm việc chọn mọi phần tử thứ k từ tổng thể sau khi bắt đầu ngẫu nhiên. Phương pháp này hữu ích khi quần thể được sắp xếp theo thứ tự và chúng ta muốn đảm bảo mức độ bao phủ đồng đều trên toàn bộ phạm vi. Đây là cách triển khai lấy mẫu có hệ thống trong Python.
 
 ```python
 import numpy as np
@@ -60,9 +60,9 @@ print("Sample Mean:", np.mean(systematic_sample))
 print("Population Mean:", np.mean(population))
 ```
 
-Slide 4: Stratified Sampling
+Slide 4: Lấy mẫu phân tầng
 
-Stratified sampling divides the population into subgroups (strata) based on shared characteristics, then samples from each stratum. This method ensures representation from all subgroups. Let's implement stratified sampling for a hypothetical student population.
+Lấy mẫu phân tầng chia dân số thành các nhóm nhỏ (tầng) dựa trên các đặc điểm chung, sau đó lấy mẫu từ mỗi tầng. Phương pháp này đảm bảo sự đại diện từ tất cả các nhóm con. Hãy thực hiện lấy mẫu phân tầng cho một nhóm sinh viên giả định.
 
 ```python
 import numpy as np
@@ -85,9 +85,9 @@ print("\nSample Mean Score:", stratified_sample['score'].mean())
 print("Population Mean Score:", students['score'].mean())
 ```
 
-Slide 5: Cluster Sampling
+Trang trình bày 5: Lấy mẫu cụm
 
-Cluster sampling involves dividing the population into clusters, randomly selecting some clusters, and then sampling all members within the chosen clusters. This method is useful when it's more practical to sample groups rather than individuals. Let's simulate cluster sampling for a city's households.
+Lấy mẫu cụm bao gồm việc chia dân số thành các cụm, chọn ngẫu nhiên một số cụm và sau đó lấy mẫu tất cả các thành viên trong cụm đã chọn. Phương pháp này hữu ích khi nó thực tế hơn đối với các nhóm mẫu hơn là các cá nhân. Hãy mô phỏng lấy mẫu theo cụm cho các hộ gia đình trong thành phố.
 
 ```python
 import numpy as np
@@ -106,9 +106,9 @@ print("Mean household income in sample:", np.mean(cluster_sample))
 print("Mean household income in population:", np.mean([income for neighborhood in city for income in neighborhood]))
 ```
 
-Slide 6: Weighted Sampling
+Slide 6: Lấy mẫu có trọng số
 
-Weighted sampling assigns different probabilities to population members based on their importance or representation. This technique is useful when certain elements should have a higher chance of being selected. Let's implement weighted sampling using Python.
+Lấy mẫu có trọng số ấn định các xác suất khác nhau cho các thành viên trong tổng thể dựa trên tầm quan trọng hoặc tính đại diện của chúng. Kỹ thuật này hữu ích khi một số phần tử nhất định có cơ hội được chọn cao hơn. Hãy triển khai lấy mẫu có trọng số bằng Python.
 
 ```python
 import numpy as np
@@ -130,9 +130,9 @@ for item, freq in frequencies.items():
     print(f"{item}: {freq:.2f}")
 ```
 
-Slide 7: Bootstrap Sampling
+Trang trình bày 7: Lấy mẫu Bootstrap
 
-Bootstrap sampling is a resampling technique used to estimate the sampling distribution of a statistic. It involves repeatedly sampling with replacement from the original sample. This method is particularly useful for estimating confidence intervals and performing hypothesis tests.
+Lấy mẫu Bootstrap là một kỹ thuật lấy mẫu lại được sử dụng để ước tính phân phối lấy mẫu của một thống kê. Nó liên quan đến việc lấy mẫu nhiều lần và thay thế mẫu ban đầu. Phương pháp này đặc biệt hữu ích để ước tính khoảng tin cậy và thực hiện kiểm tra giả thuyết.
 
 ```python
 import numpy as np
@@ -161,9 +161,9 @@ print("Bootstrap Mean of Means:", np.mean(bootstrap_means))
 print("95% Confidence Interval:", np.percentile(bootstrap_means, [2.5, 97.5]))
 ```
 
-Slide 8: Importance Sampling
+Slide 8: Lấy mẫu tầm quan trọng
 
-Importance sampling is a technique used to estimate properties of a particular distribution while sampling from a different distribution. This method is particularly useful in situations where sampling from the target distribution is difficult or computationally expensive.
+Lấy mẫu quan trọng là một kỹ thuật được sử dụng để ước tính các thuộc tính của một phân phối cụ thể trong khi lấy mẫu từ một phân phối khác. Phương pháp này đặc biệt hữu ích trong các trường hợp khó lấy mẫu từ phân bố mục tiêu hoặc tốn kém về mặt tính toán.
 
 ```python
 import numpy as np
@@ -197,9 +197,9 @@ plt.title("Importance Sampling")
 plt.show()
 ```
 
-Slide 9: Reservoir Sampling
+Slide 9: Lấy mẫu hồ chứa
 
-Reservoir sampling is an algorithm for randomly selecting k samples from a population of unknown size, possibly very large or streaming. This technique is particularly useful when dealing with big data or streaming data where we can't hold all items in memory at once.
+Lấy mẫu hồ chứa là một thuật toán để chọn ngẫu nhiên k mẫu từ một quần thể có kích thước không xác định, có thể rất lớn hoặc đang phát trực tuyến. Kỹ thuật này đặc biệt hữu ích khi xử lý dữ liệu lớn hoặc dữ liệu truyền trực tuyến mà chúng ta không thể lưu giữ tất cả các mục trong bộ nhớ cùng một lúc.
 
 ```python
 import numpy as np
@@ -227,9 +227,9 @@ print("Reservoir Sample:", reservoir_sample)
 print("Sample Mean:", np.mean(reservoir_sample))
 ```
 
-Slide 10: Monte Carlo Sampling
+Trang trình bày 10: Lấy mẫu Monte Carlo
 
-Monte Carlo sampling is a broad class of computational algorithms that rely on repeated random sampling to obtain numerical results. One common application is estimating definite integrals. Let's use Monte Carlo sampling to estimate the value of π.
+Lấy mẫu Monte Carlo là một lớp thuật toán tính toán rộng rãi dựa trên việc lấy mẫu ngẫu nhiên lặp đi lặp lại để thu được kết quả bằng số. Một ứng dụng phổ biến là ước tính tích phân xác định. Hãy sử dụng phương pháp lấy mẫu Monte Carlo để ước tính giá trị của số π.
 
 ```python
 import numpy as np
@@ -259,9 +259,9 @@ print(f"Final π estimate (with {sample_sizes[-1]} samples): {pi_estimates[-1]}"
 print(f"True π value: {np.pi}")
 ```
 
-Slide 11: Gibbs Sampling
+Trang trình bày 11: Lấy mẫu Gibbs
 
-Gibbs sampling is a Markov Chain Monte Carlo (MCMC) algorithm for obtaining a sequence of observations which are approximated from a specified multivariate probability distribution. It's particularly useful for sampling from high-dimensional distributions. Let's implement a simple Gibbs sampler for a bivariate normal distribution.
+Lấy mẫu Gibbs là thuật toán Markov Chain Monte Carlo (MCMC) để thu được một chuỗi các quan sát gần đúng với phân bố xác suất đa biến được chỉ định. Nó đặc biệt hữu ích cho việc lấy mẫu từ các bản phân phối nhiều chiều. Hãy triển khai bộ lấy mẫu Gibbs đơn giản để phân phối chuẩn hai biến.
 
 ```python
 import numpy as np
@@ -307,9 +307,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 12: Metropolis-Hastings Algorithm
+Slide 12: Thuật toán Metropolis-Hastings
 
-The Metropolis-Hastings algorithm is another MCMC method used to obtain a sequence of random samples from a probability distribution where direct sampling is difficult. It's more general than Gibbs sampling and can be applied to a wider range of problems. Let's implement it for sampling from a gamma distribution.
+Thuật toán Metropolis-Hastings là một phương pháp MCMC khác được sử dụng để thu được một chuỗi các mẫu ngẫu nhiên từ phân bố xác suất trong đó khó lấy mẫu trực tiếp. Nó tổng quát hơn việc lấy mẫu Gibbs và có thể áp dụng cho nhiều vấn đề hơn. Hãy triển khai nó để lấy mẫu từ bản phân phối gamma.
 
 ```python
 import numpy as np
@@ -362,9 +362,9 @@ print(f"Sample Mean: {np.mean(samples):.4f}")
 print(f"True Mean: {k * theta:.4f}")
 ```
 
-Slide 13: Rejection Sampling
+Trang trình bày 13: Lấy mẫu từ chối
 
-Rejection sampling is a technique used to generate observations from a distribution when direct sampling is difficult. It involves sampling from a simpler proposal distribution and accepting or rejecting samples based on a comparison with the target distribution. Let's implement rejection sampling for a custom probability distribution.
+Lấy mẫu loại bỏ là một kỹ thuật được sử dụng để tạo ra các quan sát từ phân phối khi khó lấy mẫu trực tiếp. Nó liên quan đến việc lấy mẫu từ phân phối đề xuất đơn giản hơn và chấp nhận hoặc từ chối các mẫu dựa trên so sánh với phân phối mục tiêu. Hãy triển khai lấy mẫu từ chối để phân phối xác suất tùy chỉnh.
 
 ```python
 import numpy as np
@@ -400,9 +400,9 @@ plt.legend()
 plt.show()
 ```
 
-Slide 14: Importance Sampling for Rare Event Simulation
+Trang trình bày 14: Lấy mẫu tầm quan trọng để mô phỏng sự kiện hiếm
 
-Importance sampling is particularly useful for simulating rare events. It allows us to estimate the probability of unlikely events more efficiently than direct Monte Carlo simulation. Let's use importance sampling to estimate the probability of a rare event in a simple queueing system.
+Lấy mẫu quan trọng đặc biệt hữu ích để mô phỏng các sự kiện hiếm gặp. Nó cho phép chúng ta ước tính xác suất xảy ra các sự kiện khó xảy ra hiệu quả hơn mô phỏng Monte Carlo trực tiếp. Hãy sử dụng lấy mẫu tầm quan trọng để ước tính xác suất xảy ra sự kiện hiếm gặp trong hệ thống xếp hàng đơn giản.
 
 ```python
 import numpy as np
@@ -447,12 +447,12 @@ print(f"Direct MC estimation: {direct_prob:.6f}")
 print(f"Importance sampling estimation: {importance_prob:.6f}")
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-For those interested in delving deeper into sampling techniques and their applications in statistics and machine learning, here are some valuable resources:
+Đối với những người quan tâm đến việc tìm hiểu sâu hơn về kỹ thuật lấy mẫu và ứng dụng của chúng trong thống kê và học máy, đây là một số tài nguyên có giá trị:
 
-1. "Monte Carlo Statistical Methods" by Christian P. Robert and George Casella ArXiv: [https://arxiv.org/abs/0908.3655](https://arxiv.org/abs/0908.3655)
-2. "An Introduction to MCMC for Machine Learning" by Christophe Andrieu et al. ArXiv: [https://arxiv.org/abs/1109.4435](https://arxiv.org/abs/1109.4435)
-3. "A Survey of Monte Carlo Methods for Parameter Estimation" by Johanna Ärje et al. ArXiv: [https://arxiv.org/abs/1parameter-estimation-monte-carlo](https://arxiv.org/abs/1parameter-estimation-monte-carlo)
+1. "Phương pháp thống kê Monte Carlo" của Christian P. Robert và George Casella ArXiv: [https://arxiv.org/abs/0908.3655](https://arxiv.org/abs/0908.3655)
+2. "Giới thiệu về MCMC cho học máy" của Christophe Andrieu và cộng sự. ArXiv: [https://arxiv.org/abs/1109.4435](https://arxiv.org/abs/1109.4435)
+3. "Khảo sát các phương pháp ước tính tham số Monte Carlo" của Johanna Ärje et al. ArXiv: [https://arxiv.org/abs/1parameter-estimation-monte-carlo](https://arxiv.org/abs/1parameter-estimation-monte-carlo)
 
-These resources provide in-depth explanations and advanced techniques in sampling and Monte Carlo methods, which are crucial for various applications in statistics, machine learning, and data science.
+Những tài nguyên này cung cấp những giải thích sâu sắc và các kỹ thuật tiên tiến trong lấy mẫu và phương pháp Monte Carlo, những tài nguyên này rất quan trọng đối với các ứng dụng khác nhau trong thống kê, học máy và khoa học dữ liệu.

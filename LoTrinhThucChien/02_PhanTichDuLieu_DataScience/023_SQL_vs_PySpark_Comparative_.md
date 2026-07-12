@@ -1,7 +1,7 @@
-## SQL vs PySpark Comparative
-Slide 1: Introduction to SQL and PySpark
+## So sánh SQL và PySpark
+Slide 1: Giới thiệu về SQL và PySpark
 
-Data manipulation and analysis can be performed using both SQL and PySpark. These technologies serve similar purposes but operate differently. SQL is a standard language for relational databases, while PySpark is a Python API for Apache Spark, designed for big data processing.
+Thao tác và phân tích dữ liệu có thể được thực hiện bằng cả SQL và PySpark. Những công nghệ này phục vụ các mục đích tương tự nhưng hoạt động khác nhau. SQL là ngôn ngữ tiêu chuẩn cho cơ sở dữ liệu quan hệ, trong khi PySpark là API Python cho Apache Spark, được thiết kế để xử lý dữ liệu lớn.
 
 ```python
 # SQL Example
@@ -15,9 +15,9 @@ from pyspark.sql import SparkSession
 spark_df.select("name", "age").filter("age > 25")
 ```
 
-Slide 2: Creating Tables and DataFrames
+Trang trình bày 2: Tạo bảng và khung dữ liệu
 
-SQL creates tables in a relational database, while PySpark creates distributed DataFrames in memory.
+SQL tạo các bảng trong cơ sở dữ liệu quan hệ, trong khi PySpark tạo các DataFrames phân tán trong bộ nhớ.
 
 ```python
 # SQL
@@ -38,9 +38,9 @@ schema = StructType([
 df = spark.createDataFrame([], schema)
 ```
 
-Slide 3: Data Selection
+Slide 3: Lựa chọn dữ liệu
 
-Both SQL and PySpark offer ways to select specific columns and filter data. The syntax differs but the concept remains similar.
+Cả SQL và PySpark đều cung cấp các cách để chọn các cột cụ thể và lọc dữ liệu. Cú pháp khác nhau nhưng khái niệm vẫn tương tự.
 
 ```python
 # SQL
@@ -53,9 +53,9 @@ WHERE department = 'IT'"""
 df.select("name", "age").filter(col("department") == "IT")
 ```
 
-Slide 4: Aggregations
+Slide 4: Tập hợp
 
-Performing grouping operations and aggregations is fundamental in data analysis. Both technologies provide robust aggregation capabilities.
+Thực hiện các hoạt động nhóm và tổng hợp là cơ bản trong phân tích dữ liệu. Cả hai công nghệ đều cung cấp khả năng tổng hợp mạnh mẽ.
 
 ```python
 # SQL
@@ -71,9 +71,9 @@ df.groupBy("department").agg(
 )
 ```
 
-Slide 5: Real-Life Example - Weather
+Slide 5: Ví dụ thực tế - Thời tiết
 
-Analysis Analyzing temperature readings from multiple weather stations across different cities.
+Phân tích Phân tích các chỉ số nhiệt độ từ nhiều trạm thời tiết ở các thành phố khác nhau.
 
 ```python
 # SQL
@@ -96,9 +96,9 @@ weather_df.filter(col("year") == 2023)\
     .filter(col("readings") > 100)
 ```
 
-Slide 6: Real-Life Example - Student
+Slide 6: Ví dụ thực tế - Sinh viên
 
-Performance Analysis Analyzing student grades across different subjects and calculating performance metrics.
+Phân tích thành tích Phân tích điểm số của học sinh trong các môn học khác nhau và tính toán các chỉ số thành tích.
 
 ```python
 # SQL
@@ -119,9 +119,9 @@ exam_df.groupBy("subject")\
     .filter(col("avg_score") < 75)
 ```
 
-Slide 7: Joins in SQL and PySpark
+Trang trình bày 7: Tham gia SQL và PySpark
 
-Both platforms support various types of joins to combine data from multiple sources.
+Cả hai nền tảng đều hỗ trợ nhiều loại kết nối khác nhau để kết hợp dữ liệu từ nhiều nguồn.
 
 ```python
 # SQL
@@ -139,9 +139,9 @@ students_df.join(
 )
 ```
 
-Slide 8: Window Functions
+Slide 8: Chức năng của cửa sổ
 
-Window functions allow calculations across a set of rows related to the current row.
+Các hàm cửa sổ cho phép tính toán trên một tập hợp các hàng liên quan đến hàng hiện tại.
 
 ```python
 # SQL
@@ -160,9 +160,9 @@ exam_df.withColumn(
 )
 ```
 
-Slide 9: Handling Missing
+Slide 9: Xử lý thiếu
 
-Values Different approaches to handle null values in both SQL and PySpark.
+Giá trị Các cách tiếp cận khác nhau để xử lý giá trị null trong cả SQL và PySpark.
 
 ```python
 # SQL
@@ -181,9 +181,9 @@ df.na.fill({"age": 0})\
     )
 ```
 
-Slide 10: String Operations
+Slide 10: Thao tác trên chuỗi
 
-Both SQL and PySpark provide functions for string manipulation.
+Cả SQL và PySpark đều cung cấp các hàm để thao tác chuỗi.
 
 ```python
 # SQL
@@ -200,9 +200,9 @@ df.select(
 )
 ```
 
-Slide 11: Complex Data Types
+Slide 11: Các kiểu dữ liệu phức tạp
 
-Handling arrays and structs in both platforms.
+Xử lý mảng và cấu trúc trong cả hai nền tảng.
 
 ```python
 # SQL
@@ -220,9 +220,9 @@ df.select(
 )
 ```
 
-Slide 12: Performance Optimization
+Trang trình bày 12: Tối ưu hóa hiệu suất
 
-Both SQL and PySpark offer ways to optimize query performance.
+Cả SQL và PySpark đều cung cấp các cách để tối ưu hóa hiệu suất truy vấn.
 
 ```python
 # SQL with indexing
@@ -236,11 +236,11 @@ df.cache()  # Cache DataFrame in memory
 df.repartition(10)  # Optimize partitioning
 ```
 
-Slide 13: Additional Resources
+Trang trình bày 13: Tài nguyên bổ sung
 
-For more detailed information about SQL and PySpark integration, refer to:
+Để biết thêm thông tin chi tiết về tích hợp SQL và PySpark, hãy tham khảo:
 
-*   "Distributed Computing with PySpark SQL: A Comparative Study" (arXiv:2103.07538)
-*   "Performance Analysis of SparkSQL vs Traditional SQL" (arXiv:1906.04516)
+* "Máy tính phân tán với PySpark SQL: Một nghiên cứu so sánh" (arXiv:2103.07538)
+* "Phân tích hiệu suất của SparkSQL so với SQL truyền thống" (arXiv:1906.04516)
 
-These papers provide comprehensive comparisons and performance analyses of both technologies.
+Những bài viết này cung cấp những so sánh toàn diện và phân tích hiệu suất của cả hai công nghệ.

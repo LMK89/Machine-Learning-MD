@@ -1,7 +1,7 @@
-## Polars vs Pandas Memory Efficiency and Performance Advantages
-Slide 1: Memory Efficiency Through Arrow Memory Format
+## Polars vs Pandas Ưu điểm về hiệu suất và hiệu suất bộ nhớ
+Slide 1: Hiệu quả bộ nhớ thông qua định dạng bộ nhớ mũi tên
 
-Polars leverages Apache Arrow's columnar memory format, enabling zero-copy operations and minimizing memory overhead during data processing. This fundamental architectural difference from Pandas results in significantly reduced memory usage when handling large datasets.
+Polars tận dụng định dạng bộ nhớ cột của Apache Arrow, cho phép thực hiện các thao tác không sao chép và giảm thiểu chi phí bộ nhớ trong quá trình xử lý dữ liệu. Sự khác biệt về kiến ​​trúc cơ bản này so với Pandas giúp giảm đáng kể mức sử dụng bộ nhớ khi xử lý các tập dữ liệu lớn.
 
 ```python
 import polars as pl
@@ -24,9 +24,9 @@ print(f"Pandas Memory Usage: {df_pd.memory_usage().sum() / 1024**2:.2f} MB")
 print(f"Polars Memory Usage: {df_pl.estimated_size() / 1024**2:.2f} MB")
 ```
 
-Slide 2: Parallel Query Execution
+Slide 2: Thực thi truy vấn song song
 
-Polars automatically parallelizes query operations across available CPU cores, leveraging modern hardware capabilities for data processing tasks. The query optimizer creates efficient execution plans that minimize memory allocations and maximize throughput.
+Polars tự động song song hóa các hoạt động truy vấn trên các lõi CPU có sẵn, tận dụng khả năng phần cứng hiện đại cho các tác vụ xử lý dữ liệu. Trình tối ưu hóa truy vấn tạo ra các kế hoạch thực thi hiệu quả nhằm giảm thiểu việc phân bổ bộ nhớ và tối đa hóa thông lượng.
 
 ```python
 # Comparing execution speed for groupby operations
@@ -45,9 +45,9 @@ print(f"Pandas execution time: {pd_time:.2f} seconds")
 print(f"Polars execution time: {pl_time:.2f} seconds")
 ```
 
-Slide 3: Lazy Evaluation Strategy
+Slide 3: Chiến lược đánh giá lười biếng
 
-Polars implements a lazy evaluation system that optimizes query execution by building a computation graph before actual execution. This allows for query optimization and efficient resource utilization compared to Pandas' eager evaluation.
+Polars triển khai một hệ thống đánh giá lười biếng nhằm tối ưu hóa việc thực hiện truy vấn bằng cách xây dựng biểu đồ tính toán trước khi thực hiện thực tế. Điều này cho phép tối ưu hóa truy vấn và sử dụng tài nguyên hiệu quả so với đánh giá háo hức của Pandas.
 
 ```python
 import polars as pl
@@ -75,9 +75,9 @@ lazy_query = (
 result = lazy_query.collect()
 ```
 
-Slide 4: Vectorized String Operations
+Trang trình bày 4: Các thao tác chuỗi được vector hóa
 
-Polars provides highly optimized string operations through a vectorized implementation, resulting in superior performance for text processing tasks compared to Pandas' string operations.
+Polars cung cấp các hoạt động chuỗi được tối ưu hóa cao thông qua triển khai vector hóa, mang lại hiệu suất vượt trội cho các tác vụ xử lý văn bản so với các hoạt động chuỗi của Pandas.
 
 ```python
 import polars as pl
@@ -106,9 +106,9 @@ print(f"Pandas string split time: {pd_time:.2f} seconds")
 print(f"Polars string split time: {pl_time:.2f} seconds")
 ```
 
-Slide 5: Expression-Based API Design
+Trang trình bày 5: Thiết kế API dựa trên biểu thức
 
-Polars introduces a powerful expression-based API that enables complex data transformations through composable operations. This design allows for more intuitive and maintainable code while maintaining high performance through optimized execution paths.
+Polars giới thiệu API dựa trên biểu thức mạnh mẽ cho phép chuyển đổi dữ liệu phức tạp thông qua các hoạt động có thể tổng hợp. Thiết kế này cho phép mã trực quan hơn và dễ bảo trì hơn trong khi vẫn duy trì hiệu suất cao thông qua các đường dẫn thực thi được tối ưu hóa.
 
 ```python
 import polars as pl
@@ -136,9 +136,9 @@ result = df.select([
 )
 ```
 
-Slide 6: Advanced Time Series Operations
+Slide 6: Hoạt động chuỗi thời gian nâng cao
 
-Polars excels at time series manipulation through specialized datetime functions and optimized window operations. The framework provides native support for various temporal aggregations and transformations with minimal overhead.
+Polars vượt trội trong việc thao tác chuỗi thời gian thông qua các hàm ngày giờ chuyên dụng và các thao tác cửa sổ được tối ưu hóa. Khung này cung cấp hỗ trợ riêng cho các phép tổng hợp và chuyển đổi theo thời gian khác nhau với chi phí tối thiểu.
 
 ```python
 # Time series analytics example
@@ -186,9 +186,9 @@ optimized_query = (
 ).collect(streaming=True)
 ```
 
-Slide 8: Real-world Example - Financial Data Analysis
+Trang trình bày 8: Ví dụ thực tế - Phân tích dữ liệu tài chính
 
-This example demonstrates Polars' efficiency in processing high-frequency trading data, showcasing its superior performance in handling time-series operations and group-by transformations.
+Ví dụ này thể hiện hiệu quả của Polars trong việc xử lý dữ liệu giao dịch tần số cao, thể hiện hiệu suất vượt trội của nó trong việc xử lý các hoạt động theo chuỗi thời gian và chuyển đổi theo nhóm.
 
 ```python
 import polars as pl
@@ -225,9 +225,9 @@ analysis_result = (
 ).collect()
 ```
 
-Slide 9: Memory-Efficient Data Streaming
+Trang trình bày 9: Truyền dữ liệu hiệu quả về bộ nhớ
 
-Polars implements streaming capabilities that enable processing of datasets larger than available RAM. This approach maintains constant memory usage regardless of input size by processing data in chunks while preserving query optimization.
+Polars triển khai khả năng phát trực tuyến cho phép xử lý các tập dữ liệu lớn hơn RAM có sẵn. Cách tiếp cận này duy trì mức sử dụng bộ nhớ liên tục bất kể kích thước đầu vào bằng cách xử lý dữ liệu theo khối trong khi vẫn duy trì tối ưu hóa truy vấn.
 
 ```python
 import polars as pl
@@ -258,9 +258,9 @@ streaming_query = (
 ).collect(streaming=True)
 ```
 
-Slide 10: Results Visualization for Memory Analysis
+Trang trình bày 10: Trực quan hóa kết quả phân tích bộ nhớ
 
-This slide demonstrates the performance metrics and memory usage patterns when processing large datasets using Polars compared to traditional approaches.
+Trang trình bày này trình bày các số liệu hiệu suất và kiểu sử dụng bộ nhớ khi xử lý các tập dữ liệu lớn bằng Polars so với các phương pháp truyền thống.
 
 ```python
 import matplotlib.pyplot as plt
@@ -299,9 +299,9 @@ print(f"Polars Execution Time: {polars_metrics['execution_time']:.2f} s")
 print(f"Pandas Execution Time: {pandas_metrics['execution_time']:.2f} s")
 ```
 
-Slide 11: Real-world Example - IoT Sensor Data Processing
+Trang trình bày 11: Ví dụ thực tế - Xử lý dữ liệu cảm biến IoT
 
-This example showcases Polars' efficiency in processing time-series sensor data with high-frequency measurements and complex aggregations.
+Ví dụ này thể hiện hiệu quả của Polars trong việc xử lý dữ liệu cảm biến chuỗi thời gian bằng các phép đo tần số cao và các phép tổng hợp phức tạp.
 
 ```python
 import polars as pl
@@ -342,9 +342,9 @@ analysis_result = (
 ).collect()
 ```
 
-Slide 12: Predicate Pushdown Optimization
+Trang trình bày 12: Tối ưu hóa vị từ đẩy xuống
 
-Polars implements advanced predicate pushdown optimization, pushing filter conditions as close as possible to the data source. This optimization significantly reduces the amount of data that needs to be loaded and processed in memory.
+Polars triển khai tối ưu hóa đẩy xuống vị từ nâng cao, đẩy các điều kiện lọc càng gần nguồn dữ liệu càng tốt. Sự tối ưu hóa này làm giảm đáng kể lượng dữ liệu cần được tải và xử lý trong bộ nhớ.
 
 ```python
 import polars as pl
@@ -376,9 +376,9 @@ optimized_query = (
 ).collect()
 ```
 
-Slide 13: Advanced Joins and Aggregations
+Trang trình bày 13: Tham gia và tập hợp nâng cao
 
-Polars provides highly optimized implementations of joins and aggregations that leverage parallel processing and efficient memory management to handle large-scale data operations with superior performance.
+Polars cung cấp các triển khai kết hợp và tổng hợp được tối ưu hóa cao nhằm tận dụng khả năng xử lý song song và quản lý bộ nhớ hiệu quả để xử lý các hoạt động dữ liệu quy mô lớn với hiệu suất vượt trội.
 
 ```python
 import polars as pl
@@ -421,10 +421,10 @@ result = (
 ).collect()
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-*   "Polars: A Lightning-Fast DataFrame Library" - [https://arxiv.org/abs/2111.12077](https://arxiv.org/abs/2111.12077) (Note: search for similar papers as this is a representative example)
-*   "Optimizing Query Performance in Modern Data Analytics" - [https://www.vldb.org/pvldb/vol13/p3502-chen.pdf](https://www.vldb.org/pvldb/vol13/p3502-chen.pdf)
-*   "Apache Arrow: A Cross-Language Development Platform for In-Memory Data" - [https://arrow.apache.org/papers/](https://arrow.apache.org/papers/)
-*   "Rust-Based Data Processing: Performance and Safety" - Search for relevant papers on Google Scholar
-*   "Modern Approaches to Large-Scale Data Processing" - Visit [https://db.cs.cmu.edu/papers/](https://db.cs.cmu.edu/papers/) for academic resources
+* "Polars: Thư viện khung dữ liệu nhanh như chớp" - [https://arxiv.org/abs/2111.12077](https://arxiv.org/abs/2111.12077) (Lưu ý: tìm kiếm các bài viết tương tự vì đây là ví dụ điển hình)
+* "Tối ưu hóa hiệu suất truy vấn trong phân tích dữ liệu hiện đại" - [https://www.vldb.org/pvldb/vol13/p3502-chen.pdf](https://www.vldb.org/pvldb/vol13/p3502-chen.pdf)
+* "Mũi tên Apache: Nền tảng phát triển đa ngôn ngữ cho dữ liệu trong bộ nhớ" - [https://arrow.apache.org/papers/](https://arrow.apache.org/papers/)
+* "Xử lý dữ liệu dựa trên rỉ sét: Hiệu suất và an toàn" - Tìm kiếm các bài viết liên quan trên Google Scholar
+* "Các phương pháp tiếp cận hiện đại để xử lý dữ liệu quy mô lớn" - Truy cập [https://db.cs.cmu.edu/papers/](https://db.cs.cmu.edu/papers/) để biết các tài nguyên học thuật

@@ -1,7 +1,7 @@
-## Fine-Tuning LLMs with PEFT and ROUGE Score
-Slide 1: Introduction to Fine-Tuning Large Language Models
+## Tinh chỉnh LLM với Điểm PEFT và ROUGE
+Trang trình bày 1: Giới thiệu về Tinh chỉnh các mô hình ngôn ngữ lớn
 
-Fine-tuning large language models (LLMs) has become a crucial technique in natural language processing. This process involves adapting pre-trained models to specific tasks or domains, improving their performance and efficiency. In this presentation, we'll explore fine-tuning using Parameter-Efficient Fine-Tuning (PEFT) techniques, specifically focusing on Low-Rank Adaptation (LoRA), and evaluate the results using the Rouge score.
+Tinh chỉnh các mô hình ngôn ngữ lớn (LLM) đã trở thành một kỹ thuật quan trọng trong xử lý ngôn ngữ tự nhiên. Quá trình này bao gồm việc điều chỉnh các mô hình được đào tạo trước cho phù hợp với các nhiệm vụ hoặc lĩnh vực cụ thể, cải thiện hiệu suất và hiệu quả của chúng. Trong phần trình bày này, chúng ta sẽ khám phá cách tinh chỉnh bằng cách sử dụng các kỹ thuật Tinh chỉnh tham số hiệu quả (PEFT), đặc biệt tập trung vào Thích ứng xếp hạng thấp (LoRA) và đánh giá kết quả bằng cách sử dụng điểm Rouge.
 
 ```python
 import torch
@@ -16,9 +16,9 @@ print(f"Loaded model: {model_name}")
 print(f"Model parameters: {model.num_parameters():,}")
 ```
 
-Slide 2: Understanding Parameter-Efficient Fine-Tuning (PEFT)
+Trang trình bày 2: Tìm hiểu về Tinh chỉnh hiệu quả tham số (PEFT)
 
-PEFT techniques aim to fine-tune large language models while updating only a small subset of the model's parameters. This approach significantly reduces computational resources and storage requirements compared to full fine-tuning. PEFT methods maintain the model's general knowledge while adapting it to specific tasks, making them ideal for resource-constrained environments.
+Các kỹ thuật PEFT nhằm mục đích tinh chỉnh các mô hình ngôn ngữ lớn trong khi chỉ cập nhật một tập hợp con nhỏ các tham số của mô hình. Cách tiếp cận này làm giảm đáng kể tài nguyên tính toán và yêu cầu lưu trữ so với tinh chỉnh đầy đủ. Các phương pháp PEFT duy trì kiến ​​thức chung của mô hình trong khi điều chỉnh nó cho phù hợp với các nhiệm vụ cụ thể, khiến chúng trở nên lý tưởng cho các môi trường hạn chế về tài nguyên.
 
 ```python
 from peft import get_peft_config, PeftModel, PeftConfig, LoraConfig
@@ -39,9 +39,9 @@ print(f"Trainable parameters: {peft_model.num_parameters(train=True):,}")
 print(f"Total parameters: {peft_model.num_parameters():,}")
 ```
 
-Slide 3: Low-Rank Adaptation (LoRA): A Deep Dive
+Trang trình bày 3: Thích ứng cấp thấp (LoRA): Đi sâu
 
-LoRA is a PEFT technique that adds trainable low-rank matrices to the layers of a pre-trained model. These matrices capture task-specific information while keeping most of the original model frozen. LoRA's efficacy comes from its ability to learn meaningful adaptations with a small number of parameters, typically less than 1% of the original model's size.
+LoRA là một kỹ thuật PEFT bổ sung các ma trận cấp thấp có thể huấn luyện được vào các lớp của mô hình được huấn luyện trước. Các ma trận này nắm bắt thông tin cụ thể của nhiệm vụ trong khi vẫn giữ nguyên hầu hết mô hình ban đầu. Hiệu quả của LoRA đến từ khả năng tìm hiểu các điều chỉnh có ý nghĩa với một số lượng nhỏ tham số, thường nhỏ hơn 1% kích thước của mô hình ban đầu.
 
 ```python
 import torch.nn as nn
@@ -65,9 +65,9 @@ print(f"Output shape: {output.shape}")
 print(f"LoRA parameters: {sum(p.numel() for p in lora_layer.parameters()):,}")
 ```
 
-Slide 4: Preparing Data for Fine-Tuning
+Slide 4: Chuẩn bị dữ liệu để tinh chỉnh
 
-Before fine-tuning, we need to prepare our dataset. This involves tokenizing the text, creating attention masks, and formatting the data for our model. Let's use a simple example of preparing a dataset for sentiment analysis.
+Trước khi tinh chỉnh, chúng ta cần chuẩn bị tập dữ liệu của mình. Điều này liên quan đến việc mã hóa văn bản, tạo mặt nạ chú ý và định dạng dữ liệu cho mô hình của chúng tôi. Hãy sử dụng một ví dụ đơn giản về việc chuẩn bị tập dữ liệu để phân tích cảm tính.
 
 ```python
 from datasets import load_dataset
@@ -90,9 +90,9 @@ print(f"Number of samples: {len(tokenized_dataset)}")
 print(f"Sample features: {next(iter(dataloader)).keys()}")
 ```
 
-Slide 5: Implementing LoRA Fine-Tuning
+Trang trình bày 5: Triển khai Tinh chỉnh LoRA
 
-Now that we have our data prepared, let's implement LoRA fine-tuning. We'll use the Hugging Face Transformers library along with the PEFT library to fine-tune our model on the sentiment analysis task.
+Bây giờ chúng ta đã chuẩn bị xong dữ liệu, hãy triển khai tinh chỉnh LoRA. Chúng tôi sẽ sử dụng thư viện Hugging Face Transformers cùng với thư viện PEFT để tinh chỉnh mô hình của chúng tôi về nhiệm vụ phân tích cảm xúc.
 
 ```python
 from transformers import TrainingArguments, Trainer
@@ -121,9 +121,9 @@ print("Fine-tuning completed!")
 print(f"Trained model saved to: {training_args.output_dir}")
 ```
 
-Slide 6: Evaluating Fine-Tuned Models: Introduction to Rouge Score
+Trang trình bày 6: Đánh giá các mô hình tinh chỉnh: Giới thiệu về Điểm Rouge
 
-The Rouge (Recall-Oriented Understudy for Gisting Evaluation) score is a set of metrics used to evaluate the quality of generated text, particularly in tasks like summarization. It compares the generated text to one or more reference texts, measuring the overlap of n-grams, word sequences, and word pairs.
+Điểm Rouge (Nghiên cứu định hướng thu hồi để đánh giá Gisting) là một tập hợp các số liệu dùng để đánh giá chất lượng của văn bản được tạo ra, đặc biệt là trong các nhiệm vụ như tóm tắt. Nó so sánh văn bản được tạo với một hoặc nhiều văn bản tham chiếu, đo lường sự chồng chéo của n-gram, chuỗi từ và cặp từ.
 
 ```python
 from rouge_score import rouge_scorer
@@ -142,15 +142,15 @@ for metric, score in scores.items():
     print(f"{metric}: {score.fmeasure:.4f}")
 ```
 
-Slide 7: Understanding Rouge Metrics
+Trang trình bày 7: Tìm hiểu về số liệu Rouge
 
-Rouge offers several metrics, each capturing different aspects of text similarity:
+Rouge đưa ra một số số liệu, mỗi số liệu nắm bắt các khía cạnh khác nhau của độ tương tự văn bản:
 
-* Rouge-N: Measures the overlap of n-grams between the generated and reference texts.
-* Rouge-L: Calculates the longest common subsequence between the texts.
-* Rouge-W: A weighted version of Rouge-L that favors consecutive matches.
+* Rouge-N: Đo sự chồng chéo của n-gram giữa văn bản được tạo và văn bản tham chiếu.
+* Rouge-L: Tính dãy con chung dài nhất giữa các văn bản.
+* Rouge-W: Một phiên bản có trọng số của Rouge-L thiên về các trận đấu liên tiếp.
 
-Let's implement a function to calculate these metrics:
+Hãy triển khai một hàm để tính các số liệu này:
 
 ```python
 def detailed_rouge_scores(prediction, reference):
@@ -174,9 +174,9 @@ for metric, value in detailed_scores.items():
     print(f"{metric}: {value:.4f}")
 ```
 
-Slide 8: Interpreting Rouge Scores
+Trang trình bày 8: Giải thích điểm Rouge
 
-Rouge scores range from 0 to 1, where higher scores indicate better similarity between the generated and reference texts. However, interpreting these scores requires context and understanding of the specific task. Let's create a function to provide a qualitative interpretation of Rouge scores:
+Điểm Rouge nằm trong khoảng từ 0 đến 1, trong đó điểm cao hơn biểu thị mức độ tương đồng cao hơn giữa văn bản được tạo và văn bản tham chiếu. Tuy nhiên, việc giải thích những điểm số này đòi hỏi bối cảnh và sự hiểu biết về nhiệm vụ cụ thể. Hãy tạo một hàm để cung cấp cách diễn giải định tính về điểm Rouge:
 
 ```python
 def interpret_rouge_score(score):
@@ -198,9 +198,9 @@ print(f"Rouge-L score: {rouge_l_score:.2f}")
 print(f"Interpretation: {interpretation}")
 ```
 
-Slide 9: Real-Life Example: Fine-Tuning for Text Summarization
+Trang trình bày 9: Ví dụ thực tế: Tinh chỉnh tóm tắt văn bản
 
-Let's apply our knowledge to a real-world scenario: fine-tuning a model for text summarization. We'll use a small dataset of news articles and their summaries to demonstrate the process.
+Hãy áp dụng kiến ​​thức của chúng ta vào một tình huống thực tế: tinh chỉnh mô hình tóm tắt văn bản. Chúng tôi sẽ sử dụng một tập dữ liệu nhỏ gồm các bài báo và phần tóm tắt của chúng để minh họa quy trình.
 
 ```python
 from datasets import load_dataset
@@ -230,9 +230,9 @@ trainer.train()
 print("Fine-tuning for summarization completed!")
 ```
 
-Slide 10: Evaluating the Summarization Model
+Slide 10: Đánh giá mô hình tóm tắt
 
-Now that we've fine-tuned our model for summarization, let's evaluate its performance using the Rouge score. We'll generate summaries for a few test articles and compare them to the reference summaries.
+Bây giờ chúng ta đã tinh chỉnh mô hình của mình để tóm tắt, hãy đánh giá hiệu suất của nó bằng cách sử dụng điểm Rouge. Chúng tôi sẽ tạo bản tóm tắt cho một số bài viết thử nghiệm và so sánh chúng với bản tóm tắt tham khảo.
 
 ```python
 from transformers import pipeline
@@ -265,9 +265,9 @@ for metric, score in scores.items():
     print(f"{metric}: {score.fmeasure:.4f}")
 ```
 
-Slide 11: Real-Life Example: Sentiment Analysis Fine-Tuning
+Trang trình bày 11: Ví dụ thực tế: Tinh chỉnh phân tích cảm xúc
 
-Let's explore another real-world application: fine-tuning a model for sentiment analysis of product reviews. We'll use a dataset of Amazon product reviews to demonstrate the process.
+Hãy cùng khám phá một ứng dụng thực tế khác: tinh chỉnh mô hình phân tích cảm tính khi đánh giá sản phẩm. Chúng tôi sẽ sử dụng tập dữ liệu về các đánh giá sản phẩm của Amazon để minh họa quy trình.
 
 ```python
 from datasets import load_dataset
@@ -294,9 +294,9 @@ trainer.train()
 print("Fine-tuning for sentiment analysis completed!")
 ```
 
-Slide 12: Evaluating the Sentiment Analysis Model
+Slide 12: Đánh giá mô hình phân tích cảm xúc
 
-Now that we've fine-tuned our model for sentiment analysis, let's evaluate its performance on some test reviews. We'll use the fine-tuned model to predict sentiments and compare them with the actual ratings.
+Bây giờ chúng ta đã tinh chỉnh mô hình để phân tích cảm tính, hãy đánh giá hiệu suất của nó qua một số bài đánh giá thử nghiệm. Chúng tôi sẽ sử dụng mô hình đã tinh chỉnh để dự đoán cảm tính và so sánh chúng với xếp hạng thực tế.
 
 ```python
 from transformers import pipeline
@@ -324,15 +324,15 @@ for review in test_reviews:
 # and calculate metrics like accuracy, precision, recall, and F1-score.
 ```
 
-Slide 13: Challenges and Considerations in Fine-Tuning
+Slide 13: Những thách thức và cân nhắc trong việc tinh chỉnh
 
-While fine-tuning LLMs with PEFT techniques like LoRA can be powerful, it's important to be aware of potential challenges:
+Mặc dù việc tinh chỉnh LLM bằng các kỹ thuật PEFT như LoRA có thể hiệu quả nhưng điều quan trọng là bạn phải nhận thức được những thách thức tiềm ẩn:
 
-1. Overfitting: Fine-tuned models may perform well on the training data but fail to generalize to new, unseen data.
-2. Catastrophic forgetting: The model might lose some of its general knowledge while adapting to a specific task.
-3. Bias amplification: Fine-tuning on biased datasets can exacerbate existing biases in the model.
+1. Trang bị quá mức: Các mô hình được tinh chỉnh có thể hoạt động tốt trên dữ liệu huấn luyện nhưng không thể khái quát hóa thành dữ liệu mới, chưa được nhìn thấy.
+2. Sự quên lãng nghiêm trọng: Mô hình có thể mất đi một số kiến ​​thức chung trong khi thích ứng với một nhiệm vụ cụ thể.
+3. Khuếch đại sai lệch: Việc tinh chỉnh các bộ dữ liệu sai lệch có thể làm trầm trọng thêm các sai lệch hiện có trong mô hình.
 
-To address these challenges, consider the following:
+Để giải quyết những thách thức này, hãy xem xét những điều sau:
 
 ```python
 from transformers import EarlyStoppingCallback
@@ -359,23 +359,23 @@ trainer.train()
 print("Robust fine-tuning completed!")
 ```
 
-Slide 14: Conclusion and Future Directions
+Slide 14: Kết luận và định hướng tương lai
 
-Fine-tuning large language models using PEFT techniques like LoRA offers a powerful way to adapt pre-trained models to specific tasks while maintaining efficiency. The Rouge score provides a valuable metric for evaluating the quality of generated text, particularly in tasks like summarization.
+Tinh chỉnh các mô hình ngôn ngữ lớn bằng cách sử dụng các kỹ thuật PEFT như LoRA mang lại một cách mạnh mẽ để điều chỉnh các mô hình được đào tạo trước cho phù hợp với các nhiệm vụ cụ thể trong khi vẫn duy trì hiệu quả. Điểm Rouge cung cấp thước đo có giá trị để đánh giá chất lượng văn bản được tạo ra, đặc biệt trong các tác vụ như tóm tắt.
 
-As the field of NLP continues to evolve, we can expect to see:
+Khi lĩnh vực NLP tiếp tục phát triển, chúng ta có thể mong đợi thấy:
 
-1. More advanced PEFT techniques that further reduce the computational requirements of fine-tuning.
-2. Improved evaluation metrics that capture more nuanced aspects of text quality and relevance.
-3. Techniques to address challenges like bias and ensure the ethical use of fine-tuned models.
+1. Các kỹ thuật PEFT tiên tiến hơn giúp giảm hơn nữa các yêu cầu tính toán khi tinh chỉnh.
+2. Các số liệu đánh giá được cải thiện nhằm nắm bắt nhiều khía cạnh sắc thái hơn về chất lượng và mức độ liên quan của văn bản.
+3. Các kỹ thuật để giải quyết những thách thức như thành kiến ​​và đảm bảo việc sử dụng các mô hình đã được tinh chỉnh một cách có đạo đức.
 
-By combining these advancements with careful consideration of the challenges and best practices, we can continue to push the boundaries of what's possible with large language models.
+Bằng cách kết hợp những tiến bộ này với việc xem xét cẩn thận các thách thức và phương pháp hay nhất, chúng tôi có thể tiếp tục vượt qua ranh giới về những gì có thể làm được với các mô hình ngôn ngữ lớn.
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-For those interested in diving deeper into the topics covered in this presentation, here are some valuable resources:
+Đối với những người muốn tìm hiểu sâu hơn về các chủ đề được trình bày trong bài trình bày này, đây là một số tài nguyên có giá trị:
 
-1. LoRA: Low-Rank Adaptation of Large Language Models ArXiv: [https://arxiv.org/abs/2106.09685](https://arxiv.org/abs/2106.09685)
-2. ROUGE: A Package for Automatic Evaluation of Summaries ArXiv: [https://arxiv.org/abs/1803.01937](https://arxiv.org/abs/1803.01937)
-3. Parameter-Efficient Transfer Learning for NLP ArXiv: [https://arxiv.org/abs/1902.00751](https://arxiv.org/abs/1902.00751)
-4. Scaling Down to Scale Up: A Guide to Parameter-Efficient Fine-Tuning ArXiv: [https://arxiv](https://arxiv).
+1. LoRA: Thích ứng cấp thấp của các mô hình ngôn ngữ lớn ArXiv: [https://arxiv.org/abs/2106.09685](https://arxiv.org/abs/2106.09685)
+2. ROUGE: Gói đánh giá tự động các bản tóm tắt ArXiv: [https://arxiv.org/abs/1803.01937](https://arxiv.org/abs/1803.01937)
+3. Học chuyển giao tham số hiệu quả cho NLP ArXiv: [https://arxiv.org/abs/1902.00751](https://arxiv.org/abs/1902.00751)
+4. Thu nhỏ để mở rộng quy mô: Hướng dẫn về ArXiv tinh chỉnh tham số hiệu quả: [https://arxiv](https://arxiv).

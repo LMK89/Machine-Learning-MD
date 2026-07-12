@@ -1,7 +1,7 @@
-## Bayesian vs Frequentist Statistics Key Concepts and Applications
-Slide 1: Bayesian vs Frequentist - Core Concepts
+## Thống kê Bayesian và Thống kê thường xuyên Các khái niệm và ứng dụng chính
+Trang trình bày 1: Bayesian vs Người theo chủ nghĩa thường xuyên - Các khái niệm cốt lõi
 
-The fundamental distinction between Bayesian and Frequentist approaches lies in their treatment of probability and parameters. This implementation demonstrates basic parameter estimation using both methodologies through a simple coin flip experiment.
+Sự khác biệt cơ bản giữa phương pháp tiếp cận Bayes và phương pháp thường xuyên nằm ở cách xử lý xác suất và các tham số. Việc triển khai này thể hiện ước tính tham số cơ bản bằng cách sử dụng cả hai phương pháp thông qua thử nghiệm lật đồng xu đơn giản.
 
 ```python
 import numpy as np
@@ -29,9 +29,9 @@ print(f"95% CI: {confidence_interval}")
 print(f"Bayesian MAP: {bayesian_estimate:.3f}")
 ```
 
-Slide 2: Prior Distribution Implementation
+Trang trình bày 2: Triển khai phân phối trước
 
-Prior distributions represent our initial beliefs about parameters before observing data. This implementation shows how to create and visualize different types of prior distributions commonly used in Bayesian analysis.
+Phân phối trước thể hiện niềm tin ban đầu của chúng tôi về các tham số trước khi quan sát dữ liệu. Việc triển khai này cho thấy cách tạo và trực quan hóa các loại phân phối trước đó khác nhau thường được sử dụng trong phân tích Bayes.
 
 ```python
 import numpy as np
@@ -62,9 +62,9 @@ plot_prior_distributions()
 plt.show()
 ```
 
-Slide 3: Likelihood Function Implementation
+Trang trình bày 3: Triển khai chức năng khả năng
 
-The likelihood function represents the probability of observing our data given specific parameter values. This implementation demonstrates how to compute and visualize likelihood functions for both discrete and continuous cases.
+Hàm khả năng biểu thị xác suất quan sát dữ liệu của chúng tôi với các giá trị tham số cụ thể. Việc triển khai này trình bày cách tính toán và trực quan hóa các hàm khả năng cho cả trường hợp rời rạc và liên tục.
 
 ```python
 import numpy as np
@@ -100,9 +100,9 @@ plt.grid(True)
 plt.show()
 ```
 
-Slide 4: Posterior Distribution Computation
+Slide 4: Tính toán phân phối sau
 
-The posterior distribution combines prior beliefs with observed data through Bayes' theorem. This implementation demonstrates the numerical computation of posterior distributions for a Gaussian model with unknown mean.
+Phân phối sau kết hợp niềm tin trước đó với dữ liệu được quan sát thông qua định lý Bayes. Việc triển khai này thể hiện tính toán số của các phân phối sau cho mô hình Gaussian với giá trị trung bình chưa xác định.
 
 ```python
 import numpy as np
@@ -140,9 +140,9 @@ plt.grid(True)
 plt.show()
 ```
 
-Slide 5: Markov Chain Monte Carlo (MCMC) Implementation
+Trang trình bày 5: Triển khai Markov Chain Monte Carlo (MCMC)
 
-MCMC methods allow sampling from complex posterior distributions where analytical solutions are intractable. This implementation shows a Metropolis-Hastings algorithm for parameter estimation.
+Phương pháp MCMC cho phép lấy mẫu từ các phân bố hậu nghiệm phức tạp trong đó các giải pháp phân tích khó có thể thực hiện được. Việc triển khai này hiển thị thuật toán Metropolis-Hastings để ước tính tham số.
 
 ```python
 import numpy as np
@@ -198,9 +198,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 6: Bayesian Linear Regression
+Trang trình bày 6: Hồi quy tuyến tính Bayes
 
-Bayesian linear regression extends classical regression by providing full posterior distributions over parameters. This implementation demonstrates a simple case with analytical posterior computation.
+Hồi quy tuyến tính Bayes mở rộng hồi quy cổ điển bằng cách cung cấp phân phối sau đầy đủ cho các tham số. Việc triển khai này thể hiện một trường hợp đơn giản với tính toán hậu nghiệm phân tích.
 
 ```python
 import numpy as np
@@ -260,9 +260,9 @@ plt.grid(True)
 plt.show()
 ```
 
-Slide 7: Comparing Frequentist and Bayesian Hypothesis Testing
+Trang trình bày 7: So sánh việc kiểm tra giả thuyết thường xuyên và giả thuyết Bayes
 
-This implementation demonstrates the key differences between Frequentist hypothesis testing (p-values) and Bayesian hypothesis testing (Bayes factors) using a simple example of comparing two groups.
+Việc triển khai này thể hiện sự khác biệt chính giữa kiểm tra giả thuyết Thường xuyên (giá trị p) và kiểm tra giả thuyết Bayes (yếu tố Bayes) bằng cách sử dụng một ví dụ đơn giản về so sánh hai nhóm.
 
 ```python
 import numpy as np
@@ -307,9 +307,9 @@ plt.grid(True)
 plt.show()
 ```
 
-Slide 8: Bayesian Model Selection
+Slide 8: Lựa chọn mô hình Bayesian
 
-Implementing Bayesian model selection using the Bayesian Information Criterion (BIC) and model evidence comparison for choosing between competing models.
+Triển khai lựa chọn mô hình Bayesian bằng cách sử dụng Tiêu chí thông tin Bayesian (BIC) và so sánh bằng chứng mô hình để lựa chọn giữa các mô hình cạnh tranh.
 
 ```python
 import numpy as np
@@ -387,9 +387,9 @@ model_selector.compute_bic(X, y)
 model_selector.plot_results(X, y)
 ```
 
-Slide 9: Bayesian Hierarchical Models
+Slide 9: Mô hình phân cấp Bayesian
 
-Hierarchical models capture multiple levels of variation in data. This implementation demonstrates a simple hierarchical model for analyzing grouped data with partial pooling of information across groups.
+Các mô hình phân cấp nắm bắt nhiều cấp độ biến đổi của dữ liệu. Việc triển khai này thể hiện một mô hình phân cấp đơn giản để phân tích dữ liệu được nhóm với việc gộp một phần thông tin giữa các nhóm.
 
 ```python
 import numpy as np
@@ -450,9 +450,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 10: Bayesian Change Point Detection
+Trang trình bày 10: Phát hiện điểm thay đổi Bayes
 
-This implementation demonstrates how to detect changes in time series data using Bayesian inference to identify points where the underlying distribution changes.
+Việc triển khai này trình bày cách phát hiện các thay đổi trong dữ liệu chuỗi thời gian bằng cách sử dụng suy luận Bayes để xác định các điểm mà phân phối cơ bản thay đổi.
 
 ```python
 import numpy as np
@@ -525,9 +525,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 11: Bayesian Neural Networks
+Trang trình bày 11: Mạng thần kinh Bayes
 
-Implementing a Bayesian Neural Network using variational inference to estimate uncertainty in predictions. This approach combines deep learning with Bayesian inference for robust uncertainty quantification.
+Triển khai Mạng thần kinh Bayes bằng cách sử dụng suy luận biến phân để ước tính độ không đảm bảo trong các dự đoán. Cách tiếp cận này kết hợp học sâu với suy luận Bayes để định lượng độ không đảm bảo chắc chắn.
 
 ```python
 import torch
@@ -607,9 +607,9 @@ plt.grid(True)
 plt.show()
 ```
 
-Slide 12: Bayesian Optimization
+Trang trình bày 12: Tối ưu hóa Bayes
 
-This implementation shows how to perform Bayesian optimization using Gaussian Processes for hyperparameter tuning, incorporating uncertainty in the optimization process.
+Việc triển khai này cho thấy cách thực hiện tối ưu hóa Bayes bằng Quy trình Gaussian để điều chỉnh siêu tham số, kết hợp tính không chắc chắn trong quy trình tối ưu hóa.
 
 ```python
 import numpy as np
@@ -688,9 +688,9 @@ plt.grid(True)
 plt.show()
 ```
 
-Slide 13: Bayesian A/B Testing
+Trang trình bày 13: Thử nghiệm A/B Bayesian
 
-Implementation of Bayesian A/B testing for comparing two variants, incorporating prior knowledge and calculating posterior probabilities of improvement.
+Triển khai thử nghiệm A/B Bayesian để so sánh hai biến thể, kết hợp kiến ​​thức trước đó và tính toán xác suất cải thiện sau.
 
 ```python
 import numpy as np
@@ -767,9 +767,9 @@ print(f"Variant B: {sum(data_b)}/{len(data_b)} = {np.mean(data_b):.3f}")
 print(f"Probability B is better: {ab_test.prob_b_better:.3f}")
 ```
 
-Slide 14: Bayesian Time Series Analysis
+Trang trình bày 14: Phân tích chuỗi thời gian Bayes
 
-Implementation of Bayesian structural time series model with trend and seasonal components for forecasting.
+Triển khai mô hình chuỗi thời gian cấu trúc Bayes với các thành phần xu hướng và mùa vụ để dự báo.
 
 ```python
 import numpy as np
@@ -854,10 +854,10 @@ plt.grid(True)
 plt.show()
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-*   ArXiv paper on Bayesian Deep Learning: [https://arxiv.org/abs/2007.06823](https://arxiv.org/abs/2007.06823)
-*   Comprehensive Tutorial on Probabilistic Programming: [https://arxiv.org/abs/1809.10756](https://arxiv.org/abs/1809.10756)
-*   Survey of Bayesian Optimization: [https://arxiv.org/abs/1807.02811](https://arxiv.org/abs/1807.02811)
-*   Modern Bayesian Methods in Machine Learning: [https://arxiv.org/abs/1505.02965](https://arxiv.org/abs/1505.02965)
-*   Practical Guide to Bayesian Neural Networks: [https://arxiv.org/abs/2006.11695](https://arxiv.org/abs/2006.11695)
+* Bài viết ArXiv về Học sâu Bayesian: [https://arxiv.org/abs/2007.06823](https://arxiv.org/abs/2007.06823)
+* Hướng dẫn toàn diện về lập trình xác suất: [https://arxiv.org/abs/1809.10756](https://arxiv.org/abs/1809.10756)
+* Khảo sát về Tối ưu hóa Bayes: [https://arxiv.org/abs/1807.02811](https://arxiv.org/abs/1807.02811)
+* Phương pháp Bayesian hiện đại trong học máy: [https://arxiv.org/abs/1505.02965](https://arxiv.org/abs/1505.02965)
+* Hướng dẫn thực hành về Mạng thần kinh Bayes: [https://arxiv.org/abs/2006.11695](https://arxiv.org/abs/2006.11695)

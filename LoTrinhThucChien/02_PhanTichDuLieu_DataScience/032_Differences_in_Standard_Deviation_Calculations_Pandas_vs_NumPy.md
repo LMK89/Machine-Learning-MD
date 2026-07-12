@@ -1,7 +1,7 @@
-## Differences in Standard Deviation Calculations Pandas vs NumPy
-Slide 1: Understanding Standard Deviation Differences
+## Sự khác biệt trong tính toán độ lệch chuẩn Pandas so với NumPy
+Trang trình bày 1: Tìm hiểu sự khác biệt về độ lệch chuẩn
 
-Statistical computations in Python can yield different results depending on the library used. The key distinction between NumPy and Pandas lies in their default behavior regarding degrees of freedom (ddof) parameter when calculating standard deviation.
+Tính toán thống kê trong Python có thể mang lại kết quả khác nhau tùy thuộc vào thư viện được sử dụng. Sự khác biệt chính giữa NumPy và Pandas nằm ở hành vi mặc định của chúng liên quan đến tham số bậc tự do (ddof) khi tính toán độ lệch chuẩn.
 
 ```python
 import numpy as np
@@ -20,9 +20,9 @@ print(f"NumPy std (ddof=0): {np_std:.6f}")
 print(f"Pandas std (ddof=1): {pd_std:.6f}")
 ```
 
-Slide 2: Mathematical Foundation
+Slide 2: Cơ sở toán học
 
-The fundamental difference stems from the population versus sample standard deviation formulas. The mathematical expressions showcase how degrees of freedom impacts the final calculation.
+Sự khác biệt cơ bản bắt nguồn từ công thức độ lệch chuẩn của dân số so với mẫu. Các biểu thức toán học cho thấy mức độ tự do tác động như thế nào đến phép tính cuối cùng.
 
 ```python
 # Mathematical formulas in LaTeX notation (not rendered)
@@ -37,9 +37,9 @@ def calculate_std(data, ddof=0):
     return (squared_diff_sum / (len(data) - ddof)) ** 0.5
 ```
 
-Slide 3: Population Standard Deviation
+Slide 3: Độ lệch chuẩn của dân số
 
-The population standard deviation assumes we have complete data about the entire population. NumPy's default implementation (ddof=0) uses this approach, dividing by N in the denominator.
+Độ lệch chuẩn của dân số giả định chúng ta có dữ liệu đầy đủ về toàn bộ dân số. Việc triển khai mặc định của NumPy (ddof=0) sử dụng phương pháp này, chia cho N ở mẫu số.
 
 ```python
 import numpy as np
@@ -59,9 +59,9 @@ print(f"NumPy population std: {pop_std:.6f}")
 print(f"Custom population std: {population_std(data):.6f}")
 ```
 
-Slide 4: Sample Standard Deviation
+Slide 4: Độ lệch chuẩn mẫu
 
-When working with sample data, statisticians often prefer using N-1 degrees of freedom (Bessel's correction). Pandas adopts this convention by default, which explains the different results.
+Khi làm việc với dữ liệu mẫu, các nhà thống kê thường thích sử dụng bậc tự do N-1 (hiệu chỉnh Bessel). Pandas áp dụng quy ước này theo mặc định, điều này giải thích các kết quả khác nhau.
 
 ```python
 import pandas as pd
@@ -81,9 +81,9 @@ print(f"Pandas sample std: {sample_std:.6f}")
 print(f"Custom sample std: {sample_std(data):.6f}")
 ```
 
-Slide 5: Real-world Example: Stock Price Analysis
+Trang trình bày 5: Ví dụ thực tế: Phân tích giá cổ phiếu
 
-Financial analysts often use standard deviation to measure market volatility. This example demonstrates how different std calculations affect risk assessment.
+Các nhà phân tích tài chính thường sử dụng độ lệch chuẩn để đo lường sự biến động của thị trường. Ví dụ này cho thấy các phép tính tiêu chuẩn khác nhau ảnh hưởng như thế nào đến việc đánh giá rủi ro.
 
 ```python
 import numpy as np
@@ -100,9 +100,9 @@ print(f"NumPy Annualized Volatility: {np_volatility:.4f}")
 print(f"Pandas Annualized Volatility: {pd_volatility:.4f}")
 ```
 
-Slide 6: Impact on Research Analysis
+Trang trình bày 6: Tác động đến phân tích nghiên cứu
 
-The choice between population and sample standard deviation significantly impacts research conclusions, especially in small datasets. Understanding these differences is crucial for accurate statistical inference and experimental design.
+Sự lựa chọn giữa độ lệch chuẩn tổng thể và mẫu tác động đáng kể đến kết luận nghiên cứu, đặc biệt là trong các tập dữ liệu nhỏ. Hiểu những khác biệt này là rất quan trọng để suy luận thống kê chính xác và thiết kế thử nghiệm.
 
 ```python
 import numpy as np
@@ -123,9 +123,9 @@ for size in sample_sizes:
     print(f"Difference: {diff_percent:.2f}%\n")
 ```
 
-Slide 7: Healthcare Data Analysis Example
+Trang trình bày 7: Ví dụ về phân tích dữ liệu chăm sóc sức khỏe
 
-Real-world application demonstrating the impact of different standard deviation calculations on patient vital signs monitoring and clinical decision-making processes.
+Ứng dụng trong thế giới thực chứng minh tác động của các phép tính độ lệch chuẩn khác nhau đối với việc theo dõi dấu hiệu sinh tồn của bệnh nhân và quá trình ra quyết định lâm sàng.
 
 ```python
 import numpy as np
@@ -154,9 +154,9 @@ for key, value in results.items():
     print(f"{key}: {value}")
 ```
 
-Slide 8: Effect of Sample Size on Standard Deviation
+Slide 8: Ảnh hưởng của cỡ mẫu đến độ lệch chuẩn
 
-A comprehensive analysis of how sample size affects the difference between population and sample standard deviation calculations, with visualization code.
+Phân tích toàn diện về mức độ ảnh hưởng của cỡ mẫu đến sự khác biệt giữa phép tính độ lệch chuẩn của tổng thể và mẫu, với mã trực quan.
 
 ```python
 import numpy as np
@@ -183,9 +183,9 @@ for size, diff in zip(sizes, diffs):
     print(f"{size:10d} | {diff:12.2f}")
 ```
 
-Slide 9: Handling Missing Values
+Slide 9: Xử lý các giá trị bị thiếu
 
-Different standard deviation calculations handle missing values differently, which can significantly impact analysis results in real-world datasets.
+Các phép tính độ lệch chuẩn khác nhau xử lý các giá trị còn thiếu theo cách khác nhau, điều này có thể tác động đáng kể đến kết quả phân tích trong bộ dữ liệu trong thế giới thực.
 
 ```python
 import numpy as np
@@ -213,9 +213,9 @@ print(f"Pandas std: {pd_std:.6f}")
 print(f"Custom robust std: {robust_std(data_with_nan):.6f}")
 ```
 
-Slide 10: Parallel Computing Considerations
+Trang trình bày 10: Những cân nhắc về tính toán song song
 
-Standard deviation calculations in distributed computing environments require special attention to maintain numerical stability and accuracy across different computation methods.
+Việc tính toán độ lệch chuẩn trong môi trường điện toán phân tán đòi hỏi sự chú ý đặc biệt để duy trì độ ổn định và độ chính xác về số trên các phương pháp tính toán khác nhau.
 
 ```python
 import numpy as np
@@ -246,9 +246,9 @@ print(f"Parallel std: {parallel_std(data.tolist()):.6f}")
 print(f"Pandas std: {pd.Series(data).std():.6f}")
 ```
 
-Slide 11: Time Series Standard Deviation
+Slide 11: Độ lệch chuẩn chuỗi thời gian
 
-Time series data requires special consideration when calculating standard deviation, as temporal dependencies can affect the interpretation of variability measurements.
+Dữ liệu chuỗi thời gian cần được xem xét đặc biệt khi tính toán độ lệch chuẩn, vì sự phụ thuộc theo thời gian có thể ảnh hưởng đến việc giải thích các phép đo độ biến thiên.
 
 ```python
 import numpy as np
@@ -284,9 +284,9 @@ for window, stats in results.items():
     print(f"Pandas rolling std: {stats['pandas']:.6f}")
 ```
 
-Slide 12: Weighted Standard Deviation
+Slide 12: Độ lệch chuẩn có trọng số
 
-When observations have different importance levels, weighted standard deviation provides a more accurate measure of dispersion considering the relative significance of each data point.
+Khi các quan sát có mức độ quan trọng khác nhau, độ lệch chuẩn có trọng số cung cấp thước đo độ phân tán chính xác hơn khi xem xét tầm quan trọng tương đối của từng điểm dữ liệu.
 
 ```python
 import numpy as np
@@ -314,9 +314,9 @@ print(f"Weighted std (numpy): {numpy_weighted[0][0]:.6f}")
 print(f"Unweighted std: {simple_std:.6f}")
 ```
 
-Slide 13: Robust Standard Deviation
+Slide 13: Độ lệch chuẩn chắc chắn
 
-Real-world data often contains outliers that can significantly impact standard deviation calculations. Robust methods provide more reliable measures of variability in such cases.
+Dữ liệu trong thế giới thực thường chứa các giá trị ngoại lệ có thể tác động đáng kể đến việc tính toán độ lệch chuẩn. Các phương pháp mạnh mẽ cung cấp các thước đo đáng tin cậy hơn về tính biến thiên trong những trường hợp như vậy.
 
 ```python
 import numpy as np
@@ -351,10 +351,10 @@ for method, value in results.items():
     print(f"{method} std: {value:.6f}")
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-*   [https://arxiv.org/abs/1906.07101](https://arxiv.org/abs/1906.07101) - "A New Look at Standard Deviation: Generalizing to Weighted Observations"
-*   [https://arxiv.org/abs/1811.02891](https://arxiv.org/abs/1811.02891) - "Robust Statistics for Outlier Detection in Big Data"
-*   [https://arxiv.org/abs/2003.06663](https://arxiv.org/abs/2003.06663) - "On the Choice of the Number of Degrees of Freedom in Statistical Estimation"
-*   [https://arxiv.org/abs/1712.04788](https://arxiv.org/abs/1712.04788) - "Statistical Analysis of Time Series Data: A Comprehensive Guide"
-*   [https://arxiv.org/abs/1902.06021](https://arxiv.org/abs/1902.06021) - "Efficient Computation of Standard Deviation in Distributed Systems"
+* [https://arxiv.org/abs/1906.07101](https://arxiv.org/abs/1906.07101) - "Một cái nhìn mới về độ lệch chuẩn: Khái quát hóa các quan sát có trọng số"
+* [https://arxiv.org/abs/1811.02891](https://arxiv.org/abs/1811.02891) - "Thống kê mạnh mẽ để phát hiện ngoại lệ trong dữ liệu lớn"
+* [https://arxiv.org/abs/2003.06663](https://arxiv.org/abs/2003.06663) - "Về việc lựa chọn số bậc tự do trong ước tính thống kê"
+* [https://arxiv.org/abs/1712.04788](https://arxiv.org/abs/1712.04788) - "Phân tích thống kê dữ liệu chuỗi thời gian: Hướng dẫn toàn diện"
+* [https://arxiv.org/abs/1902.06021](https://arxiv.org/abs/1902.06021) - "Tính toán hiệu quả độ lệch chuẩn trong hệ thống phân tán"

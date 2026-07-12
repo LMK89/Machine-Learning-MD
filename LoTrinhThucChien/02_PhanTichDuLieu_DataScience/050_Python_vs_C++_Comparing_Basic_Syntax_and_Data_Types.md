@@ -1,10 +1,10 @@
-## Python vs C++ Comparing Basic Syntax and Data Types
+## Python vs C++ So sánh cú pháp cơ bản và kiểu dữ liệu
 
-Slide 1: Python Variables
+Trang trình bày 1: Biến Python
 
-Python Variables: Dynamic and Flexible
+Biến Python: Năng động và linh hoạt
 
-Variables in Python are dynamically typed and can change types during execution.
+Các biến trong Python được gõ động và có thể thay đổi kiểu trong khi thực thi.
 
 ```python
 # Storing user information
@@ -21,11 +21,11 @@ print(f"{name}'s age: {age}")
 # Output: Alice's age: thirty
 ```
 
-Slide 2: C++ Variables
+Trang trình bày 2: Biến C++
 
-C++ Variables: Statically Typed and Explicit
+Biến C++: Được gõ tĩnh và rõ ràng
 
-C++ variables must be declared with a specific type before use.
+Các biến C++ phải được khai báo với một kiểu cụ thể trước khi sử dụng.
 
 ```cpp
 #include <iostream>
@@ -49,11 +49,11 @@ int main() {
 }
 ```
 
-Slide 3: Python Data Types - Numbers
+Trang trình bày 3: Các kiểu dữ liệu Python - Số
 
-Python Numbers: Flexible and Intuitive
+Số Python: Linh hoạt và trực quan
 
-Python supports integers, floating-point numbers, and complex numbers.
+Python hỗ trợ số nguyên, số dấu phẩy động và số phức.
 
 ```python
 # Temperature converter
@@ -70,11 +70,11 @@ print(f"Magnitude of {z} is {abs(z)}")
 # Output: Magnitude of (2+3j) is 3.605551275463989
 ```
 
-Slide 4: C++ Data Types - Numbers
+Trang trình bày 4: Kiểu dữ liệu C++ - Số
 
-C++ Numbers: Precise Control over Types
+Số C++: Kiểm soát chính xác các loại
 
-C++ offers various integer and floating-point types with specific sizes.
+C++ cung cấp nhiều loại số nguyên và dấu phẩy động với kích thước cụ thể.
 
 ```cpp
 #include <iostream>
@@ -100,11 +100,11 @@ int main() {
 }
 ```
 
-Slide 5: Python Strings
+Trang trình bày 5: Chuỗi Python
 
-Python Strings: Versatile and Easy to Manipulate
+Chuỗi Python: Linh hoạt và dễ thao tác
 
-Python strings are immutable sequences of Unicode characters.
+Chuỗi Python là chuỗi ký tự Unicode bất biến.
 
 ```python
 # String operations
@@ -124,11 +124,11 @@ age = 30
 print(f"{name} is {age} years old.")  # Output: Alice is 30 years old.
 ```
 
-Slide 6: C++ Strings
+Trang trình bày 6: Chuỗi C++
 
-C++ Strings: Efficient and Mutable
+Chuỗi C++: Hiệu quả và có thể thay đổi
 
-C++ strings are mutable and offer both C-style and object-oriented approaches.
+Chuỗi C++ có thể thay đổi và cung cấp cả cách tiếp cận kiểu C và hướng đối tượng.
 
 ```cpp
 #include <iostream>
@@ -162,11 +162,11 @@ int main() {
 }
 ```
 
-Slide 7: Python Lists
+Trang trình bày 7: Danh sách Python
 
-Python Lists: Dynamic and Versatile
+Danh sách Python: Năng động và linh hoạt
 
-Python lists are mutable sequences that can hold mixed data types.
+Danh sách Python là các chuỗi có thể thay đổi và có thể chứa các loại dữ liệu hỗn hợp.
 
 ```python
 # Shopping list manager
@@ -193,11 +193,11 @@ print(f"Total for expensive items: ${total}")
 # Output: Total for expensive items: $6.0
 ```
 
-Slide 8: C++ Vectors
+Trang trình bày 8: Vectơ C++
 
-C++ Vectors: Dynamic Arrays with Type Safety
+Vectơ C++: Mảng động với kiểu an toàn
 
-Vectors in C++ are dynamic arrays that can grow or shrink in size.
+Các vectơ trong C++ là các mảng động có thể tăng hoặc giảm kích thước.
 
 ```cpp
 #include <iostream>
@@ -240,11 +240,11 @@ int main() {
 }
 ```
 
-Slide 9: Python Dictionaries
+Trang trình bày 9: Từ điển Python
 
-Python Dictionaries: Flexible Key-Value Pairs
+Từ điển Python: Cặp khóa-giá trị linh hoạt
 
-Dictionaries in Python store key-value pairs with quick lookup.
+Từ điển trong Python lưu trữ các cặp khóa-giá trị với khả năng tra cứu nhanh chóng.
 
 ```python
 # Student grade tracker
@@ -279,11 +279,11 @@ print("High performers:", high_performers)
 # Output: High performers: {'Bob': 87.67}
 ```
 
-Slide 10: C++ Maps
+Trang trình bày 10: Bản đồ C++
 
-C++ Maps: Efficient Associative Containers
+Bản đồ C++: Vùng chứa kết hợp hiệu quả
 
-Maps in C++ store key-value pairs with fast key-based access.
+Bản đồ trong C++ lưu trữ các cặp khóa-giá trị với khả năng truy cập dựa trên khóa nhanh chóng.
 
 ```cpp
 #include <iostream>
@@ -343,11 +343,11 @@ int main() {
 }
 ```
 
-Slide 11: Python Control Flow
+Trang trình bày 11: Luồng điều khiển Python
 
-Python Control Flow: Clean and Intuitive
+Luồng điều khiển Python: Sạch sẽ và trực quan
 
-Python uses indentation to define code blocks, making it readable.
+Python sử dụng thụt lề để xác định các khối mã, làm cho nó có thể đọc được.
 
 ```python
 # Temperature classifier
@@ -389,11 +389,11 @@ while True:
         print("Please enter a valid number or 'q' to quit.")
 ```
 
-Slide 12: C++ Control Flow
+Trang trình bày 12: Luồng điều khiển C++
 
-C++ Control Flow: Explicit and Flexible
+Luồng điều khiển C++: Rõ ràng và linh hoạt
 
-C++ uses curly braces to define code blocks and offers various control structures.
+C++ sử dụng dấu ngoặc nhọn để xác định các khối mã và cung cấp các cấu trúc điều khiển khác nhau.
 
 ```cpp
 #include <iostream>
@@ -453,11 +453,11 @@ int main() {
 }
 ```
 
-Slide 13: Python Functions
+Trang trình bày 13: Hàm Python
 
-Python Functions: Flexible and Powerful
+Hàm Python: Linh hoạt và mạnh mẽ
 
-Python functions support default arguments, keyword arguments, and variable-length arguments.
+Các hàm Python hỗ trợ các đối số mặc định, đối số từ khóa và đối số có độ dài thay đổi.
 
 ```python
 # Flexible function for calculating discounted prices
@@ -492,11 +492,11 @@ print(f"Total (including 8% tax): ${total:.2f}")
 # Output: Total (including 8% tax): $53.25
 ```
 
-Slide 14: C++ Functions
+Trang trình chiếu 14: Hàm C++
 
-C++ Functions: Type-Safe with Overloading
+Chức năng C++: Loại an toàn với quá tải
 
-C++ functions are strongly typed and support function overloading.
+Các hàm C++ được gõ mạnh và hỗ trợ nạp chồng hàm.
 
 ```cpp
 #include <iostream>
@@ -538,11 +538,11 @@ int main() {
 }
 ```
 
-Slide 15: Python Classes and Objects
+Trang trình bày 15: Lớp và đối tượng Python
 
-Python Classes: Simple and Intuitive
+Lớp Python: Đơn giản và trực quan
 
-Python classes use a straightforward syntax for object-oriented programming.
+Các lớp Python sử dụng cú pháp đơn giản để lập trình hướng đối tượng.
 
 ```python
 class BankAccount:
@@ -573,11 +573,11 @@ account.withdraw(200)  # Output: Withdrew $200. New balance: $1300
 account.withdraw(2000)  # Output: Insufficient funds!
 ```
 
-Slide 16: C++ Classes and Objects
+Trang trình bày 16: Lớp và đối tượng trong C++
 
-C++ Classes: Powerful and Efficient
+Các lớp C++: Mạnh mẽ và Hiệu quả
 
-C++ classes offer fine-grained control over member access and behavior.
+Các lớp C++ cung cấp khả năng kiểm soát chi tiết đối với quyền truy cập và hành vi của thành viên.
 
 ```cpp
 #include <iostream>
@@ -624,7 +624,7 @@ int main() {
 }
 ```
 
-Slide 17: Wrap-up: Python vs C++ Syntax and Data Types
+Trang trình bày 17: Tóm tắt: Cú pháp và kiểu dữ liệu của Python và C++
 
 ```
 | Feature       | Python                                   | C++                                       |

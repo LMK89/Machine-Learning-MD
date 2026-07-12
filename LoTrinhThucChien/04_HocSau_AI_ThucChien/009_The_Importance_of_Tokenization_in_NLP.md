@@ -1,7 +1,7 @@
-## The Importance of Tokenization in NLP
-Slide 1: Basic Text Tokenization
+## Tầm quan trọng của mã thông báo trong NLP
+Trang trình bày 1: Mã thông báo văn bản cơ bản
 
-Text tokenization forms the foundation of NLP by splitting raw text into individual tokens. This process transforms unstructured text data into a sequence of meaningful units that can be processed by machine learning models, enabling fundamental natural language understanding tasks.
+Mã thông báo văn bản tạo thành nền tảng của NLP bằng cách chia văn bản thô thành các mã thông báo riêng lẻ. Quá trình này biến đổi dữ liệu văn bản phi cấu trúc thành một chuỗi các đơn vị có ý nghĩa có thể được xử lý bằng các mô hình học máy, cho phép thực hiện các tác vụ hiểu ngôn ngữ tự nhiên cơ bản.
 
 ```python
 def basic_tokenizer(text):
@@ -25,9 +25,9 @@ print(f"Tokenized result: {tokens}")
 # Tokenized result: ['hello', 'world', 'this', 'is', 'a', 'basic', 'tokenization', 'example']
 ```
 
-Slide 2: Word Tokenization with NLTK
+Slide 2: Mã thông báo từ với NLTK
 
-NLTK provides sophisticated tokenization capabilities that handle various edge cases and linguistic nuances. This implementation demonstrates how to use NLTK's word\_tokenize function while preserving important linguistic features and handling multiple languages.
+NLTK cung cấp các khả năng mã hóa phức tạp để xử lý các trường hợp phức tạp và sắc thái ngôn ngữ khác nhau. Việc triển khai này trình bày cách sử dụng hàm word\_tokenize của NLTK trong khi vẫn giữ được các tính năng ngôn ngữ quan trọng và xử lý nhiều ngôn ngữ.
 
 ```python
 import nltk
@@ -55,9 +55,9 @@ print(f"French tokens: {french_tokens}")
 # French tokens: ['L', "'", 'exemple', 'est', 'très', 'simple', '.']
 ```
 
-Slide 3: Subword Tokenization Using BPE
+Trang trình bày 3: Mã thông báo từ phụ bằng BPE
 
-Byte Pair Encoding (BPE) is a subword tokenization algorithm that identifies and uses common subword units. This implementation demonstrates the core BPE algorithm, which iteratively merges the most frequent adjacent byte pairs to create a vocabulary of subword tokens.
+Mã hóa cặp byte (BPE) là một thuật toán mã hóa từ phụ giúp xác định và sử dụng các đơn vị từ phụ phổ biến. Việc triển khai này thể hiện thuật toán BPE cốt lõi, thuật toán này hợp nhất lặp đi lặp lại các cặp byte liền kề thường xuyên nhất để tạo ra từ vựng về mã thông báo từ phụ.
 
 ```python
 from collections import defaultdict
@@ -94,9 +94,9 @@ for i in range(num_merges):
     print(f"Vocabulary: {vocab}\n")
 ```
 
-Slide 4: Sentence Tokenization and Segmentation
+Trang trình bày 4: Mã thông báo và phân đoạn câu
 
-Accurate sentence tokenization is crucial for tasks requiring document-level understanding. This implementation showcases advanced sentence segmentation techniques using both rule-based and machine learning approaches to handle complex cases.
+Mã thông báo câu chính xác là rất quan trọng đối với các nhiệm vụ đòi hỏi sự hiểu biết ở cấp độ tài liệu. Việc triển khai này giới thiệu các kỹ thuật phân đoạn câu nâng cao bằng cách sử dụng cả phương pháp tiếp cận dựa trên quy tắc và học máy để xử lý các trường hợp phức tạp.
 
 ```python
 import nltk
@@ -134,9 +134,9 @@ for i, sent in enumerate(sentences, 1):
 # Sentence 3: Mrs. Jones, from Ltd. Corp., implemented it successfully.
 ```
 
-Slide 5: WhiteSpace and RegEx Tokenization
+Trang trình bày 5: Mã thông báo WhiteSpace và RegEx
 
-Regular expressions provide powerful pattern matching capabilities for tokenization. This implementation demonstrates how to create a flexible tokenizer that can handle multiple delimiters and complex patterns while maintaining high performance for large-scale text processing.
+Biểu thức chính quy cung cấp khả năng khớp mẫu mạnh mẽ cho mã thông báo. Việc triển khai này trình bày cách tạo mã thông báo linh hoạt có thể xử lý nhiều dấu phân cách và mẫu phức tạp trong khi vẫn duy trì hiệu suất cao để xử lý văn bản quy mô lớn.
 
 ```python
 import re
@@ -186,9 +186,9 @@ for token, start, end in tokens_with_pos:
 # Token: example        Position: 48-55
 ```
 
-Slide 6: Neural Tokenization with SentencePiece
+Trang trình bày 6: Mã thông báo thần kinh với SentencePiece
 
-SentencePiece implements subword tokenization using neural methods. This implementation shows how to train a custom tokenizer model using the unigram algorithm, which learns subword units based on statistical occurrence patterns.
+SentencePiece triển khai mã thông báo từ phụ bằng phương pháp thần kinh. Việc triển khai này cho thấy cách huấn luyện mô hình mã thông báo tùy chỉnh bằng thuật toán unigram, thuật toán này học các đơn vị từ phụ dựa trên các mẫu xuất hiện thống kê.
 
 ```python
 import sentencepiece as spm
@@ -251,9 +251,9 @@ print(f"Tokenized: {tokens}")
 # Tokenized: ['▁Ne', 'ural', '▁token', 'ization', '▁works', '▁well', '.']
 ```
 
-Slide 7: Custom Vocabulary Tokenizer
+Trang trình bày 7: Công cụ mã thông báo từ vựng tùy chỉnh
 
-Building a custom vocabulary-based tokenizer enables fine-grained control over the tokenization process. This implementation includes frequency-based vocabulary building and special token handling for machine learning applications.
+Việc xây dựng trình mã thông báo dựa trên từ vựng tùy chỉnh cho phép kiểm soát chi tiết quá trình mã thông báo. Việc triển khai này bao gồm xây dựng vốn từ vựng dựa trên tần số và xử lý mã thông báo đặc biệt cho các ứng dụng học máy.
 
 ```python
 from collections import Counter
@@ -330,9 +330,9 @@ print(f"Decoded: {decoded}")
 # Decoded: custom tokenization example
 ```
 
-Slide 8: Character-Level Tokenization
+Trang trình bày 8: Mã hóa cấp độ ký tự
 
-Character-level tokenization provides granular text analysis capabilities and is particularly useful for handling out-of-vocabulary words and morphologically rich languages. This implementation showcases advanced character-level tokenization with support for unicode and special character handling.
+Mã thông báo cấp ký tự cung cấp khả năng phân tích văn bản chi tiết và đặc biệt hữu ích để xử lý các từ không có từ vựng và ngôn ngữ giàu hình thái. Việc triển khai này thể hiện mã thông báo cấp ký tự nâng cao có hỗ trợ xử lý unicode và ký tự đặc biệt.
 
 ```python
 class CharacterTokenizer:
@@ -405,9 +405,9 @@ print(f"Decoded: {decoded}")
 # Decoded: Testing χ123!
 ```
 
-Slide 9: Morphological Tokenization
+Trang trình bày 9: Token hóa hình thái
 
-Morphological tokenization breaks words into their constituent morphemes, enabling deeper linguistic analysis. This implementation uses rule-based and statistical approaches to identify morphemes while handling complex word formations.
+Mã thông báo hình thái chia các từ thành các hình thái cấu thành của chúng, cho phép phân tích ngôn ngữ sâu hơn. Việc triển khai này sử dụng các phương pháp thống kê và dựa trên quy tắc để xác định các hình thái trong khi xử lý các cách tạo từ phức tạp.
 
 ```python
 from typing import List, Dict, Tuple
@@ -483,9 +483,9 @@ for word in words:
 # Suffix: ['ing']
 ```
 
-Slide 10: Multilingual Tokenization
+Trang trình bày 10: Token hóa đa ngôn ngữ
 
-Multilingual tokenization requires handling different writing systems, character sets, and language-specific rules. This implementation provides robust tokenization across multiple languages while preserving linguistic features specific to each language.
+Mã thông báo đa ngôn ngữ yêu cầu xử lý các hệ thống chữ viết, bộ ký tự và quy tắc dành riêng cho ngôn ngữ khác nhau. Việc triển khai này cung cấp khả năng mã hóa mạnh mẽ trên nhiều ngôn ngữ trong khi vẫn duy trì các đặc điểm ngôn ngữ cụ thể cho từng ngôn ngữ.
 
 ```python
 from typing import List, Dict, Optional
@@ -593,9 +593,9 @@ for lang, text in texts.items():
 # - japanese: 100%
 ```
 
-Slide 11: Performance Optimization for Large-Scale Tokenization
+Trang trình bày 11: Tối ưu hóa hiệu suất cho mã thông báo quy mô lớn
 
-When dealing with large text corpora, tokenization performance becomes crucial. This implementation focuses on optimizing tokenization speed and memory usage through parallel processing and efficient data structures.
+Khi xử lý văn bản lớn, hiệu suất mã thông báo trở nên quan trọng. Việc triển khai này tập trung vào việc tối ưu hóa tốc độ mã thông báo và mức sử dụng bộ nhớ thông qua xử lý song song và cấu trúc dữ liệu hiệu quả.
 
 ```python
 import multiprocessing as mp
@@ -687,9 +687,9 @@ print(f"Cache size: {len(tokenizer.token_cache)} entries")
 # Cache size: 10000 entries
 ```
 
-Slide 12: Context-Aware Tokenization
+Trang trình bày 12: Mã thông báo nhận biết ngữ cảnh
 
-Context-aware tokenization considers surrounding text to resolve ambiguous cases and improve tokenization accuracy. This implementation uses sliding windows and contextual rules to make informed tokenization decisions.
+Mã thông báo nhận biết ngữ cảnh xem xét văn bản xung quanh để giải quyết các trường hợp mơ hồ và cải thiện độ chính xác của mã thông báo. Việc triển khai này sử dụng các cửa sổ trượt và các quy tắc theo ngữ cảnh để đưa ra quyết định về mã thông báo sáng suốt.
 
 ```python
 from typing import List, Tuple, Dict
@@ -820,9 +820,9 @@ for text in texts:
 # Rule applied: pattern_match: \b(can|should|would|must)'t\b
 ```
 
-Slide 13: Evaluation Metrics for Tokenization
+Trang trình bày 13: Các số liệu đánh giá về mã thông báo
 
-Quantitative evaluation of tokenization quality is essential for comparing different approaches and optimizing tokenizer performance. This implementation provides comprehensive metrics including accuracy, consistency, and handling of edge cases.
+Đánh giá định lượng về chất lượng mã thông báo là điều cần thiết để so sánh các phương pháp tiếp cận khác nhau và tối ưu hóa hiệu suất của mã thông báo. Việc triển khai này cung cấp các số liệu toàn diện bao gồm độ chính xác, tính nhất quán và khả năng xử lý các trường hợp khó khăn.
 
 ```python
 import numpy as np
@@ -974,16 +974,16 @@ print(f"Memory Usage: {metrics.memory_usage:.2f} MB")
 # Memory Usage: 24.56 MB
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-*   "Neural Unsupervised Learning of Vocabulary" - Search on ArXiv for paper ID: 1804.00209
-*   "BPE-Dropout: Simple and Effective Subword Regularization" - [https://arxiv.org/abs/1910.13267](https://arxiv.org/abs/1910.13267)
-*   "Tokenization Techniques and Challenges in Natural Language Processing" - [https://arxiv.org/abs/2106.13884](https://arxiv.org/abs/2106.13884)
-*   "SentencePiece: A simple and language independent subword tokenizer and detokenizer" - Search for paper ID: 1808.06226
-*   "Multilingual Tokenization: Challenges and Solutions" - [https://arxiv.org/abs/2004.12752](https://arxiv.org/abs/2004.12752)
+* "Học từ vựng không giám sát thần kinh" - Tìm kiếm trên ArXiv ID giấy: 1804.00209
+* "BPE-Dropout: Chính quy hóa từ con đơn giản và hiệu quả" - [https://arxiv.org/abs/1910.13267](https://arxiv.org/abs/1910.13267)
+* "Kỹ thuật mã hóa và những thách thức trong xử lý ngôn ngữ tự nhiên" - [https://arxiv.org/abs/2106.13884](https://arxiv.org/abs/2106.13884)
+* "SentencePiece: Trình mã hóa và giải mã từ phụ đơn giản và độc lập với ngôn ngữ" - Tìm kiếm ID giấy: 1808.06226
+* "Mã thông báo đa ngôn ngữ: Những thách thức và giải pháp" - [https://arxiv.org/abs/2004.12752](https://arxiv.org/abs/2004.12752)
 
-For further research and implementation details:
+Để biết thêm chi tiết nghiên cứu và triển khai:
 
-*   Visit ACL Anthology ([https://aclanthology.org](https://aclanthology.org)) and search for "tokenization"
-*   Check Google Scholar for recent papers on "neural tokenization"
-*   Explore HuggingFace documentation for practical implementations
+* Truy cập ACL Anthology ([https://aclanthology.org](https://aclanthology.org)) và tìm kiếm "tokenization"
+* Kiểm tra Google Scholar để biết các bài viết gần đây về "mã thông báo thần kinh"
+* Khám phá tài liệu HuggingFace để triển khai thực tế

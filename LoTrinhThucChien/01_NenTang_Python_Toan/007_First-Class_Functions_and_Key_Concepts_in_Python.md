@@ -1,7 +1,7 @@
-## First-Class Functions and Key Concepts in Python
-Slide 1: First-Class Functions Fundamentals
+## Hàm hạng nhất và khái niệm chính trong Python
+Trang trình bày 1: Nguyên tắc cơ bản về chức năng hạng nhất
 
-In Python, functions are first-class objects, meaning they can be assigned to variables, passed as arguments to other functions, returned from functions, and stored in data structures. This fundamental concept enables powerful functional programming paradigms and flexible code design.
+Trong Python, hàm là đối tượng hạng nhất, nghĩa là chúng có thể được gán cho các biến, được truyền dưới dạng đối số cho các hàm khác, được trả về từ hàm và được lưu trữ trong cấu trúc dữ liệu. Khái niệm cơ bản này cho phép các mô hình lập trình chức năng mạnh mẽ và thiết kế mã linh hoạt.
 
 ```python
 # Functions as objects
@@ -23,9 +23,9 @@ print(f"Squared: {squared}")
 # Squared: [1, 4, 9, 16]
 ```
 
-Slide 2: Higher-Order Functions
+Slide 2: Hàm bậc cao hơn
 
-Higher-order functions are functions that can accept other functions as arguments and/or return functions. This powerful feature enables code reusability and abstraction, allowing for more elegant solutions to complex problems through functional composition.
+Hàm bậc cao hơn là các hàm có thể chấp nhận các hàm khác làm đối số và/hoặc hàm trả về. Tính năng mạnh mẽ này cho phép tái sử dụng và trừu tượng hóa mã, cho phép đưa ra các giải pháp tinh tế hơn cho các vấn đề phức tạp thông qua thành phần chức năng.
 
 ```python
 def create_multiplier(factor):
@@ -52,9 +52,9 @@ print(f"Tripled: {tripled}")
 # Tripled: [3, 6, 9, 12]
 ```
 
-Slide 3: Function Decorators Implementation
+Trang trình bày 3: Triển khai trang trí chức năng
 
-Function decorators provide a clean syntax for wrapping functions with additional functionality. Understanding their implementation reveals how Python leverages first-class functions to enable powerful metaprogramming capabilities through function transformation.
+Trình trang trí hàm cung cấp một cú pháp rõ ràng để gói các hàm với chức năng bổ sung. Hiểu cách triển khai của chúng cho thấy cách Python tận dụng các hàm hạng nhất để kích hoạt khả năng lập trình siêu dữ liệu mạnh mẽ thông qua chuyển đổi hàm.
 
 ```python
 import time
@@ -82,9 +82,9 @@ print(f"Result: {result}")
 # Result: 333332833333500000
 ```
 
-Slide 4: Function Factories
+Slide 4: Nhà máy chức năng
 
-Function factories dynamically create specialized functions based on input parameters, enabling the creation of customized behavior while maintaining clean and maintainable code through the principle of closure and lexical scoping.
+Các nhà máy chức năng tự động tạo ra các chức năng chuyên biệt dựa trên các tham số đầu vào, cho phép tạo hành vi tùy chỉnh trong khi vẫn duy trì mã sạch và có thể bảo trì thông qua nguyên tắc đóng và phạm vi từ vựng.
 
 ```python
 def create_power_function(exponent):
@@ -109,9 +109,9 @@ print(f"Fourth power of {number}: {fourth_power(number)}")
 # Fourth power of 3: 81
 ```
 
-Slide 5: Partial Functions and Currying
+Slide 5: Chức năng từng phần và Currying
 
-Partial functions and currying facilitate the creation of specialized functions by fixing certain arguments, enabling more flexible and reusable code structures through functional composition and parameter binding.
+Các hàm một phần và cà ri tạo điều kiện thuận lợi cho việc tạo ra các hàm chuyên biệt bằng cách sửa các đối số nhất định, cho phép các cấu trúc mã linh hoạt hơn và có thể tái sử dụng thông qua thành phần chức năng và liên kết tham số.
 
 ```python
 from functools import partial
@@ -137,9 +137,9 @@ print(f"Cubes modulo 7: {cubes_mod_7}")
 # Cubes modulo 7: [6, 1, 6]
 ```
 
-Slide 6: Function Composition
+Slide 6: Thành phần chức năng
 
-Function composition allows for the creation of complex operations by combining simpler functions, enabling a more declarative and maintainable approach to solving complex problems through functional programming principles.
+Thành phần hàm cho phép tạo ra các hoạt động phức tạp bằng cách kết hợp các hàm đơn giản hơn, cho phép một cách tiếp cận mang tính khai báo và dễ bảo trì hơn để giải quyết các vấn đề phức tạp thông qua các nguyên tắc lập trình hàm.
 
 ```python
 from typing import Callable, Any
@@ -175,9 +175,9 @@ print(f"Transformed: {transform(number)}")  # ((3 * 2) + 1)^2
 # Transformed: 49
 ```
 
-Slide 7: Lambda Functions and Functional Programming
+Trang trình bày 7: Hàm Lambda và lập trình hàm
 
-Lambda functions provide concise, anonymous function definitions for simple operations, enabling functional programming patterns like map, filter, and reduce. These expressions are particularly useful when working with higher-order functions and data transformations.
+Hàm Lambda cung cấp các định nghĩa hàm ẩn danh, ngắn gọn cho các thao tác đơn giản, hỗ trợ các mẫu lập trình hàm như bản đồ, bộ lọc và thu gọn. Những biểu thức này đặc biệt hữu ích khi làm việc với các hàm bậc cao hơn và các phép biến đổi dữ liệu.
 
 ```python
 # Using lambda with map, filter, and reduce
@@ -206,9 +206,9 @@ print(f"Product of all numbers: {product}")
 # Product of all numbers: 3628800
 ```
 
-Slide 8: Function Attributes and Metadata
+Slide 8: Thuộc tính chức năng và siêu dữ liệu
 
-Python functions can carry metadata through attributes, enabling powerful introspection capabilities and decorator-based functionality. This feature allows for runtime behavior modification and enhanced documentation capabilities.
+Các hàm Python có thể mang siêu dữ liệu thông qua các thuộc tính, cho phép khả năng xem xét nội tâm mạnh mẽ và chức năng dựa trên trình trang trí. Tính năng này cho phép sửa đổi hành vi thời gian chạy và nâng cao khả năng tài liệu.
 
 ```python
 def add_metadata(func):
@@ -250,9 +250,9 @@ print(f"Documentation:\n{complex_calculation.__doc__}")
 # Tags: math, utility
 ```
 
-Slide 9: Function Caching and Memoization
+Trang trình bày 9: Bộ nhớ đệm và ghi nhớ chức năng
 
-Function caching optimizes performance by storing previously computed results, implementing memoization patterns for expensive operations. This technique significantly improves execution time for recursive or computationally intensive functions.
+Bộ nhớ đệm chức năng tối ưu hóa hiệu suất bằng cách lưu trữ các kết quả được tính toán trước đó, triển khai các mẫu ghi nhớ cho các hoạt động tốn kém. Kỹ thuật này cải thiện đáng kể thời gian thực hiện các hàm đệ quy hoặc hàm tính toán chuyên sâu.
 
 ```python
 from functools import lru_cache
@@ -296,9 +296,9 @@ print(f"With cache: {fibonacci_cached(n)}")
 # With cache: 9227465
 ```
 
-Slide 10: Real-World Application - Data Processing Pipeline
+Slide 10: Ứng dụng trong thế giới thực - Đường ống xử lý dữ liệu
 
-A practical implementation of first-class functions in a data processing pipeline demonstrates how functional programming can create flexible, maintainable data transformation workflows using function composition and higher-order functions.
+Việc triển khai thực tế các hàm hạng nhất trong quy trình xử lý dữ liệu cho thấy cách lập trình hàm có thể tạo ra các quy trình chuyển đổi dữ liệu linh hoạt, có thể bảo trì bằng cách sử dụng thành phần hàm và các hàm bậc cao hơn.
 
 ```python
 from typing import Callable, List, Dict
@@ -362,9 +362,9 @@ print(json.dumps(result, indent=2))
 # }
 ```
 
-Slide 11: Real-World Application - Event-Driven System
+Slide 11: Ứng dụng thực tế - Hệ thống hướng sự kiện
 
-Implementation of an event-driven system using first-class functions demonstrates how to create a flexible publish-subscribe pattern for handling complex application events and callbacks.
+Việc triển khai hệ thống hướng sự kiện bằng cách sử dụng các hàm hạng nhất trình bày cách tạo mẫu đăng ký xuất bản linh hoạt để xử lý các sự kiện và lệnh gọi lại ứng dụng phức tạp.
 
 ```python
 from typing import Callable, Dict, List, Any
@@ -426,9 +426,9 @@ event_system.publish('TRADE_EXECUTED', trade_data)
 # [NOTIFICATION] Trade alert: {'symbol': 'AAPL', 'quantity': 100, 'price': 150.75, 'action': 'BUY'}
 ```
 
-Slide 12: Performance Analysis of Higher-Order Functions
+Slide 12: Phân tích hiệu suất của các hàm bậc cao
 
-This slide explores the performance implications of using higher-order functions and demonstrates how to implement efficient function composition while measuring execution time and memory usage in practical scenarios.
+Trang trình bày này khám phá ý nghĩa về hiệu suất của việc sử dụng các hàm bậc cao hơn và trình bày cách triển khai kết hợp hàm hiệu quả đồng thời đo lường thời gian thực thi và mức sử dụng bộ nhớ trong các tình huống thực tế.
 
 ```python
 import time
@@ -506,9 +506,9 @@ for approach, metrics in results.items():
 # Result: 333332833333500000
 ```
 
-Slide 13: Advanced Function Type Hints and Runtime Verification
+Trang trình bày 13: Gợi ý loại chức năng nâng cao và xác minh thời gian chạy
 
-This implementation demonstrates how to create a robust function type checking system using Python's typing module and runtime verification, ensuring type safety in functional programming patterns.
+Việc triển khai này trình bày cách tạo một hệ thống kiểm tra loại chức năng mạnh mẽ bằng cách sử dụng mô-đun gõ và xác minh thời gian chạy của Python, đảm bảo an toàn về loại trong các mẫu lập trình chức năng.
 
 ```python
 from typing import TypeVar, Callable, Any, get_type_hints
@@ -570,16 +570,16 @@ except TypeError as e:
 # Type error caught: Parameter 'numbers' must be list[int], got list[str]
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-*   ArXiv Papers and Resources:
-*   "On the Expressive Power of First-Class Functions"
-    *   Search: "First-Class Functions in Programming Languages ArXiv"
-*   "Functional Programming Patterns and Performance Analysis"
-    *   [https://arxiv.org/abs/cs/0610066](https://arxiv.org/abs/cs/0610066)
-*   "Type Systems for Functional Programming"
-    *   Search: "Type Systems Functional Programming ArXiv"
-*   "Advanced Python Programming Techniques"
-    *   [https://docs.python.org/3/library/functools.html](https://docs.python.org/3/library/functools.html)
-*   "Design Patterns in Functional Programming"
-    *   Search: "Functional Programming Design Patterns Research"
+* Giấy tờ và tài nguyên ArXiv:
+* "Về khả năng biểu đạt của chức năng hạng nhất"
+    * Tìm kiếm: "Các hàm hạng nhất trong ngôn ngữ lập trình ArXiv"
+* "Các mẫu lập trình chức năng và phân tích hiệu suất"
+    * [https://arxiv.org/abs/cs/0610066](https://arxiv.org/abs/cs/0610066)
+* "Hệ thống loại cho lập trình chức năng"
+    * Tìm kiếm: "Gõ hệ thống lập trình chức năng ArXiv"
+* "Kỹ thuật lập trình Python nâng cao"
+    * [https://docs.python.org/3/library/functools.html](https://docs.python.org/3/library/functools.html)
+* "Mẫu thiết kế trong lập trình chức năng"
+    * Tìm kiếm: "Nghiên cứu mẫu thiết kế lập trình chức năng"

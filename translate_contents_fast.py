@@ -26,13 +26,17 @@ def translate_markdown(text):
             translated_paragraphs.append(p)
             continue
 
-        if p.startswith('    ') or p.startswith('\t'):
-            translated_paragraphs.append(p)
+        if p.startswith('    ') or p.startswith('\t') or p.startswith('# '):
+            # Try to translate headers too
+            try:
+                translated_paragraphs.append(translator.translate(p))
+            except:
+                translated_paragraphs.append(p)
             continue
 
         try:
-            if len(p) > 4000:
-                chunks = [p[i:i+4000] for i in range(0, len(p), 4000)]
+            if len(p) > 3000:
+                chunks = [p[i:i+3000] for i in range(0, len(p), 3000)]
                 t_chunks = [translator.translate(chunk) for chunk in chunks]
                 translated_paragraphs.append(''.join(t_chunks))
             else:
@@ -47,6 +51,10 @@ def process_file(filepath):
     with open(filepath, 'r', encoding='utf-8') as file:
         content = file.read()
 
+    # Check if already translated roughly
+    if "Lộ trình" in content or "Trang trình bày" in content or "bước tiến" in content:
+        return
+
     translated = translate_markdown(content)
 
     with open(filepath, 'w', encoding='utf-8') as file:
@@ -58,7 +66,8 @@ for root, _, files in os.walk("LoTrinhThucChien"):
         if f.endswith(".md") and f != "plan.md":
             files_to_process.append(os.path.join(root, f))
 
-with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+# Increase workers to 20 for faster processing
+with concurrent.futures.ThreadPoolExecutor(max_workers=20) as executor:
     executor.map(process_file, files_to_process)
 
 print("Translation completed.")

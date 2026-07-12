@@ -1,7 +1,7 @@
-## Handling Missing Data Strategies for MCAR MAR and MNAR
-Slide 1: Understanding Missing Data Patterns
+## Xử lý các chiến lược dữ liệu bị thiếu cho MCAR MAR và MNAR
+Trang trình bày 1: Tìm hiểu các mẫu dữ liệu bị thiếu
 
-Missing data mechanisms fundamentally shape our imputation strategy choices. We'll explore how to detect MCAR, MAR, and MNAR patterns using statistical tests and visualization techniques that guide subsequent handling approaches.
+Cơ chế dữ liệu bị thiếu về cơ bản định hình các lựa chọn chiến lược áp đặt của chúng tôi. Chúng ta sẽ khám phá cách phát hiện các mẫu MCAR, MAR và MNAR bằng cách sử dụng các kiểm tra thống kê và kỹ thuật trực quan hướng dẫn các phương pháp xử lý tiếp theo.
 
 ```python
 import numpy as np
@@ -62,9 +62,9 @@ results = analyze_missing_patterns(df)
 print(f"MCAR test p-value: {results['mcar_p_value']:.4f}")
 ```
 
-Slide 2: kNN Imputation Implementation
+Trang trình bày 2: Thực hiện quy định kNN
 
-The k-Nearest Neighbors imputation method leverages similarity between observations to fill missing values. This implementation includes distance-weighted voting and handles both numerical and categorical features through custom distance metrics.
+Phương pháp tính toán k-Nearest Neighbors tận dụng sự giống nhau giữa các quan sát để điền vào các giá trị còn thiếu. Việc triển khai này bao gồm bỏ phiếu theo trọng số khoảng cách và xử lý cả tính năng số và phân loại thông qua số liệu khoảng cách tùy chỉnh.
 
 ```python
 import numpy as np
@@ -130,9 +130,9 @@ print("Original data:\n", X)
 print("\nImputed data:\n", X_imputed)
 ```
 
-Slide 3: MissForest Algorithm Implementation
+Slide 3: Triển khai thuật toán MissForest
 
-MissForest employs an iterative imputation strategy using Random Forests as the underlying predictor. This implementation includes convergence monitoring and handles both regression and classification tasks adaptively.
+MissForest sử dụng chiến lược quy định lặp đi lặp lại bằng cách sử dụng Rừng ngẫu nhiên làm công cụ dự đoán cơ bản. Việc triển khai này bao gồm giám sát hội tụ và xử lý cả nhiệm vụ hồi quy và phân loại một cách thích ứng.
 
 ```python
 from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
@@ -205,9 +205,9 @@ print("Original data:\n", X)
 print("\nImputed data:\n", X_imputed)
 ```
 
-Slide 4: Evaluating Imputation Quality
+Slide 4: Đánh giá chất lượng tranh chấp
 
-Statistical evaluation of imputation quality requires specialized metrics beyond standard error measures. We implement normalized root mean squared error (NRMSE) and feature-wise accuracy assessment for both numerical and categorical variables.
+Đánh giá thống kê về chất lượng cắt bỏ đòi hỏi các số liệu chuyên biệt ngoài các biện pháp đo lỗi tiêu chuẩn. Chúng tôi triển khai sai số bình phương trung bình gốc đã chuẩn hóa (NRMSE) và đánh giá độ chính xác theo tính năng cho cả biến số và biến phân loại.
 
 ```python
 import numpy as np
@@ -271,9 +271,9 @@ print("Bias:", results['bias'])
 print("Feature-wise MSE:", results['feature_metrics'])
 ```
 
-Slide 5: Imputation for Time Series Data
+Trang trình bày 5: Tính toán cho dữ liệu chuỗi thời gian
 
-Time series data requires specialized imputation approaches that account for temporal dependencies. This implementation combines local temporal patterns with global feature relationships using an autoregressive component.
+Dữ liệu chuỗi thời gian yêu cầu các phương pháp tính toán chuyên biệt có tính đến sự phụ thuộc theo thời gian. Việc triển khai này kết hợp các mẫu thời gian cục bộ với các mối quan hệ đối tượng địa lý toàn cầu bằng cách sử dụng thành phần tự hồi quy.
 
 ```python
 import numpy as np
@@ -349,9 +349,9 @@ error = mean_squared_error(
 print(f"MSE on missing values: {error:.6f}")
 ```
 
-Slide 6: Multiple Imputation by Chained Equations (MICE)
+Trang trình bày 6: Phép tính bội bằng phương trình chuỗi (MICE)
 
-MICE implements an iterative approach where each feature is imputed using all other features as predictors. This implementation includes custom prediction models for different variable types and handles convergence monitoring.
+MICE thực hiện một cách tiếp cận lặp đi lặp lại trong đó mỗi tính năng được xác định bằng cách sử dụng tất cả các tính năng khác làm yếu tố dự đoán. Việc triển khai này bao gồm các mô hình dự đoán tùy chỉnh cho các loại biến khác nhau và xử lý việc giám sát hội tụ.
 
 ```python
 import numpy as np
@@ -438,9 +438,9 @@ imputation_variance = np.var(multiple_imputations, axis=0)
 print("Average imputation variance:", np.mean(imputation_variance))
 ```
 
-Slide 7: Handling Mixed Data Types in Imputation
+Trang trình bày 7: Xử lý các kiểu dữ liệu hỗn hợp trong phép tính
 
-Mixed data types require specialized distance metrics and imputation strategies. This implementation combines numerical and categorical handling in a unified framework with adaptive feature processing.
+Các loại dữ liệu hỗn hợp yêu cầu các số liệu khoảng cách chuyên biệt và các chiến lược quy đổi. Việc triển khai này kết hợp xử lý số và phân loại trong một khung thống nhất với xử lý tính năng thích ứng.
 
 ```python
 import numpy as np
@@ -543,9 +543,9 @@ print("Missing values before:", df.isna().sum())
 print("Missing values after:", df_imputed.isna().sum())
 ```
 
-Slide 8: Matrix Factorization for Imputation
+Slide 8: Hệ số hóa ma trận cho phép tính
 
-Matrix factorization approaches decompose the incomplete data matrix into lower-rank approximations, effectively capturing latent patterns for imputation. This implementation includes regularization and alternating optimization.
+Các phương pháp phân tích nhân tố ma trận sẽ phân hủy ma trận dữ liệu không đầy đủ thành các xấp xỉ xếp hạng thấp hơn, nắm bắt hiệu quả các mẫu tiềm ẩn để quy nạp. Việc triển khai này bao gồm việc chính quy hóa và tối ưu hóa xen kẽ.
 
 ```python
 import numpy as np
@@ -641,9 +641,9 @@ mse = np.mean((X_true[missing_mask] - X_imputed[missing_mask]) ** 2)
 print(f"MSE on missing values: {mse:.6f}")
 ```
 
-Slide 9: Robust Imputation with Autoencoder
+Trang trình bày 9: Tính toán mạnh mẽ bằng bộ mã hóa tự động
 
-Autoencoder-based imputation leverages deep learning to capture complex non-linear relationships in the data. This implementation includes denoising and dropout for improved robustness.
+Việc quy nạp dựa trên bộ mã hóa tự động tận dụng khả năng học sâu để nắm bắt các mối quan hệ phi tuyến tính phức tạp trong dữ liệu. Việc triển khai này bao gồm việc khử nhiễu và loại bỏ để cải thiện độ bền.
 
 ```python
 import numpy as np
@@ -762,9 +762,9 @@ mse = np.mean((X[missing_mask] - X_imputed[missing_mask]) ** 2)
 print(f"MSE on missing values: {mse:.6f}")
 ```
 
-Slide 10: Streaming Data Imputation
+Trang trình bày 10: Truyền dữ liệu trực tuyến
 
-Real-time imputation for streaming data requires efficient online algorithms that can update incrementally. This implementation uses exponential moving averages and sliding windows for adaptive imputation.
+Việc quy định thời gian thực để truyền dữ liệu đòi hỏi các thuật toán trực tuyến hiệu quả có thể cập nhật tăng dần. Việc triển khai này sử dụng các đường trung bình động theo cấp số nhân và các cửa sổ trượt để tính toán thích ứng.
 
 ```python
 import numpy as np
@@ -876,9 +876,9 @@ mse = np.mean(
 print(f"Streaming MSE: {mse:.6f}")
 ```
 
-Slide 11: Real-world Example: Medical Time Series Data
+Trang trình bày 11: Ví dụ thực tế: Dữ liệu chuỗi thời gian y tế
 
-Implementation of a specialized imputation strategy for medical time series data, handling irregular sampling rates and physiological constraints while preserving temporal patterns.
+Triển khai chiến lược quy định chuyên biệt cho dữ liệu chuỗi thời gian y tế, xử lý tốc độ lấy mẫu không đều và các hạn chế về sinh lý trong khi vẫn duy trì các mô hình thời gian.
 
 ```python
 import numpy as np
@@ -1010,9 +1010,9 @@ for col in ['heart_rate', 'blood_pressure', 'oxygen_saturation']:
     print(f"Imputed mean: {imputed_data[col].mean():.2f}")
 ```
 
-Slide 12: Real-world Example: Financial Market Data
+Trang trình bày 12: Ví dụ thực tế: Dữ liệu thị trường tài chính
 
-Implementation of a specialized imputation strategy for financial time series, handling market hours, forward-filling for categorical data, and maintaining time-dependent relationships.
+Triển khai chiến lược quy định chuyên biệt cho chuỗi thời gian tài chính, xử lý giờ thị trường, điền dữ liệu phân loại về phía trước và duy trì các mối quan hệ phụ thuộc vào thời gian.
 
 ```python
 import numpy as np
@@ -1145,10 +1145,10 @@ for col in data.columns:
         print(f"Imputed mean: {imputed_data[col].mean():.2f}")
 ```
 
-Slide 13: Additional Resources
+Trang trình bày 13: Tài nguyên bổ sung
 
-*   "Missing Data Imputation Through Machine Learning Methods: A Survey" - [https://arxiv.org/abs/2106.14656](https://arxiv.org/abs/2106.14656)
-*   "Deep Learning for Missing Value Imputation in Tables with Non-Numerical Data" - [https://arxiv.org/abs/1902.06398](https://arxiv.org/abs/1902.06398)
-*   "MICE: Multivariate Imputation by Chained Equations in R" - [https://arxiv.org/abs/1501.02155](https://arxiv.org/abs/1501.02155)
-*   "Matrix Completion and Low-Rank SVD via Fast Alternating Least Squares" - [https://arxiv.org/abs/1410.2596](https://arxiv.org/abs/1410.2596)
-*   "Imputation of Clinical Time Series with Deep Generative Models" - [https://arxiv.org/abs/2011.08858](https://arxiv.org/abs/2011.08858)
+* "Thiếu dữ liệu được cung cấp thông qua các phương pháp học máy: Một khảo sát" - [https://arxiv.org/abs/2106.14656](https://arxiv.org/abs/2106.14656)
+* "Học sâu để xác định giá trị bị thiếu trong bảng có dữ liệu phi số" - [https://arxiv.org/abs/1902.06398](https://arxiv.org/abs/1902.06398)
+* "MICE: Phép tính đa biến theo phương trình chuỗi trong R" - [https://arxiv.org/abs/1501.02155](https://arxiv.org/abs/1501.02155)
+* "Hoàn thành ma trận và SVD xếp hạng thấp thông qua bình phương nhỏ nhất xen kẽ nhanh" - [https://arxiv.org/abs/1410.2596](https://arxiv.org/abs/1410.2596)
+* "Việc tính toán chuỗi thời gian lâm sàng với các mô hình sáng tạo sâu" - [https://arxiv.org/abs/2011.08858](https://arxiv.org/abs/2011.08858)

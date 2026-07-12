@@ -1,7 +1,7 @@
-## Evaluating Regression Model Metrics in Python
-Slide 1: Evaluating Regression Model Performance
+##Đánh giá các số liệu của quy trình khôi phục mô hình trong Python
+Trang trình bày 1: Đánh giá hiệu suất của mô hình phục hồi
 
-Regression models are essential tools in predictive analytics. To ensure their effectiveness, we need reliable metrics to assess their performance. This presentation will explore key evaluation metrics for regression models, including Mean Squared Error (MSE), Root Mean Squared Error (RMSE), R-squared (R²), and Adjusted R-squared. We'll demonstrate how to implement these metrics using Python, providing practical examples along the way.
+Mô hình hồi quy là công cụ thiết yếu trong phân tích dự đoán. Để đảm bảo hiệu quả của chúng, chúng tôi cần những số liệu đáng tin cậy để đánh giá hiệu suất của chúng. Phần trình bày này sẽ khám phá các số liệu đánh giá chính xác cho các mô hình hồi phục, bao gồm các lỗi bình phương trung bình (MSE), lỗi bình phương trung bình gốc (RMSE), R bình phương (R²) và R bình phương đã điều chỉnh. Chúng tôi sẽ trình bày cách phát triển các số liệu này bằng Python, đồng thời cung cấp các ví dụ thực tế trong quá trình thực hiện.
 
 ```python
 import numpy as np
@@ -21,9 +21,9 @@ y_pred = model.predict(X)
 # We'll use this data to calculate our metrics
 ```
 
-Slide 2: Mean Squared Error (MSE)
+Trang trình bày 2: Lỗi bình bình trung bình (MSE)
 
-Mean Squared Error is a fundamental metric that measures the average squared difference between predicted and actual values. It penalizes larger errors more heavily due to the squaring operation. A lower MSE indicates better model performance.
+Sai số phương pháp trung bình là số liệu cơ bản đo độ chênh lệch phương pháp trung bình giữa giá trị dự đoán và giá trị thực tế. Nó phạt nặng hơn các lỗi lớn hơn là hoạt động bình phương. MSE thấp hơn cho thấy hiệu quả hoạt động tốt hơn.
 
 ```python
 def calculate_mse(y_true, y_pred):
@@ -37,9 +37,9 @@ mse_sklearn = mean_squared_error(y, y_pred)
 print(f"MSE (sklearn): {mse_sklearn:.4f}")
 ```
 
-Slide 3: Root Mean Squared Error (RMSE)
+Trang trình bày 3: Lỗi bình luận gốc trung bình (RMSE)
 
-RMSE is the square root of MSE. It provides an error metric in the same unit as the target variable, making it more interpretable. Like MSE, a lower RMSE indicates better model performance.
+RMSE là cấp hai của MSE. Nó cung cấp lỗi số trong cùng một đơn vị cho mục tiêu biến đổi, làm cho nó dễ hiểu hơn. Giống như MSE, RMSE thấp hơn cho thấy hiệu suất hoạt động tốt hơn.
 
 ```python
 def calculate_rmse(y_true, y_pred):
@@ -53,9 +53,9 @@ rmse_sklearn = np.sqrt(mean_squared_error(y, y_pred))
 print(f"RMSE (sklearn): {rmse_sklearn:.4f}")
 ```
 
-Slide 4: R-squared (R²)
+Trang trình bày 4: R bình phương (R²)
 
-R-squared, also known as the coefficient of determination, measures the proportion of variance in the dependent variable that is predictable from the independent variable(s). It ranges from 0 to 1, with 1 indicating perfect prediction and 0 indicating that the model performs no better than a horizontal line.
+R-squared, còn được gọi là hệ số xác định, phương pháp đo tỷ lệ sai trong các biến phụ thuộc có thể dự đoán được từ (các) biến độc lập. Nó nằm trong khoảng từ 0 đến 1, với 1 biểu hiện được mong đợi hoàn hảo và 0 biểu thị rằng hoạt động không tốt hơn một đường ngang.
 
 ```python
 def calculate_r2(y_true, y_pred):
@@ -71,9 +71,9 @@ r2_sklearn = r2_score(y, y_pred)
 print(f"R-squared (sklearn): {r2_sklearn:.4f}")
 ```
 
-Slide 5: Adjusted R-squared
+Slide 5: Bình phương R đã điều chỉnh
 
-Adjusted R-squared modifies the R-squared by penalizing the addition of extraneous predictors to the model. It's particularly useful when comparing models with different numbers of predictors.
+Bình phương R đã điều chỉnh sẽ sửa đổi bình phương R bằng cách xử lý phạt bổ sung các yếu tố dự đoán không liên quan vào mô hình. Nó đặc biệt hữu ích khi so sánh các mô hình với số lượng yếu tố dự đoán khác nhau.
 
 ```python
 def calculate_adjusted_r2(y_true, y_pred, n_features):
@@ -85,9 +85,9 @@ adj_r2 = calculate_adjusted_r2(y, y_pred, X.shape[1])
 print(f"Adjusted R-squared: {adj_r2:.4f}")
 ```
 
-Slide 6: Real-life Example: Housing Price Prediction
+Trang trình bày 6: Ví dụ thực tế: Dự đoán giá nhà ở
 
-Let's apply these metrics to a real-world scenario of predicting housing prices based on various features like square footage, number of bedrooms, etc.
+Vui lòng áp dụng các dữ liệu này vào kịch bản thực tế để dự đoán giá nhà dựa trên các đặc điểm khác nhau như diện tích, số phòng ngủ, v.v.
 
 ```python
 from sklearn.datasets import fetch_california_housing
@@ -118,9 +118,9 @@ print(f"R-squared: {r2:.4f}")
 print(f"Adjusted R-squared: {adj_r2:.4f}")
 ```
 
-Slide 7: Interpreting the Results
+Slide 7: kết quả giải thích
 
-The metrics we calculated provide insights into our model's performance. A low MSE and RMSE suggest that our predictions are close to the actual values. The R-squared value indicates how much of the variance in housing prices our model explains. The adjusted R-squared helps us understand if we're overfitting by adding too many features.
+Các số liệu mà chúng tôi đã tính toán cung cấp thông tin chi tiết về hiệu suất của mô hình của chúng tôi. MSE và RMSE low cho thấy sự mong đợi của chúng tôi gần với giá trị thực tế. Giá trị bình phương R cho biết mức độ chênh lệch trong giá đất mà chúng tôi giải thích. Bình phương R được điều chỉnh giúp chúng tôi biết liệu chúng tôi có trang bị quá mạnh hay không bằng cách bổ sung quá nhiều tính năng.
 
 ```python
 import matplotlib.pyplot as plt
@@ -135,9 +135,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 8: Mean Absolute Error (MAE)
+Trang trình bày 8: Error tuyệt đối trung bình (MAE)
 
-Mean Absolute Error is another useful metric that measures the average magnitude of errors in a set of predictions, without considering their direction. It's less sensitive to outliers compared to MSE and RMSE.
+Sai số tuyệt đối trung bình là một thước đo hữu ích khác được sử dụng để đo tốc độ sai trung bình trong một tập hợp các kỳ vọng mà không cần xem xét hướng dẫn của chúng. Nó ít nhạy cảm hơn các ngoại lệ so với MSE và RMSE.
 
 ```python
 from sklearn.metrics import mean_absolute_error
@@ -153,9 +153,9 @@ mae_sklearn = mean_absolute_error(y_test, y_pred)
 print(f"MAE (sklearn): {mae_sklearn:.4f}")
 ```
 
-Slide 9: Real-life Example: Stock Price Prediction
+Slide 9: Ví dụ thực tế: Dự đoán giá cổ phiếu
 
-Let's apply our metrics to another real-world scenario: predicting stock prices based on historical data and various financial indicators.
+Vui lòng áp dụng số liệu của chúng tôi vào một vấn đề thực tế khác: dự đoán giá cổ phiếu dựa trên dữ liệu lịch sử và các số liệu chính khác nhau.
 
 ```python
 import pandas as pd
@@ -196,9 +196,9 @@ print(f"MAE: {mae:.4f}")
 print(f"R-squared: {r2:.4f}")
 ```
 
-Slide 10: Cross-Validation for Model Evaluation
+Trang trình bày 10: Xác thực chéo để đánh giá mô hình
 
-Cross-validation is a robust technique for assessing how the results of a statistical analysis will generalize to an independent data set. It's particularly useful when you have a limited amount of data.
+Xác thực chéo là một kỹ thuật mạnh mẽ để đánh giá các thống kê phân tích kết quả sẽ độc đáo như thế nào đối với một tập dữ liệu độc lập. Nó đặc biệt hữu ích khi bạn có một chế độ hạn chế dữ liệu.
 
 ```python
 from sklearn.model_selection import cross_val_score
@@ -215,9 +215,9 @@ print(f"Mean RMSE: {np.mean(rmse_scores):.4f}")
 print(f"Standard deviation of RMSE: {np.std(rmse_scores):.4f}")
 ```
 
-Slide 11: Residual Analysis
+Slide 11: Phân tích dư lượng
 
-Residual analysis is crucial for validating the assumptions of linear regression. It involves examining the differences between observed and predicted values.
+Phân tích phần dư là rất quan trọng để xác định các giả định của tính năng khôi phục tuyến tính. Nó liên kết đến các công việc kiểm tra khác nhau giữa các giá trị được khảo sát và dự kiến.
 
 ```python
 residuals = y_test - y_pred
@@ -241,9 +241,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 12: Feature Importance
+Trang trình bày 12: Tầm quan trọng của tính năng
 
-Understanding which features contribute most to your model's predictions can provide valuable insights. For linear regression, we can examine the coefficients.
+Việc hiểu những tính năng nào đóng góp nhiều nhất vào dự đoán của mô hình của bạn có thể cung cấp những tính năng hiểu biết sâu sắc có giá trị. Đối với việc khôi phục tính năng tuyến tính, chúng tôi có thể kiểm tra các hệ thống.
 
 ```python
 feature_importance = pd.DataFrame({
@@ -260,9 +260,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 13: Overfitting and Underfitting
+Trình bày 13: Trang bị quá trình độ và trang bị thiếu trang
 
-Comparing training and testing errors can help detect overfitting or underfitting. If the training error is much lower than the testing error, the model might be overfitting.
+So sánh các huấn luyện lỗi và kiểm tra có thể giúp phát hiện trang quá đủ hoặc thiếu trang. Nếu huấn luyện có nhiều lỗi hơn nên kiểm tra lỗi thì mô hình có thể quá khớp.
 
 ```python
 y_train_pred = model.predict(X_train)
@@ -293,12 +293,12 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-For those interested in diving deeper into regression model evaluation and related topics, here are some valuable resources:
+Đối với những người muốn tìm hiểu sâu hơn về đánh giá mô hình phục hồi và các chủ đề liên quan, đây là một số tài nguyên có giá trị:
 
-1. "A Survey of Cross-Validation Procedures for Model Selection" by Sylvain Arlot and Alain Celisse (2010). Available at: [https://arxiv.org/abs/0907.4728](https://arxiv.org/abs/0907.4728)
-2. "Regression Shrinkage and Selection via the Lasso" by Robert Tibshirani (1996). Available at: [https://arxiv.org/abs/math/9508054](https://arxiv.org/abs/math/9508054)
-3. "An Introduction to Statistical Learning" by Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani. This book provides an accessible overview of statistical learning methods with applications in R.
+1. "Khảo sát các quy trình mô xác thực chéo để lựa chọn hình ảnh" của Sylvain Arlot và Alain Celisse (2010). Có tại: [https://arxiv.org/abs/0907.4728](https://arxiv.org/abs/0907.4728)
+2. “Thành co rút hồi quy và đơn vị thông qua Lasso” của Robert Tibshirani (1996). Có tại: [https://arxiv.org/abs/math/9508054](https://arxiv.org/abs/math/9508054)
+3. "Giới thiệu về học thống kê" của Gareth James, Daniela Witten, Trevor Hastie và Robert Tibshirani. Cuốn sách này cung cấp một cái nhìn tổng thể dễ dàng tiếp cận về các phương pháp học thống kê với các ứng dụng trong R.
 
-These resources offer in-depth discussions on model evaluation techniques, advanced regression methods, and statistical learning principles that can enhance your understanding of regression analysis and model performance evaluation.
+Tài nguyên này cung cấp các thảo luận chuyên sâu về kỹ thuật đánh giá mô hình, phương pháp phục hồi nâng cao và nguyên tắc thống kê có thể nâng cao hiểu biết của bạn về phân tích phục hồi và đánh giá hiệu suất mô hình.

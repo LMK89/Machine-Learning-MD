@@ -1,7 +1,7 @@
-## Discrete Probability Distributions in Python
-Slide 1: Introduction to Discrete Distributions
+## Phân phối xác suất rời rạc trong Python
+Trang trình bày 1: Giới thiệu về phân phối rời rạc
 
-Discrete distributions are probability distributions that describe random variables with a finite or countably infinite set of possible values. They are fundamental in statistics and probability theory, used to model various real-world phenomena where outcomes are distinct and separate.
+Phân phối rời rạc là phân phối xác suất mô tả các biến ngẫu nhiên với tập hợp hữu hạn hoặc vô hạn đếm được các giá trị có thể. Chúng là nền tảng trong lý thuyết thống kê và xác suất, được sử dụng để mô hình hóa các hiện tượng khác nhau trong thế giới thực trong đó các kết quả là khác biệt và riêng biệt.
 
 ```python
 import numpy as np
@@ -20,9 +20,9 @@ plt.title('Histogram of Discrete Data (Dice Rolls)')
 plt.show()
 ```
 
-Slide 2: Bernoulli Distribution
+Trang trình bày 2: Phân phối Bernoulli
 
-The Bernoulli distribution models a single binary outcome, such as success/failure or yes/no. It's named after Jacob Bernoulli and is the simplest discrete probability distribution. The probability mass function is defined by a single parameter p, which represents the probability of success.
+Phân phối Bernoulli mô hình hóa một kết quả nhị phân duy nhất, chẳng hạn như thành công/thất bại hoặc có/không. Nó được đặt theo tên của Jacob Bernoulli và là phân bố xác suất rời rạc đơn giản nhất. Hàm khối lượng xác suất được xác định bởi một tham số p duy nhất, đại diện cho xác suất thành công.
 
 ```python
 import numpy as np
@@ -40,9 +40,9 @@ plt.ylabel('Count')
 plt.show()
 ```
 
-Slide 3: Bernoulli Distribution - Real-Life Example
+Trang trình bày 3: Phân phối Bernoulli - Ví dụ thực tế
 
-Consider a quality control process in a manufacturing plant. Each product is inspected and classified as either defective or non-defective. This scenario can be modeled using a Bernoulli distribution, where success (1) represents a non-defective item and failure (0) represents a defective item.
+Hãy xem xét một quy trình kiểm soát chất lượng trong một nhà máy sản xuất. Mỗi sản phẩm đều được kiểm tra và phân loại là bị lỗi hoặc không bị lỗi. Kịch bản này có thể được mô hình hóa bằng phân phối Bernoulli, trong đó thành công (1) đại diện cho một mặt hàng không bị lỗi và thất bại (0) đại diện cho một mặt hàng bị lỗi.
 
 ```python
 def quality_control(defect_rate, num_items):
@@ -56,9 +56,9 @@ print(f"Number of non-defective items: {np.sum(inspection_results)}")
 print(f"Number of defective items: {num_items - np.sum(inspection_results)}")
 ```
 
-Slide 4: Binomial Distribution
+Trang trình bày 4: Phân phối nhị thức
 
-The Binomial distribution models the number of successes in a fixed number of independent Bernoulli trials. It's characterized by two parameters: n (number of trials) and p (probability of success on each trial). The Binomial distribution is widely used in various fields, including biology, physics, and social sciences.
+Phân phối nhị thức mô hình hóa số lần thành công trong một số thử nghiệm Bernoulli độc lập cố định. Nó được đặc trưng bởi hai tham số: n (số lần thử) và p (xác suất thành công của mỗi lần thử). Phân phối nhị thức được sử dụng rộng rãi trong nhiều lĩnh vực khác nhau, bao gồm sinh học, vật lý và khoa học xã hội.
 
 ```python
 from scipy.stats import binom
@@ -74,9 +74,9 @@ plt.ylabel('Probability')
 plt.show()
 ```
 
-Slide 5: Binomial Distribution - Real-Life Example
+Trang trình bày 5: Phân phối nhị thức - Ví dụ thực tế
 
-Imagine a call center that receives an average of 100 calls per hour. Each call has a 20% chance of requiring escalation to a supervisor. We can use the Binomial distribution to model the number of escalated calls in a given hour.
+Hãy tưởng tượng một trung tâm cuộc gọi nhận được trung bình 100 cuộc gọi mỗi giờ. Mỗi cuộc gọi có 20% khả năng yêu cầu báo cáo lên người giám sát. Chúng ta có thể sử dụng Phân phối nhị thức để lập mô hình số lượng cuộc gọi leo thang trong một giờ nhất định.
 
 ```python
 n_calls = 100
@@ -98,9 +98,9 @@ plt.ylabel('Frequency')
 plt.show()
 ```
 
-Slide 6: Geometric Distribution
+Trang trình bày 6: Phân phối hình học
 
-The Geometric distribution models the number of Bernoulli trials needed to get the first success. It's characterized by a single parameter p, which is the probability of success on each trial. This distribution is memoryless, meaning the probability of success doesn't depend on previous outcomes.
+Mô hình phân phối hình học số lượng phép thử Bernoulli cần thiết để đạt được thành công đầu tiên. Nó được đặc trưng bởi một tham số p duy nhất, là xác suất thành công của mỗi lần thử. Phân phối này không có bộ nhớ, nghĩa là xác suất thành công không phụ thuộc vào kết quả trước đó.
 
 ```python
 from scipy.stats import geom
@@ -116,9 +116,9 @@ plt.ylabel('Probability')
 plt.show()
 ```
 
-Slide 7: Geometric Distribution - Application
+Slide 7: Phân bố hình học - Ứng dụng
 
-The Geometric distribution can be used to model the number of attempts needed to achieve a desired outcome. For instance, in a game where players need to roll a six on a fair die, the number of rolls until the first six appears follows a Geometric distribution.
+Phân phối hình học có thể được sử dụng để mô hình hóa số lần thử cần thiết để đạt được kết quả mong muốn. Ví dụ: trong một trò chơi mà người chơi cần tung được số sáu vào một con súc sắc công bằng, số lần tung xúc xắc cho đến khi sáu con đầu tiên xuất hiện tuân theo sự phân bố Hình học.
 
 ```python
 def roll_until_six():
@@ -141,9 +141,9 @@ plt.show()
 print(f"Average number of rolls: {np.mean(results):.2f}")
 ```
 
-Slide 8: Poisson Distribution
+Trang trình bày 8: Phân phối Poisson
 
-The Poisson distribution models the number of events occurring in a fixed interval of time or space, given that these events happen with a known average rate and independently of each other. It's characterized by a single parameter λ (lambda), which represents both the mean and variance of the distribution.
+Phân phối Poisson mô hình hóa số lượng sự kiện xảy ra trong một khoảng thời gian hoặc không gian cố định, với điều kiện là những sự kiện này xảy ra với tốc độ trung bình đã biết và độc lập với nhau. Nó được đặc trưng bởi một tham số duy nhất λ (lambda), đại diện cho cả giá trị trung bình và phương sai của phân phối.
 
 ```python
 from scipy.stats import poisson
@@ -159,9 +159,9 @@ plt.ylabel('Probability')
 plt.show()
 ```
 
-Slide 9: Poisson Distribution - Real-Life Example
+Slide 9: Phân phối Poisson - Ví dụ thực tế
 
-The Poisson distribution can model various real-world phenomena, such as the number of customers arriving at a store in a given hour, or the number of typos in a document of a certain length. Let's simulate the number of earthquakes occurring in a seismically active region over a period of time.
+Phân phối Poisson có thể mô hình hóa các hiện tượng khác nhau trong thế giới thực, chẳng hạn như số lượng khách hàng đến cửa hàng trong một giờ nhất định hoặc số lỗi chính tả trong một tài liệu có độ dài nhất định. Hãy mô phỏng số lượng trận động đất xảy ra ở khu vực có hoạt động địa chấn trong một khoảng thời gian.
 
 ```python
 avg_earthquakes_per_year = 5
@@ -179,9 +179,9 @@ print(f"Average earthquakes per year: {np.mean(earthquake_counts):.2f}")
 print(f"Maximum earthquakes in a year: {np.max(earthquake_counts)}")
 ```
 
-Slide 10: Uniform Distribution (Discrete)
+Slide 10: Phân bố đồng đều (rời rạc)
 
-The Discrete Uniform distribution assigns equal probability to a finite set of outcomes. It's characterized by two parameters: a (minimum value) and b (maximum value). This distribution is often used to model situations where each outcome is equally likely, such as rolling a fair die.
+Phân phối đồng nhất rời rạc ấn định xác suất bằng nhau cho một tập hợp kết quả hữu hạn. Nó được đặc trưng bởi hai tham số: a (giá trị tối thiểu) và b (giá trị tối đa). Phân phối này thường được sử dụng để mô hình hóa các tình huống trong đó mỗi kết quả đều có khả năng xảy ra như nhau, chẳng hạn như tung xúc xắc công bằng.
 
 ```python
 from scipy.stats import randint
@@ -198,9 +198,9 @@ plt.xticks(x)
 plt.show()
 ```
 
-Slide 11: Uniform Distribution - Application
+Slide 11: Phân phối thống nhất - Ứng dụng
 
-The Discrete Uniform distribution can be used to model various scenarios where outcomes are equally likely. Let's simulate a simple game where a player wins if they correctly guess a randomly chosen number between 1 and 10.
+Phân phối Đồng nhất rời rạc có thể được sử dụng để mô hình hóa các tình huống khác nhau trong đó kết quả có khả năng xảy ra như nhau. Hãy mô phỏng một trò chơi đơn giản trong đó người chơi thắng nếu họ đoán đúng một số được chọn ngẫu nhiên trong khoảng từ 1 đến 10.
 
 ```python
 def play_guessing_game(num_games):
@@ -222,9 +222,9 @@ print(f"Win rate: {wins/num_games:.2%}")
 print(f"Theoretical win probability: {1/10:.2%}")
 ```
 
-Slide 12: Comparing Discrete Distributions
+Trang trình bày 12: So sánh các phân phối rời rạc
 
-Different discrete distributions can be used to model various phenomena. Here's a visual comparison of the probability mass functions for the distributions we've discussed.
+Các phân bố rời rạc khác nhau có thể được sử dụng để mô hình hóa các hiện tượng khác nhau. Dưới đây là so sánh trực quan về các hàm khối lượng xác suất cho các phân bố mà chúng ta đã thảo luận.
 
 ```python
 fig, axs = plt.subplots(2, 2, figsize=(12, 10))
@@ -257,17 +257,17 @@ plt.tight_layout()
 plt.show()
 ```
 
-Slide 13: Choosing the Right Distribution
+Trang trình bày 13: Chọn cách phân phối phù hợp
 
-Selecting the appropriate discrete distribution depends on the nature of the problem:
+Việc lựa chọn phân phối rời rạc phù hợp phụ thuộc vào bản chất của vấn đề:
 
-1. Bernoulli: For binary outcomes (success/failure).
-2. Binomial: For the number of successes in fixed trials.
-3. Geometric: For the number of trials until first success.
-4. Poisson: For the number of events in a fixed interval.
-5. Uniform: For equally likely outcomes.
+1. Bernoulli: Dành cho kết quả nhị phân (thành công/thất bại).
+2. Nhị thức: Cho số lần thành công trong các lần thử cố định.
+3. Hình học: Cho số lần thử cho đến thành công đầu tiên.
+4. Poisson: Cho số lượng sự kiện trong một khoảng thời gian cố định.
+5. Đồng nhất: Dành cho các kết quả có khả năng xảy ra như nhau.
 
-Consider the underlying process and assumptions when choosing a distribution to model your data.
+Hãy xem xét quy trình cơ bản và các giả định khi chọn phân phối để lập mô hình dữ liệu của bạn.
 
 ```python
 # Example: Deciding between Binomial and Poisson
@@ -287,11 +287,11 @@ plt.legend()
 plt.show()
 ```
 
-Slide 14: Additional Resources
+Trang trình bày 14: Tài nguyên bổ sung
 
-For those interested in delving deeper into discrete distributions and their applications, here are some valuable resources:
+Đối với những người muốn tìm hiểu sâu hơn về các bản phân phối rời rạc và ứng dụng của chúng, đây là một số tài nguyên có giá trị:
 
-1. "A Survey of Discrete Probability Distributions" by Aleksandar Nanevski (arXiv:2102.07850) URL: [https://arxiv.org/abs/2102.07850](https://arxiv.org/abs/2102.07850)
-2. "Probability Distributions in the Physical Sciences" by Michael Trott (arXiv:1611.08318) URL: [https://arxiv.org/abs/1611.08318](https://arxiv.org/abs/1611.08318)
-3. "Statistical Distributions" by Catherine Forbes et al. (Book, Wiley)
-4. Online courses on probability theory and statistics from platforms like Coursera, edX, or MIT OpenCourseWare.
+1. "Khảo sát về phân phối xác suất rời rạc" của Aleksandar Nanevski (arXiv:2102.07850) URL: [https://arxiv.org/abs/2102.07850](https://arxiv.org/abs/2102.07850)
+2. "Phân phối xác suất trong khoa học vật lý" của Michael Trott (arXiv:1611.08318) URL: [https://arxiv.org/abs/1611.08318](https://arxiv.org/abs/1611.08318)
+3. "Phân phối thống kê" của Catherine Forbes et al. (Sách, Wiley)
+4. Các khóa học trực tuyến về lý thuyết xác suất và thống kê từ các nền tảng như Coursera, edX hoặc MIT OpenCourseWare.

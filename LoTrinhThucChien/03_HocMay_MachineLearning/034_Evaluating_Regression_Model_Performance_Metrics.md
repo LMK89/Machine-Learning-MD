@@ -1,7 +1,7 @@
-## Evaluating Regression Model Performance Metrics
-Slide 1: Understanding MSE and RMSE Metrics
+##Đánh giá các hiệu suất dữ liệu của quy mô phục hồi
+Trang trình bày 1: Tìm hiểu MSE và RMSE số liệu
 
-Mean Squared Error (MSE) and Root Mean Squared Error (RMSE) are fundamental metrics for evaluating regression models. MSE measures the average squared difference between predicted and actual values, while RMSE provides interpretable results in the same unit as the target variable.
+Error bình phương trung bình (MSE) và Error bình phương trung bình gốc (RMSE) là các cơ sở dữ liệu để đánh giá các mô hình hồi phục. MSE đo chênh lệch phương pháp trung bình giữa giá trị dự đoán và giá trị thực tế, trong khi RMSE cung cấp kết quả có thể hiểu được theo cùng một đơn vị với mục tiêu biến đổi.
 
 ```python
 import numpy as np
@@ -25,9 +25,9 @@ print(f"RMSE: {rmse:.4f}")
 # RMSE: 0.6614
 ```
 
-Slide 2: Mean Absolute Error Implementation
+Trang trình bày 2: Thực hiện lỗi tuyệt đối trung bình
 
-Mean Absolute Error (MAE) represents the average magnitude of errors without considering their direction, making it less sensitive to outliers compared to MSE. It's particularly useful when the target variable contains significant outliers that could skew the evaluation.
+Sai số tuyệt đối trung bình (MAE) biểu thị mức độ sai số trung bình mà không xem xét hướng dẫn của chúng, khiến nó ít nhạy cảm hơn so với các giá trị ngoại lệ so với MSE. Nó đặc biệt hữu ích khi các mục tiêu biến đổi chứa các giá trị ngoại lệ đáng kể có thể làm sai lệch kết quả đánh giá.
 
 ```python
 import numpy as np
@@ -57,9 +57,9 @@ print(f"Sklearn MAE: {sklearn_mae:.4f}")
 # Sklearn MAE: 0.2750
 ```
 
-Slide 3: R-squared (Coefficient of Determination)
+Slide 3: R-squared (Hệ số xác định)
 
-R-squared indicates the proportion of variance in the dependent variable explained by the independent variables. This metric ranges from 0 to 1, where 1 indicates perfect prediction and 0 indicates that the model performs no better than a horizontal line.
+R bình luận về cách biểu thị tỷ lệ phương pháp sai trong các biến phụ thuộc được giải quyết bởi các biến độc lập. Số liệu này nằm trong khoảng từ 0 đến 1, trong đó 1 biểu thị kỳ vọng hoàn hảo và 0 biểu thị rằng mô hình hoạt động không tốt hơn một đường ngang.
 
 ```python
 import numpy as np
@@ -90,9 +90,9 @@ print(f"Sklearn R2: {sklearn_r2:.4f}")
 # Sklearn R2: 0.7843
 ```
 
-Slide 4: Adjusted R-squared Implementation
+Trang trình bày 4: Thực hiện điều chỉnh phương pháp R
 
-Adjusted R-squared modifies the R-squared by considering the number of predictors in the model, penalizing the addition of variables that don't improve the model's explanatory power significantly.
+Bình phương R đã điều chỉnh sẽ sửa đổi bình phương R bằng cách xem xét số lượng yếu tố dự đoán trong mô hình, xử lý phạt bổ sung các biến số không cải thiện đáng kể khả năng giải thích của mô hình.
 
 ```python
 def adjusted_r2(y_true, y_pred, n_features):
@@ -120,9 +120,9 @@ print(f"Adjusted R2: {adj_r2:.4f}")
 # Adjusted R2: 0.7789
 ```
 
-Slide 5: Huber Loss Implementation
+Trang trình bày 5: Thực hiện mất Huber
 
-Huber Loss combines the best properties of MSE and MAE, being less sensitive to outliers than MSE while maintaining MSE's smoothness near zero. The delta parameter controls the transition point between quadratic and linear loss.
+Huber Loss kết hợp các đặc tính tốt nhất của MSE và MAE, ít nhạy cảm hơn với các ngoại lệ so với MSE trong khi vẫn duy trì tốc độ mượt mà của MSE gần bằng 0. Tham số delta kiểm soát điểm chuyển tiếp tiếp giữa tổng thất bại và tuyến tính.
 
 ```python
 import numpy as np
@@ -157,9 +157,9 @@ print(f"Huber Loss (delta=5.0): {huber_loss_5:.4f}")
 # Huber Loss (delta=5.0): 2.4561
 ```
 
-Slide 6: Cross-validation for Regression Metrics
+Trình bày 6: Xác thực chéo các dữ liệu phục hồi
 
-Cross-validation provides a robust way to evaluate regression models by splitting data into multiple train-test sets. This implementation demonstrates how to perform k-fold cross-validation while tracking multiple regression metrics simultaneously.
+Xác thực chéo cung cấp một cách mạnh mẽ để đánh giá các mô hình phục hồi bằng cách chia dữ liệu thành nhiều bộ kiểm tra tàu. Việc phát triển trình bày này trình bày cách thực hiện xác thực chéo k-fold trong khi theo dõi nhiều phản hồi chỉ số.
 
 ```python
 from sklearn.model_selection import KFold
@@ -216,9 +216,9 @@ for metric, value in results.items():
 # r2_std: 0.0015
 ```
 
-Slide 7: Weighted Mean Squared Error
+Trang trình bày 7: Error bình luận phương pháp trung bình có tầm quan trọng
 
-Weighted MSE allows assigning different importance to different samples in the dataset, useful when certain observations are more critical or reliable than others. This implementation demonstrates how to calculate weighted error metrics.
+MSE có số lượng được phép phân bổ khác nhau về mức độ quan trọng cho các mẫu khác nhau trong dữ liệu, hữu ích khi có một số lượng sát nhất được xác định quan trọng hoặc đáng tin cậy hơn các mẫu khác. Việc phát triển trình khai báo này trình bày cách tính toán số liệu có một số lỗi nghiêm trọng.
 
 ```python
 import numpy as np
@@ -260,9 +260,9 @@ print(f"Weighted MSE: {weighted_mse_value:.4f}")
 # Weighted MSE: 0.2156
 ```
 
-Slide 8: Real-world Example - House Price Prediction
+Slide 8: Ví dụ thực tế - Dự đoán giá nhà
 
-This implementation demonstrates a complete regression evaluation pipeline using the California Housing dataset, including data preprocessing, model training, and comprehensive metric evaluation.
+Việc phát triển này có thể thực hiện hoàn thiện quy trình đánh giá khôi phục quy trình bằng cách sử dụng bộ dữ liệu Nhà ở California, bao gồm bao tiền xử lý dữ liệu, đào tạo mô hình và đánh giá số liệu toàn diện.
 
 ```python
 from sklearn.datasets import fetch_california_housing
@@ -327,9 +327,9 @@ print(importance)
 # ...
 ```
 
-Slide 9: Percentage Error Metrics
+Trang trình bày 9: Chỉ số phần trăm lỗi
 
-Percentage error metrics provide a scale-independent way to evaluate regression models, making them particularly useful when comparing models across different scales or units. MAPE and SMAPE are commonly used variants.
+Số liệu về tỷ lệ phần trăm lỗi cung cấp một mô hình không phụ thuộc vào quy tắc để đánh giá các quy tắc khôi phục mô hình, làm cho chúng đặc biệt hữu ích khi so sánh các mô hình trên các mô hình hoặc các đơn vị khác nhau. MAPE và SMAPE là những biến có thể được sử dụng phổ biến.
 
 ```python
 import numpy as np
@@ -382,9 +382,9 @@ for scale in scales:
 # ...
 ```
 
-Slide 10: Distribution-based Regression Metrics
+Trang trình bày 10: Số liệu phục hồi dựa trên phân phối
 
-Distribution-based metrics evaluate how well predicted distributions match actual value distributions, crucial for probabilistic regression models. This implementation includes Kullback-Leibler divergence and Jensen-Shannon distance.
+Các dữ liệu dựa trên phân phối mức độ phân phối được dự đoán sẽ phù hợp với phân phối giá trị thực tế như thế nào, điều này rất quan trọng đối với các mô hình thu hồi xác thực. Việc phát triển này bao gồm phân kỳ Kullback-Leibler và khoảng cách Jensen-Shannon.
 
 ```python
 import numpy as np
@@ -440,9 +440,9 @@ plt.show()
 # Jensen-Shannon Distance: 0.1234
 ```
 
-Slide 11: Regression Metrics for Time Series Data
+Trang trình bày 11: Số khôi phục dữ liệu cho thời gian chuỗi dữ liệu
 
-Time series regression requires specialized metrics that account for temporal dependencies and patterns. This implementation demonstrates metrics specifically designed for time series prediction evaluation, including time-lagged correlations.
+Hồi quy thời gian chuỗi yêu cầu giải pháp chuyên biệt số liệu thích các mẫu và phụ thuộc theo thời gian. Việc phát triển này có thể đưa ra các số liệu được thiết kế đặc biệt để đánh giá dự kiến ​​về thời gian chuỗi, bao gồm cả các mối tương quan có tốc độ thời gian.
 
 ```python
 import numpy as np
@@ -503,9 +503,9 @@ for i, corr in enumerate(metrics['lag_correlations']):
 # ...
 ```
 
-Slide 12: Real-world Example - Energy Consumption Prediction
+Slide 12: Ví dụ thực tế - Dự đoán năng lực tiêu thụ
 
-This implementation showcases a complete energy consumption prediction pipeline, demonstrating the application of multiple regression metrics in a real-world scenario with temporal dependencies.
+Việc phát triển này giới thiệu một quy trình dự kiến ​​​​tiêu thụ năng lượng hoàn thiện, có thể hiện thực hóa việc áp dụng nhiều dữ liệu phục hồi trong kịch bản thế giới thực sự phụ thuộc theo thời gian.
 
 ```python
 import numpy as np
@@ -587,9 +587,9 @@ print(results_df.mean().round(4))
 # ...
 ```
 
-Slide 13: Quantile Regression Metrics
+Trang trình bày 13: Số lượng khôi phục dữ liệu
 
-Quantile regression metrics evaluate model performance at different percentiles of the prediction distribution, providing insights into the model's ability to capture the full range of the target variable's behavior.
+Số liệu phục hồi chất lượng đánh giá hiệu suất của mô hình ở các phần trăm khác nhau của phân phối dự kiến, cung cấp thông tin chi tiết về khả năng của mô hình trong việc nắm bắt toàn bộ hành động của các tiêu chí biến thể.
 
 ```python
 import numpy as np
@@ -651,9 +651,9 @@ for metric, value in metrics.items():
 # ...
 ```
 
-Slide 14: Implementing Robust Regression Metrics
+Trang trình bày 14: Triển khai các số liệu hồi phục mạnh mẽ
 
-This implementation focuses on metrics that are resistant to outliers and non-normal error distributions, essential for real-world applications where data may contain anomalies.
+Việc phát triển tập tin này có khả năng chống lại các ngoại lệ và phân phối lỗi không bình thường, cần thiết cho các ứng dụng trong thế giới thực nơi dữ liệu có thể chứa các điểm bất ngờ.
 
 ```python
 import numpy as np
@@ -715,10 +715,10 @@ for metric, value in metrics.items():
 # spearman_corr: 0.9876
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-*   "A Survey of Regression Metrics for Machine Learning" - arXiv:2308.12345
-*   "Robust Regression Evaluation Methods" - arXiv:2307.54321
-*   "Time Series Regression Metrics: A Comprehensive Review" - arXiv:2306.98765
-*   "Distribution-based Metrics for Regression Tasks" - [https://www.google.com/search?q=distribution+based+metrics+regression](https://www.google.com/search?q=distribution+based+metrics+regression)
-*   "Advanced Techniques in Quantile Regression" - [https://scholar.google.com/search?q=advanced+quantile+regression+techniques](https://scholar.google.com/search?q=advanced+quantile+regression+techniques)
+* "Khả năng khảo sát số liệu phục hồi cho máy học" - arXiv:2308.12345
+* "Phương pháp đánh giá hồi quy mạnh mẽ" - arXiv:2307.54321
+* "Số liệu phục hồi chuỗi thời gian: Đánh giá toàn diện" - arXiv:2306.98765
+* "Chỉ số dựa trên phân phối cho nhiệm vụ hồi quy" - [https://www.google.com/search?q=distribution+based+metrics+regression](https://www.google.com/search?q=distribution+based+metrics+regression)
+* "Các kỹ thuật nâng cao trong hồi phục lượng tử" - [https://scholar.google.com/search?q=advanced+quantile+regression+techniques](https://scholar.google.com/search?q=advanced+quantile+regression+techniques)

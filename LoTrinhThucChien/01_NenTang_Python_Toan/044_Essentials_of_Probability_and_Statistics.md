@@ -1,7 +1,7 @@
-## Essentials of Probability and Statistics
-Slide 1: Introduction to Probability
+## Cơ bản về Xác suất và Thống kê
+Slide 1: Giới thiệu về Xác suất
 
-Probability is the branch of mathematics that deals with the likelihood of events occurring. It forms the foundation for statistical analysis and decision-making under uncertainty.
+Xác suất là một nhánh của toán học liên quan đến khả năng xảy ra các sự kiện. Nó tạo thành nền tảng cho việc phân tích thống kê và ra quyết định trong điều kiện không chắc chắn.
 
 ```python
 import random
@@ -17,9 +17,9 @@ probability_heads = heads_count / flips
 print(f"Probability of getting Heads: {probability_height:.2f}")
 ```
 
-Slide 2: Fundamental Concepts of Probability
+Slide 2: Các khái niệm cơ bản về xác suất
 
-The three axioms of probability define its mathematical foundation: non-negativity, normalization, and additivity. These principles ensure that probabilities are always between 0 and 1, and the sum of all possible outcomes equals 1.
+Ba tiên đề xác suất xác định nền tảng toán học của nó: tính không âm, tính chuẩn hóa và tính cộng. Những nguyên tắc này đảm bảo rằng xác suất luôn nằm trong khoảng từ 0 đến 1 và tổng của tất cả các kết quả có thể xảy ra bằng 1.
 
 ```python
 def check_probability_axioms(probabilities):
@@ -34,9 +34,9 @@ event_probabilities = [0.2, 0.3, 0.5]
 print(f"Probabilities satisfy axioms: {check_probability_axioms(event_probabilities)}")
 ```
 
-Slide 3: Key Probability Descriptors
+Trang trình bày 3: Mô tả xác suất chính
 
-Probability mass functions (PMF) for discrete variables and probability density functions (PDF) for continuous variables describe the likelihood of different outcomes. Cumulative distribution functions (CDF) give the probability of a value being less than or equal to a given point.
+Hàm khối lượng xác suất (PMF) cho các biến rời rạc và hàm mật độ xác suất (PDF) cho các biến liên tục mô tả khả năng xảy ra các kết quả khác nhau. Hàm phân phối tích lũy (CDF) cho biết xác suất của một giá trị nhỏ hơn hoặc bằng một điểm nhất định.
 
 ```python
 import numpy as np
@@ -53,9 +53,9 @@ plt.ylabel("Probability")
 plt.show()
 ```
 
-Slide 4: Central Tendency Metrics
+Trang trình bày 4: Số liệu xu hướng trung tâm
 
-Measures of central tendency include the mean, median, and mode. They provide different perspectives on the typical or central value in a dataset.
+Các thước đo về xu hướng trung tâm bao gồm giá trị trung bình, trung vị và mode. Chúng cung cấp các quan điểm khác nhau về giá trị điển hình hoặc giá trị trung tâm trong tập dữ liệu.
 
 ```python
 import numpy as np
@@ -71,9 +71,9 @@ print(f"Median: {median}")
 print(f"Mode: {mode}")
 ```
 
-Slide 5: Probability Distributions
+Trang trình bày 5: Phân bố xác suất
 
-Probability distributions describe the likelihood of different outcomes for a random variable. Common distributions include normal, binomial, and Poisson distributions.
+Phân phối xác suất mô tả khả năng xảy ra các kết quả khác nhau đối với một biến ngẫu nhiên. Các phân phối phổ biến bao gồm phân phối chuẩn, phân phối nhị thức và phân phối Poisson.
 
 ```python
 import numpy as np
@@ -90,9 +90,9 @@ plt.ylabel("Probability Density")
 plt.show()
 ```
 
-Slide 6: Similarity and Correlation Measures
+Slide 6: Các thước đo tương đồng và tương quan
 
-Correlation coefficients measure the strength and direction of relationships between variables. Common measures include Pearson's correlation for linear relationships and Spearman's rank correlation for monotonic relationships.
+Các hệ số tương quan đo lường cường độ và hướng của mối quan hệ giữa các biến. Các biện pháp phổ biến bao gồm mối tương quan của Pearson cho các mối quan hệ tuyến tính và tương quan xếp hạng của Spearman cho các mối quan hệ đơn điệu.
 
 ```python
 import numpy as np
@@ -104,9 +104,9 @@ pearson_corr = np.corrcoef(x, y)[0, 1]
 print(f"Pearson correlation: {pearson_corr:.2f}")
 ```
 
-Slide 7: Introduction to Statistics
+Slide 7: Giới thiệu về Thống kê
 
-Statistics involves collecting, analyzing, interpreting, and presenting data. It allows us to make inferences about populations based on sample data.
+Thống kê bao gồm việc thu thập, phân tích, giải thích và trình bày dữ liệu. Nó cho phép chúng ta đưa ra suy luận về quần thể dựa trên dữ liệu mẫu.
 
 ```python
 import numpy as np
@@ -121,9 +121,9 @@ print(f"Population mean: {population_mean:.2f}")
 print(f"Sample mean: {sample_mean:.2f}")
 ```
 
-Slide 8: Hypothesis Testing
+Slide 8: Kiểm định giả thuyết
 
-Hypothesis testing is a statistical method used to make inferences about a population parameter based on sample data. It involves formulating null and alternative hypotheses and using statistical tests to decide whether to reject the null hypothesis.
+Kiểm tra giả thuyết là một phương pháp thống kê được sử dụng để đưa ra suy luận về tham số tổng thể dựa trên dữ liệu mẫu. Nó liên quan đến việc xây dựng các giả thuyết không và giả thuyết thay thế, đồng thời sử dụng các kiểm tra thống kê để quyết định xem có bác bỏ giả thuyết không hay không.
 
 ```python
 from scipy import stats
@@ -139,9 +139,9 @@ print(f"P-value: {p_value:.4f}")
 print(f"{'Reject' if p_value < 0.05 else 'Fail to reject'} the null hypothesis")
 ```
 
-Slide 9: Z-test
+Trang trình bày 9: Kiểm tra Z
 
-The Z-test is used when the population standard deviation is known and the sample size is large. It compares a sample mean to a known population mean using the standard normal distribution.
+Kiểm định Z được sử dụng khi đã biết độ lệch chuẩn của tổng thể và cỡ mẫu lớn. Nó so sánh giá trị trung bình mẫu với giá trị trung bình tổng thể đã biết bằng cách sử dụng phân phối chuẩn chuẩn.
 
 ```python
 from scipy import stats
@@ -161,9 +161,9 @@ print(f"Z-statistic: {z_statistic:.2f}")
 print(f"P-value: {p_value:.4f}")
 ```
 
-Slide 10: t-test
+Trang trình bày 10: t-test
 
-The t-test is used when the population standard deviation is unknown and the sample size is small. It compares means between two groups or a sample mean to a known value.
+Kiểm định t được sử dụng khi chưa biết độ lệch chuẩn của tổng thể và cỡ mẫu nhỏ. Nó so sánh giá trị trung bình giữa hai nhóm hoặc giá trị trung bình mẫu với giá trị đã biết.
 
 ```python
 from scipy import stats
@@ -178,9 +178,9 @@ print(f"T-statistic: {t_statistic:.2f}")
 print(f"P-value: {p_value:.4f}")
 ```
 
-Slide 11: Chi-Square Test
+Slide 11: Kiểm tra Chi-Square
 
-The Chi-Square test is used to determine if there is a significant association between categorical variables or to test the goodness of fit of observed data to expected distributions.
+Kiểm tra Chi-Square được sử dụng để xác định xem liệu có mối liên hệ đáng kể giữa các biến phân loại hay để kiểm tra mức độ phù hợp của dữ liệu được quan sát với phân phối dự kiến.
 
 ```python
 from scipy.stats import chi2_contingency
@@ -194,9 +194,9 @@ print(f"Chi-square statistic: {chi2:.2f}")
 print(f"P-value: {p_value:.4f}")
 ```
 
-Slide 12: Analysis of Variance (ANOVA)
+Slide 12: Phân tích phương sai (ANOVA)
 
-ANOVA is used to compare means across three or more groups. It helps determine if there are statistically significant differences between group means.
+ANOVA được sử dụng để so sánh các phương tiện giữa ba nhóm trở lên. Nó giúp xác định xem có sự khác biệt có ý nghĩa thống kê giữa các phương tiện nhóm hay không.
 
 ```python
 import numpy as np
@@ -212,9 +212,9 @@ print(f"F-statistic: {f_statistic:.2f}")
 print(f"P-value: {p_value:.4f}")
 ```
 
-Slide 13: Multiple Comparisons
+Trang trình bày 13: Nhiều so sánh
 
-When conducting multiple statistical tests, the chance of a Type I error (false positive) increases. Multiple comparison procedures, such as Bonferroni correction or False Discovery Rate, adjust p-values to control this error rate.
+Khi tiến hành nhiều thử nghiệm thống kê, khả năng xảy ra lỗi Loại I (dương tính giả) sẽ tăng lên. Nhiều quy trình so sánh, chẳng hạn như hiệu chỉnh Bonferroni hoặc Tỷ lệ phát hiện sai, điều chỉnh giá trị p để kiểm soát tỷ lệ lỗi này.
 
 ```python
 from statsmodels.stats.multitest import multipletests
@@ -230,9 +230,9 @@ print("Original p-values:", p_values)
 print("Bonferroni corrected p-values:", bonferroni_corrected[1])
 ```
 
-Slide 14: Factor Analysis
+Slide 14: Phân tích nhân tố
 
-Factor analysis is a statistical method used to describe variability among observed, correlated variables in terms of a potentially lower number of unobserved variables called factors.
+Phân tích nhân tố là một phương pháp thống kê được sử dụng để mô tả sự biến thiên giữa các biến được quan sát, có mối tương quan với số lượng biến không được quan sát được gọi là các yếu tố có thể thấp hơn.
 
 ```python
 from factor_analyzer import FactorAnalyzer
@@ -252,12 +252,12 @@ loadings = pd.DataFrame(fa.loadings_, columns=['Factor1', 'Factor2'], index=data
 print(loadings)
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-For further exploration of probability and statistics, consider the following resources:
+Để khám phá thêm về xác suất và thống kê, hãy xem xét các tài nguyên sau:
 
-1. "Introduction to Probability" by Blitzstein and Hwang (arXiv:1302.1281)
-2. "Statistical Inference" by Casella and Berger
-3. "The Elements of Statistical Learning" by Hastie, Tibshirani, and Friedman (arXiv:1011.0933)
-4. Online courses on platforms like Coursera, edX, or MIT OpenCourseWare
-5. Statistical software documentation (e.g., Python's SciPy and statsmodels libraries)
+1. "Giới thiệu về xác suất" của Blitzstein và Hwang (arXiv:1302.1281)
+2. “Suy luận thống kê” của Casella và Berger
+3. "Các yếu tố của việc học thống kê" của Hastie, Tibshirani và Friedman (arXiv:1011.0933)
+4. Các khóa học trực tuyến trên các nền tảng như Coursera, edX hoặc MIT OpenCourseWare
+5. Tài liệu phần mềm thống kê (ví dụ: thư viện SciPy và statsmodels của Python)

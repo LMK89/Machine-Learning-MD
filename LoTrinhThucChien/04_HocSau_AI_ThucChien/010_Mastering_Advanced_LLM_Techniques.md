@@ -1,13 +1,13 @@
-## Mastering Advanced LLM Techniques
-Slide 1: Introduction to Advanced LLM Techniques
+## Nắm vững các kỹ thuật LLM nâng cao
+Trang trình bày 1: Giới thiệu về Kỹ thuật LLM nâng cao
 
-Large Language Models (LLMs) have revolutionized natural language processing. This presentation explores advanced techniques that enhance LLM performance and capabilities. We'll cover pause tokens, Infini-Attention, Rotary Positional Encoding (RoPE), KV Cache, and Mixture of Experts (MoE). These concepts are crucial for understanding state-of-the-art LLMs and their evolving architectures.
+Mô hình ngôn ngữ lớn (LLM) đã cách mạng hóa việc xử lý ngôn ngữ tự nhiên. Bài trình bày này khám phá các kỹ thuật tiên tiến giúp nâng cao hiệu suất và khả năng của LLM. Chúng tôi sẽ bao gồm các mã thông báo tạm dừng, Infini-Attention, Mã hóa vị trí quay (RoPE), Bộ nhớ đệm KV và Hỗn hợp các chuyên gia (MoE). Những khái niệm này rất quan trọng để hiểu các LLM hiện đại và kiến ​​trúc đang phát triển của chúng.
 
-Slide 2: Pause Tokens - Enabling LLMs to "Think"
+Trang trình bày 2: Tạm dừng mã thông báo - Cho phép LLM "Suy nghĩ"
 
-Pause tokens are special tokens inserted into the input sequence to give LLMs time to process information before generating a response. This technique mimics human thinking pauses and can lead to more thoughtful and accurate outputs. Pause tokens are particularly useful for complex reasoning tasks.
+Mã thông báo tạm dừng là mã thông báo đặc biệt được chèn vào chuỗi đầu vào để giúp LLM có thời gian xử lý thông tin trước khi tạo phản hồi. Kỹ thuật này bắt chước những khoảng dừng suy nghĩ của con người và có thể dẫn đến những kết quả đầu ra chính xác và chu đáo hơn. Mã thông báo tạm dừng đặc biệt hữu ích cho các tác vụ suy luận phức tạp.
 
-Slide 3: Source Code for Pause Tokens - Enabling LLMs to "Think"
+Trang trình bày 3: Mã nguồn cho mã thông báo tạm dừng - Cho phép LLM "Suy nghĩ"
 
 ```python
 def add_pause_tokens(input_text, pause_token="<pause>", pause_interval=5):
@@ -25,7 +25,7 @@ output_text = add_pause_tokens(input_text)
 print(output_text)
 ```
 
-Slide 4: Results for: Source Code for Pause Tokens - Enabling LLMs to "Think"
+Trang trình bày 4: Kết quả cho: Mã nguồn cho mã thông báo tạm dừng - Cho phép LLM "Suy nghĩ"
 
 ```
 The quick brown fox jumps <pause> over the lazy dog
@@ -71,7 +71,7 @@ result = infini_attention(query, key, value)
 print(result)
 ```
 
-Slide 7: Results for: Source Code for Infini-Attention - Extending Context Windows
+Slide 7: Kết quả cho: Mã nguồn của Infini-Attention - Extending Context Windows
 
 ```
 [[0.3205043785063948, 0.42050437850639485], [0.33561786056929443, 0.4356178605692944]]
@@ -114,7 +114,7 @@ rope_encoded = apply_rotary_encoding(x, positions, embedding_dim)
 print(rope_encoded.shape)
 ```
 
-Slide 10: Results for: Source Code for Rotary Positional Encoding (RoPE)
+Trang trình bày 10: Kết quả cho: Mã nguồn cho mã hóa vị trí quay (RoPE)
 
 ```
 torch.Size([10, 64])
@@ -163,7 +163,7 @@ output = model(input_seq, use_cache=True)
 print(output.shape)
 ```
 
-Slide 13: Results for: Source Code for KV Cache - Optimizing Inference Speed
+Slide 13: Kết quả cho: Source Code for KV Cache - Tối ưu hóa tốc độ suy luận
 
 ```
 torch.Size([1, 10, 1000])
@@ -213,7 +213,7 @@ result = moe_model.process(input_data)
 print(result)
 ```
 
-Slide 16: Results for: Source Code for Mixture of Experts (MoE)
+Trang trình bày 16: Kết quả cho: Mã nguồn hỗn hợp các chuyên gia (MoE)
 
 ```
 Math Expert processed: What is the capital of France?

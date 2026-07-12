@@ -1,7 +1,7 @@
-## Improving Attention in Large Language Models with DIFFTransformer
-Slide 1: DIFFTransformer Base Architecture
+## Cải thiện sự chú ý trong các mô hình ngôn ngữ lớn với DIFFTransformer
+Trang trình bày 1: Kiến trúc cơ sở DIFFTransformer
 
-The DIFFTransformer architecture introduces a novel differential attention mechanism that operates by computing two distinct attention distributions. This approach enables more focused context processing by explicitly modeling both positive and negative attention patterns.
+Kiến trúc DIFFTransformer giới thiệu một cơ chế chú ý khác biệt mới hoạt động bằng cách tính toán hai phân bổ chú ý riêng biệt. Cách tiếp cận này cho phép xử lý bối cảnh tập trung hơn bằng cách mô hình hóa rõ ràng cả mô hình chú ý tích cực và tiêu cực.
 
 ```python
 import torch
@@ -31,9 +31,9 @@ class DIFFAttention(nn.Module):
         return self.proj(x)
 ```
 
-Slide 2: Attention Score Computation
+Trang trình bày 2: Tính điểm chú ý
 
-The differential attention mechanism calculates attention scores through a subtraction operation between two softmax-transformed attention maps. This process helps filter out noise and emphasizes meaningful token relationships.
+Cơ chế chú ý vi phân tính toán điểm chú ý thông qua phép trừ giữa hai bản đồ chú ý được chuyển đổi softmax. Quá trình này giúp lọc tiếng ồn và nhấn mạnh các mối quan hệ mã thông báo có ý nghĩa.
 
 ```python
 def compute_diff_attention_scores(query, key, value, scale=1.0):
@@ -89,9 +89,9 @@ class TokenFeatureEnhancer(nn.Module):
         return enhanced_features
 ```
 
-Slide 4: Noise Reduction Layer
+Slide 4: Lớp giảm tiếng ồn
 
-A specialized noise reduction layer processes the differential attention outputs to further minimize irrelevant information and enhance focus on key contextual elements through adaptive thresholding.
+Lớp giảm nhiễu chuyên dụng xử lý các đầu ra chú ý khác nhau để giảm thiểu hơn nữa thông tin không liên quan và tăng cường tập trung vào các yếu tố ngữ cảnh chính thông qua ngưỡng thích ứng.
 
 ```python
 class NoiseReductionLayer(nn.Module):
@@ -135,9 +135,9 @@ class InformationFlowController(nn.Module):
         return gated_output
 ```
 
-Slide 6: Model Implementation and Training Setup
+Slide 6: Triển khai mô hình và thiết lập đào tạo
 
-The DIFFTransformer implementation requires specific initialization and training procedures to ensure stable convergence. This setup includes custom loss components that account for both the primary task and attention distribution quality.
+Việc triển khai DIFFTransformer yêu cầu các quy trình khởi tạo và đào tạo cụ thể để đảm bảo sự hội tụ ổn định. Thiết lập này bao gồm các thành phần mất tùy chỉnh chiếm cả nhiệm vụ chính và chất lượng phân phối sự chú ý.
 
 ```python
 class DIFFTransformer(nn.Module):
@@ -208,9 +208,9 @@ def analyze_attention_patterns(model_output, threshold=0.1):
     }
 ```
 
-Slide 8: Custom Loss Function Implementation
+Trang trình bày 8: Triển khai chức năng mất tùy chỉnh
 
-The DIFFTransformer requires a specialized loss function that combines traditional cross-entropy with attention-based regularization terms to optimize both task performance and attention quality.
+DIFFTransformer yêu cầu một hàm mất mát chuyên dụng kết hợp entropy chéo truyền thống với các thuật ngữ chính quy hóa dựa trên sự chú ý để tối ưu hóa cả hiệu suất tác vụ và chất lượng sự chú ý.
 
 ```python
 class DIFFTransformerLoss(nn.Module):
@@ -282,9 +282,9 @@ def prepare_text_classification_model(num_classes, vocab_size=30000):
     return model
 ```
 
-Slide 10: Training Pipeline Implementation
+Slide 10: Triển khai quy trình đào tạo
 
-The training pipeline implements gradient accumulation, custom learning rate scheduling, and attention pattern monitoring to ensure optimal convergence of the DIFFTransformer architecture.
+Quy trình đào tạo triển khai tích lũy độ dốc, lập lịch tốc độ học tùy chỉnh và giám sát mẫu chú ý để đảm bảo sự hội tụ tối ưu của kiến ​​trúc DIFFTransformer.
 
 ```python
 class DIFFTransformerTrainer:
@@ -369,9 +369,9 @@ class AttentionVisualizer:
         return plt.gcf(), stats
 ```
 
-Slide 12: Real-world Example - Document Summarization
+Slide 12: Ví dụ thực tế - Tóm tắt tài liệu
 
-Implementation of DIFFTransformer for document summarization, showcasing its ability to handle long documents and generate concise summaries through improved attention mechanisms.
+Triển khai DIFFTransformer để tóm tắt tài liệu, thể hiện khả năng xử lý các tài liệu dài và tạo ra các bản tóm tắt ngắn gọn thông qua các cơ chế chú ý được cải tiến.
 
 ```python
 class SummarizationDIFFTransformer(nn.Module):
@@ -472,9 +472,9 @@ class DIFFTransformerEvaluator:
         }
 ```
 
-Slide 14: Experiment Results
+Slide 14: Kết quả thí nghiệm
 
-A detailed analysis of DIFFTransformer's performance across multiple tasks, demonstrating improvements in accuracy, efficiency, and attention quality compared to traditional transformer architectures.
+Phân tích chi tiết về hiệu suất của DIFFTransformer qua nhiều tác vụ, thể hiện sự cải thiện về độ chính xác, hiệu quả và chất lượng chú ý so với kiến ​​trúc máy biến áp truyền thống.
 
 ```python
 def run_comparative_analysis():
@@ -529,11 +529,11 @@ def calculate_improvement(diff_metrics, baseline_metrics):
     }
 ```
 
-Slide 15: Additional Resources
+Trang trình bày 15: Tài nguyên bổ sung
 
-*   arXiv:2306.12086 - "DIFFTransformer: A Novel Attention Mechanism for Enhanced Natural Language Processing"
-*   arXiv:2307.09234 - "Comparative Analysis of Attention Mechanisms in Modern Transformer Architectures"
-*   arXiv:2308.15477 - "Efficient Training Strategies for DIFFTransformer Models"
-*   [https://github.com/microsoft/DIFFTransformer](https://github.com/microsoft/DIFFTransformer) - Official Implementation Repository
-*   [https://research.microsoft.com/difftransformer](https://research.microsoft.com/difftransformer) - Project Documentation and Research Papers
-*   Google Scholar search terms: "DIFFTransformer attention mechanism", "differential attention neural networks", "sparse attention transformers"
+* arXiv:2306.12086 - "DIFFTransformer: Cơ chế chú ý mới để xử lý ngôn ngữ tự nhiên nâng cao"
+* arXiv:2307.09234 - "Phân tích so sánh các cơ chế chú ý trong kiến trúc máy biến áp hiện đại"
+* arXiv:2308.15477 - "Chiến lược đào tạo hiệu quả cho các mô hình DIFFTransformer"
+* [https://github.com/microsoft/DIFFTransformer](https://github.com/microsoft/DIFFTransformer) - Kho lưu trữ triển khai chính thức
+* [https://research.microsoft.com/difftransformer](https://research.microsoft.com/difftransformer) - Tài liệu nghiên cứu và tài liệu dự án
+* Thuật ngữ tìm kiếm của Google Scholar: "Cơ chế chú ý DIFFTransformer", "mạng thần kinh chú ý khác biệt", "máy biến áp chú ý thưa thớt"
