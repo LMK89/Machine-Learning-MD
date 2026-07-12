@@ -1,7 +1,7 @@
-## Giới thiệu hồi quy tuyến tính đơn giản
+##Giới thiệu thu hồi quy tuyến tính đơn giản
 Slide 1: Hồi quy tuyến tính đơn giản
 
-Hồi quy tuyến tính đơn giản dự đoán một biến phụ thuộc bằng cách sử dụng một biến độc lập. Đó là lý tưởng cho các mối quan hệ đơn giản có thể được biểu thị bằng một đường.
+Hồi quy tuyến tính đơn giản mong đợi một biến phụ thuộc bằng cách sử dụng một biến độc lập. Đó là lý tưởng cho mối mối mối đơn giản có thể được biểu thị bằng một con đường.
 
 ```python
 import numpy as np
@@ -35,7 +35,7 @@ Công thức toán học (LaTeX): [y = \\beta\_0 + \\beta\_1x + \\epsilon]
 
 Slide 2: Hồi quy tuyến tính đa thức
 
-Hồi quy đa thức mô hình hóa các mối quan hệ phi tuyến tính bằng cách thêm các đặc điểm đa thức vào mô hình tuyến tính, làm cho nó phù hợp với các xu hướng cong.
+Hồi quy đa thức mô hình hóa các mối quan hệ phi tuyến tính bằng cách bổ sung các đặc tính đa thức vào mô hình tuyến tính, làm cho nó phù hợp với các xu hướng cong.
 
 ```python
 import numpy as np
@@ -71,7 +71,7 @@ Công thức toán học (LaTeX): [y = \\beta\_0 + \\beta\_1x + \\beta\_2x^2 + .
 
 Slide 3: Hồi quy tuyến tính bội
 
-Hồi quy tuyến tính bội dự đoán kết quả bằng cách sử dụng một số biến độc lập, cho phép mô hình hóa các mối quan hệ phức tạp hơn.
+Hồi quy tuyến tính bội dự kiến ​​​​kết quả bằng cách sử dụng một số biến độc lập, cho phép mô hình hóa các mối quan hệ phức tạp hơn.
 
 ```python
 import numpy as np
@@ -109,7 +109,7 @@ Công thức toán học (LaTeX): [y = \\beta\_0 + \\beta\_1x\_1 + \\beta\_2x\_2
 
 Trang trình bày 4: Hồi quy sườn (Chính quy L2)
 
-Ridge Regression áp dụng chính quy hóa L2 để giảm tình trạng trang bị quá mức trong khi vẫn giữ được tất cả các tính năng. Tính năng này hữu ích khi bạn muốn giữ lại tất cả các biến nhưng giảm thiểu tác động của chúng.
+Ridge Regression áp dụng chính hóa L2 để giảm trạng thái quá mức trong khi vẫn giữ được tất cả các tính năng. Tính năng này hữu ích khi bạn muốn giữ lại tất cả các biến nhưng giảm thiểu tác động của chúng.
 
 ```python
 import numpy as np
@@ -146,7 +146,7 @@ Công thức toán học (LaTeX): [\\min\_{\\beta} |y - X\\beta|^2\_2 + \\alpha|
 
 Trang trình bày 5: Hồi quy Lasso (Chính quy L1)
 
-Hồi quy Lasso sử dụng chính quy hóa L1 để thực hiện lựa chọn tính năng bằng cách đưa một số hệ số về 0, chỉ chọn các tính năng quan trọng nhất một cách hiệu quả.
+Hồi quy Lasso sử dụng chính quy hóa L1 để thực hiện lựa chọn tính năng bằng cách đưa ra một số hệ thống về 0, chỉ chọn các tính năng quan trọng nhất một cách hiệu quả.
 
 ```python
 import numpy as np
@@ -183,7 +183,7 @@ Công thức toán học (LaTeX): [\\min\_{\\beta} |y - X\\beta|^2\_2 + \\alpha|
 
 Trang trình bày 6: Hồi quy mạng đàn hồi
 
-Elastic Net kết hợp chính quy hóa L1 và L2, cung cấp cả lựa chọn tính năng và chính quy hóa. Nó hữu ích khi bạn muốn có sự cân bằng giữa hồi quy Ridge và Lasso.
+Elastic Net kết hợp chính hóa L1 và L2, cung cấp các loại lựa chọn tính năng và chính hóa hóa. Nó hữu ích khi bạn muốn cân bằng giữa phục hồi Ridge và Lasso.
 
 ```python
 import numpy as np
@@ -221,7 +221,7 @@ Công thức toán học (LaTeX): [\\min\_{\\beta} |y - X\\beta|^2\_2 + \\alpha\
 
 Slide 7: Hồi quy logistic
 
-Hồi quy logistic được sử dụng cho các vấn đề phân loại nhị phân, ước tính xác suất của một thể hiện thuộc một lớp cụ thể.
+Hồi quy logistic được sử dụng cho phân loại nhị phân phân loại vấn đề, ước tính hiệu suất của một lớp cụ thể hiện có.
 
 ```python
 import numpy as np
@@ -273,7 +273,7 @@ Công thức toán học (LaTeX): [P(y=1|x) = \\frac{1}{1 + e^{-(\\beta\_0 + \\b
 
 Slide 8: Hồi quy logistic đa thức
 
-Hồi quy logistic đa thức mở rộng hồi quy logistic để xử lý các vấn đề phân loại với nhiều hơn hai loại.
+Hồi quy logistic mở rộng đa thức hồi phục logistic để xử lý các phân loại vấn đề với nhiều loại hơn.
 
 ```python
 import numpy as np
@@ -320,7 +320,7 @@ Công thức toán học (LaTeX): [P(y=k|x) = \\frac{e^{\\beta\_k^T x}}{\\sum\_{
 
 Trang trình bày 9: Ví dụ thực tế: Hồi quy tuyến tính đơn giản
 
-Hãy sử dụng Hồi quy tuyến tính đơn giản để dự đoán chiều cao của một người dựa trên cỡ giày của họ.
+Hãy sử dụng Hồi quy tuyến tính đơn giản để dự đoán chiều cao của một người dựa trên kích thước giày của họ.
 
 ```python
 import numpy as np
@@ -364,7 +364,7 @@ predicted_height = model.predict(new_shoe_size)
 print(f"Predicted height for shoe size 10.75: {predicted_height[0]:.2f} inches")
 ```
 
-Ví dụ này cho thấy cách sử dụng Hồi quy tuyến tính đơn giản để dự đoán chiều cao của một người dựa trên cỡ giày của họ, cho thấy ứng dụng thực tế của kỹ thuật này trong nhân trắc học.
+Ví dụ này đã tìm ra cách sử dụng Hồi quy tuyến tính đơn giản để mong đợi chiều cao của một người dựa trên cỡ giày của họ, tìm thấy ứng dụng thực tế của kỹ thuật này trong nhân trắc học.
 
 Trang trình chiếu 10: Ví dụ thực tế: Hồi quy tuyến tính bội
 
@@ -412,11 +412,11 @@ predicted_mpg = model.predict(new_car)
 print(f"Predicted MPG for new car: {predicted_mpg[0]:.2f}")
 ```
 
-Ví dụ này cho thấy cách sử dụng hồi quy tuyến tính bội để dự đoán hiệu quả sử dụng nhiên liệu của ô tô dựa trên nhiều đặc điểm, thể hiện ứng dụng của nó trong kỹ thuật ô tô và nghiên cứu môi trường.
+Ví dụ này đã tìm ra cách sử dụng hồi quy tuyến tính bội để mong đợi hiệu quả sử dụng nhiên liệu của ô tô dựa trên nhiều đặc điểm, có thể thực hiện ứng dụng của nó trong kỹ thuật ô tô và môi trường nghiên cứu.
 
 Slide 11: Hồi quy đa thức trong khoa học khí hậu
 
-Hồi quy đa thức có thể được sử dụng để mô hình hóa các xu hướng phi tuyến tính trong dữ liệu khí hậu, chẳng hạn như mối quan hệ giữa nồng độ CO2 trong khí quyển và sự bất thường về nhiệt độ toàn cầu.
+Hồi quy đa thức có thể được sử dụng để mô hình hóa các tính năng phi tuyến tính xu hướng trong khí hậu khí hậu, hạn chế như mối quan hệ giữa nồng độ CO2 trong khí cụ và bất thường về nhiệt độ toàn cầu.
 
 ```python
 import numpy as np
@@ -452,11 +452,11 @@ predicted_temp_anomaly = model.predict(new_co2_level)
 print(f"Predicted temperature anomaly for CO2 level of 380 ppm: {predicted_temp_anomaly[0]:.2f}°C")
 ```
 
-Ví dụ này cho thấy cách hồi quy đa thức có thể được áp dụng để mô hình hóa mối quan hệ phi tuyến tính giữa mức CO2 và sự bất thường về nhiệt độ, điều này rất quan trọng trong nghiên cứu khoa học khí hậu.
+Ví dụ này đã tìm thấy cách phục hồi đa thức có thể được áp dụng để hóa học mối quan hệ phi tuyến tính giữa CO2 và sự bất thường về nhiệt độ, điều này rất quan trọng trong nghiên cứu khoa học khí hậu.
 
-Slide 12: Hồi quy logistic trong chẩn đoán y khoa
+Slide 12: Hồi quy logistic trong kỳ vọng y khoa
 
-Hồi quy logistic có thể được sử dụng trong chẩn đoán y tế để dự đoán khả năng mắc bệnh dựa trên các triệu chứng hoặc yếu tố nguy cơ khác nhau.
+Hồi quy logistic có thể được sử dụng trong dự đoán y tế để dự đoán khả năng mắc bệnh dựa trên các triệu chứng hoặc yếu tố nguy cơ cơ bản khác nhau.
 
 ```python
 import numpy as np
@@ -497,11 +497,11 @@ disease_probability = model.predict_proba(new_patient)[0][1]
 print(f"Probability of disease for new patient: {disease_probability:.2f}")
 ```
 
-Ví dụ này cho thấy cách hồi quy logistic có thể được áp dụng trong chẩn đoán y tế để dự đoán khả năng mắc bệnh dựa trên đặc điểm của bệnh nhân, chứng tỏ tầm quan trọng của nó trong việc ra quyết định chăm sóc sức khỏe.
+Ví dụ này cho thấy cách hồi phục logistic có thể được áp dụng trong kỳ vọng y tế để dự đoán khả năng chữa bệnh dựa trên đặc điểm của bệnh nhân, chứng minh tầm quan trọng của nó trong công việc ra quyết định chăm sóc sức khỏe.
 
-Trang trình bày 13: Hồi quy sườn trong bộ gen
+Trình bày 13: Hồi quy sườn trong bộ gen
 
-Hồi quy Ridge có thể hữu ích trong bộ gen để dự đoán các đặc điểm dựa trên dữ liệu biểu hiện gen, đặc biệt là khi xử lý nhiều gen (đặc điểm) và tương đối ít mẫu.
+Hồi quy Ridge có thể hữu ích trong bộ gen để mong đợi các đặc tính dựa trên biểu hiện dữ liệu, đặc biệt là khi xử lý nhiều gen (đặc điểm) và tương phản với ít mẫu.
 
 ```python
 import numpy as np
@@ -543,15 +543,15 @@ print("Top 10 most influential genes (indices):")
 print(top_genes)
 ```
 
-Ví dụ này chứng minh cách áp dụng Hồi quy Ridge trong bộ gen để dự đoán các đặc điểm dựa trên dữ liệu biểu hiện gen trong khi xử lý thách thức về chiều cao thường gặp trong lĩnh vực này.
+Ví dụ này chứng minh cách áp dụng Hồi quy Ridge trong bộ gen để dự đoán các đặc tính dựa trên biểu hiện dữ liệu trong khi xử lý các công thức về chiều cao thường gặp trong lĩnh vực này.
 
 Trang trình bày 14: Tài nguyên bổ sung
 
-Đối với những người quan tâm đến việc tìm hiểu sâu hơn về các kỹ thuật hồi quy và ứng dụng của chúng, đây là một số tài nguyên có giá trị:
+Đối với những người quan tâm đến công việc tìm hiểu sâu hơn về các kỹ thuật hồi phục và ứng dụng của chúng, thì đây là một số tài nguyên có giá trị:
 
-1. "Hướng dẫn toàn diện về hồi quy tuyến tính" của Gareth James và cộng sự. (2013) arXiv:1309.6886 \[stat.ML\]
-2. "Đường dẫn chính quy hóa cho các mô hình tuyến tính tổng quát thông qua việc giảm tọa độ" của Jerome Friedman và cộng sự. (2010) arXiv:0708.1485 \[stat.ML\]
-3. "Giới thiệu về học thống kê" của Gareth James và cộng sự. (2013) Có tại: [https://www.statlearning.com/](https://www.statlearning.com/)
-4. "Các yếu tố của việc học thống kê" của Trevor Hastie et al. (2009) Có tại: [https://web.stanford.edu/~hastie/ElemStatLearn/](https://web.stanford.edu/~hastie/ElemStatLearn/)
+1. "Hướng dẫn về tính năng khôi phục tuyến tính" của Gareth James và cộng đồng. (2013) arXiv:1309.6886 \[stat.ML\]
+2. "Đường dẫn chính hóa cho các mô hình tuyến tính tổng hợp thông tin giảm tốc độ" của Jerome Friedman và cộng đồng. (2010) arXiv:0708.1485 \[stat.ML\]
+3. "Giới thiệu về thống kê học tập" của Gareth James và cộng đồng. (2013) Có tại: [https://www.statlearning.com/](https://www.statlearning.com/)
+4. “Các yếu tố của việc học thống kê” của Trevor Hastie et al. (2009) Có tại: [https://web.stanford.edu/~hastie/ElemStatLearn/](https://web.stanford.edu/~hastie/ElemStatLearn/)
 
-Những tài nguyên này cung cấp những giải thích sâu sắc về các kỹ thuật hồi quy khác nhau, nền tảng toán học của chúng và các ứng dụng thực tế trong các lĩnh vực khác nhau.
+Những tài nguyên này cung cấp những giải pháp thích sâu sắc về các kỹ thuật phục hồi khác nhau, nền tảng toán học của chúng và các ứng dụng thực tế trong các lĩnh vực khác nhau.

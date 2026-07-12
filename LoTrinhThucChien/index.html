@@ -3,163 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lộ Trình Học AI/ML Thực Chiến</title>
+    <title>Lộ Trình Học AI/ML Thực Chiến (80 Bài Cốt Lõi)</title>
     <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #1e1e2f;
+            background-color: #121212;
             color: #ffffff;
             margin: 0;
             padding: 20px;
         }
-        h1 {
-            text-align: center;
-            color: #4CAF50;
-        }
-        p.subtitle {
-            text-align: center;
-            font-size: 1.1em;
-            color: #b0bec5;
-        }
+        h1 { text-align: center; color: #00e676; margin-bottom: 5px; }
+        p.subtitle { text-align: center; font-size: 1.1em; color: #b0bec5; margin-top: 0; }
         #mynetwork {
             width: 100%;
-            height: 700px;
-            border: 2px solid #33334d;
-            border-radius: 10px;
-            background-color: #2b2b40;
-            margin-top: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-        }
-        .legend {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .color-box {
-            width: 20px;
-            height: 20px;
-            border-radius: 4px;
+            height: 800px;
+            border: 1px solid #333;
+            border-radius: 12px;
+            background-color: #1e1e1e;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
         }
     </style>
 </head>
 <body>
 
-    <h1>🚀 Lộ Trình Học AI & Machine Learning Thực Chiến</h1>
-    <p class="subtitle">Sơ đồ tương tác thể hiện mối liên hệ giữa các phần học (Toán, Python, Dữ liệu, Học máy, AI)</p>
-
-    <div class="legend">
-        <div class="legend-item"><div class="color-box" style="background-color: #ff9800;"></div> Phần 1: Nền tảng Python & Toán</div>
-        <div class="legend-item"><div class="color-box" style="background-color: #2196f3;"></div> Phần 2: Data Science</div>
-        <div class="legend-item"><div class="color-box" style="background-color: #4caf50;"></div> Phần 3: Machine Learning</div>
-        <div class="legend-item"><div class="color-box" style="background-color: #e91e63;"></div> Phần 4: Deep Learning & AI</div>
-    </div>
+    <h1>🧠 Lộ Trình Học AI & Machine Learning Thực Chiến</h1>
+    <p class="subtitle">Sơ đồ tương tác phân cấp (Hierarchical) 80 bài học cốt lõi</p>
 
     <div id="mynetwork"></div>
 
     <script type="text/javascript">
-        // Khởi tạo Nodes (Các bài học/Chủ đề)
-        var nodes = new vis.DataSet([
-            {id: 1, label: 'Python Cơ Bản\n(Biến, Vòng lặp, Hàm)', group: 'phase1', shape: 'box'},
-            {id: 2, label: 'Đại số Tuyến tính\n(Ma trận, Vector)', group: 'phase1', shape: 'ellipse'},
-            {id: 3, label: 'Giải tích\n(Đạo hàm)', group: 'phase1', shape: 'ellipse'},
-
-            {id: 4, label: 'NumPy\n(Tính toán Mảng)', group: 'phase2', shape: 'box'},
-            {id: 5, label: 'Pandas\n(Xử lý Bảng Dữ liệu)', group: 'phase2', shape: 'box'},
-            {id: 6, label: 'Làm sạch Dữ liệu\n(Data Cleaning)', group: 'phase2', shape: 'box'},
-
-            {id: 7, label: 'Hồi quy Tuyến tính\n(Linear Regression)', group: 'phase3', shape: 'diamond'},
-            {id: 8, label: 'Gradient Descent\n(Tối ưu hóa)', group: 'phase3', shape: 'diamond'},
-            {id: 9, label: 'Phân loại\n(Classification / Trees)', group: 'phase3', shape: 'diamond'},
-
-            {id: 10, label: 'Mạng Nơ-ron\n(Neural Networks)', group: 'phase4', shape: 'star'},
-            {id: 11, label: 'Thị giác Máy tính\n(CNN / Image Padding)', group: 'phase4', shape: 'star'},
-            {id: 12, label: 'Xử lý Ngôn ngữ Tự nhiên\n(Transformers & LLMs)', group: 'phase4', shape: 'star'},
-            {id: 13, label: 'Agentic RAG\n(Tối ưu LLM thực chiến)', group: 'phase4', shape: 'star'},
-        ]);
-
-        // Khởi tạo Edges (Mối liên hệ)
-        var edges = new vis.DataSet([
-            // Từ Python sang các thư viện
-            {from: 1, to: 4, arrows: 'to', label: 'Cơ sở code', dashes: true},
-            {from: 1, to: 5, arrows: 'to', label: 'Cơ sở code', dashes: true},
-
-            // Từ Toán sang Thuật toán/Thư viện
-            {from: 2, to: 4, arrows: 'to', label: 'Thực hành Ma trận trên NumPy'},
-            {from: 3, to: 8, arrows: 'to', label: 'Ứng dụng Đạo hàm để tìm cực tiểu'},
-
-            // Từ Data sang ML
-            {from: 4, to: 7, arrows: 'to', label: 'Cung cấp mảng số'},
-            {from: 5, to: 6, arrows: 'to', label: 'Tiền xử lý'},
-            {from: 6, to: 7, arrows: 'to', label: 'Dữ liệu sạch cho Model'},
-            {from: 6, to: 9, arrows: 'to', label: 'Dữ liệu sạch cho Model'},
-
-            // Thuật toán ML
-            {from: 8, to: 7, arrows: 'to', label: 'Giải thuật tối ưu (Loss Function)'},
-
-            // Từ ML sang DL
-            {from: 2, to: 10, arrows: 'to', label: 'Nhân ma trận liên tục'},
-            {from: 8, to: 10, arrows: 'to', label: 'Backpropagation'},
-            {from: 7, to: 10, arrows: 'to', label: 'Nền tảng của Nơ-ron'},
-
-            // Nhánh AI cụ thể
-            {from: 10, to: 11, arrows: 'to', label: 'Xử lý ảnh'},
-            {from: 10, to: 12, arrows: 'to', label: 'Xử lý văn bản'},
-            {from: 12, to: 13, arrows: 'to', label: 'Nâng cấp mô hình với Dữ liệu ngoài'},
-        ]);
+        var nodes = new vis.DataSet([{"id": 1, "label": "Ph\u1ea7n 1: N\u1ec1n T\u1ea3ng\nPython & To\u00e1n", "group": "phase1", "shape": "hexagon", "level": 1, "font": {"size": 20, "bold": true}}, {"id": 2, "label": "Ph\u1ea7n 2: X\u1eed L\u00fd D\u1eef Li\u1ec7u\n(Data Science)", "group": "phase2", "shape": "hexagon", "level": 2, "font": {"size": 20, "bold": true}}, {"id": 3, "label": "Ph\u1ea7n 3: H\u1ecdc M\u00e1y\n(Machine Learning)", "group": "phase3", "shape": "hexagon", "level": 3, "font": {"size": 20, "bold": true}}, {"id": 4, "label": "Ph\u1ea7n 4: Tr\u00ed Tu\u1ec7 Nh\u00e2n T\u1ea1o\n(Deep Learning & LLM)", "group": "phase4", "shape": "hexagon", "level": 4, "font": {"size": 20, "bold": true}}, {"id": 10, "label": "Ph\u00e2n ph\u1ed1i x\u00e1c su\u1ea5t ch\u00ednh v\u1edb...", "title": "01_Ph\u00e2n ph\u1ed1i x\u00e1c su\u1ea5t ch\u00ednh v\u1edbi Python", "group": "phase1", "shape": "dot", "size": 10, "level": 1}, {"id": 11, "label": "S\u1ee9c m\u1ea1nh c\u1ee7a l\u00fd thuy\u1ebft ma t...", "title": "02_S\u1ee9c m\u1ea1nh c\u1ee7a l\u00fd thuy\u1ebft ma tr\u1eadn b\u1eb1ng Python", "group": "phase1", "shape": "dot", "size": 10, "level": 1}, {"id": 12, "label": "Gi\u1ea3i th\u00edch v\u1ec1 Tr\u00ecnh t\u1ea1o tro...", "title": "03_Gi\u1ea3i th\u00edch v\u1ec1 Tr\u00ecnh t\u1ea1o trong Python b\u1eb1ng Fibonacci", "group": "phase1", "shape": "dot", "size": 10, "level": 1}, {"id": 13, "label": "Gi\u1edbi thi\u1ec7u v\u1ec1 Gi\u1ea3i t\u00edch III...", "title": "04_Gi\u1edbi thi\u1ec7u v\u1ec1 Gi\u1ea3i t\u00edch III trong Python", "group": "phase1", "shape": "dot", "size": 10, "level": 1}, {"id": 14, "label": "Kh\u00e1m ph\u00e1 x\u00e1c su\u1ea5t c\u00f3 \u0111i\u1ec1u k...", "title": "05_Kh\u00e1m ph\u00e1 x\u00e1c su\u1ea5t c\u00f3 \u0111i\u1ec1u ki\u1ec7n v\u1edbi Python", "group": "phase1", "shape": "dot", "size": 10, "level": 1}, {"id": 15, "label": "C\u00e1c ph\u01b0\u01a1ng th\u1ee9c nh\u00e2n ma tr\u1ead...", "title": "06_C\u00e1c ph\u01b0\u01a1ng th\u1ee9c nh\u00e2n ma tr\u1eadn trong Python v\u1edbi NumPy", "group": "phase1", "shape": "dot", "size": 10, "level": 1}, {"id": 16, "label": "\u0110a t\u1ea1p m\u01b0\u1ee3t m\u00e0 v\u00e0 c\u00f3 th\u1ec3 qu...", "title": "07_\u0110a t\u1ea1p m\u01b0\u1ee3t m\u00e0 v\u00e0 c\u00f3 th\u1ec3 quan s\u00e1t \u0111\u01b0\u1ee3c trong Python", "group": "phase1", "shape": "dot", "size": 10, "level": 1}, {"id": 17, "label": "B\u1ea3ng t\u00ednh ph\u00e2n ph\u1ed1i x\u00e1c su\u1ea5...", "title": "08_B\u1ea3ng t\u00ednh ph\u00e2n ph\u1ed1i x\u00e1c su\u1ea5t Python", "group": "phase1", "shape": "dot", "size": 10, "level": 1}, {"id": 18, "label": "M\u00e1y t\u00ednh giai th\u1eeba trong Py...", "title": "09_M\u00e1y t\u00ednh giai th\u1eeba trong Python", "group": "phase1", "shape": "dot", "size": 10, "level": 1}, {"id": 19, "label": "X\u00e1c su\u1ea5t & Th\u1ed1ng k\u00ea cho Kho...", "title": "10_X\u00e1c su\u1ea5t & Th\u1ed1ng k\u00ea cho Khoa h\u1ecdc D\u1eef li\u1ec7u v\u00e0 AI", "group": "phase1", "shape": "dot", "size": 10, "level": 1}, {"id": 20, "label": "Tensor \u0111\u1ea1o h\u00e0m b\u1eadc ba trong...", "title": "11_Tensor \u0111\u1ea1o h\u00e0m b\u1eadc ba trong AI v\u00e0 ML", "group": "phase1", "shape": "dot", "size": 10, "level": 1}, {"id": 21, "label": "Gi\u1edbi thi\u1ec7u v\u1ec1 Gi\u1ea3i t\u00edch I t...", "title": "12_Gi\u1edbi thi\u1ec7u v\u1ec1 Gi\u1ea3i t\u00edch I trong Python", "group": "phase1", "shape": "dot", "size": 10, "level": 1}, {"id": 22, "label": "Chu\u1ed7i tho\u00e1t trong Python V\u00ed...", "title": "13_Chu\u1ed7i tho\u00e1t trong Python V\u00ed d\u1ee5 m\u00e3 th\u1ef1c t\u1ebf", "group": "phase1", "shape": "dot", "size": 10, "level": 1}, {"id": 23, "label": "Ph\u01b0\u01a1ng ph\u00e1p nh\u00e2n t\u1eed h\u00f3a v\u00e0 ...", "title": "14_Ph\u01b0\u01a1ng ph\u00e1p nh\u00e2n t\u1eed h\u00f3a v\u00e0 tenx\u01a1 c\u1ee7a ma tr\u1eadn", "group": "phase1", "shape": "dot", "size": 10, "level": 1}, {"id": 24, "label": "Th\u00edch \u1ee9ng th\u1ee9 h\u1ea1ng d\u1ef1a tr\u00ean...", "title": "15_Th\u00edch \u1ee9ng th\u1ee9 h\u1ea1ng d\u1ef1a tr\u00ean ma tr\u1eadn (MoRA) trong Python", "group": "phase1", "shape": "dot", "size": 10, "level": 1}, {"id": 25, "label": "K\u1ebft n\u1ed1i v\u00e0 \u0111\u1ea7u v\u00e0o chu\u1ed7i Py...", "title": "16_K\u1ebft n\u1ed1i v\u00e0 \u0111\u1ea7u v\u00e0o chu\u1ed7i Python d\u00e0nh cho ng\u01b0\u1eddi m\u1edbi b\u1eaft \u0111\u1ea7u", "group": "phase1", "shape": "dot", "size": 10, "level": 1}, {"id": 26, "label": "Tr\u00ecnh gi\u1ea3i m\u00e3 AI qu\u00e9t m\u00ecn b...", "title": "01_Tr\u00ecnh gi\u1ea3i m\u00e3 AI qu\u00e9t m\u00ecn b\u1eb1ng Python v\u1edbi Matplotlib", "group": "phase2", "shape": "dot", "size": 10, "level": 2}, {"id": 27, "label": "L\u00e0m s\u1ea1ch d\u1eef li\u1ec7u b\u1eb1ng Pytho...", "title": "02_L\u00e0m s\u1ea1ch d\u1eef li\u1ec7u b\u1eb1ng Python", "group": "phase2", "shape": "dot", "size": 10, "level": 2}, {"id": 28, "label": "N\u1eafm v\u1eefng c\u00e1ch tr\u1ef1c quan h\u00f3a...", "title": "03_N\u1eafm v\u1eefng c\u00e1ch tr\u1ef1c quan h\u00f3a Matplotlib b\u1eb1ng Python", "group": "phase2", "shape": "dot", "size": 10, "level": 2}, {"id": 29, "label": "L\u00e0m ch\u1ee7 vi\u1ec7c chuy\u1ec3n \u0111\u1ed5i ki\u1ec3...", "title": "04_L\u00e0m ch\u1ee7 vi\u1ec7c chuy\u1ec3n \u0111\u1ed5i ki\u1ec3u d\u1eef li\u1ec7u trong Pandas", "group": "phase2", "shape": "dot", "size": 10, "level": 2}, {"id": 30, "label": "X\u1eed l\u00fd c\u00e1c ngo\u1ea1i l\u1ec7 trong d\u1eef...", "title": "05_X\u1eed l\u00fd c\u00e1c ngo\u1ea1i l\u1ec7 trong d\u1eef li\u1ec7u t\u1eeb \u0111i\u1ec3m Z \u0111\u1ebfn tr\u1ef1c quan h\u00f3a", "group": "phase2", "shape": "dot", "size": 10, "level": 2}, {"id": 31, "label": "T\u0103ng c\u01b0\u1eddng tr\u1ef1c quan h\u00f3a d\u1eef...", "title": "06_T\u0103ng c\u01b0\u1eddng tr\u1ef1c quan h\u00f3a d\u1eef li\u1ec7u v\u1edbi Seaborn trong Python", "group": "phase2", "shape": "dot", "size": 10, "level": 2}, {"id": 32, "label": "NumPy Broadcasting \u0110\u01a1n gi\u1ea3n...", "title": "07_NumPy Broadcasting \u0110\u01a1n gi\u1ea3n h\u00f3a m\u00e3 Python", "group": "phase2", "shape": "dot", "size": 10, "level": 2}, {"id": 33, "label": "L\u00fd do n\u00ean di chuy\u1ec3n t\u1eeb Pand...", "title": "08_L\u00fd do n\u00ean di chuy\u1ec3n t\u1eeb Pandas sang FireDucks", "group": "phase2", "shape": "dot", "size": 10, "level": 2}, {"id": 34, "label": "T\u1ed1i \u01b0u h\u00f3a hi\u1ec7u su\u1ea5t NumPy ...", "title": "09_T\u1ed1i \u01b0u h\u00f3a hi\u1ec7u su\u1ea5t NumPy v\u1edbi c\u1ea5u h\u00ecnh lu\u1ed3ng", "group": "phase2", "shape": "dot", "size": 10, "level": 2}, {"id": 35, "label": "Ph\u00edm t\u1eaft NumPy \u0111\u1ec3 ph\u00e2n t\u00edch...", "title": "10_Ph\u00edm t\u1eaft NumPy \u0111\u1ec3 ph\u00e2n t\u00edch d\u1eef li\u1ec7u hi\u1ec7u qu\u1ea3", "group": "phase2", "shape": "dot", "size": 10, "level": 2}, {"id": 36, "label": "B\u1ed1 c\u1ee5c b\u1ed9 nh\u1edb Pandas DataFr...", "title": "11_B\u1ed1 c\u1ee5c b\u1ed9 nh\u1edb Pandas DataFrame v\u00e0 l\u1eb7p l\u1ea1i hi\u1ec7u qu\u1ea3", "group": "phase2", "shape": "dot", "size": 10, "level": 2}, {"id": 37, "label": "B\u1ea3ng cheat NumPy to\u00e0n di\u1ec7n ...", "title": "12_B\u1ea3ng cheat NumPy to\u00e0n di\u1ec7n \u0111\u1ec3 t\u1ea1o m\u1ea3ng trong Python", "group": "phase2", "shape": "dot", "size": 10, "level": 2}, {"id": 38, "label": "Gi\u1edbi thi\u1ec7u v\u1ec1 L\u00e0m s\u1ea1ch d\u1eef l...", "title": "13_Gi\u1edbi thi\u1ec7u v\u1ec1 L\u00e0m s\u1ea1ch d\u1eef li\u1ec7u v\u1edbi Pandas v\u00e0 Python", "group": "phase2", "shape": "dot", "size": 10, "level": 2}, {"id": 39, "label": "Tr\u00ecnh di\u1ec5n tr\u1ef1c quan v\u1ec1 ph\u00e2...", "title": "14_Tr\u00ecnh di\u1ec5n tr\u1ef1c quan v\u1ec1 ph\u00e2n c\u1ee5m DBSCAN", "group": "phase2", "shape": "dot", "size": 10, "level": 2}, {"id": 40, "label": "\u01afu \u0111i\u1ec3m v\u1ec1 hi\u1ec7u su\u1ea5t v\u00e0 hi\u1ec7...", "title": "15_\u01afu \u0111i\u1ec3m v\u1ec1 hi\u1ec7u su\u1ea5t v\u00e0 hi\u1ec7u su\u1ea5t b\u1ed9 nh\u1edb c\u1ee7a Polars vs Pandas", "group": "phase2", "shape": "dot", "size": 10, "level": 2}, {"id": 41, "label": "L\u1ed9 tr\u00ecnh Khoa h\u1ecdc d\u1eef li\u1ec7u v...", "title": "16_L\u1ed9 tr\u00ecnh Khoa h\u1ecdc d\u1eef li\u1ec7u v\u1edbi Python", "group": "phase2", "shape": "dot", "size": 10, "level": 2}, {"id": 42, "label": "Tr\u00e1nh nh\u1eefng sai l\u1ea7m c\u1ee7a ng\u01b0...", "title": "17_Tr\u00e1nh nh\u1eefng sai l\u1ea7m c\u1ee7a ng\u01b0\u1eddi m\u1edbi b\u1eaft \u0111\u1ea7u! T\u1ea7m quan tr\u1ecdng c\u1ee7a vi\u1ec7c l\u00e0m s\u1ea1ch d\u1eef li\u1ec7u", "group": "phase2", "shape": "dot", "size": 10, "level": 2}, {"id": 43, "label": "Tr\u1ef1c quan h\u00f3a d\u1eef li\u1ec7u t\u01b0\u01a1ng...", "title": "18_Tr\u1ef1c quan h\u00f3a d\u1eef li\u1ec7u t\u01b0\u01a1ng t\u00e1c v\u1edbi Matplotlib", "group": "phase2", "shape": "dot", "size": 10, "level": 2}, {"id": 44, "label": "Matplotlib Subplot Kh\u1ea3m M\u1ed9t...", "title": "19_Matplotlib Subplot Kh\u1ea3m M\u1ed9t gi\u1ea3i ph\u00e1p thay th\u1ebf linh ho\u1ea1t cho subplots()", "group": "phase2", "shape": "dot", "size": 10, "level": 2}, {"id": 45, "label": "Kh\u00e1m ph\u00e1 Machine Learning v...", "title": "01_Kh\u00e1m ph\u00e1 Machine Learning v\u1edbi h\u1ed3i quy tuy\u1ebfn t\u00ednh", "group": "phase3", "shape": "dot", "size": 10, "level": 3}, {"id": 46, "label": "S\u1ef1 tr\u00f4i d\u1ea1t kh\u00e1i ni\u1ec7m so v\u1edb...", "title": "02_S\u1ef1 tr\u00f4i d\u1ea1t kh\u00e1i ni\u1ec7m so v\u1edbi s\u1ef1 tr\u00f4i d\u1ea1t d\u1eef li\u1ec7u trong h\u1ecdc m\u00e1y", "group": "phase3", "shape": "dot", "size": 10, "level": 3}, {"id": 47, "label": "Gi\u1ea3m k\u00edch th\u01b0\u1edbc nhanh h\u01a1n 2...", "title": "03_Gi\u1ea3m k\u00edch th\u01b0\u1edbc nhanh h\u01a1n 20 l\u1ea7n so v\u1edbi PCA", "group": "phase3", "shape": "dot", "size": 10, "level": 3}, {"id": 48, "label": "Gi\u1ea3i th\u00edch thu\u1eadt to\u00e1n ph\u00e2n ...", "title": "04_Gi\u1ea3i th\u00edch thu\u1eadt to\u00e1n ph\u00e2n c\u1ee5m K-Means", "group": "phase3", "shape": "dot", "size": 10, "level": 3}, {"id": 49, "label": "Nguy\u00ean t\u1eafc c\u01a1 b\u1ea3n v\u1ec1 gi\u1ea3m \u0111...", "title": "05_Nguy\u00ean t\u1eafc c\u01a1 b\u1ea3n v\u1ec1 gi\u1ea3m \u0111\u1ed9 d\u1ed1c trong Python", "group": "phase3", "shape": "dot", "size": 10, "level": 3}, {"id": 50, "label": "Tri\u1ec3n khai Gi\u1ea3m d\u1ea7n \u0111\u1ed9 d\u1ed1c ...", "title": "06_Tri\u1ec3n khai Gi\u1ea3m d\u1ea7n \u0111\u1ed9 d\u1ed1c h\u00e0ng lo\u1ea1t trong Python", "group": "phase3", "shape": "dot", "size": 10, "level": 3}, {"id": 51, "label": "T\u00ecm hi\u1ec3u ph\u01b0\u01a1ng ph\u00e1p khu\u1ef7u ...", "title": "07_T\u00ecm hi\u1ec3u ph\u01b0\u01a1ng ph\u00e1p khu\u1ef7u tay trong ph\u00e2n c\u1ee5m K-Means", "group": "phase3", "shape": "dot", "size": 10, "level": 3}, {"id": 52, "label": "L\u00e0m ch\u1ee7 c\u00e1c m\u00e1y vect\u01a1 h\u1ed7 tr...", "title": "08_L\u00e0m ch\u1ee7 c\u00e1c m\u00e1y vect\u01a1 h\u1ed7 tr\u1ee3 \u0111\u1ec3 ph\u00e2n lo\u1ea1i v\u00e0 h\u1ed3i quy", "group": "phase3", "shape": "dot", "size": 10, "level": 3}, {"id": 53, "label": "S\u1ef1 l\u00e3ng qu\u00ean th\u1ea3m kh\u1ed1c tron...", "title": "09_S\u1ef1 l\u00e3ng qu\u00ean th\u1ea3m kh\u1ed1c trong c\u00e1c m\u00f4 h\u00ecnh h\u1ed3i quy tuy\u1ebfn t\u00ednh", "group": "phase3", "shape": "dot", "size": 10, "level": 3}, {"id": 54, "label": "L\u00e0m ch\u1ee7 c\u00e2y quy\u1ebft \u0111\u1ecbnh v\u1edbi ...", "title": "10_L\u00e0m ch\u1ee7 c\u00e2y quy\u1ebft \u0111\u1ecbnh v\u1edbi ID3 v\u00e0 Scikit-Learn", "group": "phase3", "shape": "dot", "size": 10, "level": 3}, {"id": 55, "label": "C\u00e1c tr\u01b0\u1eddng h\u1ee3p s\u1eed d\u1ee5ng ph\u00e2n...", "title": "11_C\u00e1c tr\u01b0\u1eddng h\u1ee3p s\u1eed d\u1ee5ng ph\u00e2n lo\u1ea1i Naive Bayes", "group": "phase3", "shape": "dot", "size": 10, "level": 3}, {"id": 56, "label": "\u01afu \u0111i\u1ec3m c\u1ee7a m\u00e1y vect\u01a1 h\u1ed7 tr...", "title": "12_\u01afu \u0111i\u1ec3m c\u1ee7a m\u00e1y vect\u01a1 h\u1ed7 tr\u1ee3 \u0111\u1ec3 ph\u00e2n lo\u1ea1i m\u1ea1nh m\u1ebd", "group": "phase3", "shape": "dot", "size": 10, "level": 3}, {"id": 57, "label": "H\u01b0\u1edbng d\u1eabn t\u1eebng b\u01b0\u1edbc \u0111\u1ec3 d\u1ef1 \u0111...", "title": "13_H\u01b0\u1edbng d\u1eabn t\u1eebng b\u01b0\u1edbc \u0111\u1ec3 d\u1ef1 \u0111o\u00e1n \u0111\u1ed9 d\u1ed1c gi\u1ea3m d\u1ea7n", "group": "phase3", "shape": "dot", "size": 10, "level": 3}, {"id": 58, "label": "\u0110\u00e1nh gi\u00e1 tr\u1ef1c quan hi\u1ec7u su\u1ea5...", "title": "14_\u0110\u00e1nh gi\u00e1 tr\u1ef1c quan hi\u1ec7u su\u1ea5t h\u1ed3i quy tuy\u1ebfn t\u00ednh", "group": "phase3", "shape": "dot", "size": 10, "level": 3}, {"id": 59, "label": "Kh\u00e1i ni\u1ec7m ph\u00e2n lo\u1ea1i v\u00e0 c\u00e2y ...", "title": "15_Kh\u00e1i ni\u1ec7m ph\u00e2n lo\u1ea1i v\u00e0 c\u00e2y quy\u1ebft \u0111\u1ecbnh", "group": "phase3", "shape": "dot", "size": 10, "level": 3}, {"id": 60, "label": "So s\u00e1nh Ph\u00e2n t\u00edch h\u00ecnh b\u00f3ng...", "title": "16_So s\u00e1nh Ph\u00e2n t\u00edch h\u00ecnh b\u00f3ng v\u00e0 \u0111\u01b0\u1eddng cong khu\u1ef7u tay \u0111\u1ec3 ph\u00e2n c\u1ee5m KMeans trong Python", "group": "phase3", "shape": "dot", "size": 10, "level": 3}, {"id": 61, "label": "T\u1ed1i \u01b0u h\u00f3a h\u1ed3i quy tuy\u1ebfn t\u00ed...", "title": "17_T\u1ed1i \u01b0u h\u00f3a h\u1ed3i quy tuy\u1ebfn t\u00ednh v\u1edbi \u0111\u1ed9 d\u1ed1c gi\u1ea3m d\u1ea7n", "group": "phase3", "shape": "dot", "size": 10, "level": 3}, {"id": 62, "label": "So s\u00e1nh gi\u1ea3m k\u00edch th\u01b0\u1edbc PCA...", "title": "18_So s\u00e1nh gi\u1ea3m k\u00edch th\u01b0\u1edbc PCA v\u00e0 t-SNE", "group": "phase3", "shape": "dot", "size": 10, "level": 3}, {"id": 63, "label": "X\u00e2y d\u1ef1ng thu\u1eadt to\u00e1n ph\u00e2n c\u1ee5...", "title": "19_X\u00e2y d\u1ef1ng thu\u1eadt to\u00e1n ph\u00e2n c\u1ee5m DBSCAN t\u1eeb \u0111\u1ea7u b\u1eb1ng Python", "group": "phase3", "shape": "dot", "size": 10, "level": 3}, {"id": 64, "label": "Gi\u1edbi thi\u1ec7u h\u1ed3i quy tuy\u1ebfn t\u00ed...", "title": "20_Gi\u1edbi thi\u1ec7u h\u1ed3i quy tuy\u1ebfn t\u00ednh \u0111\u01a1n gi\u1ea3n", "group": "phase3", "shape": "dot", "size": 10, "level": 3}, {"id": 65, "label": "Hi\u1ec3u ph\u1ea7n \u0111\u1ec7m trong m\u1ea1ng th...", "title": "01_Hi\u1ec3u ph\u1ea7n \u0111\u1ec7m trong m\u1ea1ng th\u1ea7n kinh t\u00edch ch\u1eadp", "group": "phase4", "shape": "dot", "size": 10, "level": 4}, {"id": 66, "label": "M\u00f4 h\u00ecnh NLP \u0111\u1ec3 ph\u00e2n t\u00edch t\u00ec...", "title": "02_M\u00f4 h\u00ecnh NLP \u0111\u1ec3 ph\u00e2n t\u00edch t\u00ecnh c\u1ea3m b\u1eb1ng Python", "group": "phase4", "shape": "dot", "size": 10, "level": 4}, {"id": 67, "label": "Tr\u1ef1c quan h\u00f3a vi\u1ec7c ra quy\u1ebft...", "title": "03_Tr\u1ef1c quan h\u00f3a vi\u1ec7c ra quy\u1ebft \u0111\u1ecbnh c\u1ee7a CNN v\u1edbi Grad-CAM", "group": "phase4", "shape": "dot", "size": 10, "level": 4}, {"id": 68, "label": "K\u1ef9 thu\u1eadt t\u0103ng c\u01b0\u1eddng d\u1eef li\u1ec7u...", "title": "04_K\u1ef9 thu\u1eadt t\u0103ng c\u01b0\u1eddng d\u1eef li\u1ec7u cho m\u1ea1ng th\u1ea7n kinh t\u00edch ch\u1eadp", "group": "phase4", "shape": "dot", "size": 10, "level": 4}, {"id": 69, "label": "\u0110i\u1ec1u ch\u1ec9nh mi\u1ec1n t\u1ef1 \u0111\u1ed9ng v\u1edbi...", "title": "05_\u0110i\u1ec1u ch\u1ec9nh mi\u1ec1n t\u1ef1 \u0111\u1ed9ng v\u1edbi Transformers \u0111\u1ec3 h\u1ecdc theo ng\u1eef c\u1ea3nh b\u1eb1ng Python", "group": "phase4", "shape": "dot", "size": 10, "level": 4}, {"id": 70, "label": "T\u1eeb LLM \u0111\u1ebfn RAG \u0111\u1ea1i l\u00fd", "title": "06_T\u1eeb LLM \u0111\u1ebfn RAG \u0111\u1ea1i l\u00fd", "group": "phase4", "shape": "dot", "size": 10, "level": 4}, {"id": 71, "label": "Tri\u1ec3n khai ph\u00e2n lo\u1ea1i h\u00ecnh \u1ea3...", "title": "07_Tri\u1ec3n khai ph\u00e2n lo\u1ea1i h\u00ecnh \u1ea3nh CNN b\u1eb1ng PyTorch", "group": "phase4", "shape": "dot", "size": 10, "level": 4}, {"id": 72, "label": "RAG so v\u1edbi Tinh ch\u1ec9nh! Ch\u1ecdn...", "title": "08_RAG so v\u1edbi Tinh ch\u1ec9nh! Ch\u1ecdn ph\u01b0\u01a1ng ph\u00e1p ti\u1ebfp c\u1eadn ph\u00f9 h\u1ee3p cho LLM", "group": "phase4", "shape": "dot", "size": 10, "level": 4}, {"id": 73, "label": "So s\u00e1nh c\u00e1c m\u00f4 h\u00ecnh CNN 2 l...", "title": "09_So s\u00e1nh c\u00e1c m\u00f4 h\u00ecnh CNN 2 l\u1edbp tr\u00ean CIFAR-10", "group": "phase4", "shape": "dot", "size": 10, "level": 4}, {"id": 74, "label": "K\u1ef9 thu\u1eadt NLP \u0111\u1ec3 ph\u00e2n t\u00edch v...", "title": "10_K\u1ef9 thu\u1eadt NLP \u0111\u1ec3 ph\u00e2n t\u00edch v\u0103n b\u1ea3n ng\u1eafn trong Python", "group": "phase4", "shape": "dot", "size": 10, "level": 4}, {"id": 75, "label": "Tinh ch\u1ec9nh so v\u1edbi K\u1ef9 thu\u1eadt ...", "title": "11_Tinh ch\u1ec9nh so v\u1edbi K\u1ef9 thu\u1eadt nhanh ch\u00f3ng cho c\u00e1c m\u00f4 h\u00ecnh m\u00e1y bi\u1ebfn \u00e1p", "group": "phase4", "shape": "dot", "size": 10, "level": 4}, {"id": 76, "label": "Ki\u1ebfn tr\u00fac m\u00e1y bi\u1ebfn \u00e1p \u0111\u1ec3 x\u1eed...", "title": "12_Ki\u1ebfn tr\u00fac m\u00e1y bi\u1ebfn \u00e1p \u0111\u1ec3 x\u1eed l\u00fd LLM hi\u1ec7u qu\u1ea3", "group": "phase4", "shape": "dot", "size": 10, "level": 4}, {"id": 77, "label": "\u0110\u1ec7m h\u00ecnh \u1ea3nh v\u00e0 b\u01b0\u1edbc ti\u1ebfn h...", "title": "13_\u0110\u1ec7m h\u00ecnh \u1ea3nh v\u00e0 b\u01b0\u1edbc ti\u1ebfn h\u1ea1t nh\u00e2n trong m\u1ea1ng th\u1ea7n kinh chuy\u1ec3n \u0111\u1ed5i", "group": "phase4", "shape": "dot", "size": 10, "level": 4}, {"id": 78, "label": "X\u00e2y d\u1ef1ng c\u00e1c m\u00f4 h\u00ecnh NLP m\u1ea1...", "title": "14_X\u00e2y d\u1ef1ng c\u00e1c m\u00f4 h\u00ecnh NLP m\u1ea1nh m\u1ebd v\u1edbi kh\u1ea3 n\u0103ng t\u0103ng c\u01b0\u1eddng d\u1eef li\u1ec7u", "group": "phase4", "shape": "dot", "size": 10, "level": 4}, {"id": 79, "label": "Hi\u1ec7u qu\u1ea3RAG T\u0103ng \u00e1p Multi-H...", "title": "15_Hi\u1ec7u qu\u1ea3RAG T\u0103ng \u00e1p Multi-Hop QA cho LLM", "group": "phase4", "shape": "dot", "size": 10, "level": 4}, {"id": 80, "label": "Nguy\u00ean t\u1eafc c\u01a1 b\u1ea3n c\u1ee7a m\u1ea1ng ...", "title": "16_Nguy\u00ean t\u1eafc c\u01a1 b\u1ea3n c\u1ee7a m\u1ea1ng n\u01a1-ron chuy\u1ec3n \u0111\u1ed5i", "group": "phase4", "shape": "dot", "size": 10, "level": 4}, {"id": 81, "label": "N\u00e2ng cao b\u1ed1i c\u1ea3nh LLM b\u1eb1ng ...", "title": "17_N\u00e2ng cao b\u1ed1i c\u1ea3nh LLM b\u1eb1ng t\u00f3m t\u1eaft \u0111\u1ec7 quy b\u1eb1ng Python", "group": "phase4", "shape": "dot", "size": 10, "level": 4}, {"id": 82, "label": "Ph\u00e2n t\u00edch ECG n\u00e2ng cao b\u1eb1ng...", "title": "18_Ph\u00e2n t\u00edch ECG n\u00e2ng cao b\u1eb1ng c\u00e1ch s\u1eed d\u1ee5ng ph\u01b0\u01a1ng ph\u00e1p h\u1ecdc chuy\u1ec3n giao v\u00e0 CNN", "group": "phase4", "shape": "dot", "size": 10, "level": 4}, {"id": 83, "label": "T\u1ea7m quan tr\u1ecdng c\u1ee7a m\u00e3 th\u00f4ng...", "title": "19_T\u1ea7m quan tr\u1ecdng c\u1ee7a m\u00e3 th\u00f4ng b\u00e1o trong NLP", "group": "phase4", "shape": "dot", "size": 10, "level": 4}, {"id": 84, "label": "M\u00e1y bi\u1ebfn \u00e1p v\u00e0 c\u01a1 ch\u1ebf ch\u00fa \u00fd...", "title": "20_M\u00e1y bi\u1ebfn \u00e1p v\u00e0 c\u01a1 ch\u1ebf ch\u00fa \u00fd trong m\u00f4 h\u00ecnh ng\u00f4n ng\u1eef l\u1edbn", "group": "phase4", "shape": "dot", "size": 10, "level": 4}]);
+        var edges = new vis.DataSet([{"from": 1, "to": 2, "arrows": "to", "label": "Cung c\u1ea5p n\u1ec1n t\u1ea3ng s\u1ed1 h\u1ecdc & code", "width": 3}, {"from": 2, "to": 3, "arrows": "to", "label": "Cung c\u1ea5p d\u1eef li\u1ec7u s\u1ea1ch", "width": 3}, {"from": 3, "to": 4, "arrows": "to", "label": "Cung c\u1ea5p thu\u1eadt to\u00e1n t\u1ed1i \u01b0u", "width": 3}, {"from": 1, "to": 10, "color": {"opacity": 0.3}}, {"from": 1, "to": 11, "color": {"opacity": 0.3}}, {"from": 1, "to": 12, "color": {"opacity": 0.3}}, {"from": 1, "to": 13, "color": {"opacity": 0.3}}, {"from": 1, "to": 14, "color": {"opacity": 0.3}}, {"from": 1, "to": 15, "color": {"opacity": 0.3}}, {"from": 1, "to": 16, "color": {"opacity": 0.3}}, {"from": 1, "to": 17, "color": {"opacity": 0.3}}, {"from": 1, "to": 18, "color": {"opacity": 0.3}}, {"from": 1, "to": 19, "color": {"opacity": 0.3}}, {"from": 1, "to": 20, "color": {"opacity": 0.3}}, {"from": 1, "to": 21, "color": {"opacity": 0.3}}, {"from": 1, "to": 22, "color": {"opacity": 0.3}}, {"from": 1, "to": 23, "color": {"opacity": 0.3}}, {"from": 1, "to": 24, "color": {"opacity": 0.3}}, {"from": 1, "to": 25, "color": {"opacity": 0.3}}, {"from": 2, "to": 26, "color": {"opacity": 0.3}}, {"from": 2, "to": 27, "color": {"opacity": 0.3}}, {"from": 2, "to": 28, "color": {"opacity": 0.3}}, {"from": 2, "to": 29, "color": {"opacity": 0.3}}, {"from": 2, "to": 30, "color": {"opacity": 0.3}}, {"from": 2, "to": 31, "color": {"opacity": 0.3}}, {"from": 2, "to": 32, "color": {"opacity": 0.3}}, {"from": 2, "to": 33, "color": {"opacity": 0.3}}, {"from": 2, "to": 34, "color": {"opacity": 0.3}}, {"from": 2, "to": 35, "color": {"opacity": 0.3}}, {"from": 2, "to": 36, "color": {"opacity": 0.3}}, {"from": 2, "to": 37, "color": {"opacity": 0.3}}, {"from": 2, "to": 38, "color": {"opacity": 0.3}}, {"from": 2, "to": 39, "color": {"opacity": 0.3}}, {"from": 2, "to": 40, "color": {"opacity": 0.3}}, {"from": 2, "to": 41, "color": {"opacity": 0.3}}, {"from": 2, "to": 42, "color": {"opacity": 0.3}}, {"from": 2, "to": 43, "color": {"opacity": 0.3}}, {"from": 2, "to": 44, "color": {"opacity": 0.3}}, {"from": 3, "to": 45, "color": {"opacity": 0.3}}, {"from": 3, "to": 46, "color": {"opacity": 0.3}}, {"from": 3, "to": 47, "color": {"opacity": 0.3}}, {"from": 3, "to": 48, "color": {"opacity": 0.3}}, {"from": 3, "to": 49, "color": {"opacity": 0.3}}, {"from": 3, "to": 50, "color": {"opacity": 0.3}}, {"from": 3, "to": 51, "color": {"opacity": 0.3}}, {"from": 3, "to": 52, "color": {"opacity": 0.3}}, {"from": 3, "to": 53, "color": {"opacity": 0.3}}, {"from": 3, "to": 54, "color": {"opacity": 0.3}}, {"from": 3, "to": 55, "color": {"opacity": 0.3}}, {"from": 3, "to": 56, "color": {"opacity": 0.3}}, {"from": 3, "to": 57, "color": {"opacity": 0.3}}, {"from": 3, "to": 58, "color": {"opacity": 0.3}}, {"from": 3, "to": 59, "color": {"opacity": 0.3}}, {"from": 3, "to": 60, "color": {"opacity": 0.3}}, {"from": 3, "to": 61, "color": {"opacity": 0.3}}, {"from": 3, "to": 62, "color": {"opacity": 0.3}}, {"from": 3, "to": 63, "color": {"opacity": 0.3}}, {"from": 3, "to": 64, "color": {"opacity": 0.3}}, {"from": 4, "to": 65, "color": {"opacity": 0.3}}, {"from": 4, "to": 66, "color": {"opacity": 0.3}}, {"from": 4, "to": 67, "color": {"opacity": 0.3}}, {"from": 4, "to": 68, "color": {"opacity": 0.3}}, {"from": 4, "to": 69, "color": {"opacity": 0.3}}, {"from": 4, "to": 70, "color": {"opacity": 0.3}}, {"from": 4, "to": 71, "color": {"opacity": 0.3}}, {"from": 4, "to": 72, "color": {"opacity": 0.3}}, {"from": 4, "to": 73, "color": {"opacity": 0.3}}, {"from": 4, "to": 74, "color": {"opacity": 0.3}}, {"from": 4, "to": 75, "color": {"opacity": 0.3}}, {"from": 4, "to": 76, "color": {"opacity": 0.3}}, {"from": 4, "to": 77, "color": {"opacity": 0.3}}, {"from": 4, "to": 78, "color": {"opacity": 0.3}}, {"from": 4, "to": 79, "color": {"opacity": 0.3}}, {"from": 4, "to": 80, "color": {"opacity": 0.3}}, {"from": 4, "to": 81, "color": {"opacity": 0.3}}, {"from": 4, "to": 82, "color": {"opacity": 0.3}}, {"from": 4, "to": 83, "color": {"opacity": 0.3}}, {"from": 4, "to": 84, "color": {"opacity": 0.3}}]);
 
         var container = document.getElementById('mynetwork');
-        var data = {
-            nodes: nodes,
-            edges: edges
-        };
+        var data = { nodes: nodes, edges: edges };
         var options = {
+            layout: {
+                hierarchical: {
+                    direction: 'UD',
+                    sortMethod: 'directed',
+                    nodeSpacing: 150,
+                    levelSeparation: 200
+                }
+            },
             groups: {
                 phase1: {color:{background:'#ff9800', border:'#e65100'}, font:{color:'white'}},
                 phase2: {color:{background:'#2196f3', border:'#0d47a1'}, font:{color:'white'}},
                 phase3: {color:{background:'#4caf50', border:'#1b5e20'}, font:{color:'white'}},
                 phase4: {color:{background:'#e91e63', border:'#880e4f'}, font:{color:'white'}}
             },
-            physics: {
-                stabilization: false,
-                barnesHut: {
-                    springLength: 200,
-                    springConstant: 0.05
-                }
-            },
             edges: {
-                font: {
-                    size: 12,
-                    color: '#b0bec5',
-                    strokeWidth: 0,
-                    align: 'middle'
-                },
-                color: {
-                    color: '#848484',
-                    highlight: '#ffffff',
-                },
-                smooth: {
-                    type: 'curvedCW',
-                    roundness: 0.2
-                }
+                smooth: { type: 'cubicBezier', forceDirection: 'vertical', roundness: 0.4 },
+                color: { color: '#666', highlight: '#fff' },
+                font: { color: '#aaa', size: 12, background: '#1e1e1e' }
             },
             nodes: {
-                font: {
-                    size: 16,
-                    face: 'Segoe UI'
-                },
-                shadow: true
+                font: { size: 14, face: 'Segoe UI' },
+                shadow: true,
+                borderWidth: 2
             },
             interaction: {
                 hover: true,
-                tooltipDelay: 200
-            }
+                tooltipDelay: 100,
+                navigationButtons: true
+            },
+            physics: false // turn off physics for strict hierarchical layout
         };
         var network = new vis.Network(container, data, options);
     </script>
