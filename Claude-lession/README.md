@@ -8,7 +8,9 @@ Quy ước đặt tên: `YYYY-MM-DD-<chu-de>-<ma-ngau-nhien>.html` — mã ngẫ
 
 | Ngày | Bài | Chủ đề | Mã |
 |---|---|---|---|
+| 2026-08-22 | [Overfitting vs Underfitting](./2026-08-22-overfitting-underfitting-c4cf9012.html) | Model Evaluation — bias-variance tradeoff, underfit/overfit, regularization (Ridge/L2) | `c4cf9012` |
 | 2026-08-20 | [Perceptron từng nhịp](./2026-08-20-perceptron-cd2c084e.html) | Neural Networks — perceptron, hàm ngưỡng, quy tắc cập nhật, giới hạn tuyến tính (XOR) | `cd2c084e` |
+| 2026-08-19 | [Gradient Descent: Đi Tìm Đáy Thung Lũng](./gradient-descent-20260819-4ecf3f.html) | Optimization — Batch/SGD/Mini-batch/Momentum gradient descent | `4ecf3f` |
 
 ## Cấu trúc mỗi bài
 
