@@ -8,6 +8,7 @@ Quy ước đặt tên: `YYYY-MM-DD-<chu-de>-<ma-ngau-nhien>.html` — mã ngẫ
 
 | Ngày | Bài | Chủ đề | Mã |
 |---|---|---|---|
+| 2026-08-25 | [CNN: Tích Chập & Pooling](./2026-08-25-cnn-convolution-4bbe45f2.html) | Computer Vision — convolution, kernel/filter, ReLU, max pooling, data augmentation | `4bbe45f2` |
 | 2026-08-23 | [K-Means Clustering](./2026-08-23-kmeans-clustering-1dba440e.html) | Unsupervised Learning — phân cụm, E-step/M-step, elbow method, chuẩn hoá dữ liệu | `1dba440e` |
 | 2026-08-22 | [Overfitting vs Underfitting](./2026-08-22-overfitting-underfitting-c4cf9012.html) | Model Evaluation — bias-variance tradeoff, underfit/overfit, regularization (Ridge/L2) | `c4cf9012` |
 | 2026-08-20 | [Perceptron từng nhịp](./2026-08-20-perceptron-cd2c084e.html) | Neural Networks — perceptron, hàm ngưỡng, quy tắc cập nhật, giới hạn tuyến tính (XOR) | `cd2c084e` |
