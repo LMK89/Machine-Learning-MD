@@ -8,6 +8,7 @@ Quy ước đặt tên: `YYYY-MM-DD-<chu-de>-<ma-ngau-nhien>.html` — mã ngẫ
 
 | Ngày | Bài | Chủ đề | Mã |
 |---|---|---|---|
+| 2026-08-26 | [Random Forest & Ensemble Learning](./2026-08-26-random-forest-ensemble-35f36b72.html) | Ensemble Learning — Bagging vs Boosting vs Stacking, bootstrap, vote đa số | `35f36b72` |
 | 2026-08-25 | [Cây Quyết Định (Decision Tree)](./2026-08-25-decision-tree-3d45ae7c.html) | Supervised Learning — Gini/Entropy, độ sâu cây, overfitting/underfitting, pruning | `3d45ae7c` |
 | 2026-08-25 | [CNN: Tích Chập & Pooling](./2026-08-25-cnn-convolution-4bbe45f2.html) | Computer Vision — convolution, kernel/filter, ReLU, max pooling, data augmentation | `4bbe45f2` |
 | 2026-08-23 | [K-Means Clustering](./2026-08-23-kmeans-clustering-1dba440e.html) | Unsupervised Learning — phân cụm, E-step/M-step, elbow method, chuẩn hoá dữ liệu | `1dba440e` |
