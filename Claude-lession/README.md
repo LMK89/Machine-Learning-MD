@@ -8,6 +8,7 @@ Quy ước đặt tên: `YYYY-MM-DD-<chu-de>-<ma-ngau-nhien>.html` — mã ngẫ
 
 | Ngày | Bài | Chủ đề | Mã |
 |---|---|---|---|
+| 2026-08-28 | [Support Vector Machine](./2026-08-28-svm-support-vector-machine-a2c13488.html) | Supervised Classification — maximum margin, support vectors, soft margin (C), kernel trick (RBF) | `a2c13488` |
 | 2026-08-27 | [Logistic Regression](./2026-08-27-logistic-regression-33a99007.html) | Supervised Classification — sigmoid, threshold tuning (precision/recall), L2 regularization | `33a99007` |
 | 2026-08-26 | [Random Forest & Ensemble Learning](./2026-08-26-random-forest-ensemble-35f36b72.html) | Ensemble Learning — Bagging vs Boosting vs Stacking, bootstrap, vote đa số | `35f36b72` |
 | 2026-08-25 | [Cây Quyết Định (Decision Tree)](./2026-08-25-decision-tree-3d45ae7c.html) | Supervised Learning — Gini/Entropy, độ sâu cây, overfitting/underfitting, pruning | `3d45ae7c` |
