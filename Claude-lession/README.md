@@ -8,6 +8,7 @@ Quy ước đặt tên: `YYYY-MM-DD-<chu-de>-<ma-ngau-nhien>.html` — mã ngẫ
 
 | Ngày | Bài | Chủ đề | Mã |
 |---|---|---|---|
+| 2026-08-30 | [Naive Bayes: Bộ Lọc Spam](./2026-08-30-naive-bayes-spam-filter-201288cf.html) | Probabilistic Classifier — Định lý Bayes, giả định độc lập, Laplace smoothing, zero-frequency problem, numerical underflow, imbalanced prior | `201288cf` |
 | 2026-08-29 | [K-Nearest Neighbors](./2026-08-29-knn-k-nearest-neighbors-1600b4a3.html) | Supervised Learning — lazy/instance-based learning, chọn k (overfit vs underfit), tầm quan trọng của chuẩn hoá dữ liệu | `1600b4a3` |
 | 2026-08-27 | [Logistic Regression](./2026-08-27-logistic-regression-33a99007.html) | Supervised Classification — sigmoid, threshold tuning (precision/recall), L2 regularization | `33a99007` |
 | 2026-08-26 | [Random Forest & Ensemble Learning](./2026-08-26-random-forest-ensemble-35f36b72.html) | Ensemble Learning — Bagging vs Boosting vs Stacking, bootstrap, vote đa số | `35f36b72` |
