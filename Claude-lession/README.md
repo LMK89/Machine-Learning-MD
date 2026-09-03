@@ -8,6 +8,7 @@ Quy ước đặt tên: `YYYY-MM-DD-<chu-de>-<ma-ngau-nhien>.html` — mã ngẫ
 
 | Ngày | Bài | Chủ đề | Mã |
 |---|---|---|---|
+| 2026-09-02 | [PCA: Nén Dữ Liệu Mà Không Mất Thông Tin](./2026-09-02-pca-dimensionality-reduction-89cd5b1b.html) | Dimensionality Reduction — Principal Component Analysis, eigenvalue/eigenvector, chuẩn hoá trước PCA, chọn đúng thứ tự trục PC1/PC2, % phương sai giữ lại, sai số tái tạo | `89cd5b1b` |
 | 2026-09-01 | [Confusion Matrix & Precision/Recall/F1/ROC-AUC](./2026-09-01-confusion-matrix-metrics-102456cc.html) | Model Evaluation — Accuracy Paradox trên dữ liệu mất cân bằng, Confusion Matrix (TP/FP/TN/FN), Precision vs Recall vs F1, ROC curve & AUC, chọn threshold theo chi phí FN/FP | `102456cc` |
 | 2026-08-31 | [Support Vector Machine](./2026-08-31-svm-support-vector-machine-28b46348.html) | Maximum-Margin Classifier — hyperplane, support vector, hard vs soft margin, slack variable, tham số C, overfit theo outlier | `28b46348` |
 | 2026-08-30 | [Naive Bayes: Bộ Lọc Spam](./2026-08-30-naive-bayes-spam-filter-201288cf.html) | Probabilistic Classifier — Định lý Bayes, giả định độc lập, Laplace smoothing, zero-frequency problem, numerical underflow, imbalanced prior | `201288cf` |
