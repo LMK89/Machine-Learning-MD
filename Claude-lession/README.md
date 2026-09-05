@@ -8,6 +8,7 @@ Quy ước đặt tên: `YYYY-MM-DD-<chu-de>-<ma-ngau-nhien>.html` — mã ngẫ
 
 | Ngày | Bài | Chủ đề | Mã |
 |---|---|---|---|
+| 2026-09-04 | [Backpropagation & MLP: Khi Một Lớp Neuron Là Chưa Đủ](./2026-09-04-backpropagation-mlp-2c27fd32.html) | Neural Networks — Multi-Layer Perceptron, hidden layer + activation phi tuyến, chain rule, mất khả năng biểu diễn khi activation tuyến tính, chưa hội tụ do thiếu epoch, giải bài toán XOR | `2c27fd32` |
 | 2026-09-03 | [Linear Regression: Tìm Đường Thẳng Khớp Nhất](./2026-09-03-linear-regression-2f2c44d6.html) | Supervised Learning — Ordinary Least Squares, Normal Equation vs Gradient Descent, learning rate quá lớn (phân kỳ), dừng huấn luyện quá sớm (chưa hội tụ), MSE, R², ảnh hưởng của outlier | `2f2c44d6` |
 | 2026-09-02 | [PCA: Nén Dữ Liệu Mà Không Mất Thông Tin](./2026-09-02-pca-dimensionality-reduction-89cd5b1b.html) | Dimensionality Reduction — Principal Component Analysis, eigenvalue/eigenvector, chuẩn hoá trước PCA, chọn đúng thứ tự trục PC1/PC2, % phương sai giữ lại, sai số tái tạo | `89cd5b1b` |
 | 2026-09-01 | [Confusion Matrix & Precision/Recall/F1/ROC-AUC](./2026-09-01-confusion-matrix-metrics-102456cc.html) | Model Evaluation — Accuracy Paradox trên dữ liệu mất cân bằng, Confusion Matrix (TP/FP/TN/FN), Precision vs Recall vs F1, ROC curve & AUC, chọn threshold theo chi phí FN/FP | `102456cc` |
