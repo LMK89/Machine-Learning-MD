@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autoencoder: Nén Dữ Liệu Để Tự Học Đặc Trưng — Học AI/ML dễ hiểu</title>
+<style>
+  :root{
+    --bg:#f6f7fb; --bg2:#ffffff; --text:#1c1f2b; --muted:#5b6072;
+    --accent:#5b5ff0; --accent2:#00b894; --warn:#f0a500; --bad:#e0455a;
+    --border:#e3e5ef; --card:#ffffff; --code-bg:#1c1f2b; --code-text:#e8eaf6;
+    --shadow: 0 8px 24px rgba(30,32,60,0.08);
+  }
+  [data-theme="dark"]{
+    --bg:#12131c; --bg2:#181a26; --text:#eceefb; --muted:#a2a6c2;
+    --accent:#8b8ffb; --accent2:#3ddc97; --warn:#ffc233; --bad:#ff6b7d;
+    --border:#2a2d40; --card:#1c1e2c; --code-bg:#0d0e16; --code-text:#dfe2f7;
+    --shadow: 0 8px 28px rgba(0,0,0,0.45);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    background:var(--bg); color:var(--text); transition:background .4s ease,color .4s ease;
+    line-height:1.6;
+  }
+  .wrap{max-width:960px; margin:0 auto; padding:20px 16px 80px;}
+  header.hero{
+    text-align:center; padding:36px 20px; border-radius:20px;
+    background:linear-gradient(135deg,var(--accent),#9b8cff);
+    color:#fff; box-shadow:var(--shadow);
+    animation: fadeInDown .7s ease both;
+    position:relative;
+  }
+  header.hero h1{margin:0 0 8px; font-size:clamp(22px,4vw,34px);}
+  header.hero p{margin:0; opacity:.92; font-size:15px;}
+  .topbar{display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:14px;}
+  .badge{
+    display:inline-block; background:rgba(255,255,255,.18); padding:4px 12px;
+    border-radius:999px; font-size:12px; letter-spacing:.5px; margin-bottom:10px;
+  }
+  button.toggle{
+    background:var(--card); color:var(--text); border:1px solid var(--border);
+    padding:8px 14px; border-radius:999px; cursor:pointer; font-size:13px;
+    box-shadow:var(--shadow); transition:transform .25s ease, background .3s ease;
+  }
+  button.toggle:hover{transform:translateY(-2px);}
+  section{
+    background:var(--card); border:1px solid var(--border); border-radius:16px;
+    padding:22px 20px; margin-top:22px; box-shadow:var(--shadow);
+    animation: slideUp .6s ease both;
+  }
+  section h2{margin-top:0; font-size:20px; display:flex; align-items:center; gap:8px;}
+  section h2 .num{
+    background:var(--accent); color:#fff; width:28px; height:28px; border-radius:50%;
+    display:inline-flex; align-items:center; justify-content:center; font-size:14px; flex:none;
+  }
+  p{color:var(--text);}
+  .muted{color:var(--muted);}
+  code, pre{font-family:"Fira Code",Consolas,monospace;}
+  pre{
+    background:var(--code-bg); color:var(--code-text); padding:14px 16px; border-radius:12px;
+    overflow-x:auto; font-size:13px; line-height:1.55;
+  }
+  code.inline{background:var(--code-bg); color:var(--code-text); padding:2px 6px; border-radius:6px; font-size:.9em;}
+  table{width:100%; border-collapse:collapse; margin:12px 0; font-size:14px; overflow-x:auto; display:block;}
+  table thead, table tbody{width:100%;}
+  th,td{border:1px solid var(--border); padding:8px 10px; text-align:left; vertical-align:top;}
+  th{background:var(--bg); color:var(--muted); font-weight:600;}
+  .grade-good{color:var(--accent2); font-weight:700;}
+  .grade-ok{color:var(--warn); font-weight:700;}
+  .grade-bad{color:var(--bad); font-weight:700;}
+  .state-card{
+    border:1px dashed var(--border); border-radius:14px; padding:16px; margin:14px 0;
+    background:var(--bg); animation: slideUp .5s ease both;
+  }
+  .state-card h3{margin:0 0 6px; font-size:16px; display:flex; align-items:center; gap:8px; flex-wrap:wrap;}
+  .pill{font-size:11px; padding:3px 10px; border-radius:999px; font-weight:700;}
+  .pill.good{background:rgba(0,184,148,.15); color:var(--accent2);}
+  .pill.ok{background:rgba(240,165,0,.15); color:var(--warn);}
+  .pill.bad{background:rgba(224,69,90,.15); color:var(--bad);}
+  .ascii{
+    background:var(--code-bg); color:var(--code-text); padding:14px; border-radius:12px;
+    font-family:"Fira Code",Consolas,monospace; font-size:12.5px; white-space:pre; overflow-x:auto;
+  }
+  .grid2{display:grid; grid-template-columns:1fr; gap:14px;}
+  @media(min-width:720px){.grid2{grid-template-columns:1fr 1fr;}}
+  .metric-row{display:flex; flex-wrap:wrap; gap:10px; margin:12px 0;}
+  .metric-box{
+    flex:1; min-width:130px; padding:10px 12px; border-radius:10px; background:var(--bg2);
+    border:1px solid var(--border); text-align:center;
+  }
+  .metric-box .v{font-size:20px; font-weight:800;}
+  .metric-box .k{font-size:11.5px; color:var(--muted);}
+  .radio-row{display:flex; gap:14px; flex-wrap:wrap; margin:10px 0;}
+  .radio-row label{display:flex; align-items:center; gap:6px; font-size:13.5px; cursor:pointer;
+    padding:7px 12px; border:1px solid var(--border); border-radius:10px; background:var(--bg2);
+    transition:background .25s ease;}
+  .radio-row label:hover{background:var(--bg);}
+  .radio-row input{accent-color:var(--accent);}
+  .btn{
+    background:var(--accent); color:#fff; border:none; padding:11px 20px; border-radius:10px;
+    font-size:14px; cursor:pointer; font-weight:600; transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .btn:hover{transform:translateY(-2px); box-shadow:0 6px 16px rgba(91,95,240,.35);}
+  .btn.secondary{background:var(--accent2);}
+  .pulse{animation: pulse 1s ease infinite;}
+  #resultBadge{
+    display:inline-block; margin-top:14px; padding:10px 18px; border-radius:12px; font-weight:700;
+    opacity:0;
+  }
+  #resultBadge.show{animation: slideDown .5s ease forwards;}
+  .ok-good{background:rgba(0,184,148,.15); color:var(--accent2);}
+  .ok-bad{background:rgba(224,69,90,.15); color:var(--bad);}
+  .ok-ok{background:rgba(240,165,0,.15); color:var(--warn);}
+  .quiz-q{margin-bottom:18px; padding-bottom:14px; border-bottom:1px dashed var(--border);}
+  .quiz-q:last-child{border-bottom:none;}
+  .quiz-opt{
+    display:flex; align-items:center; gap:8px; padding:8px 10px; border-radius:10px; margin:4px 0;
+    cursor:pointer; border:1px solid transparent; transition:background .25s ease;
+  }
+  .quiz-opt:hover{background:var(--bg);}
+  .quiz-opt input{accent-color:var(--accent);}
+  .feedback{
+    margin-top:8px; padding:8px 12px; border-radius:8px; font-size:13.5px; display:none;
+  }
+  .feedback.show{display:block; animation: slideDown .4s ease both;}
+  .feedback.correct{background:rgba(0,184,148,.15); color:var(--accent2);}
+  .feedback.wrong{background:rgba(224,69,90,.15); color:var(--bad);}
+  #quizScore, #warmupScore{
+    margin-top:10px; font-weight:700; opacity:0;
+  }
+  #quizScore.show, #warmupScore.show{animation: fadeInDown .5s ease forwards;}
+  .data-good, .data-bad{padding:12px 14px; border-radius:12px; font-size:13.5px;}
+  .data-good{background:rgba(0,184,148,.08); border:1px solid rgba(0,184,148,.35);}
+  .data-bad{background:rgba(224,69,90,.08); border:1px solid rgba(224,69,90,.35);}
+  .warmup-box{
+    border:1px dashed var(--border); border-radius:14px; padding:14px 16px; margin:12px 0;
+    background:var(--bg);
+  }
+  .warmup-box h4{margin:0 0 8px; font-size:14.5px;}
+  .fillblank{
+    padding:9px 12px; border-radius:10px; border:1px solid var(--border);
+    background:var(--bg2); color:var(--text); font-size:14px; width:220px; max-width:100%;
+  }
+  select.matchsel, select.wordsel{
+    padding:8px 10px; border-radius:8px; border:1px solid var(--border);
+    background:var(--bg2); color:var(--text); font-size:13.5px;
+  }
+  .match-row{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin:6px 0;}
+  .tracewrap{overflow-x:auto;}
+  .cell-ok{color:var(--accent2); font-weight:800;}
+  .cell-bad{color:var(--bad); font-weight:800;}
+  .chart-wrap{
+    background:var(--bg2); border:1px solid var(--border); border-radius:14px; padding:10px;
+    margin:14px 0;
+  }
+  .chart-wrap svg{width:100%; height:auto; display:block;}
+  .picker-row{display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin:10px 0;}
+  .picker-row label{font-size:13.5px; display:flex; flex-direction:column; gap:4px;}
+  input[type="range"]{accent-color:var(--accent); width:220px;}
+  .sentence-box{
+    background:var(--bg2); border:1px solid var(--border); border-radius:12px; padding:12px 16px;
+    font-size:16px; margin:10px 0; line-height:1.9;
+  }
+  .sentence-box .qword{background:rgba(91,95,240,.2); color:var(--accent); font-weight:800; padding:2px 6px; border-radius:6px;}
+  .sentence-box .kword{padding:2px 6px; border-radius:6px; font-weight:700;}
+  .steps-table td:first-child{font-weight:600; color:var(--muted); white-space:nowrap;}
+  footer{text-align:center; margin-top:30px; font-size:12.5px; color:var(--muted);}
+
+  @keyframes fadeInDown{
+    from{opacity:0; transform:translateY(-16px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  @keyframes slideUp{
+    from{opacity:0; transform:translateY(18px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  @keyframes slideDown{
+    from{opacity:0; transform:translateY(-8px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  @keyframes pulse{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.05);}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <span class="muted" style="font-size:13px;">Claude-lession · AI/ML Tiếng Việt</span>
+    <button class="toggle" onclick="toggleTheme()">🌙 / ☀️ Đổi giao diện</button>
+  </div>
+
+  <header class="hero">
+    <span class="badge">DEEP LEARNING — AUTOENCODER & ANOMALY DETECTION</span>
+    <h1>🗜️ Autoencoder: Nén Dữ Liệu Để Tự Học Đặc Trưng</h1>
+    <p>Không ai gán nhãn "đây là gian lận" hay "đây hợp lệ" — <b>Autoencoder</b> chỉ được giao 1 nhiệm vụ duy nhất: nhìn một giao dịch, nén nó qua một "cổ chai" (bottleneck) hẹp, rồi tái tạo lại chính nó. Nếu tái tạo <b>tệ bất thường</b>, khả năng cao đó là thứ mô hình <b>chưa từng thấy dạng như vậy</b> — đó chính là cách phát hiện gian lận không cần nhãn.</p>
+  </header>
+
+  <!-- KHỞI ĐỘNG NHANH -->
+  <section>
+    <h2><span class="num">0</span> Khởi động nhanh (60 giây)</h2>
+    <p class="muted">Trả lời nhanh 3 câu dưới đây trước khi học — không cần đúng hết, chỉ để "hâm nóng" não bạn.</p>
+
+    <div class="warmup-box">
+      <h4>1️⃣ Trắc nghiệm nhanh</h4>
+      <p>Autoencoder khác gì so với một mạng neural network supervised thông thường (như bộ phân loại spam/không-spam)?</p>
+      <label class="quiz-opt"><input type="radio" name="w1" value="wrong">Autoencoder luôn cần nhãn (label) do con người gán, giống hệt bộ phân loại</label>
+      <label class="quiz-opt"><input type="radio" name="w1" value="right">Autoencoder học <b>không giám sát</b> (unsupervised) — nó tự tạo "nhãn" từ chính input, huấn luyện để tái tạo lại input đó qua một bottleneck hẹp</label>
+      <label class="quiz-opt"><input type="radio" name="w1" value="wrong">Autoencoder chỉ hoạt động được với dữ liệu ảnh, không dùng được cho dữ liệu dạng bảng như giao dịch</label>
+    </div>
+
+    <div class="warmup-box">
+      <h4>2️⃣ Điền khuyết</h4>
+      <p>Lớp giữa hẹp nhất của Autoencoder — nơi dữ liệu bị nén thành biểu diễn ít chiều nhất trước khi được giải mã trở lại — được gọi là ______ (bottleneck / latent space / không gian tiềm ẩn).</p>
+      <input class="fillblank" type="text" id="w2input" placeholder="Nhập từ khoá...">
+    </div>
+
+    <div class="warmup-box">
+      <h4>3️⃣ Đối chiếu với bản mẫu</h4>
+      <p>Ghép mỗi mô tả với biến thể Autoencoder tương ứng:</p>
+      <div class="match-row">"Thêm nhiễu ngẫu nhiên vào input lúc train, nhưng target vẫn là bản SẠCH" →
+        <select class="matchsel" id="m1">
+          <option value="">-- chọn --</option>
+          <option value="denoise">Denoising Autoencoder</option>
+          <option value="vae">Variational Autoencoder (VAE)</option>
+        </select>
+      </div>
+      <div class="match-row">"Ép latent space tuân theo phân phối chuẩn N(0,1) để có thể 'sample' ra mẫu mới" →
+        <select class="matchsel" id="m2">
+          <option value="">-- chọn --</option>
+          <option value="denoise">Denoising Autoencoder</option>
+          <option value="vae">Variational Autoencoder (VAE)</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="btn" onclick="checkWarmup()">✅ Kiểm tra khởi động</button>
+    <div id="warmupScore"></div>
+  </section>
+
+  <!-- 1. ĐỊNH NGHĨA -->
+  <section>
+    <h2><span class="num">1</span> Định nghĩa ngắn gọn</h2>
+    <p><b>Autoencoder</b> là mạng neural huấn luyện <b>không giám sát</b> để tái tạo lại chính input của nó, bằng cách ép dữ liệu đi qua một "cổ chai" (bottleneck) có số chiều nhỏ hơn input. Vì bottleneck hẹp hơn, mạng buộc phải học ra biểu diễn <b>nén, cô đọng nhất</b> để vẫn tái tạo được gần đúng — quá trình đó chính là học đặc trưng (feature learning) hoàn toàn tự động.</p>
+    <div class="ascii">  Input x (n chiều) --[Encoder f]--&gt; z (bottleneck, k chiều, k &lt; n) --[Decoder g]--&gt; x̂ (n chiều)
+
+  Loss = MSE(x, x̂) = ||x - x̂||²      ← "nhãn" chính là x — không cần con người gán nhãn gì cả!
+
+  z = f(x) = nén thông tin quan trọng nhất
+  x̂ = g(z) = cố gắng dựng lại x từ bản nén z
+  Nếu x̂ càng khác xa x  →  reconstruction error càng cao
+                        →  dấu hiệu x là dạng dữ liệu mô hình CHƯA từng học cách nén tốt</div>
+    <p class="muted">Điểm mấu chốt: Autoencoder không "nhớ" cả bảng tra cứu — bottleneck hẹp buộc nó phải tìm ra <b>cấu trúc/tương quan chung</b> giữa các đặc trưng (giống PCA ở bài trước, nhưng có thể phi tuyến nhờ activation như ReLU/sigmoid).</p>
+  </section>
+
+  <!-- 2. BÀI TOÁN THỰC TẾ -->
+  <section>
+    <h2><span class="num">2</span> Bài toán thực tế: Phát hiện gian lận thẻ tín dụng 💳🚨</h2>
+    <p>Ngân hàng có hàng triệu giao dịch <b>hợp lệ</b> mỗi ngày nhưng rất ít ví dụ gian lận đã được gắn nhãn (và kẻ gian luôn nghĩ ra chiêu trò mới). Thay vì huấn luyện bộ phân loại "gian lận vs hợp lệ" (cần nhãn đầy đủ), ta huấn luyện Autoencoder <b>chỉ trên giao dịch hợp lệ</b>. Khi gặp giao dịch có <i>pattern lạ</i> — dù chưa từng thấy loại gian lận đó bao giờ — reconstruction error sẽ tự nhiên tăng vọt.</p>
+    <table>
+      <thead><tr><th>Giao dịch</th><th>Autoencoder từng "quen" pattern này chưa?</th><th>Reconstruction error</th></tr></thead>
+      <tbody>
+        <tr><td>500$ mua sắm lúc 19h (giờ cao điểm)</td><td>Có, giống hệt hàng triệu giao dịch hợp lệ đã train</td><td>Thấp</td></tr>
+        <tr><td>950$ rút ATM nước ngoài lúc 3h sáng</td><td>Không — kết hợp số tiền lớn + giờ bất thường hiếm gặp ở dữ liệu train</td><td>Cao</td></tr>
+      </tbody>
+    </table>
+    <p class="muted">4 trạng thái tiếp theo dùng đúng bài toán này để so sánh các kiến trúc Autoencoder, từ "vô dụng" đến "phát hiện gian lận tốt".</p>
+  </section>
+
+  <!-- 3. 4 TRẠNG THÁI -->
+  <section>
+    <h2><span class="num">3</span> 4 trạng thái của Autoencoder</h2>
+    <p class="muted">Cùng bài toán phát hiện gian lận ở trên, chỉ đổi kiến trúc/ràng buộc của Autoencoder:</p>
+
+    <!-- State 1 -->
+    <div class="state-card">
+      <h3>❌ Trạng thái 1 — Overcomplete, không ràng buộc gì <span class="pill bad">❌ Xấu (học "chép nguyên")</span></h3>
+      <div class="ascii">  Bottleneck (64) &gt;= Input (30)  →  mạng THỪA chỗ chứa, không bị ép nén gì cả
+
+  x (30 chiều) --&gt; z (64 chiều, RỘNG hơn x) --&gt; x̂ (30 chiều)
+
+  Vấn đề: mạng dễ dàng học ra 1 phép ánh xạ IDENTITY (copy y hệt input sang output)
+     → reconstruction error luôn ~0, kể cả với giao dịch GIAN LẬN chưa từng thấy!
+     → mất hoàn toàn khả năng phân biệt bình thường/bất thường</div>
+      <pre>from tensorflow.keras.layers import Input, Dense
+from tensorflow.keras.models import Model
+
+inp = Input(shape=(30,))                        # 30 đặc trưng giao dịch
+encoded = Dense(64, activation='relu')(inp)      # bottleneck 64 > input 30 -> KHÔNG nén!
+decoded = Dense(30, activation='linear')(encoded)
+autoencoder = Model(inp, decoded)
+autoencoder.compile(optimizer='adam', loss='mse')
+# Không có gì ép mạng phải "cô đọng" thông tin -> dễ học identity mapping vô nghĩa</pre>
+      <p class="muted">Đây là lỗi kinh điển khi mới làm quen Autoencoder: nghĩ rằng "mạng càng lớn càng tốt", nhưng nếu không ràng buộc (bottleneck hẹp, thêm nhiễu, sparsity...), mạng chọn đường tắt dễ nhất là chép nguyên input — vô dụng cho cả nén dữ liệu lẫn phát hiện bất thường.</p>
+    </div>
+
+    <!-- State 2 -->
+    <div class="state-card">
+      <h3>✅ Trạng thái 2 — Undercomplete Autoencoder <span class="pill good">✅ Tốt (nén cơ bản)</span></h3>
+      <div class="ascii">  Bottleneck (8) &lt;&lt; Input (30)  →  BUỘC mạng phải nén thông tin
+
+  x (30 chiều) --&gt; z (8 chiều, HẸP hơn x) --&gt; x̂ (30 chiều)
+
+  Chỉ train trên giao dịch HỢP LỆ:
+     mạng "quen" tái tạo tốt pattern bình thường -> error thấp
+     gặp pattern lạ (gian lận) -> không đủ "vốn từ" để nén đúng -> error CAO bất thường</div>
+      <pre>inp = Input(shape=(30,))
+encoded = Dense(8, activation='relu')(inp)       # bottleneck 8 << 30 -> BUỘC nén
+decoded = Dense(30, activation='linear')(encoded)
+autoencoder = Model(inp, decoded)
+autoencoder.compile(optimizer='adam', loss='mse')
+autoencoder.fit(X_normal_train, X_normal_train, epochs=50, batch_size=32)
+# Chỉ train trên giao dịch HỢP LỆ -> autoencoder "quen" tái tạo đúng pattern bình thường
+threshold = 0.02
+error = ((X_test - autoencoder.predict(X_test))**2).mean(axis=1)
+is_fraud = error > threshold   # error cao bất thường -> nghi ngờ gian lận</pre>
+      <p class="muted">Nếu chỉ dùng activation tuyến tính (linear) và loss MSE, Undercomplete Autoencoder về bản chất toán học gần giống hệt <b>PCA</b> (đã học ở bài trước): cả hai đều tìm không gian con chiều thấp hơn sao cho sai số tái tạo nhỏ nhất. Khác biệt: Autoencoder có thể thêm activation phi tuyến (ReLU) để nắm bắt cấu trúc phi tuyến mà PCA (thuần tuyến tính) bỏ lỡ.</p>
+    </div>
+
+    <!-- State 3 -->
+    <div class="state-card">
+      <h3>✅ Trạng thái 3 — Denoising Autoencoder <span class="pill good">✅ Tốt (bền vững với nhiễu)</span></h3>
+      <div class="ascii">  Input lúc train KHÔNG SẠCH -- cố tình thêm nhiễu ngẫu nhiên:
+
+  x_sạch --&gt; [+ nhiễu ngẫu nhiên] --&gt; x_nhiễu --&gt; Encoder --&gt; z --&gt; Decoder --&gt; x̂
+                                                                              |
+                                                    so sánh x̂ với x_SẠCH (không phải x_nhiễu!)
+
+  Mạng bị ép phải học ĐẶC TRƯNG THẬT SỰ quan trọng của dữ liệu,
+  không thể "ăn gian" bằng cách chỉ copy input (vì input đã bị nhiễu, copy y hệt sẽ SAI)</div>
+      <pre>import numpy as np
+
+noise_factor = 0.1
+X_noisy = X_normal_train + noise_factor * np.random.normal(size=X_normal_train.shape)
+
+autoencoder.fit(X_noisy, X_normal_train, epochs=50, batch_size=32)
+# input = bản NHIỄU, target = bản SẠCH
+# -> ép mạng học đặc trưng bền vững, không còn "đường tắt" chép nguyên input</pre>
+      <p class="muted">Dữ liệu giao dịch thực tế luôn có nhiễu (lỗi làm tròn số tiền, giờ giao dịch lệch múi giờ nhẹ...). Denoising Autoencoder giúp mô hình không bị "quá nhạy" với nhiễu nhỏ vô hại, tập trung vào tín hiệu thật sự phân biệt bình thường/bất thường.</p>
+    </div>
+
+    <!-- State 4 -->
+    <div class="state-card">
+      <h3>✅ Trạng thái 4 — Variational Autoencoder (VAE) <span class="pill good">✅ Tốt (nâng cao, sinh dữ liệu)</span></h3>
+      <div class="ascii">  Thay vì encoder xuất ra 1 điểm z DUY NHẤT, VAE xuất ra 1 PHÂN PHỐI (mean, log_var):
+
+  x --&gt; Encoder --&gt; (z_mean, z_log_var) --&gt; sample z ~ N(z_mean, exp(z_log_var)) --&gt; Decoder --&gt; x̂
+
+  Loss = Reconstruction_loss(x, x̂)  +  KL_divergence( N(z_mean,z_log_var) || N(0,1) )
+                                        ↑ ép latent space "gọn gàng", liên tục quanh gốc toạ độ
+
+  -> có thể LẤY MẪU z mới ngẫu nhiên từ N(0,1) rồi cho qua Decoder
+     -> SINH RA giao dịch giả lập hợp lý (data augmentation, mô phỏng kịch bản gian lận mới)</div>
+      <pre>import tensorflow as tf
+from tensorflow.keras.layers import Dense, Lambda
+
+def sampling(args):
+    z_mean, z_log_var = args
+    eps = tf.random.normal(shape=tf.shape(z_mean))
+    return z_mean + tf.exp(0.5 * z_log_var) * eps
+
+z_mean = Dense(2)(encoded)
+z_log_var = Dense(2)(encoded)
+z = Lambda(sampling)([z_mean, z_log_var])
+# loss = reconstruction_loss + kl_divergence(z_mean, z_log_var)
+# -> latent space liên tục -> "nội suy" giữa 2 giao dịch cũng cho ra giao dịch hợp lý</pre>
+      <p class="muted">VAE phức tạp hơn 3 trạng thái trước, nhưng đổi lại có khả năng <b>sinh (generate)</b> dữ liệu mới hợp lý — hữu ích khi cần mô phỏng thêm kịch bản gian lận hiếm gặp để làm giàu tập huấn luyện cho các mô hình khác.</p>
+    </div>
+  </section>
+
+  <!-- BẢNG SO SÁNH -->
+  <section>
+    <h2><span class="num">4</span> Bảng so sánh tổng hợp</h2>
+    <table>
+      <thead><tr><th>Trạng Thái</th><th>Input</th><th>Xử Lý</th><th>Output</th><th>Đánh Giá</th></tr></thead>
+      <tbody>
+        <tr><td>Overcomplete không ràng buộc</td><td>Giao dịch hợp lệ</td><td>Bottleneck rộng hơn input, không nén gì</td><td>x̂ ≈ x gần như tuyệt đối (kể cả gian lận)</td><td class="grade-bad">❌ Học "chép nguyên", vô dụng để phát hiện bất thường</td></tr>
+        <tr><td>Undercomplete</td><td>Chỉ giao dịch hợp lệ</td><td>Bottleneck hẹp hơn input nhiều lần, ép nén thông tin</td><td>x̂ gần đúng nếu quen pattern, sai lệch nếu lạ</td><td class="grade-good">✅ Nền tảng tốt cho anomaly detection</td></tr>
+        <tr><td>Denoising Autoencoder</td><td>Bản nhiễu của giao dịch hợp lệ</td><td>Học tái tạo bản SẠCH từ bản NHIỄU</td><td>x̂ bền vững, ít nhạy nhiễu vô hại</td><td class="grade-good">✅ Ổn định hơn trên dữ liệu thực (có nhiễu)</td></tr>
+        <tr><td>Variational Autoencoder (VAE)</td><td>Giao dịch hợp lệ</td><td>Encoder ra phân phối (mean, log_var) + KL divergence</td><td>x̂ + khả năng sample z mới để sinh dữ liệu</td><td class="grade-good">✅ Mạnh nhất, thêm được khả năng generative</td></tr>
+      </tbody>
+    </table>
+    <p class="muted">💡 <b>Bài học:</b> Bottleneck (hẹp hơn input) là điều kiện <b>bắt buộc</b> để Autoencoder học được gì đó có ý nghĩa — không có nó, mô hình chỉ học "đường tắt" chép input. Từ nền Undercomplete, Denoising và VAE là 2 hướng mở rộng phổ biến nhất trong thực tế.</p>
+  </section>
+
+  <!-- DEMO TƯƠNG TÁC -->
+  <section>
+    <h2><span class="num">5</span> Demo: Tính reconstruction error để phát hiện gian lận</h2>
+    <p class="muted">Autoencoder tuyến tính đơn giản, bottleneck 1 chiều, đã "học" xong hướng nén <code class="inline">w = [0.8, 0.6]</code> từ dữ liệu giao dịch hợp lệ (2 đặc trưng đã chuẩn hoá 0–1: <b>số tiền</b> và <b>độ bất thường của giờ giao dịch</b>, 0.6 ≈ giờ cao điểm bình thường). Chọn 1 giao dịch, xem <b>từng bước tính thật</b> — không phải số giả định.</p>
+
+    <div class="picker-row">
+      <label>Chọn giao dịch:
+        <select class="wordsel" id="txPicker" onchange="runDemo()">
+          <option value="normal_a">💳 500$ mua sắm lúc 19h (giờ cao điểm)</option>
+          <option value="normal_b">💳 450$ ăn uống lúc 18h</option>
+          <option value="normal_c">💳 560$ mua sắm cuối tuần lúc 20h</option>
+          <option value="fraud_d">🚨 950$ rút ATM nước ngoài lúc 3h sáng</option>
+          <option value="fraud_e">🚨 60$ nhưng lặp lại 27 lần dồn dập lúc 4h sáng</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="sentence-box" id="sentenceBox"></div>
+
+    <table class="steps-table">
+      <thead><tr><th>Bước</th><th>Giá trị</th></tr></thead>
+      <tbody>
+        <tr><td>1. Encode: z = x·w</td><td id="step-z"></td></tr>
+        <tr><td>2. Decode: x̂ = z·w</td><td id="step-xhat"></td></tr>
+        <tr><td>3. Sai số từng chiều (x - x̂)</td><td id="step-diff"></td></tr>
+        <tr><td>4. Reconstruction error = Σ(x - x̂)²</td><td id="step-error"></td></tr>
+      </tbody>
+    </table>
+
+    <div class="chart-wrap">
+      <svg id="chartSvg" viewBox="0 0 100 40" preserveAspectRatio="xMidYMid meet"></svg>
+    </div>
+
+    <div class="metric-row" id="metricRow"></div>
+    <div id="resultBadge"></div>
+  </section>
+
+  <!-- DỮ LIỆU TỐT vs XẤU -->
+  <section>
+    <h2><span class="num">6</span> Dữ liệu tốt vs dữ liệu xấu</h2>
+    <div class="grid2">
+      <div class="data-good">
+        <b>✅ Dữ liệu tốt</b>
+        <ul>
+          <li>Tập train chỉ gồm dữ liệu <b>bình thường</b> (đã lọc sạch gian lận đã biết) — autoencoder chỉ nên "quen" pattern hợp lệ</li>
+          <li>Chuẩn hoá (scale) tất cả đặc trưng về cùng khoảng giá trị trước khi train — nếu không, đặc trưng có scale lớn (vd số tiền hàng nghìn) sẽ áp đảo loss so với đặc trưng scale nhỏ</li>
+          <li>Bottleneck đủ hẹp so với input (undercomplete thật sự), hoặc có thêm ràng buộc (nhiễu, sparsity, KL divergence) nếu bottleneck không hẹp được</li>
+          <li>Threshold cảnh báo được chọn dựa trên phân phối reconstruction error thực tế trên tập validation (vd percentile 99), không đoán bừa một con số</li>
+        </ul>
+      </div>
+      <div class="data-bad">
+        <b>❌ Dữ liệu xấu</b>
+        <ul>
+          <li>Trộn lẫn một số giao dịch gian lận đã biết vào tập train "cho nhiều dữ liệu" — khiến autoencoder học luôn cách tái tạo tốt CẢ pattern gian lận, làm giảm khả năng phát hiện</li>
+          <li>Không chuẩn hoá đặc trưng → loss bị chi phối bởi 1-2 đặc trưng scale lớn, các đặc trưng quan trọng khác gần như bị bỏ qua</li>
+          <li>Bottleneck quá rộng (overcomplete) mà không thêm ràng buộc gì → học identity mapping, error luôn thấp giả tạo (xem Trạng thái 1)</li>
+          <li>Dữ liệu train thiếu đa dạng (chỉ có giao dịch giờ hành chính) → giao dịch hợp lệ nhưng hiếm gặp (vd mua hàng lúc nửa đêm khi đi công tác) bị báo động giả (false positive) liên tục</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- BÀI TẬP + QUIZ -->
+  <section>
+    <h2><span class="num">7</span> Bài tập nhỏ</h2>
+    <p>Cho 2 giao dịch mới đã chuẩn hoá: <b>x = [0.30, 0.55]</b> (số tiền khá nhỏ, giờ gần bình thường) và <b>x = [0.85, 0.15]</b> (số tiền lớn, giờ khá bất thường). Dùng đúng công thức ở Mục 5 với <code class="inline">w = [0.8, 0.6]</code>: tính <code class="inline">z = x·w</code>, rồi <code class="inline">x̂ = z·w</code>, rồi reconstruction error <code class="inline">Σ(x-x̂)²</code> cho từng giao dịch. So sánh với threshold 0.02 — giao dịch nào lệch khỏi đường w nhiều hơn, và vì sao giao dịch "trông có vẻ nhỏ, bình thường" vẫn có thể bị gắn cờ?</p>
+
+    <h2 style="margin-top:26px;"><span class="num">?</span> Quiz tự kiểm tra</h2>
+
+    <div class="quiz-q">
+      <p><b>Câu 1.</b> Vì sao Autoencoder overcomplete (bottleneck ≥ input) mà không thêm ràng buộc gì dễ trở nên vô dụng cho phát hiện bất thường?</p>
+      <label class="quiz-opt"><input type="radio" name="q1" value="wrong">Vì overcomplete autoencoder chạy quá chậm nên không kịp huấn luyện xong</label>
+      <label class="quiz-opt"><input type="radio" name="q1" value="right">Vì mạng có đủ "chỗ chứa" để học ánh xạ gần như identity (chép nguyên input sang output) mà không bị ép học đặc trưng quan trọng, khiến reconstruction error luôn thấp kể cả với dữ liệu bất thường</label>
+      <label class="quiz-opt"><input type="radio" name="q1" value="wrong">Vì overcomplete autoencoder chỉ hoạt động được với dữ liệu ảnh màu, không dùng được với dữ liệu số như giao dịch</label>
+      <div class="feedback" id="fb-q1"></div>
+    </div>
+
+    <div class="quiz-q">
+      <p><b>Câu 2.</b> Trong ứng dụng phát hiện gian lận, vì sao autoencoder chỉ nên train trên giao dịch <b>hợp lệ</b>, không trộn dữ liệu gian lận vào tập train?</p>
+      <label class="quiz-opt"><input type="radio" name="q2" value="wrong">Vì dữ liệu gian lận luôn có định dạng file khác với dữ liệu bình thường nên không load chung được</label>
+      <label class="quiz-opt"><input type="radio" name="q2" value="right">Để mô hình chỉ "quen" tái tạo đúng pattern bình thường; khi gặp giao dịch có pattern khác lạ (gian lận), reconstruction error sẽ tự nhiên cao bất thường — không cần nhãn gian lận nào lúc train</label>
+      <label class="quiz-opt"><input type="radio" name="q2" value="wrong">Vì các thư viện deep learning không cho phép trộn 2 loại dữ liệu vào cùng 1 tập train</label>
+      <div class="feedback" id="fb-q2"></div>
+    </div>
+
+    <div class="quiz-q">
+      <p><b>Câu 3.</b> Autoencoder tuyến tính (không activation phi tuyến, loss MSE) về bản chất gần giống với thuật toán nào đã học ở bài trước?</p>
+      <label class="quiz-opt"><input type="radio" name="q3" value="wrong">K-Means clustering — vì cả hai đều chia dữ liệu thành các cụm rời rạc</label>
+      <label class="quiz-opt"><input type="radio" name="q3" value="right">PCA (Principal Component Analysis) — cả hai đều tìm một không gian con tuyến tính chiều thấp hơn sao cho sai số tái tạo (reconstruction error) là nhỏ nhất</label>
+      <label class="quiz-opt"><input type="radio" name="q3" value="wrong">Naive Bayes — vì cả hai đều dựa trên định lý Bayes và giả định độc lập giữa các đặc trưng</label>
+      <div class="feedback" id="fb-q3"></div>
+    </div>
+
+    <button class="btn" onclick="checkQuiz()">✅ Chấm điểm</button>
+    <div id="quizScore"></div>
+  </section>
+
+  <footer>
+    Claude-lession · Bài giảng AI/ML tiếng Việt tự động · Chủ đề tham khảo từ khóa học <i>AI For Beginners</i>.
+  </footer>
+</div>
+
+<script>
+function toggleTheme(){
+  const root = document.documentElement;
+  const cur = root.getAttribute('data-theme');
+  root.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+  try{ localStorage.setItem('lesson-theme', root.getAttribute('data-theme')); }catch(e){}
+}
+(function initTheme(){
+  try{
+    const saved = localStorage.getItem('lesson-theme');
+    if(saved){ document.documentElement.setAttribute('data-theme', saved); }
+    else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+      document.documentElement.setAttribute('data-theme','dark');
+    }
+  }catch(e){}
+})();
+
+function checkWarmup(){
+  let score = 0, total = 4;
+  const box = document.getElementById('warmupScore');
+
+  const w1 = document.querySelector('input[name="w1"]:checked');
+  if(w1 && w1.value === 'right') score++;
+
+  const w2 = (document.getElementById('w2input').value || '').trim().toLowerCase();
+  if(w2.includes('bottleneck') || w2.includes('latent') || w2.includes('tiềm ẩn') || w2.includes('tiem an')) score++;
+
+  const m1 = document.getElementById('m1').value;
+  const m2 = document.getElementById('m2').value;
+  if(m1 === 'denoise') score++;
+  if(m2 === 'vae') score++;
+
+  box.textContent = `Khởi động xong: ${score}/${total} đúng — ` +
+    (score >= 3 ? '🔥 Trực giác tốt, vào bài chính thôi!' : '👍 Chưa sao, đọc kỹ Trạng thái 1-4 bên dưới nhé.');
+  box.className = 'show';
+}
+
+// w = hướng nén đã "học" từ dữ liệu hợp lệ (đơn vị vector: 0.8^2 + 0.6^2 = 1)
+const W = [0.8, 0.6];
+const THRESHOLD = 0.02;
+
+const TRANSACTIONS = {
+  normal_a: { x: [0.80, 0.60], label: '💳 500$ mua sắm lúc 19h (giờ cao điểm bình thường)' },
+  normal_b: { x: [0.72, 0.56], label: '💳 450$ ăn uống lúc 18h' },
+  normal_c: { x: [0.88, 0.64], label: '💳 560$ mua sắm cuối tuần lúc 20h' },
+  fraud_d:  { x: [0.95, 0.05], label: '🚨 950$ rút ATM nước ngoài lúc 3h sáng' },
+  fraud_e:  { x: [0.10, 0.90], label: '🚨 60$ nhưng lặp lại 27 lần dồn dập lúc 4h sáng' }
+};
+
+function dot(a, b){ return a[0]*b[0] + a[1]*b[1]; }
+
+function drawChart(error){
+  const svg = document.getElementById('chartSvg');
+  const maxErr = 0.5;
+  const w = Math.min(error / maxErr, 1) * 80;
+  const thresholdX = 18 + (THRESHOLD / maxErr) * 80;
+  let html = '';
+  html += `<text x="2" y="10" font-size="4.2" fill="var(--text)" font-weight="700">error</text>`;
+  html += `<rect x="18" y="4" width="${w.toFixed(2)}" height="10" rx="2" fill="${error > THRESHOLD ? 'var(--bad)' : 'var(--accent2)'}"/>`;
+  html += `<text x="${(18+w+2).toFixed(2)}" y="12" font-size="4.2" fill="var(--muted)">${error.toFixed(4)}</text>`;
+  html += `<line x1="${thresholdX.toFixed(2)}" y1="0" x2="${thresholdX.toFixed(2)}" y2="18" stroke="var(--warn)" stroke-width="0.6" stroke-dasharray="1.5,1"/>`;
+  html += `<text x="${thresholdX.toFixed(2)}" y="24" font-size="3.6" fill="var(--warn)" text-anchor="middle">threshold ${THRESHOLD}</text>`;
+  svg.innerHTML = html;
+}
+
+function runDemo(){
+  const key = document.getElementById('txPicker').value;
+  const tx = TRANSACTIONS[key];
+  document.getElementById('sentenceBox').innerHTML = tx.label;
+
+  const x = tx.x;
+  const z = dot(x, W);
+  const xhat = [z * W[0], z * W[1]];
+  const diff = [x[0] - xhat[0], x[1] - xhat[1]];
+  const error = diff[0]*diff[0] + diff[1]*diff[1];
+
+  document.getElementById('step-z').textContent = `z = ${x[0].toFixed(2)}×0.8 + ${x[1].toFixed(2)}×0.6 = ${z.toFixed(4)}`;
+  document.getElementById('step-xhat').textContent = `x̂ = [${xhat[0].toFixed(4)}, ${xhat[1].toFixed(4)}]`;
+  document.getElementById('step-diff').textContent = `[${diff[0].toFixed(4)}, ${diff[1].toFixed(4)}]`;
+  document.getElementById('step-error').textContent = error.toFixed(4);
+
+  drawChart(error);
+
+  const metricRow = document.getElementById('metricRow');
+  metricRow.innerHTML = `
+    <div class="metric-box"><div class="v">${z.toFixed(3)}</div><div class="k">z (latent, 1 chiều)</div></div>
+    <div class="metric-box"><div class="v">${error.toFixed(4)}</div><div class="k">Reconstruction error</div></div>
+    <div class="metric-box"><div class="v">${THRESHOLD}</div><div class="k">Ngưỡng cảnh báo</div></div>`;
+
+  const badge = document.getElementById('resultBadge');
+  badge.className = '';
+  let verdict, cls;
+  if(error > THRESHOLD){
+    verdict = `🚨 Reconstruction error (${error.toFixed(4)}) > threshold (${THRESHOLD}) — NGHI NGỜ GIAN LẬN, cần xem xét thêm!`;
+    cls = 'ok-bad';
+  } else {
+    verdict = `✅ Reconstruction error (${error.toFixed(4)}) ≤ threshold (${THRESHOLD}) — giao dịch bình thường, khớp tốt với pattern đã học`;
+    cls = 'ok-good';
+  }
+  badge.textContent = verdict;
+  badge.classList.add(cls);
+  requestAnimationFrame(()=> badge.classList.add('show'));
+}
+
+runDemo();
+
+const ANSWERS = { q1:'right', q2:'right', q3:'right' };
+function checkQuiz(){
+  let score = 0;
+  const total = Object.keys(ANSWERS).length;
+  for(const q in ANSWERS){
+    const checked = document.querySelector(`input[name="${q}"]:checked`);
+    const fb = document.getElementById('fb-'+q);
+    if(checked && checked.value === ANSWERS[q]){
+      score++;
+      fb.textContent = '✅ Chính xác!';
+      fb.className = 'feedback show correct';
+    } else {
+      fb.textContent = checked ? '❌ Chưa đúng — đọc lại phần Trạng thái ở trên nhé.' : '⚠️ Bạn chưa chọn đáp án.';
+      fb.className = 'feedback show wrong';
+    }
+  }
+  const box = document.getElementById('quizScore');
+  box.textContent = `Kết quả: ${score}/${total} câu đúng — ` +
+    (score === total ? '🏆 Xuất sắc!' : score >= total/2 ? '👍 Khá tốt, xem lại câu sai nhé.' : '📖 Nên đọc lại bài trước khi làm tiếp.');
+  box.className = 'show';
+}
+</script>
+</body>
+</html>
