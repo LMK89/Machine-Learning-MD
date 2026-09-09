@@ -8,6 +8,7 @@ Quy ước đặt tên: `YYYY-MM-DD-<chu-de>-<ma-ngau-nhien>.html` — mã ngẫ
 
 | Ngày | Bài | Chủ đề | Mã |
 |---|---|---|---|
+| 2026-09-08 | [Autoencoder: Nén Dữ Liệu Để Tự Học Đặc Trưng](./2026-09-08-autoencoder-anomaly-detection-d1a06ba1.html) | Deep Learning — Overcomplete (học "chép nguyên") vs Undercomplete vs Denoising vs Variational Autoencoder (VAE), bottleneck/latent space, so sánh với PCA, demo phát hiện gian lận thẻ tín dụng bằng reconstruction error | `d1a06ba1` |
 | 2026-09-07 | [Attention Mechanism: Nhìn Toàn Cảnh Thay Vì Đọc Tuần Tự](./2026-09-07-attention-mechanism-transformer-4f6d9d92.html) | Deep Learning — Seq2Seq bottleneck vs Bahdanau Attention vs Self-Attention vs Multi-Head Attention, scaled dot-product Q/K/V, positional encoding, causal mask, demo giải quyết đại từ mơ hồ ("nó" ám chỉ từ nào) | `4f6d9d92` |
 | 2026-09-06 | [RNN, LSTM & GRU: Cho Mạng Nơ-ron Một Trí Nhớ](./2026-09-06-rnn-lstm-gru-sequence-9f317b9c.html) | Deep Learning — Vanilla RNN vs LSTM vs GRU vs Bidirectional LSTM, vanishing/exploding gradient, Backpropagation Through Time, forget/input/output gate, demo tín hiệu gradient theo khoảng cách | `9f317b9c` |
 | 2026-09-05 | [Word Embeddings: Biến Từ Ngữ Thành Vector Số](./2026-09-05-word-embeddings-word2vec-4620e44a.html) | NLP — One-Hot vs Bag-of-Words/TF-IDF vs Word2Vec (Skip-gram/CBOW) vs Contextual Embedding (BERT), cosine similarity, Distributional Hypothesis, đa nghĩa (polysemy), demo bản đồ vector tương tác | `4620e44a` |
